@@ -1,0 +1,6 @@
+<layers>
+  <layer
+      name="UlearnTheme"
+      interface="ulearn.theme.browser.interfaces.IUlearnTheme"
+  />
+</layers>

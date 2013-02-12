@@ -1,0 +1,66 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="ulearn.theme">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <includeDependencies package="." />
+  <include package="grokcore.component" file="meta.zcml" />
+  <grok:grok package=".browser" />
+
+  <include package=".browser" />
+
+  <cmf:registerDirectory name="ulearntheme_custom" recursive="True" />
+
+  <include package="plone.resource" file="meta.zcml"/>
+
+  <!-- Resource traversers -->
+  <adapter
+      name="ulearn"
+      for="* zope.publisher.interfaces.IRequest"
+      provides="zope.traversing.interfaces.ITraversable"
+      factory=".traversal.UlearnTraverser"
+      />
+
+  <plone:static
+      directory="static"
+      type="ulearn"
+      name="static"
+      />
+
+  <plone:static
+      directory="stylesheets"
+      type="ulearn"
+      name="stylesheets"
+      />
+
+  <plone:static
+      directory="js"
+      type="ulearn"
+      name="js"
+      />
+
+  <include package="z3c.jbot" file="meta.zcml" />
+
+  <browser:jbot
+      directory="templates"
+      layer=".browser.interfaces.IUlearnTheme"
+  />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="ulearn.theme"
+      directory="profiles/default"
+      description="Installs the ulearn.theme package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>
