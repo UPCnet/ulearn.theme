@@ -1,15 +1,15 @@
-// @import "compass_twitter_bootstrap/variables";
-// @import "compass_twitter_bootstrap/mixins";
-// @import "compass_twitter_bootstrap/buttons";
-// @import "genwebupc";
-@import "compass_twitter_bootstrap";
-@import "compass_twitter_bootstrap_responsive";
+@import "genwebupc";
 
+.pb-ajax {
+  @extend .modal;
+}
 
-.btn-newcommunity {
-  @extend .btn;
-  @extend .btn-danger;
-  color:red;
+.pb-ajax .documentFirstHeading {
+  @extend .modal-header;
+}
+
+.pb-ajax #content-core {
+  @extend .modal-body;
 }
 
 .btn-custom {
