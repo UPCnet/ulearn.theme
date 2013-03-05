@@ -3,7 +3,7 @@ from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone.app.portlets.portlets.navigation import Renderer as NavigationRenderer
 from ulearn.core.content.community import ICommunity
-from genweb.theme.browser.interfaces import IHomePageView
+from genweb.core.interfaces import IHomePage
 
 
 class gwNavigation(NavigationRenderer):
@@ -14,7 +14,7 @@ class gwNavigation(NavigationRenderer):
     recurse = ViewPageTemplateFile('templates/navigation_recurse.pt')
 
     def showCreateCommunity(self):
-        if IHomePageView.providedBy(self.context):
+        if IHomePage.providedBy(self.context):
             return True
 
     def showEditCommunity(self):
