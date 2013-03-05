@@ -16,6 +16,7 @@
   <grok:grok package=".browser" />
 
   <include package=".browser" />
+  <include package=".portlets" />
 
   <cmf:registerDirectory name="ulearntheme_custom" recursive="True" />
 
