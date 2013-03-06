@@ -211,6 +211,7 @@
     <![endif]-->
 
     <script tal:attributes="src string:${portal_url}/++genweb++js/main.js"></script>
+    <script tal:attributes="src string:${portal_url}/++ulearn++js/ulearn.js"></script>
 
 
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/ios-orientationchange-fix.js"></script>
