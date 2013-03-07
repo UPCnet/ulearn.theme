@@ -13,3 +13,9 @@ $('#editModal').on('shown', function () {
         $('[type=file]').customFileInput();
         }
 });
+
+$('a[data-toggle="tab"]').on('show', function (e) {
+    targetid = $(this).data('target');
+    $(targetid).load();
+    console.log(targetid);
+})
