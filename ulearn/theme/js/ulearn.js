@@ -16,6 +16,9 @@ $('#editModal').on('shown', function () {
 
 $('a[data-toggle="tab"]').on('show', function (e) {
     targetid = $(this).data('target');
-    $(targetid).load();
-    console.log(targetid);
-})
+    remote = $(targetid).data('remote');
+    if (remote) {
+        $(targetid).load(document.location.href + "/" + remote + '/ajax_folder_summary_view');
+    }
+    // console.log(targetid);
+});
