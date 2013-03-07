@@ -1,0 +1,18 @@
+<div id="box_perfil" class="ulearnbox">
+    <div id="user">
+        <h2>Javier Otero</h2>
+        <p><span class="dades">Innovación / 256 thinkings</span></p>
+    </div>
+    <div class="row-fluid">
+        <div class="span9">
+            <img src="/++ulearn++static/images/user_javier.png" width="176" height="176" alt="User" >
+        </div>
+
+        <div class="span3">
+            <div class="box_badges"><i class="icon-trophy"></i></div>
+            <div class="box_badges"><i class="icon-certificate"></i></div>
+            <div class="box_badges novetat"><i class="icon-star"></i></div>
+            <div class="box_badges novetat"><i class="icon-flag"></i></div>
+        </div>
+    </div>
+</div>

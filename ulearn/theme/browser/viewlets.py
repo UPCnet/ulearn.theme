@@ -73,25 +73,11 @@ class viewletBase(grok.Viewlet):
 #         return pm.getPersonalPortrait().absolute_url()
 
 
-# class gwHeader(viewletBase):
-#     grok.name('genweb.header')
-#     grok.template('header')
-#     grok.viewletmanager(IPortalHeader)
-#     grok.layer(IGenwebTheme)
-
-#     def get_image_class(self):
-#         if self.genweb_config().treu_menu_horitzontal:
-#             # Is a L2 type
-#             return 'l2-image'
-#         else:
-#             return 'l3-image'
-
-#     def show_login(self):
-#         isAnon = getMultiAdapter((self.context, self.request), name='plone_portal_state').anonymous()
-#         return not self.genweb_config().amaga_identificacio and isAnon
-
-#     def show_directory(self):
-#         return self.genweb_config().directori_upc
+class gwHeader(viewletBase):
+    grok.name('genweb.header')
+    grok.template('header')
+    grok.viewletmanager(IPortalHeader)
+    grok.layer(IUlearnTheme)
 
 
 # class gwImportantNews(viewletBase):

@@ -6,7 +6,8 @@ from ulearn.core.content.community import ICommunity
 from genweb.core.interfaces import IHomePage
 
 
-class gwNavigation(NavigationRenderer):
+# Not used
+class ulearnCommunitiesNavigation(NavigationRenderer):
     """ The standard navigation portlet override 'old style'
         as it doesn't allow to do it jbot way...
     """

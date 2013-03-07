@@ -1,0 +1,10 @@
+<div id="box_thinkers"class="ulearnbox">
+    <h2>Thinnkers</h2>
+    <div id="miniatures"> <a href="#"><img src="/++ulearn++static/images/user_victor.png" alt="User"></a>
+         <a href="#"><img src="/++ulearn++static/images/user_ricard.png" alt="User"></a>
+         <a href="#"><img src="/++ulearn++static/images/user_rosa.png" alt="User"></a>
+         <a href="#"><img src="/++ulearn++static/images/user_janet.png" alt="User"></a>
+         <a href="#"><img src="/++ulearn++static/images/user_marc.png" alt="User"></a>
+         <a href="#"><img src="/++ulearn++static/images/user_carlos.png" alt="User"></a>
+     </div>
+</div>

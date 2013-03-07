@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<portlets>
+    <portlet title="Communities" addview="ulearn.portlets.communities"
+       description="Communities portlet"/>
+    <portlet title="Profile" addview="ulearn.portlets.profile"
+       description="User's profile portlet"/>
+    <portlet title="Thinnkers" addview="ulearn.portlets.thinnkers"
+       description="Thinnkers portlet"/>
+</portlets>

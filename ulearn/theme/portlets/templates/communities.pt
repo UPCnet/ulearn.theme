@@ -1,0 +1,54 @@
+<div id="box_comunitats" class="ulearnbox">
+
+<h2>Comunidades</h2>
+
+<nav class="subnavbar">
+  <ul class="nav nav-pills nav-stacked" role="menu">
+    <li role="menuitem"><a href="#">UPCnet<div class="num">3</div></a></li>
+    <li><a href="#">Innovación
+                  <div class="num">8</div></a></li>
+              <li><a href="#">eSoluciones
+                  <div class="num">4</div></a></li>
+              <li><a href="#">RSC<div class="num">+9</div></a></li>
+  </ul>
+</nav>
+
+<p><a href="#"><span class="icon-plus-sign icons"> </span>Ver más</a></p>
+
+<p tal:condition="view/showCreateCommunity">
+  <button class="btn btn-large btn-comunitat"
+          type="button"
+          data-remote="addCommunity" data-toggle="modal" data-target="#addModal">
+            Crea una nova comunitat
+  </button>
+</p>
+
+<p tal:condition="view/showEditCommunity">
+  <button class="btn btn-large btn-info"
+          type="button"
+          data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
+            Editar comunitat
+  </button>
+</p>
+
+<div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Crea una nova comunitat</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+</div>
+
+<div id="editModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="editModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+</div>
+
+</div>
