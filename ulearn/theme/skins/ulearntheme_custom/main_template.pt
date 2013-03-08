@@ -5,6 +5,7 @@
             context_state context/@@plone_context_state;
             plone_view context/@@plone;
             genweb_config context/@@gwconfig;
+            genweb_utils context/@@genweb.utils;
             lang portal_state/language;
             view nocall:view | nocall: plone_view;
             dummy python: plone_view.mark_view(view);
@@ -73,7 +74,8 @@
 <body tal:define="isRTL portal_state/is_rtl;
                   sl python:plone_view.have_portlets('plone.leftcolumn', view);
                   sr python:plone_view.have_portlets('plone.rightcolumn', view);
-                  body_class python:plone_view.bodyClass(template, view);"
+                  body_class python:plone_view.bodyClass(template, view);
+                  content_class python:genweb_utils.getContentClass(view)"
     tal:attributes="class body_class;
                     dir python:isRTL and 'rtl' or 'ltr'">
 
@@ -100,7 +102,7 @@
             </tal:notajax>
 
             <tal:comment content="nothing"> <!-- Supposing there is no right portlet column --> </tal:comment>
-            <div id="portal-column-content" tal:attributes="class python:sl and 'span9' or 'span12'">
+            <div id="portal-column-content" tal:attributes="class content_class">
 
                 <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" tal:condition="not:ajax_load" />
 
@@ -172,10 +174,10 @@
 
             </div> <!-- Fi span content -->
 
-            <!-- Ojo, a GW no tenim mai columna dreta de portlets! no? -->
+            <!-- A ulearn tenim portlets a la dreta -->
             <tal:notajax tal:condition="not:ajax_load">
                 <div id="portal-column-two"
-                    class="spanX"
+                    class="span3"
                     metal:define-slot="column_two_slot"
                     tal:condition="sr">
                     <metal:portlets define-slot="portlets_two_slot">
