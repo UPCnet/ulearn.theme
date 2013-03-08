@@ -9,10 +9,10 @@
         </div>
 
         <div class="span3">
-            <div class="box_badges"><i class="icon-trophy"></i></div>
-            <div class="box_badges"><i class="icon-certificate"></i></div>
-            <div class="box_badges novetat"><i class="icon-star"></i></div>
-            <div class="box_badges novetat"><i class="icon-flag"></i></div>
+            <div class="box_badges"><i class="fa-icon-trophy"></i></div>
+            <div class="box_badges"><i class="fa-icon-certificate"></i></div>
+            <div class="box_badges novetat"><i class="fa-icon-star"></i></div>
+            <div class="box_badges novetat"><i class="fa-icon-flag"></i></div>
         </div>
     </div>
 </div>

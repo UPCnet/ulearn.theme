@@ -37,4 +37,12 @@
         addview=".thinnkers.AddForm"
      />
 
+    <plone:portlet
+        name="ulearn.portlets.buttonbar"
+        interface=".homebuttonbar.IHomeButtonBarPortlet"
+        assignment=".homebuttonbar.Assignment"
+        renderer=".homebuttonbar.Renderer"
+        addview=".homebuttonbar.AddForm"
+        />
+
 </configure>

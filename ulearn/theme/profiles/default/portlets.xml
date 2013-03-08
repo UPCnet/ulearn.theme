@@ -6,4 +6,6 @@
        description="User's profile portlet"/>
     <portlet title="Thinnkers" addview="ulearn.portlets.thinnkers"
        description="Thinnkers portlet"/>
+    <portlet title="Button Bar" addview="ulearn.portlets.buttonbar"
+       description="Button bar portlet"/>
 </portlets>

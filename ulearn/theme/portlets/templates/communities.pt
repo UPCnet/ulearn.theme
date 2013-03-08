@@ -4,12 +4,16 @@
 
 <nav class="subnavbar">
   <ul class="nav nav-pills nav-stacked" role="menu">
-    <li role="menuitem"><a href="#">UPCnet<div class="num">3</div></a></li>
-    <li><a href="#">Innovación
-                  <div class="num">8</div></a></li>
-              <li><a href="#">eSoluciones
-                  <div class="num">4</div></a></li>
-              <li><a href="#">RSC<div class="num">+9</div></a></li>
+    <li role="menuitem"
+        tal:repeat="community view/getCommunities">
+          <a href="#"
+             tal:attributes="href community/getURL">
+              <tal:community content="community/Title">
+                Community
+              </tal:community>
+              <div class="num">3</div>
+          </a>
+    </li>
   </ul>
 </nav>
 
@@ -24,7 +28,7 @@
 </p>
 
 <p tal:condition="view/showEditCommunity">
-  <button class="btn btn-large btn-info"
+  <button class="btn btn-large btn-comunitat"
           type="button"
           data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
             Editar comunitat

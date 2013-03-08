@@ -1,0 +1,6 @@
+<div id="menusup">
+    <ul class="nav nav-tabs">
+        <li class="active" ><a href="#"><i class="fa-icon-comment icons"></i> Entrada </a></li>
+        <li ><a href="#"><i class="fa-icon-comments icons"></i>Comunidades</a></li>
+    </ul>
+</div>
