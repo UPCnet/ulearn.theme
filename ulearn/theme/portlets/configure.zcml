@@ -45,4 +45,27 @@
         addview=".homebuttonbar.AddForm"
         />
 
+    <plone:portlet
+        name="ulearn.portlets.calendar"
+        interface=".calendar.ICalendarPortlet"
+        assignment=".calendar.Assignment"
+        renderer=".calendar.Renderer"
+        addview=".calendar.AddForm"
+        />
+
+    <plone:portlet
+        name="ulearn.portlets.mostvalued"
+        interface=".mostvalued.IMostValuedPortlet"
+        assignment=".mostvalued.Assignment"
+        renderer=".mostvalued.Renderer"
+        addview=".mostvalued.AddForm"
+        />
+
+    <plone:portlet
+        name="ulearn.portlets.comments"
+        interface=".comments.ICommentsPortlet"
+        assignment=".comments.Assignment"
+        renderer=".comments.Renderer"
+        addview=".comments.AddForm"
+        />
 </configure>

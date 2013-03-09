@@ -126,39 +126,11 @@ class gwHeader(viewletBase):
 #         return IHomePageView.providedBy(self.view)
 
 
-# class gwFooter(viewletBase):
-#     grok.name('genweb.footer')
-#     grok.template('footer')
-#     grok.viewletmanager(IPortalFooter)
-#     grok.layer(IGenwebTheme)
-
-#     def getLinksPeu(self):
-#         """ links fixats per accessibilitat/rss/about """
-#         idioma = self.pref_lang()
-#         footer_links = {
-#             "ca": {
-#                 "rss": "rss-ca",
-#                 "about": "sobre-aquest-web",
-#                 "accessibility": "accessibilitat"
-#             },
-#             "es": {
-#                 "rss": "rss-es",
-#                 "about": "sobre-esta-web",
-#                 "accessibility": "accesibilidad"
-#             },
-#             "en": {
-#                 "rss": "rss-en",
-#                 "about": "about-this-web",
-#                 "accessibility": "accessibility"
-#             },
-#             "zh": {
-#                 "rss": "rss-en",
-#                 "about": "about-this-web",
-#                 "accessibility": "accessibility"
-#             },
-#         }
-
-#         return footer_links[idioma]
+class gwFooter(viewletBase):
+    grok.name('genweb.footer')
+    grok.template('footer')
+    grok.viewletmanager(IPortalFooter)
+    grok.layer(IUlearnTheme)
 
 
 # class gwSearchViewletManager(grok.ViewletManager):

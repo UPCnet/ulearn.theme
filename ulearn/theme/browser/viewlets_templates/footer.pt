@@ -1,0 +1,31 @@
+<footer id="peu" role="contentinfo"
+        i18n:domain="genweb">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8">
+        <p>&copy;
+          <a href="http://www.upcnet.es" target="_blank">
+            <abbr rel="tooltip" data-placement="top" title="UPCnet - Universitat Politècnica de Catalunya · BarcelonaTech">UPCnet 2013</abbr>
+            <img class="img_blank" src="/++genweb++static/images/blank_blanc.png"
+                 i18n:attributes="alt obrir_link_finestra_nova"></a>.
+        </p>
+      </div>
+      <div class="span4" role="complementary" aria-labelledby="titol-sobre-el-web">
+        <h2 class="goout" id="titol-sobre-el-web"> Sobre el web </h2>
+        <ul class="pull-right sobreElWeb" role="menu">
+          <li role="menuitem" class="amunt"><a href="#portal-header" rel="tooltip" data-placement="top" title="Inici de la pàgina"><img src="/++genweb++static/images/amunt.png" alt="Inici de la pàgina"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!--[if !IE]> -->
+<footer id="canvia-vista" role="complementary">
+  <p>
+    <a class="reView" data-defaultText="Versi&oacute; m&ograve;bil" data-coreText="Versi&oacute; d&apos;escriptori" href="javascript:void(0)">
+      Versi&oacute; d&apos;escriptori
+    </a>
+  </p>
+</footer>
+<!-- <![endif]-->

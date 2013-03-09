@@ -8,4 +8,10 @@
        description="Thinnkers portlet"/>
     <portlet title="Button Bar" addview="ulearn.portlets.buttonbar"
        description="Button bar portlet"/>
+    <portlet title="Ulearn calendar" addview="ulearn.portlets.calendar"
+       description="Calendar portlet"/>
+    <portlet title="Ulearn most valued" addview="ulearn.portlets.mostvalued"
+       description="Most valued portlet"/>
+    <portlet title="Ulearn comments" addview="ulearn.portlets.comments"
+       description="Comments portlet"/>
 </portlets>
