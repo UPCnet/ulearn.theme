@@ -4,7 +4,7 @@
     <h1 class="pull-left">
       <a accesskey="1"
          tal:attributes="href string:${viewlet/portal_url}">
-        <img tal:attributes="src string:${viewlet/portal_url}/++ulearn++static/images/logo-upcnet-ulearn.png"
+        <img tal:attributes="src string:${viewlet/portal_url}/++ulearn++static/images/logo-upcnet-ulearn-es.png"
              alt="Universitat Politècnica de Catalunya · BarcelonaTech">
       </a>
     </h1>

@@ -17,6 +17,8 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.content.community import ICommunity
 
+import random
+
 
 class ICommunitiesNavigation(IPortletDataProvider):
     """ A portlet which can render the logged user profile information.
@@ -48,6 +50,9 @@ class Renderer(base.Renderer):
         pc = getToolByName(portal, "portal_catalog")
         communities = pc.searchResults(object_provides=ICommunity.__identifier__)
         return communities
+
+    def getCommunityNumber(self):
+        return random.choice(range(1, 10))
 
 
 class AddForm(base.NullAddForm):
