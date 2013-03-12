@@ -26,11 +26,7 @@ body {
 #portal-header {
   border-top: none;
   border-bottom: none;
-  background:#eae9e4;
-}
-
-#portal-header .container {
-  border-bottom: none;
+  background:#eae9e4!important;
 }
 
 input, button, select, textarea {
@@ -67,7 +63,7 @@ a:hover, a:active {
 
 .masthead {
   background-color: #f58d3d;
-  margin-bottom: 1.2em;
+  margin-bottom: 0;
   padding: 15px 20px;
   box-shadow:0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #DDDDDD;
 }
@@ -81,9 +77,6 @@ a:hover, a:active {
 .dropdown-menu a {
   text-decoration:none;
   }
-.span3 {
-
-}
 .span6 {
 background:white;
   }
@@ -239,6 +232,7 @@ text-shadow:none;
     padding-top: 24px;
     text-align: center;
     text-shadow: 1px 1px 0 #92480F;
+	margin-bottom:0;
 }
 #day p {margin:0;}
 .data {font-size:13px;}
@@ -250,6 +244,7 @@ text-shadow:none;
 #esdev {
     line-height: 15px;
     padding: 8px 4px 0 2px;
+	margin-bottom:0;
 }
 #calendari {
     background: none repeat scroll 0 0 #F5F5F5;
@@ -271,7 +266,9 @@ text-shadow:none;
 .event a {color:#555;font-weight:normal;}
 .todayevent a {color:#fff;}
 
-#box_valorats ul, #box_comentaris ul {margin-top:10px;}
+#box_valorats ul, #box_comentaris ul {margin-top:10px;margin-left:25px;}
+
+#box_valorats li a:hover, #box_comentaris li a:hover {text-decoration:underline;}
 
 #box_valorats li, #box_comentaris li {
     border-bottom: 1px solid #EEEEEE;
@@ -332,6 +329,7 @@ text-shadow:none;
     color: #007BC0;
     font-family: 'Open Sans', serif;
 }
+#maxui-container a:hover {border-bottom:0;}
 .maxui-displayname {
     color: #F58D3D;
     font-size: 14px;
@@ -392,12 +390,12 @@ text-shadow:none;
     position: absolute;
     right: 0;
     top: 0;
+	box-shadow: none;
 }
-
-.maxui-avatar {
-  box-shadow: none;
+#maxui-container a img {
+    border: 0 none;
+    border-radius: 0 0 0 0;
 }
-
 .maxui-topright {
     color: #222222;
     font-size: 11px;
@@ -420,3 +418,87 @@ text-shadow:none;
     padding-bottom: 3px;
     text-align: center;
 }
+.maxui-avatar img {
+    box-shadow: none;
+}
+input.maxui-button {
+    background: none repeat scroll 0 0 #F58D3D;
+    border: 0 none;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 5px 0 0;
+    padding: 4px 16px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+input.maxui-button:hover, input.maxui-button:hover, input.maxui-button:focus, input.maxui-button:focus {
+    background: none repeat scroll 0 0 #fb9a4f;
+    border: 0 none;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF;
+    cursor: pointer;
+}
+input.maxui-button[disabled] {
+    background: none repeat scroll 0 0 #E5E5E5;
+    border: 0;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: none;
+    color: #666666;
+    cursor: default;
+    text-shadow: 0 1px #FFFFFF;
+}
+#maxui-container input:focus {
+    box-shadow: none !important;
+}
+#maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
+    border: 1px solid #F58D3D !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset, 0 0 8px rgba(100, 123, 192, 0.5) !important;
+}
+/* ==========================================================================
+   MODIFICACIONS GENWEB
+   ========================================================================== */
+h1, h2, h3, label {
+    color: #F58D3D;
+		}
+.liniaDalt, .tileHeadline {
+    border-top: 1px solid #DDDDDD;
+    box-shadow: none;
+	padding: 10px 0;
+}
+.liniaBaix, .documentFirstHeading {
+    border-bottom: 1px solid #DDDDDD;
+    box-shadow: none;
+    margin: 0 0 15px;
+    padding: 0 0 5px;
+}
+.tab-content, .documentEditable {
+     padding: 10px;
+}
+.nav-tabs, .contentViews, .configlets {
+ box-shadow: none;
+}
+#portal-header .container {
+    border-top: 0 none;
+    margin-bottom: 15px;	;
+    margin-top: 0;
+	border-bottom:0;
+}
+#content-area {
+    margin-top: 1.7em;
+	}
+[class*="span"], .cella {
+    margin-bottom: 0;
+}	
+#portal-breadcrumbs {
+    margin-bottom: -15px;
+    margin-top: -15px;
+}
+.template-homepage #portal-breadcrumbs {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#eines .input-append {
+    border-left: 0;
+	}	
