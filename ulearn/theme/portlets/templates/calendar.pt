@@ -1,7 +1,7 @@
 <div id="box_agenda" class="ulearnbox">
     <h2>Agenda</h2>
     <div id="agenda" class="row-fluid">
-        <div id="day" class="span5"><p>14</p><p class="data">Dijous</p></div>
+        <div id="day" class="span5"><p>13</p><p class="data">Miércoles</p></div>
         <div id="esdev" class="span7">
            <a href="#">Desayuno de trabajo: aportando valores a la formación...</a>
         </div>

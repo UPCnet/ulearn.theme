@@ -1,11 +1,11 @@
 <div id="box_perfil" class="ulearnbox">
     <div id="user">
-        <h2>Javier Otero</h2>
-        <p><span class="dades">Innovación / 256 thinkings</span></p>
+        <h2>Ricard Grau</h2>
+        <p><span class="dades">D. Negocio / 256 thinkings</span></p>
     </div>
     <div class="row-fluid">
         <div class="span9">
-            <img src="/++ulearn++static/images/user_javier.png" width="176" height="176" alt="User" >
+            <img src="/++ulearn++static/images/ricard_grau.jpg" width="176" height="176" alt="User" >
         </div>
 
         <div class="span3">

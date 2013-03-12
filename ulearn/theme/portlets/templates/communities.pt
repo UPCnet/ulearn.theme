@@ -11,7 +11,7 @@
               <tal:community content="community/Title">
                 Community
               </tal:community>
-              <div class="num">3</div>
+              <div class="num" tal:content="view/getCommunityNumber">3</div>
           </a>
     </li>
   </ul>
@@ -23,7 +23,7 @@
   <button class="btn btn-large btn-comunitat"
           type="button"
           data-remote="addCommunity" data-toggle="modal" data-target="#addModal">
-            Crea una nova comunitat
+            Crea una nueva comunidad
   </button>
 </p>
 
@@ -31,14 +31,14 @@
   <button class="btn btn-large btn-comunitat"
           type="button"
           data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
-            Editar comunitat
+            Edita la comunidad
   </button>
 </p>
 
 <div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">Crea una nova comunitat</h3>
+    <h3 id="myModalLabel">Crea una nueva comunidad</h3>
   </div>
   <div class="modal-body">
     <p>One fine body…</p>
@@ -48,7 +48,7 @@
 <div id="editModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="editModalLabel">Modal header</h3>
+    <h3 id="editModalLabel">Edita la comunidad</h3>
   </div>
   <div class="modal-body">
     <p>One fine body…</p>
