@@ -1,0 +1,12 @@
+<section>
+  <ul>
+    <li tal:repeat="community view/get_communities">
+      <a tal:attributes="href community/getURL">
+        <img tal:attributes="src string:${community/getURL}/@@download/image/${community/image_filename};
+                             height picture/_height | nothing;
+                             width picture/_width | nothing;" />
+        <tal:name content="community/Title">Community</tal:name>
+      </a>
+    </li>
+  </ul>
+</section>
