@@ -1,6 +1,7 @@
 <footer id="peu" role="contentinfo"
         i18n:domain="genweb">
   <div class="container">
+    <div class="inner">
     <div class="row-fluid">
       <div class="span8">
         <p>&copy;
@@ -17,6 +18,7 @@
         </ul>
       </div>
     </div>
+  </div>
   </div>
 </footer>
 

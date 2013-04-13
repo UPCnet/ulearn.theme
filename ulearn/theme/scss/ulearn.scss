@@ -23,6 +23,25 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+#portal-header h1.pull-left {
+  // Override the media query for retina images.
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+      height: 46px;
+      width: 207px;
+      background: url('/++ulearn++static/images/logo-upcnet-ulearn-ca.png') no-repeat;
+      -webkit-background-size: 100%;
+      -moz-background-size: 100%;
+      -o-background-size: 100%;
+      background-size: 100%;
+    }
+}
+
 #portal-header {
   border-top: none;
   border-bottom: none;
@@ -92,12 +111,15 @@ background:white;
 #peu .container {
   border-top: none;
   background-color: #f58d3d;
-  padding:20px;
+  // padding:20px;
   font-size:13px;
   color:white;
   margin-top:20px;
   box-shadow:0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #DDDDDD;
 }
+
+#peu .inner { padding: 20px;}
+
 input[type="text"] {
     border-color: #E76E10;
     margin-right: 5px;
@@ -506,7 +528,7 @@ h1, h2, h3, label {
 	}
 [class*="span"], .cella {
     margin-bottom: 0;
-}	
+}
 #portal-breadcrumbs {
     margin-bottom: -15px;
     margin-top: -15px;
@@ -517,8 +539,8 @@ h1, h2, h3, label {
 }
 #eines .input-append {
     border-left: 0;
-	}	
+	}
 #edit-bar, .formTabs {
 font-size:12px;
-}	
+}
 #edit-bar a, .formTabs a {text-decoration:none;}
