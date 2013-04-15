@@ -14,18 +14,35 @@
 <body>
 
   <div metal:fill-slot="main">
-    <section>
+    <section id="communitylist"
+             tal:define="communities view/get_communities">
       <ul>
-        <li tal:repeat="community view/get_communities">
-          <a tal:attributes="href community/getURL">
-            <img tal:attributes="src string:${community/getURL}/@@download/image/${community/image_filename};
-                                 height picture/_height | nothing;
-                                 width picture/_width | nothing;" />
-            <tal:name content="community/Title">Community</tal:name>
+        <li tal:repeat="community communities">
+          <div class="eines pull-right">
+          <a class=""
+             tal:condition="python:view.is_community_manager(community)"
+             tal:attributes="href string:${community/getURL}/edit">
+            <i class="fa-icon-pencil"></i>
           </a>
+          </div>
+          <div class="item">
+            <a tal:attributes="href community/getURL">
+              <img class="pull-left"
+                   tal:condition="community/image_filename"
+                   tal:attributes="src string:${community/getURL}/@@images/image/tile"/>
+              <h4 tal:content="community/Title">Community</h4>
+              <p tal:content="community/Description">Description</p>
+            </a>
+          </div>
         </li>
       </ul>
+
+    <tal:batchnavigation
+      define="batchnavigation nocall:context/@@batchnavigation"
+      replace="structure python:batchnavigation(communities)" />
+
     </section>
+
   </div>
 
 </body>

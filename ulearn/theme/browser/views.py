@@ -1,5 +1,7 @@
 from five import grok
 
+from plone.batching import Batch
+
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 
@@ -23,7 +25,13 @@ class baseCommunities(grok.View):
     def get_communities(self):
         pc = getToolByName(self.context, "portal_catalog")
         results = pc.searchResults(portal_type="ulearn.community")
-        return results
+        batch = Batch(results, size=2, orphan=10)
+        return batch
+
+    def is_community_manager(self, community):
+        pm = getToolByName(self.context, "portal_membership")
+        current_user = pm.getAuthenticatedMember().getUserName()
+        return current_user == community.Creator
 
 
 class communities(baseCommunities):

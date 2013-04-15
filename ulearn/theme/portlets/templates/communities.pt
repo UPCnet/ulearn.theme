@@ -11,7 +11,7 @@
               <tal:community content="community/Title">
                 Community
               </tal:community>
-              <div class="num" tal:content="view/getCommunityNumber">3</div>
+              <div class="num" tal:content="python:view.getCommunityMembers(community)">3</div>
           </a>
     </li>
   </ul>

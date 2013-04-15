@@ -51,8 +51,8 @@ class Renderer(base.Renderer):
         communities = pc.searchResults(object_provides=ICommunity.__identifier__)
         return communities
 
-    def getCommunityNumber(self):
-        return random.choice(range(1, 10))
+    def getCommunityMembers(self, community):
+        return len(community.getObject().subscribed)
 
 
 class AddForm(base.NullAddForm):
