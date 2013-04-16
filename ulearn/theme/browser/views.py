@@ -22,6 +22,9 @@ class homePage(HomePageBase):
 class baseCommunities(grok.View):
     grok.baseclass()
 
+    def update(self):
+        self.favorites = self.get_favorites()
+
     def get_communities(self):
         pc = getToolByName(self.context, "portal_catalog")
         results = pc.searchResults(portal_type="ulearn.community")
@@ -32,6 +35,17 @@ class baseCommunities(grok.View):
         pm = getToolByName(self.context, "portal_membership")
         current_user = pm.getAuthenticatedMember().getUserName()
         return current_user == community.Creator
+
+    def get_favorites(self):
+        pm = getToolByName(self.context, "portal_membership")
+        pc = getToolByName(self.context, "portal_catalog")
+        current_user = pm.getAuthenticatedMember().getUserName()
+
+        results = pc.unrestrictedSearchResults(favoritedBy=current_user)
+        return [favorites.id for favorites in results]
+
+    def get_star_class(self, community):
+        return community.id in self.favorites and 'fa-icon-star' or 'fa-icon-star-empty'
 
 
 class communities(baseCommunities):

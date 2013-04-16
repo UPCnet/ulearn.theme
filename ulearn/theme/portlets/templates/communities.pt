@@ -17,7 +17,11 @@
   </ul>
 </nav>
 
-<p><a href="#"><span class="icon-plus-sign icons"> </span>Ver más</a></p>
+<p>
+  <a tal:attributes="href string:${view/portal_url}/communities">
+    <span class="icon-plus-sign icons"> </span>Ver más
+  </a>
+</p>
 
 <p tal:condition="view/showCreateCommunity">
   <button class="btn btn-large btn-comunitat"

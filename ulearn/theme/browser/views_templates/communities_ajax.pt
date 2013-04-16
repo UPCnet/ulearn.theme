@@ -1,13 +1,31 @@
+<script type="text/javascript">
+// Rebind the favorites
+$('.favorite').on('click', function(event) {
+  event.preventDefault();
+  var community_url = $(this).data()['community'];
+  $.get(community_url + '/toggle-favorite');
+  if ($('i', this).hasClass('fa-icon-star')) {
+    $('i', this).addClass('fa-icon-star-empty').removeClass('fa-icon-star');
+  } else {
+    $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
+  }
+});
+</script>
+
 <section id="communitylist"
          tal:define="communities view/get_communities">
   <ul>
     <li tal:repeat="community communities">
       <div class="eines pull-right">
-      <a class=""
-         tal:condition="python:view.is_community_manager(community)"
-         tal:attributes="href string:${community/getURL}/edit">
-        <i class="fa-icon-pencil"></i>
-      </a>
+        <a class=""
+           tal:condition="python:view.is_community_manager(community)"
+           tal:attributes="href string:${community/getURL}/edit">
+          <i class="fa-icon-pencil"></i>
+        </a>
+        <a class="favorite" href="#"
+           tal:attributes="data-community string:${community/getURL}">
+          <i tal:attributes="class python:view.get_star_class(community)"></i>
+        </a>
       </div>
       <div class="item">
         <a tal:attributes="href community/getURL">

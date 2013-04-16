@@ -24,6 +24,10 @@
              tal:attributes="href string:${community/getURL}/edit">
             <i class="fa-icon-pencil"></i>
           </a>
+          <a class="favorite" href="#"
+             tal:attributes="data-community string:${community/getURL}">
+            <i tal:attributes="class python:view.get_star_class(community)"></i>
+          </a>
           </div>
           <div class="item">
             <a tal:attributes="href community/getURL">

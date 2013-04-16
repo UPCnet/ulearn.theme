@@ -14,7 +14,7 @@ $('#editModal').on('shown', function () {
         }
 });
 
-$('a[data-toggle="tab"]').on('show', function (e) {
+$('.portaltype-ulearn-community a[data-toggle="tab"]').on('show', function (e) {
     targetid = $(this).data('target');
     remote = $(targetid).data('remote');
     if (remote) {
@@ -23,7 +23,7 @@ $('a[data-toggle="tab"]').on('show', function (e) {
     // console.log(targetid);
 });
 
-$('#menusup a[data-toggle="tab"]').on('show', function (e) {
+$('.portaltype-plone-site a[data-toggle="tab"]').on('show', function (e) {
     targetid = $(this).data('target');
     remote = $(targetid).data('remote');
     if (remote) {
