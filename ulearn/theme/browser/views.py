@@ -15,7 +15,7 @@ class homePage(HomePageBase):
     """ Override the original homepage as it will be always restricted to auth users """
     grok.implements(IHomePageView)
     grok.context(IPloneSiteRoot)
-    grok.require('genweb.authenticated')
+    grok.require('genweb.member')
     grok.layer(IUlearnTheme)
 
 
@@ -51,7 +51,7 @@ class baseCommunities(grok.View):
 class communities(baseCommunities):
     """ The list of communities """
     grok.context(IPloneSiteRoot)
-    grok.require('genweb.authenticated')
+    grok.require('genweb.member')
     grok.layer(IUlearnTheme)
 
 
@@ -59,6 +59,6 @@ class communitiesAJAX(baseCommunities):
     """ The list of communities via AJAX """
     grok.name('communities-ajax')
     grok.context(IPloneSiteRoot)
-    grok.require('genweb.authenticated')
+    grok.require('genweb.member')
     grok.template('communities_ajax')
     grok.layer(IUlearnTheme)

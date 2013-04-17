@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <portlets>
-    <portlet title="Communities" addview="ulearn.portlets.communities"
+    <portlet title="Ulearn Communities" addview="ulearn.portlets.communities"
        description="Communities portlet"/>
-    <portlet title="Profile" addview="ulearn.portlets.profile"
+    <portlet title="Ulearn Profile" addview="ulearn.portlets.profile"
        description="User's profile portlet"/>
-    <portlet title="Thinnkers" addview="ulearn.portlets.thinnkers"
+    <portlet title="Ulearn Thinnkers" addview="ulearn.portlets.thinnkers"
        description="Thinnkers portlet"/>
-    <portlet title="Button Bar" addview="ulearn.portlets.buttonbar"
+    <portlet title="Ulearn Button Bar" addview="ulearn.portlets.buttonbar"
        description="Button bar portlet"/>
     <portlet title="Ulearn calendar" addview="ulearn.portlets.calendar"
        description="Calendar portlet"/>
