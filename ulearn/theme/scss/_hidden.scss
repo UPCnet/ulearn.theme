@@ -1,0 +1,5 @@
+// Elements amagats per CSS per a seguir comptant amb la funcionalitat, però que
+// no es mostrin a l'usuari.
+
+// Amagar estats
+li > a#plone-contentmenu-workflow {display: none}

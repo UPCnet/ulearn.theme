@@ -1741,14 +1741,195 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   color: #fff;
 }
 
-/* line 22, ../scss/ulearn.scss */
-body {
-  background: #eae9e4;
-  font-family: "Open Sans", sans-serif;
+/* line 5, ../scss/_maxui.scss */
+#maxui-container {
+  color: #444444;
+  font: 13px/18px "Open Sans", serif;
+  text-shadow: 0 1px white;
+  border: 0 none;
+}
+
+/* line 11, ../scss/_maxui.scss */
+#maxui-container a {
+  color: #007BC0;
+  font-family: "Open Sans", serif;
+}
+
+/* line 15, ../scss/_maxui.scss */
+#maxui-container a:hover {
+  border-bottom: 0;
+}
+
+/* line 16, ../scss/_maxui.scss */
+.maxui-displayname {
+  color: #F58D3D;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* line 21, ../scss/_maxui.scss */
+#maxui-container a:hover {
+  color: #34495E;
+  text-decoration: none;
+}
+
+/* line 25, ../scss/_maxui.scss */
+#maxui-timeline {
+  background: none repeat scroll 0 0 white;
+  clear: both;
+  margin: 0;
+  overflow: hidden;
+  padding: 10px;
+}
+
+/* line 32, ../scss/_maxui.scss */
+#maxui-newactivity {
+  background: none repeat scroll 0 0 #34495e;
+  padding: 10px;
+  position: relative;
+}
+
+/* line 37, ../scss/_maxui.scss */
+#maxui-newactivity textarea, .maxui-comments textarea {
+  border: 0 none;
+  border-radius: 3px 3px 3px 3px;
+  box-shadow: 0;
+  color: #444444;
+  font-family: "Open Sans", serif;
+  font-size: 13px;
+  height: 48px;
+  line-height: 18px;
+  min-height: 48px;
+  overflow: auto;
+  padding: 5px 3px 5px 8px;
+  position: relative;
+  resize: vertical;
+  width: 100%;
+}
+
+/* line 53, ../scss/_maxui.scss */
+#maxui-search {
+  background: none repeat scroll 0 0 #deded6;
+  border-bottom: 0 none;
+  border-top: 0 none;
+  padding: 10px 30px 10px 10px;
+}
+
+/* line 59, ../scss/_maxui.scss */
+#maxui-search-text {
+  -moz-appearance: none;
+  border: 1px solid #b2b2b2;
+  color: #666666;
+  font-family: "Open Sans", serif;
+  font-size: 13px;
+  height: 24px;
+  line-height: 20px;
+  min-height: 24px;
+  padding: 1px 5px;
+  position: relative;
+  width: 100%;
+}
+
+/* line 72, ../scss/_maxui.scss */
+.maxui-avatar:before, .maxui-avatar:before {
+  border-radius: 0 0 0 0;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-shadow: none;
+}
+
+/* line 82, ../scss/_maxui.scss */
+#maxui-container a img {
+  border: 0 none;
+  border-radius: 0 0 0 0;
+}
+
+/* line 86, ../scss/_maxui.scss */
+.maxui-topright {
+  color: #222222;
+  font-size: 11px;
+  text-align: right;
+}
+
+/* line 91, ../scss/_maxui.scss */
+.maxui-avatar {
+  float: left;
+  left: -60px;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+/* line 98, ../scss/_maxui.scss */
+.activities .maxui-activity-content {
+  margin: 0 0 0 60px;
+}
+
+/* line 101, ../scss/_maxui.scss */
+#maxui-back-conversations, #maxui-show-conversations {
+  background: none repeat scroll 0 0 whitesmoke;
+  border-bottom: 0 none;
+  height: 18px;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+/* line 108, ../scss/_maxui.scss */
+.maxui-avatar img {
+  box-shadow: none;
+}
+
+/* line 111, ../scss/_maxui.scss */
+input.maxui-button {
+  background: none repeat scroll 0 0 #f58d3d;
+  border: 0 none;
+  border-radius: 4px 4px 4px 4px;
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  margin: 5px 0 0;
+  padding: 4px 16px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* line 123, ../scss/_maxui.scss */
+input.maxui-button:hover, input.maxui-button:hover, input.maxui-button:focus, input.maxui-button:focus {
+  background: none repeat scroll 0 0 #fb9a4f;
+  border: 0 none;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+/* line 130, ../scss/_maxui.scss */
+input.maxui-button[disabled] {
+  background: none repeat scroll 0 0 #e5e5e5;
+  border: 0;
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: none;
+  color: #666666;
+  cursor: default;
+  text-shadow: 0 1px white;
+}
+
+/* line 139, ../scss/_maxui.scss */
+#maxui-container input:focus {
+  box-shadow: none !important;
+}
+
+/* line 142, ../scss/_maxui.scss */
+#maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
+  border: 1px solid #f58d3d !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset, 0 0 8px rgba(100, 123, 192, 0.5) !important;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  /* line 27, ../scss/ulearn.scss */
+  /* line 5, ../scss/_overrides.scss */
   #portal-header h1.pull-left {
     height: 46px;
     width: 207px;
@@ -1760,19 +1941,110 @@ body {
   }
 }
 
-/* line 46, ../scss/ulearn.scss */
+/* line 24, ../scss/_overrides.scss */
+h1, h2, h3, label {
+  color: #F58D3D;
+}
+
+/* line 27, ../scss/_overrides.scss */
+.liniaDalt, .tileHeadline {
+  border-top: 1px solid #dddddd;
+  box-shadow: none;
+  padding: 10px 0;
+}
+
+/* line 32, ../scss/_overrides.scss */
+.liniaBaix, .documentFirstHeading {
+  border-bottom: 1px solid #dddddd;
+  box-shadow: none;
+  margin: 0 0 15px;
+  padding: 0 0 5px;
+}
+
+/* line 38, ../scss/_overrides.scss */
+#documents-view, #links-view, #images-view, .documentEditable {
+  padding: 10px;
+}
+
+/* line 42, ../scss/_overrides.scss */
+.content_edit .rowlike {
+  padding: 10px;
+}
+
+/* line 43, ../scss/_overrides.scss */
+.nav-tabs, .contentViews, .configlets {
+  box-shadow: none;
+}
+
+/* line 46, ../scss/_overrides.scss */
+#portal-header .container {
+  border-top: 0 none;
+  margin-bottom: 15px;
+  margin-top: 0;
+  border-bottom: 0;
+}
+
+/* line 52, ../scss/_overrides.scss */
+#content-area {
+  margin-top: 1.7em;
+}
+
+/* line 55, ../scss/_overrides.scss */
+[class*="span"], .cella {
+  margin-bottom: 0;
+}
+
+/* line 58, ../scss/_overrides.scss */
+#portal-breadcrumbs {
+  margin-bottom: -15px;
+  margin-top: -15px;
+}
+
+/* line 62, ../scss/_overrides.scss */
+.template-homepage #portal-breadcrumbs {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+/* line 66, ../scss/_overrides.scss */
+#eines .input-append {
+  border-left: 0;
+}
+
+/* line 69, ../scss/_overrides.scss */
+#edit-bar, .formTabs {
+  font-size: 12px;
+}
+
+/* line 72, ../scss/_overrides.scss */
+#edit-bar a, .formTabs a {
+  text-decoration: none;
+}
+
+/* line 5, ../scss/_hidden.scss */
+li > a#plone-contentmenu-workflow {
+  display: none;
+}
+
+/* line 25, ../scss/ulearn.scss */
+body {
+  background: #eae9e4;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 30, ../scss/ulearn.scss */
 #portal-header {
   border-top: none;
   border-bottom: none;
   background: #eae9e4!important;
 }
 
-/* line 52, ../scss/ulearn.scss */
+/* line 36, ../scss/ulearn.scss */
 input, button, select, textarea {
   font-family: "Open Sans", sans-serif;
 }
 
-/* line 56, ../scss/ulearn.scss */
+/* line 40, ../scss/ulearn.scss */
 .ulearnbox h2 {
   color: #f58d3d;
   font-size: 20px;
@@ -1782,10 +2054,9 @@ input, button, select, textarea {
   padding: 0;
 }
 
-/* line 64, ../scss/ulearn.scss */
+/* line 48, ../scss/ulearn.scss */
 a {
   color: #007BC0;
-  text-decoration: underline;
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
@@ -1793,24 +2064,24 @@ a {
   -webkit-backface-visibility: hidden;
 }
 
-/* line 73, ../scss/ulearn.scss */
+/* line 57, ../scss/ulearn.scss */
 a:hover {
   color: #004A74;
   text-decoration: none;
 }
 
-/* line 76, ../scss/ulearn.scss */
+/* line 60, ../scss/ulearn.scss */
 a:hover, a:focus {
   color: #004A74;
   text-decoration: underline;
 }
 
-/* line 80, ../scss/ulearn.scss */
+/* line 64, ../scss/ulearn.scss */
 a:hover, a:active {
   outline: 0 none;
 }
 
-/* line 84, ../scss/ulearn.scss */
+/* line 68, ../scss/ulearn.scss */
 .masthead {
   background-color: #f58d3d;
   margin-bottom: 0;
@@ -1818,27 +2089,27 @@ a:hover, a:active {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #dddddd;
 }
 
-/* line 97, ../scss/ulearn.scss */
+/* line 81, ../scss/ulearn.scss */
 .dropdown-menu a {
   text-decoration: none;
 }
 
-/* line 100, ../scss/ulearn.scss */
+/* line 84, ../scss/ulearn.scss */
 .span6 {
   background: white;
 }
 
-/* line 104, ../scss/ulearn.scss */
+/* line 88, ../scss/ulearn.scss */
 #peu {
   background: none;
   border-top: none;
 }
-/* line 107, ../scss/ulearn.scss */
+/* line 91, ../scss/ulearn.scss */
 #peu a {
   color: white;
 }
 
-/* line 112, ../scss/ulearn.scss */
+/* line 96, ../scss/ulearn.scss */
 #peu .container {
   border-top: none;
   background-color: #f58d3d;
@@ -1848,24 +2119,24 @@ a:hover, a:active {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #dddddd;
 }
 
-/* line 122, ../scss/ulearn.scss */
+/* line 106, ../scss/ulearn.scss */
 #peu .inner {
   padding: 20px;
 }
 
-/* line 124, ../scss/ulearn.scss */
+/* line 108, ../scss/ulearn.scss */
 input[type="text"] {
   border-color: #E76E10;
   margin-right: 5px;
   padding: 4px 0 4px 10px;
 }
 
-/* line 129, ../scss/ulearn.scss */
+/* line 113, ../scss/ulearn.scss */
 input[type="text"]:focus {
   border-color: #34495E;
 }
 
-/* line 133, ../scss/ulearn.scss */
+/* line 117, ../scss/ulearn.scss */
 .ulearnbox {
   background: url("/++ulearn++static/images/pix_cantonada.png") no-repeat right top white;
   padding: 5px 10px 10px;
@@ -1874,17 +2145,17 @@ input[type="text"]:focus {
   box-shadow: -1px 1px 2px #dddddd;
 }
 
-/* line 140, ../scss/ulearn.scss */
+/* line 124, ../scss/ulearn.scss */
 .ulearnbox a {
   text-decoration: none;
 }
 
-/* line 141, ../scss/ulearn.scss */
+/* line 125, ../scss/ulearn.scss */
 #badges {
   background: white;
 }
 
-/* line 144, ../scss/ulearn.scss */
+/* line 128, ../scss/ulearn.scss */
 .box_badges {
   background: none repeat scroll 0 0 #f58d3d;
   color: white;
@@ -1898,7 +2169,7 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-/* line 156, ../scss/ulearn.scss */
+/* line 140, ../scss/ulearn.scss */
 .box_badges:hover {
   opacity: 0.8;
   cursor: pointer;
@@ -1906,29 +2177,29 @@ input[type="text"]:focus {
   transition: all 0.25s ease 0s;
 }
 
-/* line 157, ../scss/ulearn.scss */
+/* line 141, ../scss/ulearn.scss */
 .novetat {
   background: none repeat scroll 0 0 #34495e;
 }
 
-/* line 160, ../scss/ulearn.scss */
+/* line 144, ../scss/ulearn.scss */
 #user {
   color: #666666;
   font-size: 0.8em;
   margin-bottom: 5px;
 }
 
-/* line 165, ../scss/ulearn.scss */
+/* line 149, ../scss/ulearn.scss */
 #user p {
   margin-bottom: 0;
 }
 
-/* line 172, ../scss/ulearn.scss */
+/* line 156, ../scss/ulearn.scss */
 .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
   background-color: #DEDED6;
 }
 
-/* line 175, ../scss/ulearn.scss */
+/* line 159, ../scss/ulearn.scss */
 .nav-pills > li > a {
   background: none repeat scroll 0 0 #deded6;
   color: #34495E;
@@ -1937,13 +2208,13 @@ input[type="text"]:focus {
   outline: none;
 }
 
-/* line 182, ../scss/ulearn.scss */
+/* line 166, ../scss/ulearn.scss */
 #box_comunitats .nav {
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-/* line 186, ../scss/ulearn.scss */
+/* line 170, ../scss/ulearn.scss */
 .num {
   background: none repeat scroll 0 0 #f58d3d;
   border-left: 1px solid #eeeeee;
@@ -1960,22 +2231,22 @@ input[type="text"]:focus {
   width: 33px;
 }
 
-/* line 201, ../scss/ulearn.scss */
+/* line 185, ../scss/ulearn.scss */
 .num:hover {
   opacity: 0.8;
 }
 
-/* line 202, ../scss/ulearn.scss */
+/* line 186, ../scss/ulearn.scss */
 .icons {
   margin-right: 4px;
 }
 
-/* line 203, ../scss/ulearn.scss */
+/* line 187, ../scss/ulearn.scss */
 #miniatures {
   margin-top: 10px;
 }
 
-/* line 206, ../scss/ulearn.scss */
+/* line 190, ../scss/ulearn.scss */
 #miniatures img {
   height: 60px;
   overflow: hidden;
@@ -1985,12 +2256,12 @@ input[type="text"]:focus {
   transition: all 0.1s ease 0s;
 }
 
-/* line 214, ../scss/ulearn.scss */
+/* line 198, ../scss/ulearn.scss */
 #miniatures img:hover {
   opacity: 0.8;
 }
 
-/* line 215, ../scss/ulearn.scss */
+/* line 199, ../scss/ulearn.scss */
 #menusup {
   background: none repeat scroll 0 0 #deded6;
   border: 1px solid white;
@@ -1998,13 +2269,13 @@ input[type="text"]:focus {
   border-bottom: 0;
 }
 
-/* line 221, ../scss/ulearn.scss */
+/* line 205, ../scss/ulearn.scss */
 #menusup .nav-tabs {
   border-bottom: 0;
   margin-bottom: 0;
 }
 
-/* line 225, ../scss/ulearn.scss */
+/* line 209, ../scss/ulearn.scss */
 #menusup .nav-tabs > li > a {
   background: #DEDED6;
   color: #444;
@@ -2017,25 +2288,25 @@ input[type="text"]:focus {
   margin: 0;
 }
 
-/* line 236, ../scss/ulearn.scss */
+/* line 220, ../scss/ulearn.scss */
 #menusup .nav-tabs > .active > a, #menusup .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
   background: #f58d3d;
   color: white;
   text-shadow: none;
 }
 
-/* line 241, ../scss/ulearn.scss */
+/* line 225, ../scss/ulearn.scss */
 #menusup .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
   background: #EEEEEE;
   transition: all 0.25s ease 0s;
 }
 
-/* line 245, ../scss/ulearn.scss */
+/* line 229, ../scss/ulearn.scss */
 #menusup .icons {
   font-size: 20px;
 }
 
-/* line 247, ../scss/ulearn.scss */
+/* line 231, ../scss/ulearn.scss */
 #day {
   background: none repeat scroll 0 0 #f58d3d;
   border-radius: 4px 4px 4px 4px;
@@ -2049,32 +2320,32 @@ input[type="text"]:focus {
   margin-bottom: 0;
 }
 
-/* line 259, ../scss/ulearn.scss */
+/* line 243, ../scss/ulearn.scss */
 #day p {
   margin: 0;
 }
 
-/* line 260, ../scss/ulearn.scss */
+/* line 244, ../scss/ulearn.scss */
 .data {
   font-size: 13px;
   padding-top: 6px;
 }
 
-/* line 261, ../scss/ulearn.scss */
+/* line 245, ../scss/ulearn.scss */
 #agenda {
   background: #f5f5f5;
   font-size: 12px;
   margin-top: 10px;
 }
 
-/* line 266, ../scss/ulearn.scss */
+/* line 250, ../scss/ulearn.scss */
 #esdev {
   line-height: 15px;
   padding: 8px 4px 0 2px;
   margin-bottom: 0;
 }
 
-/* line 271, ../scss/ulearn.scss */
+/* line 255, ../scss/ulearn.scss */
 #calendari {
   background: none repeat scroll 0 0 whitesmoke;
   margin-top: 10px;
@@ -2082,7 +2353,7 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0 white;
 }
 
-/* line 277, ../scss/ulearn.scss */
+/* line 261, ../scss/ulearn.scss */
 #box_agenda .hiddenStructure {
   background: none repeat scroll 0 0 #eae9e4;
   color: black;
@@ -2090,29 +2361,29 @@ input[type="text"]:focus {
   padding: 1px;
 }
 
-/* line 283, ../scss/ulearn.scss */
+/* line 267, ../scss/ulearn.scss */
 .weekdays {
   font-size: 11px;
 }
 
-/* line 284, ../scss/ulearn.scss */
+/* line 268, ../scss/ulearn.scss */
 .ploneCalendar {
   width: 100%;
   font-size: 13px;
 }
 
-/* line 285, ../scss/ulearn.scss */
+/* line 269, ../scss/ulearn.scss */
 .event {
   text-shadow: none;
   text-align: center;
 }
 
-/* line 286, ../scss/ulearn.scss */
+/* line 270, ../scss/ulearn.scss */
 .event:hover {
   background: #fff;
 }
 
-/* line 287, ../scss/ulearn.scss */
+/* line 271, ../scss/ulearn.scss */
 .todayevent {
   background: #007BC0;
   text-shadow: none;
@@ -2120,29 +2391,29 @@ input[type="text"]:focus {
   border-radius: 2px;
 }
 
-/* line 288, ../scss/ulearn.scss */
+/* line 272, ../scss/ulearn.scss */
 .event a {
   color: #555;
   font-weight: normal;
 }
 
-/* line 289, ../scss/ulearn.scss */
+/* line 273, ../scss/ulearn.scss */
 .todayevent a {
   color: #fff;
 }
 
-/* line 291, ../scss/ulearn.scss */
+/* line 275, ../scss/ulearn.scss */
 #box_valorats ul, #box_comentaris ul {
   margin-top: 10px;
   margin-left: 25px;
 }
 
-/* line 293, ../scss/ulearn.scss */
+/* line 277, ../scss/ulearn.scss */
 #box_valorats li a:hover, #box_comentaris li a:hover {
   text-decoration: underline;
 }
 
-/* line 295, ../scss/ulearn.scss */
+/* line 279, ../scss/ulearn.scss */
 #box_valorats li, #box_comentaris li {
   border-bottom: 1px solid #eeeeee;
   font-size: 13px;
@@ -2151,14 +2422,14 @@ input[type="text"]:focus {
   padding-bottom: 8px;
 }
 
-/* line 302, ../scss/ulearn.scss */
+/* line 286, ../scss/ulearn.scss */
 #box_valorats i, #box_comentaris i {
   color: #34495E;
   font-size: 15px;
   vertical-align: middle;
 }
 
-/* line 309, ../scss/ulearn.scss */
+/* line 293, ../scss/ulearn.scss */
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -2181,7 +2452,7 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-/* line 334, ../scss/ulearn.scss */
+/* line 318, ../scss/ulearn.scss */
 .btn-comunitat:hover,
 .btn-comunitat:active,
 .btn-comunitat.active,
@@ -2192,7 +2463,7 @@ input[type="text"]:focus {
   *background-color: #003bb3;
 }
 
-/* line 339, ../scss/ulearn.scss */
+/* line 323, ../scss/ulearn.scss */
 #menusup .nav-tabs > .btn-plus > a {
   background: none repeat scroll 0 0 #34495e;
   color: white;
@@ -2201,286 +2472,13 @@ input[type="text"]:focus {
   text-shadow: none;
 }
 
-/* line 346, ../scss/ulearn.scss */
+/* line 330, ../scss/ulearn.scss */
 #menusup .nav-tabs > .btn-plus > a:hover {
   background: none repeat scroll 0 0 #34495e;
   opacity: 0.8;
 }
 
-/* ==========================================================================
-   MAX
-   ========================================================================== */
-/* line 355, ../scss/ulearn.scss */
-#maxui-container {
-  color: #444444;
-  font: 13px/18px "Open Sans", serif;
-  text-shadow: 0 1px white;
-  border: 0 none;
-}
-
-/* line 361, ../scss/ulearn.scss */
-#maxui-container a {
-  color: #007BC0;
-  font-family: "Open Sans", serif;
-}
-
-/* line 365, ../scss/ulearn.scss */
-#maxui-container a:hover {
-  border-bottom: 0;
-}
-
-/* line 366, ../scss/ulearn.scss */
-.maxui-displayname {
-  color: #F58D3D;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* line 371, ../scss/ulearn.scss */
-#maxui-container a:hover {
-  color: #34495E;
-  text-decoration: none;
-}
-
-/* line 375, ../scss/ulearn.scss */
-#maxui-timeline {
-  background: none repeat scroll 0 0 white;
-  clear: both;
-  margin: 0;
-  overflow: hidden;
-  padding: 10px;
-}
-
-/* line 382, ../scss/ulearn.scss */
-#maxui-newactivity {
-  background: none repeat scroll 0 0 #34495e;
-  padding: 10px;
-  position: relative;
-}
-
-/* line 387, ../scss/ulearn.scss */
-#maxui-newactivity textarea, .maxui-comments textarea {
-  border: 0 none;
-  border-radius: 3px 3px 3px 3px;
-  box-shadow: 0;
-  color: #444444;
-  font-family: "Open Sans", serif;
-  font-size: 13px;
-  height: 48px;
-  line-height: 18px;
-  min-height: 48px;
-  overflow: auto;
-  padding: 5px 3px 5px 8px;
-  position: relative;
-  resize: vertical;
-  width: 100%;
-}
-
-/* line 403, ../scss/ulearn.scss */
-#maxui-search {
-  background: none repeat scroll 0 0 #deded6;
-  border-bottom: 0 none;
-  border-top: 0 none;
-  padding: 10px 30px 10px 10px;
-}
-
-/* line 409, ../scss/ulearn.scss */
-#maxui-search-text {
-  -moz-appearance: none;
-  border: 1px solid #b2b2b2;
-  color: #666666;
-  font-family: "Open Sans", serif;
-  font-size: 13px;
-  height: 24px;
-  line-height: 20px;
-  min-height: 24px;
-  padding: 1px 5px;
-  position: relative;
-  width: 100%;
-}
-
-/* line 422, ../scss/ulearn.scss */
-.maxui-avatar:before, .maxui-avatar:before {
-  border-radius: 0 0 0 0;
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  box-shadow: none;
-}
-
-/* line 432, ../scss/ulearn.scss */
-#maxui-container a img {
-  border: 0 none;
-  border-radius: 0 0 0 0;
-}
-
-/* line 436, ../scss/ulearn.scss */
-.maxui-topright {
-  color: #222222;
-  font-size: 11px;
-  text-align: right;
-}
-
-/* line 441, ../scss/ulearn.scss */
-.maxui-avatar {
-  float: left;
-  left: -60px;
-  max-width: 100%;
-  position: absolute;
-  top: 0;
-}
-
-/* line 448, ../scss/ulearn.scss */
-.activities .maxui-activity-content {
-  margin: 0 0 0 60px;
-}
-
-/* line 451, ../scss/ulearn.scss */
-#maxui-back-conversations, #maxui-show-conversations {
-  background: none repeat scroll 0 0 whitesmoke;
-  border-bottom: 0 none;
-  height: 18px;
-  padding-bottom: 3px;
-  text-align: center;
-}
-
-/* line 458, ../scss/ulearn.scss */
-.maxui-avatar img {
-  box-shadow: none;
-}
-
-/* line 461, ../scss/ulearn.scss */
-input.maxui-button {
-  background: none repeat scroll 0 0 #f58d3d;
-  border: 0 none;
-  border-radius: 4px 4px 4px 4px;
-  color: #FFFFFF;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: bold;
-  margin: 5px 0 0;
-  padding: 4px 16px;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-}
-
-/* line 473, ../scss/ulearn.scss */
-input.maxui-button:hover, input.maxui-button:hover, input.maxui-button:focus, input.maxui-button:focus {
-  background: none repeat scroll 0 0 #fb9a4f;
-  border: 0 none;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-  color: #FFFFFF;
-  cursor: pointer;
-}
-
-/* line 480, ../scss/ulearn.scss */
-input.maxui-button[disabled] {
-  background: none repeat scroll 0 0 #e5e5e5;
-  border: 0;
-  border-radius: 4px 4px 4px 4px;
-  box-shadow: none;
-  color: #666666;
-  cursor: default;
-  text-shadow: 0 1px white;
-}
-
-/* line 489, ../scss/ulearn.scss */
-#maxui-container input:focus {
-  box-shadow: none !important;
-}
-
-/* line 492, ../scss/ulearn.scss */
-#maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
-  border: 1px solid #f58d3d !important;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset, 0 0 8px rgba(100, 123, 192, 0.5) !important;
-}
-
-/* ==========================================================================
-   MODIFICACIONS GENWEB
-   ========================================================================== */
-/* line 499, ../scss/ulearn.scss */
-h1, h2, h3, label {
-  color: #F58D3D;
-}
-
-/* line 502, ../scss/ulearn.scss */
-.liniaDalt, .tileHeadline {
-  border-top: 1px solid #dddddd;
-  box-shadow: none;
-  padding: 10px 0;
-}
-
-/* line 507, ../scss/ulearn.scss */
-.liniaBaix, .documentFirstHeading {
-  border-bottom: 1px solid #dddddd;
-  box-shadow: none;
-  margin: 0 0 15px;
-  padding: 0 0 5px;
-}
-
-/* line 513, ../scss/ulearn.scss */
-#documents-view, #links-view, #images-view, .documentEditable {
-  padding: 10px;
-}
-
-/* line 517, ../scss/ulearn.scss */
-.content_edit .rowlike {
-  padding: 10px;
-}
-
-/* line 518, ../scss/ulearn.scss */
-.nav-tabs, .contentViews, .configlets {
-  box-shadow: none;
-}
-
-/* line 521, ../scss/ulearn.scss */
-#portal-header .container {
-  border-top: 0 none;
-  margin-bottom: 15px;
-  margin-top: 0;
-  border-bottom: 0;
-}
-
-/* line 527, ../scss/ulearn.scss */
-#content-area {
-  margin-top: 1.7em;
-}
-
-/* line 530, ../scss/ulearn.scss */
-[class*="span"], .cella {
-  margin-bottom: 0;
-}
-
-/* line 533, ../scss/ulearn.scss */
-#portal-breadcrumbs {
-  margin-bottom: -15px;
-  margin-top: -15px;
-}
-
-/* line 537, ../scss/ulearn.scss */
-.template-homepage #portal-breadcrumbs {
-  margin-bottom: 0;
-  margin-top: 0;
-}
-
-/* line 541, ../scss/ulearn.scss */
-#eines .input-append {
-  border-left: 0;
-}
-
-/* line 544, ../scss/ulearn.scss */
-#edit-bar, .formTabs {
-  font-size: 12px;
-}
-
-/* line 547, ../scss/ulearn.scss */
-#edit-bar a, .formTabs a {
-  text-decoration: none;
-}
-
-/* line 549, ../scss/ulearn.scss */
+/* line 335, ../scss/ulearn.scss */
 #communitylist {
   padding: 10px;
   font-size: 13px;
@@ -2488,7 +2486,7 @@ h1, h2, h3, label {
   text-shadow: 1px 1px 0px white;
   background: #f9f9f9;
 }
-/* line 556, ../scss/ulearn.scss */
+/* line 342, ../scss/ulearn.scss */
 #communitylist .eines {
   color: #34495E;
   float: right;
@@ -2496,12 +2494,12 @@ h1, h2, h3, label {
   margin: 0 10px 50px;
   text-decoration: none;
 }
-/* line 564, ../scss/ulearn.scss */
+/* line 350, ../scss/ulearn.scss */
 #communitylist ul {
   margin-left: 0;
   list-style: none;
 }
-/* line 569, ../scss/ulearn.scss */
+/* line 355, ../scss/ulearn.scss */
 #communitylist li {
   min-height: 45px;
   line-height: 20px;
@@ -2513,23 +2511,23 @@ h1, h2, h3, label {
   background: #f9f9f9;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #dddddd;
 }
-/* line 581, ../scss/ulearn.scss */
+/* line 367, ../scss/ulearn.scss */
 #communitylist a {
   color: #555;
   text-decoration: none;
 }
-/* line 585, ../scss/ulearn.scss */
+/* line 371, ../scss/ulearn.scss */
 #communitylist a h4 {
   color: #F58D3D;
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 0;
 }
-/* line 591, ../scss/ulearn.scss */
+/* line 377, ../scss/ulearn.scss */
 #communitylist a h4:hover {
   opacity: 0.8;
 }
-/* line 595, ../scss/ulearn.scss */
+/* line 381, ../scss/ulearn.scss */
 #communitylist img {
   margin-bottom: 35px;
   margin-right: 15px;
@@ -2537,22 +2535,22 @@ h1, h2, h3, label {
   border: 2px solid white;
   max-width: 54px;
 }
-/* line 602, ../scss/ulearn.scss */
+/* line 388, ../scss/ulearn.scss */
 #communitylist img:hover {
   transition: all 0.25s ease 0s;
   border: 2px solid #f58d3d;
 }
-/* line 605, ../scss/ulearn.scss */
+/* line 391, ../scss/ulearn.scss */
 #communitylist .item {
   margin-right: 50px;
 }
 
-/* line 610, ../scss/ulearn.scss */
+/* line 396, ../scss/ulearn.scss */
 .icon-ulearn-community, .icon-ulearn.community {
   background-position: -312px -192px;
 }
 
-/* line 612, ../scss/ulearn.scss */
+/* line 398, ../scss/ulearn.scss */
 #listing-table a.contenttype-ulearn-community:before,
 .template-folder_tabular_view .listing a.contenttype-ulearn-community:before {
   background-position: -312px -192px;
