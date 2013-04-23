@@ -23,7 +23,14 @@
 
 h1, h2, h3, label {
     color: #F58D3D;
-        }
+}
+
+#portal-column-content {background-color: white;}
+
+#portlet-prefs, .documentEditable, {
+     padding: 10px;
+}
+
 .liniaDalt, .tileHeadline {
     border-top: 1px solid #DDDDDD;
     box-shadow: none;
@@ -34,9 +41,6 @@ h1, h2, h3, label {
     box-shadow: none;
     margin: 0 0 15px;
     padding: 0 0 5px;
-}
-#documents-view, #links-view, #images-view, .documentEditable {
-     padding: 10px;
 }
 
 .content_edit .rowlike {padding: 10px;}

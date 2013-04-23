@@ -1946,14 +1946,24 @@ h1, h2, h3, label {
   color: #F58D3D;
 }
 
-/* line 27, ../scss/_overrides.scss */
+/* line 28, ../scss/_overrides.scss */
+#portal-column-content {
+  background-color: white;
+}
+
+/* line 30, ../scss/_overrides.scss */
+#portlet-prefs, .documentEditable {
+  padding: 10px;
+}
+
+/* line 34, ../scss/_overrides.scss */
 .liniaDalt, .tileHeadline {
   border-top: 1px solid #dddddd;
   box-shadow: none;
   padding: 10px 0;
 }
 
-/* line 32, ../scss/_overrides.scss */
+/* line 39, ../scss/_overrides.scss */
 .liniaBaix, .documentFirstHeading {
   border-bottom: 1px solid #dddddd;
   box-shadow: none;
@@ -1961,22 +1971,17 @@ h1, h2, h3, label {
   padding: 0 0 5px;
 }
 
-/* line 38, ../scss/_overrides.scss */
-#documents-view, #links-view, #images-view, .documentEditable {
-  padding: 10px;
-}
-
-/* line 42, ../scss/_overrides.scss */
+/* line 46, ../scss/_overrides.scss */
 .content_edit .rowlike {
   padding: 10px;
 }
 
-/* line 43, ../scss/_overrides.scss */
+/* line 47, ../scss/_overrides.scss */
 .nav-tabs, .contentViews, .configlets {
   box-shadow: none;
 }
 
-/* line 46, ../scss/_overrides.scss */
+/* line 50, ../scss/_overrides.scss */
 #portal-header .container {
   border-top: 0 none;
   margin-bottom: 15px;
@@ -1984,39 +1989,39 @@ h1, h2, h3, label {
   border-bottom: 0;
 }
 
-/* line 52, ../scss/_overrides.scss */
+/* line 56, ../scss/_overrides.scss */
 #content-area {
   margin-top: 1.7em;
 }
 
-/* line 55, ../scss/_overrides.scss */
+/* line 59, ../scss/_overrides.scss */
 [class*="span"], .cella {
   margin-bottom: 0;
 }
 
-/* line 58, ../scss/_overrides.scss */
+/* line 62, ../scss/_overrides.scss */
 #portal-breadcrumbs {
   margin-bottom: -15px;
   margin-top: -15px;
 }
 
-/* line 62, ../scss/_overrides.scss */
+/* line 66, ../scss/_overrides.scss */
 .template-homepage #portal-breadcrumbs {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-/* line 66, ../scss/_overrides.scss */
+/* line 70, ../scss/_overrides.scss */
 #eines .input-append {
   border-left: 0;
 }
 
-/* line 69, ../scss/_overrides.scss */
+/* line 73, ../scss/_overrides.scss */
 #edit-bar, .formTabs {
   font-size: 12px;
 }
 
-/* line 72, ../scss/_overrides.scss */
+/* line 76, ../scss/_overrides.scss */
 #edit-bar a, .formTabs a {
   text-decoration: none;
 }
@@ -2033,15 +2038,15 @@ body {
 }
 
 /* line 30, ../scss/ulearn.scss */
+input, button, select, textarea {
+  font-family: "Open Sans", sans-serif;
+}
+
+/* line 34, ../scss/ulearn.scss */
 #portal-header {
   border-top: none;
   border-bottom: none;
   background: #eae9e4!important;
-}
-
-/* line 36, ../scss/ulearn.scss */
-input, button, select, textarea {
-  font-family: "Open Sans", sans-serif;
 }
 
 /* line 40, ../scss/ulearn.scss */

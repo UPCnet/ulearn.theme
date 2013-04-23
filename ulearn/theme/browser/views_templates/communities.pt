@@ -34,6 +34,9 @@
               <img class="pull-left"
                    tal:condition="community/image_filename"
                    tal:attributes="src string:${community/getURL}/@@images/image/tile"/>
+              <img class="pull-left"
+                   src="/++ulearn++static/images/avatar_default.png"
+                   tal:condition="not: community/image_filename"/>
               <h4 tal:content="community/Title">Community</h4>
               <p tal:content="community/Description">Description</p>
             </a>

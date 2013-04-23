@@ -1,4 +1,4 @@
-HIHIHIHI
+
 <tal:personaltools condition="not: view/anonymous">
 <h1 class="goout" id="titol-eines-usuari"> Eines d'usuari </h1>
 <nav id="portal-personaltools-wrapper" role="toolbar" aria-labelledby="titol-eines-usuari"

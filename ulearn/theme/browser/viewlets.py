@@ -3,6 +3,7 @@ import re
 from five import grok
 from cgi import escape
 from Acquisition import aq_inner
+from Acquisition import aq_chain
 from AccessControl import getSecurityManager
 from zope.interface import Interface
 from zope.component import getMultiAdapter
@@ -17,7 +18,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from plone.app.layout.viewlets.common import PersonalBarViewlet, GlobalSectionsViewlet, PathBarViewlet
 from plone.app.layout.viewlets.common import SearchBoxViewlet, TitleViewlet, ManagePortletsFallbackViewlet
-from plone.app.layout.viewlets.interfaces import IHtmlHead, IPortalTop, IPortalHeader, IBelowContent
+from plone.app.layout.viewlets.interfaces import IHtmlHead, IPortalTop, IPortalHeader, IAboveContent, IBelowContent
 from plone.app.layout.viewlets.interfaces import IPortalFooter, IAboveContentTitle
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 
@@ -29,6 +30,8 @@ from genweb.theme.browser.interfaces import IHomePageView
 from genweb.core.utils import genweb_config, havePermissionAtRoot, pref_lang
 
 from genweb.theme.browser.interfaces import IGenwebTheme
+from ulearn.core.content.community import ICommunity
+from ulearn.core.interfaces import IDocumentFolder, ILinksFolder, IPhotosFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
 grok.context(Interface)
@@ -54,6 +57,42 @@ class viewletBase(grok.Viewlet):
         lt = getToolByName(self.portal(), 'portal_languages')
         return lt.getPreferredLanguage()
 
+
+class folderBar(viewletBase):
+    grok.name('ulearn.folderbar')
+    grok.template('folderbar')
+    grok.viewletmanager(IAboveContent)
+    grok.layer(IUlearnTheme)
+
+    def update(self):
+        context = aq_inner(self.context)
+        self.folder_type = ''
+        for obj in aq_chain(context):
+            if IDocumentFolder.providedBy(obj):
+                self.folder_type = 'documents'
+                break
+            if ILinksFolder.providedBy(obj):
+                self.folder_type = 'links'
+                break
+            if IPhotosFolder.providedBy(obj):
+                self.folder_type = 'photos'
+                break
+            if ICommunity.providedBy(obj):
+                self.folder_type = 'community'
+                break
+
+    def get_community(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return obj
+
+    def render_viewlet(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+        return False
 
 # class gwPersonalBarViewlet(PersonalBarViewlet, viewletBase):
 #     grok.name('genweb.personalbar')
