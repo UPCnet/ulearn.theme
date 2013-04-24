@@ -1946,24 +1946,21 @@ h1, h2, h3, label {
   color: #F58D3D;
 }
 
-/* line 28, ../scss/_overrides.scss */
-#portal-column-content {
+/* line 31, ../scss/_overrides.scss */
+#portlet-prefs, .documentEditable,
+.template-overview-controlpanel #content {
+  padding: 10px;
   background-color: white;
 }
 
-/* line 30, ../scss/_overrides.scss */
-#portlet-prefs, .documentEditable {
-  padding: 10px;
-}
-
-/* line 34, ../scss/_overrides.scss */
+/* line 36, ../scss/_overrides.scss */
 .liniaDalt, .tileHeadline {
   border-top: 1px solid #dddddd;
   box-shadow: none;
   padding: 10px 0;
 }
 
-/* line 39, ../scss/_overrides.scss */
+/* line 41, ../scss/_overrides.scss */
 .liniaBaix, .documentFirstHeading {
   border-bottom: 1px solid #dddddd;
   box-shadow: none;
@@ -1971,17 +1968,17 @@ h1, h2, h3, label {
   padding: 0 0 5px;
 }
 
-/* line 46, ../scss/_overrides.scss */
+/* line 48, ../scss/_overrides.scss */
 .content_edit .rowlike {
   padding: 10px;
 }
 
-/* line 47, ../scss/_overrides.scss */
+/* line 49, ../scss/_overrides.scss */
 .nav-tabs, .contentViews, .configlets {
   box-shadow: none;
 }
 
-/* line 50, ../scss/_overrides.scss */
+/* line 52, ../scss/_overrides.scss */
 #portal-header .container {
   border-top: 0 none;
   margin-bottom: 15px;
@@ -1989,39 +1986,39 @@ h1, h2, h3, label {
   border-bottom: 0;
 }
 
-/* line 56, ../scss/_overrides.scss */
+/* line 58, ../scss/_overrides.scss */
 #content-area {
   margin-top: 1.7em;
 }
 
-/* line 59, ../scss/_overrides.scss */
+/* line 61, ../scss/_overrides.scss */
 [class*="span"], .cella {
   margin-bottom: 0;
 }
 
-/* line 62, ../scss/_overrides.scss */
+/* line 64, ../scss/_overrides.scss */
 #portal-breadcrumbs {
   margin-bottom: -15px;
   margin-top: -15px;
 }
 
-/* line 66, ../scss/_overrides.scss */
+/* line 68, ../scss/_overrides.scss */
 .template-homepage #portal-breadcrumbs {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-/* line 70, ../scss/_overrides.scss */
+/* line 72, ../scss/_overrides.scss */
 #eines .input-append {
   border-left: 0;
 }
 
-/* line 73, ../scss/_overrides.scss */
+/* line 75, ../scss/_overrides.scss */
 #edit-bar, .formTabs {
   font-size: 12px;
 }
 
-/* line 76, ../scss/_overrides.scss */
+/* line 78, ../scss/_overrides.scss */
 #edit-bar a, .formTabs a {
   text-decoration: none;
 }

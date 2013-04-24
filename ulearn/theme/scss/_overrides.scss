@@ -25,10 +25,12 @@ h1, h2, h3, label {
     color: #F58D3D;
 }
 
-#portal-column-content {background-color: white;}
+// #portal-column-content {background-color: white;}
 
-#portlet-prefs, .documentEditable, {
+#portlet-prefs, .documentEditable,
+.template-overview-controlpanel #content {
      padding: 10px;
+     background-color: white;
 }
 
 .liniaDalt, .tileHeadline {
