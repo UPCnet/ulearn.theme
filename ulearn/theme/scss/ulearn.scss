@@ -4,6 +4,7 @@ $fontAwesomePath: "/++genweb++static/fonts";
 @import "maxui";
 @import "overrides";
 @import "hidden";
+@import "arrows";
 // @import "genwebupc";
 
 // Victor for pushing it to genweb.theme
@@ -196,12 +197,63 @@ border-color: #34495E;
   transition: all 0.10s ease 0s;
 }
 #miniatures img:hover {opacity:0.8;}
+
 #menusup {
     background: none repeat scroll 0 0 #DEDED6;
-    border: 1px solid white;
     padding-bottom: 1px;
-  border-bottom:0;
+    border-bottom:0;
+    height: 35px;
+
+    nav {
+        border-bottom:0;
+        margin-bottom:0;
+
+        .bubble {
+            background:#DEDED6;
+
+            .arrow {
+                border-top-color: #DEDED6;
+                display: none;
+            }
+
+            &:hover {
+                background:#EEEEEE;
+            }
+        }
+
+        .bubble-content {padding: 7px 0px;}
+
+        a {
+            background:#DEDED6;
+            color:#444;
+            border-radius:0;
+            border:0;
+            padding: 11px 15px 7px 7px;
+            text-shadow:1px 1px 0px white;
+            text-decoration:none;
+            margin:0;
+
+            &:hover {
+                background:#EEEEEE;
+            }
+        }
+
+        .active {
+            .arrow {
+                border-top-color: #f58d3d;
+                display: block;
+            }
+
+            &, a, a:hover {
+                background:#f58d3d !important;
+                color:white;
+                text-shadow:none;
+            }
+        }
+
+    }
 }
+
 #menusup .nav-tabs {
   border-bottom:0;
   margin-bottom:0;
