@@ -228,10 +228,14 @@ border-color: #34495E;
             color:#444;
             border-radius:0;
             border:0;
-            padding: 10px 15px 8px 7px;
+            padding: 10px 10px 8px 10px;
             text-shadow:1px 1px 0px white;
             text-decoration:none;
             margin:0;
+            -webkit-transition: 0s;
+            -moz-transition: 0s;
+            -o-transition: 0s;
+            transition: 0s;
 
             &:hover {
                 background:#EEEEEE;
@@ -450,3 +454,5 @@ text-shadow:none;
 .template-folder_tabular_view .listing a.contenttype-ulearn-community:before {
   background-position: -312px -192px;
 }
+
+#box_perfil .span9 {overflow-y: hidden; height: 150px;}

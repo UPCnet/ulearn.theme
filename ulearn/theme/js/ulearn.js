@@ -29,5 +29,6 @@ $('.portaltype-plone-site a[data-toggle="tab"]').on('show', function (e) {
     if (remote) {
         $(targetid).load(document.location.href + "/" + remote);
     }
-    // console.log(targetid);
+    $('#menusup .bubble-container .active').removeClass('active');
+    $(e.target.parentElement.parentElement).addClass('active')
 });

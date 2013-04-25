@@ -5,7 +5,7 @@
     </div>
     <div class="row-fluid">
         <div class="span9">
-            <img src="/++ulearn++static/images/ricard_grau.jpg" width="176" height="176" alt="User" >
+            <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
         </div>
 
         <div class="span3">
