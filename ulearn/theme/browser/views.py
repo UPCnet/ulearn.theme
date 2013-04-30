@@ -27,8 +27,10 @@ class baseCommunities(grok.View):
         self.query = self.request.form.get('q', '')
 
     def get_my_communities(self):
+        pm = getToolByName(self.context, "portal_membership")
         pc = getToolByName(self.context, "portal_catalog")
-        results = pc.searchResults(portal_type="ulearn.community")
+        current_user = pm.getAuthenticatedMember().getUserName()
+        results = pc.searchResults(portal_type="ulearn.community", Creator=current_user)
         return results
 
     def get_batched_communities(self, query=None, batch=True, b_size=2, b_start=0):
