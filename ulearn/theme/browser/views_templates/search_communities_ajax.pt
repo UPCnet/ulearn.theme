@@ -1,0 +1,41 @@
+<script type="text/javascript">
+// Rebind the favorites
+$('.favorite').on('click', function(event) {
+  event.preventDefault();
+  var community_url = $(this).data()['community'];
+  $.get(community_url + '/toggle-favorite');
+  if ($('i', this).hasClass('fa-icon-star')) {
+    $('i', this).addClass('fa-icon-star-empty').removeClass('fa-icon-star');
+  } else {
+    $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
+  }
+});
+</script>
+
+<ul tal:define="communities view/get_communities_by_query">
+  <li tal:repeat="community communities">
+    <div class="eines pull-right">
+      <a class=""
+         tal:condition="python:view.is_community_manager(community)"
+         tal:attributes="href string:${community/getURL}/edit">
+        <i class="fa-icon-pencil"></i>
+      </a>
+      <a class="favorite" href="#"
+         tal:attributes="data-community string:${community/getURL}">
+        <i tal:attributes="class python:view.get_star_class(community)"></i>
+      </a>
+    </div>
+    <div class="item">
+      <a tal:attributes="href community/getURL">
+        <img class="pull-left"
+             tal:condition="community/image_filename"
+             tal:attributes="src string:${community/getURL}/@@images/image/tile"/>
+        <img class="pull-left"
+             src="/++ulearn++static/images/avatar_default.png"
+             tal:condition="not: community/image_filename"/>
+        <h4 tal:content="community/Title">Community</h4>
+        <p tal:content="community/Description">Description</p>
+      </a>
+    </div>
+  </li>
+</ul>

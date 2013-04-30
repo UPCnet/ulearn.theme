@@ -13,7 +13,7 @@ $('.favorite').on('click', function(event) {
 </script>
 
 <section id="communitylist"
-         tal:define="communities view/get_communities">
+         tal:define="communities view/get_my_communities">
   <ul>
     <li tal:repeat="community communities">
       <div class="eines pull-right">

@@ -24,11 +24,17 @@ class baseCommunities(grok.View):
 
     def update(self):
         self.favorites = self.get_favorites()
+        self.query = self.request.form.get('q', '')
 
-    def get_communities(self):
+    def get_my_communities(self):
         pc = getToolByName(self.context, "portal_catalog")
         results = pc.searchResults(portal_type="ulearn.community")
-        batch = Batch(results, size=2, orphan=10)
+        return results
+
+    def get_batched_communities(self, query=None, batch=True, b_size=2, b_start=0):
+        pc = getToolByName(self.context, "portal_catalog")
+        results = pc.searchResults(portal_type="ulearn.community")
+        batch = Batch(results, b_size, b_start)
         return batch
 
     def is_community_manager(self, community):
@@ -47,6 +53,32 @@ class baseCommunities(grok.View):
     def get_star_class(self, community):
         return community.id in self.favorites and 'fa-icon-star' or 'fa-icon-star-empty'
 
+    def get_communities_by_query(self):
+        pc = getToolByName(self.context, "portal_catalog")
+
+        def quotestring(s):
+            return '"%s"' % s
+
+        def quote_bad_chars(s):
+            bad_chars = ["(", ")"]
+            for char in bad_chars:
+                s = s.replace(char, quotestring(char))
+            return s
+
+        if not self.query == '':
+            multispace = u'\u3000'.encode('utf-8')
+            for char in ('?', '-', '+', '*', multispace):
+                self.query = self.query.replace(char, ' ')
+
+            query = self.query.split()
+            query = " AND ".join(query)
+            query = quote_bad_chars(query) + '*'
+
+            results = pc.searchResults(portal_type="ulearn.community", SearchableText=query)
+            return results
+        else:
+            return ''
+
 
 class communities(baseCommunities):
     """ The list of communities """
@@ -57,8 +89,17 @@ class communities(baseCommunities):
 
 class communitiesAJAX(baseCommunities):
     """ The list of communities via AJAX """
-    grok.name('communities-ajax')
+    grok.name('my-communities-ajax')
     grok.context(IPloneSiteRoot)
     grok.require('genweb.member')
-    grok.template('communities_ajax')
+    grok.template('my_communities_ajax')
+    grok.layer(IUlearnTheme)
+
+
+class searchCommunitiesAJAX(baseCommunities):
+    """ Search communities via AJAX """
+    grok.name('search-communities-ajax')
+    grok.context(IPloneSiteRoot)
+    grok.require('genweb.member')
+    grok.template('search_communities_ajax')
     grok.layer(IUlearnTheme)

@@ -13,13 +13,19 @@
 
 <body>
 
-  <div metal:fill-slot="main">
-    <div class="input-append">
-      <input class="span2" id="appendedInputButton" type="text">
-      <button class="btn" type="button">Go!</button>
+  <metal:main metal:fill-slot="main"
+              tal:define="b_start python:0;
+                         b_start request/b_start | b_start;
+                         communities python: view.get_batched_communities(b_start=b_start);">
+
+    <div id="searchcommunities">
+      <div class="input-append">
+        <input class="searchInput" type="text">
+        <button class="btn" type="button" i18n:translate="">Search</button>
+      </div>
     </div>
-    <section id="communitylist"
-             tal:define="communities view/get_communities">
+
+    <section id="communitylist">
       <ul>
         <li tal:repeat="community communities">
           <div class="eines pull-right">
@@ -47,14 +53,12 @@
           </div>
         </li>
       </ul>
+    </section>
 
     <tal:batchnavigation
       define="batchnavigation nocall:context/@@batchnavigation"
       replace="structure python:batchnavigation(communities)" />
 
-    </section>
-
-  </div>
-
+  </metal:main>
 </body>
 </html>

@@ -56,3 +56,25 @@ $(function(){
     }
 
 });
+
+// Favorites
+$('.favorite').on('click', function(event) {
+  event.preventDefault();
+  var community_url = $(this).data()['community'];
+  $.get(community_url + '/toggle-favorite');
+  if ($('i', this).hasClass('fa-icon-star')) {
+    $('i', this).addClass('fa-icon-star-empty').removeClass('fa-icon-star');
+  } else {
+    $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
+  }
+});
+
+
+// Community search
+$('.searchInput').on('keyup', function(event) {
+    var query = $(this).val();
+    $('.listingBar').hide();
+    $.get(portal_url + '/search-communities-ajax', { q: query }, function(data) {
+        $('#communitylist').html(data);
+    });
+});
