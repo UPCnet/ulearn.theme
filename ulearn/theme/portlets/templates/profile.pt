@@ -1,4 +1,36 @@
-<div id="box_perfil" class="ulearnbox">
+<tal:profile tal:define="is_community view/community_mode">
+<div id="box_community" class="ulearnbox"
+     tal:condition="is_community"
+     tal:define="community view/get_community">
+    <div id="user">
+        <h2 tal:content="community/title">Ricard Grau</h2>
+        <p><span class="dades">D. Negocio / 256 thinkings</span></p>
+    </div>
+    <div class="row-fluid">
+        <div class="span9"
+             tal:define="image nocall:context/image">
+            <img alt="User"
+                 tal:attributes="src string:${community/absolute_url}/@@download/image/${community/image/filename}"
+                 tal:condition="nocall:image"/>
+            <img alt="User"
+                 src="/++ulearn++static/images/avatar_default.png"
+                 tal:condition="nocall:not:image"/>
+        </div>
+
+        <div class="span3">
+            <div tal:repeat="badge view/get_badges">
+                <div class="box_badges"
+                     tal:attributes="class python:'box_badges' if badge['awarded'] else 'box_badges novetat'">
+                    <i class="fa-icon-trophy"
+                       tal:attributes="class string:fa-icon-${badge/icon}"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="box_perfil" class="ulearnbox"
+     tal:condition="not:is_community">
     <div id="user">
         <h2 tal:content="view/fullname">Ricard Grau</h2>
         <p><span class="dades">D. Negocio / 256 thinkings</span></p>
@@ -9,10 +41,14 @@
         </div>
 
         <div class="span3">
-            <div class="box_badges"><i class="fa-icon-trophy"></i></div>
-            <div class="box_badges"><i class="fa-icon-certificate"></i></div>
-            <div class="box_badges novetat"><i class="fa-icon-star"></i></div>
-            <div class="box_badges novetat"><i class="fa-icon-flag"></i></div>
+            <div tal:repeat="badge view/get_badges">
+                <div class="box_badges"
+                     tal:attributes="class python:'box_badges' if badge['awarded'] else 'box_badges novetat'">
+                    <i class="fa-icon-trophy"
+                       tal:attributes="class string:fa-icon-${badge/icon}"></i>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+</tal:profile>

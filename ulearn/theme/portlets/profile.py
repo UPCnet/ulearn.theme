@@ -1,4 +1,5 @@
 from Acquisition import aq_inner
+from Acquisition import aq_chain
 from zope.interface import implements
 from zope.component import getMultiAdapter
 from zope.component.hooks import getSite
@@ -11,7 +12,8 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-from ulearn.core.badges import PROFILE_COMPLETE_BADGE
+from ulearn.core.badges import AVAILABLE_BADGES
+from ulearn.core.content.community import ICommunity
 
 
 class IProfilePortlet(IPortletDataProvider):
@@ -75,10 +77,25 @@ class Renderer(base.Renderer):
         # >>> connect_backpack(self.username.getId(), app="ulearn", sort="user_preference", limit=4)
         # >>> [{"displayName": "Code Whisperer", "id":"codewhisperer", "png": "http://...", "icon": "trophy"}, ]
 
-        badges = []
+        badges = AVAILABLE_BADGES
         if self.has_complete_profile():
-            badges.append(PROFILE_COMPLETE_BADGE)
-        return []
+            badges[0]['awarded'] = True
+
+        return badges
+
+    def get_community(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return obj
+
+    def community_mode(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
 
 
 class AddForm(base.NullAddForm):

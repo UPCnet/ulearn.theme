@@ -2751,7 +2751,12 @@ input[type="text"]:focus {
   height: 150px;
 }
 
-/* line 450, ../scss/ulearn.scss */
+/* line 449, ../scss/ulearn.scss */
+#box_community img {
+  width: 150px;
+}
+
+/* line 451, ../scss/ulearn.scss */
 #searchcommunities {
   margin-right: auto;
   margin-left: auto;

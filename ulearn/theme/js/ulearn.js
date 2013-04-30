@@ -49,7 +49,7 @@ $(function(){
         $username.css("font-size", "16px");
     }
     else if (($letters >= 30) && ($letters < 40)) {
-        $username.css("font-size", "24px");
+        $username.css("font-size", "14px");
     }
     else {
         $username.css("font-size", "20px");
