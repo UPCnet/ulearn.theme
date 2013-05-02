@@ -1,10 +1,11 @@
 from Acquisition import aq_inner
 from Acquisition import aq_chain
 from zope.interface import implements
-from zope.component import getMultiAdapter
+from zope.component import getMultiAdapter, queryUtility
 from zope.component.hooks import getSite
 
 from plone.app.portlets.portlets import base
+from plone.registry.interfaces import IRegistry
 from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
 
@@ -14,6 +15,9 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from ulearn.core.badges import AVAILABLE_BADGES
 from ulearn.core.content.community import ICommunity
+
+from maxclient import MaxClient
+from mrs.max.browser.controlpanel import IMAXUISettings
 
 
 class IProfilePortlet(IPortletDataProvider):
@@ -96,6 +100,22 @@ class Renderer(base.Renderer):
                 return True
 
         return False
+
+    def get_thinnkings(self):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IMAXUISettings, check=False)
+        # Pick grant type from settings unless passed as optional argument
+        effective_grant_type = settings.oauth_grant_type
+
+        pm = getToolByName(self.context, "portal_membership")
+        member = pm.getAuthenticatedMember()
+        username = member.getUserName()
+        member = pm.getMemberById(username)
+        oauth_token = member.getProperty('oauth_token', None)
+
+        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
+        maxclient.setActor(username)
+        maxclient.setToken(oauth_token)
 
 
 class AddForm(base.NullAddForm):

@@ -4,7 +4,8 @@
      tal:define="community view/get_community">
     <div id="user">
         <h2 tal:content="community/title">Ricard Grau</h2>
-        <p><span class="dades">D. Negocio / 256 thinkings</span></p>
+        <p><span class="dades"
+                 tal:content="view/get_thinnkings">256 thinnkings</span></p>
     </div>
     <div class="row-fluid">
         <div class="span9"
