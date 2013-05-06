@@ -117,9 +117,7 @@ class Renderer(base.Renderer):
         maxclient.setActor(username)
         maxclient.setToken(oauth_token)
 
-        maxclient.getUserActivities()
-
-        return
+        return maxclient.getUserActivities()
 
 
 class AddForm(base.NullAddForm):
