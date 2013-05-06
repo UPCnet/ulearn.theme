@@ -4,8 +4,8 @@
      tal:define="community view/get_community">
     <div id="user">
         <h2 tal:content="community/title">Ricard Grau</h2>
-        <p><span class="dades"
-                 tal:content="view/get_thinnkings">256 thinnkings</span></p>
+        <p><span class="dades currentactivity"
+                 tal:content="python:view.get_thinnkins(community=community)">256</span> thinnkins</p>
     </div>
     <div class="row-fluid">
         <div class="span9"
@@ -34,8 +34,8 @@
      tal:condition="not:is_community">
     <div id="user">
         <h2 tal:content="view/fullname">Ricard Grau</h2>
-        <p><span class="dades useractivity"
-                 tal:content="view/get_thinnkings">256</span> thinnkins</p>
+        <p><span class="dades currentactivity"
+                 tal:content="view/get_thinnkins">256</span> thinnkins</p>
     </div>
     <div class="row-fluid">
         <div class="span9">

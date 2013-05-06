@@ -1,3 +1,5 @@
+from hashlib import sha1
+
 from Acquisition import aq_inner
 from Acquisition import aq_chain
 from zope.interface import implements
@@ -101,7 +103,7 @@ class Renderer(base.Renderer):
 
         return False
 
-    def get_thinnkings(self):
+    def get_thinnkins(self, community=False):
         registry = queryUtility(IRegistry)
         settings = registry.forInterface(IMAXUISettings, check=False)
         # Pick grant type from settings unless passed as optional argument
@@ -117,7 +119,11 @@ class Renderer(base.Renderer):
         maxclient.setActor(username)
         maxclient.setToken(oauth_token)
 
-        return maxclient.getUserActivities()
+        if community:
+            context_hash = sha1(community.absolute_url()).hexdigest()
+            return maxclient.getUserActivities(context=context_hash, count=True)
+        else:
+            return maxclient.getUserActivities(count=True)
 
 
 class AddForm(base.NullAddForm):

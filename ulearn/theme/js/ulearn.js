@@ -81,6 +81,6 @@ $('.searchInput').on('keyup', function(event) {
 
 // # of thinnkinns updater
 $(window).on('maxui-posted-activity', function(event) {
-    int_activities = parseInt($('.useractivity').text(), 10);
-    $('.useractivity').text(int_activities + 1);
+    int_activities = parseInt($('.currentactivity').text(), 10);
+    $('.currentactivity').text(int_activities + 1);
 });
