@@ -189,6 +189,12 @@ border-color: #34495E;
 }
 #miniatures img:hover {opacity:0.8;}
 
+// Menu de communities i subseccions
+.menuwrapper {
+  background-color: #eae9e4;
+  height: 45px;
+}
+
 #menusup {
     background: none repeat scroll 0 0 #DEDED6;
     padding-bottom: 1px;
@@ -201,10 +207,11 @@ border-color: #34495E;
 
         .bubble {
             background:#DEDED6;
+            border-right: 4px solid #EEE;
 
             .arrow {
                 border-top-color: #DEDED6;
-                display: none;
+                // display: none;
             }
 
             &:hover {
@@ -229,7 +236,9 @@ border-color: #34495E;
             transition: 0s;
 
             &:hover {
-                background:#EEEEEE;
+                // background:#EEEEEE;
+                color: #000;
+                // text-shadow:1px 1px 0px #DEDED6;
             }
         }
 

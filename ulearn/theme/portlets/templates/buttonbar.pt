@@ -32,23 +32,3 @@
   <div class="tab-pane active" id="maxui-widget-container"></div>
   <div class="tab-pane" id="communities-view" data-remote="my-communities-ajax">Documents</div>
 </div>
-<!--
-    <ul class="nav nav-tabs">
-        <li class="active">
-            <a href="#"
-               data-toggle="tab"
-               data-target="#maxui-widget-container">
-                  <i class="fa-icon-comment icons"></i>
-                  <tal:Entrada i18n:translate="Entrada"> Entrada </tal:Entrada></a></li>
-        <li><a href="#"
-               data-toggle="tab"
-               data-target="#communities-view">
-                  <i class="fa-icon-comments icons"></i>
-                  <tal:Documents i18n:translate="my_communities">My communities</tal:Documents></a></li>
-    </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="maxui-widget-container"></div>
-    <div class="tab-pane" id="communities-view" data-remote="communities-ajax">Documents</div>
-  </div>
-</div>
- -->
