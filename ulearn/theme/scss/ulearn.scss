@@ -449,3 +449,22 @@ text-shadow:none;
 #box_community img {width: 150px;}
 
 #searchcommunities {margin-right: auto; margin-left: auto; width: 300px;}
+
+#box_comunitats {
+  .bubble-content { padding: 6px 0px }
+  .bubble {
+    a {
+      background: none repeat scroll 0 0 #f58d3d;
+      padding: 6px 14px ;
+      color: white;
+      font-weight: bold;
+      height: 18px;
+      text-align: center;
+      text-shadow: 1px 1px 0 #92480F;
+      width: 33px;
+    }
+    .arrow { border-right-color: #f58d3d; }
+  }
+
+  li a { @include border-radius(0px); }
+}

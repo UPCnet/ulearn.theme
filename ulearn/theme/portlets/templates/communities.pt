@@ -6,12 +6,21 @@
   <ul class="nav nav-pills nav-stacked" role="menu">
     <li role="menuitem"
         tal:repeat="community view/getCommunities">
+          <div class="bubble right pull-right">
+            <div class="arrow"></div>
+            <div class="bubble-content">
+              <a href="#"
+                 tal:attributes="href community/getURL"
+                 tal:content="python:view.getCommunityMembers(community)">
+                23
+              </a>
+            </div>
+          </div>
           <a href="#"
              tal:attributes="href community/getURL">
               <tal:community content="community/Title">
                 Community
               </tal:community>
-              <div class="num" tal:content="python:view.getCommunityMembers(community)">3</div>
           </a>
     </li>
   </ul>
