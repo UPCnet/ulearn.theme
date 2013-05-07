@@ -452,7 +452,7 @@ text-shadow:none;
 }
 
 #box_perfil .span9 {overflow-y: hidden; height: 150px;}
-#box_community img {width: 150px;}
+#box_community img {width: 200px;}
 
 #searchcommunities {margin-right: auto; margin-left: auto; width: 300px;}
 
@@ -473,4 +473,24 @@ text-shadow:none;
   }
 
   li a { @include border-radius(0px); }
+}
+
+#box_stats {
+  .bubble-content { padding: 5px 12px; text-align: center; }
+  .bubble {
+    background-color: #344961;
+    color: white;
+    width: 60px;
+    .arrow { border-left-color: #344961; }
+  }
+  p {
+    margin: 0;
+    padding: 5px 0 5px 78px;
+    background-color: #bbb;
+    font-weight: bold;
+  }
+  ul { margin-top: 5px; }
+  li {
+    margin-bottom: 5px;
+  }
 }

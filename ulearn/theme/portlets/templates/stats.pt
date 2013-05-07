@@ -1,0 +1,45 @@
+<div id="box_stats" class="ulearnbox"
+     i18n:domain="ulearn">
+    <h2 i18n:translate="stats">Stats</h2>
+    <ul class="nav nav-pills nav-stacked">
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_stats_for('documents')">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p>
+          Documents
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_stats_for('links')">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p>
+          Links
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_stats_for('photos')">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p>
+          Photos
+        </p>
+      </li>
+    </ul>
+</div>

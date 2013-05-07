@@ -17,6 +17,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from ulearn.core.badges import AVAILABLE_BADGES
 from ulearn.core.content.community import ICommunity
+from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 from maxclient import MaxClient
 from mrs.max.browser.controlpanel import IMAXUISettings
@@ -87,6 +88,17 @@ class Renderer(base.Renderer):
         if self.has_complete_profile():
             badges[0]['awarded'] = True
 
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
+
+        thinnkins = self.get_thinnkins()
+        if thinnkins >= settings.threshold_winwin1:
+            badges[1]['awarded'] = True
+        if thinnkins >= settings.threshold_winwin2:
+            badges[2]['awarded'] = True
+        if thinnkins >= settings.threshold_winwin3:
+            badges[3]['awarded'] = True
+
         return badges
 
     def get_community(self):
@@ -103,6 +115,7 @@ class Renderer(base.Renderer):
 
         return False
 
+    @memoize_contextless
     def get_thinnkins(self, community=False):
         registry = queryUtility(IRegistry)
         settings = registry.forInterface(IMAXUISettings, check=False)

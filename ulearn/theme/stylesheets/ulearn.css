@@ -2742,7 +2742,7 @@ input[type="text"]:focus {
 
 /* line 455, ../scss/ulearn.scss */
 #box_community img {
-  width: 150px;
+  width: 200px;
 }
 
 /* line 457, ../scss/ulearn.scss */
@@ -2776,4 +2776,35 @@ input[type="text"]:focus {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
+}
+
+/* line 479, ../scss/ulearn.scss */
+#box_stats .bubble-content {
+  padding: 5px 12px;
+  text-align: center;
+}
+/* line 480, ../scss/ulearn.scss */
+#box_stats .bubble {
+  background-color: #344961;
+  color: white;
+  width: 60px;
+}
+/* line 484, ../scss/ulearn.scss */
+#box_stats .bubble .arrow {
+  border-left-color: #344961;
+}
+/* line 486, ../scss/ulearn.scss */
+#box_stats p {
+  margin: 0;
+  padding: 5px 0 5px 78px;
+  background-color: #bbb;
+  font-weight: bold;
+}
+/* line 492, ../scss/ulearn.scss */
+#box_stats ul {
+  margin-top: 5px;
+}
+/* line 493, ../scss/ulearn.scss */
+#box_stats li {
+  margin-bottom: 5px;
 }

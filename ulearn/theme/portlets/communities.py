@@ -1,17 +1,21 @@
 from zope.interface import implements
-from zope.security import checkPermission
 from zope.component.hooks import getSite
-from Products.CMFCore.utils import getToolByName
-from genweb.core.interfaces import IHomePage
-from ulearn.core.content.community import ICommunity
+from zope.security import checkPermission
+from zope.component import queryUtility
 
-from Products.CMFPlone.interfaces import IPloneSiteRoot
+from plone.registry.interfaces import IRegistry
+from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
 
+from Products.CMFCore.utils import getToolByName
+from Products.CMFPlone import PloneMessageFactory as _
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-from Products.CMFPlone import PloneMessageFactory as _
+from genweb.core.interfaces import IHomePage
+from ulearn.core.content.community import ICommunity
+from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 
 class ICommunitiesNavigation(IPortletDataProvider):
@@ -29,8 +33,13 @@ class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/communities.pt')
 
+    @memoize_contextless
     def portal_url(self):
-        return getSite().absolute_url()
+        return self.portal().absolute_url()
+
+    @memoize_contextless
+    def portal(self):
+        return getSite()
 
     def showCreateCommunity(self):
         if IHomePage.providedBy(self.context):
@@ -43,7 +52,7 @@ class Renderer(base.Renderer):
             return True
 
     def getCommunities(self):
-        portal = getSite()
+        portal = self.portal()
         pc = getToolByName(portal, "portal_catalog")
         pm = getToolByName(portal, "portal_membership")
         current_user = pm.getAuthenticatedMember().getUserName()
@@ -61,6 +70,11 @@ class Renderer(base.Renderer):
             return title[:20] + '...'
         else:
             return title
+
+    def get_campus_url(self):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
+        return settings.campus_url
 
 
 class AddForm(base.NullAddForm):

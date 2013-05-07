@@ -68,4 +68,13 @@
         renderer=".comments.Renderer"
         addview=".comments.AddForm"
         />
+
+    <plone:portlet
+        name="ulearn.portlets.stats"
+        interface=".stats.IStatsPortlet"
+        assignment=".stats.Assignment"
+        renderer=".stats.Renderer"
+        addview=".stats.AddForm"
+        />
+
 </configure>

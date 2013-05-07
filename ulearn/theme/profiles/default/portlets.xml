@@ -14,4 +14,6 @@
        description="Most valued portlet"/>
     <portlet title="Ulearn comments" addview="ulearn.portlets.comments"
        description="Comments portlet"/>
+    <portlet title="Ulearn stats" addview="ulearn.portlets.stats"
+       description="Stats portlet"/>
 </portlets>
