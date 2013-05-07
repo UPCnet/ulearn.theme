@@ -51,7 +51,10 @@ class Renderer(base.Renderer):
         return communities
 
     def getCommunityMembers(self, community):
-        return len(community.getObject().subscribed)
+        if community.subscribed_items < 100:
+            return community.subscribed_items
+        else:
+            return '+99'
 
     def get_community_title(self, title):
         if len(title) > 20:
