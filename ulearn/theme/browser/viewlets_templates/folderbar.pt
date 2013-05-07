@@ -1,13 +1,12 @@
-<div class="menuwrapper">
 <div id="menusup"
      tal:define="community viewlet/get_community"
      tal:condition="viewlet/render_viewlet"
      i18n:domain="ulearn">
   <nav>
-    <div class="bubble-container">
+    <div class="row-fluid">
 
-      <div class="active bubble top pull-left"
-           tal:attributes="class python:'active bubble top pull-left' if viewlet.folder_type == 'community' else 'bubble top pull-left'">
+      <div class="active bubble top"
+           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'community' else 'bubble top span3'">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -17,8 +16,8 @@
         </div>
       </div>
 
-      <div class="bubble top pull-left"
-           tal:attributes="class python:'active bubble top pull-left' if viewlet.folder_type == 'documents' else 'bubble top pull-left'">
+      <div class="bubble top"
+           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'documents' else 'bubble top span3'">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -28,8 +27,8 @@
         </div>
       </div>
 
-      <div class="bubble top pull-left"
-           tal:attributes="class python:'active bubble top pull-left' if viewlet.folder_type == 'links' else 'bubble top pull-left'">
+      <div class="bubble top"
+           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'links' else 'bubble top span3'">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -39,8 +38,8 @@
         </div>
       </div>
 
-      <div class="bubble top pull-left"
-           tal:attributes="class python:'active bubble top pull-left' if viewlet.folder_type == 'photos' else 'bubble top pull-left'">
+      <div class="bubble top"
+           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'photos' else 'bubble top span3'">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -52,5 +51,4 @@
 
     </div>
   </nav>
-</div>
 </div>

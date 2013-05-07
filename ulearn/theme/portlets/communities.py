@@ -53,6 +53,12 @@ class Renderer(base.Renderer):
     def getCommunityMembers(self, community):
         return len(community.getObject().subscribed)
 
+    def get_community_title(self, title):
+        if len(title) > 20:
+            return title[:20] + '...'
+        else:
+            return title
+
 
 class AddForm(base.NullAddForm):
 

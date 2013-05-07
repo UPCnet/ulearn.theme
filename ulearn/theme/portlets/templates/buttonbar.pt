@@ -1,9 +1,9 @@
 <div id="menusup"
      i18n:domain="ulearn">
   <nav>
-    <div class="bubble-container">
+    <div class="row-fluid">
 
-      <div class="active bubble top pull-left">
+      <div class="active bubble top span6">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -14,7 +14,7 @@
         </div>
       </div>
 
-      <div class="bubble top pull-left">
+      <div class="bubble top span6">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -28,6 +28,7 @@
     </div>
   </nav>
 </div>
+
 <div class="tab-content">
   <div class="tab-pane active" id="maxui-widget-container"></div>
   <div class="tab-pane" id="communities-view" data-remote="my-communities-ajax">Documents</div>

@@ -76,9 +76,10 @@ a:hover, a:active {
 .dropdown-menu a {
   text-decoration:none;
   }
-.span6 {
-background:white;
-  }
+
+// .span6 {
+// background:white;
+//   }
 
 #peu {
   background: none;
@@ -192,14 +193,11 @@ border-color: #34495E;
 // Menu de communities i subseccions
 .menuwrapper {
   background-color: #eae9e4;
-  height: 45px;
+  height: 47px;
 }
 
 #menusup {
-    background: none repeat scroll 0 0 #DEDED6;
-    padding-bottom: 1px;
-    border-bottom:0;
-    height: 35px;
+    height: 47px;
 
     nav {
         border-bottom:0;
@@ -207,26 +205,25 @@ border-color: #34495E;
 
         .bubble {
             background:#DEDED6;
-            border-right: 4px solid #EEE;
 
             .arrow {
                 border-top-color: #DEDED6;
-                // display: none;
             }
 
             &:hover {
-                background:#EEEEEE;
+                // background:#EEEEEE;
             }
         }
 
-        .bubble-content {padding: 7px 0px;}
+        .bubble-content {padding: 7px 0px 8px 0px;}
 
         a {
+            display: block; //Make a fills all div parent
+            text-align: center;
             background:#DEDED6;
             color:#444;
             border-radius:0;
             border:0;
-            padding: 10px 10px 8px 10px;
             text-shadow:1px 1px 0px white;
             text-decoration:none;
             margin:0;

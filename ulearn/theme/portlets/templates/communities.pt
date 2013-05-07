@@ -1,6 +1,7 @@
-<div id="box_comunitats" class="ulearnbox">
+<div id="box_comunitats" class="ulearnbox"
+      i18n:domain="ulearn">
 
-<h2>Comunidades</h2>
+<h2 i18n:translate="communities">Comunidades</h2>
 
 <nav class="subnavbar">
   <ul class="nav nav-pills nav-stacked" role="menu">
@@ -17,8 +18,10 @@
             </div>
           </div>
           <a href="#"
-             tal:attributes="href community/getURL">
-              <tal:community content="community/Title">
+             rel="tooltip" data-placement="right" title="Community title not trimmed"
+             tal:attributes="href community/getURL;
+                             title community/Title">
+              <tal:community content="python:view.get_community_title(community.Title)">
                 Community
               </tal:community>
           </a>
