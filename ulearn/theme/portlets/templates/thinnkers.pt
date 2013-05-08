@@ -1,10 +1,32 @@
-<div id="box_thinkers"class="ulearnbox">
-    <h2>Thinnkers</h2>
-    <div id="miniatures"> <a href="#"><img src="/++ulearn++static/images/user_victor.png" alt="User"></a>
-         <a href="#"><img src="/++ulearn++static/images/user_ricard.png" alt="User"></a>
-         <a href="#"><img src="/++ulearn++static/images/user_rosa.png" alt="User"></a>
-         <a href="#"><img src="/++ulearn++static/images/user_janet.png" alt="User"></a>
-         <a href="#"><img src="/++ulearn++static/images/user_marc.png" alt="User"></a>
-         <a href="#"><img src="/++ulearn++static/images/user_carlos.png" alt="User"></a>
-     </div>
+<tal:thinnkers tal:define="is_community view/community_mode">
+<div id="box_thinkers" class="ulearnbox"
+     tal:condition="is_community"
+     tal:define="community view/get_community">
+      <h2>Thinnkers</h2>
+      <div id="miniatures">
+        <tal:loop repeat="thinnker python:view.get_thinnkers(community=community)">
+          <a href="#" rel="tooltip" data-placement="bottom"
+             tal:attributes="title thinnker/displayName;
+                             href string:${view/portal_url}/profile/${thinnker/username}">
+            <img alt="User"
+                 tal:attributes="src string:${view/portal_url}/@@avatar/${thinnker/username}">
+          </a>
+        </tal:loop>
+      </div>
 </div>
+
+<div id="box_thinkers" class="ulearnbox"
+     tal:condition="not: is_community">
+      <h2>Thinnkers</h2>
+      <div id="miniatures">
+        <tal:loop repeat="thinnker python:view.get_thinnkers()">
+          <a href="#" rel="tooltip" data-placement="bottom"
+             tal:attributes="title thinnker/displayName;
+                             href string:${view/portal_url}/profile/${thinnker/username}">
+            <img alt="User"
+                 tal:attributes="src string:${view/portal_url}/@@avatar/${thinnker/username}">
+          </a>
+        </tal:loop>
+      </div>
+</div>
+</tal:thinnkers>

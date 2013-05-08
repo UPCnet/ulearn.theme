@@ -17,16 +17,6 @@
                  src="/++ulearn++static/images/avatar_default.png"
                  tal:condition="nocall:not:image"/>
         </div>
-
-<!--         <div class="span3">
-            <div tal:repeat="badge view/get_badges">
-                <div class="box_badges"
-                     tal:attributes="class python:'box_badges' if badge['awarded'] else 'box_badges novetat'">
-                    <i class="fa-icon-trophy"
-                       tal:attributes="class string:fa-icon-${badge/icon}"></i>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>
 

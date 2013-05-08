@@ -1,18 +1,26 @@
+from hashlib import sha1
+
 from zope.interface import implements
+from zope.component.hooks import getSite
 
 from Products.CMFCore.utils import getToolByName
-from Acquisition import aq_inner
-from genweb.core.interfaces import IHomePage
-from genweb.core.utils import pref_lang
-from zope.component import getMultiAdapter
+from Acquisition import aq_inner, aq_chain
 
+from zope.component import getMultiAdapter, queryUtility
 
+from plone.registry.interfaces import IRegistry
+from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from Products.CMFPlone import PloneMessageFactory as _
+
+from ulearn.core.content.community import ICommunity
+
+from maxclient import MaxClient
+from mrs.max.browser.controlpanel import IMAXUISettings
 
 
 class IThinnkersPortlet(IPortletDataProvider):
@@ -30,15 +38,49 @@ class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/thinnkers.pt')
 
-    def getHomepage(self):
-        page = {}
-        context = aq_inner(self.context)
-        pc = getToolByName(context, 'portal_catalog')
-        result = pc.searchResults(object_provides=IHomePage.__identifier__,
-                                  Language=pref_lang())
-        page['body'] = result[0].CookedBody()
+    @memoize_contextless
+    def portal_url(self):
+        return self.portal().absolute_url()
 
-        return page
+    @memoize_contextless
+    def portal(self):
+        return getSite()
+
+    def get_community(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return obj
+
+    def community_mode(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
+
+    def get_thinnkers(self, community=False):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IMAXUISettings, check=False)
+        # Pick grant type from settings unless passed as optional argument
+        effective_grant_type = settings.oauth_grant_type
+
+        pm = getToolByName(self.context, "portal_membership")
+        member = pm.getAuthenticatedMember()
+        username = member.getUserName()
+        member = pm.getMemberById(username)
+        oauth_token = member.getProperty('oauth_token', None)
+
+        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
+        maxclient.setActor(username)
+        maxclient.setToken(oauth_token)
+
+        if community:
+            context_hash = sha1(community.absolute_url()).hexdigest()
+            return maxclient.getContextLastAuthors(context=context_hash).get('items', [])
+        else:
+            return maxclient.getTimelineLastAuthors().get('items', [])
 
 
 class AddForm(base.NullAddForm):
