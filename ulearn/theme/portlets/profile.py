@@ -135,7 +135,7 @@ class Renderer(base.Renderer):
 
         if community:
             context_hash = sha1(community.absolute_url()).hexdigest()
-            return maxclient.getUserActivities(context=context_hash, count=True)
+            return maxclient.getContextActivities(context=context_hash, count=True)
         else:
             return maxclient.getUserActivities(count=True)
 
