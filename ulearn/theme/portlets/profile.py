@@ -71,6 +71,7 @@ class Renderer(base.Renderer):
         pm = getToolByName(self.portal(), 'portal_membership')
         user = pm.getAuthenticatedMember()
         if user.getProperty('fullname') \
+           and user.getProperty('fullname') != user.getProperty('username') \
            and user.getProperty('email') \
            and user.getProperty('portrait'):
             return True
