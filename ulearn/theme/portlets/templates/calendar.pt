@@ -1,105 +1,71 @@
 <div id="box_agenda" class="ulearnbox">
-    <h2>Agenda</h2>
-    <div id="agenda" class="row-fluid">
-        <div id="day" class="span5"><p>14</p><p class="data">Jueves</p></div>
-        <div id="esdev" class="span7">
-           <a href="#">Desayuno de trabajo: aportando valores a la formación...</a>
-        </div>
+  <h2>Agenda</h2>
+  <div id="agenda" class="row-fluid"
+       tal:define="today view/today">
+    <div id="day" class="bubble left span5">
+      <div class="arrow"></div>
+      <div class="bubble-content">
+        <p tal:content="today/number">14</p>
+        <p class="data"
+           tal:content="today/weekday">Jueves</p>
+      </div>
     </div>
 
-    <div id="calendari">
-        <table summary="Calendari" class="ploneCalendar">
-            <caption class="hiddenStructure">Abril 2013</caption>
-            <thead>
-                <tr class="weekdays"><th scope="col">Dl</th><th scope="col">Dt</th><th scope="col">Dc</th><th scope="col">Dj</th><th scope="col">Dv</th><th scope="col">Ds</th><th scope="col">Dg</th>
-                </tr>
-            </thead>
-<tbody>
-<tr><td></td><td></td><td></td><td></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="01/03/2013
-12:20 - Esdeveniment 1
-12:20 - Esdeveniment 1
-12:20 - Esdeveniment 1">1</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="02/03/2013
-Esdeveniment 1
-Esdeveniment 1
-Esdeveniment 1">2</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="03/03/2013
-Esdeveniment 1
-Esdeveniment 1
-Esdeveniment 1">3</a></strong></td>
-</tr>
-<tr><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="04/03/2013
-Esdeveniment 1
-Esdeveniment 1
-Esdeveniment 1">4</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="05/03/2013
-Esdeveniment 1
-Esdeveniment 1
-Esdeveniment 1">5</a></strong></td><td class="todayevent"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="06/03/2013
-Esdeveniment 1
-Esdeveniment 1
-Esdeveniment 1
-12:20-12:20 Esdeveniment 1
-12:20-12:20 Esdeveniment 1">6</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="07/03/2013
-Esdeveniment 1
-Esdeveniment 1
-Esdeveniment 1">7</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#t" data-original-title="08/03/2013
-Esdeveniment 1
-Esdeveniment 1
-Esdeveniment 1">8</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="09/03/2013
-Esdeveniment 1 - 12:20
-Esdeveniment 1
-Esdeveniment 1">9</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="10/03/2013
-Esdeveniment 1
-Esdeveniment 1">10</a></strong></td>
-</tr>
-<tr><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="11/03/2013
-Esdeveniment 1
-Esdeveniment 1">11</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="12/03/2013
-Esdeveniment 1
-Esdeveniment 1">12</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="13/03/2013
-Esdeveniment 1
-Esdeveniment 1">13</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="14/03/2013
-Esdeveniment 1
-Esdeveniment 1">14</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="15/03/2013
-Esdeveniment 1
-Esdeveniment 1">15</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="16/03/2013
-Esdeveniment 1
-Esdeveniment 1">16</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="17/03/2013
-Esdeveniment 1
-Esdeveniment 1">17</a></strong></td>
-</tr>
-<tr><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="18/03/2013
-Esdeveniment 1
-Esdeveniment 1">18</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="19/03/2013
-Esdeveniment 1
-Esdeveniment 1">19</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="20/03/2013
-Esdeveniment 1
-Esdeveniment 1">20</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="21/03/2013
-Esdeveniment 1
-Esdeveniment 1">21</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="22/03/2013
-Esdeveniment 1
-Esdeveniment 1">22</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="23/03/2013
-Esdeveniment 1
-Esdeveniment 1">23</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="https://gw42.beta.upcnet.es/gw4e/@@search?advanced_search=True&amp;review_state=published&amp;amp;review_state=intranet&amp;amp;start.query:record:list:date=2013-3-24+23%3A59%3A59&amp;start.range:record=max&amp;end.query:record:list:date=2013-3-24+00%3A00%3A00&amp;end.range:record=min&amp;Type=Event" data-original-title="24/03/2013
-Esdeveniment 1
-Esdeveniment 1">24</a></strong></td>
-</tr>
-<tr><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="25/03/2013
-Esdeveniment 1
-Esdeveniment 1">25</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="26/03/2013
-Esdeveniment 1
-Esdeveniment 1">26</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="27/03/2013
-Esdeveniment 1
-Esdeveniment 1">27</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="28/03/2013
-Esdeveniment 1
-Esdeveniment 1">28</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="29/03/2013
-Esdeveniment 1
-Esdeveniment 1">29</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="30/03/2013
-Esdeveniment 1
-Esdeveniment 1">30</a></strong></td><td class="event"><strong><a data-placement="top" rel="tooltip" href="#" data-original-title="31/03/2013
-Esdeveniment 1 - 12:20
-Esdeveniment 1 - 12:20">31</a></strong></td>
-</tr>
-</tbody>
+    <div id="esdev" class="span6">
+       <a href="#">Desayuno de trabajo: aportando valores a la formación...</a>
+    </div>
+  </div>
 
-</table>
+  <div id="calendari">
+    <table class="ploneCalendar"
+           summary="Calendar"
+           i18n:domain="plone"
+           i18n:attributes="summary summary_calendar;">
+        <caption class="hiddenStructure"
+                 tal:content="view/monthName">Month name</caption>
+        <thead>
+            <tr class="weekdays"
+                ><tal:data tal:repeat="weekday view/getWeekdays"
+                    ><th scope="col"
+                         i18n:translate=""
+                         tal:content="weekday">Su</th
+                ></tal:data>
+            </tr>
+        </thead>
+        <tbody>
+            <tr tal:repeat="week view/getEventsForCalendar"
+                ><tal:block repeat="day week"
+                    ><tal:day define="daynumber day/day;"
+                        ><tal:isday condition="daynumber"
+                            ><tal:block define="day_event day/event;
+                                                is_today day/is_today"
+                                ><td class="event"
+                                    tal:condition="day_event"
+                                    tal:attributes="class python:is_today and 'todayevent' or 'event'"
+                                   ><strong><a href="" rel="tooltip" data-placement="top"
+                                       tal:attributes="href string:${navigation_root_url}/@@search?advanced_search=True&amp;${view/getReviewStateString}start.query:record:list:date=${day/date_string}+23%3A59%3A59&amp;start.range:record=max&amp;end.query:record:list:date=${day/date_string}+00%3A00%3A00&amp;end.range:record=min&amp;Type=Event;
+                                                       title day/eventstring;"
+                                       tal:content="daynumber">
+                                       31
+                                   </a
+                                ></strong></td
+                                ><tal:notdayevent tal:condition="not: day_event"
+                                    ><td tal:condition="python:is_today"
+                                         class="todaynoevent"><strong
+                                         tal:content="daynumber">31</strong></td
+                                    ><td tal:condition="python:not is_today"
+                                         tal:content="daynumber">31</td
+                                ></tal:notdayevent
+                            ></tal:block
+                        ></tal:isday
+                        ><tal:notisday condition="not: daynumber"
+                            ><td></td
+                        ></tal:notisday
+                    ></tal:day
+                ></tal:block>
+            </tr>
+        </tbody>
+
+    </table>
 
 </div>

@@ -11,11 +11,15 @@ from ulearn.core.content.community import ICommunity
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
+from plone.app.portlets.portlets.calendar import Renderer as calendarRenderer
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.content.community import ICommunity
+
+from zope.i18nmessageid import MessageFactory
+PLMF = MessageFactory('plonelocales')
 
 
 class ICalendarPortlet(IPortletDataProvider):
@@ -29,9 +33,15 @@ class Assignment(base.Assignment):
     title = _(u'ulearncalendar', default=u'Calendar portlet')
 
 
-class Renderer(base.Renderer):
+class Renderer(calendarRenderer):
 
     render = ViewPageTemplateFile('templates/calendar.pt')
+
+    def today(self):
+        today = {}
+        today['weekday'] = PLMF(self._ts.day_msgid(self.now.tm_wday+1, format='l'))
+        today['number'] = self.now.tm_mday
+        return today
 
     def showCreateCommunity(self):
         if IHomePage.providedBy(self.context):
