@@ -1,12 +1,9 @@
 from zope.interface import implements
-from zope.security import checkPermission
-from zope.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
-from Acquisition import aq_inner
+from Acquisition import aq_inner, aq_chain
 from genweb.core.interfaces import IHomePage
-from genweb.core.utils import pref_lang
+
 from zope.component import getMultiAdapter
-from ulearn.core.content.community import ICommunity
 
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from plone.portlets.interfaces import IPortletDataProvider
@@ -17,7 +14,9 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.content.community import ICommunity
+from ulearn.core.interfaces import IEventsFolder
 
+from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory
 PLMF = MessageFactory('plonelocales')
 
@@ -43,21 +42,86 @@ class Renderer(calendarRenderer):
         today['number'] = self.now.tm_mday
         return today
 
-    def showCreateCommunity(self):
+    def get_nearest_today_event(self):
+        context = aq_inner(self.context)
+        pc = getToolByName(context, 'portal_catalog')
+        now = DateTime()
+        tomorrow = DateTime.Date(now + 1)
+        yesterday = DateTime.Date(now - 1)
+
+        portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
+        navigation_root_path = portal_state.navigation_root_path()
+
         if IHomePage.providedBy(self.context):
+            path = navigation_root_path
+        else:
+            path = '/'.join(self.get_community().getPhysicalPath())
+
+        query = {
+            'portal_type': self.calendar.getCalendarTypes(),
+            'review_state': self.calendar.getCalendarStates(),
+            'start': {'query': [yesterday, tomorrow], 'range': 'min:max'},
+            'end': {'query': now, 'range': 'min'},
+            'sort_on': 'start',
+            'path': path,
+            'sort_limit': 1
+        }
+
+        result = pc(**query)
+        if result:
+            return result[0]
+        else:
+            return
+
+    def getEventsForCalendar(self):
+        context = aq_inner(self.context)
+        year = self.year
+        month = self.month
+        portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
+        navigation_root_path = portal_state.navigation_root_path()
+
+        if IHomePage.providedBy(self.context):
+            path = navigation_root_path
+        else:
+            path = '/'.join(self.get_community().getPhysicalPath())
+
+        weeks = self.calendar.getEventsForCalendar(month, year, path=path)
+        for week in weeks:
+            for day in week:
+                daynumber = day['day']
+                if daynumber == 0:
+                    continue
+                day['is_today'] = self.isToday(daynumber)
+                if day['event']:
+                    cur_date = DateTime(year, month, daynumber)
+                    localized_date = [self._ts.ulocalized_time(cur_date, context=context, request=self.request)]
+                    day['eventstring'] = '\n'.join(localized_date+[' %s' %
+                        self.getEventString(e) for e in day['eventslist']])
+                    day['date_string'] = '%s-%s-%s' % (year, month, daynumber)
+
+        return weeks
+
+    def get_community(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return obj
+
+    def show_newevent_url(self):
+        context = aq_inner(self.context)
+        if IHomePage.providedBy(context):
+            return False
+        else:
             return True
 
-    def showEditCommunity(self):
-        if not IPloneSiteRoot.providedBy(self.context) and \
-           ICommunity.providedBy(self.context) and \
-           checkPermission('cmf.RequestReview', self.context):
-            return True
+    def newevent_url(self):
+        community = self.get_community()
+        event_folder_id = ''
+        for obj in community.objectIds():
+            if IEventsFolder.providedBy(obj):
+                event_folder_id = obj.id
 
-    def getCommunities(self):
-        portal = getSite()
-        pc = getToolByName(portal, "portal_catalog")
-        communities = pc.searchResults(object_provides=ICommunity.__identifier__)
-        return communities
+        return '{}/{}/++add++Event'.format(self.get_community().absolute_url(), event_folder_id)
 
 
 class AddForm(base.NullAddForm):

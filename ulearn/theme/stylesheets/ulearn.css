@@ -144,7 +144,7 @@ li [class*=" fa-icon-"].fa-icon-large, .nav li [class^="fa-icon-"].fa-icon-large
 /* line 131, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 ul.icons {
   list-style-type: none;
-  text-indent: -0.75em;
+  text-indent: -.75em;
 }
 /* line 137, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 ul.icons li [class^="fa-icon-"],
@@ -1744,7 +1744,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 /* line 5, ../scss/_maxui.scss */
 #maxui-container {
   color: #444444;
-  font: 13px/18px "Open Sans", serif;
+  font: 13px/18px 'Open Sans', serif;
   text-shadow: 0 1px #FFFFFF;
   border: 0 none;
 }
@@ -2272,7 +2272,7 @@ input[type="text"]:focus {
   padding: 5px 10px 10px;
   clear: both;
   margin-bottom: 20px;
-  box-shadow: -1px 1px 2px #dddddd;
+  box-shadow: -1px 1px 2px #ddd;
 }
 
 /* line 121, ../scss/ulearn.scss */
@@ -2498,12 +2498,12 @@ input[type="text"]:focus {
   border-left-color: #f58d3d;
 }
 
-/* line 293, ../scss/ulearn.scss */
+/* line 294, ../scss/ulearn.scss */
 #day p {
   margin: 0;
 }
 
-/* line 294, ../scss/ulearn.scss */
+/* line 295, ../scss/ulearn.scss */
 .data {
   font-size: 13px;
   padding-top: 6px;
@@ -2516,22 +2516,36 @@ input[type="text"]:focus {
   margin-top: 10px;
 }
 
-/* line 302, ../scss/ulearn.scss */
+/* line 303, ../scss/ulearn.scss */
 #esdev {
-  line-height: 15px;
+  line-height: 13px;
   padding: 8px 4px 0 2px;
   margin-bottom: 0;
 }
+/* line 308, ../scss/ulearn.scss */
+#esdev .vertical_aligned {
+  display: table;
+  height: 62px;
+}
+/* line 309, ../scss/ulearn.scss */
+#esdev a {
+  display: table-cell;
+  vertical-align: middle;
+}
 
-/* line 307, ../scss/ulearn.scss */
+/* line 312, ../scss/ulearn.scss */
 #calendari {
   background: none repeat scroll 0 0 #F5F5F5;
   margin-top: 10px;
   padding: 5px 5px 10px;
   text-shadow: 1px 1px 0 white;
 }
+/* line 318, ../scss/ulearn.scss */
+#calendari td {
+  text-align: center;
+}
 
-/* line 313, ../scss/ulearn.scss */
+/* line 323, ../scss/ulearn.scss */
 #box_agenda .hiddenStructure {
   background: none repeat scroll 0 0 #EAE9E4;
   color: black;
@@ -2539,29 +2553,33 @@ input[type="text"]:focus {
   padding: 1px;
 }
 
-/* line 319, ../scss/ulearn.scss */
+/* line 331, ../scss/ulearn.scss */
+#box_agenda .newevent {
+  margin-top: 15px;
+}
+
+/* line 334, ../scss/ulearn.scss */
 .weekdays {
   font-size: 11px;
 }
 
-/* line 320, ../scss/ulearn.scss */
+/* line 335, ../scss/ulearn.scss */
 .ploneCalendar {
   width: 100%;
   font-size: 13px;
 }
 
-/* line 321, ../scss/ulearn.scss */
+/* line 336, ../scss/ulearn.scss */
 .event {
   text-shadow: none;
-  text-align: center;
 }
 
-/* line 322, ../scss/ulearn.scss */
+/* line 337, ../scss/ulearn.scss */
 .event:hover {
   background: #fff;
 }
 
-/* line 323, ../scss/ulearn.scss */
+/* line 338, ../scss/ulearn.scss */
 .todayevent {
   background: #007BC0;
   text-shadow: none;
@@ -2569,29 +2587,29 @@ input[type="text"]:focus {
   border-radius: 2px;
 }
 
-/* line 324, ../scss/ulearn.scss */
+/* line 339, ../scss/ulearn.scss */
 .event a {
   color: #555;
   font-weight: normal;
 }
 
-/* line 325, ../scss/ulearn.scss */
+/* line 340, ../scss/ulearn.scss */
 .todayevent a {
   color: #fff;
 }
 
-/* line 327, ../scss/ulearn.scss */
+/* line 342, ../scss/ulearn.scss */
 #box_valorats ul, #box_comentaris ul {
   margin-top: 10px;
   margin-left: 25px;
 }
 
-/* line 329, ../scss/ulearn.scss */
+/* line 344, ../scss/ulearn.scss */
 #box_valorats li a:hover, #box_comentaris li a:hover {
   text-decoration: underline;
 }
 
-/* line 331, ../scss/ulearn.scss */
+/* line 346, ../scss/ulearn.scss */
 #box_valorats li, #box_comentaris li {
   border-bottom: 1px solid #EEEEEE;
   font-size: 13px;
@@ -2600,14 +2618,14 @@ input[type="text"]:focus {
   padding-bottom: 8px;
 }
 
-/* line 338, ../scss/ulearn.scss */
+/* line 353, ../scss/ulearn.scss */
 #box_valorats i, #box_comentaris i {
   color: #34495E;
   font-size: 15px;
   vertical-align: middle;
 }
 
-/* line 344, ../scss/ulearn.scss */
+/* line 359, ../scss/ulearn.scss */
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -2630,7 +2648,7 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-/* line 369, ../scss/ulearn.scss */
+/* line 384, ../scss/ulearn.scss */
 .btn-comunitat:hover,
 .btn-comunitat:active,
 .btn-comunitat.active,
@@ -2641,7 +2659,7 @@ input[type="text"]:focus {
   *background-color: #003bb3;
 }
 
-/* line 374, ../scss/ulearn.scss */
+/* line 389, ../scss/ulearn.scss */
 #menusup .nav-tabs > .btn-plus > a {
   background: none repeat scroll 0 0 #34495E;
   color: white;
@@ -2650,13 +2668,13 @@ input[type="text"]:focus {
   text-shadow: none;
 }
 
-/* line 381, ../scss/ulearn.scss */
+/* line 396, ../scss/ulearn.scss */
 #menusup .nav-tabs > .btn-plus > a:hover {
   background: none repeat scroll 0 0 #34495E;
   opacity: 0.8;
 }
 
-/* line 386, ../scss/ulearn.scss */
+/* line 401, ../scss/ulearn.scss */
 #communitylist {
   padding: 10px;
   font-size: 13px;
@@ -2664,7 +2682,7 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0px white;
   background: #f9f9f9;
 }
-/* line 393, ../scss/ulearn.scss */
+/* line 408, ../scss/ulearn.scss */
 #communitylist .eines {
   color: #34495E;
   float: right;
@@ -2672,12 +2690,12 @@ input[type="text"]:focus {
   margin: 0 10px 50px;
   text-decoration: none;
 }
-/* line 401, ../scss/ulearn.scss */
+/* line 416, ../scss/ulearn.scss */
 #communitylist ul {
   margin-left: 0;
   list-style: none;
 }
-/* line 406, ../scss/ulearn.scss */
+/* line 421, ../scss/ulearn.scss */
 #communitylist li {
   min-height: 55px;
   line-height: 20px;
@@ -2689,121 +2707,144 @@ input[type="text"]:focus {
   background: #f9f9f9;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #dddddd;
 }
-/* line 418, ../scss/ulearn.scss */
+/* line 433, ../scss/ulearn.scss */
 #communitylist a {
   color: #555;
   text-decoration: none;
 }
-/* line 422, ../scss/ulearn.scss */
+/* line 437, ../scss/ulearn.scss */
 #communitylist a h4 {
   color: #F58D3D;
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 0;
 }
-/* line 428, ../scss/ulearn.scss */
+/* line 443, ../scss/ulearn.scss */
 #communitylist a h4:hover {
   opacity: 0.8;
 }
-/* line 432, ../scss/ulearn.scss */
+/* line 447, ../scss/ulearn.scss */
 #communitylist img {
   margin-right: 15px;
   margin-top: 3px;
   border: 2px solid white;
   max-width: 54px;
 }
-/* line 438, ../scss/ulearn.scss */
+/* line 453, ../scss/ulearn.scss */
 #communitylist img:hover {
   transition: all 0.25s ease 0s;
   border: 2px solid #F58D3D;
 }
-/* line 441, ../scss/ulearn.scss */
+/* line 456, ../scss/ulearn.scss */
 #communitylist .item {
   margin-right: 50px;
 }
 
-/* line 446, ../scss/ulearn.scss */
+/* line 461, ../scss/ulearn.scss */
 .icon-ulearn-community, .icon-ulearn.community {
   background-position: -312px -192px;
 }
 
-/* line 448, ../scss/ulearn.scss */
+/* line 463, ../scss/ulearn.scss */
 #listing-table a.contenttype-ulearn-community:before,
 .template-folder_tabular_view .listing a.contenttype-ulearn-community:before {
   background-position: -312px -192px;
 }
 
-/* line 452, ../scss/ulearn.scss */
+/* line 467, ../scss/ulearn.scss */
 #box_perfil .span9 {
   overflow-y: hidden;
   height: 150px;
 }
 
-/* line 453, ../scss/ulearn.scss */
+/* line 468, ../scss/ulearn.scss */
 #box_community img {
   width: 200px;
 }
 
-/* line 455, ../scss/ulearn.scss */
+/* line 470, ../scss/ulearn.scss */
 #searchcommunities {
   margin-right: auto;
   margin-left: auto;
   width: 300px;
 }
 
-/* line 458, ../scss/ulearn.scss */
+/* line 473, ../scss/ulearn.scss */
 #box_comunitats .bubble-content {
   padding: 6px 0px;
 }
-/* line 460, ../scss/ulearn.scss */
+/* line 475, ../scss/ulearn.scss */
 #box_comunitats .bubble a {
   background: none repeat scroll 0 0 #f58d3d;
   padding: 6px 14px;
   color: white;
-  font-weight: bold;
+  font-weight: 600;
   height: 18px;
   text-align: center;
-  text-shadow: 1px 1px 0 #92480F;
   width: 33px;
 }
-/* line 470, ../scss/ulearn.scss */
+/* line 485, ../scss/ulearn.scss */
 #box_comunitats .bubble .arrow {
   border-right-color: #f58d3d;
 }
-/* line 473, ../scss/ulearn.scss */
+/* line 488, ../scss/ulearn.scss */
 #box_comunitats li a {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 477, ../scss/ulearn.scss */
+/* line 491, ../scss/ulearn.scss */
+.bubble.top .arrow:after {
+  border-top-color: transparent;
+}
+
+/* line 492, ../scss/ulearn.scss */
+.bubble.right .arrow:after {
+  border-right-color: transparent;
+}
+
+/* line 493, ../scss/ulearn.scss */
+.bubble.left .arrow:after {
+  border-left-color: transparent;
+}
+
+/* line 496, ../scss/ulearn.scss */
 #box_stats .bubble-content {
   padding: 5px 12px;
   text-align: center;
 }
-/* line 478, ../scss/ulearn.scss */
+/* line 497, ../scss/ulearn.scss */
 #box_stats .bubble {
   background-color: #344961;
   color: white;
   width: 60px;
 }
-/* line 482, ../scss/ulearn.scss */
+/* line 501, ../scss/ulearn.scss */
 #box_stats .bubble .arrow {
   border-left-color: #344961;
 }
-/* line 484, ../scss/ulearn.scss */
+/* line 503, ../scss/ulearn.scss */
 #box_stats p {
   margin: 0;
   padding: 5px 0 5px 78px;
   background-color: #bbb;
   font-weight: bold;
 }
-/* line 490, ../scss/ulearn.scss */
+/* line 509, ../scss/ulearn.scss */
 #box_stats ul {
   margin-top: 5px;
 }
-/* line 491, ../scss/ulearn.scss */
+/* line 510, ../scss/ulearn.scss */
 #box_stats li {
   margin-bottom: 5px;
+}
+
+/* line 516, ../scss/ulearn.scss */
+#addModal .modal-body {
+  max-height: 426px;
+}
+/* line 517, ../scss/ulearn.scss */
+#addModal #content-core {
+  height: 426px;
 }

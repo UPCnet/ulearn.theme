@@ -11,12 +11,22 @@
       </div>
     </div>
 
-    <div id="esdev" class="span6">
-       <a href="#">Desayuno de trabajo: aportando valores a la formación...</a>
+    <div id="esdev" class="span6"
+         tal:define="today_event view/get_nearest_today_event">
+          <div class="vertical_aligned">
+            <a href="#"
+              tal:condition="today_event"
+              tal:content="today_event/Title"
+              tal:attributes="href today_event/getURL">Desayuno de trabajo: aportando valores a la formación...</a>
+            <a href="#"
+              tal:condition="not: today_event"
+              i18n:translate="not_events_for_today">There are not events today</a>
+          </div>
     </div>
   </div>
 
-  <div id="calendari">
+  <div id="calendari"
+       tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;">
     <table class="ploneCalendar"
            summary="Calendar"
            i18n:domain="plone"
@@ -67,5 +77,14 @@
         </tbody>
 
     </table>
+  </div>
+
+  <p class="newevent"
+     tal:condition="view/show_newevent_url">
+    <a tal:attributes="href view/newevent_url">
+      <i class="icon-plus-sign icons"> </i>
+      <tal:newevent i18n:translate="newevent">Create a new event</tal:newevent>
+    </a>
+  </p>
 
 </div>

@@ -290,41 +290,56 @@ text-shadow:none;
 
   .arrow { border-left-color: #f58d3d; }
 }
-#day p {margin:0;}
-.data {font-size:13px;padding-top:6px;}
 
+#day p { margin:0; }
+.data { font-size:13px;padding-top:6px; }
 
 #agenda {
   background:#f5f5f5;
   font-size:12px;
   margin-top:10px;
-  }
-#esdev {
-    line-height: 15px;
-    padding: 8px 4px 0 2px;
-	margin-bottom:0;
 }
+
+#esdev {
+  line-height: 13px;
+  padding: 8px 4px 0 2px;
+	margin-bottom:0;
+
+  .vertical_aligned { display: table; height: 62px; }
+  a { display: table-cell; vertical-align: middle; }
+}
+
 #calendari {
     background: none repeat scroll 0 0 #F5F5F5;
     margin-top: 10px;
     padding: 5px 5px 10px;
     text-shadow: 1px 1px 0 white;
+
+    td {
+      text-align: center;
+    }
 }
+
 #box_agenda .hiddenStructure {
     background: none repeat scroll 0 0 #EAE9E4;
     color: black;
     margin-bottom: 5px;
     padding: 1px;
 }
+
+#box_agenda {
+  .newevent { margin-top: 15px; }
+}
+
 .weekdays {font-size:11px;}
 .ploneCalendar {width:100%;font-size:13px;}
-.event { text-shadow:none;text-align:center;}
-.event:hover {background:#fff;}
-.todayevent{ background:#007BC0;text-shadow:none;text-align:center;border-radius:2px;}
-.event a {color:#555;font-weight:normal;}
-.todayevent a {color:#fff;}
+.event { text-shadow:none; }
+.event:hover { background:#fff; }
+.todayevent{ background:#007BC0;text-shadow:none;text-align:center;border-radius:2px; }
+.event a { color:#555;font-weight:normal; }
+.todayevent a { color:#fff; }
 
-#box_valorats ul, #box_comentaris ul {margin-top:10px;margin-left:25px;}
+#box_valorats ul, #box_comentaris ul { margin-top:10px;margin-left:25px; }
 
 #box_valorats li a:hover, #box_comentaris li a:hover {text-decoration:underline;}
 
@@ -461,10 +476,10 @@ text-shadow:none;
       background: none repeat scroll 0 0 #f58d3d;
       padding: 6px 14px ;
       color: white;
-      font-weight: bold;
+      font-weight: 600; // Semi-bold
       height: 18px;
       text-align: center;
-      text-shadow: 1px 1px 0 #92480F;
+      // text-shadow: 1px 1px 0 #92480F;
       width: 33px;
     }
     .arrow { border-right-color: #f58d3d; }
@@ -472,6 +487,10 @@ text-shadow:none;
 
   li a { @include border-radius(0px); }
 }
+
+.bubble.top .arrow:after { border-top-color: transparent; }
+.bubble.right .arrow:after { border-right-color: transparent; }
+.bubble.left .arrow:after { border-left-color: transparent; }
 
 #box_stats {
   .bubble-content { padding: 5px 12px; text-align: center; }
@@ -491,4 +510,9 @@ text-shadow:none;
   li {
     margin-bottom: 5px;
   }
+}
+
+#addModal {
+  .modal-body { max-height: 426px; }
+  #content-core { height: 426px; }
 }
