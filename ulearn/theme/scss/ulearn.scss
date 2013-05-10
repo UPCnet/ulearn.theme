@@ -210,10 +210,11 @@ border-color: #34495E;
             }
         }
 
-        .bubble-content {padding: 7px 0px 8px 0px;}
+        .bubble-content { padding: 0; } //Delegate all body to anchor (as display: block)
 
         a {
             display: block; //Make a fills all div parent
+            padding: 8px 0;
             text-align: center;
             background:#DEDED6;
             color:#444;
