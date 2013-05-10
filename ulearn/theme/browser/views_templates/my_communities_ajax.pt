@@ -10,36 +10,55 @@ $('.favorite').on('click', function(event) {
     $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
   }
 });
+
+// Mixitup initialize
+$('.sortablelist').mixitup({layoutMode: 'list'});
 </script>
+
+<div class="clearfix">
+  <div class="btn-group pull-right">
+    <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-arrow-up"></i></button>
+    <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-arrow-down"></i></button>
+  </div>
+</div>
 
 <section id="communitylist"
          tal:define="communities view/get_my_communities">
-  <ul>
-    <li tal:repeat="community communities">
-      <div class="eines pull-right">
-        <a class=""
-           tal:condition="python:view.is_community_manager(community)"
-           tal:attributes="href string:${community/getURL}/edit">
-          <i class="fa-icon-pencil"></i>
-        </a>
-        <a class="favorite" href="#"
-           tal:attributes="data-community string:${community/getURL}">
-          <i tal:attributes="class python:view.get_star_class(community)"></i>
-        </a>
-      </div>
-      <div class="item">
-        <a tal:attributes="href community/getURL">
-          <img class="pull-left"
-               tal:condition="community/image_filename"
-               tal:attributes="src string:${community/getURL}/@@images/image/tile"/>
-          <img class="pull-left"
-               src="/++ulearn++static/images/avatar_default.png"
-               tal:condition="not: community/image_filename"/>
-          <h4 tal:content="community/Title">Community</h4>
-          <p tal:content="community/Description">Description</p>
-        </a>
-      </div>
-    </li>
+  <ul class="sortablelist">
+    <tal:community repeat="community communities">
+      <li class="mix"
+          tal:attributes="data-name community/Title">
+        <div class="eines pull-right">
+          <a class=""
+             tal:condition="python:view.is_community_manager(community)"
+             tal:attributes="href string:${community/getURL}/edit">
+            <i class="fa-icon-pencil"></i>
+          </a>
+          <a class="favorite" href="#"
+             tal:attributes="data-community string:${community/getURL}">
+            <i tal:attributes="class python:view.get_star_class(community)"></i>
+          </a>
+        </div>
+        <div class="item">
+          <a tal:attributes="href community/getURL">
+            <img class="pull-left"
+                 tal:condition="community/image_filename"
+                 tal:attributes="src string:${community/getURL}/@@images/image/tile"/>
+            <img class="pull-left"
+                 src="/++ulearn++static/images/avatar_default.png"
+                 tal:condition="not: community/image_filename"/>
+            <h4 tal:content="community/Title">Community</h4>
+            <p tal:content="community/Description">Description</p>
+          </a>
+        </div>
+      </li>
+    </tal:community>
   </ul>
-
 </section>
+
+<div class="clearfix">
+  <div class="btn-group pull-right">
+    <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-arrow-up"></i></button>
+    <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-arrow-down"></i></button>
+  </div>
+</div>

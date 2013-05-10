@@ -2394,6 +2394,7 @@ input[type="text"]:focus {
 /* line 194, ../scss/ulearn.scss */
 #menusup {
   height: 49px;
+  max-width: 474px;
 }
 /* line 197, ../scss/ulearn.scss */
 #menusup nav {

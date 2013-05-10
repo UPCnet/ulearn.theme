@@ -30,9 +30,9 @@ class baseCommunities(grok.View):
         pm = getToolByName(self.context, "portal_membership")
         pc = getToolByName(self.context, "portal_catalog")
         current_user = pm.getAuthenticatedMember().getUserName()
-        ascreator = pc.searchResults(portal_type="ulearn.community", Creator=current_user)
-        asmember = pc.searchResults(portal_type="ulearn.community", subscribed_users=current_user)
-        return ascreator + asmember
+        return pc.searchResults(portal_type="ulearn.community",
+                                subscribed_users=current_user,
+                                sort_on="sortable_title",)
 
     def get_batched_communities(self, query=None, batch=True, b_size=10, b_start=0):
         pc = getToolByName(self.context, "portal_catalog")
