@@ -290,6 +290,7 @@ text-shadow:none;
   margin-bottom:0;
 
   .arrow { border-left-color: #f58d3d; }
+  .bubble-content { padding: 9px; }
 }
 
 #day p { margin:0; }
@@ -471,7 +472,7 @@ text-shadow:none;
 #searchcommunities {margin-right: auto; margin-left: auto; width: 300px;}
 
 #box_comunitats {
-  .bubble-content { padding: 6px 0px }
+  .bubble-content { padding: 6px 0px; width: 49px; }
   .bubble {
     a {
       background: none repeat scroll 0 0 #f58d3d;
