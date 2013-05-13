@@ -472,15 +472,18 @@ text-shadow:none;
 #searchcommunities {margin-right: auto; margin-left: auto; width: 300px;}
 
 #box_comunitats {
-  .bubble-content { padding: 6px 0px; width: 49px; }
+  .bubble-content {
+    padding: 6px 0px;
+    width: 40px;
+    text-align: center;
+    background: none repeat scroll 0 0 #f58d3d; }
+
   .bubble {
     a {
-      background: none repeat scroll 0 0 #f58d3d;
-      padding: 6px 14px ;
+      // padding: 6px 14px ;
       color: white;
       font-weight: 600; // Semi-bold
       height: 18px;
-      text-align: center;
       // text-shadow: 1px 1px 0 #92480F;
       width: 33px;
     }
