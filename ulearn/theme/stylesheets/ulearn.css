@@ -1747,33 +1747,34 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   font: 13px/18px "Open Sans", serif;
   text-shadow: 0 1px white;
   border: 0 none;
+  box-shadow: -1px 1px 2px #dddddd;
 }
 
-/* line 11, ../scss/_maxui.scss */
+/* line 12, ../scss/_maxui.scss */
 #maxui-container a {
   color: #007BC0;
   font-family: "Open Sans", serif;
 }
 
-/* line 15, ../scss/_maxui.scss */
+/* line 16, ../scss/_maxui.scss */
 #maxui-container a:hover {
   border-bottom: 0;
 }
 
-/* line 16, ../scss/_maxui.scss */
+/* line 17, ../scss/_maxui.scss */
 .maxui-displayname {
   color: #F58D3D;
   font-size: 14px;
   font-weight: bold;
 }
 
-/* line 21, ../scss/_maxui.scss */
+/* line 22, ../scss/_maxui.scss */
 #maxui-container a:hover {
   color: #34495E;
   text-decoration: none;
 }
 
-/* line 25, ../scss/_maxui.scss */
+/* line 26, ../scss/_maxui.scss */
 #maxui-timeline {
   background: none repeat scroll 0 0 white;
   clear: both;
@@ -1782,14 +1783,14 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   padding: 10px;
 }
 
-/* line 32, ../scss/_maxui.scss */
+/* line 33, ../scss/_maxui.scss */
 #maxui-newactivity {
   background: none repeat scroll 0 0 #34495e;
   padding: 10px;
   position: relative;
 }
 
-/* line 37, ../scss/_maxui.scss */
+/* line 38, ../scss/_maxui.scss */
 #maxui-newactivity textarea, .maxui-comments textarea {
   border: 0 none;
   border-radius: 3px 3px 3px 3px;
@@ -1807,7 +1808,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   width: 100%;
 }
 
-/* line 53, ../scss/_maxui.scss */
+/* line 54, ../scss/_maxui.scss */
 #maxui-search {
   background: none repeat scroll 0 0 #deded6;
   border-bottom: 0 none;
@@ -1815,7 +1816,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   padding: 10px 30px 10px 10px;
 }
 
-/* line 59, ../scss/_maxui.scss */
+/* line 60, ../scss/_maxui.scss */
 #maxui-search-text {
   -moz-appearance: none;
   border: 1px solid #b2b2b2;
@@ -1830,7 +1831,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   width: 100%;
 }
 
-/* line 72, ../scss/_maxui.scss */
+/* line 73, ../scss/_maxui.scss */
 .maxui-avatar:before, .maxui-avatar:before {
   border-radius: 0 0 0 0;
   bottom: 0;
@@ -1842,20 +1843,20 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   box-shadow: none;
 }
 
-/* line 82, ../scss/_maxui.scss */
+/* line 83, ../scss/_maxui.scss */
 #maxui-container a img {
   border: 0 none;
   border-radius: 0 0 0 0;
 }
 
-/* line 86, ../scss/_maxui.scss */
+/* line 87, ../scss/_maxui.scss */
 .maxui-topright {
   color: #222222;
   font-size: 11px;
   text-align: right;
 }
 
-/* line 91, ../scss/_maxui.scss */
+/* line 92, ../scss/_maxui.scss */
 .maxui-avatar {
   float: left;
   left: -60px;
@@ -1864,12 +1865,12 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   top: 0;
 }
 
-/* line 98, ../scss/_maxui.scss */
+/* line 99, ../scss/_maxui.scss */
 .activities .maxui-activity-content {
   margin: 0 0 0 60px;
 }
 
-/* line 101, ../scss/_maxui.scss */
+/* line 102, ../scss/_maxui.scss */
 #maxui-back-conversations, #maxui-show-conversations {
   background: none repeat scroll 0 0 whitesmoke;
   border-bottom: 0 none;
@@ -1878,12 +1879,12 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   text-align: center;
 }
 
-/* line 108, ../scss/_maxui.scss */
+/* line 109, ../scss/_maxui.scss */
 .maxui-avatar img {
   box-shadow: none;
 }
 
-/* line 111, ../scss/_maxui.scss */
+/* line 112, ../scss/_maxui.scss */
 input.maxui-button {
   background: none repeat scroll 0 0 #f58d3d;
   border: 0 none;
@@ -1897,7 +1898,7 @@ input.maxui-button {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-/* line 123, ../scss/_maxui.scss */
+/* line 124, ../scss/_maxui.scss */
 input.maxui-button:hover, input.maxui-button:hover, input.maxui-button:focus, input.maxui-button:focus {
   background: none repeat scroll 0 0 #fb9a4f;
   border: 0 none;
@@ -1906,7 +1907,7 @@ input.maxui-button:hover, input.maxui-button:hover, input.maxui-button:focus, in
   cursor: pointer;
 }
 
-/* line 130, ../scss/_maxui.scss */
+/* line 131, ../scss/_maxui.scss */
 input.maxui-button[disabled] {
   background: none repeat scroll 0 0 #e5e5e5;
   border: 0;
@@ -1917,12 +1918,12 @@ input.maxui-button[disabled] {
   text-shadow: 0 1px white;
 }
 
-/* line 139, ../scss/_maxui.scss */
+/* line 140, ../scss/_maxui.scss */
 #maxui-container input:focus {
   box-shadow: none !important;
 }
 
-/* line 142, ../scss/_maxui.scss */
+/* line 143, ../scss/_maxui.scss */
 #maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
   border: 1px solid #f58d3d !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset, 0 0 8px rgba(100, 123, 192, 0.5) !important;
@@ -2396,24 +2397,24 @@ input[type="text"]:focus {
   height: 49px;
   max-width: 474px;
 }
-/* line 197, ../scss/ulearn.scss */
+/* line 198, ../scss/ulearn.scss */
 #menusup nav {
   border-bottom: 0;
   margin-bottom: 0;
 }
-/* line 201, ../scss/ulearn.scss */
+/* line 202, ../scss/ulearn.scss */
 #menusup nav .bubble {
   background: #DEDED6;
 }
-/* line 204, ../scss/ulearn.scss */
+/* line 205, ../scss/ulearn.scss */
 #menusup nav .bubble .arrow {
   border-top-color: #DEDED6;
 }
-/* line 213, ../scss/ulearn.scss */
+/* line 214, ../scss/ulearn.scss */
 #menusup nav .bubble-content {
   padding: 0;
 }
-/* line 215, ../scss/ulearn.scss */
+/* line 216, ../scss/ulearn.scss */
 #menusup nav a {
   display: block;
   padding: 8px 0;
@@ -2430,29 +2431,29 @@ input[type="text"]:focus {
   -o-transition: 0s;
   transition: 0s;
 }
-/* line 231, ../scss/ulearn.scss */
+/* line 232, ../scss/ulearn.scss */
 #menusup nav a:hover {
   color: #000;
 }
-/* line 239, ../scss/ulearn.scss */
+/* line 240, ../scss/ulearn.scss */
 #menusup nav .active .arrow {
   border-top-color: #f58d3d;
   display: block;
 }
-/* line 244, ../scss/ulearn.scss */
+/* line 245, ../scss/ulearn.scss */
 #menusup nav .active, #menusup nav .active a, #menusup nav .active a:hover {
   background: #f58d3d !important;
   color: white;
   text-shadow: none;
 }
 
-/* line 254, ../scss/ulearn.scss */
+/* line 255, ../scss/ulearn.scss */
 #menusup .nav-tabs {
   border-bottom: 0;
   margin-bottom: 0;
 }
 
-/* line 258, ../scss/ulearn.scss */
+/* line 259, ../scss/ulearn.scss */
 #menusup .nav-tabs > li > a {
   background: #DEDED6;
   color: #444;
@@ -2465,22 +2466,17 @@ input[type="text"]:focus {
   margin: 0;
 }
 
-/* line 269, ../scss/ulearn.scss */
+/* line 270, ../scss/ulearn.scss */
 #menusup .nav-tabs > .active > a, #menusup .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
   background: #f58d3d;
   color: white;
   text-shadow: none;
 }
 
-/* line 274, ../scss/ulearn.scss */
+/* line 275, ../scss/ulearn.scss */
 #menusup .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
   background: #EEEEEE;
   transition: all 0.25s ease 0s;
-}
-
-/* line 278, ../scss/ulearn.scss */
-#menusup .icons {
-  font-size: 20px;
 }
 
 /* line 280, ../scss/ulearn.scss */
@@ -2577,25 +2573,22 @@ input[type="text"]:focus {
 
 /* line 338, ../scss/ulearn.scss */
 .event {
+  background-color: #384e65;
   text-shadow: none;
-}
-
-/* line 339, ../scss/ulearn.scss */
-.event:hover {
-  background: #fff;
+  border-right: 1px solid white;
 }
 
 /* line 340, ../scss/ulearn.scss */
 .todayevent {
-  background: #007BC0;
+  background: #f58d3d;
   text-shadow: none;
   text-align: center;
-  border-radius: 2px;
+  border-right: 1px solid white;
 }
 
 /* line 341, ../scss/ulearn.scss */
 .event a {
-  color: #555;
+  color: white;
   font-weight: normal;
 }
 
@@ -2710,8 +2703,8 @@ input[type="text"]:focus {
   padding-bottom: 15px;
   padding-left: 10px;
   padding-top: 10px;
-  background: #f9f9f9;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #dddddd;
+  background: none repeat scroll 0 0 white;
+  box-shadow: none;
 }
 /* line 435, ../scss/ulearn.scss */
 #communitylist a {
@@ -2834,7 +2827,7 @@ input[type="text"]:focus {
 #box_stats p {
   margin: 0;
   padding: 5px 0 5px 78px;
-  background-color: #bbb;
+  background-color: #deded6;
   font-weight: bold;
 }
 /* line 514, ../scss/ulearn.scss */

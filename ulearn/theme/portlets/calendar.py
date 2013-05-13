@@ -117,9 +117,9 @@ class Renderer(calendarRenderer):
     def newevent_url(self):
         community = self.get_community()
         event_folder_id = ''
-        for obj in community.objectIds():
-            if IEventsFolder.providedBy(obj):
-                event_folder_id = obj.id
+        for obj_id in community.objectIds():
+            if IEventsFolder.providedBy(community[obj_id]):
+                event_folder_id = obj_id
 
         return '{}/{}/++add++Event'.format(self.get_community().absolute_url(), event_folder_id)
 

@@ -194,6 +194,7 @@ border-color: #34495E;
 #menusup {
     height: 49px;
     max-width: 474px;
+
     nav {
         border-bottom:0;
         margin-bottom:0;
@@ -275,7 +276,6 @@ text-shadow:none;
   background:#EEEEEE;
    transition: all 0.25s ease 0s;
   }
-#menusup .icons {font-size:20px;}
 
 #day {
   background: none repeat scroll 0 0 #f58d3d;
@@ -335,10 +335,10 @@ text-shadow:none;
 
 .weekdays {font-size:11px;}
 .ploneCalendar {width:100%;font-size:13px;}
-.event { text-shadow:none; }
-.event:hover { background:#fff; }
-.todayevent{ background:#007BC0;text-shadow:none;text-align:center;border-radius:2px; }
-.event a { color:#555;font-weight:normal; }
+.event { background-color: #384e65; text-shadow:none; border-right: 1px solid white; }
+// .event:hover { background:#fff; }
+.todayevent{ background:#f58d3d; text-shadow:none; text-align:center; border-right: 1px solid white; }
+.event a { color: white; font-weight:normal; }
 .todayevent a { color:#fff; }
 
 #box_valorats ul, #box_comentaris ul { margin-top:10px;margin-left:25px; }
@@ -428,8 +428,8 @@ text-shadow:none;
         padding-bottom: 15px;
         padding-left: 10px;
         padding-top: 10px;
-        background:#f9f9f9;
-        box-shadow:0 1px 3px rgba(0, 0, 0, 0.1) inset, 0 0 0 #DDDDDD;
+        background: none repeat scroll 0 0 #FFFFFF;
+        box-shadow: none;
     }
 
     a {
@@ -508,7 +508,7 @@ text-shadow:none;
   p {
     margin: 0;
     padding: 5px 0 5px 78px;
-    background-color: #bbb;
+    background-color: #deded6;
     font-weight: bold;
   }
   ul { margin-top: 5px; }
