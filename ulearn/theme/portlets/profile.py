@@ -3,8 +3,9 @@ from hashlib import sha1
 from Acquisition import aq_inner
 from Acquisition import aq_chain
 from zope.interface import implements
-from zope.component import getMultiAdapter, queryUtility
+from zope.component import queryUtility
 from zope.component.hooks import getSite
+from zope.security import checkPermission
 
 from plone.app.portlets.portlets import base
 from plone.registry.interfaces import IRegistry
@@ -13,6 +14,7 @@ from plone.portlets.interfaces import IPortletDataProvider
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from ulearn.core.badges import AVAILABLE_BADGES
@@ -115,6 +117,12 @@ class Renderer(base.Renderer):
                 return True
 
         return False
+
+    def showEditCommunity(self):
+        if not IPloneSiteRoot.providedBy(self.context) and \
+           ICommunity.providedBy(self.context) and \
+           checkPermission('cmf.RequestReview', self.context):
+            return True
 
     @memoize_contextless
     def get_thinnkins(self, community=False):

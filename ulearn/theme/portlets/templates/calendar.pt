@@ -79,11 +79,20 @@
     </table>
   </div>
 
+  <ul class="icons">
+    <li tal:repeat="event view/get_next_three_events">
+      <a tal:attributes="href event/getURL">
+        <i class="fa-icon-calendar"></i>
+        <tal:event content="event/Title">Event Title</tal:event>
+      </a>
+    </li>
+  </ul>
+
   <p class="newevent"
      tal:condition="view/show_newevent_url">
-    <a tal:attributes="href view/newevent_url">
-      <i class="icon-plus-sign icons"> </i>
-      <tal:newevent i18n:translate="newevent">Create a new event</tal:newevent>
+    <a class="btn btn-large btn-comunitat"
+       tal:attributes="href view/newevent_url">
+        <tal:newevent i18n:translate="newevent">Create a new event</tal:newevent>
     </a>
   </p>
 

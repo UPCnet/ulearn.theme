@@ -5,11 +5,12 @@ from genweb.core.interfaces import IHomePage
 
 from zope.component import getMultiAdapter
 
-from Products.CMFPlone.interfaces import IPloneSiteRoot
-from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
+from plone.portlets.interfaces import IPortletDataProvider
+from plone.memoize.view import memoize_contextless
 from plone.app.portlets.portlets.calendar import Renderer as calendarRenderer
 
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
 from Products.CMFPlone import PloneMessageFactory as _
@@ -42,6 +43,7 @@ class Renderer(calendarRenderer):
         today['number'] = self.now.tm_mday
         return today
 
+    @memoize_contextless
     def get_nearest_today_event(self):
         context = aq_inner(self.context)
         pc = getToolByName(context, 'portal_catalog')
@@ -52,7 +54,7 @@ class Renderer(calendarRenderer):
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
 
-        if IHomePage.providedBy(self.context):
+        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
             path = navigation_root_path
         else:
             path = '/'.join(self.get_community().getPhysicalPath())
@@ -73,6 +75,38 @@ class Renderer(calendarRenderer):
         else:
             return
 
+    def get_next_three_events(self):
+        context = aq_inner(self.context)
+        pc = getToolByName(context, 'portal_catalog')
+        now = DateTime()
+        year = self.year
+        month = self.month
+        year = int(year)
+        month = int(month)
+        last_day = self.calendar._getCalendar().monthrange(year, month)[1]
+        last_date = self.calendar.getBeginAndEndTimes(last_day, month, year)[1]
+
+        portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
+        navigation_root_path = portal_state.navigation_root_path()
+
+        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
+            path = navigation_root_path
+        else:
+            path = '/'.join(self.get_community().getPhysicalPath())
+
+        query = {
+            'portal_type': self.calendar.getCalendarTypes(),
+            'review_state': self.calendar.getCalendarStates(),
+            'start': {'query': last_date, 'range': 'max'},
+            'end': {'query': now, 'range': 'min'},
+            'sort_on': 'start',
+            'path': path,
+        }
+
+        result = pc(**query)
+        nearest = self.get_nearest_today_event()
+        return [event for event in result if event.id != nearest.id]
+
     def getEventsForCalendar(self):
         context = aq_inner(self.context)
         year = self.year
@@ -80,7 +114,7 @@ class Renderer(calendarRenderer):
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
 
-        if IHomePage.providedBy(self.context):
+        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
             path = navigation_root_path
         else:
             path = '/'.join(self.get_community().getPhysicalPath())
@@ -109,7 +143,7 @@ class Renderer(calendarRenderer):
 
     def show_newevent_url(self):
         context = aq_inner(self.context)
-        if IHomePage.providedBy(context):
+        if IHomePage.providedBy(context) or IPloneSiteRoot.providedBy(self.context):
             return False
         else:
             return True

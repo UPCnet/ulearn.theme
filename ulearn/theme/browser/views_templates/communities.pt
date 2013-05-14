@@ -28,28 +28,31 @@
     <section id="communitylist">
       <ul>
         <li tal:repeat="community communities">
-          <div class="eines pull-right">
-          <a class=""
-             tal:condition="python:view.is_community_manager(community)"
-             tal:attributes="href string:${community/getURL}/edit">
-            <i class="fa-icon-pencil"></i>
-          </a>
-          <a class="favorite" href="#"
-             tal:attributes="data-community string:${community/getURL}">
-            <i tal:attributes="class python:view.get_star_class(community)"></i>
-          </a>
-          </div>
-          <div class="item">
-            <a tal:attributes="href community/getURL">
-              <img class="pull-left"
-                   tal:condition="community/image_filename"
-                   tal:attributes="src string:${community/getURL}/@@images/image/tile"/>
-              <img class="pull-left"
-                   src="/++ulearn++static/images/avatar_default.png"
-                   tal:condition="not: community/image_filename"/>
-              <h4 tal:content="community/Title">Community</h4>
-              <p tal:content="community/Description">Description</p>
-            </a>
+          <div class="row-fluid">
+            <div class="span2">
+              <a tal:attributes="href community/getURL">
+                <img tal:condition="community/image_filename"
+                     tal:attributes="src string:${community/getURL}/@@images/image/thumb" />
+                <img src="/++ulearn++static/images/avatar_default.png"
+                     tal:condition="not: community/image_filename" />
+              </a>
+            </div>
+            <div class="span8">
+              <a tal:attributes="href community/getURL">
+                <h4 tal:content="community/Title">Community</h4>
+                <p tal:content="community/Description">Description</p>
+              </a>
+            </div>
+            <div class="eines span2">
+              <a tal:condition="python:view.is_community_manager(community)"
+                 tal:attributes="href string:${community/getURL}/edit">
+                <i class="fa-icon-pencil"></i>
+              </a>
+              <a class="favorite" href="#"
+                 tal:attributes="data-community string:${community/getURL}">
+                <i tal:attributes="class python:view.get_star_class(community)"></i>
+              </a>
+            </div>
           </div>
         </li>
       </ul>

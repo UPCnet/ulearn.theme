@@ -191,6 +191,7 @@ border-color: #34495E;
 }
 #miniatures img:hover {opacity:0.8;}
 
+// Menu superior central
 #menusup {
     height: 49px;
     max-width: 474px;
@@ -252,31 +253,7 @@ border-color: #34495E;
     }
 }
 
-#menusup .nav-tabs {
-  border-bottom:0;
-  margin-bottom:0;
-  }
-#menusup .nav-tabs > li > a {
-  background:#DEDED6;
-  color:#444;
-  border-radius:0;
-  border:0;
-  padding-right:15px;
-  padding-left:7px;
-  text-shadow:1px 1px 0px white;
-  text-decoration:none;
-  margin:0;
-  }
-#menusup .nav-tabs > .active > a, #menusup .nav-tabs > .active > a:hover, .nav-tabs > .active > a:focus {
-background:#f58d3d;
-color:white;
-text-shadow:none;
-    }
-#menusup .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
-  background:#EEEEEE;
-   transition: all 0.25s ease 0s;
-  }
-
+// Calendari
 #day {
   background: none repeat scroll 0 0 #f58d3d;
   // border-radius: 4px 4px 4px 4px;
@@ -330,7 +307,22 @@ text-shadow:none;
 }
 
 #box_agenda {
-  .newevent { margin-top: 15px; }
+  .newevent { margin-top: 15px;
+    a { padding: 10px 0}
+  }
+  ul { list-style: none; margin-left:25px; margin-top: 10px; }
+  li {
+    border-bottom: 1px solid #EEEEEE;
+    font-size: 13px;
+    line-height: 15px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    a {
+      // color: #333;
+    }
+
+    i { color: #34495E; }
+  }
 }
 
 .weekdays {font-size:11px;}
@@ -341,23 +333,8 @@ text-shadow:none;
 .event a { color: white; font-weight:normal; }
 .todayevent a { color:#fff; }
 
-#box_valorats ul, #box_comentaris ul { margin-top:10px;margin-left:25px; }
 
-#box_valorats li a:hover, #box_comentaris li a:hover {text-decoration:underline;}
-
-#box_valorats li, #box_comentaris li {
-    border-bottom: 1px solid #EEEEEE;
-    font-size: 13px;
-    line-height: 15px;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-}
-#box_valorats i, #box_comentaris i {
- color:#34495E;
- font-size:15px;
- vertical-align: middle;
-}
-
+// Botó blau
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -388,18 +365,8 @@ text-shadow:none;
   background-color: #34495E;
   *background-color: #003bb3;
 }
-#menusup .nav-tabs > .btn-plus > a {
-    background: none repeat scroll 0 0 #34495E;
-    color: white;
-    padding-left: 10px;
-    padding-right: 5px;
-    text-shadow: none;
-}
-#menusup .nav-tabs > .btn-plus > a:hover {
-    background: none repeat scroll 0 0 #34495E;
-    opacity: 0.8;
-}
 
+// Listat de comunitats
 #communitylist {
     padding: 10px;
     font-size: 13px;
@@ -409,9 +376,7 @@ text-shadow:none;
 
     .eines {
         color: #34495E;
-        float: right;
         font-size: 18px;
-        margin: 0 10px 50px;
         text-decoration: none;
     }
 
@@ -447,7 +412,6 @@ text-shadow:none;
     }
 
     img {
-        margin-right: 15px;
         margin-top: 3px;
         border:2px solid white;
         max-width: 54px;
@@ -455,11 +419,9 @@ text-shadow:none;
         &:hover {transition: all 0.25s ease 0s;border:2px solid #F58D3D;}
     }
 
-    .item { margin-right: 50px}
-
 }
 
-// Afegida la icona a tot arreu.
+// Afegida la icona de comunitats a tot arreu.
 .icon-ulearn-community, .icon-ulearn.community { background-position: -312px -192px; }
 #listing-table a.contenttype-ulearn-community:before,
 .template-folder_tabular_view .listing a.contenttype-ulearn-community:before {

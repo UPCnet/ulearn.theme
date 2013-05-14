@@ -66,8 +66,8 @@ class Renderer(base.Renderer):
             return '+99'
 
     def get_community_title(self, title):
-        if len(title) > 20:
-            return title[:20] + '...'
+        if len(title) > 18:
+            return title[:18] + '...'
         else:
             return title
 
