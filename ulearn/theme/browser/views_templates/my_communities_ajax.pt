@@ -1,16 +1,25 @@
 <script type="text/javascript">
 // Mixitup initialize
-/// $('.sortablelist').mixitup({layoutMode: 'list'});
 // Rebind the favorites
-// set_favorites();
-
-$('.sortablelist').mixitup({layoutMode: 'list', onMixEnd: set_favorites()})
+$('.sortablelist').mixitup({layoutMode: 'list', onMixEnd: function () {
+  $('.favorite').on('click', function(event) {
+  event.preventDefault();
+  var community_url = $(this).data()['community'];
+  $.get(community_url + '/toggle-favorite');
+  if ($('i', this).hasClass('fa-icon-star')) {
+    $('i', this).addClass('fa-icon-star-empty').removeClass('fa-icon-star');
+  } else {
+    $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
+  }
+});
+} })
 </script>
 
 <div class="clearfix">
   <div class="btn-group pull-right">
     <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-arrow-up"></i></button>
     <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-arrow-down"></i></button>
+    <button class="btn sort" data-sort="default" data-order="desc"><i class="fa-icon-bullseye"></i></button>
   </div>
 </div>
 
@@ -55,5 +64,6 @@ $('.sortablelist').mixitup({layoutMode: 'list', onMixEnd: set_favorites()})
   <div class="btn-group pull-right">
     <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-arrow-up"></i></button>
     <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-arrow-down"></i></button>
+    <button class="btn sort" data-sort="default" data-order="desc"><i class="fa-icon-bullseye"></i></button>
   </div>
 </div>

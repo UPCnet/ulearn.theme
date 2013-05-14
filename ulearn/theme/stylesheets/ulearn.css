@@ -1,36 +1,40 @@
 /*
- *  Font Awesome 3.0.2
- *  the iconic font designed for use with Twitter Bootstrap
+ *  Font Awesome 3.1.0
+ *  the iconic font designed for Bootstrap
  *  -------------------------------------------------------
  *  The full suite of pictographic icons, examples, and documentation
- *  can be found at: http://fortawesome.github.com/Font-Awesome/
+ *  can be found at: http://fontawesome.io
  *
  *  License
  *  -------------------------------------------------------
- *  - The Font Awesome font is licensed under the SIL Open Font License - http://scripts.sil.org/OFL
+ *  - The Font Awesome font is licensed under the SIL Open Font License v1.1 -
+ *    http://scripts.sil.org/OFL
  *  - Font Awesome CSS, LESS, and SASS files are licensed under the MIT License -
  *    http://opensource.org/licenses/mit-license.html
- *  - The Font Awesome pictograms are licensed under the CC BY 3.0 License - http://creativecommons.org/licenses/by/3.0/
+ *  - Font Awesome documentation licensed under CC BY 3.0 License -
+ *    http://creativecommons.org/licenses/by/3.0/
  *  - Attribution is no longer required in Font Awesome 3.0, but much appreciated:
- *    "Font Awesome by Dave Gandy - http://fortawesome.github.com/Font-Awesome"
- *
+ *    "Font Awesome by Dave Gandy - http://fontawesome.io"
+
  *  Contact
  *  -------------------------------------------------------
- *  Email: dave@davegandy.com
+ *  Email: dave@fontawesome.io
  *  Twitter: http://twitter.com/fortaweso_me
  *  Work: Lead Product Designer @ http://kyruus.com
  */
+/* FONT PATH
+ * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("/++genweb++static/fonts/fontawesome-webfont.eot?v=3.0.1");
-  src: url("/++genweb++static/fonts/fontawesome-webfont.eot?#iefix&v=3.0.1") format("embedded-opentype"), url("/++genweb++static/fonts/fontawesome-webfont.woff?v=3.0.1") format("woff"), url("/++genweb++static/fonts/fontawesome-webfont.ttf?v=3.0.1") format("truetype");
+  src: url("/++genweb++static/fonts/fontawesome-webfont.eot?v=3.1.0");
+  src: url("/++genweb++static/fonts/fontawesome-webfont.eot?#iefix&v=3.1.0") format("embedded-opentype"), url("/++genweb++static/fonts/fontawesome-webfont.woff?v=3.1.0") format("woff"), url("/++genweb++static/fonts/fontawesome-webfont.ttf?v=3.1.0") format("truetype"), url("/++genweb++static/fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.1.0") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
-/*  Font Awesome styles
-    ------------------------------------------------------- */
-/* line 43, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* FONT AWESOME CORE
+ * -------------------------- */
+/* line 38, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 [class^="fa-icon-"],
 [class*=" fa-icon-"] {
   font-family: FontAwesome;
@@ -38,7 +42,172 @@
   font-style: normal;
   text-decoration: inherit;
   -webkit-font-smoothing: antialiased;
-  /* sprites.less reset */
+  *margin-right: .3em;
+}
+
+/* line 47, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+[class^="fa-icon-"]:before,
+[class*=" fa-icon-"]:before {
+  text-decoration: inherit;
+  display: inline-block;
+  speak: none;
+}
+
+/* makes the font 33% larger relative to the icon container */
+/* line 53, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-large:before {
+  vertical-align: -10%;
+  font-size: 1.3333333333333333em;
+}
+
+/* makes sure icons active on rollover in links */
+/* line 61, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+a [class^="fa-icon-"],
+a [class*=" fa-icon-"],
+a [class^="fa-icon-"]:before,
+a [class*=" fa-icon-"]:before {
+  display: inline;
+}
+
+/* increased font size for fa-icon-large */
+/* line 66, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+[class^="fa-icon-"].fa-icon-fixed-width,
+[class*=" fa-icon-"].fa-icon-fixed-width {
+  display: inline-block;
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+/* line 72, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+[class^="fa-icon-"].fa-icon-fixed-width.fa-icon-large,
+[class*=" fa-icon-"].fa-icon-fixed-width.fa-icon-large {
+  width: 1.5714285714285714em;
+}
+
+/* line 75, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+ul.icons-ul {
+  list-style-type: none;
+  text-indent: -0.7142857142857143em;
+  margin-left: 2.142857142857143em;
+}
+
+/* line 80, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+ul.icons-ul > li .fa-icon-li {
+  width: 0.7142857142857143em;
+  display: inline-block;
+  text-align: center;
+}
+
+/* line 86, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+[class^="fa-icon-"].hide,
+[class*=" fa-icon-"].hide {
+  display: none;
+}
+
+/* line 89, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-muted {
+  color: #eeeeee;
+}
+
+/* line 92, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-light {
+  color: #ffffff;
+}
+
+/* line 95, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-dark {
+  color: #333333;
+}
+
+/* line 98, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-border {
+  border: solid 1px #eeeeee;
+  padding: 0.2em 0.25em 0.15em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* line 105, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-2x {
+  font-size: 2em;
+}
+
+/* line 108, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-2x.fa-icon-border {
+  border-width: 2px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 114, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-3x {
+  font-size: 3em;
+}
+
+/* line 117, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-3x.fa-icon-border {
+  border-width: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 123, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-4x {
+  font-size: 4em;
+}
+
+/* line 126, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-4x.fa-icon-border {
+  border-width: 4px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* line 132, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-5x {
+  font-size: 5em;
+}
+
+/* line 135, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-5x.fa-icon-border {
+  border-width: 5px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+}
+
+/* line 141, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.pull-right {
+  float: right;
+}
+
+/* line 144, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.pull-left {
+  float: left;
+}
+
+/* line 148, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+[class^="fa-icon-"].pull-left,
+[class*=" fa-icon-"].pull-left {
+  margin-right: .3em;
+}
+
+/* line 152, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+[class^="fa-icon-"].pull-right,
+[class*=" fa-icon-"].pull-right {
+  margin-left: .3em;
+}
+
+/* BOOTSTRAP SPECIFIC CLASSES
+ * -------------------------- */
+/* Bootstrap 2.0 sprites.less reset */
+/* line 159, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+[class^="fa-icon-"],
+[class*=" fa-icon-"] {
   display: inline;
   width: auto;
   height: auto;
@@ -51,7 +220,7 @@
 }
 
 /* more sprites.less reset */
-/* line 75, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 183, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-white,
 .nav-pills > .active > a > [class^="fa-icon-"],
 .nav-pills > .active > a > [class*=" fa-icon-"],
@@ -68,203 +237,117 @@
   background-image: none;
 }
 
-/* line 80, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-[class^="fa-icon-"]:before,
-[class*=" fa-icon-"]:before {
-  text-decoration: inherit;
-  display: inline-block;
-  speak: none;
-}
-
-/* makes sure icons active on rollover in links */
-/* line 89, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-a [class^="fa-icon-"],
-a [class*=" fa-icon-"] {
-  display: inline-block;
-}
-
-/* makes the font 33% larger relative to the icon container */
-/* line 95, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-large:before {
-  vertical-align: -10%;
-  font-size: 1.3333333333333333em;
-}
-
-/* line 102, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="fa-icon-"],
-.btn [class*=" fa-icon-"], .nav [class^="fa-icon-"],
-.nav [class*=" fa-icon-"] {
-  display: inline;
-  /* keeps button heights with and without icons the same */
-}
-/* line 105, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* keeps Bootstrap styles with and without icons the same */
+/* line 190, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .btn [class^="fa-icon-"].fa-icon-large,
-.btn [class*=" fa-icon-"].fa-icon-large, .nav [class^="fa-icon-"].fa-icon-large,
+.nav [class^="fa-icon-"].fa-icon-large,
+.btn [class*=" fa-icon-"].fa-icon-large,
 .nav [class*=" fa-icon-"].fa-icon-large {
   line-height: .9em;
 }
-/* line 106, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+
+/* line 196, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .btn [class^="fa-icon-"].fa-icon-spin,
-.btn [class*=" fa-icon-"].fa-icon-spin, .nav [class^="fa-icon-"].fa-icon-spin,
+.nav [class^="fa-icon-"].fa-icon-spin,
+.btn [class*=" fa-icon-"].fa-icon-spin,
 .nav [class*=" fa-icon-"].fa-icon-spin {
   display: inline-block;
 }
 
-/* line 112, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 206, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .nav-tabs [class^="fa-icon-"],
-.nav-tabs [class*=" fa-icon-"], .nav-pills [class^="fa-icon-"],
-.nav-pills [class*=" fa-icon-"] {
-  /* keeps button heights with and without icons the same */
-}
-/* line 114, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.nav-tabs [class^="fa-icon-"], .nav-tabs [class^="fa-icon-"].fa-icon-large,
+.nav-pills [class^="fa-icon-"],
 .nav-tabs [class*=" fa-icon-"],
-.nav-tabs [class*=" fa-icon-"].fa-icon-large, .nav-pills [class^="fa-icon-"], .nav-pills [class^="fa-icon-"].fa-icon-large,
 .nav-pills [class*=" fa-icon-"],
+.nav-tabs [class^="fa-icon-"].fa-icon-large,
+.nav-pills [class^="fa-icon-"].fa-icon-large,
+.nav-tabs [class*=" fa-icon-"].fa-icon-large,
 .nav-pills [class*=" fa-icon-"].fa-icon-large {
   line-height: .9em;
 }
 
-/* line 120, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-li [class^="fa-icon-"],
-li [class*=" fa-icon-"], .nav li [class^="fa-icon-"],
-.nav li [class*=" fa-icon-"] {
-  display: inline-block;
-  width: 1.25em;
-  text-align: center;
-}
-/* line 124, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-li [class^="fa-icon-"].fa-icon-large,
-li [class*=" fa-icon-"].fa-icon-large, .nav li [class^="fa-icon-"].fa-icon-large,
-.nav li [class*=" fa-icon-"].fa-icon-large {
-  /* increased font size for fa-icon-large */
-  width: 1.5625em;
-}
-
-/* line 131, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-ul.icons {
-  list-style-type: none;
-  text-indent: -.75em;
-}
-/* line 137, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-ul.icons li [class^="fa-icon-"],
-ul.icons li [class*=" fa-icon-"] {
-  width: .75em;
-}
-
-/* line 143, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-muted {
-  color: #eeeeee;
-}
-
-/* line 150, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-border {
-  border: solid 1px #eeeeee;
-  padding: 0.2em 0.25em 0.15em;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
-
-/* line 159, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-2x {
-  font-size: 2em;
-}
-/* line 161, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-2x.fa-icon-border {
-  border-width: 2px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-}
-
-/* line 166, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-3x {
-  font-size: 3em;
-}
-/* line 168, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-3x.fa-icon-border {
-  border-width: 3px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-
-/* line 173, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-4x {
-  font-size: 4em;
-}
-/* line 175, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-4x.fa-icon-border {
-  border-width: 4px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
-
-/* line 185, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.pull-right {
-  float: right;
-}
-
-/* line 186, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.pull-left {
-  float: left;
-}
-
-/* line 190, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-[class^="fa-icon-"].pull-left,
-[class*=" fa-icon-"].pull-left {
-  margin-right: .3em;
-}
-/* line 193, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-[class^="fa-icon-"].pull-right,
-[class*=" fa-icon-"].pull-right {
-  margin-left: .3em;
-}
-
-/* line 202, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.btn [class^="fa-icon-"].pull-left.fa-icon-2x, .btn [class^="fa-icon-"].pull-right.fa-icon-2x,
+/* line 212, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.btn [class^="fa-icon-"].pull-left.fa-icon-2x,
 .btn [class*=" fa-icon-"].pull-left.fa-icon-2x,
+.btn [class^="fa-icon-"].pull-right.fa-icon-2x,
 .btn [class*=" fa-icon-"].pull-right.fa-icon-2x {
   margin-top: .18em;
 }
-/* line 204, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+
+/* line 216, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .btn [class^="fa-icon-"].fa-icon-spin.fa-icon-large,
 .btn [class*=" fa-icon-"].fa-icon-spin.fa-icon-large {
   line-height: .8em;
 }
 
-/* line 212, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-small [class^="fa-icon-"].pull-left.fa-icon-2x, .btn.btn-small [class^="fa-icon-"].pull-right.fa-icon-2x,
+/* line 222, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.btn.btn-small [class^="fa-icon-"].pull-left.fa-icon-2x,
 .btn.btn-small [class*=" fa-icon-"].pull-left.fa-icon-2x,
+.btn.btn-small [class^="fa-icon-"].pull-right.fa-icon-2x,
 .btn.btn-small [class*=" fa-icon-"].pull-right.fa-icon-2x {
   margin-top: .25em;
 }
 
-/* line 219, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 226, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .btn.btn-large [class^="fa-icon-"],
 .btn.btn-large [class*=" fa-icon-"] {
   margin-top: 0;
 }
-/* line 222, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.btn.btn-large [class^="fa-icon-"].pull-left.fa-icon-2x, .btn.btn-large [class^="fa-icon-"].pull-right.fa-icon-2x,
+
+/* line 232, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.btn.btn-large [class^="fa-icon-"].pull-left.fa-icon-2x,
 .btn.btn-large [class*=" fa-icon-"].pull-left.fa-icon-2x,
+.btn.btn-large [class^="fa-icon-"].pull-right.fa-icon-2x,
 .btn.btn-large [class*=" fa-icon-"].pull-right.fa-icon-2x {
   margin-top: .05em;
 }
-/* line 224, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+
+/* line 236, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .btn.btn-large [class^="fa-icon-"].pull-left.fa-icon-2x,
 .btn.btn-large [class*=" fa-icon-"].pull-left.fa-icon-2x {
   margin-right: .2em;
 }
-/* line 225, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+
+/* line 240, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .btn.btn-large [class^="fa-icon-"].pull-right.fa-icon-2x,
 .btn.btn-large [class*=" fa-icon-"].pull-right.fa-icon-2x {
   margin-left: .2em;
 }
 
-/* line 230, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* EXTRAS
+ * -------------------------- */
+/* Stacked and layered icon */
+/* line 246, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: -35%;
+}
+
+/* line 255, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-stack [class^="fa-icon-"],
+.fa-icon-stack [class*=" fa-icon-"] {
+  display: block;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  line-height: inherit;
+  *line-height: 2em;
+}
+
+/* line 265, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-stack .fa-icon-stack-base {
+  font-size: 2em;
+  *line-height: 1em;
+}
+
+/* Animated rotating icon */
+/* line 270, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-spin {
   display: inline-block;
   -moz-animation: spin 2s infinite linear;
@@ -274,1333 +357,1630 @@ ul.icons li [class*=" fa-icon-"] {
 }
 
 @-moz-keyframes spin {
-  /* line 239, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 278, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   0% {
     -moz-transform: rotate(0deg);
   }
 
-  /* line 240, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 281, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   100% {
     -moz-transform: rotate(359deg);
   }
 }
 
 @-webkit-keyframes spin {
-  /* line 243, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 286, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 244, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 289, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   100% {
     -webkit-transform: rotate(359deg);
   }
 }
 
 @-o-keyframes spin {
-  /* line 247, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 294, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   0% {
     -o-transform: rotate(0deg);
   }
 
-  /* line 248, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 297, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   100% {
     -o-transform: rotate(359deg);
   }
 }
 
 @-ms-keyframes spin {
-  /* line 251, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 302, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   0% {
     -ms-transform: rotate(0deg);
   }
 
-  /* line 252, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 305, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   100% {
     -ms-transform: rotate(359deg);
   }
 }
 
 @keyframes spin {
-  /* line 255, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 310, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   0% {
     transform: rotate(0deg);
   }
 
-  /* line 256, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+  /* line 313, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
   100% {
     transform: rotate(359deg);
   }
 }
 
-@-moz-document url-prefix() {
-  /* line 260, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-  .fa-icon-spin {
-    height: .9em;
-  }
-
-  /* line 261, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-  .btn .fa-icon-spin {
-    height: auto;
-  }
-
-  /* line 262, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-  .fa-icon-spin.fa-icon-large {
-    height: 1.25em;
-  }
-
-  /* line 263, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-  .btn .fa-icon-spin.fa-icon-large {
-    height: .75em;
-  }
+/* Icon rotations and mirroring */
+/* line 318, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-rotate-90:before {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
 }
 
-/*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
-    readers do not read off random characters that represent icons */
-/* line 268, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 326, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-rotate-180:before {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
+/* line 334, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-rotate-270:before {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+/* line 342, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-flip-horizontal:before {
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+/* line 349, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-flip-vertical:before {
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+/* line 358, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-glass:before {
   content: "\f000";
 }
 
-/* line 269, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 361, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-music:before {
   content: "\f001";
 }
 
-/* line 270, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 364, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-search:before {
   content: "\f002";
 }
 
-/* line 271, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 367, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-envelope:before {
   content: "\f003";
 }
 
-/* line 272, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 370, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-heart:before {
   content: "\f004";
 }
 
-/* line 273, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 373, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-star:before {
   content: "\f005";
 }
 
-/* line 274, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 376, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-star-empty:before {
   content: "\f006";
 }
 
-/* line 275, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 379, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-user:before {
   content: "\f007";
 }
 
-/* line 276, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 382, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-film:before {
   content: "\f008";
 }
 
-/* line 277, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 385, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-th-large:before {
   content: "\f009";
 }
 
-/* line 278, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 388, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-th:before {
   content: "\f00a";
 }
 
-/* line 279, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 391, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-th-list:before {
   content: "\f00b";
 }
 
-/* line 280, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 394, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-ok:before {
   content: "\f00c";
 }
 
-/* line 281, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 397, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-remove:before {
   content: "\f00d";
 }
 
-/* line 282, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 400, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-zoom-in:before {
   content: "\f00e";
 }
 
-/* line 284, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 403, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-zoom-out:before {
   content: "\f010";
 }
 
-/* line 285, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 406, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-off:before {
   content: "\f011";
 }
 
-/* line 286, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 409, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-signal:before {
   content: "\f012";
 }
 
-/* line 287, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 412, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-cog:before {
   content: "\f013";
 }
 
-/* line 288, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 415, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-trash:before {
   content: "\f014";
 }
 
-/* line 289, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 418, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-home:before {
   content: "\f015";
 }
 
-/* line 290, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 421, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-file:before {
   content: "\f016";
 }
 
-/* line 291, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 424, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-time:before {
   content: "\f017";
 }
 
-/* line 292, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 427, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-road:before {
   content: "\f018";
 }
 
-/* line 293, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 430, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-download-alt:before {
   content: "\f019";
 }
 
-/* line 294, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 433, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-download:before {
   content: "\f01a";
 }
 
-/* line 295, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 436, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-upload:before {
   content: "\f01b";
 }
 
-/* line 296, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 439, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-inbox:before {
   content: "\f01c";
 }
 
-/* line 297, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 442, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-play-circle:before {
   content: "\f01d";
 }
 
-/* line 298, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-repeat:before {
+/* line 446, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-repeat:before,
+.fa-icon-rotate-right:before {
   content: "\f01e";
 }
 
-/* \f020 doesn't work in Safari. all shifted one down */
-/* line 301, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* F020 doesn't work in Safari. all shifted one down */
+/* line 450, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-refresh:before {
   content: "\f021";
 }
 
-/* line 302, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 453, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-list-alt:before {
   content: "\f022";
 }
 
-/* line 303, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 456, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-lock:before {
   content: "\f023";
 }
 
-/* line 304, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 459, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-flag:before {
   content: "\f024";
 }
 
-/* line 305, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 462, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-headphones:before {
   content: "\f025";
 }
 
-/* line 306, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 465, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-volume-off:before {
   content: "\f026";
 }
 
-/* line 307, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 468, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-volume-down:before {
   content: "\f027";
 }
 
-/* line 308, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 471, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-volume-up:before {
   content: "\f028";
 }
 
-/* line 309, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 474, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-qrcode:before {
   content: "\f029";
 }
 
-/* line 310, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 477, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-barcode:before {
   content: "\f02a";
 }
 
-/* line 311, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 480, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-tag:before {
   content: "\f02b";
 }
 
-/* line 312, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 483, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-tags:before {
   content: "\f02c";
 }
 
-/* line 313, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 486, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-book:before {
   content: "\f02d";
 }
 
-/* line 314, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 489, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bookmark:before {
   content: "\f02e";
 }
 
-/* line 315, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 492, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-print:before {
   content: "\f02f";
 }
 
-/* line 317, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 495, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-camera:before {
   content: "\f030";
 }
 
-/* line 318, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 498, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-font:before {
   content: "\f031";
 }
 
-/* line 319, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 501, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bold:before {
   content: "\f032";
 }
 
-/* line 320, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 504, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-italic:before {
   content: "\f033";
 }
 
-/* line 321, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 507, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-text-height:before {
   content: "\f034";
 }
 
-/* line 322, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 510, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-text-width:before {
   content: "\f035";
 }
 
-/* line 323, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 513, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-align-left:before {
   content: "\f036";
 }
 
-/* line 324, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 516, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-align-center:before {
   content: "\f037";
 }
 
-/* line 325, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 519, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-align-right:before {
   content: "\f038";
 }
 
-/* line 326, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 522, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-align-justify:before {
   content: "\f039";
 }
 
-/* line 327, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 525, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-list:before {
   content: "\f03a";
 }
 
-/* line 328, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 528, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-indent-left:before {
   content: "\f03b";
 }
 
-/* line 329, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 531, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-indent-right:before {
   content: "\f03c";
 }
 
-/* line 330, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 534, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-facetime-video:before {
   content: "\f03d";
 }
 
-/* line 331, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 537, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-picture:before {
   content: "\f03e";
 }
 
-/* line 333, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 540, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-pencil:before {
   content: "\f040";
 }
 
-/* line 334, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 543, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-map-marker:before {
   content: "\f041";
 }
 
-/* line 335, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 546, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-adjust:before {
   content: "\f042";
 }
 
-/* line 336, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 549, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-tint:before {
   content: "\f043";
 }
 
-/* line 337, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 552, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-edit:before {
   content: "\f044";
 }
 
-/* line 338, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 555, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-share:before {
   content: "\f045";
 }
 
-/* line 339, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 558, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-check:before {
   content: "\f046";
 }
 
-/* line 340, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 561, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-move:before {
   content: "\f047";
 }
 
-/* line 341, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 564, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-step-backward:before {
   content: "\f048";
 }
 
-/* line 342, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 567, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-fast-backward:before {
   content: "\f049";
 }
 
-/* line 343, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 570, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-backward:before {
   content: "\f04a";
 }
 
-/* line 344, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 573, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-play:before {
   content: "\f04b";
 }
 
-/* line 345, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 576, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-pause:before {
   content: "\f04c";
 }
 
-/* line 346, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 579, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-stop:before {
   content: "\f04d";
 }
 
-/* line 347, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 582, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-forward:before {
   content: "\f04e";
 }
 
-/* line 349, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 585, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-fast-forward:before {
   content: "\f050";
 }
 
-/* line 350, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 588, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-step-forward:before {
   content: "\f051";
 }
 
-/* line 351, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 591, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-eject:before {
   content: "\f052";
 }
 
-/* line 352, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 594, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-chevron-left:before {
   content: "\f053";
 }
 
-/* line 353, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 597, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-chevron-right:before {
   content: "\f054";
 }
 
-/* line 354, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 600, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-plus-sign:before {
   content: "\f055";
 }
 
-/* line 355, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 603, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-minus-sign:before {
   content: "\f056";
 }
 
-/* line 356, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 606, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-remove-sign:before {
   content: "\f057";
 }
 
-/* line 357, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 609, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-ok-sign:before {
   content: "\f058";
 }
 
-/* line 358, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 612, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-question-sign:before {
   content: "\f059";
 }
 
-/* line 359, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 615, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-info-sign:before {
   content: "\f05a";
 }
 
-/* line 360, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 618, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-screenshot:before {
   content: "\f05b";
 }
 
-/* line 361, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 621, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-remove-circle:before {
   content: "\f05c";
 }
 
-/* line 362, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 624, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-ok-circle:before {
   content: "\f05d";
 }
 
-/* line 363, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 627, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-ban-circle:before {
   content: "\f05e";
 }
 
-/* line 365, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 630, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-arrow-left:before {
   content: "\f060";
 }
 
-/* line 366, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 633, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-arrow-right:before {
   content: "\f061";
 }
 
-/* line 367, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 636, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-arrow-up:before {
   content: "\f062";
 }
 
-/* line 368, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 639, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-arrow-down:before {
   content: "\f063";
 }
 
-/* line 369, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-share-alt:before {
+/* line 643, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-share-alt:before,
+.fa-icon-mail-forward:before {
   content: "\f064";
 }
 
-/* line 370, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 646, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-resize-full:before {
   content: "\f065";
 }
 
-/* line 371, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 649, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-resize-small:before {
   content: "\f066";
 }
 
-/* line 372, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 652, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-plus:before {
   content: "\f067";
 }
 
-/* line 373, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 655, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-minus:before {
   content: "\f068";
 }
 
-/* line 374, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 658, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-asterisk:before {
   content: "\f069";
 }
 
-/* line 375, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 661, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-exclamation-sign:before {
   content: "\f06a";
 }
 
-/* line 376, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 664, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-gift:before {
   content: "\f06b";
 }
 
-/* line 377, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 667, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-leaf:before {
   content: "\f06c";
 }
 
-/* line 378, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 670, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-fire:before {
   content: "\f06d";
 }
 
-/* line 379, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 673, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-eye-open:before {
   content: "\f06e";
 }
 
-/* line 381, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 676, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-eye-close:before {
   content: "\f070";
 }
 
-/* line 382, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 679, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-warning-sign:before {
   content: "\f071";
 }
 
-/* line 383, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 682, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-plane:before {
   content: "\f072";
 }
 
-/* line 384, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 685, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-calendar:before {
   content: "\f073";
 }
 
-/* line 385, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 688, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-random:before {
   content: "\f074";
 }
 
-/* line 386, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 691, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-comment:before {
   content: "\f075";
 }
 
-/* line 387, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 694, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-magnet:before {
   content: "\f076";
 }
 
-/* line 388, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 697, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-chevron-up:before {
   content: "\f077";
 }
 
-/* line 389, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 700, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-chevron-down:before {
   content: "\f078";
 }
 
-/* line 390, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 703, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-retweet:before {
   content: "\f079";
 }
 
-/* line 391, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 706, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-shopping-cart:before {
   content: "\f07a";
 }
 
-/* line 392, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 709, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-folder-close:before {
   content: "\f07b";
 }
 
-/* line 393, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 712, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-folder-open:before {
   content: "\f07c";
 }
 
-/* line 394, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 715, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-resize-vertical:before {
   content: "\f07d";
 }
 
-/* line 395, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 718, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-resize-horizontal:before {
   content: "\f07e";
 }
 
-/* line 397, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 721, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bar-chart:before {
   content: "\f080";
 }
 
-/* line 398, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 724, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-twitter-sign:before {
   content: "\f081";
 }
 
-/* line 399, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 727, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-facebook-sign:before {
   content: "\f082";
 }
 
-/* line 400, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 730, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-camera-retro:before {
   content: "\f083";
 }
 
-/* line 401, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 733, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-key:before {
   content: "\f084";
 }
 
-/* line 402, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 736, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-cogs:before {
   content: "\f085";
 }
 
-/* line 403, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 739, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-comments:before {
   content: "\f086";
 }
 
-/* line 404, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 742, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-thumbs-up:before {
   content: "\f087";
 }
 
-/* line 405, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 745, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-thumbs-down:before {
   content: "\f088";
 }
 
-/* line 406, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 748, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-star-half:before {
   content: "\f089";
 }
 
-/* line 407, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 751, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-heart-empty:before {
   content: "\f08a";
 }
 
-/* line 408, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 754, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-signout:before {
   content: "\f08b";
 }
 
-/* line 409, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 757, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-linkedin-sign:before {
   content: "\f08c";
 }
 
-/* line 410, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 760, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-pushpin:before {
   content: "\f08d";
 }
 
-/* line 411, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 763, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-external-link:before {
   content: "\f08e";
 }
 
-/* line 413, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 766, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-signin:before {
   content: "\f090";
 }
 
-/* line 414, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 769, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-trophy:before {
   content: "\f091";
 }
 
-/* line 415, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 772, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-github-sign:before {
   content: "\f092";
 }
 
-/* line 416, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 775, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-upload-alt:before {
   content: "\f093";
 }
 
-/* line 417, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 778, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-lemon:before {
   content: "\f094";
 }
 
-/* line 418, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 781, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-phone:before {
   content: "\f095";
 }
 
-/* line 419, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 784, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-check-empty:before {
   content: "\f096";
 }
 
-/* line 420, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 787, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bookmark-empty:before {
   content: "\f097";
 }
 
-/* line 421, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 790, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-phone-sign:before {
   content: "\f098";
 }
 
-/* line 422, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 793, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-twitter:before {
   content: "\f099";
 }
 
-/* line 423, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 796, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-facebook:before {
   content: "\f09a";
 }
 
-/* line 424, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 799, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-github:before {
   content: "\f09b";
 }
 
-/* line 425, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 802, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-unlock:before {
   content: "\f09c";
 }
 
-/* line 426, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 805, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-credit-card:before {
   content: "\f09d";
 }
 
-/* line 427, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 808, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-rss:before {
   content: "\f09e";
 }
 
-/* line 429, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 811, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-hdd:before {
   content: "\f0a0";
 }
 
-/* line 430, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 814, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bullhorn:before {
   content: "\f0a1";
 }
 
-/* line 431, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 817, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bell:before {
   content: "\f0a2";
 }
 
-/* line 432, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 820, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-certificate:before {
   content: "\f0a3";
 }
 
-/* line 433, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 823, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-hand-right:before {
   content: "\f0a4";
 }
 
-/* line 434, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 826, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-hand-left:before {
   content: "\f0a5";
 }
 
-/* line 435, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 829, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-hand-up:before {
   content: "\f0a6";
 }
 
-/* line 436, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 832, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-hand-down:before {
   content: "\f0a7";
 }
 
-/* line 437, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 835, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-circle-arrow-left:before {
   content: "\f0a8";
 }
 
-/* line 438, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 838, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-circle-arrow-right:before {
   content: "\f0a9";
 }
 
-/* line 439, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 841, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-circle-arrow-up:before {
   content: "\f0aa";
 }
 
-/* line 440, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 844, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-circle-arrow-down:before {
   content: "\f0ab";
 }
 
-/* line 441, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 847, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-globe:before {
   content: "\f0ac";
 }
 
-/* line 442, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 850, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-wrench:before {
   content: "\f0ad";
 }
 
-/* line 443, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 853, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-tasks:before {
   content: "\f0ae";
 }
 
-/* line 445, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 856, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-filter:before {
   content: "\f0b0";
 }
 
-/* line 446, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 859, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-briefcase:before {
   content: "\f0b1";
 }
 
-/* line 447, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 862, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-fullscreen:before {
   content: "\f0b2";
 }
 
-/* line 449, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 865, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-group:before {
   content: "\f0c0";
 }
 
-/* line 450, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 868, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-link:before {
   content: "\f0c1";
 }
 
-/* line 451, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 871, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-cloud:before {
   content: "\f0c2";
 }
 
-/* line 452, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 874, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-beaker:before {
   content: "\f0c3";
 }
 
-/* line 453, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 877, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-cut:before {
   content: "\f0c4";
 }
 
-/* line 454, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 880, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-copy:before {
   content: "\f0c5";
 }
 
-/* line 455, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 883, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-paper-clip:before {
   content: "\f0c6";
 }
 
-/* line 456, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 886, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-save:before {
   content: "\f0c7";
 }
 
-/* line 457, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 889, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-sign-blank:before {
   content: "\f0c8";
 }
 
-/* line 458, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 892, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-reorder:before {
   content: "\f0c9";
 }
 
-/* line 459, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 895, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-list-ul:before {
   content: "\f0ca";
 }
 
-/* line 460, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 898, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-list-ol:before {
   content: "\f0cb";
 }
 
-/* line 461, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 901, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-strikethrough:before {
   content: "\f0cc";
 }
 
-/* line 462, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 904, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-underline:before {
   content: "\f0cd";
 }
 
-/* line 463, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 907, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-table:before {
   content: "\f0ce";
 }
 
-/* line 465, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 910, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-magic:before {
   content: "\f0d0";
 }
 
-/* line 466, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 913, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-truck:before {
   content: "\f0d1";
 }
 
-/* line 467, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 916, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-pinterest:before {
   content: "\f0d2";
 }
 
-/* line 468, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 919, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-pinterest-sign:before {
   content: "\f0d3";
 }
 
-/* line 469, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 922, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-google-plus-sign:before {
   content: "\f0d4";
 }
 
-/* line 470, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 925, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-google-plus:before {
   content: "\f0d5";
 }
 
-/* line 471, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 928, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-money:before {
   content: "\f0d6";
 }
 
-/* line 472, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 931, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-caret-down:before {
   content: "\f0d7";
 }
 
-/* line 473, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 934, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-caret-up:before {
   content: "\f0d8";
 }
 
-/* line 474, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 937, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-caret-left:before {
   content: "\f0d9";
 }
 
-/* line 475, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 940, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-caret-right:before {
   content: "\f0da";
 }
 
-/* line 476, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 943, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-columns:before {
   content: "\f0db";
 }
 
-/* line 477, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 946, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-sort:before {
   content: "\f0dc";
 }
 
-/* line 478, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 949, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-sort-down:before {
   content: "\f0dd";
 }
 
-/* line 479, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 952, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-sort-up:before {
   content: "\f0de";
 }
 
-/* line 481, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 955, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-envelope-alt:before {
   content: "\f0e0";
 }
 
-/* line 482, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 958, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-linkedin:before {
   content: "\f0e1";
 }
 
-/* line 483, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-undo:before {
+/* line 962, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-undo:before,
+.fa-icon-rotate-left:before {
   content: "\f0e2";
 }
 
-/* line 484, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 965, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-legal:before {
   content: "\f0e3";
 }
 
-/* line 485, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 968, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-dashboard:before {
   content: "\f0e4";
 }
 
-/* line 486, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 971, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-comment-alt:before {
   content: "\f0e5";
 }
 
-/* line 487, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 974, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-comments-alt:before {
   content: "\f0e6";
 }
 
-/* line 488, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 977, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bolt:before {
   content: "\f0e7";
 }
 
-/* line 489, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 980, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-sitemap:before {
   content: "\f0e8";
 }
 
-/* line 490, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 983, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-umbrella:before {
   content: "\f0e9";
 }
 
-/* line 491, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 986, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-paste:before {
   content: "\f0ea";
 }
 
-/* line 492, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 989, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-lightbulb:before {
   content: "\f0eb";
 }
 
-/* line 493, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 992, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-exchange:before {
   content: "\f0ec";
 }
 
-/* line 494, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 995, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-cloud-download:before {
   content: "\f0ed";
 }
 
-/* line 495, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 998, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-cloud-upload:before {
   content: "\f0ee";
 }
 
-/* line 497, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1001, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-user-md:before {
   content: "\f0f0";
 }
 
-/* line 498, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1004, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-stethoscope:before {
   content: "\f0f1";
 }
 
-/* line 499, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1007, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-suitcase:before {
   content: "\f0f2";
 }
 
-/* line 500, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1010, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-bell-alt:before {
   content: "\f0f3";
 }
 
-/* line 501, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1013, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-coffee:before {
   content: "\f0f4";
 }
 
-/* line 502, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1016, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-food:before {
   content: "\f0f5";
 }
 
-/* line 503, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1019, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-file-alt:before {
   content: "\f0f6";
 }
 
-/* line 504, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1022, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-building:before {
   content: "\f0f7";
 }
 
-/* line 505, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1025, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-hospital:before {
   content: "\f0f8";
 }
 
-/* line 506, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1028, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-ambulance:before {
   content: "\f0f9";
 }
 
-/* line 507, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1031, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-medkit:before {
   content: "\f0fa";
 }
 
-/* line 508, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1034, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-fighter-jet:before {
   content: "\f0fb";
 }
 
-/* line 509, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1037, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-beer:before {
   content: "\f0fc";
 }
 
-/* line 510, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1040, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-h-sign:before {
   content: "\f0fd";
 }
 
-/* line 511, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1043, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-plus-sign-alt:before {
   content: "\f0fe";
 }
 
-/* line 513, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1046, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-double-angle-left:before {
   content: "\f100";
 }
 
-/* line 514, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1049, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-double-angle-right:before {
   content: "\f101";
 }
 
-/* line 515, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1052, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-double-angle-up:before {
   content: "\f102";
 }
 
-/* line 516, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1055, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-double-angle-down:before {
   content: "\f103";
 }
 
-/* line 517, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1058, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-angle-left:before {
   content: "\f104";
 }
 
-/* line 518, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1061, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-angle-right:before {
   content: "\f105";
 }
 
-/* line 519, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1064, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-angle-up:before {
   content: "\f106";
 }
 
-/* line 520, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1067, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-angle-down:before {
   content: "\f107";
 }
 
-/* line 521, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1070, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-desktop:before {
   content: "\f108";
 }
 
-/* line 522, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1073, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-laptop:before {
   content: "\f109";
 }
 
-/* line 523, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1076, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-tablet:before {
   content: "\f10a";
 }
 
-/* line 524, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1079, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-mobile-phone:before {
   content: "\f10b";
 }
 
-/* line 525, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1082, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-circle-blank:before {
   content: "\f10c";
 }
 
-/* line 526, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1085, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-quote-left:before {
   content: "\f10d";
 }
 
-/* line 527, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1088, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-quote-right:before {
   content: "\f10e";
 }
 
-/* line 529, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1091, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-spinner:before {
   content: "\f110";
 }
 
-/* line 530, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1094, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-circle:before {
   content: "\f111";
 }
 
-/* line 531, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-reply:before {
+/* line 1098, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-reply:before,
+.fa-icon-mail-reply:before {
   content: "\f112";
 }
 
-/* line 532, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
-.fa-icon-github-alt:before {
-  content: "\f113";
-}
-
-/* line 533, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1101, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-folder-close-alt:before {
   content: "\f114";
 }
 
-/* line 534, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+/* line 1104, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-folder-open-alt:before {
   content: "\f115";
+}
+
+/* line 1107, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-expand-alt:before {
+  content: "\f116";
+}
+
+/* line 1110, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-collapse-alt:before {
+  content: "\f117";
+}
+
+/* line 1113, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-smile:before {
+  content: "\f118";
+}
+
+/* line 1116, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-frown:before {
+  content: "\f119";
+}
+
+/* line 1119, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-meh:before {
+  content: "\f11a";
+}
+
+/* line 1122, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-gamepad:before {
+  content: "\f11b";
+}
+
+/* line 1125, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-keyboard:before {
+  content: "\f11c";
+}
+
+/* line 1128, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-flag-alt:before {
+  content: "\f11d";
+}
+
+/* line 1131, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-flag-checkered:before {
+  content: "\f11e";
+}
+
+/* line 1134, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-terminal:before {
+  content: "\f120";
+}
+
+/* line 1137, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-code:before {
+  content: "\f121";
+}
+
+/* line 1140, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-reply-all:before {
+  content: "\f122";
+}
+
+/* line 1143, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-mail-reply-all:before {
+  content: "\f122";
+}
+
+/* line 1147, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-star-half-full:before,
+.fa-icon-star-half-empty:before {
+  content: "\f123";
+}
+
+/* line 1150, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-location-arrow:before {
+  content: "\f124";
+}
+
+/* line 1153, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-crop:before {
+  content: "\f125";
+}
+
+/* line 1156, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-code-fork:before {
+  content: "\f126";
+}
+
+/* line 1159, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-unlink:before {
+  content: "\f127";
+}
+
+/* line 1162, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-question:before {
+  content: "\f128";
+}
+
+/* line 1165, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-info:before {
+  content: "\f129";
+}
+
+/* line 1168, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-exclamation:before {
+  content: "\f12a";
+}
+
+/* line 1171, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-superscript:before {
+  content: "\f12b";
+}
+
+/* line 1174, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-subscript:before {
+  content: "\f12c";
+}
+
+/* line 1177, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-eraser:before {
+  content: "\f12d";
+}
+
+/* line 1180, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-puzzle-piece:before {
+  content: "\f12e";
+}
+
+/* line 1183, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-microphone:before {
+  content: "\f130";
+}
+
+/* line 1186, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-microphone-off:before {
+  content: "\f131";
+}
+
+/* line 1189, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-shield:before {
+  content: "\f132";
+}
+
+/* line 1192, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-calendar-empty:before {
+  content: "\f133";
+}
+
+/* line 1195, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-fire-extinguisher:before {
+  content: "\f134";
+}
+
+/* line 1198, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-rocket:before {
+  content: "\f135";
+}
+
+/* line 1201, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-maxcdn:before {
+  content: "\f136";
+}
+
+/* line 1204, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-chevron-sign-left:before {
+  content: "\f137";
+}
+
+/* line 1207, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-chevron-sign-right:before {
+  content: "\f138";
+}
+
+/* line 1210, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-chevron-sign-up:before {
+  content: "\f139";
+}
+
+/* line 1213, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-chevron-sign-down:before {
+  content: "\f13a";
+}
+
+/* line 1216, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-html5:before {
+  content: "\f13b";
+}
+
+/* line 1219, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-css3:before {
+  content: "\f13c";
+}
+
+/* line 1222, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-anchor:before {
+  content: "\f13d";
+}
+
+/* line 1225, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-unlock-alt:before {
+  content: "\f13e";
+}
+
+/* line 1228, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-bullseye:before {
+  content: "\f140";
+}
+
+/* line 1231, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-ellipsis-horizontal:before {
+  content: "\f141";
+}
+
+/* line 1234, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-ellipsis-vertical:before {
+  content: "\f142";
+}
+
+/* line 1237, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-rss-sign:before {
+  content: "\f143";
+}
+
+/* line 1240, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-play-sign:before {
+  content: "\f144";
+}
+
+/* line 1243, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-ticket:before {
+  content: "\f145";
+}
+
+/* line 1246, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-minus-sign-alt:before {
+  content: "\f146";
+}
+
+/* line 1249, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-check-minus:before {
+  content: "\f147";
+}
+
+/* line 1252, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-level-up:before {
+  content: "\f148";
+}
+
+/* line 1255, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-level-down:before {
+  content: "\f149";
+}
+
+/* line 1258, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-check-sign:before {
+  content: "\f14a";
+}
+
+/* line 1261, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-edit-sign:before {
+  content: "\f14b";
+}
+
+/* line 1264, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-external-link-sign:before {
+  content: "\f14c";
+}
+
+/* line 1267, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
+.fa-icon-share-sign:before {
+  content: "\f14d";
 }
 
 /* Example tokeninput style #2: Facebook style */
@@ -2367,17 +2747,12 @@ input[type="text"]:focus {
   opacity: 0.8;
 }
 
-/* line 180, ../scss/ulearn.scss */
-.icons {
-  margin-right: 4px;
-}
-
-/* line 181, ../scss/ulearn.scss */
+/* line 182, ../scss/ulearn.scss */
 #miniatures {
   margin-top: 10px;
 }
 
-/* line 184, ../scss/ulearn.scss */
+/* line 185, ../scss/ulearn.scss */
 #miniatures img {
   height: 60px;
   overflow: hidden;
@@ -2387,34 +2762,34 @@ input[type="text"]:focus {
   transition: all 0.1s ease 0s;
 }
 
-/* line 192, ../scss/ulearn.scss */
+/* line 193, ../scss/ulearn.scss */
 #miniatures img:hover {
   opacity: 0.8;
 }
 
-/* line 195, ../scss/ulearn.scss */
+/* line 196, ../scss/ulearn.scss */
 #menusup {
   height: 49px;
   max-width: 474px;
 }
-/* line 199, ../scss/ulearn.scss */
+/* line 200, ../scss/ulearn.scss */
 #menusup nav {
   border-bottom: 0;
   margin-bottom: 0;
 }
-/* line 203, ../scss/ulearn.scss */
+/* line 204, ../scss/ulearn.scss */
 #menusup nav .bubble {
   background: #DEDED6;
 }
-/* line 206, ../scss/ulearn.scss */
+/* line 207, ../scss/ulearn.scss */
 #menusup nav .bubble .arrow {
   border-top-color: #DEDED6;
 }
-/* line 215, ../scss/ulearn.scss */
+/* line 216, ../scss/ulearn.scss */
 #menusup nav .bubble-content {
   padding: 0;
 }
-/* line 217, ../scss/ulearn.scss */
+/* line 218, ../scss/ulearn.scss */
 #menusup nav a {
   display: block;
   padding: 8px 0;
@@ -2431,23 +2806,23 @@ input[type="text"]:focus {
   -o-transition: 0s;
   transition: 0s;
 }
-/* line 233, ../scss/ulearn.scss */
+/* line 234, ../scss/ulearn.scss */
 #menusup nav a:hover {
   color: #000;
 }
-/* line 241, ../scss/ulearn.scss */
+/* line 242, ../scss/ulearn.scss */
 #menusup nav .active .arrow {
   border-top-color: #f58d3d;
   display: block;
 }
-/* line 246, ../scss/ulearn.scss */
+/* line 247, ../scss/ulearn.scss */
 #menusup nav .active, #menusup nav .active a, #menusup nav .active a:hover {
   background: #f58d3d !important;
   color: white;
   text-shadow: none;
 }
 
-/* line 257, ../scss/ulearn.scss */
+/* line 258, ../scss/ulearn.scss */
 #day {
   background: none repeat scroll 0 0 #f58d3d;
   color: white;
@@ -2459,63 +2834,63 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0 #92480f;
   margin-bottom: 0;
 }
-/* line 269, ../scss/ulearn.scss */
+/* line 270, ../scss/ulearn.scss */
 #day .arrow {
   border-left-color: #f58d3d;
 }
-/* line 270, ../scss/ulearn.scss */
+/* line 271, ../scss/ulearn.scss */
 #day .bubble-content {
   padding: 9px;
 }
 
-/* line 273, ../scss/ulearn.scss */
+/* line 274, ../scss/ulearn.scss */
 #day p {
   margin: 0;
 }
 
-/* line 274, ../scss/ulearn.scss */
+/* line 275, ../scss/ulearn.scss */
 .data {
   font-size: 13px;
   padding-top: 6px;
 }
 
-/* line 276, ../scss/ulearn.scss */
+/* line 277, ../scss/ulearn.scss */
 #agenda {
   background: #f5f5f5;
   font-size: 12px;
   margin-top: 10px;
 }
 
-/* line 282, ../scss/ulearn.scss */
+/* line 283, ../scss/ulearn.scss */
 #esdev {
   line-height: 13px;
   padding: 8px 4px 0 2px;
   margin-bottom: 0;
 }
-/* line 287, ../scss/ulearn.scss */
+/* line 288, ../scss/ulearn.scss */
 #esdev .vertical_aligned {
   display: table;
   height: 62px;
 }
-/* line 288, ../scss/ulearn.scss */
+/* line 289, ../scss/ulearn.scss */
 #esdev a {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 291, ../scss/ulearn.scss */
+/* line 292, ../scss/ulearn.scss */
 #calendari {
   background: none repeat scroll 0 0 whitesmoke;
   margin-top: 10px;
   padding: 5px 5px 10px;
   text-shadow: 1px 1px 0 white;
 }
-/* line 297, ../scss/ulearn.scss */
+/* line 298, ../scss/ulearn.scss */
 #calendari td {
   text-align: center;
 }
 
-/* line 302, ../scss/ulearn.scss */
+/* line 303, ../scss/ulearn.scss */
 #box_agenda .hiddenStructure {
   background: none repeat scroll 0 0 #eae9e4;
   color: black;
@@ -2523,21 +2898,21 @@ input[type="text"]:focus {
   padding: 1px;
 }
 
-/* line 310, ../scss/ulearn.scss */
+/* line 311, ../scss/ulearn.scss */
 #box_agenda .newevent {
   margin-top: 15px;
 }
-/* line 311, ../scss/ulearn.scss */
+/* line 312, ../scss/ulearn.scss */
 #box_agenda .newevent a {
   padding: 10px 0;
 }
-/* line 313, ../scss/ulearn.scss */
+/* line 314, ../scss/ulearn.scss */
 #box_agenda ul {
   list-style: none;
   margin-left: 25px;
   margin-top: 10px;
 }
-/* line 314, ../scss/ulearn.scss */
+/* line 315, ../scss/ulearn.scss */
 #box_agenda li {
   border-bottom: 1px solid #eeeeee;
   font-size: 13px;
@@ -2545,30 +2920,30 @@ input[type="text"]:focus {
   margin-bottom: 8px;
   padding-bottom: 8px;
 }
-/* line 324, ../scss/ulearn.scss */
+/* line 325, ../scss/ulearn.scss */
 #box_agenda li i {
   color: #34495E;
 }
 
-/* line 328, ../scss/ulearn.scss */
+/* line 329, ../scss/ulearn.scss */
 .weekdays {
   font-size: 11px;
 }
 
-/* line 329, ../scss/ulearn.scss */
+/* line 330, ../scss/ulearn.scss */
 .ploneCalendar {
   width: 100%;
   font-size: 13px;
 }
 
-/* line 330, ../scss/ulearn.scss */
+/* line 331, ../scss/ulearn.scss */
 .event {
   background-color: #384e65;
   text-shadow: none;
   border-right: 1px solid white;
 }
 
-/* line 332, ../scss/ulearn.scss */
+/* line 333, ../scss/ulearn.scss */
 .todayevent {
   background: #f58d3d;
   text-shadow: none;
@@ -2576,18 +2951,18 @@ input[type="text"]:focus {
   border-right: 1px solid white;
 }
 
-/* line 333, ../scss/ulearn.scss */
+/* line 334, ../scss/ulearn.scss */
 .event a {
   color: white;
   font-weight: normal;
 }
 
-/* line 334, ../scss/ulearn.scss */
+/* line 335, ../scss/ulearn.scss */
 .todayevent a {
   color: #fff;
 }
 
-/* line 338, ../scss/ulearn.scss */
+/* line 339, ../scss/ulearn.scss */
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -2610,7 +2985,7 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-/* line 363, ../scss/ulearn.scss */
+/* line 364, ../scss/ulearn.scss */
 .btn-comunitat:hover,
 .btn-comunitat:active,
 .btn-comunitat.active,
@@ -2621,7 +2996,7 @@ input[type="text"]:focus {
   *background-color: #003bb3;
 }
 
-/* line 370, ../scss/ulearn.scss */
+/* line 371, ../scss/ulearn.scss */
 #communitylist {
   padding: 10px;
   font-size: 13px;
@@ -2629,18 +3004,18 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0px white;
   background: #f9f9f9;
 }
-/* line 377, ../scss/ulearn.scss */
+/* line 378, ../scss/ulearn.scss */
 #communitylist .eines {
   color: #34495E;
   font-size: 18px;
   text-decoration: none;
 }
-/* line 383, ../scss/ulearn.scss */
+/* line 384, ../scss/ulearn.scss */
 #communitylist ul {
   margin-left: 0;
   list-style: none;
 }
-/* line 388, ../scss/ulearn.scss */
+/* line 389, ../scss/ulearn.scss */
 #communitylist li {
   min-height: 55px;
   line-height: 20px;
@@ -2652,139 +3027,144 @@ input[type="text"]:focus {
   background: none repeat scroll 0 0 white;
   box-shadow: none;
 }
-/* line 400, ../scss/ulearn.scss */
+/* line 401, ../scss/ulearn.scss */
 #communitylist a {
   color: #555;
   text-decoration: none;
 }
-/* line 404, ../scss/ulearn.scss */
+/* line 405, ../scss/ulearn.scss */
 #communitylist a h4 {
   color: #F58D3D;
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 0;
 }
-/* line 410, ../scss/ulearn.scss */
+/* line 411, ../scss/ulearn.scss */
 #communitylist a h4:hover {
   opacity: 0.8;
 }
-/* line 414, ../scss/ulearn.scss */
+/* line 415, ../scss/ulearn.scss */
 #communitylist img {
   margin-top: 3px;
   border: 2px solid white;
   max-width: 54px;
 }
-/* line 419, ../scss/ulearn.scss */
+/* line 420, ../scss/ulearn.scss */
 #communitylist img:hover {
   transition: all 0.25s ease 0s;
   border: 2px solid #f58d3d;
 }
 
-/* line 425, ../scss/ulearn.scss */
+/* line 426, ../scss/ulearn.scss */
 .icon-ulearn-community, .icon-ulearn.community {
   background-position: -312px -192px;
 }
 
-/* line 427, ../scss/ulearn.scss */
+/* line 428, ../scss/ulearn.scss */
 #listing-table a.contenttype-ulearn-community:before,
 .template-folder_tabular_view .listing a.contenttype-ulearn-community:before {
   background-position: -312px -192px;
 }
 
-/* line 431, ../scss/ulearn.scss */
+/* line 432, ../scss/ulearn.scss */
 #box_perfil .span9 {
   overflow-y: hidden;
   height: 150px;
 }
 
-/* line 432, ../scss/ulearn.scss */
+/* line 433, ../scss/ulearn.scss */
 #box_community img {
   width: 200px;
 }
 
 /* line 434, ../scss/ulearn.scss */
+#box_community p {
+  margin-top: 10px;
+}
+
+/* line 436, ../scss/ulearn.scss */
 #searchcommunities {
   margin-right: auto;
   margin-left: auto;
   width: 300px;
 }
 
-/* line 437, ../scss/ulearn.scss */
+/* line 439, ../scss/ulearn.scss */
 #box_comunitats .bubble-content {
   padding: 6px 0px;
   width: 40px;
   text-align: center;
   background: none repeat scroll 0 0 #f58d3d;
 }
-/* line 444, ../scss/ulearn.scss */
+/* line 446, ../scss/ulearn.scss */
 #box_comunitats .bubble a {
   color: white;
   font-weight: 600;
   height: 18px;
   width: 33px;
 }
-/* line 452, ../scss/ulearn.scss */
+/* line 454, ../scss/ulearn.scss */
 #box_comunitats .bubble .arrow {
   border-right-color: #f58d3d;
 }
-/* line 455, ../scss/ulearn.scss */
+/* line 457, ../scss/ulearn.scss */
 #box_comunitats li a {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 458, ../scss/ulearn.scss */
+/* line 460, ../scss/ulearn.scss */
 .bubble.top .arrow:after {
   border-top-color: transparent;
 }
 
-/* line 459, ../scss/ulearn.scss */
+/* line 461, ../scss/ulearn.scss */
 .bubble.right .arrow:after {
   border-right-color: transparent;
 }
 
-/* line 460, ../scss/ulearn.scss */
+/* line 462, ../scss/ulearn.scss */
 .bubble.left .arrow:after {
   border-left-color: transparent;
 }
 
-/* line 463, ../scss/ulearn.scss */
+/* line 465, ../scss/ulearn.scss */
 #box_stats .bubble-content {
   padding: 5px 12px;
   text-align: center;
 }
-/* line 464, ../scss/ulearn.scss */
+/* line 466, ../scss/ulearn.scss */
 #box_stats .bubble {
   background-color: #344961;
   color: white;
   width: 60px;
 }
-/* line 468, ../scss/ulearn.scss */
+/* line 470, ../scss/ulearn.scss */
 #box_stats .bubble .arrow {
   border-left-color: #344961;
 }
-/* line 470, ../scss/ulearn.scss */
+/* line 472, ../scss/ulearn.scss */
 #box_stats p {
   margin: 0;
   padding: 5px 0 5px 78px;
   background-color: #deded6;
   font-weight: bold;
 }
-/* line 476, ../scss/ulearn.scss */
+/* line 478, ../scss/ulearn.scss */
 #box_stats ul {
   margin-top: 5px;
 }
-/* line 477, ../scss/ulearn.scss */
+/* line 479, ../scss/ulearn.scss */
 #box_stats li {
   margin-bottom: 5px;
 }
 
-/* line 483, ../scss/ulearn.scss */
+/* line 485, ../scss/ulearn.scss */
 #addModal .modal-body {
   max-height: 426px;
 }
-/* line 484, ../scss/ulearn.scss */
+/* line 486, ../scss/ulearn.scss */
 #addModal #content-core {
   height: 426px;
 }

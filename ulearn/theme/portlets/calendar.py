@@ -105,7 +105,10 @@ class Renderer(calendarRenderer):
 
         result = pc(**query)
         nearest = self.get_nearest_today_event()
-        return [event for event in result if event.id != nearest.id]
+        if nearest:
+            return [event for event in result if event.id != nearest.id]
+        else:
+            return result
 
     def getEventsForCalendar(self):
         context = aq_inner(self.context)

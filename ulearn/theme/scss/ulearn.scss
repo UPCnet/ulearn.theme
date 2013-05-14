@@ -176,8 +176,9 @@ border-color: #34495E;
     text-shadow: 1px 1px 0 #92480F;
     width: 33px;
 }
-.num:hover {opacity:0.8;}
-.icons {margin-right:4px;}
+.num:hover { opacity:0.8; }
+// .icons { margin-right:4px; }
+// ul.icons { text-indent: -.75em; }
 #miniatures {
   margin-top:10px;
   }
@@ -428,8 +429,9 @@ border-color: #34495E;
   background-position: -312px -192px;
 }
 
-#box_perfil .span9 {overflow-y: hidden; height: 150px;}
-#box_community img {width: 200px;}
+#box_perfil .span9 { overflow-y: hidden; height: 150px; }
+#box_community img { width: 200px; }
+#box_community p { margin-top: 10px; }
 
 #searchcommunities {margin-right: auto; margin-left: auto; width: 300px;}
 

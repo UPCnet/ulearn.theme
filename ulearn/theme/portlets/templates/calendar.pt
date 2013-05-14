@@ -79,10 +79,10 @@
     </table>
   </div>
 
-  <ul class="icons">
+  <ul class="icons-ul">
     <li tal:repeat="event view/get_next_three_events">
       <a tal:attributes="href event/getURL">
-        <i class="fa-icon-calendar"></i>
+        <i class="fa-icon-li fa-icon-calendar"></i>
         <tal:event content="event/Title">Event Title</tal:event>
       </a>
     </li>

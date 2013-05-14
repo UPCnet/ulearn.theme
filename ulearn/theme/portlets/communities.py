@@ -56,7 +56,10 @@ class Renderer(base.Renderer):
         pc = getToolByName(portal, "portal_catalog")
         pm = getToolByName(portal, "portal_membership")
         current_user = pm.getAuthenticatedMember().getUserName()
-        communities = pc.searchResults(object_provides=ICommunity.__identifier__, favoritedBy=current_user)
+        communities = pc.searchResults(object_provides=ICommunity.__identifier__,
+                                       favoritedBy=current_user,
+                                       sort_on="subscribed_items",
+                                       sort_order="reverse")
         return communities
 
     def getCommunityMembers(self, community):
