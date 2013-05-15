@@ -9,4 +9,11 @@
         name="UlearnTheme"
         />
 
+    <browser:page
+      name="profile"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".user_profile.userProfile"
+      permission="genweb.authenticated"
+      />
+
 </configure>
