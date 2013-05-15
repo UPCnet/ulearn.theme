@@ -226,6 +226,7 @@ border-color: #34495E;
             text-shadow:1px 1px 0px white;
             text-decoration:none;
             margin:0;
+            outline: none;
             -webkit-transition: 0s;
             -moz-transition: 0s;
             -o-transition: 0s;
@@ -433,7 +434,20 @@ border-color: #34495E;
 #box_community img { width: 200px; }
 #box_community p { margin-top: 10px; }
 
-#searchcommunities {margin-right: auto; margin-left: auto; width: 300px;}
+.template-communities #content { background-color: white; }
+.template-communities h1 { margin: 0 0 20px 20px; padding-top: 20px; }
+#searchcommunities {
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+
+  .searchInput {
+    height: 25px;
+    font-size: 20px;
+    line-height: 25px;
+    width: inherit;
+  }
+}
 
 #box_comunitats {
   .bubble-content {

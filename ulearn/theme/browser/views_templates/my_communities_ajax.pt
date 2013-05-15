@@ -1,20 +1,3 @@
-<script type="text/javascript">
-// Mixitup initialize
-// Rebind the favorites
-$('.sortablelist').mixitup({layoutMode: 'list', onMixEnd: function () {
-  $('.favorite').on('click', function(event) {
-  event.preventDefault();
-  var community_url = $(this).data()['community'];
-  $.get(community_url + '/toggle-favorite');
-  if ($('i', this).hasClass('fa-icon-star')) {
-    $('i', this).addClass('fa-icon-star-empty').removeClass('fa-icon-star');
-  } else {
-    $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
-  }
-});
-} })
-</script>
-
 <div class="clearfix">
   <div class="btn-group pull-right">
     <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-arrow-up"></i></button>

@@ -80,7 +80,7 @@ class baseCommunities(grok.View):
             results = pc.searchResults(portal_type="ulearn.community", SearchableText=query)
             return results
         else:
-            return ''
+            return self.get_batched_communities(query=None, batch=True, b_size=10, b_start=0)
 
 
 class communities(baseCommunities):

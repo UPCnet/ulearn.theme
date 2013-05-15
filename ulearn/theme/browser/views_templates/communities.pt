@@ -18,11 +18,12 @@
                          b_start request/b_start | b_start;
                          communities python: view.get_batched_communities(b_start=b_start);">
 
+    <h1 i18n:translate="allcommunities">Communities</h1>
+
     <div id="searchcommunities">
-      <div class="input-append">
-        <input class="searchInput" type="text">
-        <button class="btn" type="button" i18n:translate="">Search</button>
-      </div>
+        <input class="searchInput" type="text" placeholder="Cerca"
+               i18n:domain="plone"
+               i18n:attributes="placeholder text_search">
     </div>
 
     <section id="communitylist">
