@@ -2822,8 +2822,12 @@ input[type="text"]:focus {
   color: white;
   text-shadow: none;
 }
+/* line 255, ../scss/ulearn.scss */
+#menusup nav i {
+  margin-right: 3px;
+}
 
-/* line 259, ../scss/ulearn.scss */
+/* line 261, ../scss/ulearn.scss */
 #day {
   background: none repeat scroll 0 0 #f58d3d;
   color: white;
@@ -2835,63 +2839,63 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0 #92480F;
   margin-bottom: 0;
 }
-/* line 271, ../scss/ulearn.scss */
+/* line 273, ../scss/ulearn.scss */
 #day .arrow {
   border-left-color: #f58d3d;
 }
-/* line 272, ../scss/ulearn.scss */
+/* line 274, ../scss/ulearn.scss */
 #day .bubble-content {
   padding: 9px;
 }
 
-/* line 275, ../scss/ulearn.scss */
+/* line 277, ../scss/ulearn.scss */
 #day p {
   margin: 0;
 }
 
-/* line 276, ../scss/ulearn.scss */
+/* line 278, ../scss/ulearn.scss */
 .data {
   font-size: 13px;
   padding-top: 6px;
 }
 
-/* line 278, ../scss/ulearn.scss */
+/* line 280, ../scss/ulearn.scss */
 #agenda {
   background: #f5f5f5;
   font-size: 12px;
   margin-top: 10px;
 }
 
-/* line 284, ../scss/ulearn.scss */
+/* line 286, ../scss/ulearn.scss */
 #esdev {
   line-height: 13px;
   padding: 8px 4px 0 2px;
   margin-bottom: 0;
 }
-/* line 289, ../scss/ulearn.scss */
+/* line 291, ../scss/ulearn.scss */
 #esdev .vertical_aligned {
   display: table;
   height: 62px;
 }
-/* line 290, ../scss/ulearn.scss */
+/* line 292, ../scss/ulearn.scss */
 #esdev a {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 293, ../scss/ulearn.scss */
+/* line 295, ../scss/ulearn.scss */
 #calendari {
   background: none repeat scroll 0 0 #F5F5F5;
   margin-top: 10px;
   padding: 5px 5px 10px;
   text-shadow: 1px 1px 0 white;
 }
-/* line 299, ../scss/ulearn.scss */
+/* line 301, ../scss/ulearn.scss */
 #calendari td {
   text-align: center;
 }
 
-/* line 304, ../scss/ulearn.scss */
+/* line 306, ../scss/ulearn.scss */
 #box_agenda .hiddenStructure {
   background: none repeat scroll 0 0 #EAE9E4;
   color: black;
@@ -2899,21 +2903,21 @@ input[type="text"]:focus {
   padding: 1px;
 }
 
-/* line 312, ../scss/ulearn.scss */
+/* line 314, ../scss/ulearn.scss */
 #box_agenda .newevent {
   margin-top: 15px;
 }
-/* line 313, ../scss/ulearn.scss */
+/* line 315, ../scss/ulearn.scss */
 #box_agenda .newevent a {
   padding: 10px 0;
 }
-/* line 315, ../scss/ulearn.scss */
+/* line 317, ../scss/ulearn.scss */
 #box_agenda ul {
   list-style: none;
   margin-left: 25px;
   margin-top: 10px;
 }
-/* line 316, ../scss/ulearn.scss */
+/* line 318, ../scss/ulearn.scss */
 #box_agenda li {
   border-bottom: 1px solid #EEEEEE;
   font-size: 13px;
@@ -2921,30 +2925,30 @@ input[type="text"]:focus {
   margin-bottom: 8px;
   padding-bottom: 8px;
 }
-/* line 326, ../scss/ulearn.scss */
+/* line 328, ../scss/ulearn.scss */
 #box_agenda li i {
   color: #34495E;
 }
 
-/* line 330, ../scss/ulearn.scss */
+/* line 332, ../scss/ulearn.scss */
 .weekdays {
   font-size: 11px;
 }
 
-/* line 331, ../scss/ulearn.scss */
+/* line 333, ../scss/ulearn.scss */
 .ploneCalendar {
   width: 100%;
   font-size: 13px;
 }
 
-/* line 332, ../scss/ulearn.scss */
+/* line 334, ../scss/ulearn.scss */
 .event {
   background-color: #384e65;
   text-shadow: none;
   border-right: 1px solid white;
 }
 
-/* line 334, ../scss/ulearn.scss */
+/* line 336, ../scss/ulearn.scss */
 .todayevent {
   background: #f58d3d;
   text-shadow: none;
@@ -2952,18 +2956,18 @@ input[type="text"]:focus {
   border-right: 1px solid white;
 }
 
-/* line 335, ../scss/ulearn.scss */
+/* line 337, ../scss/ulearn.scss */
 .event a {
   color: white;
   font-weight: normal;
 }
 
-/* line 336, ../scss/ulearn.scss */
+/* line 338, ../scss/ulearn.scss */
 .todayevent a {
   color: #fff;
 }
 
-/* line 340, ../scss/ulearn.scss */
+/* line 342, ../scss/ulearn.scss */
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -2986,7 +2990,7 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-/* line 365, ../scss/ulearn.scss */
+/* line 367, ../scss/ulearn.scss */
 .btn-comunitat:hover,
 .btn-comunitat:active,
 .btn-comunitat.active,
@@ -2997,7 +3001,7 @@ input[type="text"]:focus {
   *background-color: #003bb3;
 }
 
-/* line 372, ../scss/ulearn.scss */
+/* line 374, ../scss/ulearn.scss */
 #communitylist {
   padding: 10px;
   font-size: 13px;
@@ -3005,18 +3009,18 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0px white;
   background: #f9f9f9;
 }
-/* line 379, ../scss/ulearn.scss */
+/* line 381, ../scss/ulearn.scss */
 #communitylist .eines {
   color: #34495E;
   font-size: 18px;
   text-decoration: none;
 }
-/* line 385, ../scss/ulearn.scss */
+/* line 387, ../scss/ulearn.scss */
 #communitylist ul {
   margin-left: 0;
   list-style: none;
 }
-/* line 390, ../scss/ulearn.scss */
+/* line 392, ../scss/ulearn.scss */
 #communitylist li {
   min-height: 55px;
   line-height: 20px;
@@ -3028,79 +3032,79 @@ input[type="text"]:focus {
   background: none repeat scroll 0 0 #FFFFFF;
   box-shadow: none;
 }
-/* line 402, ../scss/ulearn.scss */
+/* line 404, ../scss/ulearn.scss */
 #communitylist a {
   color: #555;
   text-decoration: none;
 }
-/* line 406, ../scss/ulearn.scss */
+/* line 408, ../scss/ulearn.scss */
 #communitylist a h4 {
   color: #F58D3D;
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 0;
 }
-/* line 412, ../scss/ulearn.scss */
+/* line 414, ../scss/ulearn.scss */
 #communitylist a h4:hover {
   opacity: 0.8;
 }
-/* line 416, ../scss/ulearn.scss */
+/* line 418, ../scss/ulearn.scss */
 #communitylist img {
   margin-top: 3px;
   border: 2px solid white;
   max-width: 54px;
 }
-/* line 421, ../scss/ulearn.scss */
+/* line 423, ../scss/ulearn.scss */
 #communitylist img:hover {
   transition: all 0.25s ease 0s;
   border: 2px solid #F58D3D;
 }
 
-/* line 427, ../scss/ulearn.scss */
+/* line 429, ../scss/ulearn.scss */
 .icon-ulearn-community, .icon-ulearn.community {
   background-position: -312px -192px;
 }
 
-/* line 429, ../scss/ulearn.scss */
+/* line 431, ../scss/ulearn.scss */
 #listing-table a.contenttype-ulearn-community:before,
 .template-folder_tabular_view .listing a.contenttype-ulearn-community:before {
   background-position: -312px -192px;
 }
 
-/* line 433, ../scss/ulearn.scss */
+/* line 435, ../scss/ulearn.scss */
 #box_perfil .span9 {
   overflow-y: hidden;
   height: 150px;
 }
 
-/* line 434, ../scss/ulearn.scss */
+/* line 436, ../scss/ulearn.scss */
 #box_community img {
   width: 200px;
 }
 
-/* line 435, ../scss/ulearn.scss */
+/* line 437, ../scss/ulearn.scss */
 #box_community p {
   margin-top: 10px;
 }
 
-/* line 437, ../scss/ulearn.scss */
+/* line 439, ../scss/ulearn.scss */
 .template-communities #content {
   background-color: white;
 }
 
-/* line 438, ../scss/ulearn.scss */
+/* line 440, ../scss/ulearn.scss */
 .template-communities h1 {
   margin: 0 0 20px 20px;
   padding-top: 20px;
 }
 
-/* line 439, ../scss/ulearn.scss */
+/* line 441, ../scss/ulearn.scss */
 #searchcommunities {
   margin-right: auto;
   margin-left: auto;
   width: 300px;
 }
-/* line 444, ../scss/ulearn.scss */
+/* line 446, ../scss/ulearn.scss */
 #searchcommunities .searchInput {
   height: 25px;
   font-size: 20px;
@@ -3108,82 +3112,82 @@ input[type="text"]:focus {
   width: inherit;
 }
 
-/* line 453, ../scss/ulearn.scss */
+/* line 455, ../scss/ulearn.scss */
 #box_comunitats .bubble-content {
   padding: 6px 0px;
   width: 40px;
   text-align: center;
   background: none repeat scroll 0 0 #f58d3d;
 }
-/* line 460, ../scss/ulearn.scss */
+/* line 462, ../scss/ulearn.scss */
 #box_comunitats .bubble a {
   color: white;
   font-weight: 600;
   height: 18px;
   width: 33px;
 }
-/* line 468, ../scss/ulearn.scss */
+/* line 470, ../scss/ulearn.scss */
 #box_comunitats .bubble .arrow {
   border-right-color: #f58d3d;
 }
-/* line 471, ../scss/ulearn.scss */
+/* line 473, ../scss/ulearn.scss */
 #box_comunitats li a {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 474, ../scss/ulearn.scss */
+/* line 476, ../scss/ulearn.scss */
 .bubble.top .arrow:after {
   border-top-color: transparent;
 }
 
-/* line 475, ../scss/ulearn.scss */
+/* line 477, ../scss/ulearn.scss */
 .bubble.right .arrow:after {
   border-right-color: transparent;
 }
 
-/* line 476, ../scss/ulearn.scss */
+/* line 478, ../scss/ulearn.scss */
 .bubble.left .arrow:after {
   border-left-color: transparent;
 }
 
-/* line 479, ../scss/ulearn.scss */
+/* line 481, ../scss/ulearn.scss */
 #box_stats .bubble-content {
   padding: 5px 12px;
   text-align: center;
 }
-/* line 480, ../scss/ulearn.scss */
+/* line 482, ../scss/ulearn.scss */
 #box_stats .bubble {
   background-color: #344961;
   color: white;
   width: 60px;
 }
-/* line 484, ../scss/ulearn.scss */
+/* line 486, ../scss/ulearn.scss */
 #box_stats .bubble .arrow {
   border-left-color: #344961;
 }
-/* line 486, ../scss/ulearn.scss */
+/* line 488, ../scss/ulearn.scss */
 #box_stats p {
   margin: 0;
   padding: 5px 0 5px 78px;
   background-color: #deded6;
   font-weight: bold;
 }
-/* line 492, ../scss/ulearn.scss */
+/* line 494, ../scss/ulearn.scss */
 #box_stats ul {
   margin-top: 5px;
 }
-/* line 493, ../scss/ulearn.scss */
+/* line 495, ../scss/ulearn.scss */
 #box_stats li {
   margin-bottom: 5px;
 }
 
-/* line 499, ../scss/ulearn.scss */
+/* line 501, ../scss/ulearn.scss */
 #addModal .modal-body {
   max-height: 426px;
 }
-/* line 500, ../scss/ulearn.scss */
+/* line 502, ../scss/ulearn.scss */
 #addModal #content-core {
   height: 426px;
 }

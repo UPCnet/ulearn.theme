@@ -78,9 +78,17 @@ class Renderer(base.Renderer):
 
         if community:
             context_hash = sha1(community.absolute_url()).hexdigest()
-            return maxclient.getContextLastAuthors(context=context_hash, limit=6).get('items', [])
+            context_last_authors = maxclient.getContextLastAuthors(context=context_hash, limit=6)
+            if context_last_authors:
+                return context_last_authors.get('items', [])
+            else:
+                return []
         else:
-            return maxclient.getTimelineLastAuthors(limit=6).get('items', [])
+            context_last_authors = maxclient.getTimelineLastAuthors(limit=6)
+            if context_last_authors:
+                return context_last_authors.get('items', [])
+            else:
+                return []
 
 
 class AddForm(base.NullAddForm):

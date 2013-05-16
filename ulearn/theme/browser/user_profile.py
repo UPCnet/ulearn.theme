@@ -25,12 +25,7 @@ class userProfile(BrowserView):
             raise NotFound(self, name, request)
         return self
 
+    index = ViewPageTemplateFile('views_templates/user_profile.pt')
+
     def __call__(self):
-        pm = getToolByName(self, 'portal_membership')
-        portrait = pm.getPersonalPortrait(self.username)
-        if isinstance(portrait, Image):
-            self.request.response.addHeader('Content-Type', portrait.content_type)
-            return portrait.data
-        else:
-            self.request.response.addHeader('Content-Type', portrait.getContentType())
-            return portrait._readFile(portrait)
+        return self.index()
