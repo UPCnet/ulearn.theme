@@ -45,6 +45,7 @@
   <button class="btn btn-large btn-comunitat"
           type="button"
           data-remote="addCommunity" data-toggle="modal" data-target="#addModal">
+            <i class="fa-icon-comments"></i>
             <tal:createcommunity i18n:translate="createcommunity">Create a new community</tal:createcommunity>
   </button>
 </p>

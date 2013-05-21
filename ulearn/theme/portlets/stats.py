@@ -45,6 +45,14 @@ class Renderer(base.Renderer):
     def portal(self):
         return getSite()
 
+    def community_mode(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
+
     def get_stats_for(self, query_type):
         current_path = '/'.join(self.context.getPhysicalPath())
         pc = getToolByName(self.portal(), "portal_catalog")
@@ -56,6 +64,30 @@ class Renderer(base.Renderer):
             results = pc.searchResults(portal_type=['Image'], path={'query': current_path})
 
         return len(results)
+
+    def get_all_activities(self):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IMAXUISettings, check=False)
+        # Pick grant type from settings unless passed as optional argument
+        effective_grant_type = settings.oauth_grant_type
+
+        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
+        maxclient.setActor(settings.max_restricted_username)
+        maxclient.setToken(settings.max_restricted_token)
+
+        return maxclient.getAllActivities(count=True)
+
+    def get_all_comments(self):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IMAXUISettings, check=False)
+        # Pick grant type from settings unless passed as optional argument
+        effective_grant_type = settings.oauth_grant_type
+
+        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
+        maxclient.setActor(settings.max_restricted_username)
+        maxclient.setToken(settings.max_restricted_token)
+
+        return maxclient.getAllComments(count=True)
 
 
 class AddForm(base.NullAddForm):

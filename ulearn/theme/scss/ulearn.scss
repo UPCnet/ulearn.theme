@@ -313,6 +313,7 @@ border-color: #34495E;
 #box_agenda {
   .newevent { margin-top: 15px;
     a { padding: 10px 0}
+    i { margin-right: 3px; }
   }
   ul { list-style: none; margin-left:25px; margin-top: 10px; }
   li {
@@ -434,6 +435,7 @@ border-color: #34495E;
 
 #box_perfil .span9 { overflow-y: hidden; height: 150px; }
 #box_community img { width: 200px; }
+#box_community i { margin-right: 3px; }
 #box_community p { margin-top: 10px; }
 
 .template-communities #content { background-color: white; }
@@ -470,6 +472,8 @@ border-color: #34495E;
     .arrow { border-right-color: #f58d3d; }
   }
 
+  i { margin-right: 3px; }
+
   li a { @include border-radius(0px); }
 }
 
@@ -500,4 +504,15 @@ border-color: #34495E;
 #addModal {
   .modal-body { max-height: 426px; }
   #content-core { height: 426px; }
+}
+
+.template-profile {
+  #content {
+    background-color: white;
+    padding: 10px 20px;
+  }
+
+  .portrait { width: 163px; }
+
+  .badges { margin-top: 5px; }
 }

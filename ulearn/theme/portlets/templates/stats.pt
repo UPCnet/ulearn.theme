@@ -1,7 +1,10 @@
+<tal:iscommunity tal:define="is_community view/community_mode">
 <div id="box_stats" class="ulearnbox"
      i18n:domain="ulearn">
     <h2 i18n:translate="stats">Stats</h2>
-    <ul class="nav nav-pills nav-stacked">
+
+    <ul class="nav nav-pills nav-stacked"
+        tal:condition="is_community">
       <li>
         <div class="bubble left pull-left">
           <div class="arrow"></div>
@@ -42,4 +45,36 @@
         </p>
       </li>
     </ul>
+
+    <ul class="nav nav-pills nav-stacked"
+        tal:condition="not: is_community">
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_all_activities()">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p>
+          Activitat
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_all_comments()">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p>
+          Comentaris
+        </p>
+      </li>
+    </ul>
+
 </div>
+</tal:iscommunity>

@@ -54,28 +54,6 @@
             tal:define="isOwner python:member.getId()==username;
                         isAnon context/@@plone_portal_state/anonymous;">
 
-            <div id="edit-bar" tal:condition="isOwner">
-                <h5 class="hiddenStructure">Views</h5>
-                <ul id="content-views"
-                    class="contentViews">
-                  <li class="selected">
-                    <a href=""
-                        tal:define="url_quote_plus python:modules['Products.PythonScripts.standard'].url_quote_plus;
-                                    memberurl python:url_quote_plus(member.getId())"
-                       tal:attributes="href string:${portal_url}/author/${memberurl}"
-                       i18n:translate="label_view">View</a>
-                  </li>
-                  <li>
-                    <a href=""
-                       tal:attributes="href string:${portal_url}/@@personal-information"
-                       i18n:translate="label_edit">Edit</a>
-                  </li>
-                </ul>
-                <div class="contentActions">&nbsp;</div>
-                 <!-- end simulated tabs -->
-            </div>
-
-
             <div metal:use-macro="context/global_statusmessage/macros/portal_message">
                 Portal status message
             </div>
@@ -90,105 +68,58 @@
                     Author ID
                 </h1>
 
-                <div class="documentDescription" tal:content="userinfo/description">
-                    Author description.
-                </div>
-
                 <div id="content-core">
-                    <div class="discreet">
-                        <tal:location condition="userinfo/location"
-                                      i18n:translate="text_location">
-                            Location:
-                            <span tal:content="userinfo/location"
-                                  tal:omit-tag=""
-                                  i18n:name="location">
-                                Some location
-                            </span>
-                        </tal:location>
-
-                        <tal:language condition="userinfo/language">
-                        &mdash;
-                        <span i18n:translate="label_main_language">Main Language:</span>
-                        <span tal:replace="userinfo/language">Some language</span>
-                        </tal:language>
+                  <div class="row-fluid">
+                    <div class="span3">
+                      <div class="row-fluid">
+                        <div class="portrait span12">
+                            <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
+                        </div>
+                      </div>
+                      <div class="row-fluid">
+                        <div class="portrait badges">
+                          <div class="span3"
+                               tal:repeat="badge view/get_badges">
+                              <div class="box_badges"
+                                   tal:attributes="class python:'box_badges' if badge['awarded'] else 'box_badges novetat'">
+                                  <i class="fa-icon-trophy"
+                                     tal:attributes="class string:fa-icon-${badge/icon}"></i>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    <img src=""
-                         alt=""
-                         class="portraitPhoto"
-                         width="75"
-                         style="float: left; margin: 1em;"
-                         tal:attributes="src portrait/absolute_url" />
+                    <div class="span9">
 
-                    <div class="visualClear"><!-- --></div>
+                      <tal:bio condition="userinfo/description">
+                        <h2 i18n:translate="biografia">Biography</h2>
+                        <p tal:content="userinfo/description"></p>
+                      </tal:bio>
 
-                    <p tal:condition="python:mtool.getHomeFolder(id=username)">
-                    <a href="#" tal:attributes="href python:mtool.getHomeFolder(id=username).absolute_url()"
-                       i18n:translate="label_author_internal_home_page">Author's home page in this site&hellip;</a>
-                    </p>
+                      <tal:mail condition="python:member.getProperty('email')">
+                        <h2 i18n:translate="eMail">eMail</h2>
+                        <p tal:content="python:member.getProperty('email')"></p>
+                      </tal:mail>
 
-                    <p tal:condition="python: not mtool.getHomeFolder(id=username) and userinfo['home_page']">
-                    <a href="#"
-                       rel="nofollow"
-                       tal:attributes="href userinfo/home_page"
-                       i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
-                    </p>
+                      <tal:location condition="userinfo/location">
+                        <h2 i18n:translate="location">Location</h2>
+                        <p tal:content="userinfo/location"></p>
+                      </tal:location>
 
-                    <tal:noemailsetup tal:condition="python:not (email_from_address or isAnon)">
-                        <p class="discreet"
-                           i18n:translate="text_no_email_setup">
-                            This site doesn't have a valid email setup, so you cannot use
-                            any contact forms.
-                        </p>
-                    </tal:noemailsetup>
-
-                    <tal:noemail tal:condition="python:not isAnon and not member.getProperty('email')">
-                        <p class="discreet"
-                           i18n:translate="text_no_member_email">
-                            You do not have an email address, so you
-                            cannot use any contact forms. Please edit
-                            your personal information.
-                        </p>
-                    </tal:noemail>
-
-                    <!-- listing of content created by this user -->
-                    <tal:authorContent define="author_content python:context.portal_catalog.searchResults(dict(Creator=username, sort_on='created', sort_order='reverse'))[:10];"
-                                       condition="author_content">
-
-                        <h2 i18n:translate="heading_author_content">
-                            Latest content created by this user
-                        </h2>
-
-                        <div metal:define-macro="user_content_listing">
-                        <table class="vertical listing"
-                               summary="Lists content written by an author grouped by content type"
-                               i18n:attributes="summary summary_author_content_list;">
-                            <tal:repeat repeat="item author_content">
-                                <tr>
-                                    <th tal:define="toLocalizedTime nocall: context/@@plone/toLocalizedTime;"
-                                        tal:content="python:toLocalizedTime(item.Date)"
-                                        style="white-space: nowrap">
-                                        Date
-                                    </th>
-                                    <td>
-                                        <a href="" tal:attributes="href item/getURL"
-                                           tal:content="item/pretty_title_or_id">title</a>
-                                    </td>
-                                </tr>
-                            </tal:repeat>
-                        </table>
-                        </div>
-
+                      <tal:homepage condition="userinfo/home_page">
+                        <h2 i18n:translate="homepage">Homepage</h2>
                         <p>
-                        <a href=""
-                           tal:attributes="href string:$here_url/search?Creator=${username}&amp;sort_on=created&amp;sort_order=reverse"
-                           i18n:translate="go_to_search_author_content">
-                            All content created by
-                            <span i18n:name="user" tal:omit-tag="" tal:content="python:userinfo['fullname'] or username"/>&hellip;
-                        </a>
+                          <a href="#"
+                             rel="nofollow"
+                             tal:attributes="href userinfo/home_page"
+                             i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
                         </p>
+                      </tal:homepage>
 
-                    </tal:authorContent>
+                    </div>
+                  </div>
+
                 </div>
             </div>
 
