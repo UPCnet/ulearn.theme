@@ -7,9 +7,7 @@
 
 <head>
   <div metal:fill-slot="javascript_head_slot" tal:omit-tag="">
-    <script type="text/javascript"
-      tal:attributes="src string:${context/absolute_url}/max_variables.js">
-    </script>
+
   </div>
 </head>
 
