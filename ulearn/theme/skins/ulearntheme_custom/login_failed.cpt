@@ -1,0 +1,102 @@
+<tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
+
+<tal:maindefines
+    define="portal_state context/@@plone_portal_state;
+            context_state context/@@plone_context_state;
+            plone_view context/@@plone;
+            genweb_config context/@@gwconfig;
+            genweb_utils context/@@genweb.utils;
+            lang portal_state/language;
+            view nocall:view | nocall: plone_view;
+            dummy python: plone_view.mark_view(view);
+            portal_url portal_state/portal_url;
+            checkPermission nocall: context/portal_membership/checkPermission;
+            site_properties context/portal_properties/site_properties;
+            ajax_load request/ajax_load | nothing;
+            ajax_include_head request/ajax_include_head | nothing;
+            dummy python:request.RESPONSE.setHeader('X-UA-Compatible', 'IE=edge,chrome=1,requiresActiveX=true');"
+            >
+<tal:IElt7 tal:replace="structure string:&lt;!--[if lt IE 7]&gt; &lt;html xmlns='http://www.w3.org/1999/xhtml' class='no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7' lang=${lang}&gt; &lt;![endif]--&gt;" />
+<tal:IE7 tal:replace="structure string:&lt;!--[if IE 7]&gt;    &lt;html xmlns='http://www.w3.org/1999/xhtml' class='no-js lt-ie10 lt-ie9 lt-ie8' lang=${lang}&gt; &lt;![endif]--&gt;" />
+<tal:IE8 tal:replace="structure string:&lt;!--[if IE 8]&gt;    &lt;html xmlns='http://www.w3.org/1999/xhtml' class='no-js lt-ie10 lt-ie9' lang=${lang}&gt; &lt;![endif]--&gt;" />
+<tal:IE9 tal:replace="structure string:&lt;!--[if IE 9]&gt;    &lt;html xmlns='http://www.w3.org/1999/xhtml' class='no-js lt-ie10' lang=${lang}&gt; &lt;![endif]--&gt;" />
+<!--[if gt IE 9]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      class="no-js"
+      tal:attributes="lang lang;">
+<!--<![endif]-->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true" />
+  <meta name="generator" content="Plone - http://plone.org" />
+  <meta name="author" content="UPCnet, SLU - eKnowledge" />
+  <meta name="description" content="Genweb v4.0 - El generador de webs d'UPCnet" />
+  <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/++ulearn++static/favicon.ico" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <tal:comment replace="nothing"><!-- El seguent script ha d'anar seguit del meta del viewport --></tal:comment>
+  <script tal:attributes="src string:${portal_url}/++genweb++static/js/ReView.js"></script>
+
+  <link rel="apple-touch-icon" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-57x57-precomposed.png" /> <!-- iPhone -->
+  <link rel="apple-touch-icon" sizes="72x72" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-72x72-precomposed.png" /> <!-- iPad -->
+  <link rel="apple-touch-icon" sizes="114x114" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-114x114-precomposed.png" /> <!-- iPhone 2x -->
+  <link rel="apple-touch-icon" sizes="144x144" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-144x144-precomposed.png" /> <!-- iPad 2x -->
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" tal:attributes="href string:${portal_url}/++genweb++stylesheets/genwebupc.css">
+  <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/ulearn.css">
+  <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/login.css">
+  <script type="text/javascript" src=""
+          tal:attributes="src string:${context/portal_url}/login.js">
+  </script>
+</head>
+
+<body tal:define="isRTL portal_state/is_rtl;
+                  sl python:plone_view.have_portlets('plone.leftcolumn', view);
+                  sr python:plone_view.have_portlets('plone.rightcolumn', view);
+                  body_class python:plone_view.bodyClass(template, view);
+                  content_class python:genweb_utils.getContentClass(view)"
+    tal:attributes="class body_class;
+                    dir python:isRTL and 'rtl' or 'ltr'">
+
+  <metal:login_failed define-macro="login_failed">
+
+<div class="outerlogin">
+  <div class="loginbox">
+
+        <metal:login use-macro="context/login_form/macros/login" />
+
+        <p i18n:translate="description_not_accept_cookies">
+          If your user name and password are correct, the problem may be that
+          your browser is not configured to accept cookies.
+        </p>
+
+        <p i18n:translate="description_still_failure">
+          If you are still reaching this page after correctly configuring
+          your browser, here are some possible reasons:
+        </p>
+
+        <ul>
+          <li i18n:translate="description_still_failure_reason1">
+            You may be running web filtering software that
+            disables cookies. If so, you will need to configure the
+            software so that it enables you to accept cookies from
+            <span tal:content="context/portal_url" tal:omit-tag="" i18n:name="url">url</span>
+          </li>
+          <li i18n:translate="description_still_failure_reason2">
+            Your computer may be behind a firewall or proxy server
+            that prevents cookies from being sent to or from your browser.
+            If so, you will need to ask your systems administrator if the
+            problem can be fixed.
+          </li>
+        </ul>
+    </div>
+  </div>
+
+  </metal:login_failed>
+
+
+</body>
+</html>
+</tal:maindefines>

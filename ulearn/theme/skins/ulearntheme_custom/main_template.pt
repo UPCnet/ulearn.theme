@@ -34,9 +34,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true" />
     <meta name="generator" content="Plone - http://plone.org" />
-    <meta name="author" content="Servei de Comunicació i Promoció" />
-    <meta name="description" content="Genweb UPC v4.0 - El generador de webs de la UPC" />
-    <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/++genweb++static/favicon.ico" />
+    <meta name="author" content="UPCnet, SLU - eKnowledge" />
+    <meta name="description" content="Genweb v4.0 - El generador de webs d'UPCnet" />
+    <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/++ulearn++static/favicon.ico" />
 
     <metal:baseslot define-slot="base">
         <base tal:attributes="href plone_view/renderBase" /><!--[if lt IE 7]></base><![endif]-->
