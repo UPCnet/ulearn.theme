@@ -31,7 +31,7 @@ from genweb.core.utils import genweb_config, havePermissionAtRoot, pref_lang
 
 from genweb.theme.browser.interfaces import IGenwebTheme
 from ulearn.core.content.community import ICommunity
-from ulearn.core.interfaces import IDocumentFolder, ILinksFolder, IPhotosFolder
+from ulearn.core.interfaces import IDocumentFolder, ILinksFolder, IPhotosFolder, IEventsFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
 grok.context(Interface)
@@ -77,9 +77,26 @@ class folderBar(viewletBase):
             if IPhotosFolder.providedBy(obj):
                 self.folder_type = 'photos'
                 break
+            if IEventsFolder.providedBy(obj):
+                self.folder_type = 'events'
+                break
             if ICommunity.providedBy(obj):
                 self.folder_type = 'community'
                 break
+
+    def bubble_class(self, bubble):
+        if self.folder_type == 'events':
+            span = 'span2'
+        else:
+            span = 'span3'
+
+        if bubble == 'events':
+            span = 'span3'
+
+        if bubble == self.folder_type:
+            return 'active bubble top {}'.format(span)
+        else:
+            return 'bubble top {}'.format(span)
 
     def get_community(self):
         context = aq_inner(self.context)

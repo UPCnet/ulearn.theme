@@ -2404,6 +2404,24 @@ h1, h2, h3, label {
   text-decoration: none;
 }
 
+/* line 82, ../scss/_overrides.scss */
+#formfield-form-widgets-start_date input,
+#formfield-form-widgets-end_date input {
+  width: 40px;
+}
+
+/* line 84, ../scss/_overrides.scss */
+#formfield-form-widgets-start_date select,
+#formfield-form-widgets-end_date select {
+  width: 100px;
+}
+
+/* line 86, ../scss/_overrides.scss */
+#caltitle select,
+#calyear select {
+  width: 155px;
+}
+
 /* line 5, ../scss/_hidden.scss */
 li > a#plone-contentmenu-workflow {
   display: none;
@@ -3264,4 +3282,11 @@ input[type="text"]:focus {
 /* line 520, ../scss/ulearn.scss */
 .template-profile .badges {
   margin-top: 5px;
+}
+
+/* line 527, ../scss/ulearn.scss */
+.subsection-esdeveniments #menusup,
+.subsection-eventos #menusup,
+.subsection-events #menusup {
+  max-width: 726px;
 }

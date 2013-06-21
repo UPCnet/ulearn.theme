@@ -98,7 +98,7 @@
                     ztu modules/ZTUtils;">
 
         <div class="loginlogo">
-          <img tal:attributes="src string:${portal_url}/++ulearn++static/images/ulearn_comunitats.png" />
+          <img tal:attributes="src string:${portal_url}/++ulearn++static/images/ulearn_comunitats_login.png" />
         </div>
 
         <div metal:use-macro="context/global_statusmessage/macros/portal_message">

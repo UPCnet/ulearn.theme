@@ -6,7 +6,7 @@
     <div class="row-fluid">
 
       <div class="active bubble top"
-           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'community' else 'bubble top span3'">
+           tal:attributes="class python: viewlet.bubble_class('community')">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -17,7 +17,7 @@
       </div>
 
       <div class="bubble top"
-           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'documents' else 'bubble top span3'">
+           tal:attributes="class python: viewlet.bubble_class('documents')">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -28,7 +28,7 @@
       </div>
 
       <div class="bubble top"
-           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'links' else 'bubble top span3'">
+           tal:attributes="class python: viewlet.bubble_class('links')">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -39,7 +39,7 @@
       </div>
 
       <div class="bubble top"
-           tal:attributes="class python:'active bubble top span3' if viewlet.folder_type == 'photos' else 'bubble top span3'">
+           tal:attributes="class python: viewlet.bubble_class('photos')">
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
@@ -48,6 +48,19 @@
                   <tal:Photos i18n:translate="Photos">Fotos</tal:Photos></a>
         </div>
       </div>
+
+      <tal:isEventFolder condition="python: viewlet.folder_type == 'events'">
+      <div class="bubble top"
+           tal:attributes="class python: viewlet.bubble_class('events')">
+        <div class="arrow"></div>
+        <div class="bubble-content">
+          <a href="#"
+               tal:attributes="href string:${community/absolute_url}/fotos">
+                  <i class="fa-icon-camera-retro icons"></i>
+                  <tal:Photos i18n:translate="Events">Esdeveniments</tal:Photos></a>
+        </div>
+      </div>
+      </tal:isEventFolder>
 
     </div>
   </nav>

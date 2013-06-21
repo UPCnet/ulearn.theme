@@ -76,3 +76,11 @@ h1, h2, h3, label {
 font-size:12px;
 }
 #edit-bar a, .formTabs a {text-decoration:none;}
+
+// Valorar si incloure-ho en GW
+#formfield-form-widgets-start_date input,
+#formfield-form-widgets-end_date input {width: 40px;}
+#formfield-form-widgets-start_date select,
+#formfield-form-widgets-end_date select {width: 100px;}
+#caltitle select,
+#calyear select {width: 155px;}
