@@ -18,12 +18,11 @@
                          b_start request/b_start | b_start;
                          communities python: view.get_batched_communities(b_start=b_start);">
 
-    <h1 i18n:translate="allcommunities">Communities</h1>
+    <!-- <h1 i18n:translate="allcommunities">Communities</h1> -->
 
     <div id="searchcommunities">
         <input class="searchInput" type="text" placeholder="Cerca"
-               i18n:domain="plone"
-               i18n:attributes="placeholder text_search">
+               i18n:attributes="placeholder search_communities">
     </div>
 
     <section id="communitylist">
@@ -38,22 +37,31 @@
                      tal:condition="not: community/image_filename" />
               </a>
             </div>
-            <div class="span8">
+            <div class="span7">
               <a tal:attributes="href community/getURL">
                 <h4 tal:content="community/Title">Community</h4>
                 <p tal:content="community/Description">Description</p>
               </a>
             </div>
-            <div class="eines span2">
-              <a tal:condition="python:view.is_community_manager(community)"
-                 tal:attributes="href string:${community/getURL}/edit">
-                <i class="fa-icon-pencil"></i>
-              </a>
-              <a class="favorite" href="#"
-                 tal:attributes="data-community string:${community/getURL}">
-                <i tal:attributes="class python:view.get_star_class(community)"></i>
-              </a>
-            </div>
+          <div class="eines span3">
+            <a class="favorite" href="#"
+               tal:attributes="data-community string:${community/getURL}">
+              <i tal:attributes="class python:view.get_star_class(community)"></i>
+            </a>
+            <a class="subscribed" href="#"
+               tal:condition="python:view.is_not_organizative(community)"
+               tal:attributes="data-community string:${community/getURL}">
+              <i tal:attributes="class python:view.get_subscribed_class(community)"></i>
+            </a>
+            <a tal:condition="python:view.is_community_manager(community)"
+               tal:attributes="href string:${community/getURL}/edit">
+              <i class="fa-icon-pencil"></i>
+            </a>
+            <a tal:condition="python:view.is_community_manager(community)"
+               tal:attributes="href string:${community/getURL}/delete_confirmation">
+            <i class="fa-icon-remove"></i>
+            </a>
+          </div>
           </div>
         </li>
       </ul>

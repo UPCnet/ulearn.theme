@@ -36,8 +36,9 @@ class baseCommunities(grok.View):
 
     def get_batched_communities(self, query=None, batch=True, b_size=10, b_start=0):
         pc = getToolByName(self.context, "portal_catalog")
-        results = pc.searchResults(portal_type="ulearn.community")
-        batch = Batch(results, b_size, b_start)
+        r_results = pc.searchResults(portal_type="ulearn.community", community_type=[u"Closed", u"Organizative"])
+        ur_results = pc.unrestrictedSearchResults(portal_type="ulearn.community", community_type=u"Open")
+        batch = Batch(r_results + ur_results, b_size, b_start)
         return batch
 
     def is_community_manager(self, community):
@@ -92,8 +93,13 @@ class baseCommunities(grok.View):
             query = " AND ".join(query)
             query = quote_bad_chars(query) + '*'
 
-            results = pc.searchResults(portal_type="ulearn.community", SearchableText=query)
-            return results
+            r_results = pc.searchResults(portal_type="ulearn.community",
+                                       community_type=[u"Closed", u"Organizative"],
+                                       SearchableText=query)
+            ur_results = pc.unrestrictedSearchResults(portal_type="ulearn.community",
+                                                      community_type=u"Open",
+                                                      SearchableText=query)
+            return r_results + ur_results
         else:
             return self.get_batched_communities(query=None, batch=True, b_size=10, b_start=0)
 
