@@ -42,8 +42,14 @@ class baseCommunities(grok.View):
 
     def is_community_manager(self, community):
         pm = getToolByName(self.context, "portal_membership")
-        current_user = pm.getAuthenticatedMember().getUserName()
-        return current_user == community.Creator
+        user = pm.getAuthenticatedMember()
+        current_user = user.getUserName()
+
+        return 'Manager' in user.getRoles() or \
+               'WebMaster' in user.getRoles() or \
+               'Site Administrator' in user.getRoles() or \
+               'Owner' in user.getRoles() or \
+               current_user == community.Creator
 
     def get_favorites(self):
         pm = getToolByName(self.context, "portal_membership")
@@ -53,8 +59,17 @@ class baseCommunities(grok.View):
         results = pc.unrestrictedSearchResults(favoritedBy=current_user)
         return [favorites.id for favorites in results]
 
+    def is_not_organizative(self, community):
+        return not community.community_type == u'Organizative'
+
     def get_star_class(self, community):
         return community.id in self.favorites and 'fa-icon-star' or 'fa-icon-star-empty'
+
+    def get_subscribed_class(self, community):
+        pm = getToolByName(self.context, "portal_membership")
+        user = pm.getAuthenticatedMember()
+        current_user = user.getUserName()
+        return 'fa-icon-check' if current_user in community.subscribed_users else ''
 
     def get_communities_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")

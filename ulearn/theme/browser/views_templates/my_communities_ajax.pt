@@ -1,11 +1,3 @@
-<div class="clearfix">
-  <div class="btn-group pull-right">
-    <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-arrow-up"></i></button>
-    <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-arrow-down"></i></button>
-    <button class="btn sort" data-sort="default" data-order="desc"><i class="fa-icon-bullseye"></i></button>
-  </div>
-</div>
-
 <section id="communitylist"
          tal:define="communities view/get_my_communities">
   <ul class="sortablelist">
@@ -21,20 +13,29 @@
                    tal:condition="not: community/image_filename" />
             </a>
           </div>
-          <div class="span8">
+          <div class="span7">
             <a tal:attributes="href community/getURL">
               <h4 tal:content="community/Title">Community</h4>
               <p tal:content="community/Description">Description</p>
             </a>
           </div>
-          <div class="eines span2">
+          <div class="eines span3">
+            <a class="favorite" href="#"
+               tal:attributes="data-community string:${community/getURL}">
+              <i tal:attributes="class python:view.get_star_class(community)"></i>
+            </a>
+            <a class="subscribed" href="#"
+               tal:condition="python:view.is_not_organizative(community)"
+               tal:attributes="data-community string:${community/getURL}">
+              <i tal:attributes="class python:view.get_subscribed_class(community)"></i>
+            </a>
             <a tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/edit">
               <i class="fa-icon-pencil"></i>
             </a>
-            <a class="favorite" href="#"
-               tal:attributes="data-community string:${community/getURL}">
-              <i tal:attributes="class python:view.get_star_class(community)"></i>
+            <a tal:condition="python:view.is_community_manager(community)"
+               tal:attributes="href string:${community/getURL}/delete_confirmation">
+            <i class="fa-icon-remove"></i>
             </a>
           </div>
         </div>
@@ -45,8 +46,8 @@
 
 <div class="clearfix">
   <div class="btn-group pull-right">
-    <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-arrow-up"></i></button>
-    <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-arrow-down"></i></button>
-    <button class="btn sort" data-sort="default" data-order="desc"><i class="fa-icon-bullseye"></i></button>
+    <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-sort-by-alphabet"></i></button>
+    <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-sort-by-alphabet-alt"></i></button>
+    <button class="btn sort" data-sort="default" data-order="desc"><i class="fa-icon-repeat"></i></button>
   </div>
 </div>
