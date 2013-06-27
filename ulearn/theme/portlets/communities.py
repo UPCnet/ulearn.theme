@@ -42,13 +42,20 @@ class Renderer(base.Renderer):
         return getSite()
 
     def showCreateCommunity(self):
-        if IHomePage.providedBy(self.context):
+        if IHomePage.providedBy(self.context) and \
+           checkPermission('ulearn.addCommunity', self.context):
             return True
 
     def showEditCommunity(self):
+        pm = getToolByName(self.portal(), 'portal_membership')
+        user = pm.getAuthenticatedMember()
+
         if not IPloneSiteRoot.providedBy(self.context) and \
            ICommunity.providedBy(self.context) and \
-           checkPermission('cmf.RequestReview', self.context):
+           ('Manager' in user.getRoles() or
+           'WebMaster' in user.getRoles() or
+           'Site Administrator' in user.getRoles() or
+           'Owner' in user.getRoles()):
             return True
 
     def getCommunities(self):
