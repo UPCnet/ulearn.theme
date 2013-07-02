@@ -3,10 +3,10 @@ from zope.component.hooks import getSite
 from zope.security import checkPermission
 from zope.component import queryUtility
 
+from plone.app.portlets.portlets import base
 from plone.registry.interfaces import IRegistry
 from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
-from plone.app.portlets.portlets import base
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _

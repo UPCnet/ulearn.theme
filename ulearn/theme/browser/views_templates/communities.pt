@@ -9,6 +9,18 @@
 <head>
   <metal:block fill-slot="top_slot"
              tal:define="dummy python:request.set('disable_border',1);"/>
+
+  <div metal:fill-slot="javascript_head_slot" tal:omit-tag="">
+    <script type="text/javascript"
+      tal:attributes="src string:${view/portal_url}/++genweb++static/js/alertify.min.js">
+    </script>
+  </div>
+  <div metal:fill-slot="style_slot" tal:omit-tag="">
+    <link rel="stylesheet"
+      tal:attributes="href string:${view/portal_url}/++genweb++static/css/alertify.core.css">
+    <link rel="stylesheet"
+      tal:attributes="href string:${view/portal_url}/++genweb++static/css/alertify.bootstrap.css">
+  </div>
 </head>
 
 <body>
@@ -21,8 +33,11 @@
     <!-- <h1 i18n:translate="allcommunities">Communities</h1> -->
 
     <div id="searchcommunities">
+      <div class="input-append">
         <input class="searchInput" type="text" placeholder="Cerca"
                i18n:attributes="placeholder search_communities">
+        <span class="add-on"><i class="fa-icon-search"></i></span>
+      </div>
     </div>
 
     <section id="communitylist">
@@ -48,17 +63,21 @@
                tal:attributes="data-community string:${community/getURL}">
               <i tal:attributes="class python:view.get_star_class(community)"></i>
             </a>
-            <a class="subscribed" href="#"
+            <a class="subscribe" href="#"
                tal:condition="python:view.is_not_organizative(community)"
-               tal:attributes="data-community string:${community/getURL}">
+               tal:attributes="data-community string:${community/getURL};
+                               data-name community/Title">
               <i tal:attributes="class python:view.get_subscribed_class(community)"></i>
             </a>
             <a tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/edit">
               <i class="fa-icon-pencil"></i>
             </a>
-            <a tal:condition="python:view.is_community_manager(community)"
-               tal:attributes="href string:${community/getURL}/delete_confirmation">
+            <a class="delete" href="#"
+               tal:condition="python:view.is_community_manager(community)"
+               tal:attributes="href string:${community/getURL}/delete_confirmation;
+                               data-authenticator view/get_authenticator;
+                               data-name community/Title">
             <i class="fa-icon-remove"></i>
             </a>
           </div>

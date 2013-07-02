@@ -90,4 +90,64 @@ $(document).ready(function (event) {
         $('.currentactivity').text(int_activities + 1);
     });
 
-})
+    // Dialog search communities
+    $('#communitylist').on('click', '.delete', function(event) {
+        event.preventDefault();
+        var $this = $(this);
+        alertify.confirm("Si cliqueu aquí, esborrareu la comunitat " + $this.data()['name'], function (e) {
+            if (e) {
+                // user clicked "ok"
+                url = $this.attr('href');
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {
+                    'form.submitted': '1',
+                    '_authenticator': $this.data()['authenticator']
+                    },
+                    error: function() {
+                        alertify.error("Error when removing community");
+                    },
+                    success: function() {
+                        $this.parent().parent().parent().remove();
+                        alertify.success("Successfully removed");
+                        console.log("ok");
+                    }
+                });
+            } else {
+                // user clicked "cancel"
+            }
+        });
+    });
+
+    $('#communitylist').on('click', '.subscribe', function(event) {
+        event.preventDefault();
+        var $this = $(this);
+        alertify.confirm("Voleu subscrivir-vos a la comunitat " + $this.data()['name'] + "?", function (e) {
+            if (e) {
+                // user clicked "ok"
+                community_url = $this.data()['community'];
+                $.ajax({
+                    type: "GET",
+                    url: community_url + "/toggle-subscribe",
+                    error: function() {
+                        alertify.error("Error when (un)subscribing to the community");
+                    },
+                    success: function() {
+                        if ($('i', $this).hasClass('fa-icon-check')) {
+                            $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
+                            alertify.success("Successfully unsubscribed");
+                        } else {
+                            $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
+                            alertify.success("Successfully subscribed");
+                        }
+                        console.log("ok");
+                    }
+                });
+            } else {
+                // user clicked "cancel"
+            }
+        });
+    });
+
+});

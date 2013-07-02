@@ -2764,6 +2764,11 @@ li > a#plone-contentmenu-workflow {
   display: none;
 }
 
+/* line 6, ../scss/_hidden.scss */
+.section-Members li > a#plone-contentmenu-workflow {
+  display: block;
+}
+
 /* line 16, ../scss/_arrows.scss */
 .bubble {
   position: relative;
@@ -3525,108 +3530,118 @@ input[type="text"]:focus {
   height: 25px;
   font-size: 20px;
   line-height: 25px;
-  width: inherit;
+  width: 260px;
+}
+/* line 461, ../scss/ulearn.scss */
+#searchcommunities .add-on {
+  background-color: white;
+  border: none;
+  font-size: 20px;
+  position: relative;
+  right: 34px;
+  top: 2px;
+  z-index: 10;
 }
 
-/* line 463, ../scss/ulearn.scss */
+/* line 473, ../scss/ulearn.scss */
 #box_comunitats .bubble-content {
   padding: 6px 0px;
   width: 40px;
   text-align: center;
   background: none repeat scroll 0 0 #f58d3d;
 }
-/* line 470, ../scss/ulearn.scss */
+/* line 480, ../scss/ulearn.scss */
 #box_comunitats .bubble a {
   color: white;
   font-weight: 600;
   height: 18px;
   width: 33px;
 }
-/* line 478, ../scss/ulearn.scss */
+/* line 488, ../scss/ulearn.scss */
 #box_comunitats .bubble .arrow {
   border-right-color: #f58d3d;
 }
-/* line 481, ../scss/ulearn.scss */
+/* line 491, ../scss/ulearn.scss */
 #box_comunitats i {
   margin-right: 3px;
 }
-/* line 483, ../scss/ulearn.scss */
+/* line 493, ../scss/ulearn.scss */
 #box_comunitats li a {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 486, ../scss/ulearn.scss */
+/* line 496, ../scss/ulearn.scss */
 .bubble.top .arrow:after {
   border-top-color: transparent;
 }
 
-/* line 487, ../scss/ulearn.scss */
+/* line 497, ../scss/ulearn.scss */
 .bubble.right .arrow:after {
   border-right-color: transparent;
 }
 
-/* line 488, ../scss/ulearn.scss */
+/* line 498, ../scss/ulearn.scss */
 .bubble.left .arrow:after {
   border-left-color: transparent;
 }
 
-/* line 491, ../scss/ulearn.scss */
+/* line 501, ../scss/ulearn.scss */
 #box_stats .bubble-content {
   padding: 5px 12px;
   text-align: center;
 }
-/* line 492, ../scss/ulearn.scss */
+/* line 502, ../scss/ulearn.scss */
 #box_stats .bubble {
   background-color: #344961;
   color: white;
   width: 60px;
 }
-/* line 496, ../scss/ulearn.scss */
+/* line 506, ../scss/ulearn.scss */
 #box_stats .bubble .arrow {
   border-left-color: #344961;
 }
-/* line 498, ../scss/ulearn.scss */
+/* line 508, ../scss/ulearn.scss */
 #box_stats p {
   margin: 0;
   padding: 5px 0 5px 78px;
   background-color: #deded6;
   font-weight: bold;
 }
-/* line 504, ../scss/ulearn.scss */
+/* line 514, ../scss/ulearn.scss */
 #box_stats ul {
   margin-top: 5px;
 }
-/* line 505, ../scss/ulearn.scss */
+/* line 515, ../scss/ulearn.scss */
 #box_stats li {
   margin-bottom: 5px;
 }
 
-/* line 511, ../scss/ulearn.scss */
+/* line 521, ../scss/ulearn.scss */
 #addModal .modal-body {
   max-height: 426px;
 }
-/* line 512, ../scss/ulearn.scss */
+/* line 522, ../scss/ulearn.scss */
 #addModal #content-core {
   height: 426px;
 }
 
-/* line 516, ../scss/ulearn.scss */
+/* line 526, ../scss/ulearn.scss */
 .template-profile #content {
   background-color: white;
   padding: 10px 20px;
 }
-/* line 521, ../scss/ulearn.scss */
+/* line 531, ../scss/ulearn.scss */
 .template-profile .portrait {
   width: 163px;
 }
-/* line 523, ../scss/ulearn.scss */
+/* line 533, ../scss/ulearn.scss */
 .template-profile .badges {
   margin-top: 5px;
 }
 
-/* line 530, ../scss/ulearn.scss */
+/* line 540, ../scss/ulearn.scss */
 .subsection-esdeveniments #menusup,
 .subsection-eventos #menusup,
 .subsection-events #menusup {

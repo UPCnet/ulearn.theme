@@ -1,6 +1,9 @@
 from five import grok
+from zope.component.hooks import getSite
 
 from plone.batching import Batch
+from plone.memoize.view import memoize_contextless
+from plone.protect import createToken
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -25,6 +28,17 @@ class baseCommunities(grok.View):
     def update(self):
         self.favorites = self.get_favorites()
         self.query = self.request.form.get('q', '')
+
+    @memoize_contextless
+    def portal_url(self):
+        return self.portal().absolute_url()
+
+    @memoize_contextless
+    def portal(self):
+        return getSite()
+
+    def get_authenticator(self):
+        return createToken()
 
     def get_my_communities(self):
         pm = getToolByName(self.context, "portal_membership")
@@ -70,7 +84,13 @@ class baseCommunities(grok.View):
         pm = getToolByName(self.context, "portal_membership")
         user = pm.getAuthenticatedMember()
         current_user = user.getUserName()
-        return 'fa-icon-check' if current_user in community.subscribed_users else ''
+        if community.community_type == u'Organizative':
+            return ''
+        else:
+            # It's an open community or a closed one where I'm subscribed. If
+            # the community is closed and I'm not subscribed, then I should not
+            # see it as I should not have permission
+            return 'fa-icon-check' if current_user in community.subscribed_users else 'fa-icon-check-empty'
 
     def get_communities_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
