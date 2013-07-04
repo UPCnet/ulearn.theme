@@ -48,8 +48,10 @@
                  tal:content="view/get_thinnkins">256</span> thinnkins</p>
     </div>
     <div class="row-fluid">
-        <div class="span9">
-            <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
+        <div class="photo span9">
+            <a tal:attributes="href string:${view/portal_url}/@@personal-information">
+                <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
+            </a>
         </div>
 
         <div class="span3">

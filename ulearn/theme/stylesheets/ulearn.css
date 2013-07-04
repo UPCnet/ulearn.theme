@@ -128,7 +128,7 @@ a [class*=" fa-icon-"] {
 /* line 102, ../../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap/_font-awesome.scss */
 .fa-icon-border {
   border: solid 1px #eeeeee;
-  padding: 0.2em 0.25em 0.15em;
+  padding: .2em .25em .15em;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -2405,9 +2405,9 @@ div.token-input-dropdown-facebook {
   width: 400px;
   background-color: #fff;
   overflow: hidden;
-  border-left: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   cursor: default;
   font-size: 13px;
   font-family: Verdana;
@@ -2461,8 +2461,8 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 /* line 5, ../scss/_maxui.scss */
 #maxui-container {
   color: #444444;
-  font: 13px/18px "Open Sans", serif;
-  text-shadow: 0 1px white;
+  font: 13px/18px 'Open Sans', serif;
+  text-shadow: 0 1px #FFFFFF;
   border: 0 none;
   box-shadow: -1px 1px 2px #dddddd;
 }
@@ -2470,7 +2470,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 /* line 12, ../scss/_maxui.scss */
 #maxui-container a {
   color: #007BC0;
-  font-family: "Open Sans", serif;
+  font-family: 'Open Sans', serif;
 }
 
 /* line 16, ../scss/_maxui.scss */
@@ -2493,7 +2493,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 
 /* line 26, ../scss/_maxui.scss */
 #maxui-timeline {
-  background: none repeat scroll 0 0 white;
+  background: none repeat scroll 0 0 #FFFFFF;
   clear: both;
   margin: 0;
   overflow: hidden;
@@ -2502,7 +2502,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 
 /* line 33, ../scss/_maxui.scss */
 #maxui-newactivity {
-  background: none repeat scroll 0 0 #34495e;
+  background: none repeat scroll 0 0 #34495E;
   padding: 10px;
   position: relative;
 }
@@ -2513,7 +2513,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   border-radius: 3px 3px 3px 3px;
   box-shadow: 0;
   color: #444444;
-  font-family: "Open Sans", serif;
+  font-family: 'Open Sans', serif;
   font-size: 13px;
   height: 48px;
   line-height: 18px;
@@ -2527,7 +2527,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 
 /* line 54, ../scss/_maxui.scss */
 #maxui-search {
-  background: none repeat scroll 0 0 #deded6;
+  background: none repeat scroll 0 0 #DEDED6;
   border-bottom: 0 none;
   border-top: 0 none;
   padding: 10px 30px 10px 10px;
@@ -2536,9 +2536,9 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 /* line 60, ../scss/_maxui.scss */
 #maxui-search-text {
   -moz-appearance: none;
-  border: 1px solid #b2b2b2;
+  border: 1px solid #B2B2B2;
   color: #666666;
-  font-family: "Open Sans", serif;
+  font-family: 'Open Sans', serif;
   font-size: 13px;
   height: 24px;
   line-height: 20px;
@@ -2589,7 +2589,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 
 /* line 102, ../scss/_maxui.scss */
 #maxui-back-conversations, #maxui-show-conversations {
-  background: none repeat scroll 0 0 whitesmoke;
+  background: none repeat scroll 0 0 #F5F5F5;
   border-bottom: 0 none;
   height: 18px;
   padding-bottom: 3px;
@@ -2603,7 +2603,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
 
 /* line 112, ../scss/_maxui.scss */
 input.maxui-button {
-  background: none repeat scroll 0 0 #f58d3d;
+  background: none repeat scroll 0 0 #F58D3D;
   border: 0 none;
   border-radius: 4px 4px 4px 4px;
   color: #FFFFFF;
@@ -2626,13 +2626,13 @@ input.maxui-button:hover, input.maxui-button:hover, input.maxui-button:focus, in
 
 /* line 131, ../scss/_maxui.scss */
 input.maxui-button[disabled] {
-  background: none repeat scroll 0 0 #e5e5e5;
+  background: none repeat scroll 0 0 #E5E5E5;
   border: 0;
   border-radius: 4px 4px 4px 4px;
   box-shadow: none;
   color: #666666;
   cursor: default;
-  text-shadow: 0 1px white;
+  text-shadow: 0 1px #FFFFFF;
 }
 
 /* line 140, ../scss/_maxui.scss */
@@ -2642,7 +2642,7 @@ input.maxui-button[disabled] {
 
 /* line 143, ../scss/_maxui.scss */
 #maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
-  border: 1px solid #f58d3d !important;
+  border: 1px solid #F58D3D !important;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset, 0 0 8px rgba(100, 123, 192, 0.5) !important;
 }
 
@@ -2673,14 +2673,14 @@ h1, h2, h3, label {
 
 /* line 36, ../scss/_overrides.scss */
 .liniaDalt, .tileHeadline {
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #DDDDDD;
   box-shadow: none;
   padding: 10px 0;
 }
 
 /* line 41, ../scss/_overrides.scss */
 .liniaBaix, .documentFirstHeading {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #DDDDDD;
   box-shadow: none;
   margin: 0 0 15px;
   padding: 0 0 5px;
@@ -2928,9 +2928,9 @@ li > a#plone-contentmenu-workflow {
   border-radius: 4px;
   opacity: 0.96;
   filter: alpha(opacity=96);
-  border-bottom: 1px solid #cccccc;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
   padding: 20px;
 }
 
@@ -2943,12 +2943,12 @@ li > a#plone-contentmenu-workflow {
 /* line 27, ../scss/ulearn.scss */
 body {
   background: #eae9e4;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* line 32, ../scss/ulearn.scss */
 input, button, select, textarea {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* line 35, ../scss/ulearn.scss */
@@ -3060,7 +3060,7 @@ input[type="text"]:focus {
   padding: 5px 10px 10px;
   clear: both;
   margin-bottom: 20px;
-  box-shadow: -1px 1px 2px #dddddd;
+  box-shadow: -1px 1px 2px #ddd;
 }
 
 /* line 124, ../scss/ulearn.scss */
@@ -3097,7 +3097,7 @@ input[type="text"]:focus {
 
 /* line 141, ../scss/ulearn.scss */
 .novetat {
-  background: none repeat scroll 0 0 #34495e;
+  background: none repeat scroll 0 0 #34495E;
 }
 
 /* line 144, ../scss/ulearn.scss */
@@ -3119,7 +3119,7 @@ input[type="text"]:focus {
 
 /* line 156, ../scss/ulearn.scss */
 .nav-pills > li > a {
-  background: none repeat scroll 0 0 #deded6;
+  background: none repeat scroll 0 0 #DEDED6;
   color: #34495E;
   text-decoration: none;
   text-shadow: 1px 1px 0px white;
@@ -3135,7 +3135,7 @@ input[type="text"]:focus {
 /* line 167, ../scss/ulearn.scss */
 .num {
   background: none repeat scroll 0 0 #f58d3d;
-  border-left: 1px solid #eeeeee;
+  border-left: 1px solid #eee;
   border-radius: 0 5px 5px 0;
   color: white;
   float: right;
@@ -3145,7 +3145,7 @@ input[type="text"]:focus {
   margin-top: -8px;
   padding: 7px 5px 5px;
   text-align: center;
-  text-shadow: 1px 1px 0 #92480f;
+  text-shadow: 1px 1px 0 #92480F;
   width: 33px;
 }
 
@@ -3166,7 +3166,7 @@ input[type="text"]:focus {
   padding-bottom: 7px;
   padding-right: 4px;
   width: 60px;
-  transition: all 0.1s ease 0s;
+  transition: all 0.10s ease 0s;
 }
 
 /* line 196, ../scss/ulearn.scss */
@@ -3243,7 +3243,7 @@ input[type="text"]:focus {
   padding-bottom: 7px;
   padding-top: 13px;
   text-align: center;
-  text-shadow: 1px 1px 0 #92480f;
+  text-shadow: 1px 1px 0 #92480F;
   margin-bottom: 0;
 }
 /* line 276, ../scss/ulearn.scss */
@@ -3292,7 +3292,7 @@ input[type="text"]:focus {
 
 /* line 298, ../scss/ulearn.scss */
 #calendari {
-  background: none repeat scroll 0 0 whitesmoke;
+  background: none repeat scroll 0 0 #F5F5F5;
   margin-top: 10px;
   padding: 5px 5px 10px;
   text-shadow: 1px 1px 0 white;
@@ -3304,7 +3304,7 @@ input[type="text"]:focus {
 
 /* line 309, ../scss/ulearn.scss */
 #box_agenda .hiddenStructure {
-  background: none repeat scroll 0 0 #eae9e4;
+  background: none repeat scroll 0 0 #EAE9E4;
   color: black;
   margin-bottom: 5px;
   padding: 1px;
@@ -3330,7 +3330,7 @@ input[type="text"]:focus {
 }
 /* line 322, ../scss/ulearn.scss */
 #box_agenda li {
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #EEEEEE;
   font-size: 13px;
   line-height: 15px;
   margin-bottom: 8px;
@@ -3439,12 +3439,12 @@ input[type="text"]:focus {
 #communitylist li {
   min-height: 55px;
   line-height: 20px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #DDDDDD;
   margin-bottom: 0;
   padding-bottom: 15px;
   padding-left: 10px;
   padding-top: 10px;
-  background: none repeat scroll 0 0 white;
+  background: none repeat scroll 0 0 #FFFFFF;
   box-shadow: none;
 }
 /* line 410, ../scss/ulearn.scss */
@@ -3472,7 +3472,7 @@ input[type="text"]:focus {
 /* line 429, ../scss/ulearn.scss */
 #communitylist img:hover {
   transition: all 0.25s ease 0s;
-  border: 2px solid #f58d3d;
+  border: 2px solid #F58D3D;
 }
 
 /* line 435, ../scss/ulearn.scss */
@@ -3486,53 +3486,53 @@ input[type="text"]:focus {
   background-position: -312px -192px;
 }
 
-/* line 441, ../scss/ulearn.scss */
-#box_perfil .span9 {
+/* line 442, ../scss/ulearn.scss */
+#box_perfil .photo {
   overflow-y: hidden;
   height: 150px;
 }
 
-/* line 442, ../scss/ulearn.scss */
+/* line 451, ../scss/ulearn.scss */
 #box_community img {
   width: 200px;
 }
 
-/* line 443, ../scss/ulearn.scss */
+/* line 452, ../scss/ulearn.scss */
 #box_community i {
   margin-right: 3px;
 }
 
-/* line 444, ../scss/ulearn.scss */
+/* line 453, ../scss/ulearn.scss */
 #box_community p {
   margin-top: 10px;
 }
 
-/* line 446, ../scss/ulearn.scss */
+/* line 455, ../scss/ulearn.scss */
 .template-communities #content {
   background-color: white;
 }
 
-/* line 447, ../scss/ulearn.scss */
+/* line 456, ../scss/ulearn.scss */
 .template-communities h1 {
   margin: 0 0 20px 20px;
   padding-top: 20px;
 }
 
-/* line 448, ../scss/ulearn.scss */
+/* line 457, ../scss/ulearn.scss */
 #searchcommunities {
   margin-right: auto;
   margin-left: auto;
   width: 300px;
   padding-top: 10px;
 }
-/* line 454, ../scss/ulearn.scss */
+/* line 463, ../scss/ulearn.scss */
 #searchcommunities .searchInput {
   height: 25px;
   font-size: 20px;
   line-height: 25px;
   width: 260px;
 }
-/* line 461, ../scss/ulearn.scss */
+/* line 470, ../scss/ulearn.scss */
 #searchcommunities .add-on {
   background-color: white;
   border: none;
@@ -3543,105 +3543,105 @@ input[type="text"]:focus {
   z-index: 10;
 }
 
-/* line 473, ../scss/ulearn.scss */
+/* line 482, ../scss/ulearn.scss */
 #box_comunitats .bubble-content {
   padding: 6px 0px;
   width: 40px;
   text-align: center;
   background: none repeat scroll 0 0 #f58d3d;
 }
-/* line 480, ../scss/ulearn.scss */
+/* line 489, ../scss/ulearn.scss */
 #box_comunitats .bubble a {
   color: white;
   font-weight: 600;
   height: 18px;
   width: 33px;
 }
-/* line 488, ../scss/ulearn.scss */
+/* line 497, ../scss/ulearn.scss */
 #box_comunitats .bubble .arrow {
   border-right-color: #f58d3d;
 }
-/* line 491, ../scss/ulearn.scss */
+/* line 500, ../scss/ulearn.scss */
 #box_comunitats i {
   margin-right: 3px;
 }
-/* line 493, ../scss/ulearn.scss */
+/* line 502, ../scss/ulearn.scss */
 #box_comunitats li a {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 496, ../scss/ulearn.scss */
+/* line 505, ../scss/ulearn.scss */
 .bubble.top .arrow:after {
   border-top-color: transparent;
 }
 
-/* line 497, ../scss/ulearn.scss */
+/* line 506, ../scss/ulearn.scss */
 .bubble.right .arrow:after {
   border-right-color: transparent;
 }
 
-/* line 498, ../scss/ulearn.scss */
+/* line 507, ../scss/ulearn.scss */
 .bubble.left .arrow:after {
   border-left-color: transparent;
 }
 
-/* line 501, ../scss/ulearn.scss */
+/* line 510, ../scss/ulearn.scss */
 #box_stats .bubble-content {
   padding: 5px 12px;
   text-align: center;
 }
-/* line 502, ../scss/ulearn.scss */
+/* line 511, ../scss/ulearn.scss */
 #box_stats .bubble {
   background-color: #344961;
   color: white;
   width: 60px;
 }
-/* line 506, ../scss/ulearn.scss */
+/* line 515, ../scss/ulearn.scss */
 #box_stats .bubble .arrow {
   border-left-color: #344961;
 }
-/* line 508, ../scss/ulearn.scss */
+/* line 517, ../scss/ulearn.scss */
 #box_stats p {
   margin: 0;
   padding: 5px 0 5px 78px;
   background-color: #deded6;
   font-weight: bold;
 }
-/* line 514, ../scss/ulearn.scss */
+/* line 523, ../scss/ulearn.scss */
 #box_stats ul {
   margin-top: 5px;
 }
-/* line 515, ../scss/ulearn.scss */
+/* line 524, ../scss/ulearn.scss */
 #box_stats li {
   margin-bottom: 5px;
 }
 
-/* line 521, ../scss/ulearn.scss */
+/* line 530, ../scss/ulearn.scss */
 #addModal .modal-body {
   max-height: 426px;
 }
-/* line 522, ../scss/ulearn.scss */
+/* line 531, ../scss/ulearn.scss */
 #addModal #content-core {
   height: 426px;
 }
 
-/* line 526, ../scss/ulearn.scss */
+/* line 535, ../scss/ulearn.scss */
 .template-profile #content {
   background-color: white;
   padding: 10px 20px;
 }
-/* line 531, ../scss/ulearn.scss */
+/* line 540, ../scss/ulearn.scss */
 .template-profile .portrait {
   width: 163px;
 }
-/* line 533, ../scss/ulearn.scss */
+/* line 542, ../scss/ulearn.scss */
 .template-profile .badges {
   margin-top: 5px;
 }
 
-/* line 540, ../scss/ulearn.scss */
+/* line 549, ../scss/ulearn.scss */
 .subsection-esdeveniments #menusup,
 .subsection-eventos #menusup,
 .subsection-events #menusup {

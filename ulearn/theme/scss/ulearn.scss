@@ -438,7 +438,16 @@ border-color: #34495E;
   background-position: -312px -192px;
 }
 
-#box_perfil .span9 { overflow-y: hidden; height: 150px; }
+#box_perfil {
+  .photo {
+    overflow-y: hidden; height: 150px;
+    // &:hover {
+    //   border: 1px solid #f58d3d;
+    //   img {margin:-1px;}
+    // }
+  }
+}
+
 #box_community img { width: 200px; }
 #box_community i { margin-right: 3px; }
 #box_community p { margin-top: 10px; }
