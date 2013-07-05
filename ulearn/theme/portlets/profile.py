@@ -95,11 +95,11 @@ class Renderer(base.Renderer):
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
 
         thinnkins = self.get_thinnkins()
-        if thinnkins >= settings.threshold_winwin1:
+        if (thinnkins >= int(settings.threshold_winwin1)):
             badges[1]['awarded'] = True
-        if thinnkins >= settings.threshold_winwin2:
+        if (thinnkins >= int(settings.threshold_winwin2)):
             badges[2]['awarded'] = True
-        if thinnkins >= settings.threshold_winwin3:
+        if (thinnkins >= int(settings.threshold_winwin3)):
             badges[3]['awarded'] = True
 
         return badges
