@@ -202,7 +202,7 @@
               <button type="submit" name="submit" class="btn btn-primary"
                       i18n:domain="plone"
                       i18n:translate="label_log_in">Log in</button>
-              <h2 class="l"
+<!--               <h2 class="l"
                   i18n:translate="genweb-si_heu_oblidat_la_contrasenya_question">
                   Have you forgotten your password?
               </h2>
@@ -215,7 +215,7 @@
                         click here to retrieve it
                     </a>
                   </tal:recuperarla>
-              </p>
+              </p> -->
             </div>
           </div>
         </form>

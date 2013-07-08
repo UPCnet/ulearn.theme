@@ -6,6 +6,7 @@ $fontAwesomePath: "/++genweb++static/fonts";
 @import "hidden";
 @import "arrows";
 @import "login";
+@import "plugins";
 // @import "genwebupc";
 
 // Victor for pushing it to genweb.theme
@@ -184,14 +185,17 @@ border-color: #34495E;
 // ul.icons { text-indent: -.75em; }
 #miniatures {
   margin-top:10px;
-  }
+}
+.thinnker {
+  height: 44px;
+  overflow-y: hidden;
+  display: inline-block;
+  margin-bottom: 7px;
+  margin-right: 4px;
+}
 #miniatures img {
-    height: 60px;
-    overflow: hidden;
-    padding-bottom: 7px;
-    padding-right: 4px;
-    width: 60px;
-  transition: all 0.10s ease 0s;
+    max-width: 44px;
+    transition: all 0.10s ease 0s;
 }
 #miniatures img:hover {opacity:0.8;}
 
@@ -525,10 +529,11 @@ border-color: #34495E;
     margin-bottom: 5px;
   }
 }
-
+.modal.fade.in { top: 34%; }
 #addModal {
-  .modal-body { max-height: 426px; }
-  #content-core { height: 426px; }
+  .modal-body { max-height: 750px; }
+  #content-core { height: 655px; }
+
 }
 
 .template-profile {

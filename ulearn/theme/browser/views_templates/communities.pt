@@ -9,18 +9,6 @@
 <head>
   <metal:block fill-slot="top_slot"
              tal:define="dummy python:request.set('disable_border',1);"/>
-
-  <div metal:fill-slot="javascript_head_slot" tal:omit-tag="">
-    <script type="text/javascript"
-      tal:attributes="src string:${view/portal_url}/++genweb++static/js/alertify.min.js">
-    </script>
-  </div>
-  <div metal:fill-slot="style_slot" tal:omit-tag="">
-    <link rel="stylesheet"
-      tal:attributes="href string:${view/portal_url}/++genweb++static/css/alertify.core.css">
-    <link rel="stylesheet"
-      tal:attributes="href string:${view/portal_url}/++genweb++static/css/alertify.bootstrap.css">
-  </div>
 </head>
 
 <body>

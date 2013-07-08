@@ -24,17 +24,21 @@
                tal:attributes="data-community string:${community/getURL}">
               <i tal:attributes="class python:view.get_star_class(community)"></i>
             </a>
-            <a class="subscribed" href="#"
+            <a class="subscribe" href="#"
                tal:condition="python:view.is_not_organizative(community)"
-               tal:attributes="data-community string:${community/getURL}">
+               tal:attributes="data-community string:${community/getURL};
+                               data-name community/Title">
               <i tal:attributes="class python:view.get_subscribed_class(community)"></i>
             </a>
             <a tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/edit">
               <i class="fa-icon-pencil"></i>
             </a>
-            <a tal:condition="python:view.is_community_manager(community)"
-               tal:attributes="href string:${community/getURL}/delete_confirmation">
+            <a class="delete" href="#"
+               tal:condition="python:view.is_community_manager(community)"
+               tal:attributes="href string:${community/getURL}/delete_confirmation;
+                               data-authenticator view/get_authenticator;
+                               data-name community/Title">
             <i class="fa-icon-remove"></i>
             </a>
           </div>

@@ -20,12 +20,14 @@
       <h2>Thinnkers</h2>
       <div id="miniatures">
         <tal:loop repeat="thinnker python:view.get_thinnkers()">
-          <a href="#" rel="tooltip" data-placement="bottom"
-             tal:attributes="title thinnker/displayName;
-                             href string:${view/portal_url}/profile/${thinnker/username}">
-            <img alt="User"
-                 tal:attributes="src string:${view/portal_url}/@@avatar/${thinnker/username}">
-          </a>
+          <div class="thinnker">
+            <a href="#" rel="tooltip" data-placement="bottom"
+               tal:attributes="title thinnker/displayName;
+                               href string:${view/portal_url}/profile/${thinnker/username}">
+              <img alt="User"
+                   tal:attributes="src string:${view/portal_url}/@@avatar/${thinnker/username}">
+            </a>
+          </div>
         </tal:loop>
       </div>
 </div>
