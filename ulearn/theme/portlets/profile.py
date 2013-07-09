@@ -4,6 +4,7 @@ from Acquisition import aq_inner
 from Acquisition import aq_chain
 from zope.interface import implements
 from zope.component import queryUtility
+from zope.component import getMultiAdapter
 from zope.component.hooks import getSite
 from zope.security import checkPermission
 
@@ -146,6 +147,10 @@ class Renderer(base.Renderer):
             return maxclient.getContextActivities(context=context_hash, count=True)
         else:
             return maxclient.getUserActivities(count=True)
+
+    def get_addable_types(self):
+        factories_view = getMultiAdapter((self.context, self.request), name='folder_factories')
+        return factories_view.addable_types()
 
 
 class AddForm(base.NullAddForm):
