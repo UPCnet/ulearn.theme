@@ -77,4 +77,12 @@
         addview=".stats.AddForm"
         />
 
+    <plone:portlet
+        name="ulearn.portlets.econnect"
+        interface=".econnect.IeConnectPortlet"
+        assignment=".econnect.Assignment"
+        renderer=".econnect.Renderer"
+        addview=".econnect.AddForm"
+        />
+
 </configure>

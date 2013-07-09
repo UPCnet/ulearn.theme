@@ -91,7 +91,7 @@
 }
 .maxui-avatar {
     float: left;
-    left: -60px;
+    left: -55px;
     max-width: 100%;
     position: absolute;
     top: 0;
@@ -143,4 +143,8 @@ input.maxui-button[disabled] {
 #maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
     border: 1px solid #F58D3D !important;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) inset, 0 0 8px rgba(100, 123, 192, 0.5) !important;
+}
+
+#maxui-search-filters .maxui-filter .close{
+    top: 0;
 }

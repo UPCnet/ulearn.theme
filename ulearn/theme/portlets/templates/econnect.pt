@@ -1,0 +1,11 @@
+<div id="box_econnect" class="ulearnbox">
+    <h2>eConnect</h2>
+    <ul class="icons">
+        <li>
+            <i class="fa-icon-circle-arrow-right"></i>
+            <a href=""
+               tal:attributes="href string:${view/portal_url}/addBBBReservation"
+               i18n:translate="">Web collaboration</a>
+        </li>
+    </ul>
+</div>
