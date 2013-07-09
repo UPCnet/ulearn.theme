@@ -75,7 +75,11 @@ a:hover, a:active {
   h1 {
     margin: 0;
   }
-  #eines {margin-top: 25px;}
+  #eines {
+    margin-top: 25px;
+    .typeahead {z-index: 1011;}
+    .typeahead li a {font-size: 13px;}
+  }
 }
 
 .dropdown-menu a {
@@ -530,7 +534,7 @@ border-color: #34495E;
   }
 }
 .modal.fade.in { top: 34%; }
-#addModal {
+#addModal, #editModal {
   .modal-body { max-height: 750px; }
   #content-core { height: 655px; }
 
@@ -561,6 +565,13 @@ border-color: #34495E;
 
 #box_econnect {
   .icons { margin-top: 10px; }
+  li {
+    list-style: none;
+  }
+}
+
+.communitylinks {
+  margin-left: 3px;
   li {
     list-style: none;
   }

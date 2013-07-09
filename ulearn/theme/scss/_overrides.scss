@@ -92,11 +92,3 @@ nav#portal-personaltools-wrapper {
       margin-top: 36px !important;
     }
 }
-
-#portal-personaltools-wrapper li[role=menuitem] {
-  @media
-    only screen and (max-width: 979px) and (orientation: portrait),
-    only screen and (max-width: 979px) and (orientation: landscape) {
-      z-index: 1000;
-    }
-}

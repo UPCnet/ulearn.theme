@@ -29,17 +29,22 @@
   </ul>
 </nav>
 
-<p tal:define="campus_url view/get_campus_url">
-  <a tal:attributes="href string:${view/portal_url}/communities">
-    <i class="icon-plus-sign icons"> </i>
-    <tal:seemore i18n:translate="seemore">See more communities</tal:seemore>
-  </a>
-  <a tal:condition="campus_url"
-     tal:attributes="href campus_url">
-    <i class="icon-plus-sign icons"> </i>
-    <tal:gotocampus i18n:translate="gotocampus">Go to the campus</tal:gotocampus>
-  </a>
-</p>
+<ul class="communitylinks"
+    tal:define="campus_url view/get_campus_url">
+  <li>
+    <a tal:attributes="href string:${view/portal_url}/communities">
+      <i class="icon-plus-sign icons"> </i>
+      <tal:seemore i18n:translate="seemore">See more communities</tal:seemore>
+    </a>
+  </li>
+  <li>
+    <a tal:condition="campus_url"
+       tal:attributes="href campus_url">
+      <i class="icon-plus-sign icons"> </i>
+      <tal:gotocampus i18n:translate="gotocampus">Go to the campus</tal:gotocampus>
+    </a>
+  </li>
+</ul>
 
 <p tal:condition="view/showCreateCommunity">
   <button class="btn btn-large btn-comunitat"

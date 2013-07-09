@@ -2771,13 +2771,6 @@ h1, h2, h3, label {
   }
 }
 
-@media only screen and (max-width: 979px) and (orientation: portrait), only screen and (max-width: 979px) and (orientation: landscape) {
-  /* line 96, ../scss/_overrides.scss */
-  #portal-personaltools-wrapper li[role=menuitem] {
-    z-index: 1000;
-  }
-}
-
 /* line 5, ../scss/_hidden.scss */
 li > a#plone-contentmenu-workflow {
   display: none;
@@ -3390,23 +3383,31 @@ a:hover, a:active {
 .masthead #eines {
   margin-top: 25px;
 }
-
+/* line 80, ../scss/ulearn.scss */
+.masthead #eines .typeahead {
+  z-index: 1011;
+}
 /* line 81, ../scss/ulearn.scss */
+.masthead #eines .typeahead li a {
+  font-size: 13px;
+}
+
+/* line 85, ../scss/ulearn.scss */
 .dropdown-menu a {
   text-decoration: none;
 }
 
-/* line 89, ../scss/ulearn.scss */
+/* line 93, ../scss/ulearn.scss */
 #peu {
   background-color: #f58d3d;
   border-top: none;
 }
-/* line 92, ../scss/ulearn.scss */
+/* line 96, ../scss/ulearn.scss */
 #peu a {
   color: white;
 }
 
-/* line 97, ../scss/ulearn.scss */
+/* line 101, ../scss/ulearn.scss */
 #peu .container {
   border-top: none;
   background-color: #f58d3d;
@@ -3415,24 +3416,24 @@ a:hover, a:active {
   margin-top: 20px;
 }
 
-/* line 107, ../scss/ulearn.scss */
+/* line 111, ../scss/ulearn.scss */
 #peu .inner {
   padding: 20px;
 }
 
-/* line 109, ../scss/ulearn.scss */
+/* line 113, ../scss/ulearn.scss */
 input[type="text"] {
   border-color: #E76E10;
   margin-right: 5px;
   padding: 4px 0 4px 10px;
 }
 
-/* line 114, ../scss/ulearn.scss */
+/* line 118, ../scss/ulearn.scss */
 input[type="text"]:focus {
   border-color: #34495E;
 }
 
-/* line 118, ../scss/ulearn.scss */
+/* line 122, ../scss/ulearn.scss */
 .ulearnbox {
   background: url("/++ulearn++static/images/pix_cantonada.png") no-repeat right top white;
   padding: 5px 10px 10px;
@@ -3441,17 +3442,17 @@ input[type="text"]:focus {
   box-shadow: -1px 1px 2px #dddddd;
 }
 
-/* line 125, ../scss/ulearn.scss */
+/* line 129, ../scss/ulearn.scss */
 .ulearnbox a {
   text-decoration: none;
 }
 
-/* line 126, ../scss/ulearn.scss */
+/* line 130, ../scss/ulearn.scss */
 #badges {
   background: white;
 }
 
-/* line 129, ../scss/ulearn.scss */
+/* line 133, ../scss/ulearn.scss */
 .box_badges {
   background: none repeat scroll 0 0 #f58d3d;
   color: white;
@@ -3465,7 +3466,7 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-/* line 141, ../scss/ulearn.scss */
+/* line 145, ../scss/ulearn.scss */
 .box_badges:hover {
   opacity: 0.8;
   cursor: pointer;
@@ -3473,29 +3474,29 @@ input[type="text"]:focus {
   transition: all 0.25s ease 0s;
 }
 
-/* line 142, ../scss/ulearn.scss */
+/* line 146, ../scss/ulearn.scss */
 .novetat {
   background: none repeat scroll 0 0 #34495e;
 }
 
-/* line 145, ../scss/ulearn.scss */
+/* line 149, ../scss/ulearn.scss */
 #user {
   color: #666666;
   font-size: 0.8em;
   margin-bottom: 5px;
 }
 
-/* line 150, ../scss/ulearn.scss */
+/* line 154, ../scss/ulearn.scss */
 #user p {
   margin-bottom: 0;
 }
 
-/* line 154, ../scss/ulearn.scss */
+/* line 158, ../scss/ulearn.scss */
 .nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
   background-color: #DEDED6;
 }
 
-/* line 157, ../scss/ulearn.scss */
+/* line 161, ../scss/ulearn.scss */
 .nav-pills > li > a {
   background: none repeat scroll 0 0 #deded6;
   color: #34495E;
@@ -3504,13 +3505,13 @@ input[type="text"]:focus {
   outline: none;
 }
 
-/* line 164, ../scss/ulearn.scss */
+/* line 168, ../scss/ulearn.scss */
 #box_comunitats .nav {
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-/* line 168, ../scss/ulearn.scss */
+/* line 172, ../scss/ulearn.scss */
 .num {
   background: none repeat scroll 0 0 #f58d3d;
   border-left: 1px solid #eeeeee;
@@ -3527,17 +3528,17 @@ input[type="text"]:focus {
   width: 33px;
 }
 
-/* line 183, ../scss/ulearn.scss */
+/* line 187, ../scss/ulearn.scss */
 .num:hover {
   opacity: 0.8;
 }
 
-/* line 186, ../scss/ulearn.scss */
+/* line 190, ../scss/ulearn.scss */
 #miniatures {
   margin-top: 10px;
 }
 
-/* line 189, ../scss/ulearn.scss */
+/* line 193, ../scss/ulearn.scss */
 .thinnker {
   height: 44px;
   overflow-y: hidden;
@@ -3546,40 +3547,40 @@ input[type="text"]:focus {
   margin-right: 4px;
 }
 
-/* line 196, ../scss/ulearn.scss */
+/* line 200, ../scss/ulearn.scss */
 #miniatures img {
   max-width: 44px;
   transition: all 0.1s ease 0s;
 }
 
-/* line 200, ../scss/ulearn.scss */
+/* line 204, ../scss/ulearn.scss */
 #miniatures img:hover {
   opacity: 0.8;
 }
 
-/* line 203, ../scss/ulearn.scss */
+/* line 207, ../scss/ulearn.scss */
 #menusup {
   height: 49px;
   max-width: 474px;
 }
-/* line 207, ../scss/ulearn.scss */
+/* line 211, ../scss/ulearn.scss */
 #menusup nav {
   border-bottom: 0;
   margin-bottom: 0;
 }
-/* line 211, ../scss/ulearn.scss */
+/* line 215, ../scss/ulearn.scss */
 #menusup nav .bubble {
   background: #DEDED6;
 }
-/* line 214, ../scss/ulearn.scss */
+/* line 218, ../scss/ulearn.scss */
 #menusup nav .bubble .arrow {
   border-top-color: #DEDED6;
 }
-/* line 223, ../scss/ulearn.scss */
+/* line 227, ../scss/ulearn.scss */
 #menusup nav .bubble-content {
   padding: 0;
 }
-/* line 225, ../scss/ulearn.scss */
+/* line 229, ../scss/ulearn.scss */
 #menusup nav a {
   display: block;
   padding: 8px 0;
@@ -3597,27 +3598,27 @@ input[type="text"]:focus {
   -o-transition: 0s;
   transition: 0s;
 }
-/* line 242, ../scss/ulearn.scss */
+/* line 246, ../scss/ulearn.scss */
 #menusup nav a:hover {
   color: #000;
 }
-/* line 250, ../scss/ulearn.scss */
+/* line 254, ../scss/ulearn.scss */
 #menusup nav .active .arrow {
   border-top-color: #f58d3d;
   display: block;
 }
-/* line 255, ../scss/ulearn.scss */
+/* line 259, ../scss/ulearn.scss */
 #menusup nav .active, #menusup nav .active a, #menusup nav .active a:hover {
   background: #f58d3d !important;
   color: white;
   text-shadow: none;
 }
-/* line 262, ../scss/ulearn.scss */
+/* line 266, ../scss/ulearn.scss */
 #menusup nav i {
   margin-right: 3px;
 }
 
-/* line 268, ../scss/ulearn.scss */
+/* line 272, ../scss/ulearn.scss */
 #day {
   background: none repeat scroll 0 0 #f58d3d;
   color: white;
@@ -3629,63 +3630,63 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0 #92480f;
   margin-bottom: 0;
 }
-/* line 280, ../scss/ulearn.scss */
+/* line 284, ../scss/ulearn.scss */
 #day .arrow {
   border-left-color: #f58d3d;
 }
-/* line 281, ../scss/ulearn.scss */
+/* line 285, ../scss/ulearn.scss */
 #day .bubble-content {
   padding: 9px;
 }
 
-/* line 284, ../scss/ulearn.scss */
+/* line 288, ../scss/ulearn.scss */
 #day p {
   margin: 0;
 }
 
-/* line 285, ../scss/ulearn.scss */
+/* line 289, ../scss/ulearn.scss */
 .data {
   font-size: 13px;
   padding-top: 6px;
 }
 
-/* line 287, ../scss/ulearn.scss */
+/* line 291, ../scss/ulearn.scss */
 #agenda {
   background: #f5f5f5;
   font-size: 12px;
   margin-top: 10px;
 }
 
-/* line 293, ../scss/ulearn.scss */
+/* line 297, ../scss/ulearn.scss */
 #esdev {
   line-height: 13px;
   padding: 8px 4px 0 2px;
   margin-bottom: 0;
 }
-/* line 298, ../scss/ulearn.scss */
+/* line 302, ../scss/ulearn.scss */
 #esdev .vertical_aligned {
   display: table;
   height: 62px;
 }
-/* line 299, ../scss/ulearn.scss */
+/* line 303, ../scss/ulearn.scss */
 #esdev a {
   display: table-cell;
   vertical-align: middle;
 }
 
-/* line 302, ../scss/ulearn.scss */
+/* line 306, ../scss/ulearn.scss */
 #calendari {
   background: none repeat scroll 0 0 whitesmoke;
   margin-top: 10px;
   padding: 5px 5px 10px;
   text-shadow: 1px 1px 0 white;
 }
-/* line 308, ../scss/ulearn.scss */
+/* line 312, ../scss/ulearn.scss */
 #calendari td {
   text-align: center;
 }
 
-/* line 313, ../scss/ulearn.scss */
+/* line 317, ../scss/ulearn.scss */
 #box_agenda .hiddenStructure {
   background: none repeat scroll 0 0 #eae9e4;
   color: black;
@@ -3693,25 +3694,25 @@ input[type="text"]:focus {
   padding: 1px;
 }
 
-/* line 321, ../scss/ulearn.scss */
+/* line 325, ../scss/ulearn.scss */
 #box_agenda .newevent {
   margin-top: 15px;
 }
-/* line 322, ../scss/ulearn.scss */
+/* line 326, ../scss/ulearn.scss */
 #box_agenda .newevent a {
   padding: 10px 0;
 }
-/* line 323, ../scss/ulearn.scss */
+/* line 327, ../scss/ulearn.scss */
 #box_agenda .newevent i {
   margin-right: 3px;
 }
-/* line 325, ../scss/ulearn.scss */
+/* line 329, ../scss/ulearn.scss */
 #box_agenda ul {
   list-style: none;
   margin-left: 25px;
   margin-top: 10px;
 }
-/* line 326, ../scss/ulearn.scss */
+/* line 330, ../scss/ulearn.scss */
 #box_agenda li {
   border-bottom: 1px solid #eeeeee;
   font-size: 13px;
@@ -3719,30 +3720,30 @@ input[type="text"]:focus {
   margin-bottom: 8px;
   padding-bottom: 8px;
 }
-/* line 336, ../scss/ulearn.scss */
+/* line 340, ../scss/ulearn.scss */
 #box_agenda li i {
   color: #34495E;
 }
 
-/* line 340, ../scss/ulearn.scss */
+/* line 344, ../scss/ulearn.scss */
 .weekdays {
   font-size: 11px;
 }
 
-/* line 341, ../scss/ulearn.scss */
+/* line 345, ../scss/ulearn.scss */
 .ploneCalendar {
   width: 100%;
   font-size: 13px;
 }
 
-/* line 342, ../scss/ulearn.scss */
+/* line 346, ../scss/ulearn.scss */
 .event {
   background-color: #384e65;
   text-shadow: none;
   border-right: 1px solid white;
 }
 
-/* line 344, ../scss/ulearn.scss */
+/* line 348, ../scss/ulearn.scss */
 .todayevent {
   background: #f58d3d;
   text-shadow: none;
@@ -3750,18 +3751,18 @@ input[type="text"]:focus {
   border-right: 1px solid white;
 }
 
-/* line 345, ../scss/ulearn.scss */
+/* line 349, ../scss/ulearn.scss */
 .event a {
   color: white;
   font-weight: normal;
 }
 
-/* line 346, ../scss/ulearn.scss */
+/* line 350, ../scss/ulearn.scss */
 .todayevent a {
   color: #fff;
 }
 
-/* line 350, ../scss/ulearn.scss */
+/* line 354, ../scss/ulearn.scss */
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -3784,7 +3785,7 @@ input[type="text"]:focus {
   width: 100%;
 }
 
-/* line 375, ../scss/ulearn.scss */
+/* line 379, ../scss/ulearn.scss */
 .btn-comunitat:hover,
 .btn-comunitat:active,
 .btn-comunitat.active,
@@ -3795,7 +3796,7 @@ input[type="text"]:focus {
   *background-color: #003bb3;
 }
 
-/* line 382, ../scss/ulearn.scss */
+/* line 386, ../scss/ulearn.scss */
 #communitylist {
   padding: 10px;
   font-size: 13px;
@@ -3803,22 +3804,22 @@ input[type="text"]:focus {
   text-shadow: 1px 1px 0px white;
   background: #f9f9f9;
 }
-/* line 389, ../scss/ulearn.scss */
+/* line 393, ../scss/ulearn.scss */
 #communitylist .eines {
   color: #34495E;
   font-size: 18px;
   text-decoration: none;
 }
-/* line 394, ../scss/ulearn.scss */
+/* line 398, ../scss/ulearn.scss */
 #communitylist .eines i {
   padding-right: 2px;
 }
-/* line 397, ../scss/ulearn.scss */
+/* line 401, ../scss/ulearn.scss */
 #communitylist ul {
   margin-left: 0;
   list-style: none;
 }
-/* line 402, ../scss/ulearn.scss */
+/* line 406, ../scss/ulearn.scss */
 #communitylist li {
   min-height: 55px;
   line-height: 20px;
@@ -3830,86 +3831,86 @@ input[type="text"]:focus {
   background: none repeat scroll 0 0 white;
   box-shadow: none;
 }
-/* line 414, ../scss/ulearn.scss */
+/* line 418, ../scss/ulearn.scss */
 #communitylist a {
   color: #555;
   text-decoration: none;
 }
-/* line 418, ../scss/ulearn.scss */
+/* line 422, ../scss/ulearn.scss */
 #communitylist a h4 {
   color: #F58D3D;
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 0;
 }
-/* line 424, ../scss/ulearn.scss */
+/* line 428, ../scss/ulearn.scss */
 #communitylist a h4:hover {
   opacity: 0.8;
 }
-/* line 428, ../scss/ulearn.scss */
+/* line 432, ../scss/ulearn.scss */
 #communitylist img {
   margin-top: 3px;
   border: 2px solid white;
   max-width: 54px;
 }
-/* line 433, ../scss/ulearn.scss */
+/* line 437, ../scss/ulearn.scss */
 #communitylist img:hover {
   transition: all 0.25s ease 0s;
   border: 2px solid #f58d3d;
 }
 
-/* line 439, ../scss/ulearn.scss */
+/* line 443, ../scss/ulearn.scss */
 .icon-ulearn-community, .icon-ulearn.community {
   background-position: -312px -192px;
 }
 
-/* line 441, ../scss/ulearn.scss */
+/* line 445, ../scss/ulearn.scss */
 #listing-table a.contenttype-ulearn-community:before,
 .template-folder_tabular_view .listing a.contenttype-ulearn-community:before {
   background-position: -312px -192px;
 }
 
-/* line 446, ../scss/ulearn.scss */
+/* line 450, ../scss/ulearn.scss */
 #box_perfil .photo {
   overflow-y: hidden;
   height: 150px;
 }
 
-/* line 455, ../scss/ulearn.scss */
+/* line 459, ../scss/ulearn.scss */
 #box_community img {
   width: 200px;
 }
 
-/* line 456, ../scss/ulearn.scss */
+/* line 460, ../scss/ulearn.scss */
 #box_community i {
   margin-right: 3px;
 }
 
-/* line 457, ../scss/ulearn.scss */
+/* line 461, ../scss/ulearn.scss */
 #box_community p {
   margin-top: 10px;
 }
 
-/* line 459, ../scss/ulearn.scss */
+/* line 463, ../scss/ulearn.scss */
 .template-communities #content {
   background-color: white;
 }
 
-/* line 461, ../scss/ulearn.scss */
+/* line 465, ../scss/ulearn.scss */
 #searchcommunities {
   margin-right: auto;
   margin-left: auto;
   width: 300px;
   padding-top: 10px;
 }
-/* line 467, ../scss/ulearn.scss */
+/* line 471, ../scss/ulearn.scss */
 #searchcommunities .searchInput {
   height: 25px;
   font-size: 20px;
   line-height: 25px;
   width: 260px;
 }
-/* line 474, ../scss/ulearn.scss */
+/* line 478, ../scss/ulearn.scss */
 #searchcommunities .add-on {
   background-color: white;
   border: none;
@@ -3920,127 +3921,136 @@ input[type="text"]:focus {
   z-index: 10;
 }
 
-/* line 486, ../scss/ulearn.scss */
+/* line 490, ../scss/ulearn.scss */
 #box_comunitats .bubble-content {
   padding: 6px 0px;
   width: 40px;
   text-align: center;
   background: none repeat scroll 0 0 #f58d3d;
 }
-/* line 493, ../scss/ulearn.scss */
+/* line 497, ../scss/ulearn.scss */
 #box_comunitats .bubble a {
   color: white;
   font-weight: 600;
   height: 18px;
   width: 33px;
 }
-/* line 501, ../scss/ulearn.scss */
+/* line 505, ../scss/ulearn.scss */
 #box_comunitats .bubble .arrow {
   border-right-color: #f58d3d;
 }
-/* line 504, ../scss/ulearn.scss */
+/* line 508, ../scss/ulearn.scss */
 #box_comunitats i {
   margin-right: 3px;
 }
-/* line 506, ../scss/ulearn.scss */
+/* line 510, ../scss/ulearn.scss */
 #box_comunitats li a {
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 509, ../scss/ulearn.scss */
+/* line 513, ../scss/ulearn.scss */
 .bubble.top .arrow:after {
   border-top-color: transparent;
 }
 
-/* line 510, ../scss/ulearn.scss */
+/* line 514, ../scss/ulearn.scss */
 .bubble.right .arrow:after {
   border-right-color: transparent;
 }
 
-/* line 511, ../scss/ulearn.scss */
+/* line 515, ../scss/ulearn.scss */
 .bubble.left .arrow:after {
   border-left-color: transparent;
 }
 
-/* line 514, ../scss/ulearn.scss */
+/* line 518, ../scss/ulearn.scss */
 #box_stats .bubble-content {
   padding: 5px 12px;
   text-align: center;
 }
-/* line 515, ../scss/ulearn.scss */
+/* line 519, ../scss/ulearn.scss */
 #box_stats .bubble {
   background-color: #344961;
   color: white;
   width: 60px;
 }
-/* line 519, ../scss/ulearn.scss */
+/* line 523, ../scss/ulearn.scss */
 #box_stats .bubble .arrow {
   border-left-color: #344961;
 }
-/* line 521, ../scss/ulearn.scss */
+/* line 525, ../scss/ulearn.scss */
 #box_stats p {
   margin: 0;
   padding: 5px 0 5px 78px;
   background-color: #deded6;
   font-weight: bold;
 }
-/* line 527, ../scss/ulearn.scss */
+/* line 531, ../scss/ulearn.scss */
 #box_stats ul {
   margin-top: 5px;
 }
-/* line 528, ../scss/ulearn.scss */
+/* line 532, ../scss/ulearn.scss */
 #box_stats li {
   margin-bottom: 5px;
 }
 
-/* line 532, ../scss/ulearn.scss */
+/* line 536, ../scss/ulearn.scss */
 .modal.fade.in {
   top: 34%;
 }
 
-/* line 534, ../scss/ulearn.scss */
-#addModal .modal-body {
+/* line 538, ../scss/ulearn.scss */
+#addModal .modal-body, #editModal .modal-body {
   max-height: 750px;
 }
-/* line 535, ../scss/ulearn.scss */
-#addModal #content-core {
+/* line 539, ../scss/ulearn.scss */
+#addModal #content-core, #editModal #content-core {
   height: 655px;
 }
 
-/* line 540, ../scss/ulearn.scss */
+/* line 544, ../scss/ulearn.scss */
 .template-profile #content {
   background-color: white;
   padding: 10px 20px;
 }
-/* line 545, ../scss/ulearn.scss */
+/* line 549, ../scss/ulearn.scss */
 .template-profile .portrait {
   width: 163px;
 }
-/* line 547, ../scss/ulearn.scss */
+/* line 551, ../scss/ulearn.scss */
 .template-profile .badges {
   margin-top: 5px;
 }
 
-/* line 554, ../scss/ulearn.scss */
+/* line 558, ../scss/ulearn.scss */
 .subsection-esdeveniments #menusup,
 .subsection-eventos #menusup,
 .subsection-events #menusup {
   max-width: 726px;
 }
 
-/* line 557, ../scss/ulearn.scss */
+/* line 561, ../scss/ulearn.scss */
 .contentaddtoolbar {
   margin-top: 10px;
   text-align: center;
 }
 
-/* line 563, ../scss/ulearn.scss */
+/* line 567, ../scss/ulearn.scss */
 #box_econnect .icons {
   margin-top: 10px;
 }
-/* line 564, ../scss/ulearn.scss */
+/* line 568, ../scss/ulearn.scss */
 #box_econnect li {
+  list-style: none;
+}
+
+/* line 573, ../scss/ulearn.scss */
+.communitylinks {
+  margin-left: 3px;
+}
+/* line 575, ../scss/ulearn.scss */
+.communitylinks li {
   list-style: none;
 }
