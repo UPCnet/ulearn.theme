@@ -19,6 +19,17 @@
         </div>
     </div>
 
+    <div class="btn-group contentaddtoolbar"
+         tal:define="types view/get_addable_types">
+        <tal:buttons repeat="type types">
+            <a class="btn" rel="tooltip" data-placement="bottom"
+               tal:attributes="href type/action;
+                               title type/description">
+                <i tal:attributes="class string:icon-${type/extra/id}"></i>
+            </a>
+        </tal:buttons>
+    </div>
+
     <p tal:condition="view/showEditCommunity">
       <button class="btn btn-large btn-comunitat"
               type="button"

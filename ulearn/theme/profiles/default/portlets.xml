@@ -16,6 +16,8 @@
        description="Comments portlet"/>
     <portlet title="Ulearn stats" addview="ulearn.portlets.stats"
        description="Stats portlet"/>
+    <portlet title="Ulearn eConnect" addview="ulearn.portlets.econnect"
+       description="eConnect portlet"/>
 
 <assignment remove="True" name="navigation" category="context" key="/"
               manager="plone.leftcolumn" type="portlets.Navigation" />
