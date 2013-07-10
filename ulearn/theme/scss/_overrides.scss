@@ -84,3 +84,11 @@ font-size:12px;
 #formfield-form-widgets-end_date select {width: 100px;}
 #caltitle select,
 #calyear select {width: 155px;}
+
+nav#portal-personaltools-wrapper {
+  @media
+    only screen and (max-width: 979px) and (orientation: portrait),
+    only screen and (max-width: 979px) and (orientation: landscape) {
+      margin-top: 36px !important;
+    }
+}
