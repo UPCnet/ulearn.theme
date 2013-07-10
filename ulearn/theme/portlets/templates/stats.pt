@@ -14,7 +14,7 @@
             </tal:docs>
           </div>
         </div>
-        <p>
+        <p i18n:translate="Documents">
           Documents
         </p>
       </li>
@@ -27,7 +27,7 @@
             </tal:docs>
           </div>
         </div>
-        <p>
+        <p i18n:translate="Links">
           Links
         </p>
       </li>
@@ -40,7 +40,7 @@
             </tal:docs>
           </div>
         </div>
-        <p>
+        <p i18n:translate="Photos">
           Photos
         </p>
       </li>
@@ -57,7 +57,7 @@
             </tal:docs>
           </div>
         </div>
-        <p>
+        <p i18n:translate="Activity">
           Activitat
         </p>
       </li>
@@ -70,7 +70,7 @@
             </tal:docs>
           </div>
         </div>
-        <p>
+        <p i18n:translate="Comments">
           Comentaris
         </p>
       </li>
