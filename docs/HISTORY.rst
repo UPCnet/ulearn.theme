@@ -1,11 +1,14 @@
 Changelog
 =========
 
-1.0b3 (unreleased)
+1.0b3 (2013-07-10)
 ------------------
 
-- Nothing changed yet.
-
+ * traducciones [Corina Riba]
+ * Fix z-index and strange behavior of search box and community portlet. [Victor Fernandez de Alba]
+ * New econnect portlet. Fix to CSS and other glidges. [Victor Fernandez de Alba]
+ * Hide content adder dropdown, added buttons instead. [Victor Fernandez de Alba]
+ * Fix glidge on template communities [Victor Fernandez de Alba]
 
 1.0b2 (2013-07-08)
 ------------------
