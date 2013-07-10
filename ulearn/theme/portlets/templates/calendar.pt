@@ -20,6 +20,7 @@
               tal:attributes="href today_event/getURL">Desayuno de trabajo: aportando valores a la formación...</a>
             <a href="#"
               tal:condition="not: today_event"
+              i18n:domain="ulearn"
               i18n:translate="not_events_for_today">There are not events today</a>
           </div>
     </div>
