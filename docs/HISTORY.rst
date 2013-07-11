@@ -4,8 +4,7 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+ * Traducciones [Corina Riba]
 
 1.0b3 (2013-07-10)
 ------------------
