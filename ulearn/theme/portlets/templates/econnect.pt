@@ -5,7 +5,7 @@
             <i class="fa-icon-circle-arrow-right"></i>
             <a href=""
                tal:attributes="href string:${view/portal_url}/addBBBReservation"
-               i18n:translate="">Web collaboration</a>
+               i18n:domain="ulearn" i18n:translate="web_collaboration">Web collaboration</a>
         </li>
     </ul>
 </div>

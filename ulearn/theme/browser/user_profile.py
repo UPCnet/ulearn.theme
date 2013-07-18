@@ -19,7 +19,6 @@ from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 class userProfile(BrowserView):
     """ Return an user profile ../profile/{username} """
-
     implements(IPublishTraverse)
 
     def __init__(self, context, request):
@@ -27,7 +26,6 @@ class userProfile(BrowserView):
         self.username = None
 
     def publishTraverse(self, request, name):
-
         if self.username is None:  # ../profile/username
             self.username = name
         else:
@@ -57,6 +55,11 @@ class userProfile(BrowserView):
             return True
         else:
             return False
+
+    def getEmail(self):
+        pm = getToolByName(self.portal(), 'portal_membership')
+        user = pm.getMemberById(self.username)
+        return user.getProperty('email')
 
     def get_badges(self):
         """ Done consistent with an hipotetical badge provider backend """
