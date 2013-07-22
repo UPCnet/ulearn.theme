@@ -25,22 +25,23 @@
 <metal:main fill-slot="content">
     <tal:main-macro metal:define-macro="main"
                     tal:define="username view/username;
-                                mtool python:context.portal_membership;
+                                mtool python: context.portal_membership;
                                 portrait python: mtool.getPersonalPortrait(username);
                                 portal_types context/portal_types;
                                 userinfo python: mtool.getMemberInfo(username);
+                                userinfo_email view/getEmail;
                                 portal_url context/@@plone_portal_state/navigation_root_url;
                                 here_url context/@@plone_context_state/object_url;
                                 member context/@@plone_portal_state/member;
                                 portal context/@@plone_portal_state/portal;
                                 email_from_address portal/email_from_address">
-
+***<tal:repl tal:replace="username"></tal:repl>***
         <tal:noAuthor condition="not: userinfo">
             <dl class="portalMessage error">
                 <dt i18n:translate="">
                     Error
                 </dt>
-                <dd i18n:translate="text_no_user_by_name">
+                <dd i18n:domain="plone" i18n:translate="text_no_user_by_name">
                     No user by that name.
                 </dd>
             </dl>
@@ -49,7 +50,7 @@
             </div>
         </tal:noAuthor>
 
-
+HOLA
         <tal:haveAuthor condition="userinfo"
             tal:define="isOwner python:member.getId()==username;
                         isAnon context/@@plone_portal_state/anonymous;">
@@ -97,9 +98,9 @@
                         <p tal:content="userinfo/description"></p>
                       </tal:bio>
 
-                      <tal:mail condition="python:member.getProperty('email')">
+                      <tal:mail condition="userinfo/has_email">
                         <h2 i18n:translate="eMail">eMail</h2>
-                        <p tal:content="python:member.getProperty('email')"></p>
+                        <p tal:content="userinfo_email"></p>
                       </tal:mail>
 
                       <tal:location condition="userinfo/location">
