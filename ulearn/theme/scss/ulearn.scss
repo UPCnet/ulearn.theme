@@ -564,10 +564,7 @@ border-color: #34495E;
 }
 
 #box_econnect {
-  .icons { margin-top: 10px; }
-  li {
-    list-style: none;
-  }
+  a { margin-top: 10px; padding:10px 0}
 }
 
 .communitylinks {
@@ -576,3 +573,6 @@ border-color: #34495E;
     list-style: none;
   }
 }
+
+.favoritedisabled i {color: #eee}
+#communitylist .anycommunities a {color: #007BC0}

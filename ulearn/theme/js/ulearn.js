@@ -153,6 +153,10 @@ $(document).ready(function (event) {
       }
     });
 
+    $('#communitylist').on('click', '.favoritedisabled', function(event) {
+      event.preventDefault();
+    });
+
     // Dialog search communities
     $('#communitylist').on('click', '.delete', function(event) {
         console.log("asdadasd");
@@ -214,4 +218,37 @@ $(document).ready(function (event) {
         });
     });
 
+    // Subscribe from button - Pity, but slightly different than the previous one
+    var subscribe_to_community = function (event) {
+        event.preventDefault();
+        var $this = $(this);
+        alertify.confirm("Voleu subscrivir-vos a la comunitat " + $this.data()['name'] + "?", function (e) {
+            if (e) {
+                // user clicked "ok"
+                community_url = $this.data()['community'];
+                $.ajax({
+                    type: "GET",
+                    url: community_url + "/toggle-subscribe",
+                    error: function() {
+                        alertify.error("Error when (un)subscribing to the community");
+                    },
+                    success: function() {
+                        if ($('i', $this).hasClass('fa-icon-check')) {
+                            $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
+                            alertify.success("Successfully unsubscribed");
+                        } else {
+                            $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
+                            alertify.success("Successfully subscribed");
+                        }
+                        console.log("ok");
+                        window.location.reload(true);
+                    }
+                });
+            } else {
+                // user clicked "cancel"
+            }
+        });
+    };
+
+    $("#subscribealert").on("click", "a", subscribe_to_community);
 });
