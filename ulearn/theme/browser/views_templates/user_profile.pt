@@ -35,7 +35,7 @@
                                 member context/@@plone_portal_state/member;
                                 portal context/@@plone_portal_state/portal;
                                 email_from_address portal/email_from_address">
-***<tal:repl tal:replace="username"></tal:repl>***
+<!-- <tal:repl tal:replace="username"></tal:repl> -->
         <tal:noAuthor condition="not: userinfo">
             <dl class="portalMessage error">
                 <dt i18n:translate="">
@@ -50,7 +50,6 @@
             </div>
         </tal:noAuthor>
 
-HOLA
         <tal:haveAuthor condition="userinfo"
             tal:define="isOwner python:member.getId()==username;
                         isAnon context/@@plone_portal_state/anonymous;">
