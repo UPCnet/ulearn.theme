@@ -2777,13 +2777,13 @@ li > a#plone-contentmenu-workflow {
 }
 
 /* line 6, ../scss/_hidden.scss */
-.section-Members li > a#plone-contentmenu-workflow {
-  display: block;
+li > .noMenuAction {
+  display: none;
 }
 
-/* line 9, ../scss/_hidden.scss */
-li > a#plone-contentmenu-factories {
-  display: none;
+/* line 7, ../scss/_hidden.scss */
+.section-Members li > a#plone-contentmenu-workflow {
+  display: block;
 }
 
 /* line 16, ../scss/_arrows.scss */
@@ -4038,19 +4038,26 @@ input[type="text"]:focus {
 }
 
 /* line 567, ../scss/ulearn.scss */
-#box_econnect .icons {
+#box_econnect a {
   margin-top: 10px;
-}
-/* line 568, ../scss/ulearn.scss */
-#box_econnect li {
-  list-style: none;
+  padding: 10px 0;
 }
 
-/* line 573, ../scss/ulearn.scss */
+/* line 570, ../scss/ulearn.scss */
 .communitylinks {
   margin-left: 3px;
 }
-/* line 575, ../scss/ulearn.scss */
+/* line 572, ../scss/ulearn.scss */
 .communitylinks li {
   list-style: none;
+}
+
+/* line 577, ../scss/ulearn.scss */
+.favoritedisabled i {
+  color: #eee;
+}
+
+/* line 578, ../scss/ulearn.scss */
+#communitylist .anycommunities a {
+  color: #007BC0;
 }

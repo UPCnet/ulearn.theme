@@ -20,7 +20,7 @@
           <a href="#"
              data-toggle="tab"
              data-target="#communities-view">
-                <i class="fa-icon-comment icons"></i>
+                <i class="fa-icon-group icons"></i>
                 <tal:Documents i18n:translate="my_communities">My communities</tal:Documents></a>
         </div>
       </div>
