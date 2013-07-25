@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b6 (unreleased)
+1.0b6 (2013-07-25)
 ------------------
 
-- Nothing changed yet.
-
+ * Remove shouter [Victor Fernandez de Alba]
 
 1.0b5 (2013-07-25)
 ------------------
