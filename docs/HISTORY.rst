@@ -1,11 +1,13 @@
 Changelog
 =========
 
-1.0b5 (unreleased)
+1.0b5 (2013-07-25)
 ------------------
 
-- Nothing changed yet.
-
+ * Fix tokenizer [Victor Fernandez de Alba]
+ * Updated CSS [Victor Fernandez de Alba]
+ * Various fixes [Victor Fernandez de Alba]
+ * Traducciones. Modificar eMail del profile ajeno [Corina Riba]
 
 1.0b4 (2013-07-11)
 ------------------
