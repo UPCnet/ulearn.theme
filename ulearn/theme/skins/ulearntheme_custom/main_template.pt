@@ -208,7 +208,6 @@
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/customInput.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.nicescroll.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/prettify.js"></script>
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/keywords.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.mixitup.min.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/alertify.min.js"></script>
 
