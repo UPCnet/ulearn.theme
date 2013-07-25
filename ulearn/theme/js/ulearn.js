@@ -1,4 +1,7 @@
 $(document).ready(function (event) {
+    // Load the i18n Plone catalog for ulearn
+    jarn.i18n.loadCatalog('ulearn');
+    _ulearn_i18n = jarn.i18n.MessageFactory('ulearn');
 
     customizedInput = false;
 
