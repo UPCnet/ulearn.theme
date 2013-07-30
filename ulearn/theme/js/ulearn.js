@@ -42,7 +42,7 @@ $(document).ready(function (event) {
                 $('#communitylist').on('click', '.delete', function(event) {
                     event.preventDefault();
                     var $this = $(this);
-                    alertify.confirm("Si cliqueu aquí, esborrareu la comunitat " + $this.data()['name'], function (e) {
+                    alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'], function (e) {
                         if (e) {
                             // user clicked "ok"
                             url = $this.attr('href');
@@ -54,11 +54,11 @@ $(document).ready(function (event) {
                                 '_authenticator': $this.data()['authenticator']
                                 },
                                 error: function() {
-                                    alertify.error("Error when removing community");
+                                    alertify.error(_ulearn_i18n("Error when removing community"));
                                 },
                                 success: function() {
                                     $this.parent().parent().parent().remove();
-                                    alertify.success("Successfully removed");
+                                    alertify.success(_ulearn_i18n("Successfully removed"));
                                     console.log("ok");
                                 }
                             });
@@ -71,7 +71,7 @@ $(document).ready(function (event) {
                 $('#communitylist').on('click', '.subscribe', function(event) {
                     event.preventDefault();
                     var $this = $(this);
-                    alertify.confirm("Voleu subscrivir-vos a la comunitat " + $this.data()['name'] + "?", function (e) {
+                    alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + "?", function (e) {
                         if (e) {
                             // user clicked "ok"
                             community_url = $this.data()['community'];
@@ -79,15 +79,15 @@ $(document).ready(function (event) {
                                 type: "GET",
                                 url: community_url + "/toggle-subscribe",
                                 error: function() {
-                                    alertify.error("Error when (un)subscribing to the community");
+                                    alertify.error(-_ulearn_i18n("Error when (un)subscribing to the community"));
                                 },
                                 success: function() {
                                     if ($('i', $this).hasClass('fa-icon-check')) {
                                         $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
-                                        alertify.success("Successfully unsubscribed");
+                                        alertify.success(_ulearn_i18n("Successfully unsubscribed"));
                                     } else {
                                         $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
-                                        alertify.success("Successfully subscribed");
+                                        alertify.success(_ulearn_i18n("Successfully subscribed"));
                                     }
                                     console.log("ok");
                                 }
@@ -165,7 +165,7 @@ $(document).ready(function (event) {
         console.log("asdadasd");
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm("Si cliqueu aquí, esborrareu la comunitat " + $this.data()['name'], function (e) {
+        alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'], function (e) {
             if (e) {
                 // user clicked "ok"
                 url = $this.attr('href');
@@ -177,11 +177,11 @@ $(document).ready(function (event) {
                     '_authenticator': $this.data()['authenticator']
                     },
                     error: function() {
-                        alertify.error("Error when removing community");
+                        alertify.error(_ulearn_i18n("Error when removing community"));
                     },
                     success: function() {
                         $this.parent().parent().parent().remove();
-                        alertify.success("Successfully removed");
+                        alertify.success(_ulearn_i18n("Successfully removed"));
                         console.log("ok");
                     }
                 });
@@ -194,7 +194,7 @@ $(document).ready(function (event) {
     $('#communitylist').on('click', '.subscribe', function(event) {
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm("Voleu subscrivir-vos a la comunitat " + $this.data()['name'] + "?", function (e) {
+        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + "?", function (e) {
             if (e) {
                 // user clicked "ok"
                 community_url = $this.data()['community'];
@@ -202,15 +202,15 @@ $(document).ready(function (event) {
                     type: "GET",
                     url: community_url + "/toggle-subscribe",
                     error: function() {
-                        alertify.error("Error when (un)subscribing to the community");
+                        alertify.error(_ulearn_i18n("Error when (un)subscribing to the community"));
                     },
                     success: function() {
                         if ($('i', $this).hasClass('fa-icon-check')) {
                             $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
-                            alertify.success("Successfully unsubscribed");
+                            alertify.success(_ulearn_i18n("Successfully unsubscribed"));
                         } else {
                             $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
-                            alertify.success("Successfully subscribed");
+                            alertify.success(_ulearn_i18n("Successfully subscribed"));
                         }
                         console.log("ok");
                     }
@@ -225,7 +225,7 @@ $(document).ready(function (event) {
     var subscribe_to_community = function (event) {
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm("Voleu subscrivir-vos a la comunitat " + $this.data()['name'] + "?", function (e) {
+        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + "?", function (e) {
             if (e) {
                 // user clicked "ok"
                 community_url = $this.data()['community'];
@@ -233,15 +233,15 @@ $(document).ready(function (event) {
                     type: "GET",
                     url: community_url + "/toggle-subscribe",
                     error: function() {
-                        alertify.error("Error when (un)subscribing to the community");
+                        alertify.error(_ulearn_i18n("Error when (un)subscribing to the community"));
                     },
                     success: function() {
                         if ($('i', $this).hasClass('fa-icon-check')) {
                             $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
-                            alertify.success("Successfully unsubscribed");
+                            alertify.success(_ulearn_i18n("Successfully unsubscribed"));
                         } else {
                             $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
-                            alertify.success("Successfully subscribed");
+                            alertify.success(_ulearn_i18n("Successfully subscribed"));
                         }
                         console.log("ok");
                         window.location.reload(true);

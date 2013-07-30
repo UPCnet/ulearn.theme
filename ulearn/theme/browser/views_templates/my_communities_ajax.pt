@@ -49,10 +49,11 @@
   </ul>
   <p class="anycommunities"
      tal:condition="not:communities">
-    <tal:msg i18n:translate="not_subscribed_to_any_community">
+    <tal:msg i18n:domain="ulearn" i18n:translate="not_subscribed_to_any_community">
      You are not subscribed to any community yet.
     </tal:msg>
     <a tal:attributes="href string:${view/portal_url}/communities"
+       i18n:domain="ulearn"
        i18n:translate="go_to_community_view">
       View the available communities.
     </a>
