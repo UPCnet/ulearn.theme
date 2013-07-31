@@ -42,7 +42,7 @@ $(document).ready(function (event) {
                 $('#communitylist').on('click', '.delete', function(event) {
                     event.preventDefault();
                     var $this = $(this);
-                    alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'], function (e) {
+                    alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'] + '"?', function (e) {
                         if (e) {
                             // user clicked "ok"
                             url = $this.attr('href');
@@ -71,7 +71,7 @@ $(document).ready(function (event) {
                 $('#communitylist').on('click', '.subscribe', function(event) {
                     event.preventDefault();
                     var $this = $(this);
-                    alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + "?", function (e) {
+                    alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + '"?', function (e) {
                         if (e) {
                             // user clicked "ok"
                             community_url = $this.data()['community'];
@@ -165,7 +165,7 @@ $(document).ready(function (event) {
         console.log("asdadasd");
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'], function (e) {
+        alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'] + '"?', function (e) {
             if (e) {
                 // user clicked "ok"
                 url = $this.attr('href');
@@ -194,7 +194,7 @@ $(document).ready(function (event) {
     $('#communitylist').on('click', '.subscribe', function(event) {
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + "?", function (e) {
+        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + '"?', function (e) {
             if (e) {
                 // user clicked "ok"
                 community_url = $this.data()['community'];
@@ -225,7 +225,7 @@ $(document).ready(function (event) {
     var subscribe_to_community = function (event) {
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + "?", function (e) {
+        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + '"?', function (e) {
             if (e) {
                 // user clicked "ok"
                 community_url = $this.data()['community'];
