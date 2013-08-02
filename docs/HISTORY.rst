@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.0b7 (unreleased)
+1.0b7 (2013-08-02)
 ------------------
 
-- Nothing changed yet.
-
+ * Traducciones [Corina Riba]
+ * Added jarn.i18n load with the ulearn catalog to default main ulearn JS [Victor Fernandez de Alba]
 
 1.0b6 (2013-07-25)
 ------------------
