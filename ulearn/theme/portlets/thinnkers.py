@@ -80,13 +80,13 @@ class Renderer(base.Renderer):
             context_hash = sha1(community.absolute_url()).hexdigest()
             context_last_authors = maxclient.getContextLastAuthors(context=context_hash, limit=6)
             if context_last_authors:
-                return context_last_authors.get('items', [])[:8]
+                return context_last_authors[:8]
             else:
                 return []
         else:
             context_last_authors = maxclient.getTimelineLastAuthors(limit=6)
             if context_last_authors:
-                return context_last_authors.get('items', [])[:8]
+                return context_last_authors[:8]
             else:
                 return []
 
