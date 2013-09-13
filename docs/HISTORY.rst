@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b8 (unreleased)
+1.0b8 (2013-09-13)
 ------------------
 
-- Nothing changed yet.
-
+* Updated to MAX 3.5 [Victor Fernandez de Alba]
 
 1.0b7 (2013-08-02)
 ------------------
