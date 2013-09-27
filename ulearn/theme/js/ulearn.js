@@ -71,7 +71,15 @@ $(document).ready(function (event) {
                 $('#communitylist').on('click', '.subscribe', function(event) {
                     event.preventDefault();
                     var $this = $(this);
-                    alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + '"?', function (e) {
+                    var msgalert = '';
+
+                    if ($('i', $this).hasClass('fa-icon-check')) {
+                        msgalert = "Voleu desubscrivir-vos de la comunitat ";
+                    } else {
+                        msgalert = "Voleu subscrivir-vos a la comunitat ";
+                           }
+
+                    alertify.confirm(_ulearn_i18n("msgalert") + $this.data()['name'] + '"?', function (e) {
                         if (e) {
                             // user clicked "ok"
                             community_url = $this.data()['community'];
@@ -165,7 +173,7 @@ $(document).ready(function (event) {
         console.log("asdadasd");
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'] + '"?', function (e) {
+        alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + '"' + $this.data()['name'] + '"?', function (e) {
             if (e) {
                 // user clicked "ok"
                 url = $this.attr('href');
@@ -194,7 +202,15 @@ $(document).ready(function (event) {
     $('#communitylist').on('click', '.subscribe', function(event) {
         event.preventDefault();
         var $this = $(this);
-        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + '"?', function (e) {
+        var msgalert = '';
+
+        if ($('i', $this).hasClass('fa-icon-check')) {
+            msgalert = "Voleu desubscrivir-vos de la comunitat ";
+        } else {
+            msgalert = "Voleu subscrivir-vos a la comunitat ";
+               }
+
+        alertify.confirm(_ulearn_i18n(msgalert) + '"' + $this.data()['name'] + '"?', function (e) {
             if (e) {
                 // user clicked "ok"
                 community_url = $this.data()['community'];
