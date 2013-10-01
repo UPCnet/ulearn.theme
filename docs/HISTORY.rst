@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b9 (unreleased)
+1.0b9 (2013-10-01)
 ------------------
 
-- Nothing changed yet.
-
+ * Cambio favicon y traducciones [Corina Riba]
 
 1.0b8 (2013-09-13)
 ------------------
