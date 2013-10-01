@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.0b10 (unreleased)
+1.0b10 (2013-10-01)
 -------------------
 
-- Nothing changed yet.
-
+ * CSS fixes [Victor Fernandez de Alba]
+ * Fix personal information for FF [Victor Fernandez de Alba]
 
 1.0b9 (2013-10-01)
 ------------------
