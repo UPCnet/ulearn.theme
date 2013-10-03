@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0b11 (unreleased)
+1.0RC1 (2013-10-03)
 -------------------
 
-- Nothing changed yet.
-
+ * Several bugs solved in community and make logos customizable [Victor Fernandez de Alba]
 
 1.0b10 (2013-10-01)
 -------------------
