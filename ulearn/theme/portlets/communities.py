@@ -1,7 +1,7 @@
 from zope.interface import implements
 from zope.component.hooks import getSite
-from zope.security import checkPermission
 from zope.component import queryUtility
+from zope.security import checkPermission
 
 from plone.app.portlets.portlets import base
 from plone.registry.interfaces import IRegistry
@@ -42,6 +42,9 @@ class Renderer(base.Renderer):
         return getSite()
 
     def showCreateCommunity(self):
+        """The Contributor role is assumed that will be applied at the front-
+           page object.
+        """
         if IHomePage.providedBy(self.context) and \
            checkPermission('ulearn.addCommunity', self.context):
             return True

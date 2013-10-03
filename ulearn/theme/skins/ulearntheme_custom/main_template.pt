@@ -66,7 +66,14 @@
         <link rel="apple-touch-icon" sizes="144x144" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-144x144-precomposed.png" /> <!-- iPad 2x -->
 
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++genweb++stylesheets/genwebupc.css">
+
+        <tal:comment content="nothing"> <!-- Splitting CSS only for IE, the rest the common CSS --> </tal:comment>
+        <!--[if !IE]><!-->
+          <link rel="stylesheet" tal:attributes="href string:${portal_url}/++genweb++stylesheets/genwebupc.css">
+        <!--<![endif]-->
+
+        <tal:splittedCSS4IE tal:replace="structure string:&lt;!--[if lt IE 10]&gt;&lt;link rel='stylesheet' href='${portal_url}/++genweb++stylesheets/genwebupc-ie.css'&gt;&lt;![endif]--&gt;" />
+
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/ulearn.css">
         <!-- <link rel="stylesheet" tal:attributes="href string:${portal_url}/dynamic.css"> -->
         <!-- <script tal:attributes="src string:${portal_url}/++bootstrap++js/modernizr-2.6.1.min.js"></script> -->
@@ -82,7 +89,7 @@
     tal:attributes="class body_class;
                     dir python:isRTL and 'rtl' or 'ltr'">
 
-<tal:ancientBrowser tal:replace="structure string:&lt;!--[if lt IE 8]&gt;&lt;p class=chromeframe&gt;Your browser is &lt;em&gt;ancient!&lt;/em&gt; &lt;a href='http://browsehappy.com/'&gt;Upgrade to a different browser&lt;/a&gt; or &lt;a href='http://www.google.com/chromeframe/?redirect=true'&gt;install Google Chrome Frame&lt;/a&gt; to experience this site.&lt;/p&gt;&lt;![endif]--&gt;" />
+<tal:ancientBrowser tal:replace="structure string:&lt;!--[if lt IE 8]&gt;&lt;p class='chromeframe'&gt;Your browser is &lt;em&gt;ancient!&lt;/em&gt; &lt;a href='http://browsehappy.com/'&gt;Upgrade to a different browser&lt;/a&gt; or &lt;a href='http://www.google.com/chromeframe/?redirect=true'&gt;install Google Chrome Frame&lt;/a&gt; to experience this site.&lt;/p&gt;&lt;![endif]--&gt;" />
 
 <tal:portaltop
     i18n:domain="plone"

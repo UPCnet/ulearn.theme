@@ -4,7 +4,7 @@
     <h1 class="pull-left">
       <a accesskey="1"
          tal:attributes="href string:${viewlet/portal_url}">
-        <img tal:attributes="src string:${viewlet/portal_url}/++ulearn++static/images/ulearn_comunitats.png"
+        <img tal:attributes="src string:${viewlet/portal_url}/ulearn_comunitats.png"
              alt="Ulearn Comunitats - UPCnet SLU">
       </a>
     </h1>
