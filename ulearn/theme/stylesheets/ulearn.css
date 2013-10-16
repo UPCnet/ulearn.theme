@@ -1,4 +1,4 @@
-/*!
+/*
  *  Font Awesome 3.2.1
  *  the fa-iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -3543,8 +3543,8 @@ input[type="text"]:focus {
   height: 44px;
   overflow-y: hidden;
   display: inline-block;
-  margin-bottom: 7px;
-  margin-right: 3px;
+  margin-bottom: 5px;
+  padding-right: 5px;
 }
 
 /* line 200, ../scss/ulearn.scss */
@@ -4065,4 +4065,9 @@ input[type="text"]:focus {
 /* line 581, ../scss/ulearn.scss */
 .template-personal-information .customfile {
   clear: both;
+}
+
+/* line 584, ../scss/ulearn.scss */
+#box_thinkers.ulearnbox {
+  padding: 5px 5px 10px 10px;
 }

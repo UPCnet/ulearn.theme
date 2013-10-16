@@ -194,8 +194,8 @@ border-color: #34495E;
   height: 44px;
   overflow-y: hidden;
   display: inline-block;
-  margin-bottom: 7px;
-  margin-right: 3px;
+  margin-bottom: 5px;
+  padding-right: 5px;
 }
 #miniatures img {
     max-width: 44px;
@@ -579,4 +579,8 @@ border-color: #34495E;
 
 .template-personal-information {
   .customfile { clear: both; }
+}
+
+#box_thinkers.ulearnbox {
+   padding: 5px 5px 10px 10px;
 }
