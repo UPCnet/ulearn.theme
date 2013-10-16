@@ -8,7 +8,6 @@ from zope.component import getMultiAdapter
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.memoize.view import memoize_contextless
-from plone.app.portlets.portlets.calendar import Renderer as calendarRenderer
 
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -16,6 +15,7 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IEventsFolder
+from ulearn.theme.portlets.legacycalendar import Renderer as calendarRenderer
 
 from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory

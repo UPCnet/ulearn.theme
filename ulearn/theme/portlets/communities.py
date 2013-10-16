@@ -42,11 +42,11 @@ class Renderer(base.Renderer):
         return getSite()
 
     def showCreateCommunity(self):
-        """The Contributor role is assumed that will be applied at the front-
-           page object.
+        """ The Contributor role is assumed that will be applied at the group in
+            the portal root.
         """
         if IHomePage.providedBy(self.context) and \
-           checkPermission('ulearn.addCommunity', self.context):
+           checkPermission('ulearn.addCommunity', self.portal()):
             return True
 
     def showEditCommunity(self):
