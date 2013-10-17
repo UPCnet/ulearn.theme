@@ -16,7 +16,7 @@ class IeConnectPortlet(IPortletDataProvider):
 class Assignment(base.Assignment):
     implements(IeConnectPortlet)
 
-    title = _(u'econnect', default=u'eConnect')
+    title = _(u'Meetings space', default=u'Meetings space')
 
 
 class Renderer(base.Renderer):
