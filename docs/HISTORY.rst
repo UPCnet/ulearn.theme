@@ -1,11 +1,15 @@
 Changelog
 =========
 
-1.0RC2 (unreleased)
+1.0RC2 (2013-10-18)
 -------------------
 
-- Nothing changed yet.
-
+ * Fix events icon [Victor Fernandez de Alba]
+ * Added ulearn verd flavour css specific [Victor Fernandez de Alba]
+ * Fix some views and portlets [Victor Fernandez de Alba]
+ * Merge branch 'master' of github.com:UPCnet/ulearn.theme [Victor Fernandez de Alba]
+ * Fix thinnkers box [Victor Fernandez de Alba]
+ * Fix new calendar issue, fix creation of communties, [Victor Fernandez de Alba]
 
 1.0RC1 (2013-10-03)
 -------------------
