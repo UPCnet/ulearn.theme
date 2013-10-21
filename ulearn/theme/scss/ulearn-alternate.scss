@@ -1,0 +1,107 @@
+$main-color: #25a13a;
+$maxui-form-bg: #026e00;
+
+// Main
+
+#portal-header {
+  background: $main-color !important;
+}
+
+.ulearnbox h2 {
+    color: $main-color;
+}
+
+#peu {
+  background-color: $main-color;
+}
+
+#peu .container {
+  background-color: $main-color;
+}
+
+.box_badges {
+    background: none repeat scroll 0 0 $main-color;
+}
+.num {
+    background: none repeat scroll 0 0 $main-color;
+}
+
+#menusup {
+  nav {
+    .active {
+      .arrow {
+        border-top-color: $main-color;
+      }
+
+      &, a, a:hover {
+        background:$main-color !important;
+      }
+    }
+  }
+}
+
+#day {
+  background: none repeat scroll 0 0 $main-color;
+  .arrow { border-left-color: $main-color; }
+}
+
+.todayevent{ background:$main-color; }
+
+#communitylist {
+  a {
+    h4 { color: $main-color; }
+    }
+  img {
+    &:hover {border:2px solid $main-color;}
+  }
+}
+
+#box_comunitats {
+  .bubble-content {
+    background: none repeat scroll 0 0 $main-color;
+  }
+  .bubble {
+    .arrow { border-right-color: $main-color; }
+}
+
+input[type="text"]:focus {
+border-color: $maxui-form-bg;
+}
+.novetat { background: none repeat scroll 0 0 $maxui-form-bg; }
+.nav-pills > li > a {
+  color:$maxui-form-bg;
+}
+
+#box_agenda {
+  li {
+    i { color: $maxui-form-bg; }
+  }
+}
+
+#communitylist {
+    .eines {
+        color: $maxui-form-bg;
+    }
+}
+
+// MAXUI
+.maxui-displayname {
+    color: #F58D3D;
+}
+input.maxui-button {
+    background: none repeat scroll 0 0 #F58D3D;
+}
+#maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
+    border: 1px solid #F58D3D !important;
+}
+#maxui-container a:hover {
+    color: $maxui-form-bg;
+}
+#maxui-newactivity {
+    background: none repeat scroll 0 0 $maxui-form-bg;
+}
+
+// OVERRIDES
+h1, h2, h3, label {
+    color: #F58D3D;
+}
