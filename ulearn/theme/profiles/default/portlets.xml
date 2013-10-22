@@ -48,19 +48,19 @@
     />
 
 <assignment
-    type="ulearn.portlets.calendar"
-    manager="plone.rightcolumn"
-    category="context"
-    key="/"
-    name="calendar"
-    />
-
-<assignment
     type="ulearn.portlets.stats"
     manager="plone.rightcolumn"
     category="context"
     key="/"
     name="stats"
+    />
+
+<assignment
+    type="ulearn.portlets.calendar"
+    manager="plone.rightcolumn"
+    category="context"
+    key="/"
+    name="calendar"
     />
 
 </portlets>

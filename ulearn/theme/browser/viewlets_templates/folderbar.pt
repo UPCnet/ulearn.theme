@@ -55,7 +55,7 @@
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
-               tal:attributes="href string:${community/absolute_url}/fotos">
+               tal:attributes="href string:${community/absolute_url}/events">
                   <i class="fa-icon-calendar icons"></i>
                   <tal:Photos i18n:translate="Events">Esdeveniments</tal:Photos></a>
         </div>
