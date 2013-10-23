@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.0RC3 (unreleased)
+1.0RC3 (2013-10-23)
 -------------------
 
-- Nothing changed yet.
-
+* Some fixes [Victor Fernandez de Alba]
+* Alternate CSS for uLearn [Victor Fernandez de Alba]
 
 1.0RC2 (2013-10-18)
 -------------------
