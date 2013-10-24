@@ -1,0 +1,179 @@
+/* line 10, ../scss/ulearn-alternate.scss */
+a {
+  color: #24a33b;
+}
+
+/* line 13, ../scss/ulearn-alternate.scss */
+#portal-header {
+  background-color: #25a73d;
+  background-image: -moz-linear-gradient(top, #27b040, #229a38);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#27b040), to(#229a38));
+  background-image: -webkit-linear-gradient(top, #27b040, #229a38);
+  background-image: -o-linear-gradient(top, #27b040, #229a38);
+  background-image: linear-gradient(to bottom, #27b040, #229a38);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#26ac3e', endColorstr='#219636', GradientType=0);
+}
+
+/* line 17, ../scss/ulearn-alternate.scss */
+.ulearnbox h2 {
+  color: #24a33b;
+}
+
+/* line 21, ../scss/ulearn-alternate.scss */
+#peu {
+  background-color: #017000;
+}
+
+/* line 25, ../scss/ulearn-alternate.scss */
+#peu .container {
+  background-color: #017000;
+}
+
+/* line 29, ../scss/ulearn-alternate.scss */
+.box_badges {
+  background: none repeat scroll 0 0 #017000;
+}
+
+/* line 32, ../scss/ulearn-alternate.scss */
+.num {
+  background: none repeat scroll 0 0 #017000;
+}
+
+/* line 39, ../scss/ulearn-alternate.scss */
+#menusup nav .active .arrow {
+  border-top-color: #017000;
+}
+/* line 43, ../scss/ulearn-alternate.scss */
+#menusup nav .active, #menusup nav .active a, #menusup nav .active a:hover {
+  background: #017000 !important;
+}
+
+/* line 50, ../scss/ulearn-alternate.scss */
+#day {
+  background: none repeat scroll 0 0 #017000;
+}
+/* line 52, ../scss/ulearn-alternate.scss */
+#day .arrow {
+  border-left-color: #017000;
+}
+
+/* line 55, ../scss/ulearn-alternate.scss */
+.todayevent {
+  background: #017000;
+}
+
+/* line 59, ../scss/ulearn-alternate.scss */
+#communitylist a h4 {
+  color: #017000;
+}
+/* line 62, ../scss/ulearn-alternate.scss */
+#communitylist img:hover {
+  border: 2px solid #017000;
+}
+
+/* line 67, ../scss/ulearn-alternate.scss */
+#box_comunitats .bubble-content {
+  background: none repeat scroll 0 0 #017000;
+}
+/* line 71, ../scss/ulearn-alternate.scss */
+#box_comunitats .bubble .arrow {
+  border-right-color: #017000;
+}
+
+/* line 75, ../scss/ulearn-alternate.scss */
+input[type="text"]:focus {
+  border-color: #24a33b;
+}
+
+/* line 78, ../scss/ulearn-alternate.scss */
+.novetat {
+  background: none repeat scroll 0 0 #24a33b;
+}
+
+/* line 82, ../scss/ulearn-alternate.scss */
+#box_agenda li i {
+  color: #24a33b;
+}
+
+/* line 87, ../scss/ulearn-alternate.scss */
+#communitylist .eines {
+  color: #24a33b;
+}
+
+/* line 92, ../scss/ulearn-alternate.scss */
+input[type="text"] {
+  border-color: #017000;
+}
+
+/* line 96, ../scss/ulearn-alternate.scss */
+.btn-comunitat {
+  background-image: none;
+  background-color: #24a33b;
+}
+
+/* line 104, ../scss/ulearn-alternate.scss */
+.btn-comunitat:hover,
+.btn-comunitat:active,
+.btn-comunitat.active,
+.btn-comunitat.disabled,
+.btn-comunitat[disabled] {
+  color: #FFFFFF;
+  background-image: none;
+  background-color: #017000;
+  *background-color: #017000;
+}
+
+/* line 112, ../scss/ulearn-alternate.scss */
+#box_stats .bubble {
+  background-color: #017000;
+}
+/* line 114, ../scss/ulearn-alternate.scss */
+#box_stats .bubble .arrow {
+  border-left-color: #017000;
+}
+
+/* line 121, ../scss/ulearn-alternate.scss */
+#maxui-container a {
+  color: #24a33b;
+}
+
+/* line 124, ../scss/ulearn-alternate.scss */
+.maxui-displayname {
+  color: #24a33b;
+}
+
+/* line 127, ../scss/ulearn-alternate.scss */
+input.maxui-button {
+  background: none repeat scroll 0 0 #24a33b;
+}
+
+/* line 130, ../scss/ulearn-alternate.scss */
+#maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
+  border: 1px solid #24a33b !important;
+}
+
+/* line 133, ../scss/ulearn-alternate.scss */
+#maxui-container a:hover {
+  color: #24a33b;
+}
+
+/* line 136, ../scss/ulearn-alternate.scss */
+#maxui-newactivity {
+  background: none repeat scroll 0 0 #deded6;
+}
+
+/* line 139, ../scss/ulearn-alternate.scss */
+#maxui-search {
+  background: none repeat scroll 0 0 #f7f7f7;
+}
+
+/* line 141, ../scss/ulearn-alternate.scss */
+#maxui-more-activities input.maxui-button {
+  color: #24a33b;
+}
+
+/* line 146, ../scss/ulearn-alternate.scss */
+h1, h2, h3, label {
+  color: #24a33b;
+}

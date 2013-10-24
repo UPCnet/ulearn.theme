@@ -1,6 +1,8 @@
 # Require any additional compass plugins here.
 #add_import_path "../../../genweb.theme/genweb/theme/scss"
-additional_import_paths = ["../../../genweb.theme/genweb/theme/scss", "../../../genweb.theme/genweb/theme/bootstrap/scss"]
+additional_import_paths = ["../../../genweb.theme/genweb/theme/scss",
+"../../../genweb.theme/genweb/theme/bootstrap/scss",
+"../../../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap"]
 
 # Set this to the root of your project when deployed:
 http_path = "/"

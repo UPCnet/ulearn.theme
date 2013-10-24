@@ -1,14 +1,21 @@
-$main-color: #25a13a;
-$maxui-form-bg: #026e00;
+@import "mixins";
 
+$main-color: #017000;
+$secondary-color: #24A33B;
+$maxui-form-bg: #DEDED6;
+$alt-gradient-start-color: #27B040;
+$alt-gradient-end-color: #229A38;
 // Main
 
+a {
+  color: $secondary-color;
+}
 #portal-header {
-  background: $main-color !important;
+  @include gradient-vertical($startColor: $alt-gradient-start-color, $endColor: $alt-gradient-end-color);
 }
 
 .ulearnbox h2 {
-    color: $main-color;
+    color: $secondary-color;
 }
 
 #peu {
@@ -62,46 +69,80 @@ $maxui-form-bg: #026e00;
   }
   .bubble {
     .arrow { border-right-color: $main-color; }
+  }
 }
 
 input[type="text"]:focus {
-border-color: $maxui-form-bg;
+border-color: $secondary-color;
 }
-.novetat { background: none repeat scroll 0 0 $maxui-form-bg; }
-.nav-pills > li > a {
-  color:$maxui-form-bg;
-}
+.novetat { background: none repeat scroll 0 0 $secondary-color; }
 
 #box_agenda {
   li {
-    i { color: $maxui-form-bg; }
+    i { color: $secondary-color; }
   }
 }
 
 #communitylist {
     .eines {
-        color: $maxui-form-bg;
+        color: $secondary-color;
     }
 }
 
+input[type="text"] {
+  border-color: #017000;
+}
+
+.btn-comunitat {
+  background-image: none;
+  background-color: $secondary-color;
+}
+.btn-comunitat:hover,
+.btn-comunitat:active,
+.btn-comunitat.active,
+.btn-comunitat.disabled,
+.btn-comunitat[disabled] {
+  color: #FFFFFF;
+  background-image: none;
+  background-color: $main-color;
+  *background-color: $main-color;
+}
+
+#box_stats {
+  .bubble {
+    background-color: $main-color;
+    .arrow {
+      border-left-color: $main-color;
+    }
+  }
+}
+
 // MAXUI
+#maxui-container a {
+  color: $secondary-color;
+}
 .maxui-displayname {
-    color: #F58D3D;
+  color: $secondary-color;
 }
 input.maxui-button {
-    background: none repeat scroll 0 0 #F58D3D;
+  background: none repeat scroll 0 0 $secondary-color;
 }
 #maxui-container textarea:focus, #maxui-container input[type="search"]:focus {
-    border: 1px solid #F58D3D !important;
+  border: 1px solid $secondary-color !important;
 }
 #maxui-container a:hover {
-    color: $maxui-form-bg;
+  color: $secondary-color;
 }
 #maxui-newactivity {
-    background: none repeat scroll 0 0 $maxui-form-bg;
+  background: none repeat scroll 0 0 $maxui-form-bg;
+}
+#maxui-search { background: none repeat scroll 0 0 #f7f7f7; }
+
+#maxui-more-activities input.maxui-button {
+  color: $secondary-color;
 }
 
 // OVERRIDES
 h1, h2, h3, label {
-    color: #F58D3D;
+  color: $secondary-color;
 }

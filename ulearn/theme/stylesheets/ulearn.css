@@ -1,4 +1,4 @@
-/*
+/*!
  *  Font Awesome 3.2.1
  *  the fa-iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -2497,7 +2497,7 @@ div.token-input-dropdown-facebook ul li.token-input-selected-dropdown-item-faceb
   clear: both;
   margin: 0;
   overflow: hidden;
-  padding: 10px;
+  padding: 0px 10px;
 }
 
 /* line 33, ../scss/_maxui.scss */
@@ -3331,7 +3331,7 @@ input, button, select, textarea {
 #portal-header {
   border-top: none;
   border-bottom: none;
-  background: #f58d3d !important;
+  background: #f58d3d;
 }
 
 /* line 44, ../scss/ulearn.scss */
