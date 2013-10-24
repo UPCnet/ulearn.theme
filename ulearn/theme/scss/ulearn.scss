@@ -130,22 +130,44 @@ border-color: #34495E;
 #badges {
   background:white;
   }
+
 .box_badges {
-    background: none repeat scroll 0 0 #f58d3d;
-    color: white;
-    float: left;
-    font-size: 23px;
-    height: 28px;
-    margin-bottom: 6px;
-    margin-right: 2px;
-    padding-top: 5px;
-    text-align: center;
-    width: 100%;
+  color: #f58d3d;
+  float: left;
+  font-size: 17px;
+  height: 32px;
+  margin-bottom: 7px;
+  text-align: center;
+  width: 100%;
+
+  &:last-child { margin-bottom: 0px; }
+  i { padding: 7px 0 0 0px; display: block; }
+  &:hover { opacity:0.8; cursor:pointer; margin-left: 3px; transition: all 0.25s ease 0s; }
 }
-.box_badges:hover {opacity:0.8;cursor:pointer;margin-left: 3px;transition: all 0.25s ease 0s;}
-.novetat {
-   background: none repeat scroll 0 0 #34495E;
-  }
+
+.type1 {
+    background: url("/++ulearn++static/images/badge1.png") no-repeat 7px;
+}
+.type2 {
+    background: url("/++ulearn++static/images/badge2.png") no-repeat 7px;
+}
+.type3 {
+    background: url("/++ulearn++static/images/badge3.png") no-repeat 7px;
+}
+
+.type1.notawarded {
+   background: url("/++ulearn++static/images/badge1_gris.png") no-repeat 7px;
+   color: #bfbfbf;
+}
+.type2.notawarded {
+   background: url("/++ulearn++static/images/badge2_gris.png") no-repeat 7px;
+   color: #bfbfbf;
+}
+.type3.notawarded {
+   background: url("/++ulearn++static/images/badge3_gris.png") no-repeat 7px;
+   color: #bfbfbf;
+}
+
 #user {
     color: #666666;
     font-size: 0.8em;

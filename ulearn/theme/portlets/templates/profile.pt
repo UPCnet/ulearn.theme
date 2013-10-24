@@ -65,14 +65,14 @@
             </a>
         </div>
 
-        <div class="span3">
-            <div tal:repeat="badge view/get_badges">
+        <div class="badges span3">
+            <tal:block repeat="badge view/get_badges">
                 <div class="box_badges"
-                     tal:attributes="class python:'box_badges' if badge['awarded'] else 'box_badges novetat'">
+                     tal:attributes="class python:'box_badges type{}'.format(badge['class']) if badge['awarded'] else 'box_badges type{} notawarded'.format(badge['class'])">
                     <i class="fa-icon-trophy"
                        tal:attributes="class string:fa-icon-${badge/icon}"></i>
                 </div>
-            </div>
+            </tal:block>
         </div>
     </div>
 </div>

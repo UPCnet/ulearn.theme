@@ -26,9 +26,6 @@ a {
   background-color: $main-color;
 }
 
-.box_badges {
-    background: none repeat scroll 0 0 $main-color;
-}
 .num {
     background: none repeat scroll 0 0 $main-color;
 }
@@ -49,6 +46,7 @@ a {
 
 #day {
   background: none repeat scroll 0 0 $main-color;
+  text-shadow: 1px 1px 0 $secondary-color;
   .arrow { border-left-color: $main-color; }
 }
 
@@ -75,7 +73,12 @@ a {
 input[type="text"]:focus {
 border-color: $secondary-color;
 }
-.novetat { background: none repeat scroll 0 0 $secondary-color; }
+
+.box_badges {
+  color: $main-color;
+}
+
+// .novetat { background: none repeat scroll 0 0 $secondary-color; }
 
 #box_agenda {
   li {
