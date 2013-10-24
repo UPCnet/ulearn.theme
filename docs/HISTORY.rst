@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0RC4 (unreleased)
+1.0RC4 (2013-10-24)
 -------------------
 
-- Nothing changed yet.
-
+* Updated alternate CSS and new badge images [Victor Fernandez de Alba]
 
 1.0RC3 (2013-10-23)
 -------------------
