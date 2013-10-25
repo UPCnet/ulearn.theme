@@ -58,11 +58,13 @@ class Renderer(base.Renderer):
     def fullname(self):
         pm = getToolByName(self.portal(), 'portal_membership')
         userid = pm.getAuthenticatedMember()
-        member_info = pm.getMemberInfo(userid)
+        member_info = pm.getMemberInfo()
+
         if member_info:
             fullname = member_info.get('fullname', '')
         else:
             fullname = None
+
         if fullname:
             return fullname
         else:
@@ -125,9 +127,12 @@ class Renderer(base.Renderer):
         return False
 
     def showEditCommunity(self):
+        pm = getToolByName(self.portal(), "portal_membership")
+        user = pm.getAuthenticatedMember()
+
         if not IPloneSiteRoot.providedBy(self.context) and \
            ICommunity.providedBy(self.context) and \
-           checkPermission('cmf.RequestReview', self.context):
+           'Owner' in self.context.get_local_roles_for_userid(user.id):
             return True
 
     @memoize_contextless

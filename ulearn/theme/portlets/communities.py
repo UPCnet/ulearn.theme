@@ -58,7 +58,7 @@ class Renderer(base.Renderer):
            ('Manager' in user.getRoles() or
            'WebMaster' in user.getRoles() or
            'Site Administrator' in user.getRoles() or
-           'Owner' in user.getRoles()):
+           'Owner' in self.context.get_local_roles_for_userid(user.id)):
             return True
 
     def getCommunities(self):

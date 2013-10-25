@@ -63,7 +63,7 @@ class baseCommunities(grok.View):
         return 'Manager' in user.getRoles() or \
                'WebMaster' in user.getRoles() or \
                'Site Administrator' in user.getRoles() or \
-               'Owner' in user.getRoles() or \
+               'Owner' in community.get_local_roles_for_userid(user.id) or \
                current_user == community.Creator
 
     def get_favorites(self):
