@@ -32,7 +32,7 @@
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
-               tal:attributes="href string:${community/absolute_url}/enllacos">
+               tal:attributes="href string:${community/absolute_url}/links">
                   <i class="fa-icon-link icons"></i>
                   <tal:Links i18n:translate="Links">Enllaços</tal:Links></a>
         </div>
@@ -43,7 +43,7 @@
         <div class="arrow"></div>
         <div class="bubble-content">
           <a href="#"
-               tal:attributes="href string:${community/absolute_url}/fotos">
+               tal:attributes="href string:${community/absolute_url}/media">
                   <i class="fa-icon-camera-retro icons"></i>
                   <tal:Photos i18n:translate="Photos">Fotos</tal:Photos></a>
         </div>
