@@ -127,22 +127,27 @@ border-color: #34495E;
   box-shadow: -1px 1px 2px #ddd;
   }
 .ulearnbox a {text-decoration:none;}
+
 #badges {
   background:white;
   }
 
-.box_badges {
-  color: #f58d3d;
-  float: left;
-  font-size: 17px;
-  height: 32px;
-  margin-bottom: 7px;
-  text-align: center;
-  width: 100%;
+// .badges { margin-top: 10px;}
 
-  &:last-child { margin-bottom: 0px; }
-  i { padding: 7px 0 0 0px; display: block; }
-  &:hover { opacity:0.8; cursor:pointer; margin-left: 3px; transition: all 0.25s ease 0s; }
+.box_badges {
+  // color: #f58d3d;
+  float: left;
+  padding-top: 10px;
+  margin-right: 10px;
+  // font-size: 17px;
+  // height: 32px;
+  // margin-bottom: 7px;
+  // text-align: center;
+  // width: 100%;
+
+  // &:last-child { margin-bottom: 0px; }
+  // i { padding: 7px 0 0 0px; display: block; }
+  &:hover { opacity:0.8; cursor:pointer; padding-top: 5px; transition: all 0.25s ease 0s; }
 }
 
 .type1 {
@@ -470,7 +475,7 @@ border-color: #34495E;
 
 #box_perfil {
   .photo {
-    overflow-y: hidden; height: 150px;
+    overflow-y: hidden; height: 202px;
     // &:hover {
     //   border: 1px solid #f58d3d;
     //   img {margin:-1px;}

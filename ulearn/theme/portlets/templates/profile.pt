@@ -59,18 +59,19 @@
                  tal:content="view/get_thinnkins">256</span> thinnkins</p>
     </div>
     <div class="row-fluid">
-        <div class="photo span9">
+        <div class="photo span12">
             <a tal:attributes="href string:${view/portal_url}/@@personal-information">
                 <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
             </a>
         </div>
-
-        <div class="badges span3">
+    </div>
+    <div class="row-fluid">
+        <div class="badges span12">
             <tal:block repeat="badge view/get_badges">
-                <div class="box_badges"
-                     tal:attributes="class python:'box_badges type{}'.format(badge['class']) if badge['awarded'] else 'box_badges type{} notawarded'.format(badge['class'])">
-                    <i class="fa-icon-trophy"
-                       tal:attributes="class string:fa-icon-${badge/icon}"></i>
+                <div class="box_badges">
+                        <img tal:attributes="src python:'{}/++ulearn++static/images/{}.png'.format(view.portal_url(), badge['png']) if badge['awarded'] else '{}/++ulearn++static/images/{}-alt.png'.format(view.portal_url(), badge['png'])" />
+<!--                     <i class="fa-icon-trophy"
+                       tal:attributes="class string:fa-icon-${badge/icon}"></i> -->
                 </div>
             </tal:block>
         </div>
