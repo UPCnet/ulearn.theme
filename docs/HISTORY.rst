@@ -1,11 +1,14 @@
 Changelog
 =========
 
-1.0RC5 (unreleased)
+1.0RC5 (2013-10-28)
 -------------------
 
-- Nothing changed yet.
-
+* Last minute updates [Victor Fernandez de Alba]
+* Updated folder links names [Victor Fernandez de Alba]
+* New badges and position in portlet. [Victor Fernandez de Alba]
+* Fix some permissions bugs [Victor Fernandez de Alba]
+* Badges 2.0 [Victor Fernandez de Alba]
 
 1.0RC4 (2013-10-24)
 -------------------
