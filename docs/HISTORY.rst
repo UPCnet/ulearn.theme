@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0RC6 (unreleased)
+1.0RC6 (2013-10-28)
 -------------------
 
-- Nothing changed yet.
-
+* New badges [Victor Fernandez de Alba]
 
 1.0RC5 (2013-10-28)
 -------------------
