@@ -69,9 +69,7 @@
         <div class="badges span12">
             <tal:block repeat="badge view/get_badges">
                 <div class="box_badges">
-                        <img tal:attributes="src python:'{}/++ulearn++static/images/{}.png'.format(view.portal_url(), badge['png']) if badge['awarded'] else '{}/++ulearn++static/images/{}-alt.png'.format(view.portal_url(), badge['png'])" />
-<!--                     <i class="fa-icon-trophy"
-                       tal:attributes="class string:fa-icon-${badge/icon}"></i> -->
+                        <img tal:attributes="src python:'{}/{}.png'.format(view.portal_url(), badge['png']) if badge['awarded'] else '{}/++ulearn++static/images/{}-alt.png'.format(view.portal_url(), badge['png'])" />
                 </div>
             </tal:block>
         </div>

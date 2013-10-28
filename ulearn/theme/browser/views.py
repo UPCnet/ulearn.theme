@@ -41,8 +41,8 @@ class baseCommunities(grok.View):
         return createToken()
 
     def get_my_communities(self):
-        pm = getToolByName(self.context, "portal_membership")
-        pc = getToolByName(self.context, "portal_catalog")
+        pm = getToolByName(self.portal(), "portal_membership")
+        pc = getToolByName(self.portal(), "portal_catalog")
         current_user = pm.getAuthenticatedMember().getUserName()
         return pc.searchResults(portal_type="ulearn.community",
                                 subscribed_users=current_user)

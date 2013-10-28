@@ -1,4 +1,4 @@
-/*!
+/*
  *  Font Awesome 3.2.1
  *  the fa-iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -3456,7 +3456,11 @@ input[type="text"]:focus {
 .box_badges {
   float: left;
   padding-top: 10px;
-  margin-right: 10px;
+  margin-right: 7px;
+}
+/* line 148, ../scss/ulearn.scss */
+.box_badges:last-child {
+  margin-right: 0px;
 }
 /* line 150, ../scss/ulearn.scss */
 .box_badges:hover {
@@ -4090,4 +4094,9 @@ input[type="text"]:focus {
 /* line 611, ../scss/ulearn.scss */
 #box_thinkers.ulearnbox {
   padding: 5px 5px 10px 10px;
+}
+
+/* line 615, ../scss/ulearn.scss */
+label[for="form.ext_editor"] ~ div.widget {
+  display: none;
 }
