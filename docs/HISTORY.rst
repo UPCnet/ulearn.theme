@@ -4,8 +4,7 @@ Changelog
 1.0RC8 (2013-10-29)
 -------------------
 
-- Nothing changed yet.
-
+* New eConnect portlet visibility onlly to role WebMaster [Victor Fernandez de Alba]
 
 1.0RC7 (2013-10-28)
 -------------------
