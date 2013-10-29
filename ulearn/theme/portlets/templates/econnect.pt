@@ -1,5 +1,6 @@
 <div id="box_econnect" class="ulearnbox"
-     i18n:domain="ulearn">
+     i18n:domain="ulearn"
+     tal:condition="view/allow_render">
     <h2 i18n:translate="Meetings space">Meetings space</h2>
     <a href="" class="btn btn-large btn-comunitat"
        tal:attributes="href string:${view/portal_url}/addBBBReservation"
