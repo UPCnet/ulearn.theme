@@ -54,9 +54,9 @@
 
   <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/ulearn.css">
   <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/login.css">
-  <script type="text/javascript" src=""
-          tal:attributes="src string:${context/portal_url}/login.js">
-  </script>
+
+  <script type="text/javascript" tal:attributes="src string:${context/portal_url}/++resource++plone.app.jquery.js"></script>
+  <script type="text/javascript" tal:attributes="src string:${context/portal_url}/login.js"></script>
 </head>
 
 <body tal:define="isRTL portal_state/is_rtl;
@@ -226,6 +226,22 @@
             </div>
           </div>
         </form>
+
+            <div id="login-forgotten-password"
+                 tal:condition="python:mail_password_url and use_normal">
+<!--                 <strong i18n:domain="plone" i18n:translate="box_forgot_password_option">
+                    Forgot your password?
+                </strong> -->
+                <p
+                   i18n:domain="plone"
+                   i18n:translate="help_password_retrieval">
+                    If you have forgotten your password,
+                    <span i18n:name="click_here">
+                        <a tal:define="mail_password_url python:mail_password_url+test(mail_password_url.find('?')==-1, '?', '&amp;')+ztu.make_query(userid=login_name)"
+                           tal:attributes="href mail_password_url; target target;"
+                           i18n:translate="label_click_here_to_retrieve">we can send you a new one</a></span>.
+                </p>
+            </div>
 
       </metal:login>
 

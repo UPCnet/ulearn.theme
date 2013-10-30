@@ -29,7 +29,12 @@
                 <li role="menuitem"><a tal:attributes="href string:${view/portal_url}/@@personal-preferences">
                        <i class="icon-cog"></i>
                        <tal:preferences i18n:translate="genweb-preferencies">
-                          Preferències d'usuari</tal:preferences>
+                          Preferències</tal:preferences>
+                </a></li>
+                <li role="menuitem"><a tal:attributes="href string:${view/portal_url}/@@change-password">
+                       <i class="icon-cog"></i>
+                       <tal:password i18n:translate="genweb-password">
+                          Canvi de contrasenya</tal:password>
                 </a></li>
                 <li aria-hidden="true" class="divider"></li>
                 <li role="menuitem" class="btn-menu-adjust">
