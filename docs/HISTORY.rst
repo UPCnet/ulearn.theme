@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.0RC9 (unreleased)
+1.0RC9 (2013-11-04)
 -------------------
 
-- Nothing changed yet.
-
+* Updated CSS with new grunt receipt [Victor Fernandez de Alba]
+* Add password reset link to login form. Fix https font load from Google Fonts. Fix AJAX CSS animation. [Victor Fernandez de Alba]
 
 1.0RC8 (2013-10-29)
 -------------------
