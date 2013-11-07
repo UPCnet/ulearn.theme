@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.0RC10 (unreleased)
---------------------
+1.0 (2013-11-07)
+----------------
 
-- Nothing changed yet.
-
+* Fix grunt task and compile scss [Victor Fernandez de Alba]
 
 1.0RC9 (2013-11-04)
 -------------------
