@@ -1,5 +1,8 @@
+from scss import Scss
+
 from five import grok
 from zope.component.hooks import getSite
+from zope.interface import Interface
 
 from plone.batching import Batch
 from plone.memoize.view import memoize_contextless
@@ -12,6 +15,8 @@ from genweb.theme.browser.views import HomePageBase
 from genweb.theme.browser.interfaces import IHomePageView
 
 from ulearn.theme.browser.interfaces import IUlearnTheme
+
+import pkg_resources
 
 
 class homePage(HomePageBase):
@@ -147,3 +152,43 @@ class searchCommunitiesAJAX(baseCommunities):
     grok.require('genweb.member')
     grok.template('search_communities_ajax')
     grok.layer(IUlearnTheme)
+
+
+class dynamicCSS(grok.View):
+    grok.name('dynamic.css')
+    grok.context(Interface)
+    grok.layer(IUlearnTheme)
+
+    def update(self):
+        self.especific1 = genweb_config().especific1
+        self.especific2 = genweb_config().especific2
+
+
+    def render(self):
+        self.request.response.setHeader('Content-Type', 'text/css')
+        if self.especific1 and self.especific2:
+            return self.compile_scss(especific1=self.especific1, especific2=self.especific2)
+        else:
+            return ""
+
+    #@ram.cache(_render_cachekey)
+    def compile_scss(self, **kwargs):
+        ulearnthemeegg = pkg_resources.get_distribution('ulearn.theme')
+        scssfile = open('{}/ulearn/theme/scss/ulearn-alternate.scss'.format(ulearnthemeegg.location))
+
+        dynamic_scss = """
+
+
+
+        """.format()
+
+        css = Scss(scss_opts={
+                   'compress': False,
+                   'debug_info': False,
+                   })
+
+        def matchdict(params, matchobj):
+            return params.get(matchobj.groups()[0], matchobj.group())
+
+        changed = re.sub(r'%\(([\w\d]+)\)s', partial(matchdict, kwargs), dynamic_scss)
+        return css.compile(changed)
