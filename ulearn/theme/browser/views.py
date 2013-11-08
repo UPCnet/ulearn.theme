@@ -3,10 +3,12 @@ from scss import Scss
 from five import grok
 from zope.component.hooks import getSite
 from zope.interface import Interface
+from zope.component import queryUtility
 
 from plone.batching import Batch
 from plone.memoize.view import memoize_contextless
 from plone.protect import createToken
+from plone.registry.interfaces import IRegistry
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -15,8 +17,10 @@ from genweb.theme.browser.views import HomePageBase
 from genweb.theme.browser.interfaces import IHomePageView
 
 from ulearn.theme.browser.interfaces import IUlearnTheme
+from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 import pkg_resources
+import scss
 
 
 class homePage(HomePageBase):
@@ -160,35 +164,54 @@ class dynamicCSS(grok.View):
     grok.layer(IUlearnTheme)
 
     def update(self):
-        self.especific1 = genweb_config().especific1
-        self.especific2 = genweb_config().especific2
-
+        registry = queryUtility(IRegistry)
+        self.settings = registry.forInterface(IUlearnControlPanelSettings)
 
     def render(self):
         self.request.response.setHeader('Content-Type', 'text/css')
-        if self.especific1 and self.especific2:
-            return self.compile_scss(especific1=self.especific1, especific2=self.especific2)
+        if self.settings.main_color and self.settings.secondary_color and \
+           self.settings.maxui_form_bg and \
+           self.settings.alt_gradient_start_color and \
+           self.settings.alt_gradient_end_color:
+            return self.compile_scss(main_color=self.settings.main_color,
+                                     secondary_color=self.settings.secondary_color,
+                                     maxui_form_bg=self.settings.maxui_form_bg,
+                                     alt_gradient_start_color=self.settings.alt_gradient_start_color,
+                                     alt_gradient_end_color=self.settings.alt_gradient_end_color)
         else:
             return ""
 
     #@ram.cache(_render_cachekey)
     def compile_scss(self, **kwargs):
+        genwebthemeegg = pkg_resources.get_distribution('genweb.theme')
         ulearnthemeegg = pkg_resources.get_distribution('ulearn.theme')
         scssfile = open('{}/ulearn/theme/scss/ulearn-alternate.scss'.format(ulearnthemeegg.location))
 
-        dynamic_scss = """
+        settings = dict(main_color=self.settings.main_color,
+                        secondary_color=self.settings.secondary_color,
+                        maxui_form_bg=self.settings.maxui_form_bg,
+                        alt_gradient_start_color=self.settings.alt_gradient_start_color,
+                        alt_gradient_end_color=self.settings.alt_gradient_end_color)
 
+        variables_scss = """
 
+        $main-color: {main_color};
+        $secondary-color: {secondary_color};
+        $maxui-form-bg: {maxui_form_bg};
+        $alt-gradient-start-color: {alt_gradient_start_color};
+        $alt-gradient-end-color: {alt_gradient_end_color};
 
-        """.format()
+        """.format(**settings)
+
+        scss.config.LOAD_PATHS = [
+            '{}/genweb/theme/bootstrap/scss/compass_twitter_bootstrap'.format(genwebthemeegg.location)
+        ]
 
         css = Scss(scss_opts={
                    'compress': False,
                    'debug_info': False,
                    })
 
-        def matchdict(params, matchobj):
-            return params.get(matchobj.groups()[0], matchobj.group())
+        dynamic_scss = ''.join([variables_scss, scssfile.read()])
 
-        changed = re.sub(r'%\(([\w\d]+)\)s', partial(matchdict, kwargs), dynamic_scss)
-        return css.compile(changed)
+        return css.compile(dynamic_scss)
