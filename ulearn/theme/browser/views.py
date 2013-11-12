@@ -5,6 +5,7 @@ from zope.component.hooks import getSite
 from zope.interface import Interface
 from zope.component import queryUtility
 
+from plone.memoize import ram
 from plone.batching import Batch
 from plone.memoize.view import memoize_contextless
 from plone.protect import createToken
@@ -158,6 +159,15 @@ class searchCommunitiesAJAX(baseCommunities):
     grok.layer(IUlearnTheme)
 
 
+def _render_cachekey(method, self, main_color, secondary_color, background_property,
+                     buttons_color_primary, buttons_color_secondary, maxui_form_bg,
+                     alt_gradient_start_color, alt_gradient_end_color):
+    """Cache by the specific colors"""
+    return (main_color, secondary_color, background_property,
+            buttons_color_primary, buttons_color_secondary, maxui_form_bg,
+            alt_gradient_start_color, alt_gradient_end_color)
+
+
 class dynamicCSS(grok.View):
     grok.name('dynamic.css')
     grok.context(Interface)
@@ -170,25 +180,34 @@ class dynamicCSS(grok.View):
     def render(self):
         self.request.response.setHeader('Content-Type', 'text/css')
         if self.settings.main_color and self.settings.secondary_color and \
+           self.settings.background_property and \
+           self.settings.buttons_color_primary and \
+           self.settings.buttons_color_secondary and \
            self.settings.maxui_form_bg and \
            self.settings.alt_gradient_start_color and \
            self.settings.alt_gradient_end_color:
             return self.compile_scss(main_color=self.settings.main_color,
                                      secondary_color=self.settings.secondary_color,
+                                     background_property=self.settings.background_property,
+                                     buttons_color_primary=self.settings.buttons_color_primary,
+                                     buttons_color_secondary=self.settings.buttons_color_secondary,
                                      maxui_form_bg=self.settings.maxui_form_bg,
                                      alt_gradient_start_color=self.settings.alt_gradient_start_color,
                                      alt_gradient_end_color=self.settings.alt_gradient_end_color)
         else:
             return ""
 
-    #@ram.cache(_render_cachekey)
+    @ram.cache(_render_cachekey)
     def compile_scss(self, **kwargs):
         genwebthemeegg = pkg_resources.get_distribution('genweb.theme')
         ulearnthemeegg = pkg_resources.get_distribution('ulearn.theme')
-        scssfile = open('{}/ulearn/theme/scss/ulearn-alternate.scss'.format(ulearnthemeegg.location))
+        scssfile = open('{}/ulearn/theme/scss/dynamic.scss'.format(ulearnthemeegg.location))
 
         settings = dict(main_color=self.settings.main_color,
                         secondary_color=self.settings.secondary_color,
+                        background_property=self.settings.background_property,
+                        buttons_color_primary=self.settings.buttons_color_primary,
+                        buttons_color_secondary=self.settings.buttons_color_secondary,
                         maxui_form_bg=self.settings.maxui_form_bg,
                         alt_gradient_start_color=self.settings.alt_gradient_start_color,
                         alt_gradient_end_color=self.settings.alt_gradient_end_color)
@@ -197,6 +216,9 @@ class dynamicCSS(grok.View):
 
         $main-color: {main_color};
         $secondary-color: {secondary_color};
+        $background-property: {background_property};
+        $buttons-color-primary: {buttons_color_primary};
+        $buttons-color-secondary: {buttons_color_secondary};
         $maxui-form-bg: {maxui_form_bg};
         $alt-gradient-start-color: {alt_gradient_start_color};
         $alt-gradient-end-color: {alt_gradient_end_color};

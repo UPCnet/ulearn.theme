@@ -1,16 +1,25 @@
 @import "mixins";
 
-// The green alternate version
+// The green alternate version, for the record:
 // $main-color: #017000;
 // $secondary-color: #24A33B;
 // $maxui-form-bg: #DEDED6;
 // $alt-gradient-start-color: #27B040;
 // $alt-gradient-end-color: #229A38;
+// $background-property: #eae9e4;
+// $buttons-color-primary: #24a33b;
+// $buttons-color-secondary: #017000;
+
 // Main
+
+body {
+  background: $background-property;
+}
 
 a {
   color: $secondary-color;
 }
+
 #portal-header {
   @include gradient-vertical($startColor: $alt-gradient-start-color, $endColor: $alt-gradient-end-color);
 }
@@ -71,8 +80,12 @@ a {
   }
 }
 
+input[type="text"] {
+  border-color: $main-color;
+}
+
 input[type="text"]:focus {
-border-color: $secondary-color;
+  border-color: $secondary-color;
 }
 
 .box_badges {
@@ -93,13 +106,9 @@ border-color: $secondary-color;
     }
 }
 
-input[type="text"] {
-  border-color: #017000;
-}
-
 .btn-comunitat {
   background-image: none;
-  background-color: $secondary-color;
+  background-color: $buttons-color-primary;
 }
 .btn-comunitat:hover,
 .btn-comunitat:active,
@@ -108,8 +117,8 @@ input[type="text"] {
 .btn-comunitat[disabled] {
   color: #FFFFFF;
   background-image: none;
-  background-color: $main-color;
-  *background-color: $main-color;
+  background-color: $buttons-color-secondary;
+  *background-color: $buttons-color-secondary;
 }
 
 #box_stats {

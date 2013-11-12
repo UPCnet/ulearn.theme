@@ -9,8 +9,7 @@ module.exports = function (grunt) {
                     // style: 'compressed'
                 },
                 files: {
-                    'ulearn/theme/stylesheets/ulearn.css': 'ulearn/theme/scss/ulearn.scss',
-                    'ulearn/theme/skins/ulearntheme_custom/ulearn-alternate.css': 'ulearn/theme/scss/ulearn-alternate.scss'
+                    'ulearn/theme/stylesheets/ulearn.css': 'ulearn/theme/scss/ulearn.scss'
                 }
             }
         },
