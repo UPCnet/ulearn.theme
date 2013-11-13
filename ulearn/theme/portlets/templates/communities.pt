@@ -1,6 +1,8 @@
 <div id="box_comunitats" class="ulearnbox"
       i18n:domain="ulearn">
 
+<div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
 <h2 i18n:translate="communities">Comunidades</h2>
 
 <nav class="subnavbar">

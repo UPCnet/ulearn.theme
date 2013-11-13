@@ -1,6 +1,9 @@
 <tal:iscommunity tal:define="is_community view/community_mode">
 <div id="box_stats" class="ulearnbox"
      i18n:domain="ulearn">
+
+    <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
     <h2 i18n:translate="stats">Stats</h2>
 
     <ul class="nav nav-pills nav-stacked"

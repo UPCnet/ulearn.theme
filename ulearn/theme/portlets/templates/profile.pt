@@ -2,6 +2,9 @@
 <div id="box_community" class="ulearnbox"
      tal:condition="is_community"
      tal:define="community view/get_community">
+
+    <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
     <div id="user">
         <h2 tal:content="community/title">Ricard Grau</h2>
         <p><span class="dades currentactivity"
@@ -53,6 +56,9 @@
 
 <div id="box_perfil" class="ulearnbox"
      tal:condition="not:is_community">
+
+    <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
     <div id="user">
         <h2 tal:content="view/fullname">Ricard Grau</h2>
         <p><span class="dades currentactivity"

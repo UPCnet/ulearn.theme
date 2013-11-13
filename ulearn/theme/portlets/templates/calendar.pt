@@ -1,4 +1,6 @@
 <div id="box_agenda" class="ulearnbox">
+  <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
   <h2>Agenda</h2>
   <div id="agenda" class="row-fluid"
        tal:define="today view/today">

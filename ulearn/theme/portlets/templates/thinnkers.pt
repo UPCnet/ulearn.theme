@@ -2,6 +2,9 @@
 <div id="box_thinkers" class="ulearnbox"
      tal:condition="is_community"
      tal:define="community view/get_community">
+
+      <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
       <h2>Thinnkers</h2>
       <div id="miniatures">
         <tal:loop repeat="thinnker python:view.get_thinnkers(community=community)">
@@ -19,6 +22,9 @@
 
 <div id="box_thinkers" class="ulearnbox"
      tal:condition="not: is_community">
+
+      <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
       <h2>Thinnkers</h2>
       <div id="miniatures">
         <tal:loop repeat="thinnker python:view.get_thinnkers()">

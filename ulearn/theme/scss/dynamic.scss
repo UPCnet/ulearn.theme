@@ -6,14 +6,15 @@
 // $maxui-form-bg: #DEDED6;
 // $alt-gradient-start-color: #27B040;
 // $alt-gradient-end-color: #229A38;
-// $background-property: #eae9e4;
+// $background-property: transparent;
+// $background-color: #eae9e4;
 // $buttons-color-primary: #24a33b;
 // $buttons-color-secondary: #017000;
 
 // Main
 
 body {
-  background: $background-property;
+  background: $background-property $background-color;
 }
 
 a {
@@ -22,6 +23,10 @@ a {
 
 #portal-header {
   @include gradient-vertical($startColor: $alt-gradient-start-color, $endColor: $alt-gradient-end-color);
+}
+
+.osomcorner {
+  background-color: $background-color;
 }
 
 .ulearnbox h2 {

@@ -1,4 +1,6 @@
 <div id="box_valorats" class="ulearnbox">
+    <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
     <h2>Más valorados</h2>
     <ul class="icons">
         <li><i class="fa-icon-circle-arrow-right"></i><a href="#">7 servicios gamificados en la empresa</a></li>

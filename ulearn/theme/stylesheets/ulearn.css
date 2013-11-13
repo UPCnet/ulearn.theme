@@ -2299,7 +2299,8 @@ input[type="text"]:focus {
   border-color: #34495E; }
 
 .ulearnbox {
-  background: url("../pix_cantonada.png") no-repeat right top white;
+  background-color: white;
+  position: relative;
   padding: 5px 10px 10px;
   clear: both;
   margin-bottom: 20px;
@@ -2307,6 +2308,25 @@ input[type="text"]:focus {
 
 .ulearnbox a {
   text-decoration: none; }
+
+.osomcorner-wrapper {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.osomcorner {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  position: relative;
+  padding: 27px 0;
+  left: 0px;
+  top: 15px;
+  width: 230px; }
 
 #badges {
   background: white; }
