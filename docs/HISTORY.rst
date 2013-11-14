@@ -1,11 +1,14 @@
 Changelog
 =========
 
-1.1 (unreleased)
+1.1 (2013-11-14)
 ----------------
 
-- Nothing changed yet.
-
+* New portlet corner in CSS, complete dynamic CSS [Victor Fernandez de Alba]
+* Dynamic CSS, full [Victor Fernandez de Alba]
+* Fix tests [Victor Fernandez de Alba]
+* New ulearn alternate color theme and dynamic view. [Victor Fernandez de Alba]
+* WIP dynamic SCSS v2.0 [Victor Fernandez de Alba]
 
 1.0 (2013-11-07)
 ----------------
