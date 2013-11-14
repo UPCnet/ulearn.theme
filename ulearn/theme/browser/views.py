@@ -179,6 +179,7 @@ class dynamicCSS(grok.View):
 
     def render(self):
         self.request.response.setHeader('Content-Type', 'text/css')
+        self.request.response.addHeader('Cache-Control', 'must-revalidate, max-age=0, no-cache, no-store')
         if self.settings.main_color and self.settings.secondary_color and \
            self.settings.background_property and \
            self.settings.background_color and \
