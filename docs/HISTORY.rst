@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.2 (unreleased)
+1.2 (2013-11-26)
 ----------------
 
-- Nothing changed yet.
-
+* Fix name of the media folder [Victor Fernandez de Alba]
+* Fix portlet creation [Victor Fernandez de Alba]
+* Added no-cache to dynamic view [Victor Fernandez de Alba]
 
 1.1 (2013-11-14)
 ----------------

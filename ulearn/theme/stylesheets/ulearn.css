@@ -2771,3 +2771,6 @@ label[for="form.ext_editor"] ~ div.widget {
 #login-forgotten-password {
   text-align: center;
   margin-top: 10px; }
+
+.template-homepage #maxui-newactivity {
+  display: none; }
