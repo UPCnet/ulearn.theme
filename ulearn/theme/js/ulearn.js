@@ -137,11 +137,20 @@ $(document).ready(function (event) {
     });
 
     // Community search
-    $('.searchInput').on('keyup', function(event) {
+    $('#searchcommunities .searchInput').on('keyup', function(event) {
         var query = $(this).val();
         $('.listingBar').hide();
         $.get(portal_url + '/search-communities-ajax', { q: query }, function(data) {
             $('#communitylist').html(data);
+        });
+    });
+
+    // User search
+    $('#searchusers .searchInput').on('keyup', function(event) {
+        var query = $(this).val();
+        $('.listingBar').hide();
+        $.get(portal_url + '/searchUser', { q: query }, function(data) {
+            $('#userlist').html(data);
         });
     });
 

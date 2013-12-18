@@ -1,4 +1,4 @@
-/*
+/*!
  *  Font Awesome 3.2.1
  *  the fa-iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -2671,6 +2671,45 @@ input[type="text"]:focus {
     right: 34px;
     top: 2px;
     z-index: 10; }
+
+#searchusers {
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+  padding-top: 10px; }
+  #searchusers .searchInput {
+    height: 25px;
+    font-size: 20px;
+    line-height: 25px;
+    width: 260px; }
+  #searchusers .add-on {
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    position: relative;
+    right: 34px;
+    top: 2px;
+    z-index: 10; }
+
+#userlist ul {
+  list-style: none; }
+#userlist a:hover {
+  text-decoration: none; }
+#userlist li {
+  background-color: white;
+  margin-bottom: 2px; }
+  #userlist li p {
+    color: #333;
+    line-height: 1em; }
+    #userlist li p span {
+      margin-left: 5px; }
+  #userlist li .usuari_petit {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: black; }
+  #userlist li .photo {
+    margin: 10px;
+    display: block; }
 
 #box_comunitats .bubble-content {
   padding: 6px 0px;

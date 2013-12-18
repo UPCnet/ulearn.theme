@@ -19,9 +19,11 @@ from genweb.theme.browser.interfaces import IHomePageView
 
 from ulearn.theme.browser.interfaces import IUlearnTheme
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
+from ulearn.core.browser.searchuser import searchUsersFunction
 
 import pkg_resources
 import scss
+import random
 
 
 class homePage(HomePageBase):
@@ -242,3 +244,31 @@ class dynamicCSS(grok.View):
         dynamic_scss = ''.join([variables_scss, scssfile.read()])
 
         return css.compile(dynamic_scss)
+
+
+class SearchUser(grok.View):
+    grok.name('searchUser')
+    grok.context(Interface)
+    grok.template('search_users_ajax')
+
+    def get_my_users(self):
+        if 'search' in self.request:
+            searchString = self.request.get('search')
+        else:
+            searchString = ''
+
+        resultat = searchUsersFunction(self.context, self.request, searchString)
+        return resultat
+
+
+class searchUsers(grok.View):
+    grok.name('searchUsers')
+    grok.context(Interface)
+    grok.require('genweb.member')
+    grok.template('search_users')
+    grok.layer(IUlearnTheme)
+
+    def users(self):
+
+        resultat = searchUsersFunction(self.context, self.request, '')
+        return resultat

@@ -1,0 +1,47 @@
+<section id="userlist"  
+         tal:define="usersDict view/get_my_users;
+                     users usersDict/content;
+                     big_data usersDict/big;
+                     num_users usersDict/length;
+                     ">
+  <tal:bigdata condition="big_data">
+    <tal:llistat repeat="user users">
+      <div class="directori_usuari_foto">
+        <a href="" tal:attributes="href user/url" tal:content="structure user/foto">
+        </a>
+      </div>
+    </tal:llistat>
+  </tal:bigdata>
+  <tal:bigdata condition="not: big_data">
+    <ul class="sortablelist"
+      tal:condition="users">
+      <tal:llistat repeat="user users">
+        <li class="mix" tal:attributes="data-name user/id">
+          <div class="row-fluid">
+            <div class="span3">
+              <a class="photo" tal:attributes="href user/url" tal:content="structure user/foto">
+              </a>
+            </div>
+            <div class="span7">
+              <a tal:attributes="href user/url">
+                <h4><span tal:replace="user/username">Username</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
+                <p tal:content="user/email">Email</p>
+                <p tal:content="user/telefon">Phone</p>
+                <p tal:content="user/location">Location</p>
+                <p tal:content="user/ubicacio">Ubicacio</p>
+              </a>
+            </div>
+          </div>
+        </li>
+      </tal:llistat>
+    </ul>
+  </tal:bigdata>
+
+  <div class="clearfix" tal:condition="big_data">
+    ... de <span tal:replace="num_users"></span> persones
+  </div>
+
+</section>
+
+
+
