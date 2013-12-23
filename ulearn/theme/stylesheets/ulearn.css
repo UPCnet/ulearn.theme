@@ -1,4 +1,4 @@
-/*
+/*!
  *  Font Awesome 3.2.1
  *  the fa-iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -1729,9 +1729,9 @@ input.maxui-button[disabled] {
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #portal-header h1.pull-left {
-    height: 46px;
-    width: 207px;
-    background: url("/++ulearn++static/images/logo-upcnet-ulearn-ca.png") no-repeat;
+    height: auto;
+    width: auto;
+    background: url("../portal_skins/ulearntheme_custom/ulearn_comunitats@2x.png") no-repeat;
     -webkit-background-size: 100%;
     -moz-background-size: 100%;
     -o-background-size: 100%;
