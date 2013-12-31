@@ -36,96 +36,93 @@
                                 portal context/@@plone_portal_state/portal;
                                 email_from_address portal/email_from_address">
 <!-- <tal:repl tal:replace="username"></tal:repl> -->
-        <tal:noAuthor condition="not: userinfo">
-            <dl class="portalMessage error">
-                <dt i18n:translate="">
-                    Error
-                </dt>
-                <dd i18n:domain="plone" i18n:translate="text_no_user_by_name">
-                    No user by that name.
-                </dd>
-            </dl>
-            <div id="content">
-                &nbsp;
-            </div>
-        </tal:noAuthor>
+      <tal:noAuthor condition="not: userinfo">
+          <dl class="portalMessage error">
+              <dt i18n:translate="">
+                  Error
+              </dt>
+              <dd i18n:domain="plone" i18n:translate="text_no_user_by_name">
+                  No user by that name.
+              </dd>
+          </dl>
+          <div id="content">
+              &nbsp;
+          </div>
+      </tal:noAuthor>
 
-        <tal:haveAuthor condition="userinfo"
-            tal:define="isOwner python:member.getId()==username;
-                        isAnon context/@@plone_portal_state/anonymous;">
+      <tal:haveAuthor condition="userinfo"
+          tal:define="isOwner python:member.getId()==username;
+                      isAnon context/@@plone_portal_state/anonymous;">
 
-            <div metal:use-macro="context/global_statusmessage/macros/portal_message">
-                Portal status message
-            </div>
+          <div metal:use-macro="context/global_statusmessage/macros/portal_message">
+              Portal status message
+          </div>
 
-            <div id="content">
-                <!-- Author information -->
-                <h1 class="documentFirstHeading" tal:condition="userinfo/fullname" tal:content="userinfo/fullname">
-                    Author name
-                </h1>
+          <div id="content">
+              <!-- Author information -->
+              <h1 class="documentFirstHeading" tal:condition="userinfo/fullname" tal:content="userinfo/fullname">
+                  Author name
+              </h1>
 
-                <h1 class="documentFirstHeading" tal:condition="not: userinfo/fullname" tal:content="username">
-                    Author ID
-                </h1>
+              <h1 class="documentFirstHeading" tal:condition="not: userinfo/fullname" tal:content="username">
+                  Author ID
+              </h1>
 
-                <div id="content-core">
-                  <div class="row-fluid">
-                    <div class="span3">
-                      <div class="row-fluid">
-                        <div class="portrait span12">
-                            <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
+              <div id="content-core">
+                <div class="row-fluid">
+                  <div class="span3">
+                    <div class="row-fluid">
+                        <div class="photo span12">
+                            <a tal:attributes="href string:${view/portal_url}/@@personal-information">
+                                <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
+                            </a>
                         </div>
-                      </div>
-                      <div class="row-fluid">
-                        <div class="portrait badges">
-                          <div class="span3"
-                               tal:repeat="badge view/get_badges">
-                              <div class="box_badges"
-                                   tal:attributes="class python:'box_badges' if badge['awarded'] else 'box_badges novetat'">
-                                  <i class="fa-icon-trophy"
-                                     tal:attributes="class string:fa-icon-${badge/icon}"></i>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
-
-                    <div class="span9">
-
-                      <tal:bio condition="userinfo/description">
-                        <h2 i18n:translate="biografia">Biography</h2>
-                        <p tal:content="userinfo/description"></p>
-                      </tal:bio>
-
-                      <tal:mail condition="userinfo/has_email">
-                        <h2 i18n:translate="eMail">eMail</h2>
-                        <p tal:content="userinfo_email"></p>
-                      </tal:mail>
-
-                      <tal:location condition="userinfo/location">
-                        <h2 i18n:translate="location">Location</h2>
-                        <p tal:content="userinfo/location"></p>
-                      </tal:location>
-
-                      <tal:homepage condition="userinfo/home_page">
-                        <h2 i18n:translate="homepage">Homepage</h2>
-                        <p>
-                          <a href="#"
-                             rel="nofollow"
-                             tal:attributes="href userinfo/home_page"
-                             i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
-                        </p>
-                      </tal:homepage>
-
+                    <div class="row-fluid">
+                      <div class="badges span12">
+                          <tal:block repeat="badge view/get_badges">
+                              <div class="box_badges">
+                                      <img tal:attributes="src python:'{}/{}.png'.format(view.portal_url(), badge['png']) if badge['awarded'] else '{}/++ulearn++static/images/{}-alt.png'.format(view.portal_url(), badge['png'])" />
+                              </div>
+                          </tal:block>
+                      </div>
                     </div>
                   </div>
 
+                  <div class="span9">
+
+                    <tal:bio condition="userinfo/description">
+                      <h2 i18n:translate="biografia">Biography</h2>
+                      <p tal:content="userinfo/description"></p>
+                    </tal:bio>
+
+                    <tal:mail condition="userinfo/has_email">
+                      <h2 i18n:translate="eMail">eMail</h2>
+                      <p tal:content="userinfo_email"></p>
+                    </tal:mail>
+
+                    <tal:location condition="userinfo/location">
+                      <h2 i18n:translate="location">Location</h2>
+                      <p tal:content="userinfo/location"></p>
+                    </tal:location>
+
+                    <tal:homepage condition="userinfo/home_page">
+                      <h2 i18n:translate="homepage">Homepage</h2>
+                      <p>
+                        <a href="#"
+                           rel="nofollow"
+                           tal:attributes="href userinfo/home_page"
+                           i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
+                      </p>
+                    </tal:homepage>
+
+                  </div>
                 </div>
-            </div>
 
+              </div>
+          </div>
 
-
-            </tal:haveAuthor>
+        </tal:haveAuthor>
 
     </tal:main-macro>
 

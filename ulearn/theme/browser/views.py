@@ -10,6 +10,7 @@ from plone.batching import Batch
 from plone.memoize.view import memoize_contextless
 from plone.protect import createToken
 from plone.registry.interfaces import IRegistry
+from plone.app.users.browser.personalpreferences import UserDataPanel
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -242,3 +243,13 @@ class dynamicCSS(grok.View):
         dynamic_scss = ''.join([variables_scss, scssfile.read()])
 
         return css.compile(dynamic_scss)
+
+
+class ULearnPersonalPreferences(UserDataPanel):
+    """
+        Override original personal preferences to disable right column portlet
+    """
+
+    def __init__(self, context, request):
+        super(ULearnPersonalPreferences, self).__init__(context, request)
+        request.set('disable_plone.rightcolumn', True)

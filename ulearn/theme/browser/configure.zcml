@@ -16,4 +16,13 @@
       permission="genweb.authenticated"
       />
 
+    <!-- Override of the personal preferences -->
+    <browser:page
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      name="personal-information"
+      class=".views.ULearnPersonalPreferences"
+      permission="cmf.SetOwnProperties"
+      layer="ulearn.theme.browser.interfaces.IUlearnTheme"
+      />
+
 </configure>

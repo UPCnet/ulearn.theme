@@ -1807,6 +1807,11 @@ h1, h2, h3, label {
   nav#portal-personaltools-wrapper {
     margin-top: 36px !important; } }
 
+.template-personal-information [for="form.portrait"] ~ img {
+  float: none;
+  height: 100px;
+  width: auto; }
+
 li > a#plone-contentmenu-workflow {
   display: none; }
 
@@ -2730,10 +2735,8 @@ input[type="text"]:focus {
 .template-profile #content {
   background-color: white;
   padding: 10px 20px; }
-.template-profile .portrait {
-  width: 163px; }
 .template-profile .badges {
-  margin-top: 5px; }
+  padding-left: 5px; }
 
 .subsection-esdeveniments #menusup,
 .subsection-eventos #menusup,

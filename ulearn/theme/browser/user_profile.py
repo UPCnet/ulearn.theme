@@ -1,3 +1,6 @@
+from copy import deepcopy
+from OFS.Image import Image
+
 from zope.interface import implements
 from zope.component import queryUtility
 from zope.component.hooks import getSite
@@ -47,11 +50,13 @@ class userProfile(BrowserView):
 
     def has_complete_profile(self):
         pm = getToolByName(self.portal(), 'portal_membership')
-        user = pm.getMemberById(self.username)
+        user = pm.getAuthenticatedMember()
+        portrait = pm.getPersonalPortrait()
+
         if user.getProperty('fullname') \
            and user.getProperty('fullname') != user.getProperty('username') \
            and user.getProperty('email') \
-           and user.getProperty('portrait'):
+           and isinstance(portrait, Image):
             return True
         else:
             return False
@@ -68,7 +73,7 @@ class userProfile(BrowserView):
         # >>> connect_backpack(self.username.getId(), app="ulearn", sort="user_preference", limit=4)
         # >>> [{"displayName": "Code Whisperer", "id":"codewhisperer", "png": "http://...", "icon": "trophy"}, ]
 
-        badges = AVAILABLE_BADGES
+        badges = deepcopy(AVAILABLE_BADGES)
         if self.has_complete_profile():
             badges[0]['awarded'] = True
 
@@ -76,12 +81,13 @@ class userProfile(BrowserView):
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
 
         thinnkins = self.get_thinnkins()
-        if thinnkins >= settings.threshold_winwin1:
-            badges[1]['awarded'] = True
-        if thinnkins >= settings.threshold_winwin2:
-            badges[2]['awarded'] = True
-        if thinnkins >= settings.threshold_winwin3:
-            badges[3]['awarded'] = True
+        if thinnkins:
+            if (thinnkins >= int(settings.threshold_winwin1)):
+                badges[1]['awarded'] = True
+            if (thinnkins >= int(settings.threshold_winwin2)):
+                badges[2]['awarded'] = True
+            if (thinnkins >= int(settings.threshold_winwin3)):
+                badges[3]['awarded'] = True
 
         return badges
 
