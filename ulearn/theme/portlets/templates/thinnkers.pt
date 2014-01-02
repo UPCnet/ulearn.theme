@@ -18,6 +18,15 @@
           </div>
         </tal:loop>
       </div>
+      <ul class="userslinks"
+        tal:define="community view/get_community">
+        <li>
+          <a tal:attributes="href string:${community/absolute_url}/searchUsers">
+            <i class="icon-plus-sign icons"> </i>
+            <tal:seemore i18n:translate="seemoreusers">See more users</tal:seemore>
+          </a>
+        </li>
+      </ul>
 </div>
 
 <div id="box_thinkers" class="ulearnbox"
@@ -38,5 +47,13 @@
           </div>
         </tal:loop>
       </div>
+      <ul class="userslinks">
+        <li>
+          <a tal:attributes="href string:${view/portal_url}/searchUsers">
+            <i class="icon-plus-sign icons"> </i>
+            <tal:seemore i18n:translate="seemoreusers">See more users</tal:seemore>
+          </a>
+        </li>
+      </ul>
 </div>
 </tal:thinnkers>

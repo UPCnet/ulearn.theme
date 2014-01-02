@@ -2792,6 +2792,11 @@ input[type="text"]:focus {
   .communitylinks li {
     list-style: none; }
 
+.userslinks {
+  margin-left: 3px; }
+  .userslinks li {
+    list-style: none; }
+
 .favoritedisabled i {
   color: #eee; }
 
