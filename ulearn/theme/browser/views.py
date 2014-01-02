@@ -272,3 +272,29 @@ class searchUsers(grok.View):
 
         resultat = searchUsersFunction(self.context, self.request, '')
         return resultat
+
+
+class showOportunitats(grok.View):
+    grok.name('showOportunitats')
+    grok.context(Interface)
+    grok.template('show_oportunitats')
+
+    def get_states(self):
+        pw = getToolByName(self.context, 'portal_workflow')
+        ordered_states = ['Idea', 'Oportunitat',  'Disseny de concepte', 'Pla de marqueting', 'Solucio tecnologica i promocio', 'Transferencia de coneixement', 'Mercat', 'Arxivada', 'Realitzada', 'Rebutjada']
+        resultat = []
+        for state in ordered_states:
+            resultat.append([state,  pw['oportunity'].states[state].title])
+        return resultat
+
+    def get_oportunitats(self):
+        pc = getToolByName(self.context, 'portal_catalog')
+        oportunitats = pc.searchResults(portal_type='ulearn.oportunity')
+        resultat = {}
+
+        for oportunitat in oportunitats:
+            if oportunitat.review_state not in resultat.keys():
+                resultat[oportunitat.review_state] = [oportunitat]
+            else:
+                resultat[oportunitat.review_state].append(oportunitat)
+        return resultat
