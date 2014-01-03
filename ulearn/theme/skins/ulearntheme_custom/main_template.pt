@@ -217,6 +217,7 @@
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/prettify.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.mixitup.min.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/alertify.min.js"></script>
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/select2.min.js"></script>
 
     <!--[if IE 8]>
     <script type="text/javascript" src="http://malsup.github.com/jquery.corner.js"></script>
