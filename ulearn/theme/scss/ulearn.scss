@@ -1,6 +1,7 @@
 $fontAwesomePath: "/++genweb++static/fonts";
 @import "compass_twitter_bootstrap/font-awesome";
 @import "token-input-facebook";
+@import "select2";
 @import "maxui";
 @import "overrides";
 @import "hidden";
@@ -659,9 +660,7 @@ border-color: #34495E;
     padding: 10px 20px;
   }
 
-  .portrait { width: 163px; }
-
-  .badges { margin-top: 5px; }
+  .badges { padding-left: 5px; }
 }
 
 // OJO! si canviem el nom de la seccio d'esdeveniments ha de canviar
@@ -716,4 +715,8 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .portaltype-ulearn-oportunity li > a#plone-contentmenu-workflow {
   display: block;
+}
+
+.template-homepage #maxui-newactivity {
+  display: none;
 }

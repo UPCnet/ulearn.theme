@@ -11,9 +11,9 @@
     only screen and (        min-device-pixel-ratio: 2),
     only screen and (                min-resolution: 192dpi),
     only screen and (                min-resolution: 2dppx) {
-      height: 46px;
-      width: 207px;
-      background: url('/++ulearn++static/images/logo-upcnet-ulearn-ca.png') no-repeat;
+      height: auto;
+      width: auto;
+      background: url('../portal_skins/ulearntheme_custom/ulearn_comunitats@2x.png') no-repeat;
       -webkit-background-size: 100%;
       -moz-background-size: 100%;
       -o-background-size: 100%;
@@ -91,4 +91,10 @@ nav#portal-personaltools-wrapper {
     only screen and (max-width: 979px) and (orientation: landscape) {
       margin-top: 36px !important;
     }
+}
+
+.template-personal-information [for="form.portrait"] ~ img {
+  float: none;
+  height: 100px;
+  width: auto;
 }

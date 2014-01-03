@@ -10,6 +10,7 @@ from plone.batching import Batch
 from plone.memoize.view import memoize_contextless
 from plone.protect import createToken
 from plone.registry.interfaces import IRegistry
+from plone.app.users.browser.personalpreferences import UserDataPanel
 
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -281,10 +282,10 @@ class showOportunitats(grok.View):
 
     def get_states(self):
         pw = getToolByName(self.context, 'portal_workflow')
-        ordered_states = ['Idea', 'Oportunitat',  'Disseny de concepte', 'Pla de marqueting', 'Solucio tecnologica i promocio', 'Transferencia de coneixement', 'Mercat', 'Arxivada', 'Realitzada', 'Rebutjada']
+        ordered_states = ['Idea', 'Oportunitat', 'Disseny de concepte', 'Pla de marqueting', 'Solucio tecnologica i promocio', 'Transferencia de coneixement', 'Mercat', 'Arxivada', 'Realitzada', 'Rebutjada']
         resultat = []
         for state in ordered_states:
-            resultat.append([state,  pw['oportunity'].states[state].title])
+            resultat.append([state, pw['oportunity'].states[state].title])
         return resultat
 
     def get_oportunitats(self):
@@ -298,3 +299,13 @@ class showOportunitats(grok.View):
             else:
                 resultat[oportunitat.review_state].append(oportunitat)
         return resultat
+
+
+class ULearnPersonalPreferences(UserDataPanel):
+    """
+        Override original personal preferences to disable right column portlet
+    """
+
+    def __init__(self, context, request):
+        super(ULearnPersonalPreferences, self).__init__(context, request)
+        request.set('disable_plone.rightcolumn', True)

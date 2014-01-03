@@ -45,7 +45,7 @@
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/media">
                   <i class="fa-icon-camera-retro icons"></i>
-                  <tal:Photos i18n:translate="Photos">Fotos</tal:Photos></a>
+                  <tal:Media i18n:translate="Media">Media</tal:Media></a>
         </div>
       </div>
 

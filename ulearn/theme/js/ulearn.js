@@ -279,4 +279,8 @@ $(document).ready(function (event) {
     };
 
     $("#subscribealert").on("click", "a", subscribe_to_community);
+
+    $(".template-homepage #maxui-widget-container").on("click", "#maxui-show-conversations.maxui-togglebar a, #maxui-show-timeline.maxui-togglebar a", function (event) {
+        $("#maxui-newactivity").toggle()
+    })
 });
