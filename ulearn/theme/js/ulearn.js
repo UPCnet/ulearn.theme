@@ -247,7 +247,7 @@ $(document).ready(function (event) {
     });
 
     // Subscribe from button - Pity, but slightly different than the previous one
-    var subscribe_to_community = function (event) {
+    var subscribe_to_community = function (event, options) {
         event.preventDefault();
         var $this = $(this);
         alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + '"?', function (e) {
@@ -256,7 +256,7 @@ $(document).ready(function (event) {
                 community_url = $this.data()['community'];
                 $.ajax({
                     type: "GET",
-                    url: community_url + "/toggle-subscribe",
+                    url: community_url + options.wsURL,
                     error: function() {
                         alertify.error(_ulearn_i18n("Error when (un)subscribing to the community"));
                     },
@@ -278,7 +278,15 @@ $(document).ready(function (event) {
         });
     };
 
-    $("#subscribealert").on("click", "a", subscribe_to_community);
+    $("#subscribealert").on("click", "a", function (event) {
+        var options = {wsURL: "/toggle-subscribe"};
+        subscribe_to_community(event, options);
+    });
+
+    $("#subscribeupgradealert").on("click", "a", function (event) {
+        var options = {wsURL: "/upgrade-subscribe"};
+        subscribe_to_community(event, options);
+    });
 
     $(".template-homepage #maxui-widget-container").on("click", "#maxui-show-conversations.maxui-togglebar a, #maxui-show-timeline.maxui-togglebar a", function (event) {
         $("#maxui-newactivity").toggle()
