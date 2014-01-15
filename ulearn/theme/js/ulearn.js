@@ -148,10 +148,12 @@ $(document).ready(function (event) {
     // User search
     $('#searchusers .searchInput').on('keyup', function(event) {
         var query = $(this).val();
-        $('.listingBar').hide();
-        $.get(portal_url + '/searchUser', { search: query }, function(data) {
-            $('#userlist').html(data);
-        });
+        if (query.length > 2) {
+            $('.listingBar').hide();
+            $.get(portal_url + '/searchUser', { search: query }, function(data) {
+                $('#userlist').html(data);
+            });
+        }
     });
 
     // # of thinnkinns updater
