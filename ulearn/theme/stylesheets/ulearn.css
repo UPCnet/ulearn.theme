@@ -3346,3 +3346,12 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .template-homepage #maxui-newactivity {
   display: none; }
+
+.directori_usuari_foto {
+  width: 21%;
+  margin: 2%;
+  float: left;
+  height: 100px;
+  overflow-y: hidden; }
+  .directori_usuari_foto img {
+    width: 100%; }
