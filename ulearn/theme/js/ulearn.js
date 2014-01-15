@@ -145,14 +145,20 @@ $(document).ready(function (event) {
         });
     });
 
+    var is_waiting = null;
     // User search
     $('#searchusers .searchInput').on('keyup', function(event) {
         var query = $(this).val();
-        if (query.length > 2) {
-            $('.listingBar').hide();
-            $.get(portal_url + '/searchUser', { search: query }, function(data) {
-                $('#userlist').html(data);
-            });
+        if (query.length > 2 || query.length === 0) {
+            is_waiting = event;
+            setTimeout(function() {
+                if (is_waiting === event) {
+                    $('.listingBar').hide();
+                    $.get(portal_url + '/searchUser', { search: query }, function(data) {
+                        $('#userlist').html(data);
+                    });
+                }
+            }, 500);
         }
     });
 
