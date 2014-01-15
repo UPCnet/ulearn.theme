@@ -149,7 +149,7 @@ $(document).ready(function (event) {
     $('#searchusers .searchInput').on('keyup', function(event) {
         var query = $(this).val();
         $('.listingBar').hide();
-        $.get(portal_url + '/searchUser', { q: query }, function(data) {
+        $.get(portal_url + '/searchUser', { search: query }, function(data) {
             $('#userlist').html(data);
         });
     });

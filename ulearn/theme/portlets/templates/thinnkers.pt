@@ -1,4 +1,5 @@
-<tal:thinnkers tal:define="is_community view/community_mode">
+<tal:thinnkers tal:define="is_community view/community_mode"
+               i18n:domain="ulearn">
 <div id="box_thinkers" class="ulearnbox"
      tal:condition="is_community"
      tal:define="community view/get_community">
