@@ -21,7 +21,9 @@
                          num_users usersDict/length;
                          big_data usersDict/big">
 
-    <!-- <h1 i18n:translate="allcommunities">Communities</h1> -->
+  <div id="communitysearch">
+
+    <h2 i18n:translate="people">People</h2>
 
     <div id="searchusers">
       <div class="input-append">
@@ -69,9 +71,9 @@
       ... de <span tal:replace="num_users"></span> persones
     </div>
 
-
     </section>
 
+  </div>
 
   </metal:main>
 </body>

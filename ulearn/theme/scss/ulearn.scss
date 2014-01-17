@@ -436,11 +436,11 @@ border-color: #34495E;
 
 // Listat de comunitats
 #communitylist {
-    padding: 10px;
+    // padding: 10px;
     font-size: 13px;
     color: #555;
     text-shadow: 1px 1px 0px white;
-    background:#f9f9f9;
+    // background:#f9f9f9;
 
     .eines {
         color: #34495E;
@@ -514,18 +514,24 @@ border-color: #34495E;
 
 .template-communities #content { background-color: white; }
 
+#communitysearch {
+  h2 {
+    float: left;
+    padding-left: 10px;
+  }
+}
 
-#searchcommunities {
-  margin-right: auto;
+#searchinputcommunities, #searchusers {
+  // margin-right: auto;
   margin-left: auto;
   width: 300px;
-  padding-top: 10px;
+  padding-top: 4px;
 
   .searchInput {
-    height: 25px;
-    font-size: 20px;
-    line-height: 25px;
-    width: 260px;
+    height: 20px;
+    font-size: 13px;
+    // line-height: 25px;
+    width: 280px;
   }
 
   .add-on {
@@ -540,29 +546,29 @@ border-color: #34495E;
 }
 
 
-#searchusers {
-  margin-right: auto;
-  margin-left: auto;
-  width: 300px;
-  padding-top: 10px;
+// #searchusers {
+//   margin-right: auto;
+//   margin-left: auto;
+//   width: 300px;
+//   padding-top: 10px;
 
-  .searchInput {
-    height: 25px;
-    font-size: 20px;
-    line-height: 25px;
-    width: 260px;
-  }
+//   .searchInput {
+//     height: 25px;
+//     font-size: 20px;
+//     line-height: 25px;
+//     width: 260px;
+//   }
 
-  .add-on {
-    background-color: white;
-    border: none;
-    font-size: 20px;
-    position: relative;
-    right: 34px;
-    top: 2px;
-    z-index: 10;
-  }
-}
+//   .add-on {
+//     background-color: white;
+//     border: none;
+//     font-size: 20px;
+//     position: relative;
+//     right: 34px;
+//     top: 2px;
+//     z-index: 10;
+//   }
+// }
 
 #userlist {
 
