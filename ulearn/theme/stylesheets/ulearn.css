@@ -1663,7 +1663,7 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
   font-size: 1px;
   text-decoration: none;
   border: 0;
-  background: url('/++genweb++static/images/select2.png?1389192327') right top no-repeat;
+  background: url('/++genweb++static/images/select2.png?1383549768') right top no-repeat;
   cursor: pointer;
   outline: 0; }
 
@@ -1748,7 +1748,7 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
   display: block;
   width: 100%;
   height: 100%;
-  background: url('/++genweb++static/images/select2.png?1389192327') no-repeat 0 1px; }
+  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 0 1px; }
 
 .select2-search {
   display: inline-block;
@@ -1774,21 +1774,21 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background: white url('/++genweb++static/images/select2.png?1389192327') no-repeat 100% -22px;
-  background: url('/++genweb++static/images/select2.png?1389192327') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('/++genweb++static/images/select2.png?1389192327') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2.png?1389192327') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2.png?1389192327') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
+  background: white url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px;
+  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
 
 .select2-drop.select2-drop-above .select2-search input {
   margin-top: 4px; }
 
 .select2-search input.select2-active {
-  background: white url('/++genweb++static/images/select2-spinner.gif?1389192327') no-repeat 100%;
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192327') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192327') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192327') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192327') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
+  background: white url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%;
+  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
 
 .select2-container-active .select2-choice,
 .select2-container-active .select2-choices {
@@ -1921,7 +1921,7 @@ disabled look for disabled choices in the results dropdown
   display: none; }
 
 .select2-more-results.select2-active {
-  background: #f4f4f4 url('/++genweb++static/images/select2-spinner.gif?1389192327') no-repeat 100%; }
+  background: #f4f4f4 url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%; }
 
 .select2-more-results {
   background: #f4f4f4;
@@ -1992,7 +1992,7 @@ disabled look for disabled choices in the results dropdown
   background: transparent !important; }
 
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
-  background: white url('/++genweb++static/images/select2-spinner.gif?1389192327') no-repeat 100% !important; }
+  background: white url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100% !important; }
 
 .select2-default {
   color: #999 !important; }
@@ -2036,7 +2036,7 @@ disabled look for disabled choices in the results dropdown
   top: 4px;
   font-size: 1px;
   outline: none;
-  background: url('/++genweb++static/images/select2.png?1389192327') right top no-repeat; }
+  background: url('/++genweb++static/images/select2.png?1383549768') right top no-repeat; }
 
 .select2-container-multi .select2-search-choice-close {
   left: 3px; }
@@ -2096,7 +2096,7 @@ disabled look for disabled choices in the results dropdown
 /* Retina-ize icons */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b {
-    background-image: url('/++genweb++static/images/select2x2.png?1389192327') !important;
+    background-image: url('/++genweb++static/images/select2x2.png?1383549768') !important;
     background-repeat: no-repeat !important;
     background-size: 60px 40px !important; }
 
@@ -2836,6 +2836,11 @@ input[type="text"]:focus {
 .ulearnbox a {
   text-decoration: none; }
 
+.lt-ie9 .osomcorner-wrapper,
+.lt-ie8 .osomcorner-wrapper,
+.lt-ie7 .osomcorner-wrapper {
+  display: none; }
+
 .osomcorner-wrapper {
   width: 50px;
   height: 50px;
@@ -3115,6 +3120,7 @@ input[type="text"]:focus {
   *background-color: #003bb3; }
 
 #communitylist {
+  min-height: 10px;
   font-size: 13px;
   color: #555;
   text-shadow: 1px 1px 0px white; }
@@ -3175,49 +3181,52 @@ input[type="text"]:focus {
 #box_community p {
   margin-top: 10px; }
 
-.template-communities #content {
+.template-communities #content,
+.template-searchusers #content {
   background-color: white; }
 
 #communitysearch h2 {
   float: left;
   padding-left: 10px; }
 
-#searchinputcommunities, #searchusers {
+#searchinputcommunities, #searchinputusers {
   margin-left: auto;
   width: 300px;
   padding-top: 4px; }
-  #searchinputcommunities .searchInput, #searchusers .searchInput {
+  #searchinputcommunities .searchInput, #searchinputusers .searchInput {
     height: 20px;
     font-size: 13px;
     width: 280px; }
-  #searchinputcommunities .add-on, #searchusers .add-on {
+  #searchinputcommunities .add-on, #searchinputusers .add-on {
     background-color: white;
     border: none;
     font-size: 20px;
     position: relative;
     right: 34px;
-    top: 2px;
+    top: 1px;
     z-index: 10; }
 
-#userlist ul {
-  list-style: none; }
-#userlist a:hover {
-  text-decoration: none; }
-#userlist li {
-  background-color: white;
-  margin-bottom: 2px; }
-  #userlist li p {
-    color: #333;
-    line-height: 1em; }
-    #userlist li p span {
-      margin-left: 5px; }
-  #userlist li .usuari_petit {
-    font-size: 0.8em;
-    font-weight: 400;
-    color: black; }
-  #userlist li .photo {
-    margin: 10px;
-    display: block; }
+#userlist {
+  min-height: 10px; }
+  #userlist ul {
+    list-style: none; }
+  #userlist a:hover {
+    text-decoration: none; }
+  #userlist li {
+    background-color: white;
+    margin-bottom: 2px; }
+    #userlist li p {
+      color: #333;
+      line-height: 1em; }
+      #userlist li p span {
+        margin-left: 5px; }
+    #userlist li .usuari_petit {
+      font-size: 0.8em;
+      font-weight: 400;
+      color: black; }
+    #userlist li .photo {
+      margin: 10px;
+      display: block; }
 
 #box_comunitats .bubble-content {
   padding: 6px 0px;

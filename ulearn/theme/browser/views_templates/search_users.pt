@@ -25,7 +25,7 @@
 
     <h2 i18n:translate="people">People</h2>
 
-    <div id="searchusers">
+    <div id="searchinputusers">
       <div class="input-append">
         <input class="searchInput" type="text" placeholder="Cerca"
                i18n:attributes="placeholder search_users">

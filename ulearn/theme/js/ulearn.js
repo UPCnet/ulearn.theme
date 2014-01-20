@@ -137,7 +137,7 @@ $(document).ready(function (event) {
     });
 
     // Community search
-    $('#searchcommunities .searchInput').on('keyup', function(event) {
+    $('#searchinputcommunities .searchInput').on('keyup', function(event) {
         var query = $(this).val();
         $('.listingBar').hide();
         $.get(portal_url + '/search-communities-ajax', { q: query }, function(data) {
@@ -147,7 +147,7 @@ $(document).ready(function (event) {
 
     var is_waiting = null;
     // User search
-    $('#searchusers .searchInput').on('keyup', function(event) {
+    $('#searchinputusers .searchInput').on('keyup', function(event) {
         var query = $(this).val();
         if (query.length > 2 || query.length === 0) {
             is_waiting = event;
