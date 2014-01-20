@@ -1,11 +1,24 @@
 Changelog
 =========
 
-1.3 (unreleased)
+1.3 (2014-01-20)
 ----------------
 
-- Nothing changed yet.
-
+* Last fixes to search views and refine the search of users [Victor Fernandez de Alba]
+* Changes to search communities and users [Victor Fernandez de Alba]
+* Add delay to JS [Victor Fernandez de Alba]
+* Add minimum length to query [Victor Fernandez de Alba]
+* New CSS [Victor Fernandez de Alba]
+* New CSS [Victor Fernandez de Alba]
+* Fix directory and icons [Victor Fernandez de Alba]
+* Updated JS with new functionality [Victor Fernandez de Alba]
+* Merge branch 'master' into iskra [Victor Fernandez de Alba]
+* Add Select2.js to main_template, add related CSS [Victor Fernandez de Alba]
+* Oportunitats d'innovació [Ramon Navarro Bosch]
+* Final search users [Ramon Navarro Bosch]
+* Disable right column in the personal-information view. Fix user profile and related CSS. [Victor Fernandez de Alba]
+* Update CSS to fix @2x device pixel ratio logo. [Victor Fernandez de Alba]
+* Search User UI [Ramon Navarro Bosch]
 
 1.2 (2013-11-26)
 ----------------
