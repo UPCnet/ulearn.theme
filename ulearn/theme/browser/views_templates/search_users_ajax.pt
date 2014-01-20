@@ -1,9 +1,8 @@
-<section id="userlist"
-         tal:define="usersDict view/get_my_users;
-                     users usersDict/content;
-                     big_data usersDict/big;
-                     num_users usersDict/length;
-                     ">
+<tal:userlist define="usersDict view/get_my_users;
+                      users usersDict/content;
+                      big_data usersDict/big;
+                      num_users usersDict/length;
+                      ">
   <tal:bigdata condition="big_data">
     <tal:llistat repeat="user users">
       <div class="directori_usuari_foto">
@@ -38,10 +37,7 @@
   </tal:bigdata>
 
   <div class="clearfix" tal:condition="big_data">
-    ... de <span tal:replace="num_users"></span> persones
+    ... de <span tal:replace="num_users"></span> personas
   </div>
 
-</section>
-
-
-
+</tal:userlist>
