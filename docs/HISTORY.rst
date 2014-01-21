@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.4 (unreleased)
+1.4 (2014-01-21)
 ----------------
 
-- Nothing changed yet.
-
+* Slight fixes [Victor Fernandez de Alba]
+* Fix duplicate section id [Victor Fernandez de Alba]
 
 1.3 (2014-01-20)
 ----------------
