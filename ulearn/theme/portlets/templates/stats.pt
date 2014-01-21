@@ -6,8 +6,7 @@
 
     <h2 i18n:translate="stats">Stats</h2>
 
-    <ul class="nav nav-pills nav-stacked"
-        tal:condition="is_community">
+    <ul tal:condition="is_community">
       <li>
         <div class="bubble left pull-left">
           <div class="arrow"></div>
@@ -49,8 +48,7 @@
       </li>
     </ul>
 
-    <ul class="nav nav-pills nav-stacked"
-        tal:condition="not: is_community">
+    <ul tal:condition="not: is_community">
       <li>
         <div class="bubble left pull-left">
           <div class="arrow"></div>

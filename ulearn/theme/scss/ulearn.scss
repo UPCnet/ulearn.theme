@@ -640,7 +640,7 @@ border-color: #34495E;
     background-color: #deded6;
     font-weight: bold;
   }
-  ul { margin-top: 5px; }
+  ul { margin-top: 5px; margin-left: 0px; }
   li {
     margin-bottom: 5px;
   }
@@ -700,6 +700,10 @@ border-color: #34495E;
 
 #box_thinkers.ulearnbox {
    padding: 5px 5px 10px 10px;
+}
+
+#box_thinkers {
+  i { margin-right: 3px; }
 }
 
 label[for="form.ext_editor"] ~ div.widget {

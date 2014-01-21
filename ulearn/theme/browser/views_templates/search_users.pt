@@ -80,10 +80,6 @@
         </ul>
       </tal:bigdata>
 
-    <div class="clearfix" tal:condition="big_data">
-      ... de <span tal:replace="num_users"></span> persones
-    </div>
-
     </section>
 
   </div>
