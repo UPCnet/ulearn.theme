@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.6 (unreleased)
+1.6 (2014-01-21)
 ----------------
 
-- Nothing changed yet.
-
+* clearfix [Victor Fernandez de Alba]
 
 1.5 (2014-01-21)
 ----------------
