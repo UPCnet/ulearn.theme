@@ -521,33 +521,44 @@ border-color: #34495E;
 .template-searchusers #content { background-color: white; }
 
 #communitysearch {
+  padding: 10px;
   h2 {
     float: left;
-    padding-left: 10px;
+    padding-left: 13px;
+    margin-top: 13px;
   }
+}
+
+#communitysearch .portalMessage, #communitysearch .alert, .portalMessage {
+    margin: 0 auto 10px;
+    width: 85%;
 }
 
 #searchinputcommunities, #searchinputusers {
   // margin-right: auto;
   margin-left: auto;
   width: 300px;
-  padding-top: 4px;
+  padding-top: 10px;
 
   .searchInput {
     height: 20px;
     font-size: 13px;
     // line-height: 25px;
+    margin-bottom: 15px;
+    padding: 2px 5px;
     width: 280px;
   }
 
   .add-on {
+    color: #888888;
     background-color: white;
     border: none;
-    font-size: 20px;
+    font-size: 15px;
     position: relative;
     right: 34px;
     top: 1px;
     z-index: 10;
+    padding:2px;
   }
 }
 

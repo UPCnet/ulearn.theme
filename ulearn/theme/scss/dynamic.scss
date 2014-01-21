@@ -164,3 +164,14 @@ input.maxui-button {
 h1, h2, h3, label {
   color: $secondary-color;
 }
+
+#maxui-container .maxui-actions {
+  a.maxui-action.maxui-likes.maxui-liked,
+  a.maxui-action.maxui-likes.maxui-liked:before {
+    color: $secondary-color;
+  }
+  a.maxui-action.maxui-favorites.maxui-favorited,
+  a.maxui-action.maxui-favorites.maxui-favorited:before {
+    color: $secondary-color;
+  }
+}

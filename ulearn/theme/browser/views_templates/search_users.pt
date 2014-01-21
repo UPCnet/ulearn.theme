@@ -33,6 +33,19 @@
       </div>
     </div>
 
+    <div id="subscribealert" class="alert alert-info" role="alert">
+      <button data-dismiss="alert" class="close" type="button">×</button>
+      <p>
+      <strong i18n:translate="info">
+                Info
+      </strong><br/>
+      <tal:msg i18n:translate="use_the_search_input_to_find_more_people">
+        Use the search input to find people. Showing 20 out of
+      </tal:msg>
+      &nbsp;<span tal:replace="num_users"></span>.
+      </p>
+    </div>
+
     <section id="userlist">
       <tal:bigdata condition="big_data">
         <tal:llistat repeat="user users">
