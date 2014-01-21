@@ -80,6 +80,9 @@
         </ul>
       </tal:bigdata>
 
+    <div class="clearfix" tal:condition="big_data">
+    </div>
+
     </section>
 
   </div>
