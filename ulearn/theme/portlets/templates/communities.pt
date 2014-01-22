@@ -48,14 +48,14 @@
   </li>
 </ul>
 
-<p tal:condition="view/showCreateCommunity">
+<tal:showcreate condition="view/showCreateCommunity">
   <button class="btn btn-large btn-comunitat"
           type="button"
           data-remote="addCommunity" data-toggle="modal" data-target="#addModal">
             <i class="fa-icon-group"></i>
             <tal:createcommunity i18n:translate="createcommunity">Create a new community</tal:createcommunity>
   </button>
-</p>
+</tal:showcreate>
 
 <div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
   <div class="modal-header">

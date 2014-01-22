@@ -124,11 +124,15 @@ border-color: #34495E;
   // background: url("../pix_cantonada.png") no-repeat right top white;
   background-color: white;
   position: relative;
-  padding: 5px 10px 10px;
+  padding: 10px;
   clear:both;
   margin-bottom:20px;
   box-shadow: -1px 1px 2px #ddd;
+
+  ul:last-child {
+    margin-bottom: 0px;
   }
+}
 
 .ulearnbox a {text-decoration:none;}
 
@@ -640,9 +644,12 @@ border-color: #34495E;
     background-color: #deded6;
     font-weight: bold;
   }
-  ul { margin-top: 5px; margin-left: 0px; }
+  ul { margin-top: 5px; margin-left: 0px; list-style: none;}
   li {
     margin-bottom: 5px;
+  }
+  li:last-child {
+    margin-bottom: 0px;
   }
 }
 .modal.fade.in { top: 34%; }

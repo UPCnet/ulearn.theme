@@ -2828,10 +2828,12 @@ input[type="text"]:focus {
 .ulearnbox {
   background-color: white;
   position: relative;
-  padding: 5px 10px 10px;
+  padding: 10px;
   clear: both;
   margin-bottom: 20px;
   box-shadow: -1px 1px 2px #ddd; }
+  .ulearnbox ul:last-child {
+    margin-bottom: 0px; }
 
 .ulearnbox a {
   text-decoration: none; }
@@ -3283,9 +3285,12 @@ input[type="text"]:focus {
   font-weight: bold; }
 #box_stats ul {
   margin-top: 5px;
-  margin-left: 0px; }
+  margin-left: 0px;
+  list-style: none; }
 #box_stats li {
   margin-bottom: 5px; }
+#box_stats li:last-child {
+  margin-bottom: 0px; }
 
 .modal.fade.in {
   top: 34%; }
