@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.7 (unreleased)
+1.7 (2014-01-22)
 ----------------
 
-- Nothing changed yet.
-
+* Show more additional love to CSS [Victor Fernandez de Alba]
 
 1.6 (2014-01-21)
 ----------------
