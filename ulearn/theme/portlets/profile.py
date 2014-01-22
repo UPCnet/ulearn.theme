@@ -27,6 +27,8 @@ from ulearn.core.controlpanel import IUlearnControlPanelSettings
 from maxclient import MaxClient
 from mrs.max.browser.controlpanel import IMAXUISettings
 
+import plone.api
+
 
 class IProfilePortlet(IPortletDataProvider):
     """ A portlet which can render the logged user profile information.
@@ -69,6 +71,9 @@ class Renderer(base.Renderer):
             return fullname
         else:
             return userid
+
+    def get_current_user(self):
+        return plone.api.user.get_current()
 
     def get_portrait(self):
         pm = getToolByName(self.portal(), 'portal_membership')
