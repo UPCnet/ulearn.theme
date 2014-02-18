@@ -119,7 +119,7 @@ class folderBar(viewletBase):
 #     index = ViewPageTemplateFile('viewlets_templates/personal_bar.pt')
 
 #     def showRootFolderLink(self):
-#         return havePermissionAtRoot(self)
+#         return havePermissionAtRoot()
 
 #     def canManageSite(self):
 #         return getSecurityManager().checkPermission("plone.app.controlpanel.Overview", self.portal)
