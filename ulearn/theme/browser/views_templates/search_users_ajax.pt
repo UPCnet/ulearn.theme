@@ -23,7 +23,7 @@
             </div>
             <div class="span7">
               <a tal:attributes="href user/url">
-                <h4><span tal:replace="user/username">Username</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
+                <h4><span tal:replace="user/fullname">Full name</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
                 <p tal:condition="user/email"><i class="fa fa-icon-envelope"></i><span tal:content="user/email">Email</span></p>
                 <p tal:condition="user/telefon"><i class="fa fa-icon-mobile"></i><span tal:content="user/telefon">Phone</span></p>
                 <p tal:condition="user/location"><i class="fa fa-icon-building"></i><span tal:content="user/location">Location</span></p>

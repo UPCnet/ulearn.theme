@@ -61,10 +61,10 @@ class userProfile(BrowserView):
         else:
             return False
 
-    def getEmail(self):
+    def get_member_data(self):
         pm = getToolByName(self.portal(), 'portal_membership')
         user = pm.getMemberById(self.username)
-        return user.getProperty('email')
+        return user
 
     def get_badges(self):
         """ Done consistent with an hipotetical badge provider backend """

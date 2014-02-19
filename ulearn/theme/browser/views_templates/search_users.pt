@@ -39,10 +39,13 @@
       <strong i18n:translate="info">
                 Info
       </strong><br/>
-      <tal:msg i18n:translate="use_the_search_input_to_find_more_people">
-        Use the search input to find people. Showing 20 out of
+      <tal:msg i18n:translate="use_the_search_input_to_find_more_people1">
+        Use the search input to find people. Showing
       </tal:msg>
-      &nbsp;<span tal:replace="num_users"></span>.
+      <span tal:replace="num_users"></span>
+      <tal:msg i18n:translate="use_the_search_input_to_find_more_people2">
+        out of 20.
+      </tal:msg>
       </p>
     </div>
 
@@ -67,7 +70,7 @@
                 </div>
                 <div class="span7">
                   <a tal:attributes="href user/url">
-                    <h4><span tal:replace="user/username">Username</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
+                    <h4><span tal:replace="user/fullname">Full name</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
                     <p tal:condition="user/email"><i class="fa fa-icon-envelope"></i><span tal:content="user/email">Email</span></p>
                     <p tal:condition="user/telefon"><i class="fa fa-icon-mobile"></i><span tal:content="user/telefon">Phone</span></p>
                     <p tal:condition="user/location"><i class="fa fa-icon-building"></i><span tal:content="user/location">Location</span></p>
