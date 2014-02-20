@@ -15,7 +15,9 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IEventsFolder
-from ulearn.theme.portlets.legacycalendar import Renderer as calendarRenderer
+# from ulearn.theme.portlets.legacycalendar import Renderer as calendarRenderer
+from plone.app.event.portlets.portlet_calendar import Renderer as calendarRenderer
+from plone.app.event.base import localized_today
 
 from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory
@@ -37,10 +39,22 @@ class Renderer(calendarRenderer):
 
     render = ViewPageTemplateFile('templates/calendar.pt')
 
+    def __init__(self, *args, **kwargs):
+        super(Renderer, self).__init__(*args, **kwargs)
+
+        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
+            path = ''
+        else:
+            path = '/'.join(('', ) + self.get_community().getPhysicalPath()[2:])
+
+        self.data.search_base = path
+        self.data.state = ('published', 'intranet')
+
     def today(self):
         today = {}
-        today['weekday'] = PLMF(self._ts.day_msgid(self.now.tm_wday+1, format='l'))
-        today['number'] = self.now.tm_mday
+        loc_today = localized_today(self.context)
+        today['weekday'] = PLMF(self._ts.day_msgid(loc_today.weekday() + 1, format='l'))
+        today['number'] = loc_today.day
         return today
 
     @memoize_contextless
@@ -57,11 +71,11 @@ class Renderer(calendarRenderer):
         if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
             path = navigation_root_path
         else:
-            path = '/'.join(self.get_community().getPhysicalPath())
+            path = '/'.join(('', ) + self.get_community().getPhysicalPath()[2:])
 
         query = {
-            'portal_type': self.calendar.getCalendarTypes(),
-            'review_state': self.calendar.getCalendarStates(),
+            'portal_type': 'Event',
+            'review_state': self.data.state,
             'start': {'query': [yesterday, tomorrow], 'range': 'min:max'},
             'end': {'query': now, 'range': 'min'},
             'sort_on': 'start',
@@ -83,6 +97,9 @@ class Renderer(calendarRenderer):
         month = self.month
         year = int(year)
         month = int(month)
+
+        # TODO: Adapt code for not rely on the existance of portal_calendar
+        self.calendar = getToolByName(context, 'portal_calendar')
         last_day = self.calendar._getCalendar().monthrange(year, month)[1]
         last_date = self.calendar.getBeginAndEndTimes(last_day, month, year)[1]
 
@@ -95,8 +112,8 @@ class Renderer(calendarRenderer):
             path = '/'.join(self.get_community().getPhysicalPath())
 
         query = {
-            'portal_type': self.calendar.getCalendarTypes(),
-            'review_state': self.calendar.getCalendarStates(),
+            'portal_type': 'Event',
+            'review_state': self.data.state,
             'start': {'query': last_date, 'range': 'max'},
             'end': {'query': now, 'range': 'min'},
             'sort_on': 'start',
@@ -132,7 +149,7 @@ class Renderer(calendarRenderer):
                 if day['event']:
                     cur_date = DateTime(year, month, daynumber)
                     localized_date = [self._ts.ulocalized_time(cur_date, context=context, request=self.request)]
-                    day['eventstring'] = '\n'.join(localized_date+[' %s' %
+                    day['eventstring'] = '\n'.join(localized_date + [' %s' %
                         self.getEventString(e) for e in day['eventslist']])
                     day['date_string'] = '%s-%s-%s' % (year, month, daynumber)
 

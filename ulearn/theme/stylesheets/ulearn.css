@@ -3073,10 +3073,23 @@ input[type="text"]:focus {
   width: 100%;
   font-size: 13px; }
 
+.portletCalendar .ploneCalendar {
+  font-size: 13px; }
+
 .event {
   background-color: #384e65;
   text-shadow: none;
   border-right: 1px solid white; }
+
+.cal_has_events {
+  background-color: #384e65;
+  text-shadow: none; }
+
+.cal_prev_month, .cal_next_month {
+  opacity: 0.5; }
+
+.today {
+  font-weight: bold; }
 
 .todayevent {
   background: #f58d3d;
