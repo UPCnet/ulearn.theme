@@ -6,7 +6,9 @@
 
       <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
-      <h2>Thinnkers</h2>
+      <h2 i18n:translate="" tal:content="view/get_people_literal">
+        Thinnkers
+      </h2>
       <div id="miniatures">
         <tal:loop repeat="thinnker python:view.get_thinnkers(community=community)">
           <div class="thinnker">
@@ -35,7 +37,9 @@
 
       <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
-      <h2>Thinnkers</h2>
+      <h2 i18n:translate="" tal:content="view/get_people_literal">
+        Thinnkers
+      </h2>
       <div id="miniatures">
         <tal:loop repeat="thinnker python:view.get_thinnkers()">
           <div class="thinnker">

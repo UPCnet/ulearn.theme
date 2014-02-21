@@ -22,6 +22,8 @@ from ulearn.core.content.community import ICommunity
 from maxclient import MaxClient
 from mrs.max.browser.controlpanel import IMAXUISettings
 
+import plone.api
+
 
 class IThinnkersPortlet(IPortletDataProvider):
     """ A portlet which can render the logged user profile information.
@@ -59,6 +61,9 @@ class Renderer(base.Renderer):
                 return True
 
         return False
+
+    def get_people_literal(self):
+        return plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
 
     def get_thinnkers(self, community=False):
         registry = queryUtility(IRegistry)
