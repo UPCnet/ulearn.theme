@@ -3,7 +3,7 @@ from hashlib import sha1
 from Acquisition import aq_inner
 from Acquisition import aq_chain
 from zope.interface import implements
-from zope.component import getMultiAdapter, queryUtility
+from zope.component import getMultiAdapter, queryUtility, getUtility
 from zope.component.hooks import getSite
 
 from plone.app.portlets.portlets import base
@@ -20,6 +20,7 @@ from ulearn.core.content.community import ICommunity
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 from maxclient import MaxClient
+from mrs.max.utilities import IMAXClient
 from mrs.max.browser.controlpanel import IMAXUISettings
 
 
@@ -45,6 +46,12 @@ class Renderer(base.Renderer):
     def portal(self):
         return getSite()
 
+    def get_community(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return obj
+
     def community_mode(self):
         context = aq_inner(self.context)
         for obj in aq_chain(context):
@@ -60,30 +67,35 @@ class Renderer(base.Renderer):
             results = pc.searchResults(portal_type=['Document', 'File'], path={'query': current_path})
         elif query_type == 'links':
             results = pc.searchResults(portal_type=['Link'], path={'query': current_path})
-        elif query_type == 'photos':
+        elif query_type == 'media':
             results = pc.searchResults(portal_type=['Image'], path={'query': current_path})
 
         return len(results)
 
-    def get_all_activities(self):
-        registry = queryUtility(IRegistry)
-        settings = registry.forInterface(IMAXUISettings, check=False)
-        # Pick grant type from settings unless passed as optional argument
-        effective_grant_type = settings.oauth_grant_type
+    @memoize_contextless
+    def get_context_activities(self):
+        pm = getToolByName(self.context, "portal_membership")
+        member = pm.getAuthenticatedMember()
+        username = member.getUserName()
+        member = pm.getMemberById(username)
+        oauth_token = member.getProperty('oauth_token', None)
 
-        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
+        maxclient, settings = getUtility(IMAXClient)()
+        maxclient.setActor(username)
+        maxclient.setToken(oauth_token)
+
+        context_hash = sha1(self.get_community().absolute_url()).hexdigest()
+        return maxclient.getContextActivities(context=context_hash, count=True)
+
+    def get_all_activities(self):
+        maxclient, settings = getUtility(IMAXClient)()
         maxclient.setActor(settings.max_restricted_username)
         maxclient.setToken(settings.max_restricted_token)
 
         return maxclient.getAllActivities(count=True)
 
     def get_all_comments(self):
-        registry = queryUtility(IRegistry)
-        settings = registry.forInterface(IMAXUISettings, check=False)
-        # Pick grant type from settings unless passed as optional argument
-        effective_grant_type = settings.oauth_grant_type
-
-        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
+        maxclient, settings = getUtility(IMAXClient)()
         maxclient.setActor(settings.max_restricted_username)
         maxclient.setToken(settings.max_restricted_token)
 

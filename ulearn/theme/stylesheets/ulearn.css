@@ -3173,12 +3173,12 @@ input[type="text"]:focus {
   margin-bottom: 0px; }
 
 .modal.fade.in {
-  top: 34%; }
+  top: 40%; }
 
 #addModal .modal-body, #editModal .modal-body {
-  max-height: 750px; }
+  max-height: 600px; }
 #addModal #content-core, #editModal #content-core {
-  height: 655px; }
+  height: auto; }
 
 .template-profile #content {
   background-color: white;

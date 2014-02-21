@@ -662,10 +662,11 @@ border-color: #34495E;
     margin-bottom: 0px;
   }
 }
-.modal.fade.in { top: 34%; }
+.modal.fade.in { top: 40%; }
+
 #addModal, #editModal {
-  .modal-body { max-height: 750px; }
-  #content-core { height: 655px; }
+  .modal-body { max-height: 600px; }
+  #content-core { height: auto; }
 
 }
 

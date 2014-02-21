@@ -11,6 +11,32 @@
         <div class="bubble left pull-left">
           <div class="arrow"></div>
           <div class="bubble-content">
+            <tal:docs content="view/get_context_activities">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p i18n:translate="Activity">
+          Activitat
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_all_comments()">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p i18n:translate="Comments">
+          Comentaris
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
             <tal:docs content="python:view.get_stats_for('documents')">
               240
             </tal:docs>
@@ -37,13 +63,13 @@
         <div class="bubble left pull-left">
           <div class="arrow"></div>
           <div class="bubble-content">
-            <tal:docs content="python:view.get_stats_for('photos')">
+            <tal:docs content="python:view.get_stats_for('media')">
               240
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Photos">
-          Photos
+        <p i18n:translate="Media">
+          Media
         </p>
       </li>
     </ul>
@@ -73,6 +99,45 @@
         </div>
         <p i18n:translate="Comments">
           Comentaris
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_stats_for('documents')">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p i18n:translate="Documents">
+          Documents
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_stats_for('links')">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p i18n:translate="Links">
+          Links
+        </p>
+      </li>
+      <li>
+        <div class="bubble left pull-left">
+          <div class="arrow"></div>
+          <div class="bubble-content">
+            <tal:docs content="python:view.get_stats_for('media')">
+              240
+            </tal:docs>
+          </div>
+        </div>
+        <p i18n:translate="Media">
+          Media
         </p>
       </li>
     </ul>
