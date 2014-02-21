@@ -33,15 +33,6 @@
         </tal:buttons>
     </div>
 
-    <p tal:condition="view/showEditCommunity">
-      <button class="btn btn-large btn-comunitat"
-              type="button"
-              data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
-                <i class="fa-icon-pencil"></i>
-                <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
-      </button>
-    </p>
-
     <div id="editModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -51,6 +42,15 @@
         <p>One fine body…</p>
       </div>
     </div>
+
+    <p tal:condition="view/showEditCommunity">
+      <button class="btn btn-large btn-comunitat"
+              type="button"
+              data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
+                <i class="fa-icon-pencil"></i>
+                <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
+      </button>
+    </p>
 
 </div>
 

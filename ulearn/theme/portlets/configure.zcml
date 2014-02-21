@@ -2,6 +2,7 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="genweb.portlets">
 
@@ -12,6 +13,13 @@
         class=".portlets.gwNavigation"
         layer="ulearn.theme.browser.interfaces.IUlearnTheme"
         /> -->
+
+    <browser:resource
+        name="plone.app.event.portlet_calendar.js"
+        file="portlet_calendar.js"
+        permission="zope.Public"
+        layer="ulearn.theme.browser.interfaces.IUlearnTheme"
+        />
 
     <plone:portlet
         name="ulearn.portlets.communities"

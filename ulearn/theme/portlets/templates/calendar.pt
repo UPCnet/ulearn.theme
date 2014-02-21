@@ -34,7 +34,6 @@
                    year view/year;">
 
     <div class="portletHeader">
-      <span class="portletTopLeft"></span>
       <a href="#" rel="nofollow"
            class="calendarPrevious"
            title="Previous month"
@@ -43,7 +42,9 @@
            tal:attributes="href view/prev_query;
                            data-year prev_year;
                            data-month prev_month;"
-           i18n:attributes="title title_previous_month;">&laquo;</a>
+           i18n:attributes="title title_previous_month;">
+          <i class="fa fa-chevron-left"></i>
+         </a>
 
         <span i18n:translate="" tal:omit-tag="">
             <span i18n:name="monthname" i18n:translate=""
@@ -62,8 +63,9 @@
            tal:attributes="href view/next_query;
                            data-year next_year;
                            data-month next_month;"
-           i18n:attributes="title title_next_month;">&raquo;</a>
-        <span class="portletTopRight"></span>
+           i18n:attributes="title title_next_month;">
+         <i class="fa fa-chevron-right"></i>
+         </a>
     </div>
 
         <table class="ploneCalendar" summary="Calendar"
@@ -158,7 +160,7 @@
    <ul class="icons-ul">
     <li tal:repeat="event view/get_next_three_events">
       <a tal:attributes="href event/getURL">
-        <i class="fa-icon-li fa-icon-calendar"></i>
+        <i class="fa fa-calendar"></i>
         <tal:event content="event/Title">Event Title</tal:event>
       </a>
     </li>
@@ -168,7 +170,7 @@
      tal:condition="view/show_newevent_url">
     <a class="btn btn-large btn-comunitat"
        tal:attributes="href view/newevent_url">
-        <i class="fa-icon-calendar-empty"></i>
+        <i class="fa fa-calendar-o"></i>
         <tal:newevent  i18n:domain="ulearn" i18n:translate="newevent">Create a new event</tal:newevent>
     </a>
   </p>

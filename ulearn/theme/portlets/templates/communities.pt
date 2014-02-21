@@ -31,6 +31,16 @@
   </ul>
 </nav>
 
+<div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel" i18n:translate="createcommunity">Create a new community</h3>
+  </div>
+  <div class="modal-body">
+    <p>One fine body…</p>
+  </div>
+</div>
+
 <ul class="communitylinks"
     tal:define="campus_url view/get_campus_url">
   <li>
@@ -56,15 +66,5 @@
             <tal:createcommunity i18n:translate="createcommunity">Create a new community</tal:createcommunity>
   </button>
 </tal:showcreate>
-
-<div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-  <div class="modal-header">
-    <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel" i18n:translate="createcommunity">Create a new community</h3>
-  </div>
-  <div class="modal-body">
-    <p>One fine body…</p>
-  </div>
-</div>
 
 </div>

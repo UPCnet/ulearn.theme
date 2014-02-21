@@ -23,6 +23,8 @@ from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory
 PLMF = MessageFactory('plonelocales')
 
+import plone.api
+
 
 class ICalendarPortlet(IPortletDataProvider):
     """ A portlet which can render the logged user profile information.
@@ -71,7 +73,7 @@ class Renderer(calendarRenderer):
         if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
             path = navigation_root_path
         else:
-            path = '/'.join(('', ) + self.get_community().getPhysicalPath()[2:])
+            path = '/'.join(self.get_community().getPhysicalPath())
 
         query = {
             'portal_type': 'Event',
@@ -163,10 +165,13 @@ class Renderer(calendarRenderer):
 
     def show_newevent_url(self):
         context = aq_inner(self.context)
-        if IHomePage.providedBy(context) or IPloneSiteRoot.providedBy(self.context):
-            return False
+        if 'Editor' in plone.api.user.get_roles(obj=self.get_community()):
+            if IHomePage.providedBy(context) or IPloneSiteRoot.providedBy(self.context):
+                return False
+            else:
+                return True
         else:
-            return True
+            return False
 
     def newevent_url(self):
         community = self.get_community()
