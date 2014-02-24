@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.9 (unreleased)
+1.9 (2014-02-24)
 ----------------
 
-- Nothing changed yet.
-
+* Fix event CSS [Victor Fernandez de Alba]
 
 1.8 (2014-02-24)
 ----------------
