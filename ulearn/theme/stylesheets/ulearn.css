@@ -2941,11 +2941,6 @@ input[type="text"]:focus {
   text-align: center;
   font-size: 14px; }
 
-.event {
-  background-color: #384e65;
-  text-shadow: none;
-  border-right: 1px solid white; }
-
 .cal_has_events {
   background-color: #384e65;
   text-shadow: none; }
@@ -2963,10 +2958,6 @@ input[type="text"]:focus {
   text-shadow: none;
   text-align: center;
   border-right: 1px solid white; }
-
-.event a {
-  color: white;
-  font-weight: normal; }
 
 .todayevent a {
   color: #fff; }
