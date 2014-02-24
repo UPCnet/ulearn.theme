@@ -1,11 +1,17 @@
 Changelog
 =========
 
-1.8 (unreleased)
+1.8 (2014-02-24)
 ----------------
 
-- Nothing changed yet.
-
+* Fix icons [Victor Fernandez de Alba]
+* Uninstall profile, thinnkers literal conditional, new i18n. [Victor Fernandez de Alba]
+* New stats portlet [Victor Fernandez de Alba]
+* New portlet calendar ready [Victor Fernandez de Alba]
+* Calendar migrated to p.a.event one [Victor Fernandez de Alba]
+* Extend the userschema properly, and fix other things [Victor Fernandez de Alba]
+* Normalize method in utils [Victor Fernandez de Alba]
+* Make portlet more richer [Victor Fernandez de Alba]
 
 1.7 (2014-01-22)
 ----------------
