@@ -170,7 +170,7 @@
      tal:condition="view/show_newevent_url">
     <a class="btn btn-large btn-comunitat"
        tal:attributes="href view/newevent_url">
-        <i class="fa fa-calendar-o"></i>
+        <i class="fa fa-calendar"></i>
         <tal:newevent  i18n:domain="ulearn" i18n:translate="newevent">Create a new event</tal:newevent>
     </a>
   </p>

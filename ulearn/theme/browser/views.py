@@ -91,7 +91,7 @@ class baseCommunities(grok.View):
         return not community.community_type == u'Organizative'
 
     def get_star_class(self, community):
-        return community.id in self.favorites and 'fa-icon-star' or 'fa-icon-star-empty'
+        return community.id in self.favorites and 'fa fa-star' or 'fa fa-star-o'
 
     def get_subscribed_class(self, community):
         pm = getToolByName(self.context, "portal_membership")
@@ -103,7 +103,7 @@ class baseCommunities(grok.View):
             # It's an open community or a closed one where I'm subscribed. If
             # the community is closed and I'm not subscribed, then I should not
             # see it as I should not have permission
-            return 'fa-icon-check' if current_user in community.subscribed_users else 'fa-icon-check-empty'
+            return 'fa fa-check-square-o' if current_user in community.subscribed_users else 'fa fa-square-o'
 
     def get_communities_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")

@@ -47,7 +47,7 @@
       <button class="btn btn-large btn-comunitat"
               type="button"
               data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
-                <i class="fa-icon-pencil"></i>
+                <i class="fa fa-pencil"></i>
                 <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
       </button>
     </p>

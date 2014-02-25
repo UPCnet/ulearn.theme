@@ -33,14 +33,14 @@
             </a>
             <a tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/edit">
-              <i class="fa-icon-pencil"></i>
+              <i class="fa fa-pencil"></i>
             </a>
             <a class="delete" href="#"
                tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/delete_confirmation;
                                data-authenticator view/get_authenticator;
                                data-name community/Title">
-            <i class="fa-icon-remove"></i>
+            <i class="fa fa-times"></i>
             </a>
           </div>
         </div>
@@ -62,8 +62,8 @@
 
 <div class="clearfix">
   <div class="btn-group pull-right">
-    <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa-icon-sort-by-alphabet"></i></button>
-    <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa-icon-sort-by-alphabet-alt"></i></button>
-    <button class="btn sort" data-sort="default" data-order="desc"><i class="fa-icon-repeat"></i></button>
+    <button class="btn sort" data-sort="data-name" data-order="desc"><i class="fa fa-sort-alpha-desc"></i></button>
+    <button class="btn sort" data-sort="data-name" data-order="asc"><i class="fa fa-sort-alpha-asc"></i></button>
+    <button class="btn sort" data-sort="default" data-order="desc"><i class="fa fa-repeat"></i></button>
   </div>
 </div>

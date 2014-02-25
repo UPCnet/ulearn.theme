@@ -9,7 +9,7 @@
           <a href="#"
              data-toggle="tab"
              data-target="#maxui-widget-container">
-                <i class="fa-icon-comment icons"></i>
+                <i class="fa fa-comment icons"></i>
                 <tal:Entrada i18n:translate="Entrada"> Entrada </tal:Entrada></a>
         </div>
       </div>
@@ -20,7 +20,7 @@
           <a href="#"
              data-toggle="tab"
              data-target="#communities-view">
-                <i class="fa-icon-group icons"></i>
+                <i class="fa fa-group icons"></i>
                 <tal:Documents i18n:translate="my_communities">My communities</tal:Documents></a>
         </div>
       </div>

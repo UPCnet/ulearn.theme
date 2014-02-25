@@ -27,11 +27,11 @@
             </a>
             <a tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/edit">
-              <i class="fa-icon-pencil"></i>
+              <i class="fa fa-pencil"></i>
             </a>
             <a tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/delete_confirmation">
-            <i class="fa-icon-remove"></i>
+            <i class="fa fa-times"></i>
             </a>
           </div>
     </div>

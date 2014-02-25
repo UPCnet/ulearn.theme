@@ -66,6 +66,15 @@ class userProfile(BrowserView):
         user = pm.getMemberById(self.username)
         return user
 
+    def user_properties(self):
+        member_data = self.get_member_data()
+        return {'fullname': member_data.getProperty('fullname'),
+                'email': member_data.getProperty('email'),
+                'home_page': member_data.getProperty('home_page'),
+                'description': member_data.getProperty('description'),
+                'twitter_username': member_data.getProperty('twitter_username'),
+                'location': member_data.getProperty('location')}
+
     def get_badges(self):
         """ Done consistent with an hipotetical badge provider backend """
         # Call to the REST service for the user badges returning a list with the

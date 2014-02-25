@@ -11,7 +11,7 @@
         <div class="bubble-content">
           <a href="#"
              tal:attributes="href string:${community/absolute_url}">
-                <i class="fa-icon-comment icons"></i>
+                <i class="fa fa-comment icons"></i>
                 <tal:Activity i18n:translate="Activity">Activitat</tal:Activity></a>
         </div>
       </div>
@@ -22,7 +22,7 @@
         <div class="bubble-content">
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/documents">
-                  <i class="fa-icon-file-alt icons"></i>
+                  <i class="fa fa-file-text-o icons"></i>
                   <tal:Documents i18n:translate="Documents">Documents</tal:Documents></a>
         </div>
       </div>
@@ -33,7 +33,7 @@
         <div class="bubble-content">
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/links">
-                  <i class="fa-icon-link icons"></i>
+                  <i class="fa fa-link icons"></i>
                   <tal:Links i18n:translate="Links">Enllaços</tal:Links></a>
         </div>
       </div>
@@ -44,7 +44,7 @@
         <div class="bubble-content">
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/media">
-                  <i class="fa-icon-camera-retro icons"></i>
+                  <i class="fa fa-camera-retro icons"></i>
                   <tal:Media i18n:translate="Media">Media</tal:Media></a>
         </div>
       </div>
@@ -56,7 +56,7 @@
         <div class="bubble-content">
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/events">
-                  <i class="fa-icon-calendar icons"></i>
+                  <i class="fa fa-calendar icons"></i>
                   <tal:Photos i18n:translate="Events">Esdeveniments</tal:Photos></a>
         </div>
       </div>

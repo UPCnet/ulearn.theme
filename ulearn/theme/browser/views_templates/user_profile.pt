@@ -28,14 +28,13 @@
                                 mtool python: context.portal_membership;
                                 portrait python: mtool.getPersonalPortrait(username);
                                 portal_types context/portal_types;
-                                userinfo python: mtool.getMemberInfo(username);
-                                userinfo_email view/getEmail;
+                                userinfo view/user_properties;
                                 portal_url context/@@plone_portal_state/navigation_root_url;
                                 here_url context/@@plone_context_state/object_url;
                                 member context/@@plone_portal_state/member;
                                 portal context/@@plone_portal_state/portal;
-                                email_from_address portal/email_from_address">
-<!-- <tal:repl tal:replace="username"></tal:repl> -->
+                                email_from_address portal/email_from_address;">
+
       <tal:noAuthor condition="not: userinfo">
           <dl class="portalMessage error">
               <dt i18n:translate="">
@@ -96,9 +95,9 @@
                       <p tal:content="userinfo/description"></p>
                     </tal:bio>
 
-                    <tal:mail condition="userinfo/has_email">
+                    <tal:mail condition="userinfo/email">
                       <h2 i18n:translate="eMail">eMail</h2>
-                      <p tal:content="userinfo_email"></p>
+                      <p tal:content="userinfo/email"></p>
                     </tal:mail>
 
                     <tal:location condition="userinfo/location">

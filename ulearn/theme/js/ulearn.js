@@ -30,10 +30,10 @@ $(document).ready(function (event) {
                   event.preventDefault();
                   var community_url = $(this).data()['community'];
                   $.get(community_url + '/toggle-favorite');
-                  if ($('i', this).hasClass('fa-icon-star')) {
-                    $('i', this).addClass('fa-icon-star-empty').removeClass('fa-icon-star');
+                  if ($('i', this).hasClass('fa-star')) {
+                    $('i', this).addClass('fa-star-o').removeClass('fa-star');
                   } else {
-                    $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
+                    $('i', this).addClass('fa-star').removeClass('fa-star-o');
                   }
                 });
                 $('.sortablelist').mixitup({layoutMode: 'list'});
@@ -73,7 +73,7 @@ $(document).ready(function (event) {
                     var $this = $(this);
                     var msgalert = '';
 
-                    if ($('i', $this).hasClass('fa-icon-check')) {
+                    if ($('i', $this).hasClass('fa-check-square-o')) {
                         msgalert = "Voleu desubscrivir-vos de la comunitat ";
                     } else {
                         msgalert = "Voleu subscrivir-vos a la comunitat ";
@@ -90,11 +90,11 @@ $(document).ready(function (event) {
                                     alertify.error(-_ulearn_i18n("Error when (un)subscribing to the community"));
                                 },
                                 success: function() {
-                                    if ($('i', $this).hasClass('fa-icon-check')) {
-                                        $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
+                                    if ($('i', $this).hasClass('fa-check-square-o')) {
+                                        $('i', $this).addClass('fa-square-o').removeClass('fa-check-square-o');
                                         alertify.success(_ulearn_i18n("Successfully unsubscribed"));
                                     } else {
-                                        $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
+                                        $('i', $this).addClass('fa-check-square-o').removeClass('fa-square-o');
                                         alertify.success(_ulearn_i18n("Successfully subscribed"));
                                     }
                                     console.log("ok");
@@ -174,10 +174,10 @@ $(document).ready(function (event) {
       event.preventDefault();
       var community_url = $(this).data()['community'];
       $.get(community_url + '/toggle-favorite');
-      if ($('i', this).hasClass('fa-icon-star')) {
-        $('i', this).addClass('fa-icon-star-empty').removeClass('fa-icon-star');
+      if ($('i', this).hasClass('fa-star')) {
+        $('i', this).addClass('fa-star-o').removeClass('fa-star');
       } else {
-        $('i', this).addClass('fa-icon-star').removeClass('fa-icon-star-empty');
+        $('i', this).addClass('fa-star').removeClass('fa-star-o');
       }
     });
 
@@ -221,7 +221,7 @@ $(document).ready(function (event) {
         var $this = $(this);
         var msgalert = '';
 
-        if ($('i', $this).hasClass('fa-icon-check')) {
+        if ($('i', $this).hasClass('fa-check-square-o')) {
             msgalert = "Voleu desubscrivir-vos de la comunitat ";
         } else {
             msgalert = "Voleu subscrivir-vos a la comunitat ";
@@ -238,11 +238,11 @@ $(document).ready(function (event) {
                         alertify.error(_ulearn_i18n("Error when (un)subscribing to the community"));
                     },
                     success: function() {
-                        if ($('i', $this).hasClass('fa-icon-check')) {
-                            $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
+                        if ($('i', $this).hasClass('fa-check-square-o')) {
+                            $('i', $this).addClass('fa-square-o').removeClass('fa-check-square-o');
                             alertify.success(_ulearn_i18n("Successfully unsubscribed"));
                         } else {
-                            $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
+                            $('i', $this).addClass('fa-check-square-o').removeClass('fa-square-o');
                             alertify.success(_ulearn_i18n("Successfully subscribed"));
                         }
                         console.log("ok");
@@ -269,11 +269,11 @@ $(document).ready(function (event) {
                         alertify.error(_ulearn_i18n("Error when (un)subscribing to the community"));
                     },
                     success: function() {
-                        if ($('i', $this).hasClass('fa-icon-check')) {
-                            $('i', $this).addClass('fa-icon-check-empty').removeClass('fa-icon-check');
+                        if ($('i', $this).hasClass('fa-check-square-o')) {
+                            $('i', $this).addClass('fa-square-o').removeClass('fa-check-square-o');
                             alertify.success(_ulearn_i18n("Successfully unsubscribed"));
                         } else {
-                            $('i', $this).addClass('fa-icon-check').removeClass('fa-icon-check-empty');
+                            $('i', $this).addClass('fa-check-square-o').removeClass('fa-square-o');
                             alertify.success(_ulearn_i18n("Successfully subscribed"));
                         }
                         console.log("ok");
