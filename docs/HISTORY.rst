@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.10 (unreleased)
+1.10 (2014-02-25)
 -----------------
 
-- Nothing changed yet.
-
+* Fix icons to match FA4 [Victor Fernandez de Alba]
+* WIP [Victor Fernandez de Alba]
 
 1.9 (2014-02-24)
 ----------------
