@@ -17,7 +17,7 @@ from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IEventsFolder
 # from ulearn.theme.portlets.legacycalendar import Renderer as calendarRenderer
 from plone.app.event.portlets.portlet_calendar import Renderer as calendarRenderer
-from plone.app.event.base import localized_today
+from plone.app.event.base import localized_today, localized_now, dt_start_of_day, dt_end_of_day
 
 from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory
@@ -63,9 +63,7 @@ class Renderer(calendarRenderer):
     def get_nearest_today_event(self):
         context = aq_inner(self.context)
         pc = getToolByName(context, 'portal_catalog')
-        now = DateTime()
-        tomorrow = DateTime.Date(now + 1)
-        yesterday = DateTime.Date(now - 1)
+        now = localized_now()
 
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
@@ -78,7 +76,7 @@ class Renderer(calendarRenderer):
         query = {
             'portal_type': 'Event',
             'review_state': self.data.state,
-            'start': {'query': [yesterday, tomorrow], 'range': 'min:max'},
+            'start': {'query': [now, dt_end_of_day(now)], 'range': 'min:max'},
             'end': {'query': now, 'range': 'min'},
             'sort_on': 'start',
             'path': path,
@@ -94,16 +92,7 @@ class Renderer(calendarRenderer):
     def get_next_three_events(self):
         context = aq_inner(self.context)
         pc = getToolByName(context, 'portal_catalog')
-        now = DateTime()
-        year = self.year
-        month = self.month
-        year = int(year)
-        month = int(month)
-
-        # TODO: Adapt code for not rely on the existance of portal_calendar
-        self.calendar = getToolByName(context, 'portal_calendar')
-        last_day = self.calendar._getCalendar().monthrange(year, month)[1]
-        last_date = self.calendar.getBeginAndEndTimes(last_day, month, year)[1]
+        now = localized_now()
 
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
@@ -116,7 +105,6 @@ class Renderer(calendarRenderer):
         query = {
             'portal_type': 'Event',
             'review_state': self.data.state,
-            'start': {'query': last_date, 'range': 'max'},
             'end': {'query': now, 'range': 'min'},
             'sort_on': 'start',
             'path': path,
@@ -127,7 +115,7 @@ class Renderer(calendarRenderer):
         if nearest:
             return [event for event in result if event.id != nearest.id]
         else:
-            return result
+            return result[:3]
 
     def getEventsForCalendar(self):
         context = aq_inner(self.context)
