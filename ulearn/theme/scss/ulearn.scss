@@ -609,7 +609,23 @@ border-color: #34495E;
       display: block;
     }
   }
-
+  .fa {
+    border: 1px solid;
+    border-radius: 21px;
+    color: #555555;
+    font-size: 11px;
+    margin-right: 10px;
+    min-width: 13px;
+    padding: 4px 3px;
+    text-align: center;
+  }
+  .fa:hover {
+    color: #F58D3D;
+  }
+  li p span {
+    font-size: 13px;
+    margin-left: 0;
+  }
 }
 
 #box_comunitats {
