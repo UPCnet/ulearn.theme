@@ -40,12 +40,17 @@
                 Info
       </strong><br/>
       <tal:msg i18n:translate="use_the_search_input_to_find_more_people1">
-        Use the search input to find people. Showing
+        Use the search input to find people.
       </tal:msg>
-      <span tal:replace="num_users"></span>
-      <tal:msg i18n:translate="use_the_search_input_to_find_more_people2">
-        out of 20.
-      </tal:msg>
+      <tal:bigdata condition="big_data">
+        <tal:msg i18n:translate="use_the_search_input_to_find_more_people2">
+          Showing
+        </tal:msg>
+        <span tal:replace="num_users"></span>
+        <tal:msg i18n:translate="use_the_search_input_to_find_more_people3">
+          out of 20.
+        </tal:msg>
+      </tal:bigdata>
       </p>
     </div>
 

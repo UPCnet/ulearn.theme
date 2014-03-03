@@ -56,7 +56,7 @@
         <li>
           <a tal:attributes="href string:${view/portal_url}/searchUsers">
             <i class="icon-plus-sign icons"> </i>
-            <tal:seemore i18n:translate="seemoreusers">See more users</tal:seemore>
+            <tal:seemore i18n:translate="" content="view/get_seemoreusers_literal">See more users</tal:seemore>
           </a>
         </li>
       </ul>

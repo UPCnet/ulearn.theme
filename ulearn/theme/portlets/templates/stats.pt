@@ -16,7 +16,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Activity">
+        <p i18n:translate="" tal:content="view/get_posts_literal">
           Activitat
         </p>
       </li>
@@ -84,7 +84,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Activity">
+        <p i18n:translate="" tal:content="view/get_posts_literal">
           Activitat
         </p>
       </li>

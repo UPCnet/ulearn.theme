@@ -259,3 +259,10 @@ class TitleViewlet(TitleViewlet, viewletBase):
             self.site_title = u"%s" % (genweb_title)
         else:
             self.site_title = u"%s &mdash; %s" % (page_title, genweb_title)
+
+
+class socialtoolsViewlet(viewletBase):
+    grok.name('genweb.socialtools')
+    grok.template('socialtools')
+    grok.viewletmanager(IAboveContentTitle)
+    grok.layer(IUlearnTheme)

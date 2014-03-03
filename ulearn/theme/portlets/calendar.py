@@ -15,7 +15,6 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IEventsFolder
-# from ulearn.theme.portlets.legacycalendar import Renderer as calendarRenderer
 from plone.app.event.portlets.portlet_calendar import Renderer as calendarRenderer
 from plone.app.event.base import localized_today, localized_now, dt_start_of_day, dt_end_of_day
 
@@ -169,6 +168,17 @@ class Renderer(calendarRenderer):
                 event_folder_id = obj_id
 
         return '{}/{}/++add++Event'.format(self.get_community().absolute_url(), event_folder_id)
+
+    def is_community(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
+
+    def get_event_folder_url(self):
+        return '{}/events'.format(self.get_community().absolute_url())
 
 
 class AddForm(base.NullAddForm):

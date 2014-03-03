@@ -23,6 +23,8 @@ from maxclient import MaxClient
 from mrs.max.utilities import IMAXClient
 from mrs.max.browser.controlpanel import IMAXUISettings
 
+import plone.api
+
 
 class IStatsPortlet(IPortletDataProvider):
     """ A portlet which can render the community stats information """
@@ -100,6 +102,13 @@ class Renderer(base.Renderer):
         maxclient.setToken(settings.max_restricted_token)
 
         return maxclient.getAllComments(count=True)
+
+    def get_posts_literal(self):
+        literal = plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+        if literal == 'thinnkers':
+            return 'thinnkins'
+        else:
+            return 'entrades'
 
 
 class AddForm(base.NullAddForm):

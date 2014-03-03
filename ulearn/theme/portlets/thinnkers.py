@@ -65,6 +65,9 @@ class Renderer(base.Renderer):
     def get_people_literal(self):
         return plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
 
+    def get_seemoreusers_literal(self):
+        return 'seemoreusers_{}'.format(self.get_people_literal())
+
     def get_thinnkers(self, community=False):
         registry = queryUtility(IRegistry)
         settings = registry.forInterface(IMAXUISettings, check=False)

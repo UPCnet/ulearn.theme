@@ -167,6 +167,13 @@ class Renderer(base.Renderer):
         factories_view = getMultiAdapter((self.context, self.request), name='folder_factories')
         return factories_view.addable_types()
 
+    def get_posts_literal(self):
+        literal = plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+        if literal == 'thinnkers':
+            return 'thinnkins'
+        else:
+            return 'entrades'
+
 
 class AddForm(base.NullAddForm):
 
