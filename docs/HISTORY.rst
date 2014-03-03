@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.11 (unreleased)
+1.11 (2014-03-03)
 -----------------
 
-- Nothing changed yet.
-
+* Fix February bugs [Victor Fernandez de Alba]
+* Update CSS [Victor Fernandez de Alba]
+* Fix calendar [Victor Fernandez de Alba]
 
 1.10 (2014-02-25)
 -----------------
