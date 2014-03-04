@@ -50,7 +50,7 @@
         </tal:msg>
         <span tal:replace="num_users"></span>
         <tal:msg i18n:translate="use_the_search_input_to_find_more_people3">
-          out of 20.
+          out of 100.
         </tal:msg>
       </tal:bigdata>
       </p>
@@ -75,12 +75,12 @@
                   <a class="photo" tal:attributes="href user/url" tal:content="structure user/foto">
                   </a>
                 </div>
-                <div class="span7">
+                <div class="span9">
                   <a tal:attributes="href user/url">
                     <h4><span tal:replace="user/fullname">Full name</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
                     <p tal:condition="user/email"><i class="fa fa-envelope"></i><span tal:content="user/email">Email</span></p>
                     <p tal:condition="user/telefon"><i class="fa fa-mobile"></i><span tal:content="user/telefon">Phone</span></p>
-                    <p tal:condition="user/location"><i class="fa fa-building"></i><span tal:content="user/location">Location</span></p>
+                    <p tal:condition="user/location"><i class="fa fa-building-o"></i><span tal:content="user/location">Location</span></p>
                     <p tal:condition="user/ubicacio"><i class="fa fa-user"></i><span tal:content="user/ubicacio">Ubicacio</span></p>
                   </a>
                 </div>
