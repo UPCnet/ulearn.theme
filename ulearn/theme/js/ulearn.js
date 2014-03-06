@@ -302,4 +302,25 @@ $(document).ready(function (event) {
 
     // Prevent click on calendar events to allow popover
     $('.cal_has_events').click(function (e) {e.preventDefault();})
+
+    
+    // Tags search
+    $('#searchinputtags .searchInput').on('keypress', function(event) {
+        var query = $(this).val();
+        var path = $(this).data()['name'];    
+        $('.listingBar').hide();
+        $.get(portal_url + '/' + path + '/searchTags', { q: query }, function(data) {
+            $('#tagslist').html(data);
+        });
+    });
+
+    // Content search
+    $('#searchinputcontent .searchInput').on('keyup', function(event) {
+        var query = $(this).val();  
+        var path = $(this).data()['name'];     
+        $('.listingBar').hide();
+        $.get(portal_url + '/' + path + '/searchContent', { q: query }, function(data) {
+            $('#tagslist').html(data);
+        });
+    });
 });

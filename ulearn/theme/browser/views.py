@@ -309,3 +309,153 @@ class ULearnPersonalPreferences(UserDataPanel):
     def __init__(self, context, request):
         super(ULearnPersonalPreferences, self).__init__(context, request)
         request.set('disable_plone.rightcolumn', True)
+  
+
+class searchContentTags(grok.View):
+    grok.name('searchContentTags')
+    grok.context(Interface)
+    grok.require('genweb.member')
+    grok.template('search_content_tags')
+    grok.layer(IUlearnTheme)
+  
+
+    def update(self):        
+        self.query = self.request.form.get('q', '')        
+
+    def get_batched_contenttags(self, query=None, batch=True, b_size=10, b_start=0):
+        pc = getToolByName(self.context, "portal_catalog")
+        path = self.context.absolute_url_path()        
+        r_results = pc.searchResults(path=path)        
+        batch = Batch(r_results, b_size, b_start)
+        return batch
+
+    def get_contenttags_by_query(self):
+        pc = getToolByName(self.context, "portal_catalog")
+
+        def quotestring(s):
+            return '"%s"' % s
+
+        def quote_bad_chars(s):
+            bad_chars = ["(", ")"]
+            for char in bad_chars:
+                s = s.replace(char, quotestring(char))
+            return s
+
+        if not self.query == '':    
+            multispace = u'\u3000'.encode('utf-8')
+            for char in ('?', '-', '+', '*', multispace):
+                self.query = self.query.replace(char, ' ')
+
+            query = self.query.split()
+            query = " AND ".join(query)
+            query = quote_bad_chars(query) + '*'
+            path = self.context.absolute_url_path()  
+
+            r_results = pc.searchResults(path=path, 
+                                         SearchableText=query)
+
+            return r_results
+        else:
+            return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
+
+    
+    def get_tags_by_query(self):
+        pc = getToolByName(self.context, "portal_catalog")
+
+        def quotestring(s):
+            return '"%s"' % s
+
+        def quote_bad_chars(s):
+            bad_chars = ["(", ")"]
+            for char in bad_chars:
+                s = s.replace(char, quotestring(char))
+            return s
+
+        if not self.query == '':    
+            multispace = u'\u3000'.encode('utf-8')
+            for char in ('?', '-', '+', '*', multispace):
+                self.query = self.query.replace(char, ' ')
+
+            query = self.query.split()
+            query = " AND ".join(query)
+            query = quote_bad_chars(query)
+            path = self.context.absolute_url_path()   
+
+            r_results = pc.searchResults(path=path, 
+                                         Subject=query)
+
+            return r_results
+        else:
+            return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
+   
+    def getIdPath(self):
+        idpath = self.context.id
+        return idpath
+
+   
+    def getContent(self):
+        resultat = []
+        catalog = getToolByName(self.context, 'portal_catalog')
+        path = self.context.absolute_url_path()
+        items = catalog.searchResults(path=path,           
+                                      sort_on='getObjPositionInParent')
+        for item in items:            
+            resultat.append({'url': item.getURL(),                 
+                             'title': item.Title,                 
+                             'text': item.Description,
+                             'categoria': item.getObject().subject,
+                            }
+            )         
+        
+        len_content = len(resultat)
+        if len_content > 100:
+            escollits = random.sample(range(len(resultat)), 100)
+            llista = []
+            for escollit in escollits:
+                llista.append(resultat[escollit])
+            return {'content': llista, 'length': len_content, 'big': True}
+        else:
+            return {'content': sorted(resultat) , 'length': len_content, 'big': False}
+      
+class searchContent(searchContentTags):
+    grok.name('searchContent') 
+    grok.context(Interface)
+    grok.template('search_content_ajax')
+    grok.layer(IUlearnTheme)
+
+
+class SearchTags(searchContentTags):
+    grok.name('searchTags')    
+    grok.context(Interface)
+    grok.template('search_tags_ajax')
+    grok.layer(IUlearnTheme) 
+    
+    # def getCategories(self):
+    #     if 'search' in self.request:
+    #         searchString = self.request.get('search')
+    #     else:
+    #         searchString = ''
+
+    #     llistaCategories = []        
+    #     catalog = getToolByName(self.context, 'portal_catalog')
+    #     path = self.context.absolute_url_path()
+    #     items = catalog.searchResults(path=path,           
+    #                                   sort_on='getObjPositionInParent')
+       
+    #     for i in items:
+    #         obj = i.getObject()
+    #         categories = obj.subject
+    #         for x in categories:
+    #             if x not in llistaCategories:
+    #                 llistaCategories.append(x)
+
+    #     len_categories = len(llistaCategories)
+    #     if len_categories > 100:
+    #         escollits = random.sample(range(len(llistaCategories)), 100)
+    #         llista = []
+    #         for escollit in escollits:
+    #             llista.append(llistaCategories[escollit])
+    #         return {'content': llista, 'length': len_categories, 'big': True}
+    #     else:
+    #         return {'content': sorted(llistaCategories) , 'length': len_categories, 'big': False}
+      

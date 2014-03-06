@@ -1,0 +1,102 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ulearn">
+
+<head>
+  <metal:block fill-slot="top_slot">
+      <tal:insert tal:replace="nothing"
+                  tal:define="dummy python:request.set('enable_border', 1);
+                              disable_column_one python:request.set('disable_plone.rightcolumn',1);" />
+    </metal:block>
+</head>
+
+<body>
+
+  <metal:main metal:fill-slot="main"
+              tal:define="b_start python:0;
+                         b_start request/b_start | b_start;
+                         contingutDict python: view.getContent();
+                         continguts contingutDict/content;
+                         num_continguts contingutDict/length;
+                         big_data contingutDict/big;
+                         path python: view.getIdPath()">
+
+  <div id="communitysearch">
+
+    <h1 class="documentFirstHeading" tal:content="context/Title" /> 
+  
+    <h2 i18n:translate="search_text">Search text</h2>
+    <div id="searchinputcontent">
+      <div class="input-append">
+        <input class="searchInput" type="text" placeholder="Cerca"
+               i18n:attributes="placeholder search_content_ajax"  tal:attributes="data-name path">
+        <span class="add-on"><i class="fa fa-search"></i></span>
+      </div>
+    </div>
+
+    <h2 i18n:translate="search_tags">Search tags</h2>
+    <div id="searchinputtags">
+      <div class="input-append">
+        <input class="searchInput" type="search" placeholder="Cerca"
+               i18n:attributes="placeholder search_tags_ajax" tal:attributes="data-name path">
+        <span class="add-on"><i class="fa fa-search"></i></span>
+      </div>
+    </div>
+
+    <div id="subscribealert" class="alert alert-info" role="alert">
+      <button data-dismiss="alert" class="close" type="button">×</button>
+      <p>
+      <strong i18n:translate="info">
+                Info
+      </strong><br/>
+      <tal:msg i18n:translate="use_the_search_input_to_find_objects_with_tags">
+        Use the search input to find objects with tags selected.
+      </tal:msg>      
+      </p>
+    </div>
+
+    <section id="tagslist">
+      <tal:bigdata condition="big_data">
+        <tal:llistat repeat="contingut continguts">
+          <div>
+            <a tal:attributes="href contingut/url">
+              <h4><span tal:replace="contingut/title">Title</span></h4>
+              <p tal:condition="contingut/text"><i class="fa fa-envelope"></i><span tal:content="contingut/text">Description</span></p>
+              <!-- <p tal:condition="contingut/categoria"><i class="fa fa-mobile"></i><span tal:content="contingut/categoria">Categories</span></p>  -->             
+            </a>
+          </div>
+        </tal:llistat>
+      </tal:bigdata>
+      <tal:bigdata condition="not: big_data">
+        <ul class="sortablelist"
+          tal:condition="continguts">
+          <tal:llistat repeat="contingut continguts">
+            <li class="mix" tal:attributes="data-name contingut/title">
+              <div class="row-fluid">
+                <div class="span12">
+                  <a tal:attributes="href contingut/url">
+                    <h4><span tal:replace="contingut/title">Title</span></h4>
+                    <p tal:condition="contingut/text"><span tal:content="contingut/text">Description</span></p>
+                    <!-- <p tal:condition="contingut/categoria"><span tal:content="contingut/categoria">Categories</span></p> -->              
+                  </a>
+                </div>               
+              </div>
+            </li>
+          </tal:llistat>
+        </ul>
+      </tal:bigdata>
+
+    <div class="clearfix" tal:condition="big_data">
+    </div>
+
+    </section> 
+
+  </div>
+
+  </metal:main>
+</body>
+</html>

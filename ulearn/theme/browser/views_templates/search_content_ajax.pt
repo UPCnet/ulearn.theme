@@ -1,0 +1,12 @@
+<ul tal:define="results view/get_contenttags_by_query">
+  <li tal:repeat="obj results">
+    <div class="row-fluid">      
+      <div class="span12">
+        <a tal:attributes="href obj/getURL">
+          <h4 tal:content="obj/Title">Title</h4>
+          <p tal:content="obj/Description">Description</p>
+        </a>
+      </div>      
+    </div>
+  </li>
+</ul>

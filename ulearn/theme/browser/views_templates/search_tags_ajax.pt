@@ -1,0 +1,37 @@
+<ul tal:define="results view/get_tags_by_query">
+  <li tal:repeat="obj results">
+    <div class="row-fluid">      
+      <div class="span12">
+        <a tal:attributes="href obj/getURL">
+          <h4 tal:content="obj/Title">Title</h4>
+          <p tal:content="obj/Description">Description</p>
+        </a>
+      </div>      
+    </div>
+  </li>
+</ul>
+<!-- <tal:userlist define="categoriesDict view/getCategories;
+                      categories categoriesDict/content;
+                      big_data categoriesDict/big;
+                      num_categories categoriesDict/length;
+                      ">
+  <tal:bigdata condition="big_data">    
+    <tal:llistat repeat="categoria categories">
+        <li class="mix" tal:attributes="data-name categoria" tal:content="categoria">
+        </li>    
+    </tal:llistat>
+  </tal:bigdata>
+  <tal:bigdata condition="not: big_data">    
+    <ul class="sortablelist"
+      tal:condition="categories">
+      <tal:llistat repeat="categoria categories">        
+        <li class="mix" tal:attributes="data-name categoria" tal:content="categoria">
+        </li>    
+      </tal:llistat>
+    </ul>
+  </tal:bigdata>
+
+  <div class="clearfix" tal:condition="big_data">
+  </div>
+
+</tal:userlist> -->
