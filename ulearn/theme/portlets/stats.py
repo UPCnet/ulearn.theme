@@ -87,21 +87,21 @@ class Renderer(base.Renderer):
         maxclient.setToken(oauth_token)
 
         context_hash = sha1(self.get_community().absolute_url()).hexdigest()
-        return maxclient.getContextActivities(context=context_hash, count=True)
+        return maxclient.contexts[context_hash].activities.head()
 
     def get_all_activities(self):
         maxclient, settings = getUtility(IMAXClient)()
         maxclient.setActor(settings.max_restricted_username)
         maxclient.setToken(settings.max_restricted_token)
 
-        return maxclient.getAllActivities(count=True)
+        return maxclient.activities.head()
 
     def get_all_comments(self):
         maxclient, settings = getUtility(IMAXClient)()
         maxclient.setActor(settings.max_restricted_username)
         maxclient.setToken(settings.max_restricted_token)
 
-        return maxclient.getAllComments(count=True)
+        return maxclient.activities.comments.head()
 
     def get_posts_literal(self):
         literal = plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
