@@ -23,6 +23,7 @@ from ulearn.core.controlpanel import IUlearnControlPanelSettings
 from ulearn.core.browser.searchuser import searchUsersFunction
 
 import pkg_resources
+import plone.api
 import scss
 import random
 
@@ -273,6 +274,9 @@ class searchUsers(grok.View):
 
         resultat = searchUsersFunction(self.context, self.request, '')
         return resultat
+
+    def get_people_literal(self):
+        return plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
 
 
 class showOportunitats(grok.View):

@@ -105,7 +105,7 @@
         </table>
   </div>
 
-  <ul class="calendarlinks"
+  <ul class="calendarlinks" i18n:domain="ulearn"
       tal:condition="view/is_community">
     <li>
       <a tal:attributes="href string:${view/get_event_folder_url}">
@@ -115,7 +115,7 @@
     </li>
   </ul>
 
-   <ul class="icons-ul">
+   <ul class="icons-ul" i18n:domain="ulearn">
     <li tal:repeat="event view/get_next_three_events">
       <a tal:attributes="href event/getURL">
         <i class="fa fa-calendar"></i>
