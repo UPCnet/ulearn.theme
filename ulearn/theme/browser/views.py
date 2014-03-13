@@ -70,15 +70,11 @@ class baseCommunities(grok.View):
         return batch
 
     def is_community_manager(self, community):
-        pm = getToolByName(self.context, "portal_membership")
-        user = pm.getAuthenticatedMember()
-        current_user = user.getUserName()
+        roles = plone.api.user.get_roles(obj=community)
 
-        return 'Manager' in user.getRoles() or \
-               'WebMaster' in user.getRoles() or \
-               'Site Administrator' in user.getRoles() or \
-               'Owner' in community.get_local_roles_for_userid(user.id) or \
-               current_user == community.Creator
+        return 'Manager' in roles or \
+               'Site Administrator' in roles or \
+               'Owner' in roles
 
     def get_favorites(self):
         pm = getToolByName(self.context, "portal_membership")
@@ -313,7 +309,7 @@ class ULearnPersonalPreferences(UserDataPanel):
     def __init__(self, context, request):
         super(ULearnPersonalPreferences, self).__init__(context, request)
         request.set('disable_plone.rightcolumn', True)
-  
+
 
 class searchContentTags(grok.View):
     grok.name('searchContentTags')
@@ -321,15 +317,15 @@ class searchContentTags(grok.View):
     grok.require('genweb.member')
     grok.template('search_content_tags')
     grok.layer(IUlearnTheme)
-  
 
-    def update(self):        
-        self.query = self.request.form.get('q', '')        
+
+    def update(self):
+        self.query = self.request.form.get('q', '')
 
     def get_batched_contenttags(self, query=None, batch=True, b_size=10, b_start=0):
         pc = getToolByName(self.context, "portal_catalog")
-        path = self.context.absolute_url_path()        
-        r_results = pc.searchResults(path=path)        
+        path = self.context.absolute_url_path()
+        r_results = pc.searchResults(path=path)
         batch = Batch(r_results, b_size, b_start)
         return batch
 
@@ -345,7 +341,7 @@ class searchContentTags(grok.View):
                 s = s.replace(char, quotestring(char))
             return s
 
-        if not self.query == '':    
+        if not self.query == '':
             multispace = u'\u3000'.encode('utf-8')
             for char in ('?', '-', '+', '*', multispace):
                 self.query = self.query.replace(char, ' ')
@@ -353,16 +349,16 @@ class searchContentTags(grok.View):
             query = self.query.split()
             query = " AND ".join(query)
             query = quote_bad_chars(query) + '*'
-            path = self.context.absolute_url_path()  
+            path = self.context.absolute_url_path()
 
-            r_results = pc.searchResults(path=path, 
+            r_results = pc.searchResults(path=path,
                                          SearchableText=query)
 
             return r_results
         else:
             return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
 
-    
+
     def get_tags_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
 
@@ -375,7 +371,7 @@ class searchContentTags(grok.View):
                 s = s.replace(char, quotestring(char))
             return s
 
-        if not self.query == '':    
+        if not self.query == '':
             multispace = u'\u3000'.encode('utf-8')
             for char in ('?', '-', '+', '*', multispace):
                 self.query = self.query.replace(char, ' ')
@@ -383,34 +379,34 @@ class searchContentTags(grok.View):
             query = self.query.split()
             query = " AND ".join(query)
             query = quote_bad_chars(query)
-            path = self.context.absolute_url_path()   
+            path = self.context.absolute_url_path()
 
-            r_results = pc.searchResults(path=path, 
+            r_results = pc.searchResults(path=path,
                                          Subject=query)
 
             return r_results
         else:
             return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
-   
+
     def getIdPath(self):
         idpath = self.context.id
         return idpath
 
-   
+
     def getContent(self):
         resultat = []
         catalog = getToolByName(self.context, 'portal_catalog')
         path = self.context.absolute_url_path()
-        items = catalog.searchResults(path=path,           
+        items = catalog.searchResults(path=path,
                                       sort_on='getObjPositionInParent')
-        for item in items:            
-            resultat.append({'url': item.getURL(),                 
-                             'title': item.Title,                 
+        for item in items:
+            resultat.append({'url': item.getURL(),
+                             'title': item.Title,
                              'text': item.Description,
                              'categoria': item.getObject().subject,
                             }
-            )         
-        
+            )
+
         len_content = len(resultat)
         if len_content > 100:
             escollits = random.sample(range(len(resultat)), 100)
@@ -420,32 +416,32 @@ class searchContentTags(grok.View):
             return {'content': llista, 'length': len_content, 'big': True}
         else:
             return {'content': sorted(resultat) , 'length': len_content, 'big': False}
-      
+
 class searchContent(searchContentTags):
-    grok.name('searchContent') 
+    grok.name('searchContent')
     grok.context(Interface)
     grok.template('search_content_ajax')
     grok.layer(IUlearnTheme)
 
 
 class SearchTags(searchContentTags):
-    grok.name('searchTags')    
+    grok.name('searchTags')
     grok.context(Interface)
     grok.template('search_tags_ajax')
-    grok.layer(IUlearnTheme) 
-    
+    grok.layer(IUlearnTheme)
+
     # def getCategories(self):
     #     if 'search' in self.request:
     #         searchString = self.request.get('search')
     #     else:
     #         searchString = ''
 
-    #     llistaCategories = []        
+    #     llistaCategories = []
     #     catalog = getToolByName(self.context, 'portal_catalog')
     #     path = self.context.absolute_url_path()
-    #     items = catalog.searchResults(path=path,           
+    #     items = catalog.searchResults(path=path,
     #                                   sort_on='getObjPositionInParent')
-       
+
     #     for i in items:
     #         obj = i.getObject()
     #         categories = obj.subject
@@ -462,4 +458,4 @@ class SearchTags(searchContentTags):
     #         return {'content': llista, 'length': len_categories, 'big': True}
     #     else:
     #         return {'content': sorted(llistaCategories) , 'length': len_categories, 'big': False}
-      
+

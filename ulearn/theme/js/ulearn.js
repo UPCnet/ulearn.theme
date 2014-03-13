@@ -19,93 +19,93 @@ $(document).ready(function (event) {
             }
     });
 
+    // Favorites on community list
+    $('#communities-view').on('click', '.favorite', function(event) {
+      event.preventDefault();
+      var community_url = $(this).data()['community'];
+      $.get(community_url + '/toggle-favorite');
+      if ($('i', this).hasClass('fa-star')) {
+        $('i', this).addClass('fa-star-o').removeClass('fa-star');
+      } else {
+        $('i', this).addClass('fa-star').removeClass('fa-star-o');
+      }
+    });
+
+    // Delete community on community list
+    $('#communities-view').on('click', '.delete', function(event) {
+        event.preventDefault();
+        var $this = $(this);
+        alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'] + '"?', function (e) {
+            if (e) {
+                // user clicked "ok"
+                url = $this.attr('href');
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: {
+                    'form.submitted': '1',
+                    '_authenticator': $this.data()['authenticator']
+                    },
+                    error: function() {
+                        alertify.error(_ulearn_i18n("Error when removing community"));
+                    },
+                    success: function() {
+                        $this.parent().parent().parent().remove();
+                        alertify.success(_ulearn_i18n("Successfully removed"));
+                    }
+                });
+            } else {
+                // user clicked "cancel"
+            }
+        });
+    });
+
+    // Subscribe to community on community list
+    $('#communities-view').on('click', '.subscribe', function(event) {
+        event.preventDefault();
+        var $this = $(this);
+        var msgalert = '';
+
+        if ($('i', $this).hasClass('fa-check-square-o')) {
+            msgalert = "Voleu desubscrivir-vos de la comunitat ";
+        } else {
+            msgalert = "Voleu subscrivir-vos a la comunitat ";
+        }
+
+        alertify.confirm(_ulearn_i18n(msgalert) + '"' + $this.data()['name'] + '"?', function (e) {
+            if (e) {
+                // user clicked "ok"
+                community_url = $this.data()['community'];
+                $.ajax({
+                    type: "GET",
+                    url: community_url + "/toggle-subscribe",
+                    error: function() {
+                        alertify.error(-_ulearn_i18n("Error when (un)subscribing to the community"));
+                    },
+                    success: function() {
+                        if ($('i', $this).hasClass('fa-check-square-o')) {
+                            $('i', $this).addClass('fa-square-o').removeClass('fa-check-square-o');
+                            $('.favorite').addClass('favoritedisabled').removeClass('favorite');
+                            alertify.success(_ulearn_i18n("Successfully unsubscribed"));
+                        } else {
+                            $('i', $this).addClass('fa-check-square-o').removeClass('fa-square-o');
+                            $('.favoritedisabled').addClass('favorite').removeClass('favoritedisabled');
+                            alertify.success(_ulearn_i18n("Successfully subscribed"));
+                        }
+                    }
+                });
+            } else {
+                // user clicked "cancel"
+            }
+        });
+    });
+
     $('.portaltype-plone-site a[data-toggle="tab"]').on('show', function (e) {
         targetid = $(this).data('target');
         remote = $(targetid).data('remote');
         if (remote) {
             $(targetid).load(portal_url + "/" + remote, function (event) {
-                // OJO! Aquest codi esta duplicat per a les vistes amb i sense AJAX
-                // Favorites
-                $('#communitylist').on('click', '.favorite', function(event) {
-                  event.preventDefault();
-                  var community_url = $(this).data()['community'];
-                  $.get(community_url + '/toggle-favorite');
-                  if ($('i', this).hasClass('fa-star')) {
-                    $('i', this).addClass('fa-star-o').removeClass('fa-star');
-                  } else {
-                    $('i', this).addClass('fa-star').removeClass('fa-star-o');
-                  }
-                });
                 $('.sortablelist').mixitup({layoutMode: 'list'});
-
-                // Dialog search communities
-                $('#communitylist').on('click', '.delete', function(event) {
-                    event.preventDefault();
-                    var $this = $(this);
-                    alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + $this.data()['name'] + '"?', function (e) {
-                        if (e) {
-                            // user clicked "ok"
-                            url = $this.attr('href');
-                            $.ajax({
-                                type: "POST",
-                                url: url,
-                                data: {
-                                'form.submitted': '1',
-                                '_authenticator': $this.data()['authenticator']
-                                },
-                                error: function() {
-                                    alertify.error(_ulearn_i18n("Error when removing community"));
-                                },
-                                success: function() {
-                                    $this.parent().parent().parent().remove();
-                                    alertify.success(_ulearn_i18n("Successfully removed"));
-                                    console.log("ok");
-                                }
-                            });
-                        } else {
-                            // user clicked "cancel"
-                        }
-                    });
-                });
-
-                $('#communitylist').on('click', '.subscribe', function(event) {
-                    event.preventDefault();
-                    var $this = $(this);
-                    var msgalert = '';
-
-                    if ($('i', $this).hasClass('fa-check-square-o')) {
-                        msgalert = "Voleu desubscrivir-vos de la comunitat ";
-                    } else {
-                        msgalert = "Voleu subscrivir-vos a la comunitat ";
-                           }
-
-                    alertify.confirm(_ulearn_i18n("msgalert") + $this.data()['name'] + '"?', function (e) {
-                        if (e) {
-                            // user clicked "ok"
-                            community_url = $this.data()['community'];
-                            $.ajax({
-                                type: "GET",
-                                url: community_url + "/toggle-subscribe",
-                                error: function() {
-                                    alertify.error(-_ulearn_i18n("Error when (un)subscribing to the community"));
-                                },
-                                success: function() {
-                                    if ($('i', $this).hasClass('fa-check-square-o')) {
-                                        $('i', $this).addClass('fa-square-o').removeClass('fa-check-square-o');
-                                        alertify.success(_ulearn_i18n("Successfully unsubscribed"));
-                                    } else {
-                                        $('i', $this).addClass('fa-check-square-o').removeClass('fa-square-o');
-                                        alertify.success(_ulearn_i18n("Successfully subscribed"));
-                                    }
-                                    console.log("ok");
-                                }
-                            });
-                        } else {
-                            // user clicked "cancel"
-                        }
-                    });
-                });
-
             });
         }
         $('#menusup .active').removeClass('active');
@@ -168,97 +168,17 @@ $(document).ready(function (event) {
         $('.currentactivity').text(int_activities + 1);
     });
 
-    // OJO! Aquest codi esta duplicat per a les vistes amb i sense AJAX
-    // Favorites for search communities form
-    $('#communitylist').on('click', '.favorite', function(event) {
-      event.preventDefault();
-      var community_url = $(this).data()['community'];
-      $.get(community_url + '/toggle-favorite');
-      if ($('i', this).hasClass('fa-star')) {
-        $('i', this).addClass('fa-star-o').removeClass('fa-star');
-      } else {
-        $('i', this).addClass('fa-star').removeClass('fa-star-o');
-      }
-    });
-
     $('#communitylist').on('click', '.favoritedisabled', function(event) {
       event.preventDefault();
     });
 
-    // Dialog search communities
-    $('#communitylist').on('click', '.delete', function(event) {
-        console.log("asdadasd");
-        event.preventDefault();
-        var $this = $(this);
-        alertify.confirm(_ulearn_i18n("Si cliqueu aquí, esborrareu la comunitat ") + '"' + $this.data()['name'] + '"?', function (e) {
-            if (e) {
-                // user clicked "ok"
-                url = $this.attr('href');
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: {
-                    'form.submitted': '1',
-                    '_authenticator': $this.data()['authenticator']
-                    },
-                    error: function() {
-                        alertify.error(_ulearn_i18n("Error when removing community"));
-                    },
-                    success: function() {
-                        $this.parent().parent().parent().remove();
-                        alertify.success(_ulearn_i18n("Successfully removed"));
-                        console.log("ok");
-                    }
-                });
-            } else {
-                // user clicked "cancel"
-            }
-        });
-    });
-
-    $('#communitylist').on('click', '.subscribe', function(event) {
-        event.preventDefault();
-        var $this = $(this);
-        var msgalert = '';
-
-        if ($('i', $this).hasClass('fa-check-square-o')) {
-            msgalert = "Voleu desubscrivir-vos de la comunitat ";
-        } else {
-            msgalert = "Voleu subscrivir-vos a la comunitat ";
-               }
-
-        alertify.confirm(_ulearn_i18n(msgalert) + '"' + $this.data()['name'] + '"?', function (e) {
-            if (e) {
-                // user clicked "ok"
-                community_url = $this.data()['community'];
-                $.ajax({
-                    type: "GET",
-                    url: community_url + "/toggle-subscribe",
-                    error: function() {
-                        alertify.error(_ulearn_i18n("Error when (un)subscribing to the community"));
-                    },
-                    success: function() {
-                        if ($('i', $this).hasClass('fa-check-square-o')) {
-                            $('i', $this).addClass('fa-square-o').removeClass('fa-check-square-o');
-                            alertify.success(_ulearn_i18n("Successfully unsubscribed"));
-                        } else {
-                            $('i', $this).addClass('fa-check-square-o').removeClass('fa-square-o');
-                            alertify.success(_ulearn_i18n("Successfully subscribed"));
-                        }
-                        console.log("ok");
-                    }
-                });
-            } else {
-                // user clicked "cancel"
-            }
-        });
-    });
-
-    // Subscribe from button - Pity, but slightly different than the previous one
+    // Subscribe from button
     var subscribe_to_community = function (event, options) {
         event.preventDefault();
-        var $this = $(this);
-        alertify.confirm(_ulearn_i18n("Voleu subscrivir-vos a la comunitat ") + $this.data()['name'] + '"?', function (e) {
+        $this = $(event.target);
+        msgalert = "Voleu subscrivir-vos a la comunitat ";
+
+        alertify.confirm(_ulearn_i18n(msgalert) + '"' + $this.data().name + '"?', function (e) {
             if (e) {
                 // user clicked "ok"
                 community_url = $this.data()['community'];
@@ -276,7 +196,6 @@ $(document).ready(function (event) {
                             $('i', $this).addClass('fa-check-square-o').removeClass('fa-square-o');
                             alertify.success(_ulearn_i18n("Successfully subscribed"));
                         }
-                        console.log("ok");
                         window.location.reload(true);
                     }
                 });
@@ -303,11 +222,11 @@ $(document).ready(function (event) {
     // Prevent click on calendar events to allow popover
     $('.cal_has_events').click(function (e) {e.preventDefault();})
 
-    
+
     // Tags search
     $('#searchinputtags .searchInput').on('keypress', function(event) {
         var query = $(this).val();
-        var path = $(this).data()['name'];    
+        var path = $(this).data()['name'];
         $('.listingBar').hide();
         $.get(portal_url + '/' + path + '/searchTags', { q: query }, function(data) {
             $('#tagslist').html(data);
@@ -316,8 +235,8 @@ $(document).ready(function (event) {
 
     // Content search
     $('#searchinputcontent .searchInput').on('keyup', function(event) {
-        var query = $(this).val();  
-        var path = $(this).data()['name'];     
+        var query = $(this).val();
+        var path = $(this).data()['name'];
         $('.listingBar').hide();
         $.get(portal_url + '/' + path + '/searchContent', { q: query }, function(data) {
             $('#tagslist').html(data);
