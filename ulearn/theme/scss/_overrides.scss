@@ -51,10 +51,17 @@ h1, h2, h3, label {
 }
 #portal-header .container {
     border-top: 0 none;
-    margin-bottom: 15px;    ;
+    // margin-bottom: 15px;
     margin-top: 0;
     border-bottom:0;
 }
+#portal-breadcrumbs {
+  margin-bottom: 6px;
+}
+#portal-breadcrumbs + #content-area {
+  margin-top: 0px;
+}
+
 #content-area {
     margin-top: 1.7em;
     }
@@ -62,8 +69,8 @@ h1, h2, h3, label {
     margin-bottom: 0;
 }
 #portal-breadcrumbs {
-    margin-bottom: -15px;
-    margin-top: -15px;
+    // margin-bottom: -15px;
+    // margin-top: -15px;
 }
 .template-homepage #portal-breadcrumbs {
     margin-bottom: 0;

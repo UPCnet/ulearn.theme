@@ -9,6 +9,7 @@ $fontAwesomePath: "/++genweb++static/fonts";
 @import "login";
 @import "templates";
 @import "plugins";
+@import "iefixes";
 // @import "genwebupc";
 
 // Victor for pushing it to genweb.theme
@@ -825,4 +826,4 @@ label[for="form.ext_editor"] ~ div.widget {
     max-width: 54px; }
     #tagslist img:hover {
       transition: all 0.25s ease 0s;
-      border: 2px solid #F58D3D; }     
+      border: 2px solid #F58D3D; }
