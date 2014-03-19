@@ -1,4 +1,4 @@
-<metal:page define-macro="master"><tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
+id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="structure string:&lt;!DOCTYPE html&gt;" />
 
 <tal:maindefines
     define="portal_state context/@@plone_portal_state;
@@ -99,7 +99,7 @@
 
 <section id="content-area">
   <div class="container">
-        <div class="row-fluid">
+        <div id="portal-columns" class="row-fluid">
             <tal:notajax tal:condition="not:ajax_load">
                 <div id="portal-column-one"
                     class="span3"
