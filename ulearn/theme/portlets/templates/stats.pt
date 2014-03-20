@@ -24,7 +24,7 @@
         <div class="bubble left pull-left">
           <div class="arrow"></div>
           <div class="bubble-content">
-            <tal:docs content="python:view.get_all_comments()">
+            <tal:docs content="python:view.get_comments_by_context()">
               240
             </tal:docs>
           </div>

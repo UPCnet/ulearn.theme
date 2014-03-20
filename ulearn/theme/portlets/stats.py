@@ -103,6 +103,14 @@ class Renderer(base.Renderer):
 
         return maxclient.activities.comments.head()
 
+    def get_comments_by_context(self):
+        maxclient, settings = getUtility(IMAXClient)()
+        maxclient.setActor(settings.max_restricted_username)
+        maxclient.setToken(settings.max_restricted_token)
+
+        context_hash = sha1(self.get_community().absolute_url()).hexdigest()
+        return maxclient.contexts[context_hash].comments.head()
+
     def get_posts_literal(self):
         literal = plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
         if literal == 'thinnkers':

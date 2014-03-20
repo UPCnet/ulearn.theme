@@ -2,20 +2,18 @@ from copy import deepcopy
 from OFS.Image import Image
 
 from zope.interface import implements
-from zope.component import queryUtility
+from zope.component import getUtility
 from zope.component.hooks import getSite
 from zope.publisher.interfaces import IPublishTraverse, NotFound
 
-from plone.registry.interfaces import IRegistry
 from plone.memoize.view import memoize_contextless
+from plone.registry.interfaces import IRegistry
 
 from Products.Five import BrowserView
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-from maxclient import MaxClient
-
-from mrs.max.browser.controlpanel import IMAXUISettings
+from mrs.max.utilities import IMAXClient
 from ulearn.core.badges import AVAILABLE_BADGES
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
@@ -86,7 +84,7 @@ class userProfile(BrowserView):
         if self.has_complete_profile():
             badges[0]['awarded'] = True
 
-        registry = queryUtility(IRegistry)
+        registry = getUtility(IRegistry)
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
 
         thinnkins = self.get_thinnkins()
@@ -102,13 +100,8 @@ class userProfile(BrowserView):
 
     @memoize_contextless
     def get_thinnkins(self):
-        registry = queryUtility(IRegistry)
-        settings = registry.forInterface(IMAXUISettings, check=False)
-        # Pick grant type from settings unless passed as optional argument
-        effective_grant_type = settings.oauth_grant_type
-
-        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
+        maxclient, settings = getUtility(IMAXClient)()
         maxclient.setActor(settings.max_restricted_username)
         maxclient.setToken(settings.max_restricted_token)
 
-        return maxclient.getUserActivities(count=True, username=self.username)
+        return maxclient.people[self.username].activities.head()
