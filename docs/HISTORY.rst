@@ -1,11 +1,18 @@
 Changelog
 =========
 
-1.14  (unreleased)
-------------------
+1.14 (2014-03-24)
+-----------------
 
-- Nothing changed yet.
-
+ * Add comments by context [Victor Fernandez de Alba]
+ * Afegit css per header gebropharma [Pilar Marinas]
+ * Fix default portlets [Victor Fernandez de Alba]
+ * Fix IE issues [Victor Fernandez de Alba]
+ * Deprecate oportunity type. Fix some views, complete user search [Victor Fernandez de Alba]
+ * Migrate to MaxClient RESTish [Victor Fernandez de Alba]
+ * Merge [Pilar Marinas]
+ * Nova vista searchContentTags [Pilar Marinas]
+ * Add missing version [Victor Fernandez de Alba]
 
 1.13 (2014-03-04)
 -----------------
