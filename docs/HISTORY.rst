@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.15 (unreleased)
+1.15 (2014-03-25)
 -----------------
 
-- Nothing changed yet.
-
+* Fix stats portlet [Victor Fernandez de Alba]
 
 1.14 (2014-03-24)
 -----------------
