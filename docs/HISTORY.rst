@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.16 (unreleased)
+1.16 (2014-03-25)
 -----------------
 
-- Nothing changed yet.
-
+* Fix visibility of tools in views [Victor Fernandez de Alba]
 
 1.15 (2014-03-25)
 -----------------
