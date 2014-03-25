@@ -70,7 +70,7 @@ class baseCommunities(grok.View):
         return batch
 
     def is_community_manager(self, community):
-        roles = plone.api.user.get_roles(obj=community)
+        roles = plone.api.user.get_roles(obj=community.getObject())
 
         return 'Manager' in roles or \
                'Site Administrator' in roles or \
