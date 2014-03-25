@@ -87,21 +87,37 @@ class Renderer(base.Renderer):
         maxclient.setToken(oauth_token)
 
         context_hash = sha1(self.get_community().absolute_url()).hexdigest()
-        return maxclient.contexts[context_hash].activities.head()
+
+        try:
+            activities = maxclient.contexts[context_hash].activities.head()
+        except:
+            activities = 'ND'
+
+        return activities
 
     def get_all_activities(self):
         maxclient, settings = getUtility(IMAXClient)()
         maxclient.setActor(settings.max_restricted_username)
         maxclient.setToken(settings.max_restricted_token)
 
-        return maxclient.activities.head()
+        try:
+            all_activities = maxclient.activities.head()
+        except:
+            all_activities = 'ND'
+
+        return all_activities
 
     def get_all_comments(self):
         maxclient, settings = getUtility(IMAXClient)()
         maxclient.setActor(settings.max_restricted_username)
         maxclient.setToken(settings.max_restricted_token)
 
-        return maxclient.activities.comments.head()
+        try:
+            all_comments = maxclient.activities.comments.head()
+        except:
+            all_comments = 'ND'
+
+        return all_comments
 
     def get_comments_by_context(self):
         maxclient, settings = getUtility(IMAXClient)()
@@ -109,7 +125,13 @@ class Renderer(base.Renderer):
         maxclient.setToken(settings.max_restricted_token)
 
         context_hash = sha1(self.get_community().absolute_url()).hexdigest()
-        return maxclient.contexts[context_hash].comments.head()
+
+        try:
+            comments = maxclient.contexts[context_hash].comments.head()
+        except:
+            comments = 'ND'
+
+        return comments
 
     def get_posts_literal(self):
         literal = plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
