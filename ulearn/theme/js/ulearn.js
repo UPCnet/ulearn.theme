@@ -223,22 +223,54 @@ $(document).ready(function (event) {
     $('.cal_has_events').click(function (e) {e.preventDefault();})
 
 
+    // Tags select2 field
+    $('#searchbytag').select2({
+        tags: [],
+        tokenSeparators: [","],
+        minimumInputLength: 1,
+        ajax: {
+            url: portal_url + '/getVocabulary?name=plone.app.vocabularies.Keywords&field=subjects',
+            data: function (term, page) {
+                return {
+                    query: term,
+                    page: page, // page number
+                };
+            },
+            results: function (data, page) {
+                return data;
+            },
+        },
+    });
+
     // Tags search
-    $('#searchinputtags .searchInput').on('keypress', function(event) {
-        var query = $(this).val();
+    $('#searchbytag').on("change", function(e) {
+        var query = $('#searchinputcontent .searchInput').val();
         var path = $(this).data()['name'];
+        var tags = $('#searchbytag').val()
+
         $('.listingBar').hide();
-        $.get(portal_url + '/' + path + '/searchTags', { q: query }, function(data) {
+        $.get(portal_url + '/' + path + '/searchContent', { q: query, t: tags }, function(data) {
             $('#tagslist').html(data);
         });
     });
+        // log("change "+JSON.stringify({val:e.val, added:e.added, removed:e.removed})); })
+
+    // $('#searchinputtags .searchInput').on('keypress', function(event) {
+    //     var query = $(this).val();
+    //     var path = $(this).data()['name'];
+    //     $('.listingBar').hide();
+    //     $.get(portal_url + '/' + path + '/searchTags', { q: query }, function(data) {
+    //         $('#tagslist').html(data);
+    //     });
+    // });
 
     // Content search
     $('#searchinputcontent .searchInput').on('keyup', function(event) {
         var query = $(this).val();
         var path = $(this).data()['name'];
+        var tags = $('#searchbytag').val()
         $('.listingBar').hide();
-        $.get(portal_url + '/' + path + '/searchContent', { q: query }, function(data) {
+        $.get(portal_url + '/' + path + '/searchContent', { q: query, t: tags }, function(data) {
             $('#tagslist').html(data);
         });
     });

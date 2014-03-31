@@ -549,7 +549,7 @@ border-color: #34495E;
 .template-communities #content,
 .template-searchusers #content { background-color: white; }
 
-#communitysearch {
+#communitysearch, #librarysearch {
   padding: 10px;
   h2 {
     float: left;
@@ -558,9 +558,21 @@ border-color: #34495E;
   }
 }
 
-#communitysearch .portalMessage, #communitysearch .alert, .portalMessage {
+#communitysearch .portalMessage,
+#communitysearch .alert,
+#librarysearch .portalMessage,
+#librarysearch .alert,
+.portalMessage {
     margin: 0 auto 10px;
     width: 85%;
+    clear: both;
+}
+
+#librarysearch {
+  .searchbytagcontainer {
+    float: right;
+  }
+
 }
 
 #searchinputcommunities, #searchinputusers, #searchinputtags, #searchinputcontent {

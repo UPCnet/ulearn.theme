@@ -3091,16 +3091,24 @@ input[type="text"]:focus {
 .template-searchusers #content {
   background-color: white; }
 
-#communitysearch {
+#communitysearch, #librarysearch {
   padding: 10px; }
-  #communitysearch h2 {
+  #communitysearch h2, #librarysearch h2 {
     float: left;
     padding-left: 13px;
     margin-top: 13px; }
 
-#communitysearch .portalMessage, #communitysearch .alert, .portalMessage {
+#communitysearch .portalMessage,
+#communitysearch .alert,
+#librarysearch .portalMessage,
+#librarysearch .alert,
+.portalMessage {
   margin: 0 auto 10px;
-  width: 85%; }
+  width: 85%;
+  clear: both; }
+
+#librarysearch .searchbytagcontainer {
+  float: right; }
 
 #searchinputcommunities, #searchinputusers, #searchinputtags, #searchinputcontent {
   margin-left: auto;

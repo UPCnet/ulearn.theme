@@ -318,9 +318,9 @@ class searchContentTags(grok.View):
     grok.template('search_content_tags')
     grok.layer(IUlearnTheme)
 
-
     def update(self):
         self.query = self.request.form.get('q', '')
+        self.tags = [v for v in self.request.form.get('t', '').split(',')]
 
     def get_batched_contenttags(self, query=None, batch=True, b_size=10, b_start=0):
         pc = getToolByName(self.context, "portal_catalog")
@@ -331,6 +331,7 @@ class searchContentTags(grok.View):
 
     def get_contenttags_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
+        path = self.context.absolute_url_path()
 
         def quotestring(s):
             return '"%s"' % s
@@ -349,15 +350,17 @@ class searchContentTags(grok.View):
             query = self.query.split()
             query = " AND ".join(query)
             query = quote_bad_chars(query) + '*'
-            path = self.context.absolute_url_path()
 
             r_results = pc.searchResults(path=path,
-                                         SearchableText=query)
+                                         SearchableText=query,
+                                         Subject={'query': self.tags, 'operator': 'and'})
 
             return r_results
         else:
-            return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
-
+            r_results = pc.searchResults(path=path,
+                                         Subject={'query': self.tags, 'operator': 'and'})
+            return r_results
+            # return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
 
     def get_tags_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
@@ -392,7 +395,6 @@ class searchContentTags(grok.View):
         idpath = self.context.id
         return idpath
 
-
     def getContent(self):
         resultat = []
         catalog = getToolByName(self.context, 'portal_catalog')
@@ -403,9 +405,8 @@ class searchContentTags(grok.View):
             resultat.append({'url': item.getURL(),
                              'title': item.Title,
                              'text': item.Description,
-                             'categoria': item.getObject().subject,
-                            }
-            )
+                             'categoria': item.getObject().subject}
+                            )
 
         len_content = len(resultat)
         if len_content > 100:
@@ -415,7 +416,8 @@ class searchContentTags(grok.View):
                 llista.append(resultat[escollit])
             return {'content': llista, 'length': len_content, 'big': True}
         else:
-            return {'content': sorted(resultat) , 'length': len_content, 'big': False}
+            return {'content': sorted(resultat), 'length': len_content, 'big': False}
+
 
 class searchContent(searchContentTags):
     grok.name('searchContent')
@@ -424,11 +426,11 @@ class searchContent(searchContentTags):
     grok.layer(IUlearnTheme)
 
 
-class SearchTags(searchContentTags):
-    grok.name('searchTags')
-    grok.context(Interface)
-    grok.template('search_tags_ajax')
-    grok.layer(IUlearnTheme)
+# class SearchTags(searchContentTags):
+#     grok.name('searchTags')
+#     grok.context(Interface)
+#     grok.template('search_tags_ajax')
+#     grok.layer(IUlearnTheme)
 
     # def getCategories(self):
     #     if 'search' in self.request:
