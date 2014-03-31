@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.19 (unreleased)
+1.19 (2014-03-31)
 -----------------
 
-- Nothing changed yet.
-
+* Merge [Pilar Marinas]
+* Canvis estils search content tags [Pilar Marinas]
 
 1.18 (2014-03-31)
 -----------------
