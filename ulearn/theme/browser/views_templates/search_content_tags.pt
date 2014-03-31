@@ -39,12 +39,12 @@
     </div>
 
     <h2 i18n:translate="search_tags">Search tags</h2>
-    <div class="searchbytagcontainer" style="width:300px;">
+    <div class="searchbytagcontainer" style="width:290px;">
         <input id="searchbytag"
                class="searchInput"
                type="hidden"
                placeholder="Cerca"
-               style="width:300px;"
+               style="width:290px;"
                i18n:attributes="placeholder search_tags_ajax" tal:attributes="data-name path">
     </div>
 
