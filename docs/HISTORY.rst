@@ -1,11 +1,22 @@
 Changelog
 =========
 
-1.17 (unreleased)
+1.19 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+1.18 (2014-03-31)
+-----------------
+
+* Fix search [Victor Fernandez de Alba]
+
+1.17 (2014-03-31)
+-----------------
+
+* New tags widget for DX. [Victor Fernandez de Alba]
+* Fix firefox breadcrumb [Victor Fernandez de Alba]
 
 1.16 (2014-03-25)
 -----------------

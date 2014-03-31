@@ -41,6 +41,7 @@
         </div>
       </div>
 
+
       <h3 i18n:translate="search_tags">Search tags</h3>
       <div class="searchbytagcontainer" >
           <input id="searchbytag"
@@ -48,8 +49,8 @@
                  type="hidden"
                  placeholder="Cerca"               
                  i18n:attributes="placeholder search_tags_ajax" tal:attributes="data-name path">
-      </div>
-   
+      </div>   
+
     </div>
 
     <!-- <div id="subscribealert" class="alert alert-info" role="alert">

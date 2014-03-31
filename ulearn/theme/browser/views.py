@@ -320,7 +320,10 @@ class searchContentTags(grok.View):
 
     def update(self):
         self.query = self.request.form.get('q', '')
-        self.tags = [v for v in self.request.form.get('t', '').split(',')]
+        if self.request.form.get('t', ''):
+            self.tags = [v for v in self.request.form.get('t').split(',')]
+        else:
+            self.tags = []
 
     def get_batched_contenttags(self, query=None, batch=True, b_size=10, b_start=0):
         pc = getToolByName(self.context, "portal_catalog")
@@ -342,6 +345,9 @@ class searchContentTags(grok.View):
                 s = s.replace(char, quotestring(char))
             return s
 
+        if not self.query and not self.tags:
+            return self.getContent()
+
         if not self.query == '':
             multispace = u'\u3000'.encode('utf-8')
             for char in ('?', '-', '+', '*', multispace):
@@ -351,14 +357,19 @@ class searchContentTags(grok.View):
             query = " AND ".join(query)
             query = quote_bad_chars(query) + '*'
 
-            r_results = pc.searchResults(path=path,
-                                         SearchableText=query,
-                                         Subject={'query': self.tags, 'operator': 'and'})
+            if self.tags:
+                r_results = pc.searchResults(path=path,
+                                             SearchableText=query,
+                                             Subject={'query': self.tags, 'operator': 'and'})
+            else:
+                r_results = pc.searchResults(path=path,
+                                             SearchableText=query)
 
             return r_results
         else:
             r_results = pc.searchResults(path=path,
                                          Subject={'query': self.tags, 'operator': 'and'})
+
             return r_results
             # return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
 
@@ -399,8 +410,9 @@ class searchContentTags(grok.View):
         resultat = []
         catalog = getToolByName(self.context, 'portal_catalog')
         path = self.context.absolute_url_path()
-        items = catalog.searchResults(path=path,
+        items = catalog.searchResults(path={'query': path, 'depth': 1},
                                       sort_on='getObjPositionInParent')
+
         for item in items:
             resultat.append({'url': item.getURL(),
                              'title': item.Title,
