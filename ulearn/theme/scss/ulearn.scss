@@ -853,3 +853,98 @@ label[for="form.ext_editor"] ~ div.widget {
 .gebropharma-campus {
   margin-right: 50px;
 }
+
+#librarysearch h2 {
+  float: left;
+  margin-top: 13px;
+  padding-left: 0;
+}
+
+#librarysearch #searchinputcontent {
+  padding-top: 5px;
+}
+
+.searchbytagcontainer .searchInput {
+  font-size: 15px;
+  height: 20px;    
+  margin-bottom: 10px;    
+  margin-top: 5px;    
+  padding: 0;    
+  vertical-align: middle;    
+  width: 99%;
+}
+
+#searchinputcontent .searchInput {
+  font-size: 18px;
+  height: 20px;
+  margin-bottom: 15px;
+  padding: 13px 5px 13px 10px;
+  vertical-align: middle;
+  width: 97%;
+}
+#librarysearch .searchbytagcontainer {
+  float: left;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+
+#librarysearch #searchinputcontent {    
+  padding-top: 5px;    
+  width: 100%;
+}
+
+#searchinputcontent .add-on {
+  background-color: #FFFFFF;
+  border: medium none;
+  color: #BBBBBB;
+  font-size: 24px;
+  padding: 2px;
+  position: relative;
+  right: 38px;
+  top: 9px;
+  z-index: 10;
+}
+.caixessearch > h3 {
+  color: #777777;
+  margin-top: 0;
+}
+
+
+.caixessearch {    
+  background: none repeat scroll 0 0 #F5F5F5;    
+  margin-bottom: 10px;    
+  min-height: 160px;    
+  padding: 10px;
+}
+
+.select2-drop-active {
+  border: none;
+  border-top: none;
+}
+
+.searchbytagcontainer .select2-choices {    
+  border: 0 none;
+}
+
+.select2-container-multi.select2-container-active .select2-choices {
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.searchbytagcontainer .select2-search-choice {    
+  color: #777777;    
+  font-size: 12px;    
+  font-weight: bold;    
+  margin-top: 5px;   
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+#librarysearch .documentDescription {    
+  font-size: 16px;    
+  font-weight: normal;    
+  margin-bottom: 18px;
+}
+

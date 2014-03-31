@@ -26,29 +26,33 @@
                          path python: view.getIdPath()">
 
   <div id="librarysearch">
-
+   
     <h1 class="documentFirstHeading" tal:content="context/Title" />
 
-    <h2 i18n:translate="search_text">Search text</h2>
-    <div id="searchinputcontent">
-      <div class="input-append">
-        <input class="searchInput" type="text" placeholder="Cerca"
-               i18n:attributes="placeholder search_content_ajax"  tal:attributes="data-name path">
-        <span class="add-on"><i class="fa fa-search"></i></span>
+    <div class="documentDescription" tal:content="context/Description">Descripció</div>
+    
+
+    <div class="caixessearch">      
+      <div id="searchinputcontent">
+        <div class="input-append">
+          <input class="searchInput" type="text" placeholder="Cerca"
+                 i18n:attributes="placeholder search_content_ajax"  tal:attributes="data-name path">
+          <span class="add-on"><i class="fa fa-search"></i></span>
+        </div>
       </div>
+
+      <h3 i18n:translate="search_tags">Search tags</h3>
+      <div class="searchbytagcontainer" >
+          <input id="searchbytag"
+                 class="searchInput"
+                 type="hidden"
+                 placeholder="Cerca"               
+                 i18n:attributes="placeholder search_tags_ajax" tal:attributes="data-name path">
+      </div>
+   
     </div>
 
-    <h2 i18n:translate="search_tags">Search tags</h2>
-    <div class="searchbytagcontainer" style="width:300px;">
-        <input id="searchbytag"
-               class="searchInput"
-               type="hidden"
-               placeholder="Cerca"
-               style="width:300px;"
-               i18n:attributes="placeholder search_tags_ajax" tal:attributes="data-name path">
-    </div>
-
-    <div id="subscribealert" class="alert alert-info" role="alert">
+    <!-- <div id="subscribealert" class="alert alert-info" role="alert">
       <button data-dismiss="alert" class="close" type="button">×</button>
       <p>
       <strong i18n:translate="info">
@@ -58,7 +62,7 @@
         Use the search input to find objects with tags selected.
       </tal:msg>
       </p>
-    </div>
+    </div> -->
 
     <section id="tagslist">
       <tal:bigdata condition="big_data">
