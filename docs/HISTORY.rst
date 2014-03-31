@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.18 (unreleased)
+1.18 (2014-03-31)
 -----------------
 
-- Nothing changed yet.
-
+* Fix search [Victor Fernandez de Alba]
 
 1.17 (2014-03-31)
 -----------------
