@@ -334,7 +334,8 @@ class searchContentTags(grok.View):
 
     def get_contenttags_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
-        path = self.context.absolute_url_path()
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
 
         def quotestring(s):
             return '"%s"' % s
