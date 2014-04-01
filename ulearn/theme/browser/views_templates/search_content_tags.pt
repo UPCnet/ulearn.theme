@@ -19,10 +19,7 @@
   <metal:main metal:fill-slot="main"
               tal:define="b_start python:0;
                          b_start request/b_start | b_start;
-                         contingutDict python: view.getContent();
-                         continguts contingutDict/content;
-                         num_continguts contingutDict/length;
-                         big_data contingutDict/big;
+                         continguts python: view.getContent();                         
                          path python: view.getIdPath()">
 
   <div id="librarysearch">
@@ -66,38 +63,19 @@
     </div> -->
 
     <section id="tagslist">
-      <tal:bigdata condition="big_data">
+      
+      <ul>
         <tal:llistat repeat="contingut continguts">
-          <div>
-            <a tal:attributes="href contingut/url">
-              <h4><span tal:replace="contingut/title">Title</span></h4>
-              <p tal:condition="contingut/text"><i class="fa fa-envelope"></i><span tal:content="contingut/text">Description</span></p>
-              <!-- <p tal:condition="contingut/categoria"><i class="fa fa-mobile"></i><span tal:content="contingut/categoria">Categories</span></p>  -->
+          <li>
+            <a tal:attributes="href contingut/getURL">
+              <h4><span tal:replace="contingut/Title">Title</span></h4>
+              <p tal:condition="contingut/Description"><span tal:content="contingut/Description">Description</span></p>
+              <!-- <p tal:condition="contingut/categoria"><span tal:content="contingut/categoria">Categories</span></p>  -->
             </a>
-          </div>
+          </li>
         </tal:llistat>
-      </tal:bigdata>
-      <tal:bigdata condition="not: big_data">
-        <ul class="sortablelist"
-          tal:condition="continguts">
-          <tal:llistat repeat="contingut continguts">
-            <li class="mix" tal:attributes="data-name contingut/title">
-              <div class="row-fluid">
-                <div class="span12">
-                  <a tal:attributes="href contingut/url">
-                    <h4><span tal:replace="contingut/title">Title</span></h4>
-                    <p tal:condition="contingut/text"><span tal:content="contingut/text">Description</span></p>
-                    <!-- <p tal:condition="contingut/categoria"><span tal:content="contingut/categoria">Categories</span></p> -->
-                  </a>
-                </div>
-              </div>
-            </li>
-          </tal:llistat>
-        </ul>
-      </tal:bigdata>
-
-    <div class="clearfix" tal:condition="big_data">
-    </div>
+      </ul>    
+     
 
     </section>
 

@@ -327,7 +327,8 @@ class searchContentTags(grok.View):
 
     def get_batched_contenttags(self, query=None, batch=True, b_size=10, b_start=0):
         pc = getToolByName(self.context, "portal_catalog")
-        path = self.context.absolute_url_path()
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
         r_results = pc.searchResults(path=path)
         batch = Batch(r_results, b_size, b_start)
         return batch
@@ -336,7 +337,7 @@ class searchContentTags(grok.View):
         pc = getToolByName(self.context, "portal_catalog")
         path = self.context.getPhysicalPath()
         path = "/".join(path)
-
+  
         def quotestring(s):
             return '"%s"' % s
 
@@ -407,7 +408,7 @@ class searchContentTags(grok.View):
         idpath = self.context.id
         return idpath
 
-    def getContent(self):
+    def getContent(self):      
         portal = getSite()
         catalog = getToolByName(portal, 'portal_catalog')
         path = self.context.getPhysicalPath()
