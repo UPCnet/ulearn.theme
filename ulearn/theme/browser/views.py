@@ -408,28 +408,15 @@ class searchContentTags(grok.View):
         return idpath
 
     def getContent(self):
-        resultat = []
-        catalog = getToolByName(self.context, 'portal_catalog')
-        path = self.context.absolute_url_path()
+        portal = getSite()
+        catalog = getToolByName(portal, 'portal_catalog')
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
+
         items = catalog.searchResults(path={'query': path, 'depth': 1},
                                       sort_on='getObjPositionInParent')
 
-        for item in items:
-            resultat.append({'url': item.getURL(),
-                             'title': item.Title,
-                             'text': item.Description,
-                             'categoria': item.getObject().subject}
-                            )
-
-        len_content = len(resultat)
-        if len_content > 100:
-            escollits = random.sample(range(len(resultat)), 100)
-            llista = []
-            for escollit in escollits:
-                llista.append(resultat[escollit])
-            return {'content': llista, 'length': len_content, 'big': True}
-        else:
-            return {'content': sorted(resultat), 'length': len_content, 'big': False}
+        return items
 
 
 class searchContent(searchContentTags):
@@ -437,40 +424,3 @@ class searchContent(searchContentTags):
     grok.context(Interface)
     grok.template('search_content_ajax')
     grok.layer(IUlearnTheme)
-
-
-# class SearchTags(searchContentTags):
-#     grok.name('searchTags')
-#     grok.context(Interface)
-#     grok.template('search_tags_ajax')
-#     grok.layer(IUlearnTheme)
-
-    # def getCategories(self):
-    #     if 'search' in self.request:
-    #         searchString = self.request.get('search')
-    #     else:
-    #         searchString = ''
-
-    #     llistaCategories = []
-    #     catalog = getToolByName(self.context, 'portal_catalog')
-    #     path = self.context.absolute_url_path()
-    #     items = catalog.searchResults(path=path,
-    #                                   sort_on='getObjPositionInParent')
-
-    #     for i in items:
-    #         obj = i.getObject()
-    #         categories = obj.subject
-    #         for x in categories:
-    #             if x not in llistaCategories:
-    #                 llistaCategories.append(x)
-
-    #     len_categories = len(llistaCategories)
-    #     if len_categories > 100:
-    #         escollits = random.sample(range(len(llistaCategories)), 100)
-    #         llista = []
-    #         for escollit in escollits:
-    #             llista.append(llistaCategories[escollit])
-    #         return {'content': llista, 'length': len_categories, 'big': True}
-    #     else:
-    #         return {'content': sorted(llistaCategories) , 'length': len_categories, 'big': False}
-
