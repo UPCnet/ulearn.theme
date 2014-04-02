@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.20 (unreleased)
+1.20 (2014-04-02)
 -----------------
 
-- Nothing changed yet.
-
+* Canvis path i vista cersca [Pilar Marinas]
+* Fix search by tags [Victor Fernandez de Alba]
+* Modificar getPhysicalPath i traduccio cerca [Pilar Marinas]
 
 1.19 (2014-03-31)
 -----------------
