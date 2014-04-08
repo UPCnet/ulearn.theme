@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.21 (unreleased)
+1.21 (2014-04-08)
 -----------------
 
-- Nothing changed yet.
-
+* Bug in CSS for retina screens [Victor Fernandez de Alba]
 
 1.20 (2014-04-02)
 -----------------
