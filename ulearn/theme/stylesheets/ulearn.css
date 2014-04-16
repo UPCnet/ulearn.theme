@@ -2118,7 +2118,7 @@ input.maxui-button[disabled] {
     -o-background-size: 100%;
     background-size: 100%; } }
 
-h1, h2, h3, label {
+h1, h2, h3, label, span.label {
   color: #F58D3D; }
 
 #portlet-prefs, .documentEditable,
