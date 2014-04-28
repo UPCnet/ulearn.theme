@@ -17,6 +17,7 @@ from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IEventsFolder
 from plone.app.event.portlets.portlet_calendar import Renderer as calendarRenderer
 from plone.app.event.base import localized_today, localized_now, dt_start_of_day, dt_end_of_day
+from plone.dexterity.interfaces import IDexterityContent
 
 from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory
@@ -43,7 +44,9 @@ class Renderer(calendarRenderer):
     def __init__(self, *args, **kwargs):
         super(Renderer, self).__init__(*args, **kwargs)
 
-        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
+        if IHomePage.providedBy(self.context) or \
+           IPloneSiteRoot.providedBy(self.context) or \
+           not IDexterityContent.providedBy(self.context):
             path = ''
         else:
             path = '/'.join(('', ) + self.get_community().getPhysicalPath()[2:])
@@ -67,7 +70,9 @@ class Renderer(calendarRenderer):
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
 
-        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
+        if IHomePage.providedBy(self.context) or \
+           IPloneSiteRoot.providedBy(self.context) or\
+           not IDexterityContent.providedBy(self.context):
             path = navigation_root_path
         else:
             path = '/'.join(self.get_community().getPhysicalPath())
@@ -96,7 +101,9 @@ class Renderer(calendarRenderer):
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
 
-        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
+        if IHomePage.providedBy(self.context) or \
+           IPloneSiteRoot.providedBy(self.context) or \
+           not IDexterityContent.providedBy(self.context):
             path = navigation_root_path
         else:
             path = '/'.join(self.get_community().getPhysicalPath())
