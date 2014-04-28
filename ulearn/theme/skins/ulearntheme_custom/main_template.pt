@@ -60,10 +60,11 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
         <tal:comment replace="nothing"><!-- El seguent script ha d'anar seguit del meta del viewport --></tal:comment>
         <script tal:attributes="src string:${portal_url}/++genweb++static/js/ReView.js"></script>
 
-        <link rel="apple-touch-icon" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-57x57-precomposed.png" /> <!-- iPhone -->
-        <link rel="apple-touch-icon" sizes="72x72" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-72x72-precomposed.png" /> <!-- iPad -->
-        <link rel="apple-touch-icon" sizes="114x114" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-114x114-precomposed.png" /> <!-- iPhone 2x -->
-        <link rel="apple-touch-icon" sizes="144x144" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-144x144-precomposed.png" /> <!-- iPad 2x -->
+        <link rel="apple-touch-icon" tal:attributes="href string:${portal_url}/apple-touch-icon.png" /> <!-- 60x60 -->
+        <link rel="apple-touch-icon" sizes="57x57" tal:attributes="href string:${portal_url}/apple-touch-icon-57x57-precomposed.png" /> <!-- iPhone -->
+        <link rel="apple-touch-icon" sizes="72x72" tal:attributes="href string:${portal_url}/apple-touch-icon-72x72-precomposed.png" /> <!-- iPad -->
+        <link rel="apple-touch-icon" sizes="114x114" tal:attributes="href string:${portal_url}/apple-touch-icon-114x114-precomposed.png" /> <!-- iPhone 2x -->
+        <link rel="apple-touch-icon" sizes="144x144" tal:attributes="href string:${portal_url}/apple-touch-icon-144x144-precomposed.png" /> <!-- iPad 2x -->
 
         <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
@@ -76,7 +77,6 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/ulearn.css">
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/dynamic.css">
-        <!-- <script tal:attributes="src string:${portal_url}/++bootstrap++js/modernizr-2.6.1.min.js"></script> -->
 
     </tal:notajax>
 </head>
