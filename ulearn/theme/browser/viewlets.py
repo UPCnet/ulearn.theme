@@ -28,8 +28,9 @@ from genweb.core.adapters import IImportant
 from genweb.core.interfaces import IHomePage
 from genweb.theme.browser.interfaces import IHomePageView
 from genweb.core.utils import genweb_config, havePermissionAtRoot, pref_lang
-
+from genweb.theme.browser.viewlets import gwPersonalBarViewlet
 from genweb.theme.browser.interfaces import IGenwebTheme
+
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IDocumentFolder, ILinksFolder, IPhotosFolder, IEventsFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
@@ -111,22 +112,14 @@ class folderBar(viewletBase):
                 return True
         return False
 
-# class gwPersonalBarViewlet(PersonalBarViewlet, viewletBase):
-#     grok.name('genweb.personalbar')
-#     grok.viewletmanager(IPortalTop)
-#     grok.layer(IUlearnTheme)
 
-#     index = ViewPageTemplateFile('viewlets_templates/personal_bar.pt')
+class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
+    """ Done without jbot as it was failing sometimes randomly """
+    grok.name('genweb.personalbar')
+    grok.viewletmanager(IPortalTop)
+    grok.layer(IUlearnTheme)
 
-#     def showRootFolderLink(self):
-#         return havePermissionAtRoot()
-
-#     def canManageSite(self):
-#         return getSecurityManager().checkPermission("plone.app.controlpanel.Overview", self.portal)
-
-#     def getPortraitMini(self):
-#         pm = getToolByName(self.portal(), 'portal_membership')
-#         return pm.getPersonalPortrait().absolute_url()
+    index = ViewPageTemplateFile('viewlets_templates/personal_bar.pt')
 
 
 class gwHeader(viewletBase):

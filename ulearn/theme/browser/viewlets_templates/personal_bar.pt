@@ -26,11 +26,6 @@
                        <tal:profile i18n:translate="genweb-perfil">
                           Profile</tal:profile>
                 </a></li>
-                <li role="menuitem"><a tal:attributes="href string:${view/portal_url}/@@personal-preferences">
-                       <i class="icon-cog"></i>
-                       <tal:preferences i18n:translate="genweb-preferencies">
-                          Preferències</tal:preferences>
-                </a></li>
                 <li role="menuitem"><a tal:attributes="href string:${view/portal_url}/@@change-password">
                        <i class="icon-cog"></i>
                        <tal:password i18n:translate="genweb-password">
