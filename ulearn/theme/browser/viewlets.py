@@ -35,6 +35,8 @@ from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IDocumentFolder, ILinksFolder, IPhotosFolder, IEventsFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
+import plone.api
+
 grok.context(Interface)
 
 
@@ -120,6 +122,17 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
     grok.layer(IUlearnTheme)
 
     index = ViewPageTemplateFile('viewlets_templates/personal_bar.pt')
+
+    def is_upc_site(self):
+        """ Check if the site is using LDAP UPC for show the
+            correct change password link
+        """
+
+        acl_users = plone.api.portal.get_tool(name='acl_users')
+        if 'ldapUPC' in acl_users:
+            return True
+        else:
+            return False
 
 
 class gwHeader(viewletBase):
