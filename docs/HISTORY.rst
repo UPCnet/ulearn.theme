@@ -1,11 +1,15 @@
 Changelog
 =========
 
-1.22 (unreleased)
+1.22 (2014-05-07)
 -----------------
 
-- Nothing changed yet.
-
+* Update some CSS for not customize MAXUI any more [Victor Fernandez de Alba]
+* Change password link for UPC users and hide user notify on user creation check [Victor Fernandez de Alba]
+* Fix personal bar viewlet by overriding it not using jbot, fix favicon [Victor Fernandez de Alba]
+* Add a corner case for calendar portlet rendering [Victor Fernandez de Alba]
+* Update main template [Victor Fernandez de Alba]
+* Fix some CSS [Victor Fernandez de Alba]
 
 1.21 (2014-04-08)
 -----------------
