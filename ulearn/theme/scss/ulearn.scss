@@ -2,7 +2,7 @@ $fontAwesomePath: "/++genweb++static/fonts";
 @import "compass_twitter_bootstrap/font-awesome";
 @import "token-input-facebook";
 @import "select2";
-@import "maxui";
+// @import "maxui";
 @import "overrides";
 @import "hidden";
 @import "arrows";
@@ -781,10 +781,6 @@ label[for="form.ext_editor"] ~ div.widget {
   display: block;
 }
 
-.template-homepage #maxui-newactivity {
-  display: none;
-}
-
 .directori_usuari_foto {
   width: 21%;
   margin: 2%;
@@ -866,11 +862,11 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .searchbytagcontainer .searchInput {
   font-size: 15px;
-  height: 20px;    
-  margin-bottom: 10px;    
-  margin-top: 5px;    
-  padding: 0;    
-  vertical-align: middle;    
+  height: 20px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 0;
+  vertical-align: middle;
   width: 99%;
 }
 
@@ -889,8 +885,8 @@ label[for="form.ext_editor"] ~ div.widget {
 }
 
 
-#librarysearch #searchinputcontent {    
-  padding-top: 5px;    
+#librarysearch #searchinputcontent {
+  padding-top: 5px;
   width: 100%;
 }
 
@@ -911,10 +907,10 @@ label[for="form.ext_editor"] ~ div.widget {
 }
 
 
-.caixessearch {    
-  background: none repeat scroll 0 0 #F5F5F5;    
-  margin-bottom: 10px;    
-  min-height: 160px;    
+.caixessearch {
+  background: none repeat scroll 0 0 #F5F5F5;
+  margin-bottom: 10px;
+  min-height: 160px;
   padding: 10px;
 }
 
@@ -923,7 +919,7 @@ label[for="form.ext_editor"] ~ div.widget {
   border-top: none;
 }
 
-.searchbytagcontainer .select2-choices {    
+.searchbytagcontainer .select2-choices {
   border: 0 none;
 }
 
@@ -934,17 +930,17 @@ label[for="form.ext_editor"] ~ div.widget {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.searchbytagcontainer .select2-search-choice {    
-  color: #777777;    
-  font-size: 12px;    
-  font-weight: bold;    
-  margin-top: 5px;   
+.searchbytagcontainer .select2-search-choice {
+  color: #777777;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
   text-shadow: 1px 1px 1px #FFFFFF;
 }
 
-#librarysearch .documentDescription {    
-  font-size: 16px;    
-  font-weight: normal;    
+#librarysearch .documentDescription {
+  font-size: 16px;
+  font-weight: normal;
   margin-bottom: 18px;
 }
 

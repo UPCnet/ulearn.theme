@@ -215,10 +215,6 @@ $(document).ready(function (event) {
         subscribe_to_community(event, options);
     });
 
-    $(".template-homepage #maxui-widget-container").on("click", "#maxui-show-conversations.maxui-togglebar a, #maxui-show-timeline.maxui-togglebar a", function (event) {
-        $("#maxui-newactivity").toggle()
-    });
-
     // Prevent click on calendar events to allow popover
     $('.cal_has_events').click(function (e) {e.preventDefault();})
 
