@@ -49,7 +49,11 @@ class Renderer(calendarRenderer):
            not IDexterityContent.providedBy(self.context):
             path = ''
         else:
-            path = '/'.join(('', ) + self.get_community().getPhysicalPath()[2:])
+            community = self.get_community()
+            if community is not None:
+                path = '/'.join(('', ) + self.get_community().getPhysicalPath()[2:])
+            else:
+                path = ''
 
         self.data.search_base = path
         self.data.state = ('published', 'intranet')
@@ -75,7 +79,11 @@ class Renderer(calendarRenderer):
            not IDexterityContent.providedBy(self.context):
             path = navigation_root_path
         else:
-            path = '/'.join(self.get_community().getPhysicalPath())
+            community = self.get_community()
+            if community is not None:
+                path = '/'.join(self.get_community().getPhysicalPath())
+            else:
+                path = navigation_root_path
 
         query = {
             'portal_type': 'Event',
@@ -106,8 +114,13 @@ class Renderer(calendarRenderer):
            not IDexterityContent.providedBy(self.context):
             path = navigation_root_path
         else:
-            path = '/'.join(self.get_community().getPhysicalPath())
+            community = self.get_community()
+            if community is not None:
+                path = '/'.join(self.get_community().getPhysicalPath())
+            else:
+                path = navigation_root_path
 
+        print path
         query = {
             'portal_type': 'Event',
             'review_state': self.data.state,
@@ -133,7 +146,11 @@ class Renderer(calendarRenderer):
         if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
             path = navigation_root_path
         else:
-            path = '/'.join(self.get_community().getPhysicalPath())
+            community = self.get_community()
+            if community is not None:
+                path = '/'.join(self.get_community().getPhysicalPath())
+            else:
+                path = navigation_root_path
 
         weeks = self.calendar.getEventsForCalendar(month, year, path=path)
         for week in weeks:
