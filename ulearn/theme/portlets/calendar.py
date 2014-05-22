@@ -120,7 +120,6 @@ class Renderer(calendarRenderer):
             else:
                 path = navigation_root_path
 
-        print path
         query = {
             'portal_type': 'Event',
             'review_state': self.data.state,
