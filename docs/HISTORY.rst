@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.23 (unreleased)
+1.23 (2014-05-26)
 -----------------
 
-- Nothing changed yet.
-
+* Bug of the portlet calendar weekday generation [Victor Fernandez de Alba]
+* Remove missing debug print [Carles Bruguera]
+* Fix calendar rendering out of communities [Carles Bruguera]
 
 1.22 (2014-05-07)
 -----------------
