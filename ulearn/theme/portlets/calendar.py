@@ -61,7 +61,7 @@ class Renderer(calendarRenderer):
     def today(self):
         today = {}
         loc_today = localized_today(self.context)
-        today['weekday'] = PLMF(self._ts.day_msgid(loc_today.isoweekday(), format='l'))
+        today['weekday'] = PLMF(self._ts.day_msgid(loc_today.isoweekday() - 1, format='l'))
         today['number'] = loc_today.day
         return today
 
