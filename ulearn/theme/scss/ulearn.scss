@@ -726,7 +726,8 @@ border-color: #34495E;
 // OJO! si canviem el nom de la seccio d'esdeveniments ha de canviar
 .subsection-esdeveniments,
 .subsection-eventos,
-.subsection-events {
+.subsection-events,
+.subsection-discussion {
   #menusup {max-width: 726px;}
 }
 
@@ -739,7 +740,8 @@ border-color: #34495E;
   a { margin-top: 10px; padding:10px 0}
 }
 
-.communitylinks {
+.communitylinks,
+.discussionlinks {
   margin-left: 3px;
   li {
     list-style: none;
@@ -944,3 +946,83 @@ label[for="form.ext_editor"] ~ div.widget {
   margin-bottom: 18px;
 }
 
+.icon-ulearn-discussion {@extend .fa-comments; @extend .fa; }
+.documentByLine {
+  .creator_image_byline {
+    width: 40px;
+    height: 40px;
+    @include border-radius(50%);
+  }
+}
+.discussion {
+  background-color: white;
+  padding: 10px;
+  .comment { clear: both; padding: 10px; }
+  .replyTreeLevel0 {
+    margin: 0;
+    // padding: 10px;
+    box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.25);
+  }
+  .cimage img {
+    width: 40px;
+    height: 40px;
+    @include border-radius(50%);
+    float: left;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+  .commentDate { padding-top: 0; }
+  .cbyline {}
+  .reply-to-comment-button { margin: 0; }
+}
+
+#commenting {
+  background-color: white;
+  padding: 10px;
+}
+
+.subsection-discussion {
+  // Do not allow user to change views for discussion folder
+  #plone-contentmenu-display { display: none; }
+}
+
+#discussionfolderview {
+  ul { list-style: none; margin: 0; }
+  a { text-decoration: none; }
+  li {
+    box-shadow: 0 -10px 10px -10px rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    &:first-child { box-shadow: none; }
+  }
+  .cimage img {
+    width: 40px;
+    height: 40px;
+    @include border-radius(50%);
+    float: left;
+    vertical-align: top;
+    margin-right: 10px;
+  }
+  .commentDate { padding-top: 0; }
+  .cbyline {}
+  .reply-to-comment-button { margin: 0; }
+}
+
+#box_discussion {
+  .newevent { margin-top: 15px;
+    a { padding: 10px 0}
+    i { margin-right: 3px; }
+  }
+  // ul { list-style: none; margin: 10px 0 0 0; }
+  li {
+    // border-bottom: 1px solid #EEEEEE;
+    // font-size: 13px;
+    // line-height: 15px;
+    // margin-bottom: 8px;
+    // padding-bottom: 8px;
+    a {
+      // padding-left: 10px;
+    }
+
+    i { color: #34495E; }
+  }
+}

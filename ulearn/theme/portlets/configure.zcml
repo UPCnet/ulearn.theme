@@ -70,11 +70,11 @@
         />
 
     <plone:portlet
-        name="ulearn.portlets.comments"
-        interface=".comments.ICommentsPortlet"
-        assignment=".comments.Assignment"
-        renderer=".comments.Renderer"
-        addview=".comments.AddForm"
+        name="ulearn.portlets.discussion"
+        interface=".discussion.ICommentsPortlet"
+        assignment=".discussion.Assignment"
+        renderer=".discussion.Renderer"
+        addview=".discussion.AddForm"
         />
 
     <plone:portlet

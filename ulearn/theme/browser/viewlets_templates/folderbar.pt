@@ -57,10 +57,23 @@
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/events">
                   <i class="fa fa-calendar icons"></i>
-                  <tal:Photos i18n:translate="Events">Esdeveniments</tal:Photos></a>
+                  <tal:Events i18n:translate="Events">Esdeveniments</tal:Events></a>
         </div>
       </div>
       </tal:isEventFolder>
+
+      <tal:isDiscussionFolder condition="python: viewlet.folder_type == 'discussion'">
+      <div class="bubble top"
+           tal:attributes="class python: viewlet.bubble_class('discussion')">
+        <div class="arrow"></div>
+        <div class="bubble-content">
+          <a href="#"
+               tal:attributes="href string:${community/absolute_url}/discussion">
+                  <i class="fa fa-calendar icons"></i>
+                  <tal:Discussion i18n:translate="Discussion">Discussion</tal:Discussion></a>
+        </div>
+      </div>
+      </tal:isDiscussionFolder>
 
     </div>
   </nav>

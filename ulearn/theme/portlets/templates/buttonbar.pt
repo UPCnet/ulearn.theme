@@ -10,7 +10,7 @@
              data-toggle="tab"
              data-target="#maxui-widget-container">
                 <i class="fa fa-comment icons"></i>
-                <tal:Entrada i18n:translate="Entrada"> Entrada </tal:Entrada></a>
+                <tal:Entrada i18n:translate="Entrada"> Stream </tal:Entrada></a>
         </div>
       </div>
 

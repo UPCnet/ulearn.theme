@@ -1,0 +1,26 @@
+<div id="box_discussion" class="ulearnbox"
+      i18n:domain="ulearn">
+
+  <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
+
+  <h2 i18n:translate="Discussion">Discussion</h2>
+
+  <ul class="discussionlinks" i18n:domain="ulearn"
+      tal:condition="view/is_community">
+    <li>
+      <a tal:attributes="href string:${view/get_discussion_folder_url}">
+        <i class="icon-plus-sign icons"> </i>
+        <tal:seeevents i18n:translate="seemorediscussions">See more events</tal:seeevents>
+      </a>
+    </li>
+  </ul>
+
+  <p tal:condition="view/show_newdiscussion_url">
+    <a class="btn btn-large btn-comunitat"
+       tal:attributes="href view/newdiscussion_url">
+        <i class="fa fa-calendar"></i>
+        <tal:discussion i18n:domain="ulearn" i18n:translate="newdiscussion">Create a discussion</tal:discussion>
+    </a>
+  </p>
+
+</div>

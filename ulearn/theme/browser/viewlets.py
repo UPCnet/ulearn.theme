@@ -32,7 +32,11 @@ from genweb.theme.browser.viewlets import gwPersonalBarViewlet
 from genweb.theme.browser.interfaces import IGenwebTheme
 
 from ulearn.core.content.community import ICommunity
-from ulearn.core.interfaces import IDocumentFolder, ILinksFolder, IPhotosFolder, IEventsFolder
+from ulearn.core.interfaces import IDocumentFolder
+from ulearn.core.interfaces import ILinksFolder
+from ulearn.core.interfaces import IPhotosFolder
+from ulearn.core.interfaces import IEventsFolder
+from ulearn.core.interfaces import IDiscussionFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
 import plone.api
@@ -83,17 +87,22 @@ class folderBar(viewletBase):
             if IEventsFolder.providedBy(obj):
                 self.folder_type = 'events'
                 break
+            if IDiscussionFolder.providedBy(obj):
+                self.folder_type = 'discussion'
+                break
             if ICommunity.providedBy(obj):
                 self.folder_type = 'community'
                 break
 
     def bubble_class(self, bubble):
-        if self.folder_type == 'events':
+        if self.folder_type == 'events' or \
+           self.folder_type == 'discussion':
             span = 'span2'
         else:
             span = 'span3'
 
-        if bubble == 'events':
+        if bubble == 'events' or \
+           bubble == 'discussion':
             span = 'span3'
 
         if bubble == self.folder_type:

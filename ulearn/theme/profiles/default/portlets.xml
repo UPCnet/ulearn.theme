@@ -12,12 +12,15 @@
        description="Calendar portlet"/>
     <portlet title="Ulearn most valued" addview="ulearn.portlets.mostvalued"
        description="Most valued portlet"/>
-    <portlet title="Ulearn comments" addview="ulearn.portlets.comments"
-       description="Comments portlet"/>
+    <portlet title="Ulearn discussion" addview="ulearn.portlets.discussion"
+       description="Discussion portlet"/>
     <portlet title="Ulearn stats" addview="ulearn.portlets.stats"
        description="Stats portlet"/>
     <portlet title="Ulearn eConnect" addview="ulearn.portlets.econnect"
        description="eConnect portlet"/>
+
+    <!-- Obsolete -->
+    <portlet title="Ulearn comments" addview="ulearn.portlets.comments" remove="True" />
 
 <assignment remove="True" name="navigation" category="context" key="/"
               manager="plone.leftcolumn" type="portlets.Navigation" />

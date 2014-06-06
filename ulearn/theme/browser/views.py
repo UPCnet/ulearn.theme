@@ -1,4 +1,5 @@
 from scss import Scss
+from DateTime import DateTime
 
 from five import grok
 from zope.component.hooks import getSite
@@ -21,6 +22,7 @@ from genweb.theme.browser.interfaces import IHomePageView
 from ulearn.theme.browser.interfaces import IUlearnTheme
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
 from ulearn.core.browser.searchuser import searchUsersFunction
+from ulearn.core.interfaces import IDiscussionFolder
 
 import pkg_resources
 import plone.api
@@ -337,7 +339,7 @@ class searchContentTags(grok.View):
         pc = getToolByName(self.context, "portal_catalog")
         path = self.context.getPhysicalPath()
         path = "/".join(path)
-  
+
         def quotestring(s):
             return '"%s"' % s
 
@@ -408,7 +410,7 @@ class searchContentTags(grok.View):
         idpath = self.context.id
         return idpath
 
-    def getContent(self):      
+    def getContent(self):
         portal = getSite()
         catalog = getToolByName(portal, 'portal_catalog')
         path = self.context.getPhysicalPath()
@@ -425,3 +427,50 @@ class searchContent(searchContentTags):
     grok.context(Interface)
     grok.template('search_content_ajax')
     grok.layer(IUlearnTheme)
+
+
+class DiscussionFolderView(grok.View):
+    grok.name('discussion_folder_view')
+    grok.context(IDiscussionFolder)
+    grok.template('discussion_folder_view')
+    grok.layer(IUlearnTheme)
+
+    @memoize_contextless
+    def portal_url(self):
+        return self.portal().absolute_url()
+
+    @memoize_contextless
+    def portal(self):
+        return getSite()
+
+    def get_folder_discussions(self):
+        pc = plone.api.portal.get_tool(name="portal_catalog")
+        path = "/".join(self.context.getPhysicalPath())
+        results = pc.searchResults(portal_type="ulearn.discussion",
+                                   path={'query': path},
+                                   sort_on='created')
+        return results
+
+    def get_last_comment_from_discussion(self, discussion):
+        pc = plone.api.portal.get_tool(name="portal_catalog")
+        pm = plone.api.portal.get_tool(name="portal_membership")
+        results = pc.searchResults(portal_type="Discussion Item",
+                                   path={'query': discussion.getPath()},
+                                   sort_on='created')
+        if results:
+            comment = results[0].getObject()
+
+            return dict(text=comment.getText(),
+                        author_username=comment.author_username,
+                        author_name=comment.author_name,
+                        portrait_url=pm.getPersonalPortrait(comment.author_username).absolute_url(),
+                        modification_date=comment.modification_date)
+        else:
+            return None
+
+    def format_time(self, time):
+        # We have to transform Python datetime into Zope DateTime
+        # before we can call toLocalizedTime.
+        util = getToolByName(self.context, 'translation_service')
+        zope_time = DateTime(time.isoformat())
+        return util.toLocalizedTime(zope_time, long_format=True)
