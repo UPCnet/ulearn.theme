@@ -1,9 +1,39 @@
 <div id="box_discussion" class="ulearnbox"
-      i18n:domain="ulearn">
+     tal:define="discussions view/get_last_discussions"
+     tal:condition="discussions"
+     i18n:domain="ulearn">
 
   <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
   <h2 i18n:translate="Discussion">Discussion</h2>
+
+  <ul class="lastdiscussion">
+    <tal:disc repeat="discussion discussions">
+      <li>
+        <div>
+          <span class="cimage">
+            <a href="" tal:attributes="href string:${view/portal_url}/profile/${discussion/author_username}">
+                 <img src="defaultUser.png"
+                      alt=""
+                      class="defaultuserimg"
+                      height="32"
+                      tal:attributes="src discussion/portrait_url;
+                                      alt discussion/author_name" />
+            </a>
+          </span>
+          <span class="byline">
+            <a tal:content="discussion/title"
+               tal:attributes="href discussion/url">
+              Discussion title
+            </a><br/>
+            <tal:creator content="discussion/author_name">
+              Display name
+            </tal:creator>
+          </span>
+        </div>
+      </li>
+    </tal:disc>
+  </ul>
 
   <ul class="discussionlinks" i18n:domain="ulearn"
       tal:condition="view/is_community">
@@ -18,7 +48,7 @@
   <p tal:condition="view/show_newdiscussion_url">
     <a class="btn btn-large btn-comunitat"
        tal:attributes="href view/newdiscussion_url">
-        <i class="fa fa-calendar"></i>
+        <i class="fa fa-comments"></i>
         <tal:discussion i18n:domain="ulearn" i18n:translate="newdiscussion">Create a discussion</tal:discussion>
     </a>
   </p>

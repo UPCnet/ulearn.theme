@@ -1,9 +1,11 @@
+from Acquisition import aq_parent
 from zope.interface import implements
 from zope.security import checkPermission
 from zope.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
 from Acquisition import aq_inner
 from Acquisition import aq_chain
+from plone.memoize.view import memoize_contextless
 
 from genweb.core.interfaces import IHomePage
 from genweb.core.utils import pref_lang
@@ -36,6 +38,54 @@ class Assignment(base.Assignment):
 class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/discussion.pt')
+
+    @memoize_contextless
+    def portal_url(self):
+        return self.portal().absolute_url()
+
+    @memoize_contextless
+    def portal(self):
+        return getSite()
+
+    def get_community(self):
+        context = aq_inner(self.context)
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return obj
+        return None
+
+    def get_last_discussions(self):
+        pc = plone.api.portal.get_tool(name="portal_catalog")
+        pm = plone.api.portal.get_tool(name="portal_membership")
+        community = self.get_community()
+        if community:
+            path = "/".join(community.getPhysicalPath())
+            comments = pc.searchResults(portal_type="Discussion Item",
+                                       path={'query': path},
+                                       sort_on='created',
+                                       sort_order='inverse')
+        else:
+            comments = pc.searchResults(portal_type="Discussion Item",
+                                       sort_on='created',
+                                       sort_order='inverse')
+
+        if comments:
+            results = []
+            control_list = []
+            for comment in comments:
+                discussion = aq_parent(aq_parent(comment.getObject()))
+
+                if discussion.id not in control_list:
+                    results.append(dict(title=discussion.Title,
+                                        author_username=discussion.Creator(),
+                                        author_name=pm.getMemberById(discussion.Creator()).getProperty("fullname"),
+                                        portrait_url=pm.getPersonalPortrait(discussion.Creator()).absolute_url(),
+                                        modification_date=comment.modification_date,
+                                        url=discussion.absolute_url()))
+                    control_list.append(discussion.id)
+            return results[:3]
+        else:
+            return None
 
     def show_newdiscussion_url(self):
         context = aq_inner(self.context)

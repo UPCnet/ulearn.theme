@@ -3350,11 +3350,27 @@ label[for="form.ext_editor"] ~ div.widget {
 #discussionfolderview .reply-to-comment-button {
   margin: 0; }
 
-#box_discussion .newevent {
-  margin-top: 15px; }
-  #box_discussion .newevent a {
+#box_discussion .cimage img {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  float: right;
+  vertical-align: top;
+  margin-right: 10px; }
+#box_discussion ul.lastdiscussion {
+  list-style: none;
+  margin: 0; }
+  #box_discussion ul.lastdiscussion li {
+    padding-bottom: 10px; }
+#box_discussion p {
+  margin-top: 0;
+  border-top: 1px solid #EEEEEE; }
+  #box_discussion p a {
+    margin-top: 10px;
     padding: 10px 0; }
-  #box_discussion .newevent i {
+  #box_discussion p i {
     margin-right: 3px; }
 #box_discussion li i {
   color: #34495E; }
