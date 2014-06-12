@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.24 (unreleased)
+1.24 (2014-06-12)
 -----------------
 
-- Nothing changed yet.
-
+* Finish debats feature [Victor Fernandez de Alba]
+* WIP debats [Victor Fernandez de Alba]
+* Fix again the portlet calendar bug for sundays [Victor Fernandez de Alba]
 
 1.23 (2014-05-26)
 -----------------
