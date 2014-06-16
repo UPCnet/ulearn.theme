@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.25 (unreleased)
+1.25 (2014-06-16)
 -----------------
 
-- Nothing changed yet.
-
+* Fix discussion order [Victor Fernandez de Alba]
 
 1.24 (2014-06-12)
 -----------------
