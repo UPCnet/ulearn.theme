@@ -456,7 +456,8 @@ class DiscussionFolderView(grok.View):
         pm = plone.api.portal.get_tool(name="portal_membership")
         results = pc.searchResults(portal_type="Discussion Item",
                                    path={'query': discussion.getPath()},
-                                   sort_on='created')
+                                   sort_on='created',
+                                   sort_order='reverse')
         if results:
             comment = results[0].getObject()
 

@@ -63,11 +63,11 @@ class Renderer(base.Renderer):
             comments = pc.searchResults(portal_type="Discussion Item",
                                        path={'query': path},
                                        sort_on='created',
-                                       sort_order='inverse')
+                                       sort_order='reverse')
         else:
             comments = pc.searchResults(portal_type="Discussion Item",
                                        sort_on='created',
-                                       sort_order='inverse')
+                                       sort_order='reverse')
 
         if comments:
             results = []
@@ -76,10 +76,11 @@ class Renderer(base.Renderer):
                 discussion = aq_parent(aq_parent(comment.getObject()))
 
                 if discussion.id not in control_list:
+                    comment = comment.getObject()
                     results.append(dict(title=discussion.Title,
                                         author_username=discussion.Creator(),
-                                        author_name=pm.getMemberById(discussion.Creator()).getProperty("fullname"),
-                                        portrait_url=pm.getPersonalPortrait(discussion.Creator()).absolute_url(),
+                                        author_name=comment.author_name,
+                                        portrait_url=pm.getPersonalPortrait(comment.author_username).absolute_url(),
                                         modification_date=comment.modification_date,
                                         url=discussion.absolute_url()))
                     control_list.append(discussion.id)
