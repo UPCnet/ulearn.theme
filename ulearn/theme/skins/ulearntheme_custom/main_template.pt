@@ -218,7 +218,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.mixitup.min.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/alertify.min.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++static/js/select2.min.js"></script>
-
+    <script tal:attributes="src string:${portal_url}/++genweb++static/js/underscore-min.js"></script>
     <script tal:attributes="src string:${portal_url}/++genweb++js/main.js"></script>
     <script tal:attributes="src string:${portal_url}/++ulearn++js/ulearn.js"></script>
 
