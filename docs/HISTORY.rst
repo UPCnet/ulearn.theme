@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.26 (unreleased)
+1.26 (2014-06-25)
 -----------------
 
-- Nothing changed yet.
-
+* Include underscore [Carles Bruguera]
 
 1.25 (2014-06-16)
 -----------------
