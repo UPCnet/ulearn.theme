@@ -11,7 +11,7 @@
   font-weight: normal;
   font-style: normal; }
 
-.fa, .icon-ulearn-discussion {
+.fa, .icon-ulearn-discussion, .icon-ulearn-video {
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -71,10 +71,10 @@
 .pull-left {
   float: left; }
 
-.fa.pull-left, .pull-left.icon-ulearn-discussion {
+.fa.pull-left, .pull-left.icon-ulearn-discussion, .pull-left.icon-ulearn-video {
   margin-right: .3em; }
 
-.fa.pull-right, .pull-right.icon-ulearn-discussion {
+.fa.pull-right, .pull-right.icon-ulearn-discussion, .pull-right.icon-ulearn-video {
   margin-left: .3em; }
 
 .fa-spin {
@@ -361,7 +361,7 @@
 .fa-indent:before {
   content: "\f03c"; }
 
-.fa-video-camera:before {
+.fa-video-camera:before, .icon-ulearn-video:before {
   content: "\f03d"; }
 
 .fa-picture-o:before {
@@ -3008,7 +3008,7 @@ input[type="text"]:focus {
     #userlist li .photo {
       margin: 10px;
       display: block; }
-  #userlist .fa, #userlist .icon-ulearn-discussion {
+  #userlist .fa, #userlist .icon-ulearn-discussion, #userlist .icon-ulearn-video {
     border: 1px solid;
     border-radius: 21px;
     color: #555555;
@@ -3017,7 +3017,7 @@ input[type="text"]:focus {
     min-width: 13px;
     padding: 4px 3px;
     text-align: center; }
-  #userlist .fa:hover, #userlist .icon-ulearn-discussion:hover {
+  #userlist .fa:hover, #userlist .icon-ulearn-discussion:hover, #userlist .icon-ulearn-video:hover {
     color: #F58D3D; }
   #userlist li p span {
     font-size: 13px;
@@ -3288,6 +3288,9 @@ label[for="form.ext_editor"] ~ div.widget {
   font-size: 16px;
   font-weight: normal;
   margin-bottom: 18px; }
+
+.icon-ulearn-video {
+  margin-top: 2px; }
 
 .documentByLine .creator_image_byline {
   width: 40px;

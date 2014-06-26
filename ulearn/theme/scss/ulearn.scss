@@ -947,6 +947,8 @@ label[for="form.ext_editor"] ~ div.widget {
 }
 
 .icon-ulearn-discussion {@extend .fa-comments; @extend .fa; }
+.icon-ulearn-video {@extend .fa-video-camera; @extend .fa; margin-top: 2px}
+
 .documentByLine {
   .creator_image_byline {
     width: 40px;
