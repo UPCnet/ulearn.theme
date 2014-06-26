@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.27 (unreleased)
+1.27 (2014-06-26)
 -----------------
 
-- Nothing changed yet.
-
+* New CSS for videos [Victor Fernandez de Alba]
 
 1.26 (2014-06-25)
 -----------------
