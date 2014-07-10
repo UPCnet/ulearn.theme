@@ -216,8 +216,13 @@ $(document).ready(function (event) {
     });
 
     // Prevent click on calendar events to allow popover
-    $('.cal_has_events').click(function (e) {e.preventDefault();})
+  /*  $('.cal_has_events').click(function (e) {
+        e.preventDefault();
+        $('.popover-content').off('click').on('click', 'a' , function() {
+            window.location=this.href
+        });
 
+    });*/
 
     // Tags select2 field
     $('#searchbytag').select2({
