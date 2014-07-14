@@ -1,5 +1,5 @@
 from hashlib import sha1
-
+from plone import api
 from Acquisition import aq_inner
 from Acquisition import aq_chain
 from zope.interface import implements
@@ -11,10 +11,12 @@ from plone.registry.interfaces import IRegistry
 from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
 
+from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
+from genweb.core.interfaces import IHomePage
 from ulearn.core.badges import AVAILABLE_BADGES
 from ulearn.core.content.community import ICommunity
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
@@ -22,8 +24,6 @@ from ulearn.core.controlpanel import IUlearnControlPanelSettings
 from maxclient import MaxClient
 from mrs.max.utilities import IMAXClient
 from mrs.max.browser.controlpanel import IMAXUISettings
-
-import plone.api
 
 
 class IStatsPortlet(IPortletDataProvider):
@@ -63,14 +63,18 @@ class Renderer(base.Renderer):
         return False
 
     def get_stats_for(self, query_type):
-        current_path = '/'.join(self.context.getPhysicalPath())
+        if IHomePage.providedBy(self.context):
+            portal = api.portal.get()
+            current_path = '/'.join(portal.getPhysicalPath())
+        else:
+            current_path = '/'.join(self.context.getPhysicalPath())
         pc = getToolByName(self.portal(), "portal_catalog")
         if query_type == 'documents':
             results = pc.searchResults(portal_type=['Document', 'File'], path={'query': current_path})
         elif query_type == 'links':
             results = pc.searchResults(portal_type=['Link'], path={'query': current_path})
         elif query_type == 'media':
-            results = pc.searchResults(portal_type=['Image'], path={'query': current_path})
+            results = pc.searchResults(portal_type=['Image', 'Video'], path={'query': current_path})
 
         return len(results)
 
@@ -134,7 +138,7 @@ class Renderer(base.Renderer):
         return comments
 
     def get_posts_literal(self):
-        literal = plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+        literal = api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
         if literal == 'thinnkers':
             return 'thinnkins'
         else:
