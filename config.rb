@@ -1,6 +1,7 @@
 # Require any additional compass plugins here.
 #add_import_path "../../../genweb.theme/genweb/theme/scss"
 additional_import_paths = ["../genweb.theme/genweb/theme/scss",
+"../genweb.alternatheme/genweb/alternatheme/components",
 "../genweb.theme/genweb/theme/bootstrap/scss",
 "../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap"]
 
@@ -14,7 +15,7 @@ javascripts_dir = "./ulearn/theme/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = :compressed
+# output_style = :compressed
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 #relative_assets = true
