@@ -1,3 +1,4 @@
+from plone import api
 from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
 from Acquisition import aq_inner, aq_chain
@@ -22,8 +23,6 @@ from plone.dexterity.interfaces import IDexterityContent
 from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory
 PLMF = MessageFactory('plonelocales')
-
-import plone.api
 
 
 class ICalendarPortlet(IPortletDataProvider):
@@ -51,10 +50,12 @@ class Renderer(calendarRenderer):
         else:
             community = self.get_community()
             if community is not None:
-                path = '/'.join(('', ) + self.get_community().getPhysicalPath()[2:])
+                portal = api.portal.get()
+                portal_path = portal.getPhysicalPath()
+                community_path = self.get_community().getPhysicalPath()
+                path = '/' + '/'.join(set(community_path) - set(portal_path))
             else:
                 path = ''
-
         self.data.search_base = path
         self.data.state = ('published', 'intranet')
 
@@ -175,7 +176,7 @@ class Renderer(calendarRenderer):
 
     def show_newevent_url(self):
         context = aq_inner(self.context)
-        if 'Editor' in plone.api.user.get_roles(obj=self.get_community()):
+        if 'Editor' in api.user.get_roles(obj=self.get_community()):
             if IHomePage.providedBy(context) or IPloneSiteRoot.providedBy(self.context):
                 return False
             else:
