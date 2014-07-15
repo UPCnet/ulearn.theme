@@ -1,11 +1,17 @@
 Changelog
 =========
 
-1.28 (unreleased)
+1.28 (2014-07-15)
 -----------------
 
-- Nothing changed yet.
-
+* New link to the communities library [Victor Fernandez de Alba]
+* Add components to the whole thing, use select2 and FA from there. [Victor Fernandez de Alba]
+* Generalize filtered_search_view [Victor Fernandez de Alba]
+* Fix stats on home page [Victor Fernandez de Alba]
+* Merge branch 'master' of github.com:UPCnet/ulearn.theme [Victor Fernandez de Alba]
+* Fix Llegir més literal [Victor Fernandez de Alba]
+* Eventos popover clicables [Pilar Marinas]
+* Fix override of portlet_calendar.js when there are more layers than the actual theme. [Victor Fernandez de Alba]
 
 1.27 (2014-06-26)
 -----------------
