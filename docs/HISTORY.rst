@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.29 (unreleased)
+1.29 (2014-07-15)
 -----------------
 
-- Nothing changed yet.
-
+* Fix calendar portlet for mountpoint-based sites. [Victor Fernandez de Alba]
 
 1.28 (2014-07-15)
 -----------------
