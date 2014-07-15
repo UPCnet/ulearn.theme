@@ -42,7 +42,8 @@
 </div>
 
 <ul class="communitylinks"
-    tal:define="campus_url view/get_campus_url">
+    tal:define="campus_url view/get_campus_url;
+                library_url view/get_library_url;">
   <li>
     <a tal:attributes="href string:${view/portal_url}/communities">
       <i class="icon-plus-sign icons"> </i>
@@ -54,6 +55,13 @@
        tal:attributes="href campus_url">
       <i class="icon-plus-sign icons"> </i>
       <tal:gotocampus i18n:translate="gotocampus">Go to the campus</tal:gotocampus>
+    </a>
+  </li>
+  <li>
+    <a tal:condition="library_url"
+       tal:attributes="href library_url">
+      <i class="icon-plus-sign icons"> </i>
+      <tal:gotolibrary i18n:translate="gotolibrary">Go to the library</tal:gotolibrary>
     </a>
   </li>
 </ul>

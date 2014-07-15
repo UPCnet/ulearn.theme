@@ -89,6 +89,11 @@ class Renderer(base.Renderer):
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
         return settings.campus_url
 
+    def get_library_url(self):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
+        return settings.library_url
+
 
 class AddForm(base.NullAddForm):
 
