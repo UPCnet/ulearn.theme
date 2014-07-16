@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 /*
- *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
-=======
-/*!
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
@@ -57,20 +52,11 @@
 .fa-li {
   position: absolute;
   left: -2.14286em;
-<<<<<<< HEAD
-  width: 2.142857142857143em;
-  top: 0.14285714285714285em;
-  text-align: center; }
-
-.fa-li.fa-lg {
-  left: -1.85714em; }
-=======
   width: 2.14286em;
   top: 0.14286em;
   text-align: center; }
   .fa-li.fa-lg {
     left: -1.85714em; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 .fa-border {
   padding: .2em .25em .15em;
@@ -1399,24 +1385,8 @@
 .fa-joomla:before {
   content: "\f1aa"; }
 
-<<<<<<< HEAD
-.select2-container .select2-choice abbr {
-  display: none;
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  right: 24px;
-  top: 8px;
-  font-size: 1px;
-  text-decoration: none;
-  border: 0;
-  background: url('/++genweb++static/images/select2.png?1389192191') right top no-repeat;
-  cursor: pointer;
-  outline: 0; }
-=======
 .fa-language:before {
   content: "\f1ab"; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 .fa-fax:before {
   content: "\f1ac"; }
@@ -1442,77 +1412,14 @@
 .fa-behance:before {
   content: "\f1b4"; }
 
-<<<<<<< HEAD
-.select2-container .select2-choice .select2-arrow {
-  display: inline-block;
-  width: 18px;
-  height: 100%;
-  position: absolute;
-  right: 0;
-  top: 0;
-  border-left: 1px solid #aaa;
-  border-radius: 0 4px 4px 0;
-  background-clip: padding-box;
-  background: #ccc;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #cccccc), color-stop(0.6, #eeeeee));
-  background-image: -webkit-linear-gradient(center bottom, #cccccc 0%, #eeeeee 60%);
-  background-image: -moz-linear-gradient(center bottom, #cccccc 0%, #eeeeee 60%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#eeeeee', endColorstr = '#cccccc', GradientType = 0);
-  background-image: linear-gradient(top, #cccccc 0%, #eeeeee 60%); }
-
-.select2-container .select2-choice .select2-arrow b {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 0 1px; }
-=======
 .fa-behance-square:before {
   content: "\f1b5"; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 .fa-steam:before {
   content: "\f1b6"; }
 
-<<<<<<< HEAD
-.select2-search input {
-  width: 100%;
-  height: auto !important;
-  min-height: 26px;
-  padding: 4px 20px 4px 5px;
-  margin: 0;
-  outline: 0;
-  font-family: sans-serif;
-  font-size: 1em;
-  border: 1px solid #aaa;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  background: white url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px;
-  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
-
-.select2-drop.select2-drop-above .select2-search input {
-  margin-top: 4px; }
-
-.select2-search input.select2-active {
-  background: white url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%;
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
-
-.select2-container-active .select2-choice,
-.select2-container-active .select2-choices {
-  border: 1px solid #5897fb;
-  outline: none;
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); }
-=======
 .fa-steam-square:before {
   content: "\f1b7"; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 .fa-recycle:before {
   content: "\f1b8"; }
@@ -1561,14 +1468,9 @@
 .fa-file-archive-o:before {
   content: "\f1c6"; }
 
-<<<<<<< HEAD
-.select2-more-results.select2-active {
-  background: #f4f4f4 url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%; }
-=======
 .fa-file-sound-o:before,
 .fa-file-audio-o:before {
   content: "\f1c7"; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 .fa-file-movie-o:before,
 .fa-file-video-o:before {
@@ -1609,62 +1511,14 @@
 .fa-git:before {
   content: "\f1d3"; }
 
-<<<<<<< HEAD
-.select2-container-multi .select2-choices .select2-search-field input.select2-active {
-  background: white url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100% !important; }
-=======
 .fa-hacker-news:before {
   content: "\f1d4"; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 .fa-tencent-weibo:before {
   content: "\f1d5"; }
 
-<<<<<<< HEAD
-.select2-container-multi .select2-choices .select2-search-choice {
-  padding: 3px 5px 3px 18px;
-  margin: 3px 0 3px 5px;
-  position: relative;
-  line-height: 13px;
-  color: #333;
-  cursor: default;
-  border: 1px solid #aaaaaa;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  background-clip: padding-box;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: #e4e4e4;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#f4f4f4', GradientType=0);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(20%, #f4f4f4), color-stop(50%, #f0f0f0), color-stop(52%, #e8e8e8), color-stop(100%, #eeeeee));
-  background-image: -webkit-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%);
-  background-image: linear-gradient(top, #f4f4f4 20%, #f0f0f0 50%, #e8e8e8 52%, #eeeeee 100%); }
-
-.select2-container-multi .select2-choices .select2-search-choice .select2-chosen {
-  cursor: default; }
-
-.select2-container-multi .select2-choices .select2-search-choice-focus {
-  background: #d4d4d4; }
-
-.select2-search-choice-close {
-  display: block;
-  width: 12px;
-  height: 13px;
-  position: absolute;
-  right: 3px;
-  top: 4px;
-  font-size: 1px;
-  outline: none;
-  background: url('/++genweb++static/images/select2.png?1389192191') right top no-repeat; }
-=======
 .fa-qq:before {
   content: "\f1d6"; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 .fa-wechat:before,
 .fa-weixin:before {
@@ -1696,20 +1550,11 @@
 .fa-share-alt:before {
   content: "\f1e0"; }
 
-<<<<<<< HEAD
-/* Retina-ize icons */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
-  .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b {
-    background-image: url('/++genweb++static/images/select2x2.png?1389192191') !important;
-    background-repeat: no-repeat !important;
-    background-size: 60px 40px !important; }
-=======
 .fa-share-alt-square:before {
   content: "\f1e1"; }
 
 .fa-bomb:before {
   content: "\f1e2"; }
->>>>>>> 770d06ade9c8713d181a7de54ed9967e4481d107
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #portal-header h1.pull-left {
