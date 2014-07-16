@@ -1,4 +1,4 @@
-/*!
+/*
  *  Font Awesome 4.0.3 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
@@ -52,13 +52,13 @@
 
 .fa-li {
   position: absolute;
-  left: -2.142857142857143em;
+  left: -2.14286em;
   width: 2.142857142857143em;
   top: 0.14285714285714285em;
   text-align: center; }
 
 .fa-li.fa-lg {
-  left: -1.8571428571428572em; }
+  left: -1.85714em; }
 
 .fa-border {
   padding: .2em .25em .15em;
@@ -1522,7 +1522,7 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
   font-size: 1px;
   text-decoration: none;
   border: 0;
-  background: url('/++genweb++static/images/select2.png?1383549768') right top no-repeat;
+  background: url('/++genweb++static/images/select2.png?1389192191') right top no-repeat;
   cursor: pointer;
   outline: 0; }
 
@@ -1607,7 +1607,7 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
   display: block;
   width: 100%;
   height: 100%;
-  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 0 1px; }
+  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 0 1px; }
 
 .select2-search {
   display: inline-block;
@@ -1633,21 +1633,21 @@ Version: 3.4.5 Timestamp: Mon Nov  4 08:22:42 PST 2013
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background: white url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px;
-  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2.png?1383549768') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
+  background: white url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px;
+  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2.png?1389192191') no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
 
 .select2-drop.select2-drop-above .select2-search input {
   margin-top: 4px; }
 
 .select2-search input.select2-active {
-  background: white url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%;
-  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
+  background: white url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%;
+  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
+  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, -moz-linear-gradient(center bottom, white 85%, #eeeeee 99%);
+  background: url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%, linear-gradient(top, #ffffff 85%, #eeeeee 99%); }
 
 .select2-container-active .select2-choice,
 .select2-container-active .select2-choices {
@@ -1780,7 +1780,7 @@ disabled look for disabled choices in the results dropdown
   display: none; }
 
 .select2-more-results.select2-active {
-  background: #f4f4f4 url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100%; }
+  background: #f4f4f4 url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100%; }
 
 .select2-more-results {
   background: #f4f4f4;
@@ -1851,7 +1851,7 @@ disabled look for disabled choices in the results dropdown
   background: transparent !important; }
 
 .select2-container-multi .select2-choices .select2-search-field input.select2-active {
-  background: white url('/++genweb++static/images/select2-spinner.gif?1383549768') no-repeat 100% !important; }
+  background: white url('/++genweb++static/images/select2-spinner.gif?1389192191') no-repeat 100% !important; }
 
 .select2-default {
   color: #999 !important; }
@@ -1895,7 +1895,7 @@ disabled look for disabled choices in the results dropdown
   top: 4px;
   font-size: 1px;
   outline: none;
-  background: url('/++genweb++static/images/select2.png?1383549768') right top no-repeat; }
+  background: url('/++genweb++static/images/select2.png?1389192191') right top no-repeat; }
 
 .select2-container-multi .select2-search-choice-close {
   left: 3px; }
@@ -1955,7 +1955,7 @@ disabled look for disabled choices in the results dropdown
 /* Retina-ize icons */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
   .select2-search input, .select2-search-choice-close, .select2-container .select2-choice abbr, .select2-container .select2-choice .select2-arrow b {
-    background-image: url('/++genweb++static/images/select2x2.png?1383549768') !important;
+    background-image: url('/++genweb++static/images/select2x2.png?1389192191') !important;
     background-repeat: no-repeat !important;
     background-size: 60px 40px !important; }
 
@@ -2579,7 +2579,7 @@ input[type="text"]:focus {
   padding: 10px;
   clear: both;
   margin-bottom: 20px;
-  box-shadow: -1px 1px 2px #ddd; }
+  box-shadow: -1px 1px 2px #dddddd; }
   .ulearnbox ul:last-child,
   .ulearnbox p:last-child {
     margin-bottom: 0px; }
@@ -3377,3 +3377,85 @@ label[for="form.ext_editor"] ~ div.widget {
     margin-right: 3px; }
 #box_discussion li i {
   color: #34495E; }
+
+#communitylist .eines i {
+  font-size: 14px; }
+
+@media only screen and (max-width: 768px) {
+  body {
+    background: none repeat scroll 0 0 white; }
+
+  .ulearnbox {
+    background-color: white;
+    box-shadow: none;
+    clear: both;
+    margin-bottom: 10px;
+    padding: 0;
+    position: relative; }
+
+  .osomcorner-wrapper {
+    display: none; }
+
+  nav#portal-personaltools-wrapper {
+    margin-top: 0px!important; }
+
+  #portal-header {
+    background: none repeat scroll 0 0 #f58d3d!important; }
+
+  #portal-header h1.pull-left {
+    margin-bottom: 0; }
+
+  #portal-header h1.pull-left img {
+    height: 55px;
+    margin-top: 0;
+    padding-top: 10px; }
+
+  #menusup {
+    height: 190px; }
+
+  .template-homepage #menusup {
+    height: 105px; }
+
+  .template-event_view #menusup {
+    height: 235px; }
+
+  #communitylist img {
+    float: left;
+    margin-right: 15px; }
+
+  #communitylist li {
+    position: relative; }
+
+  #communitylist .eines {
+    position: absolute;
+    right: 0;
+    top: 15px; }
+
+  #communitylist a h4 {
+    margin-top: -10px; }
+
+  #communitysearch h2, #librarysearch h2 {
+    float: left;
+    margin-top: 13px;
+    padding-left: 0; }
+
+  #searchinputcommunities, #searchinputusers, #searchinputtags, #searchinputcontent {
+    clear: both;
+    margin-left: 0;
+    padding-top: 10px;
+    width: 100%; }
+
+  #searchinputcommunities .searchInput, #searchinputusers .searchInput, #searchinputtags .searchInput, #searchinputcontent .searchInput {
+    font-size: 13px;
+    height: 20px;
+    margin-bottom: 0;
+    padding: 2px 5px;
+    width: 95%; }
+
+  #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
+    background-color: white;
+    padding: 0; }
+
+  .documentByLine {
+    font-size: 85%;
+    margin-bottom: 10px; } }

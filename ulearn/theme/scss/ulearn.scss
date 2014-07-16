@@ -1036,3 +1036,86 @@ label[for="form.ext_editor"] ~ div.widget {
     i { color: #34495E; }
   }
 }
+#communitylist .eines i {
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 768px) {
+body {
+    background: none repeat scroll 0 0 white;
+}
+.ulearnbox {
+    background-color: white;
+    box-shadow: none;
+    clear: both;
+    margin-bottom: 10px;
+    padding: 0;
+    position: relative;
+}
+.osomcorner-wrapper {display: none;}
+nav#portal-personaltools-wrapper { 
+  margin-top: 0px!important; 
+}
+#portal-header {
+    background: none repeat scroll 0 0 #f58d3d!important;
+}
+#portal-header h1.pull-left {
+    margin-bottom: 0;
+}
+#portal-header h1.pull-left img {
+    height: 55px;
+    margin-top: 0;
+    padding-top: 10px;
+}
+#menusup {
+    height: 190px;
+}
+.template-homepage #menusup {
+    height: 105px;
+}
+.template-event_view #menusup {
+    height: 235px;
+}
+#communitylist img {
+        float: left;
+    margin-right: 15px;
+}
+#communitylist li {
+  position: relative;
+}
+#communitylist .eines {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+#communitylist a h4 {
+  margin-top: -10px;
+}
+#communitysearch h2, #librarysearch h2 {
+    float: left;
+    margin-top: 13px;
+    padding-left: 0;
+}
+#searchinputcommunities, #searchinputusers, #searchinputtags, #searchinputcontent {
+    clear: both;
+    margin-left: 0;
+    padding-top: 10px;
+    width: 100%;
+}
+#searchinputcommunities .searchInput, #searchinputusers .searchInput, #searchinputtags .searchInput, #searchinputcontent .searchInput {
+    font-size: 13px;
+    height: 20px;
+    margin-bottom: 0;
+    padding: 2px 5px;
+    width: 95%;
+}
+#portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
+    background-color: white;
+    padding: 0;
+}
+.documentByLine {
+    font-size: 85%;
+    margin-bottom: 10px;
+}
+
+}
