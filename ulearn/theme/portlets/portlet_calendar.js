@@ -32,6 +32,15 @@
             offset: [-10, 0],
             tipClass: 'pae_calendar_tooltip'
         });
+        $('[rel="popover"]').popover();
+        // Prevent click on calendar events to allow popover
+        $('.cal_has_events').click(function (event) {
+            event.preventDefault();
+            $('.popover-content').off('click').on('click', 'a' , function() {
+                window.location=this.href
+             });
+
+        });
     }
 
     $(document).ready(function () {

@@ -14,13 +14,6 @@
         layer="ulearn.theme.browser.interfaces.IUlearnTheme"
         /> -->
 
-    <browser:resource
-        name="plone.app.event.portlet_calendar.js"
-        file="portlet_calendar.js"
-        permission="zope.Public"
-        layer="ulearn.theme.browser.interfaces.IUlearnTheme"
-        />
-
     <plone:portlet
         name="ulearn.portlets.communities"
         interface=".communities.ICommunitiesNavigation"
