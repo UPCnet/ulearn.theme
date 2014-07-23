@@ -1,7 +1,7 @@
 # Require any additional compass plugins here.
 #add_import_path "../../../genweb.theme/genweb/theme/scss"
 additional_import_paths = ["../genweb.theme/genweb/theme/scss",
-"../genweb.alternatheme/genweb/alternatheme/components",
+"../genweb.core/genweb/core/components",
 "../genweb.theme/genweb/theme/bootstrap/scss",
 "../genweb.theme/genweb/theme/bootstrap/scss/compass_twitter_bootstrap"]
 
