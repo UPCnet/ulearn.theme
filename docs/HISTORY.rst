@@ -1,17 +1,17 @@
 Changelog
 =========
 
-1.31 (unreleased)
+1.31 (2014-09-04)
 -----------------
 
-- Nothing changed yet.
-
+* Fix calendar [Victor Fernandez de Alba]
+* Update search path for scss resources [Victor Fernandez de Alba]
 
 1.30 (2014-07-21)
 -----------------
 
-- Nothing changed yet.
-
+* Fix calendar [Victor Fernandez de Alba]
+* Update search path for scss resources [Victor Fernandez de Alba]
 
 1.29 (2014-07-15)
 -----------------
