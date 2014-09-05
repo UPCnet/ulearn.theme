@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.32 (unreleased)
+1.32 (2014-09-05)
 -----------------
 
-- Nothing changed yet.
-
+* Canvis Marc a Setembre [roberto.diaz]
+* Merge branch 'master' of github.com:UPCnet/ulearn.theme [roberto.diaz]
 
 1.31 (2014-09-04)
 -----------------
