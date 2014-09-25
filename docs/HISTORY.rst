@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.33 (unreleased)
+1.33 (2014-09-25)
 -----------------
 
-- Nothing changed yet.
-
+* Fix message of search form [Victor Fernandez de Alba]
 
 1.32 (2014-09-05)
 -----------------
