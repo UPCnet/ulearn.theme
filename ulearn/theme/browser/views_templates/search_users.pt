@@ -46,12 +46,9 @@
       </tal:msg>
       <tal:bigdata condition="big_data">
         <tal:msg i18n:translate="use_the_search_input_to_find_more_people2">
-          Showing
+          Showing 100 out of
         </tal:msg>
-        <span tal:replace="num_users"></span>
-        <tal:msg i18n:translate="use_the_search_input_to_find_more_people3">
-          out of 100.
-        </tal:msg>
+        <span tal:replace="num_users">256</span>
       </tal:bigdata>
       </p>
     </div>
