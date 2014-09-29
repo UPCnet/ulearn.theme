@@ -9,7 +9,7 @@ additional_import_paths = ["../genweb.theme/genweb/theme/scss",
 http_path = "/"
 css_dir = "./ulearn/theme/stylesheets"
 sass_dir = "./ulearn/theme/scss"
-http_images_path = "/++genweb++static/images"
+http_images_path = "++genweb++static/images"
 images_dir = "../genweb.theme/genweb/theme/static/images"
 javascripts_dir = "./ulearn/theme/js"
 
