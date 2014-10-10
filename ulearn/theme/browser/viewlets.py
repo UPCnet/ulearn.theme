@@ -41,6 +41,10 @@ from ulearn.theme.browser.interfaces import IUlearnTheme
 
 import plone.api
 
+from zope.component import getUtility
+from plone.registry.interfaces import IRegistry
+from ulearn.core.controlpanel import IUlearnControlPanelSettings
+
 grok.context(Interface)
 
 
@@ -142,6 +146,39 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
             return True
         else:
             return False
+
+    def quicklinks(self):
+        """ Return de quicklinks for language
+        """
+        lang = pref_lang()
+        registry = getUtility(IRegistry)
+        settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
+
+        text = None
+        if settings.quicklinks_literal is not None:
+            for item in settings.quicklinks_literal:
+                if lang in item['language']:
+                    text = item['text']
+                    break
+
+        items = []
+        if settings.quicklinks_table is not None:
+            for item in settings.quicklinks_table:
+                if lang in item['language']:
+                    items.append(item)
+
+        if len(items) > 0:
+            quicklinks_show = True
+        else:
+            quicklinks_show = False
+
+        dades = {'quicklinks_literal': text,
+                 'quicklinks_icon': settings.quicklinks_icon,
+                 'quicklinks_table': items,
+                 'quicklinks_show': quicklinks_show,
+                 }
+
+        return dades
 
 
 class gwHeader(viewletBase):

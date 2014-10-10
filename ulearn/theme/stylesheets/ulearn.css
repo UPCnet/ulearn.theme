@@ -3091,3 +3091,19 @@ label[for="form.ext_editor"] ~ div.widget {
 
   #menusup nav a {
     font-size: 13px; } }
+
+#formfield-form-widgets-quicklinks_literal .required:after {
+content: "";
+}
+
+#formfield-form-widgets-quicklinks_table .required:after {
+content: "";
+}
+
+#formfield-form-widgets-quicklinks_literal .datagridwidget-table-view {
+border-collapse: separate;
+}
+
+#formfield-form-widgets-quicklinks_table .datagridwidget-table-view {
+border-collapse: separate;
+}

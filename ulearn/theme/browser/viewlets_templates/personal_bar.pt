@@ -51,6 +51,20 @@
                 </li>
               </ul>
             </li>
+            <li tal:condition="dades/quicklinks_show" class="dropdown" role="menuitem" tal:define="dades view/quicklinks">
+              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                <i tal:attributes="class string:fa ${dades/quicklinks_icon}"></i>
+                <tal:quicklinks tal:content="dades/quicklinks_literal"> Quick Links </tal:quicklinks>
+                <b aria-hidden="true" class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem" tal:repeat="item dades/quicklinks_table"><a tal:attributes="href string:${item/link}">
+                       <i tal:attributes="class string:fa ${item/icon}"></i>
+                       <tal:link tal:content="item/text">
+                          Links1</tal:link>
+                </a></li>
+              </ul>
+            </li>
             <li  role="menuitem"><a tal:condition="view/showRootFolderLink"
                    tal:attributes="href string:${view/portal_url}/folder_contents">
                    <tal:rootFolder i18n:translate="genweb-accesarrel">

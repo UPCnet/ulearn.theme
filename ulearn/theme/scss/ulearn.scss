@@ -1055,8 +1055,8 @@ body {
     position: relative;
 }
 .osomcorner-wrapper {display: none;}
-nav#portal-personaltools-wrapper { 
-  margin-top: 0px!important; 
+nav#portal-personaltools-wrapper {
+  margin-top: 0px!important;
 }
 #portal-header {
     background: none repeat scroll 0 0 #f58d3d!important;
@@ -1130,12 +1130,12 @@ nav#portal-personaltools-wrapper {
       float: left;
       font-size: 13px;
       width: 25%;
-  } 
+  }
   .template-homepage #menusup nav .bubble {
       float: left;
       font-size: 13px;
       width: 50%;
-  }  
+  }
   #menusup {
       height: 55px;
   }
@@ -1155,4 +1155,21 @@ nav#portal-personaltools-wrapper {
   #menusup nav a {
     font-size: 13px
   }
+}
+
+#formfield-form-widgets-quicklinks_literal .required:after {
+content: "";
+}
+
+#formfield-form-widgets-quicklinks_table .required:after {
+content: "";
+}
+
+
+#formfield-form-widgets-quicklinks_literal .datagridwidget-table-view {
+border-collapse: separate;
+}
+
+#formfield-form-widgets-quicklinks_table .datagridwidget-table-view {
+border-collapse: separate;
 }
