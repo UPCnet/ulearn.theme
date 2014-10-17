@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.34 (unreleased)
+1.34 (2014-10-17)
 -----------------
 
-- Nothing changed yet.
-
+* Added typeahead [Victor Fernandez de Alba]
+* Add quick links personal_bar [Pilar Marinas]
+* Fix relative paths [Victor Fernandez de Alba]
 
 1.33 (2014-09-25)
 -----------------
