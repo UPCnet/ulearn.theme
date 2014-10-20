@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.35 (unreleased)
+1.35 (2014-10-20)
 -----------------
 
-- Nothing changed yet.
-
+* Transfer new genweb search feature [Victor Fernandez de Alba]
 
 1.34 (2014-10-17)
 -----------------
