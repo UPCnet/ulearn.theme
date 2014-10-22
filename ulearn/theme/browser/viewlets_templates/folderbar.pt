@@ -12,7 +12,7 @@
           <a href="#"
              tal:attributes="href string:${community/absolute_url}">
                 <i class="fa fa-comment icons"></i>
-                <tal:Activity i18n:translate="Activity">Activitat</tal:Activity></a>
+                <tal:Activity i18n:domain="ulearn" i18n:translate="ulearn_activity">Activity</tal:Activity></a>
         </div>
       </div>
 
@@ -23,7 +23,7 @@
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/documents">
                   <i class="fa fa-file-text-o icons"></i>
-                  <tal:Documents i18n:translate="Documents">Documents</tal:Documents></a>
+                  <tal:Documents i18n:domain="ulearn" i18n:translate="ulearn_documents">Documents</tal:Documents></a>
         </div>
       </div>
 
@@ -34,7 +34,7 @@
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/links">
                   <i class="fa fa-link icons"></i>
-                  <tal:Links i18n:translate="Links">Enllaços</tal:Links></a>
+                  <tal:Links i18n:domain="ulearn" i18n:translate="ulearn_links">Links</tal:Links></a>
         </div>
       </div>
 
@@ -45,7 +45,7 @@
           <a href="#"
                tal:attributes="href string:${community/absolute_url}/media">
                   <i class="fa fa-camera-retro icons"></i>
-                  <tal:Media i18n:translate="Media">Media</tal:Media></a>
+                  <tal:Media i18n:domain="ulearn" i18n:translate="ulearn_media">Media</tal:Media></a>
         </div>
       </div>
 

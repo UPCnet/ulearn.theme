@@ -17,7 +17,7 @@
           </div>
         </div>
         <p i18n:translate="" tal:content="view/get_posts_literal">
-          Activitat
+          Activity
         </p>
       </li>
       <li>
@@ -29,8 +29,8 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Comments">
-          Comentaris
+        <p i18n:translate="stats_comments">
+          Comments
         </p>
       </li>
       <li>
@@ -42,7 +42,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Documents">
+        <p i18n:translate="ulearn_documents">
           Documents
         </p>
       </li>
@@ -55,7 +55,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Links">
+        <p i18n:translate="ulearn_links">
           Links
         </p>
       </li>
@@ -68,7 +68,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Media">
+        <p i18n:translate="ulearn_media">
           Media
         </p>
       </li>
@@ -97,7 +97,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Comments">
+        <p i18n:translate="stats_comments">
           Comentaris
         </p>
       </li>
@@ -110,7 +110,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Documents">
+        <p i18n:translate="ulearn_documents">
           Documents
         </p>
       </li>
@@ -123,7 +123,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Links">
+        <p i18n:translate="ulearn_links">
           Links
         </p>
       </li>
@@ -136,7 +136,7 @@
             </tal:docs>
           </div>
         </div>
-        <p i18n:translate="Media">
+        <p i18n:translate="ulearn_media">
           Media
         </p>
       </li>
