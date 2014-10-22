@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.36 (unreleased)
+1.36 (2014-10-22)
 -----------------
 
-- Nothing changed yet.
-
+* Fix i18n [Victor Fernandez de Alba]
 
 1.35 (2014-10-20)
 -----------------
