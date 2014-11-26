@@ -1,4 +1,4 @@
-/*
+/*!
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
@@ -2075,6 +2075,17 @@ li > .noMenuAction {
 .lt-ie9 #userlist .photo img {
   height: 79px; }
 
+.template-ideaslist #content {
+  background-color: white; }
+
+#ideas-view {
+  padding: 10px; }
+  #ideas-view h2 {
+    margin-top: 0; }
+
+#ideaslist ul {
+  list-style-type: none; }
+
 body {
   background: #eae9e4;
   font-family: 'Open Sans', sans-serif; }
@@ -2174,7 +2185,7 @@ input[type="text"]:focus {
   padding: 10px;
   clear: both;
   margin-bottom: 20px;
-  box-shadow: -1px 1px 2px #dddddd; }
+  box-shadow: -1px 1px 2px #ddd; }
   .ulearnbox ul:last-child,
   .ulearnbox p:last-child {
     margin-bottom: 0px; }
@@ -2995,10 +3006,10 @@ label[for="form.ext_editor"] ~ div.widget {
     display: none; }
 
   nav#portal-personaltools-wrapper {
-    margin-top: 0px!important; }
+    margin-top: 0px !important; }
 
   #portal-header {
-    background: none repeat scroll 0 0 #f58d3d!important; }
+    background: none repeat scroll 0 0 #f58d3d !important; }
 
   #portal-header h1.pull-left {
     margin-bottom: 0; }
@@ -3091,19 +3102,14 @@ label[for="form.ext_editor"] ~ div.widget {
 
   #menusup nav a {
     font-size: 13px; } }
-
 #formfield-form-widgets-quicklinks_literal .required:after {
-content: "";
-}
+  content: ""; }
 
 #formfield-form-widgets-quicklinks_table .required:after {
-content: "";
-}
+  content: ""; }
 
 #formfield-form-widgets-quicklinks_literal .datagridwidget-table-view {
-border-collapse: separate;
-}
+  border-collapse: separate; }
 
 #formfield-form-widgets-quicklinks_table .datagridwidget-table-view {
-border-collapse: separate;
-}
+  border-collapse: separate; }
