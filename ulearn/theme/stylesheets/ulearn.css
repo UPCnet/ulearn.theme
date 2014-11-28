@@ -2085,6 +2085,10 @@ li > .noMenuAction {
 
 #ideaslist ul {
   list-style-type: none; }
+#ideaslist h4 {
+  margin-top: 0; }
+#ideaslist i {
+  font-size: 30px; }
 
 body {
   background: #eae9e4;

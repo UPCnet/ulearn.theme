@@ -224,4 +224,28 @@ $(document).ready(function (event) {
 
     });*/
 
+    $("#ideaslist .magrada a").on("click", function (event) {
+        event.preventDefault();
+        $anchor = $(this);
+        idea_url = $(this).data()['idea'];
+        $.ajax({
+            type: "GET",
+            url: idea_url + "/toggle_like",
+            error: function() {
+                alertify.error(_ulearn_i18n("Error when (un)like the idea"));
+            },
+            success: function() {
+                // debugger;
+                if ($('i', $anchor).hasClass('fa-heart-o')) {
+                    $('i', $anchor).addClass('fa-heart').removeClass('fa-heart-o');
+                    alertify.success(_ulearn_i18n("Successfully liked"));
+                } else {
+                    $('i', $anchor).addClass('fa-heart-o').removeClass('fa-heart');
+                    alertify.success(_ulearn_i18n("Successfully liked"));
+                }
+            }
+        });
+
+    });
+
 });
