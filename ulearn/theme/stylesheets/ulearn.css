@@ -1,4 +1,4 @@
-/*!
+/*
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
@@ -2081,14 +2081,85 @@ li > .noMenuAction {
 #ideas-view {
   padding: 10px; }
   #ideas-view h2 {
-    margin-top: 0; }
+    border-bottom: 1px solid #dddddd;
+    color: #555555;
+    font-size: 192.308%;
+    margin: 0 0 15px;
+    padding: 5px 0 15px; }
 
-#ideaslist ul {
-  list-style-type: none; }
-#ideaslist h4 {
-  margin-top: 0; }
-#ideaslist i {
-  font-size: 30px; }
+#ideaslist {
+  margin-top: 25px; }
+  #ideaslist ul {
+    list-style-type: none;
+    margin-left: 0; }
+  #ideaslist h4 {
+    color: #007bc0;
+    font-size: 16px;
+    margin-bottom: 5px;
+    margin-top: 0; }
+  #ideaslist i {
+    color: #007bc0;
+    font-size: 30px; }
+  #ideaslist a:hover {
+    text-decoration: none; }
+
+.idea:last-child {
+  border: 0 none; }
+
+.idea {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  padding-bottom: 10px; }
+  .idea .span1 {
+    background: none repeat scroll 0 0 #eee;
+    border: 1px solid #ddd;
+    font-size: 11px;
+    height: 55px;
+    padding: 0;
+    text-align: center;
+    text-shadow: 0 0 1px white;
+    width: 55px; }
+  .idea .span9 {
+    margin-left: 15px;
+    max-width: 510px; }
+  .idea .total {
+    color: #999;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 25px;
+    margin-top: 5px;
+    text-shadow: 0 0 1px white; }
+  .idea .author {
+    color: #999;
+    font-size: 11px;
+    line-height: 8px; }
+  .idea .created {
+    color: #999;
+    font-size: 11px;
+    line-height: 8px; }
+  .idea .eines {
+    font-size: 11px;
+    text-align: center; }
+    .idea .eines a {
+      color: #888; }
+
+.ulnexus {
+  margin-top: 20px; }
+  .ulnexus li {
+    list-style: outside none none;
+    margin-bottom: 10px;
+    max-width: 97%; }
+
+.n24banner:hover {
+  opacity: 0.8; }
+
+.n24banner {
+  margin-left: 25px;
+  margin-right: 25px; }
+
+.n24content {
+  margin-top: 20px;
+  min-height: 420px; }
 
 body {
   background: #eae9e4;
