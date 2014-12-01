@@ -232,20 +232,47 @@ $(document).ready(function (event) {
             type: "GET",
             url: idea_url + "/toggle_like",
             error: function() {
-                alertify.error(_ulearn_i18n("Error when (un)like the idea"));
+                alertify.error(_ulearn_i18n("Error when (un)like the proposal"));
             },
             success: function() {
                 // debugger;
                 if ($('i', $anchor).hasClass('fa-heart-o')) {
                     $('i', $anchor).addClass('fa-heart').removeClass('fa-heart-o');
-                    alertify.success(_ulearn_i18n("Successfully liked"));
+                    alertify.success(_ulearn_i18n("Gràcies per donar suport en aquesta idea."));
                 } else {
                     $('i', $anchor).addClass('fa-heart-o').removeClass('fa-heart');
-                    alertify.success(_ulearn_i18n("Successfully liked"));
+                    alertify.set({ delay: 10000 });
+                    alertify.success(_ulearn_i18n("OK"));
+                    alertify.set({ delay: 5000 });
                 }
             }
         });
 
     });
 
+    $("#ideaslist .mhiapunto a").on("click", function (event) {
+        event.preventDefault();
+        $anchor = $(this);
+        idea_url = $(this).data()['idea'];
+        $.ajax({
+            type: "GET",
+            url: idea_url + "/toggle_join",
+            error: function() {
+                alertify.error(_ulearn_i18n("Error when (un)join the proposal"));
+            },
+            success: function() {
+                // debugger;
+                if ($('i', $anchor).hasClass('fa-sign-out')) {
+                    $('i', $anchor).addClass('fa-sign-in').removeClass('fa-sign-out');
+                    alertify.success(_ulearn_i18n("Successfully unjoined"));
+                } else {
+                    $('i', $anchor).addClass('fa-sign-out').removeClass('fa-sign-in');
+                    alertify.set({ delay: 10000 });
+                    alertify.success(_ulearn_i18n("Gràcies per implicar-te en aquesta proposta. La persona que la promou es posarà en contacte amb tu per mirar de tirar-la endavant."));
+                    alertify.set({ delay: 5000 });
+                }
+            }
+        });
+
+    });
 });
