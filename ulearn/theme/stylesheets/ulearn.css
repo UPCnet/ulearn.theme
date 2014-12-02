@@ -2079,6 +2079,8 @@ li > .noMenuAction {
   background-color: white; }
 
 #ideas-view {
+  background: none repeat scroll 0 0 white;
+  min-height: 305px;
   padding: 10px; }
   #ideas-view h2 {
     border-bottom: 1px solid #dddddd;
@@ -2160,6 +2162,93 @@ li > .noMenuAction {
 .n24content {
   margin-top: 20px;
   min-height: 420px; }
+
+.nx24adminlinks a {
+  background: none repeat scroll 0 0 #007bc0;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+  margin-right: 20px;
+  padding: 3px 14px 4px; }
+.nx24adminlinks a:hover {
+  color: white;
+  background: #006fae;
+  text-decoration: none; }
+
+.magrada {
+  float: left;
+  text-align: center;
+  margin-right: 15px; }
+  .magrada a {
+    font-size: 12px;
+    color: #666; }
+  .magrada i {
+    font-size: 30px;
+    color: #007bc0; }
+
+.mhiapunto {
+  float: left;
+  text-align: center; }
+  .mhiapunto a {
+    font-size: 12px;
+    color: #666; }
+  .mhiapunto i {
+    font-size: 30px;
+    color: #007bc0; }
+
+.portaltype-ulearn-proposal #portal-column-content #content .span1 {
+  background: none repeat scroll 0 0 #eee;
+  border: 1px solid #ddd;
+  font-size: 11px;
+  height: 55px;
+  padding: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  text-shadow: 0 0 1px white;
+  width: 55px; }
+.portaltype-ulearn-proposal #portal-column-content #content .span9 {
+  width: 66%; }
+  .portaltype-ulearn-proposal #portal-column-content #content .span9 .author {
+    color: #007bc0;
+    font-weight: bold;
+    font-size: 14px; }
+  .portaltype-ulearn-proposal #portal-column-content #content .span9 .created {
+    color: #007bc0;
+    font-size: 14px; }
+.portaltype-ulearn-proposal #portal-column-content #content .span4 {
+  background: none repeat scroll 0 0 #eee;
+  border-top: 1px solid #ddd;
+  font-weight: bold;
+  padding: 10px;
+  text-align: right; }
+.portaltype-ulearn-proposal #portal-column-content #content .span8 {
+  border-top: 1px solid #ddd;
+  margin-left: 15px;
+  padding-bottom: 10px;
+  padding-top: 5px; }
+.portaltype-ulearn-proposal #portal-column-content #content .total {
+  color: #999;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 25px;
+  margin-top: 5px;
+  text-shadow: 0 0 1px white; }
+.portaltype-ulearn-proposal #portal-column-content #content .eines {
+  width: 20%; }
+
+.proposta_validada {
+  background: none repeat scroll 0 0 #007bc0;
+  border-radius: 10px;
+  color: white;
+  float: right;
+  padding: 3px 14px; }
+
+.template-proposalslist .eines .magrada {
+  float: none;
+  margin-right: 0; }
+.template-proposalslist .eines .mhiapunto {
+  float: none;
+  margin-right: 0; }
 
 body {
   background: #eae9e4;
