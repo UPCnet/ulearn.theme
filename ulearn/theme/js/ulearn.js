@@ -224,7 +224,7 @@ $(document).ready(function (event) {
 
     });*/
 
-    $("#ideaslist .magrada a").on("click", function (event) {
+    $(".magrada a").on("click", function (event) {
         event.preventDefault();
         $anchor = $(this);
         idea_url = $(this).data()['idea'];
@@ -250,7 +250,7 @@ $(document).ready(function (event) {
 
     });
 
-    $("#ideaslist .mhiapunto a").on("click", function (event) {
+    $(".mhiapunto a").on("click", function (event) {
         event.preventDefault();
         $anchor = $(this);
         idea_url = $(this).data()['idea'];
@@ -274,5 +274,18 @@ $(document).ready(function (event) {
             }
         });
 
+    });
+
+    // Share popover specific
+    $('.like_popover')
+        .popover({
+          html:true,
+          placement:'bottom',
+          content:function(){
+              return $('.like_content').html();
+          }
+        })
+        .click(function(e) { // evita scroll top
+          e.preventDefault();
     });
 });
