@@ -95,6 +95,7 @@
 .n24banner {
     margin-left: 25px;
     margin-right: 25px;
+    margin-bottom: 15px;
 }
 .n24content {
     margin-top: 20px;
@@ -211,4 +212,73 @@
             margin-right: 0;
         }
     }
+}
+.proposta_no_validada {
+    float: right;
+    margin-top: -7px;
+}
+
+@media only screen and (max-width: 768px) {
+#portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
+    padding:10px!important;
+}
+.template-proposalslist {
+    .idea:first-child {
+        padding-top: 100px;
+    }
+}
+.nx24adminlinks {
+    a {
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    min-height: 22px;
+    padding: 6px 14px 4px;
+    width: 90%;
+    }
+}
+.idea {
+    .span1 {
+        float: left;
+    }
+    .span9 {
+         float: left;
+         max-width: 50%;
+    }
+}
+.portaltype-ulearn-proposal #portal-column-content #content .span1 {
+    float: left;
+}
+.portaltype-ulearn-proposal #portal-column-content #content .span9 {
+    float: left;
+    margin-left: 10px;
+    width: 56%;
+}
+.portaltype-ulearn-proposal #portal-column-content #content .eines {
+    width: auto;
+}
+.portaltype-ulearn-proposal #portal-column-content #content .span4 {
+    margin-top: 10px;
+    text-align: left;
+}
+.portaltype-ulearn-proposal #portal-column-content #content .span8 {
+    border-top: 0 none;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+}
+.magrada {
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+}
+.mhiapunto {
+    float: right;
+    padding-right: 10px;
+    text-align: center;
+}
+.proposta_no_validada {
+    float: none;
+    margin-bottom: 5px;
+}
 }

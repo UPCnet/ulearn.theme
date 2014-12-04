@@ -1060,7 +1060,7 @@ nav#portal-personaltools-wrapper {
   margin-top: 0px!important;
 }
 #portal-header {
-    background: none repeat scroll 0 0 #f58d3d!important;
+    background: none repeat scroll 0 0 #f58d3d;
 }
 #portal-header h1.pull-left {
     margin-bottom: 0;
@@ -1156,6 +1156,28 @@ nav#portal-personaltools-wrapper {
   #menusup nav a {
     font-size: 13px
   }
+  .loginbox {
+    width: auto;
+  }
+  .loginlogo {
+    margin-bottom: 20px;
+    text-align: left;
+    img {
+        max-width: 285px;
+    }
+  }
+  #login-forgotten-password {
+      font-size: 11px;
+      line-height: 14px;
+      margin-top: 10px;
+      max-width: 270px;
+  }
+#box_comunitats {
+  padding: 15px;
+}
+#box_perfil {
+    padding: 15px;
+}
 }
 
 #formfield-form-widgets-quicklinks_literal .required:after {

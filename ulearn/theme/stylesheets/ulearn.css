@@ -2157,7 +2157,8 @@ li > .noMenuAction {
 
 .n24banner {
   margin-left: 25px;
-  margin-right: 25px; }
+  margin-right: 25px;
+  margin-bottom: 15px; }
 
 .n24content {
   margin-top: 20px;
@@ -2250,6 +2251,65 @@ li > .noMenuAction {
   float: none;
   margin-right: 0; }
 
+.proposta_no_validada {
+  float: right;
+  margin-top: -7px; }
+
+@media only screen and (max-width: 768px) {
+  #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
+    padding: 10px !important; }
+
+  .template-proposalslist .idea:first-child {
+    padding-top: 100px; }
+
+  .nx24adminlinks a {
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    min-height: 22px;
+    padding: 6px 14px 4px;
+    width: 90%; }
+
+  .idea .span1 {
+    float: left; }
+  .idea .span9 {
+    float: left;
+    max-width: 50%; }
+
+  .portaltype-ulearn-proposal #portal-column-content #content .span1 {
+    float: left; }
+
+  .portaltype-ulearn-proposal #portal-column-content #content .span9 {
+    float: left;
+    margin-left: 10px;
+    width: 56%; }
+
+  .portaltype-ulearn-proposal #portal-column-content #content .eines {
+    width: auto; }
+
+  .portaltype-ulearn-proposal #portal-column-content #content .span4 {
+    margin-top: 10px;
+    text-align: left; }
+
+  .portaltype-ulearn-proposal #portal-column-content #content .span8 {
+    border-top: 0 none;
+    margin-left: 10px;
+    padding-bottom: 5px;
+    padding-right: 10px; }
+
+  .magrada {
+    float: right;
+    margin-right: 10px;
+    text-align: center; }
+
+  .mhiapunto {
+    float: right;
+    padding-right: 10px;
+    text-align: center; }
+
+  .proposta_no_validada {
+    float: none;
+    margin-bottom: 5px; } }
 body {
   background: #eae9e4;
   font-family: 'Open Sans', sans-serif; }
@@ -3173,7 +3233,7 @@ label[for="form.ext_editor"] ~ div.widget {
     margin-top: 0px !important; }
 
   #portal-header {
-    background: none repeat scroll 0 0 #f58d3d !important; }
+    background: none repeat scroll 0 0 #f58d3d; }
 
   #portal-header h1.pull-left {
     margin-bottom: 0; }
@@ -3265,7 +3325,28 @@ label[for="form.ext_editor"] ~ div.widget {
     display: none; }
 
   #menusup nav a {
-    font-size: 13px; } }
+    font-size: 13px; }
+
+  .loginbox {
+    width: auto; }
+
+  .loginlogo {
+    margin-bottom: 20px;
+    text-align: left; }
+    .loginlogo img {
+      max-width: 285px; }
+
+  #login-forgotten-password {
+    font-size: 11px;
+    line-height: 14px;
+    margin-top: 10px;
+    max-width: 270px; }
+
+  #box_comunitats {
+    padding: 15px; }
+
+  #box_perfil {
+    padding: 15px; } }
 #formfield-form-widgets-quicklinks_literal .required:after {
   content: ""; }
 
