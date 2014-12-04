@@ -276,13 +276,25 @@ $(document).ready(function (event) {
 
     });
 
-    // Share popover specific
+    // NX24 like popover specific
     $('.like_popover')
         .popover({
           html:true,
           placement:'bottom',
           content:function(){
               return $('.like_content').html();
+          }
+        })
+        .click(function(e) { // evita scroll top
+          e.preventDefault();
+    });
+    // NX24 join popover specific
+    $('.join_popover')
+        .popover({
+          html:true,
+          placement:'bottom',
+          content:function(){
+              return $('.join_content').html();
           }
         })
         .click(function(e) { // evita scroll top
