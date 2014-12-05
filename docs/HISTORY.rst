@@ -1,11 +1,19 @@
 Changelog
 =========
 
-1.37 (unreleased)
+1.37 (2014-12-05)
 -----------------
 
-- Nothing changed yet.
-
+* Marc changes [Roberto Diaz]
+* Ultims canvis de JS per nexus24 [Victor Fernandez de Alba]
+* Canvis Marc [Roberto Diaz]
+* Canvis Marc [Roberto Diaz]
+* New JS for Nexus24 [Victor Fernandez de Alba]
+* Merge branch 'master' of github.com:UPCnet/ulearn.theme [Victor Fernandez de Alba]
+* JS for nexus23 [Victor Fernandez de Alba]
+* Marc styles [Roberto Diaz]
+* CSS [Victor Fernandez de Alba]
+* Fix portlet_calendar and update CSS [Victor Fernandez de Alba]
 
 1.36 (2014-10-22)
 -----------------
