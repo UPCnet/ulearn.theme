@@ -49,11 +49,11 @@
     padding: 0;
     text-align: center;
     text-shadow: 0 0 1px white;
-    width: 55px;
+    width: 60px;
     }
     .span9 {
     margin-left: 15px;
-    max-width: 510px;
+    max-width: 508px;
     }
     .total {
     color: #999;
@@ -106,8 +106,27 @@
     background: none repeat scroll 0 0 #007bc0;
     border-radius: 3px;
     color: white;
+    float: left;
+    font-size: 12px;
     font-weight: 600;
     margin-right: 20px;
+    padding: 3px 14px 4px;
+    }   
+    a:hover {
+    color: white;
+    background: #006fae;
+    text-decoration: none;
+    }
+}
+.nx24userlinks {
+    a {
+    background: none repeat scroll 0 0 #007bc0;
+    border-radius: 3px;
+    color: white;
+    float: left;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 0;
     padding: 3px 14px 4px;
     }   
     a:hover {
@@ -150,13 +169,16 @@
                     font-size: 11px;
                     height: 55px;
                     padding: 0;
-                    margin-bottom: 25px;
+                    margin-bottom: 0;
+                    margin-right: 10px;
                     text-align: center;
                     text-shadow: 0 0 1px white;
-                    width: 55px;
+                    width: 60px;
+                    line-height: 8px;
                     }
-            .span9 {
-                    width: 66%;
+            .span7 {
+                    margin-left: 5px;
+                    width: 56%;
                     .author {
                         color:#007bc0;
                         font-weight: bold;
@@ -186,6 +208,7 @@
                     font-weight: bold;
                     line-height: 25px;
                     margin-top: 5px;
+                    margin-bottom: 5px;
                     text-shadow: 0 0 1px white;
                     }                           
             .eines {
@@ -202,6 +225,9 @@
     padding: 3px 14px;
 }
 .template-proposalslist {
+    .idea:first-child {
+        padding-top: 40px;
+    }
     .eines {
         .magrada {
             float: none;
@@ -217,16 +243,80 @@
     float: right;
     margin-top: -7px;
 }
+.template-proposalslistbylikes {
+    .idea:first-child {
+    padding-top: 40px;
+    }
+}
+.template-pendingproposalslist {
+    .idea:first-child {
+    padding-top: 35px;
+    } 
+}
+.portaltype-ulearn-proposal {
+    .well {
+        background-color: #e9f4fa;
+        border: 1px solid #c1e5fa;
+        border-radius: 4px;
+        box-shadow: none;
+        margin: 10px auto 30px;
+        li {
+            list-style: none;
+            margin-top: 5px
+        }
+    }
+    .documentFirstHeading {
+        margin-bottom: 20px;
+    }
+}
+#commenting {
+    padding-top: 0;
+    legend {
+    font-weight: bold;
+    }
+}
+.section-idees {
+    .popover {
+        background-color: #444;
+        color: white;
+        ul {
+            margin-left: 0;
+        }
+        li {
+        border-bottom: 1px solid #aaa;
+        font-size: 13px;
+        line-height: 18px;
+        list-style-position: inside;
+        list-style-type: numbers;
+        margin-bottom: 4px;
+        padding-bottom: 5px; 
+        }
+    }
+}
+
+.section-idees .popover.bottom .arrow:after, .section-idees .bottom.expandable-content .arrow:after {
+    border-bottom-color: #444;
+}
 
 @media only screen and (max-width: 768px) {
 #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
     padding:10px!important;
 }
-.template-proposalslist {
-    .idea:first-child {
-        padding-top: 100px;
+.userrole-manager {
+    .template-proposalslist {
+        .idea:first-child {
+            padding-top: 100px;
+        }
     }
 }
+.userrole-authenticated {
+    .template-proposalslist {
+        .idea:first-child {
+            padding-top: 100px;
+        }
+    }
+}
+
 .nx24adminlinks {
     a {
     clear: both;
@@ -237,22 +327,36 @@
     width: 90%;
     }
 }
+.nx24userlinks {
+    a {
+    clear: both;
+    float: left;
+    margin-bottom: 10px;
+    min-height: 22px;
+    padding: 6px 14px 4px;
+    width: 90%;
+    }    
+}
 .idea {
     .span1 {
         float: left;
     }
-    .span9 {
-         float: left;
-         max-width: 50%;
+    .span7 {
+        clear: both;
+        float: left;
+        margin-left: 0;
+        margin-top: 10px;
+        width: 50%;
     }
 }
 .portaltype-ulearn-proposal #portal-column-content #content .span1 {
     float: left;
 }
-.portaltype-ulearn-proposal #portal-column-content #content .span9 {
+.portaltype-ulearn-proposal #portal-column-content #content .span7 {
+    clear: both;
     float: left;
-    margin-left: 10px;
-    width: 56%;
+    margin-left: 0;
+    width: 60%;
 }
 .portaltype-ulearn-proposal #portal-column-content #content .eines {
     width: auto;
