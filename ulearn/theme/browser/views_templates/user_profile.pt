@@ -72,7 +72,8 @@
                   <div class="span3">
                     <div class="row-fluid">
                         <div class="photo span12">
-                            <a tal:attributes="href string:${view/portal_url}/@@personal-information">
+                            <a tal:omit-tag="not: isOwner"
+                               tal:attributes="href string:${view/portal_url}/@@personal-information">
                                 <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
                             </a>
                         </div>
@@ -111,9 +112,19 @@
                         <a href="#"
                            rel="nofollow"
                            tal:attributes="href userinfo/home_page"
-                           i18n:translate="label_author_external_home_page">Author's external home page&hellip;</a>
+                           tal:content="userinfo/home_page">The homepage</a>
                       </p>
                     </tal:homepage>
+
+                    <tal:ubicacio condition="userinfo/ubicacio">
+                      <h2 i18n:translate="ubicacio">Ubicació</h2>
+                      <p tal:content="userinfo/ubicacio"></p>
+                    </tal:ubicacio>
+
+                    <tal:telephone condition="userinfo/telefon">
+                      <h2 i18n:translate="telephone">Telèfon</h2>
+                      <p tal:content="userinfo/telefon"></p>
+                    </tal:telephone>
 
                   </div>
                 </div>

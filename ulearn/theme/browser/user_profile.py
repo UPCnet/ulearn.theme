@@ -71,7 +71,10 @@ class userProfile(BrowserView):
                 'home_page': member_data.getProperty('home_page'),
                 'description': member_data.getProperty('description'),
                 'twitter_username': member_data.getProperty('twitter_username'),
-                'location': member_data.getProperty('location')}
+                'location': member_data.getProperty('location'),
+                'telefon': member_data.getProperty('telefon'),
+                'ubicacio': member_data.getProperty('ubicacio'),
+                }
 
     def get_badges(self):
         """ Done consistent with an hipotetical badge provider backend """
