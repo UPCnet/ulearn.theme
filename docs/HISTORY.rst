@@ -1,11 +1,12 @@
 Changelog
 =========
 
-1.38 (unreleased)
+1.38 (2014-12-10)
 -----------------
 
-- Nothing changed yet.
-
+* Merge branch 'master' of github.com:UPCnet/ulearn.theme [Victor Fernandez de Alba]
+* Canvis Marc [Roberto Diaz]
+* Update profile, fix some issues [Victor Fernandez de Alba]
 
 1.37 (2014-12-05)
 -----------------
