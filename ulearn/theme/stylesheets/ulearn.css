@@ -2359,7 +2359,8 @@ li > .noMenuAction {
     clear: both;
     float: left;
     margin-left: 0;
-    width: 60%; }
+    width: 40%;
+    margin-top: 10px; }
 
   .portaltype-ulearn-proposal #portal-column-content #content .eines {
     width: auto; }
@@ -2386,7 +2387,17 @@ li > .noMenuAction {
 
   .proposta_no_validada {
     float: none;
-    margin-bottom: 5px; } }
+    margin-bottom: 5px; }
+
+  #ideaslist .span9 {
+    float: left;
+    max-width: 160px;
+    margin-left: 0; }
+  #ideaslist .span1 {
+    margin-right: 10px; }
+
+  .template-proposalslist .idea:first-child {
+    padding-top: 130px; } }
 body {
   background: #eae9e4;
   font-family: 'Open Sans', sans-serif; }
@@ -3300,7 +3311,7 @@ label[for="form.ext_editor"] ~ div.widget {
     box-shadow: none;
     clear: both;
     margin-bottom: 10px;
-    padding: 0;
+    padding: 10px;
     position: relative; }
 
   .osomcorner-wrapper {
@@ -3417,13 +3428,7 @@ label[for="form.ext_editor"] ~ div.widget {
     font-size: 11px;
     line-height: 14px;
     margin-top: 10px;
-    max-width: 270px; }
-
-  #box_comunitats {
-    padding: 15px; }
-
-  #box_perfil {
-    padding: 15px; } }
+    max-width: 270px; } }
 #formfield-form-widgets-quicklinks_literal .required:after {
   content: ""; }
 
