@@ -1043,6 +1043,30 @@ label[for="form.ext_editor"] ~ div.widget {
     font-size: 14px;
 }
 
+.ploneCalendar {
+  .popover {
+    background: none repeat scroll 0 0 #555;
+    font-size: 12px;
+    font-weight: normal;
+    text-shadow: none;
+  }
+  .popover.bottom .arrow:after, .bottom.expandable-content .arrow:after {
+    border-bottom-color: #555;
+  }
+  #box_agenda { 
+    li {
+    a {
+      padding-left: 0;
+      }
+     i {
+      float: left;
+      margin-bottom: 6px;
+      margin-right: 8px;
+      margin-top: 2px;
+    }  
+  }
+}
+
 @media only screen and (max-width: 768px) {
 body {
     background: none repeat scroll 0 0 white;
@@ -1052,7 +1076,7 @@ body {
     box-shadow: none;
     clear: both;
     margin-bottom: 10px;
-    padding: 0;
+    padding: 10px;
     position: relative;
 }
 .osomcorner-wrapper {display: none;}
@@ -1124,14 +1148,12 @@ nav#portal-personaltools-wrapper {
 @media only screen and (max-width: 480px) {
   #menusup nav .bubble {
       float: left;
-      width: 50%;
+      width: 100%;
       border-right: 1px solid white;
   }
-  #menusup nav .bubble {
-      float: left;
-      font-size: 13px;
-      width: 25%;
-  }
+  #menusup nav .bubble:last-child {
+    margin-bottom: 20px;
+}
   .template-homepage #menusup nav .bubble {
       float: left;
       font-size: 13px;
@@ -1150,12 +1172,6 @@ nav#portal-personaltools-wrapper {
   .bubble.left {
       margin-right: 0;
   }
-  #menusup nav i {
-    display: none;
-  }
-  #menusup nav a {
-    font-size: 13px
-  }
   .loginbox {
     width: auto;
   }
@@ -1172,12 +1188,6 @@ nav#portal-personaltools-wrapper {
       margin-top: 10px;
       max-width: 270px;
   }
-#box_comunitats {
-  padding: 15px;
-}
-#box_perfil {
-    padding: 15px;
-}
 }
 
 #formfield-form-widgets-quicklinks_literal .required:after {
