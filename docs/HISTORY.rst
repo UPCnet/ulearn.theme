@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.39 (unreleased)
+1.39 (2014-12-11)
 -----------------
 
-- Nothing changed yet.
-
+* Fix literals [Victor Fernandez de Alba]
 
 1.38 (2014-12-10)
 -----------------
