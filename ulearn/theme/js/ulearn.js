@@ -242,7 +242,7 @@ $(document).ready(function (event) {
                 } else {
                     $('i', $anchor).addClass('fa-heart-o').removeClass('fa-heart');
                     alertify.set({ delay: 10000 });
-                    alertify.success(_ulearn_i18n("OK"));
+                    alertify.success(_ulearn_i18n("Heu cancel·lat el m'agrada d'aquesta proposta."));
                     alertify.set({ delay: 5000 });
                 }
             }
@@ -264,7 +264,7 @@ $(document).ready(function (event) {
                 // debugger;
                 if ($('i', $anchor).hasClass('fa-sign-out')) {
                     $('i', $anchor).addClass('fa-sign-in').removeClass('fa-sign-out');
-                    alertify.success(_ulearn_i18n("Successfully unjoined"));
+                    alertify.success(_ulearn_i18n("Heu cancel·lat la implicació a aquesta proposta."));
                 } else {
                     $('i', $anchor).addClass('fa-sign-out').removeClass('fa-sign-in');
                     alertify.set({ delay: 10000 });
