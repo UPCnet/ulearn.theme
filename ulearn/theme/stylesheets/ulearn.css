@@ -3440,3 +3440,13 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #formfield-form-widgets-quicklinks_table .datagridwidget-table-view {
   border-collapse: separate; }
+
+.searchSection label {
+  color: white;
+  font-size: 11px;
+  text-shadow: 1px 1px 1px #555;
+}
+
+.portaltype-formfolder .btn-group {
+display: none;
+}

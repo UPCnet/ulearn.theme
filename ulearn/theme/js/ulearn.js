@@ -154,7 +154,7 @@ $(document).ready(function (event) {
             setTimeout(function() {
                 if (is_waiting === event) {
                     $('.listingBar').hide();
-                    $.get(portal_url + '/searchUser', { search: query }, function(data) {
+                    $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
                         $('#userlist').html(data);
                     });
                 }
