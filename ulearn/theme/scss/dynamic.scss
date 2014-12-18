@@ -186,3 +186,14 @@ h1, h2, h3, label, span.label, fieldset legend {
     color: #444;
   }
 }
+
+.portletCalendar .ploneCalendar td.cal_has_events .popover-content a {
+  color: $secondary-color;
+  text-shadow: 0 -1px $secondary-color;
+}
+
+.portletCalendar .ploneCalendar td.cal_has_events {
+  background: $secondary-color;
+  font-weight: bold;
+  text-shadow: 0 -1px $secondary-color;
+}

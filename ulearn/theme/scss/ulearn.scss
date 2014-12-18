@@ -1053,7 +1053,7 @@ label[for="form.ext_editor"] ~ div.widget {
   .popover.bottom .arrow:after, .bottom.expandable-content .arrow:after {
     border-bottom-color: #555;
   }
-  #box_agenda { 
+  #box_agenda {
     li {
     a {
       padding-left: 0;
@@ -1063,7 +1063,7 @@ label[for="form.ext_editor"] ~ div.widget {
       margin-bottom: 6px;
       margin-right: 8px;
       margin-top: 2px;
-    }  
+    }
   }
 }
 
@@ -1215,4 +1215,23 @@ border-collapse: separate;
 
 .portaltype-formfolder .btn-group {
 display: none;
+}
+
+.portletCalendar .ploneCalendar td.cal_has_events .popover-content a {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 15px;
+}
+.portletCalendar .ploneCalendar td.cal_has_events .popover-content a:hover {
+  opacity:0.8;
+}
+
+#box_agenda li a {
+  padding-left: 0;
+}
+#box_agenda li i {
+  float: left;
+  margin-bottom: 6px;
+  margin-right: 8px;
+  margin-top: 2px;
 }
