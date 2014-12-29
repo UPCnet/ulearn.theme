@@ -9,7 +9,7 @@ $fa-font-path: "/++components++root/fontawesome/fonts";
 @import "templates";
 @import "plugins";
 @import "iefixes";
-@import "idees";
+@import "propostes";
 // @import "genwebupc";
 
 // Victor for pushing it to genweb.theme
@@ -1053,98 +1053,100 @@ label[for="form.ext_editor"] ~ div.widget {
   .popover.bottom .arrow:after, .bottom.expandable-content .arrow:after {
     border-bottom-color: #555;
   }
-  #box_agenda {
-    li {
-    a {
-      padding-left: 0;
+}
+#box_agenda {
+  li {
+        a {
+            padding-left: 0;
+            i {
+              float: left;
+              margin-bottom: 6px;
+              margin-right: 8px;
+              margin-top: 2px;
+            }
+          }
       }
-     i {
-      float: left;
-      margin-bottom: 6px;
-      margin-right: 8px;
-      margin-top: 2px;
-    }
-  }
 }
 
 @media only screen and (max-width: 768px) {
-body {
-    background: none repeat scroll 0 0 white;
-}
-.ulearnbox {
-    background-color: white;
-    box-shadow: none;
-    clear: both;
-    margin-bottom: 10px;
-    padding: 10px;
+  body {
+      background: none repeat scroll 0 0 white;
+  }
+  .ulearnbox {
+      background-color: white;
+      box-shadow: none;
+      clear: both;
+      margin-bottom: 10px;
+      padding: 10px;
+      position: relative;
+  }
+  .osomcorner-wrapper {display: none;}
+  nav#portal-personaltools-wrapper {
+    margin-top: 0px!important;
+  }
+  #portal-header {
+      background: none repeat scroll 0 0 #f58d3d;
+  }
+  #portal-header h1.pull-left {
+      margin-bottom: 0;
+  }
+  #portal-header h1.pull-left img {
+      height: 55px;
+      margin-top: 0;
+      padding-top: 10px;
+  }
+  #menusup {
+      height: 190px;
+  }
+  .template-homepage #menusup {
+      height: 105px;
+  }
+  .template-event_view #menusup {
+      height: 235px;
+  }
+  #communitylist img {
+      float: left;
+      margin-right: 15px;
+  }
+  #communitylist li {
     position: relative;
+  }
+  #communitylist .eines {
+      position: absolute;
+      right: 0;
+      top: 15px;
+  }
+  #communitylist a h4 {
+    margin-top: -10px;
+  }
+  #communitysearch h2, #librarysearch h2 {
+      float: left;
+      margin-top: 13px;
+      padding-left: 0;
+  }
+  #searchinputcommunities, #searchinputusers, #searchinputtags, #searchinputcontent {
+      clear: both;
+      margin-left: 0;
+      padding-top: 10px;
+      width: 100%;
+  }
+  #searchinputcommunities .searchInput, #searchinputusers .searchInput, #searchinputtags .searchInput, #searchinputcontent .searchInput {
+      font-size: 13px;
+      height: 20px;
+      margin-bottom: 0;
+      padding: 2px 5px;
+      width: 95%;
+  }
+  #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
+      background-color: white;
+      padding: 0;
+  }
+  .documentByLine {
+      font-size: 85%;
+      margin-bottom: 11px;
+  }
 }
-.osomcorner-wrapper {display: none;}
-nav#portal-personaltools-wrapper {
-  margin-top: 0px!important;
-}
-#portal-header {
-    background: none repeat scroll 0 0 #f58d3d;
-}
-#portal-header h1.pull-left {
-    margin-bottom: 0;
-}
-#portal-header h1.pull-left img {
-    height: 55px;
-    margin-top: 0;
-    padding-top: 10px;
-}
-#menusup {
-    height: 190px;
-}
-.template-homepage #menusup {
-    height: 105px;
-}
-.template-event_view #menusup {
-    height: 235px;
-}
-#communitylist img {
-        float: left;
-    margin-right: 15px;
-}
-#communitylist li {
-  position: relative;
-}
-#communitylist .eines {
-    position: absolute;
-    right: 0;
-    top: 15px;
-}
-#communitylist a h4 {
-  margin-top: -10px;
-}
-#communitysearch h2, #librarysearch h2 {
-    float: left;
-    margin-top: 13px;
-    padding-left: 0;
-}
-#searchinputcommunities, #searchinputusers, #searchinputtags, #searchinputcontent {
-    clear: both;
-    margin-left: 0;
-    padding-top: 10px;
-    width: 100%;
-}
-#searchinputcommunities .searchInput, #searchinputusers .searchInput, #searchinputtags .searchInput, #searchinputcontent .searchInput {
-    font-size: 13px;
-    height: 20px;
-    margin-bottom: 0;
-    padding: 2px 5px;
-    width: 95%;
-}
-#portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
-    background-color: white;
-    padding: 0;
-}
-.documentByLine {
-    font-size: 85%;
-    margin-bottom: 11px;
-}
-}
+
 @media only screen and (max-width: 480px) {
   #menusup nav .bubble {
       float: left;
@@ -1153,7 +1155,7 @@ nav#portal-personaltools-wrapper {
   }
   #menusup nav .bubble:last-child {
     margin-bottom: 20px;
-}
+  }
   .template-homepage #menusup nav .bubble {
       float: left;
       font-size: 13px;
@@ -1191,20 +1193,20 @@ nav#portal-personaltools-wrapper {
 }
 
 #formfield-form-widgets-quicklinks_literal .required:after {
-content: "";
+  content: "";
 }
 
 #formfield-form-widgets-quicklinks_table .required:after {
-content: "";
+  content: "";
 }
 
 
 #formfield-form-widgets-quicklinks_literal .datagridwidget-table-view {
-border-collapse: separate;
+  border-collapse: separate;
 }
 
 #formfield-form-widgets-quicklinks_table .datagridwidget-table-view {
-border-collapse: separate;
+  border-collapse: separate;
 }
 
 .searchSection label {
@@ -1214,7 +1216,7 @@ border-collapse: separate;
 }
 
 .portaltype-formfolder .btn-group {
-display: none;
+  display: none;
 }
 
 .portletCalendar .ploneCalendar td.cal_has_events .popover-content a {
@@ -1223,7 +1225,7 @@ display: none;
   line-height: 15px;
 }
 .portletCalendar .ploneCalendar td.cal_has_events .popover-content a:hover {
-  opacity:0.8;
+  opacity: 0.8;
 }
 
 #box_agenda li a {

@@ -1,4 +1,4 @@
-/*
+/*!
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
@@ -2255,7 +2255,7 @@ li > .noMenuAction {
   margin-bottom: 5px;
   text-shadow: 0 0 1px white; }
 .portaltype-ulearn-proposal #portal-column-content #content .eines {
-  width: 20%; }
+  width: 23%; }
 
 .proposta_validada {
   background: none repeat scroll 0 0 #007bc0;
@@ -2316,6 +2316,12 @@ li > .noMenuAction {
 
 .section-idees .popover.bottom .arrow:after, .section-idees .bottom.expandable-content .arrow:after {
   border-bottom-color: #444; }
+
+.join_popover {
+  float: left; }
+
+.like_popover {
+  float: left; }
 
 @media only screen and (max-width: 768px) {
   #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
@@ -3302,6 +3308,22 @@ label[for="form.ext_editor"] ~ div.widget {
 #communitylist .eines i {
   font-size: 14px; }
 
+.ploneCalendar .popover {
+  background: none repeat scroll 0 0 #555;
+  font-size: 12px;
+  font-weight: normal;
+  text-shadow: none; }
+.ploneCalendar .popover.bottom .arrow:after, .ploneCalendar .bottom.expandable-content .arrow:after {
+  border-bottom-color: #555; }
+
+#box_agenda li a {
+  padding-left: 0; }
+  #box_agenda li a i {
+    float: left;
+    margin-bottom: 6px;
+    margin-right: 8px;
+    margin-top: 2px; }
+
 @media only screen and (max-width: 768px) {
   body {
     background: none repeat scroll 0 0 white; }
@@ -3383,13 +3405,11 @@ label[for="form.ext_editor"] ~ div.widget {
 @media only screen and (max-width: 480px) {
   #menusup nav .bubble {
     float: left;
-    width: 50%;
+    width: 100%;
     border-right: 1px solid white; }
 
-  #menusup nav .bubble {
-    float: left;
-    font-size: 13px;
-    width: 25%; }
+  #menusup nav .bubble:last-child {
+    margin-bottom: 20px; }
 
   .template-homepage #menusup nav .bubble {
     float: left;
@@ -3408,12 +3428,6 @@ label[for="form.ext_editor"] ~ div.widget {
 
   .bubble.left {
     margin-right: 0; }
-
-  #menusup nav i {
-    display: none; }
-
-  #menusup nav a {
-    font-size: 13px; }
 
   .loginbox {
     width: auto; }
@@ -3444,28 +3458,24 @@ label[for="form.ext_editor"] ~ div.widget {
 .searchSection label {
   color: white;
   font-size: 11px;
-  text-shadow: 1px 1px 1px #555;
-}
+  text-shadow: 1px 1px 1px #555; }
 
 .portaltype-formfolder .btn-group {
-display: none;
-}
+  display: none; }
 
 .portletCalendar .ploneCalendar td.cal_has_events .popover-content a {
   font-size: 13px;
   font-weight: normal;
-  line-height: 15px;
-}
+  line-height: 15px; }
+
 .portletCalendar .ploneCalendar td.cal_has_events .popover-content a:hover {
-  opacity:0.8;
-}
+  opacity: 0.8; }
 
 #box_agenda li a {
-  padding-left: 0;
-}
+  padding-left: 0; }
+
 #box_agenda li i {
   float: left;
   margin-bottom: 6px;
   margin-right: 8px;
-  margin-top: 2px;
-}
+  margin-top: 2px; }

@@ -298,6 +298,13 @@
     border-bottom-color: #444;
 }
 
+.join_popover {
+    float: left;
+}
+.like_popover {
+    float: left;
+}
+
 @media only screen and (max-width: 768px) {
 #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
     padding:10px!important;
