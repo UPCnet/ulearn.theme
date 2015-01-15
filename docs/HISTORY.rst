@@ -1,11 +1,13 @@
 Changelog
 =========
 
-1.40 (unreleased)
+1.40 (2015-01-15)
 -----------------
 
-- Nothing changed yet.
-
+* Update CSS [Victor Fernandez de Alba]
+* Changes for production [Victor Fernandez de Alba]
+* Solucionar color popover events calendari [Pilar Marinas]
+* Cerca afegint check només en aquest lloc [Pilar Marinas]
 
 1.39 (2014-12-11)
 -----------------
