@@ -1,4 +1,4 @@
-/*!
+/*
  *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
@@ -59,7 +59,7 @@
     left: -1.85714em; }
 
 .fa-border {
-  padding: .2em .25em .15em;
+  padding: 0.2em 0.25em 0.15em;
   border: solid 0.08em #eeeeee;
   border-radius: .1em; }
 
@@ -1575,12 +1575,12 @@ h1, h2, h3, label, span.label {
   background-color: white; }
 
 .liniaDalt, .tileHeadline {
-  border-top: 1px solid #DDDDDD;
+  border-top: 1px solid #dddddd;
   box-shadow: none;
   padding: 10px 0; }
 
 .liniaBaix, .documentFirstHeading {
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
   box-shadow: none;
   margin: 0 0 15px;
   padding: 0 0 5px; }
@@ -1775,9 +1775,9 @@ li > .noMenuAction {
   border-radius: 4px;
   opacity: 0.96;
   filter: alpha(opacity=96);
-  border-bottom: 1px solid #CCCCCC;
-  border-left: 1px solid #EEEEEE;
-  border-right: 1px solid #EEEEEE;
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
   padding: 20px; }
 
 .loginlogo {
@@ -1941,7 +1941,7 @@ li > .noMenuAction {
 
 .alertify {
   background: #FFF;
-  border: 1px solid #8E8E8E;
+  border: 1px solid #8e8e8e;
   /* browsers that don't support rgba */
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 6px;
@@ -1971,7 +1971,7 @@ li > .noMenuAction {
   border-radius: 4px;
   padding: 8px;
   background-color: #FFF;
-  border: 1px solid #CCC;
+  border: 1px solid #cccccc;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
 
 .alertify-text:focus {
@@ -1982,9 +1982,9 @@ li > .noMenuAction {
 .alertify-buttons {
   padding: 14px 15px 15px;
   background: #F5F5F5;
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #dddddd;
   border-radius: 0 0 6px 6px;
-  box-shadow: inset 0 1px 0 #FFF;
+  box-shadow: inset 0 1px 0 white;
   text-align: right; }
 
 .alertify-button,
@@ -2005,7 +2005,7 @@ li > .noMenuAction {
 
 .alertify-button:focus {
   outline: none;
-  box-shadow: 0 0 5px #2B72D5; }
+  box-shadow: 0 0 5px #2b72d5; }
 
 .alertify-button:active {
   position: relative;
@@ -2017,7 +2017,7 @@ li > .noMenuAction {
 .alertify-button-cancel:active {
   text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.75);
   background-color: #E6E6E6;
-  border: 1px solid #BBB;
+  border: 1px solid #bbbbbb;
   color: #333;
   background-image: -webkit-linear-gradient(top, white, #e6e6e6);
   background-image: -moz-linear-gradient(top, white, #e6e6e6);
@@ -2036,8 +2036,8 @@ li > .noMenuAction {
 .alertify-button-ok:active {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #04C;
-  border: 1px solid #04C;
-  border-color: #04C #04C #002A80;
+  border: 1px solid #0044cc;
+  border-color: #0044cc #0044cc #002a80;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   color: #FFF; }
 
@@ -2052,17 +2052,17 @@ li > .noMenuAction {
   border-radius: 4px;
   color: #3A8ABF;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-  border: 1px solid #BCE8F1; }
+  border: 1px solid #bce8f1; }
 
 .alertify-log-error {
   color: #B94A48;
   background: #F2DEDE;
-  border: 1px solid #EED3D7; }
+  border: 1px solid #eed3d7; }
 
 .alertify-log-success {
   color: #468847;
   background: #DFF0D8;
-  border: 1px solid #D6E9C6; }
+  border: 1px solid #d6e9c6; }
 
 .lt-ie9 .box_badges {
   margin-right: 5px; }
@@ -2109,12 +2109,12 @@ li > .noMenuAction {
   border: 0 none; }
 
 .idea {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee;
   margin-bottom: 20px;
   padding-bottom: 10px; }
   .idea .span1 {
-    background: none repeat scroll 0 0 #eee;
-    border: 1px solid #ddd;
+    background: none repeat scroll 0 0 #eeeeee;
+    border: 1px solid #dddddd;
     font-size: 11px;
     height: 55px;
     padding: 0;
@@ -2214,8 +2214,8 @@ li > .noMenuAction {
     color: #007bc0; }
 
 .portaltype-ulearn-proposal #portal-column-content #content .span1 {
-  background: none repeat scroll 0 0 #eee;
-  border: 1px solid #ddd;
+  background: none repeat scroll 0 0 #eeeeee;
+  border: 1px solid #dddddd;
   font-size: 11px;
   height: 55px;
   padding: 0;
@@ -2236,13 +2236,13 @@ li > .noMenuAction {
     color: #007bc0;
     font-size: 14px; }
 .portaltype-ulearn-proposal #portal-column-content #content .span4 {
-  background: none repeat scroll 0 0 #eee;
-  border-top: 1px solid #ddd;
+  background: none repeat scroll 0 0 #eeeeee;
+  border-top: 1px solid #dddddd;
   font-weight: bold;
   padding: 10px;
   text-align: right; }
 .portaltype-ulearn-proposal #portal-column-content #content .span8 {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #dddddd;
   margin-left: 15px;
   padding-bottom: 10px;
   padding-top: 5px; }
@@ -2306,7 +2306,7 @@ li > .noMenuAction {
   .section-idees .popover ul {
     margin-left: 0; }
   .section-idees .popover li {
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #aaaaaa;
     font-size: 13px;
     line-height: 18px;
     list-style-position: inside;
@@ -2325,7 +2325,7 @@ li > .noMenuAction {
 
 @media only screen and (max-width: 768px) {
   #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
-    padding: 10px !important; }
+    padding: 10px!important; }
 
   .userrole-manager .template-proposalslist .idea:first-child {
     padding-top: 100px; }
@@ -2406,10 +2406,10 @@ li > .noMenuAction {
     padding-top: 130px; } }
 body {
   background: #eae9e4;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 input, button, select, textarea {
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Open Sans", sans-serif; }
 
 #portal-personaltools-wrapper {
   margin-top: 36px !important; }
@@ -2503,7 +2503,7 @@ input[type="text"]:focus {
   padding: 10px;
   clear: both;
   margin-bottom: 20px;
-  box-shadow: -1px 1px 2px #ddd; }
+  box-shadow: -1px 1px 2px #dddddd; }
   .ulearnbox ul:last-child,
   .ulearnbox p:last-child {
     margin-bottom: 0px; }
@@ -2583,7 +2583,7 @@ input[type="text"]:focus {
   background-color: #DEDED6; }
 
 .nav-pills > li > a {
-  background: none repeat scroll 0 0 #DEDED6;
+  background: none repeat scroll 0 0 #deded6;
   color: #34495E;
   text-decoration: none;
   text-shadow: 1px 1px 0px white;
@@ -2595,7 +2595,7 @@ input[type="text"]:focus {
 
 .num {
   background: none repeat scroll 0 0 #f58d3d;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #eeeeee;
   border-radius: 0 5px 5px 0;
   color: white;
   float: right;
@@ -2605,7 +2605,7 @@ input[type="text"]:focus {
   margin-top: -8px;
   padding: 7px 5px 5px;
   text-align: center;
-  text-shadow: 1px 1px 0 #92480F;
+  text-shadow: 1px 1px 0 #92480f;
   width: 33px; }
 
 .num:hover {
@@ -2623,7 +2623,7 @@ input[type="text"]:focus {
 
 #miniatures img {
   max-width: 44px;
-  transition: all 0.10s ease 0s; }
+  transition: all 0.1s ease 0s; }
 
 #miniatures img:hover {
   opacity: 0.8; }
@@ -2676,7 +2676,7 @@ input[type="text"]:focus {
   padding-bottom: 7px;
   padding-top: 13px;
   text-align: center;
-  text-shadow: 1px 1px 0 #92480F;
+  text-shadow: 1px 1px 0 #92480f;
   margin-bottom: 0; }
   #day .arrow {
     border-left-color: #f58d3d; }
@@ -2707,7 +2707,7 @@ input[type="text"]:focus {
     vertical-align: middle; }
 
 #calendari {
-  background: none repeat scroll 0 0 #F5F5F5;
+  background: none repeat scroll 0 0 whitesmoke;
   margin-top: 10px;
   padding: 5px 5px 10px;
   text-shadow: 1px 1px 0 white; }
@@ -2715,7 +2715,7 @@ input[type="text"]:focus {
     text-align: center; }
 
 #box_agenda .hiddenStructure {
-  background: none repeat scroll 0 0 #EAE9E4;
+  background: none repeat scroll 0 0 #eae9e4;
   color: black;
   margin-bottom: 5px;
   padding: 1px; }
@@ -2730,7 +2730,7 @@ input[type="text"]:focus {
   list-style: none;
   margin: 10px 0 0 0; }
 #box_agenda li {
-  border-bottom: 1px solid #EEEEEE;
+  border-bottom: 1px solid #eeeeee;
   font-size: 13px;
   line-height: 15px;
   margin-bottom: 8px;
@@ -2822,12 +2822,12 @@ input[type="text"]:focus {
   #communitylist li {
     min-height: 55px;
     line-height: 20px;
-    border-bottom: 1px solid #DDDDDD;
+    border-bottom: 1px solid #dddddd;
     margin-bottom: 0;
     padding-bottom: 15px;
     padding-left: 10px;
     padding-top: 10px;
-    background: none repeat scroll 0 0 #FFFFFF;
+    background: none repeat scroll 0 0 white;
     box-shadow: none; }
   #communitylist a {
     color: #555;
@@ -2845,7 +2845,7 @@ input[type="text"]:focus {
     max-width: 54px; }
     #communitylist img:hover {
       transition: all 0.25s ease 0s;
-      border: 2px solid #F58D3D; }
+      border: 2px solid #f58d3d; }
 
 .icon-ulearn-community, .icon-ulearn.community {
   background-position: -312px -192px; }
@@ -3094,12 +3094,12 @@ label[for="form.ext_editor"] ~ div.widget {
 #tagslist li {
   min-height: 55px;
   line-height: 20px;
-  border-bottom: 1px solid #DDDDDD;
+  border-bottom: 1px solid #dddddd;
   margin-bottom: 0;
   padding-bottom: 15px;
   padding-left: 10px;
   padding-top: 10px;
-  background: none repeat scroll 0 0 #FFFFFF;
+  background: none repeat scroll 0 0 white;
   box-shadow: none; }
 
 #tagslist a {
@@ -3122,7 +3122,7 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #tagslist img:hover {
   transition: all 0.25s ease 0s;
-  border: 2px solid #F58D3D; }
+  border: 2px solid #f58d3d; }
 
 .gebropharma-accessos-directes {
   margin-top: 7px; }
@@ -3183,7 +3183,7 @@ label[for="form.ext_editor"] ~ div.widget {
   margin-top: 0; }
 
 .caixessearch {
-  background: none repeat scroll 0 0 #F5F5F5;
+  background: none repeat scroll 0 0 whitesmoke;
   margin-bottom: 10px;
   min-height: 160px;
   padding: 10px; }
@@ -3206,7 +3206,7 @@ label[for="form.ext_editor"] ~ div.widget {
   font-size: 12px;
   font-weight: bold;
   margin-top: 5px;
-  text-shadow: 1px 1px 1px #FFFFFF; }
+  text-shadow: 1px 1px 1px white; }
 
 #librarysearch .documentDescription {
   font-size: 16px;
@@ -3296,7 +3296,7 @@ label[for="form.ext_editor"] ~ div.widget {
     padding-bottom: 10px; }
 #box_discussion p {
   margin-top: 0;
-  border-top: 1px solid #EEEEEE; }
+  border-top: 1px solid #eeeeee; }
   #box_discussion p a {
     margin-top: 10px;
     padding: 10px 0; }
@@ -3309,7 +3309,7 @@ label[for="form.ext_editor"] ~ div.widget {
   font-size: 14px; }
 
 .ploneCalendar .popover {
-  background: none repeat scroll 0 0 #555;
+  background: none repeat scroll 0 0 #555555;
   font-size: 12px;
   font-weight: normal;
   text-shadow: none; }
@@ -3340,7 +3340,7 @@ label[for="form.ext_editor"] ~ div.widget {
     display: none; }
 
   nav#portal-personaltools-wrapper {
-    margin-top: 0px !important; }
+    margin-top: 0px!important; }
 
   #portal-header {
     background: none repeat scroll 0 0 #f58d3d; }
@@ -3458,7 +3458,7 @@ label[for="form.ext_editor"] ~ div.widget {
 .searchSection label {
   color: white;
   font-size: 11px;
-  text-shadow: 1px 1px 1px #555; }
+  text-shadow: 1px 1px 1px #555555; }
 
 .portaltype-formfolder .btn-group {
   display: none; }

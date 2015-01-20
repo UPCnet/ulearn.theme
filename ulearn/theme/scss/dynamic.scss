@@ -180,6 +180,15 @@ h1, h2, h3, label, span.label, fieldset legend {
   a.maxui-action.maxui-commentaction {
     color: $secondary-color;
   }
+  a.maxui-action.maxui-flag.maxui-flagged:before {
+      color: $secondary-color;
+  }
+  a.maxui-action.maxui-flag.maxui-flagged {
+      color: $secondary-color;
+  }
+  a.maxui-action.maxui-flag:hover:before {
+      color: $secondary-color;
+  }
   a.maxui-action.maxui-favorites.maxui-favorited:hover,
   a.maxui-action.maxui-likes.maxui-liked:hover,
   a.maxui-action.maxui-commentaction:hover {
