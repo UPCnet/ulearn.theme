@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.41 (unreleased)
+1.41 (2015-01-20)
 -----------------
 
-- Nothing changed yet.
-
+* Widget flag link colors [Carles Bruguera]
 
 1.40 (2015-01-15)
 -----------------
