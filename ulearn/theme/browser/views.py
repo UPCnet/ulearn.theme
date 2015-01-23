@@ -92,17 +92,23 @@ class baseCommunities(grok.View):
     def get_star_class(self, community):
         return community.id in self.favorites and 'fa fa-star' or 'fa fa-star-o'
 
-    def get_subscribed_class(self, community):
+    def authenticated_user_is_subscribed(self, community):
         pm = getToolByName(self.context, "portal_membership")
         user = pm.getAuthenticatedMember()
         current_user = user.getUserName()
+        return current_user in community.subscribed_users
+
+    def favorite_button_enabled(self, community):
+        return self.authenticated_user_is_subscribed(community)
+
+    def get_subscribed_class(self, community):
         if community.community_type == u'Organizative':
             return ''
         else:
             # It's an open community or a closed one where I'm subscribed. If
             # the community is closed and I'm not subscribed, then I should not
             # see it as I should not have permission
-            return 'fa fa-check-square-o' if current_user in community.subscribed_users else 'fa fa-square-o'
+            return 'fa fa-check-square-o' if self.authenticated_user_is_subscribed(community) else 'fa fa-square-o'
 
     def get_communities_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
