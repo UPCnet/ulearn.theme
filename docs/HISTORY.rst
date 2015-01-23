@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.42 (unreleased)
+1.42 (2015-01-23)
 -----------------
 
-- Nothing changed yet.
-
+* Fix favorite button [Carles Bruguera]
 
 1.41 (2015-01-20)
 -----------------
