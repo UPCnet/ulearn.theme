@@ -3479,3 +3479,10 @@ label[for="form.ext_editor"] ~ div.widget {
   margin-bottom: 6px;
   margin-right: 8px;
   margin-top: 2px; }
+
+.datagridwidget-cell .label {
+  display: none;
+}
+.datagridwidget-cell input[type="checkbox"] {
+  margin: 0 52px 10px;
+}

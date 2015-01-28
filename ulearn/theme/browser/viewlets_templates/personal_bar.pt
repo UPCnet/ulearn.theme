@@ -58,11 +58,22 @@
                 <b aria-hidden="true" class="caret"></b>
               </a>
               <ul class="dropdown-menu" role="menu">
-                <li role="menuitem" tal:repeat="item dades/quicklinks_table"><a tal:attributes="href string:${item/link}">
-                       <i tal:attributes="class string:fa ${item/icon}"></i>
-                       <tal:link tal:content="item/text">
-                          Links1</tal:link>
-                </a></li>
+                <li role="menuitem" tal:repeat="item dades/quicklinks_table">
+                  <tal:span condition="not: item/new_window">
+                    <a tal:attributes="href string:${item/link}">
+                         <i tal:attributes="class string:fa ${item/icon}"></i>
+                         <tal:link tal:content="item/text">
+                            Links1</tal:link>
+                    </a>
+                  </tal:span>
+                  <tal:span condition="item/new_window">
+                    <a class="quicklinks" tal:attributes="href string:${item/link}" target="_blank">
+                         <i tal:attributes="class string:fa ${item/icon}"></i>
+                         <tal:link tal:content="item/text">
+                            Links1</tal:link>
+                    </a>
+                  </tal:span>
+                </li>
               </ul>
             </li>
             <li  role="menuitem"><a tal:condition="view/showRootFolderLink"
