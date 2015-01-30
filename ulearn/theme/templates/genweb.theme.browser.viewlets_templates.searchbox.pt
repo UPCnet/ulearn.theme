@@ -1,4 +1,4 @@
-<div id="gwsearch" i18n:domain="ulearn">
+<div id="ulearnsearch" i18n:domain="ulearn">
   <input class="typeahead" type="text" placeholder="Search"
          tal:attributes="data-typeahead-url string:${context/absolute_url}/gw_type_ahead_search;
                          data-search-url string:${context/absolute_url}/@@search;"

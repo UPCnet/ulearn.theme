@@ -300,4 +300,77 @@ $(document).ready(function (event) {
         .click(function(e) { // evita scroll top
           e.preventDefault();
     });
+
+    var liveSearch = function(data_url) {
+        return function findMatches(q, cb) {
+          if (document.getElementById('searchbox_currentfolder_only').checked){
+                cf =  $('#ulearnsearch .searchSection #searchbox_currentfolder_only').val();
+          } else {
+                cf = ''
+          }
+          $.get(data_url + '?q=' + q + '&cf=' + cf, function(data) {
+            window._gw_typeahead_last_result = data;
+            cb(data);
+          });
+
+        };
+    };
+
+    window._gw_typeahead_last_result = [];
+    var selector = '#ulearnsearch .typeahead';
+    var $typeahead_dom = $(selector);
+    $typeahead_dom.typeahead({
+        hint: true,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: 'states',
+        displayKey: 'title',
+        source: liveSearch($typeahead_dom.attr('data-typeahead-url')),
+        templates: {
+        suggestion: Handlebars.compile('<a class="{{class}}" href="{{itemUrl}}">{{title}}</a>'),
+        empty: '<div class="tt-empty"><p>'+ window._ulearn_i18n("No hi ha elements") + '<p></div>'
+    }
+    }).on("typeahead:datasetRendered", function(event) {
+        var $dropdown = $(this).parent().find('.tt-dropdown-menu');
+        var $separator = $dropdown.find('.tt-suggestion a.with-separator').parent();
+        var separator_css = {
+        "border-top": ' 1px solid rgba(0, 0, 0, 0.2)',
+        'background-color': "#f5f5f5",
+        "padding-top": "4px"
+     };
+
+    if ($separator.is(':first-child')) {
+        separator_css['border-top-left-radius']= "8px";
+        separator_css['border-top-right-radius']= "8px";
+        separator_css['border-top'] = "none";
+        }
+
+    $separator.css(separator_css);
+    $separator = $dropdown.find('.tt-suggestion a.with-background').parent();
+    $separator.css({'background-color': "#f5f5f5" });
+    })
+    .on("keyup", function(event) {
+      if (event.keyCode === 13) {
+          var text = $(this).val();
+          if (document.getElementById('searchbox_currentfolder_only').checked){
+            cf =  $('#ulearnsearch .searchSection #searchbox_currentfolder_only').val();
+          } else {
+                cf = ''
+          }
+          if (!_.findWhere(window._gw_typeahead_last_result, {'title': text})) {
+              window.location.href = $typeahead_dom.attr('data-search-url') + '?SearchableText=' + text + '&path=' + cf;
+          }
+
+      }
+    })
+    .on("typeahead:selected", function(event, suggestion, dataset) {
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        window.location.href = suggestion.itemUrl;
+
+    });
+
 });
