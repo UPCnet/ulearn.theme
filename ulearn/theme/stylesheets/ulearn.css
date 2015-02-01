@@ -3460,6 +3460,15 @@ label[for="form.ext_editor"] ~ div.widget {
   font-size: 11px;
   text-shadow: 1px 1px 1px #555555; }
 
+.searchSection {
+  margin-bottom: 5px;
+  margin-top: -5px;
+}
+
+.tt-dropdown-menu {
+ z-index: 1020 !important;
+}
+
 .portaltype-formfolder .btn-group {
   display: none; }
 
