@@ -145,20 +145,24 @@ $(document).ready(function (event) {
         });
     });
 
-    var is_waiting = null;
+    var delay = (function(){
+      var timer = 0;
+      return function(callback, ms){
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+      };
+    })();
+
     // User search
     $('#searchinputusers .searchInput').on('keyup', function(event) {
         var query = $(this).val();
         if (query.length > 2 || query.length === 0) {
-            is_waiting = event;
-            setTimeout(function() {
-                if (is_waiting === event) {
-                    $('.listingBar').hide();
-                    $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
-                        $('#userlist').html(data);
-                    });
-                }
-            }, 500);
+            delay(function(){
+                $('.listingBar').hide();
+                $.get(window.location.href.match(/(.*\/)/)[0] + '/searchUser', { search: query }, function(data) {
+                    $('#userlist').html(data);
+                });
+            }, 1000 );
         }
     });
 

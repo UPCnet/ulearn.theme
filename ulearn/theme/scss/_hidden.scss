@@ -12,3 +12,6 @@ li > .noMenuAction {display: none}
 
 // Amagar check de validar el mail
 #formfield-form-mail_me {display: none;}
+
+// Amagar l'enllac a l'arrel per la intranet UPCnet
+.portaltype-plone-site.site-intranetupcnet #box_thinkers .userslinks {display: none;}
