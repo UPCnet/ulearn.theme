@@ -1,11 +1,13 @@
 Changelog
 =========
 
-1.43 (unreleased)
+1.43 (2015-02-05)
 -----------------
 
-- Nothing changed yet.
-
+* No mostrar btn-group en els formularis [Pilar Marinas]
+* Modificar css check cerca en aquest lloc [Pilar Marinas]
+* Cerca afegint check només en aquest lloc [Pilar Marinas]
+* Obrir finestra nova quicklinks [Pilar Marinas]
 
 1.42 (2015-01-23)
 -----------------
