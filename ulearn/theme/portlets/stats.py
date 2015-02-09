@@ -24,6 +24,7 @@ from ulearn.core.controlpanel import IUlearnControlPanelSettings
 from maxclient import MaxClient
 from mrs.max.utilities import IMAXClient
 from mrs.max.browser.controlpanel import IMAXUISettings
+from zope.security import checkPermission
 
 
 class IStatsPortlet(IPortletDataProvider):
@@ -143,6 +144,12 @@ class Renderer(base.Renderer):
             return 'thinnkins'
         else:
             return 'entrades'
+
+    def show_stats(self):
+        """ The genweb.webmaster can see stats.
+        """
+        if checkPermission('genweb.webmaster', self.context):
+            return True
 
 
 class AddForm(base.NullAddForm):

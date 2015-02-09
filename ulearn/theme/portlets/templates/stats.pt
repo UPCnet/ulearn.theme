@@ -72,6 +72,12 @@
           Media
         </p>
       </li>
+      <li tal:condition="view/show_stats">
+        <a tal:attributes="href string:${view/portal_url}/ulearn-stats">
+          <i class="icon-plus-sign icons"> </i>
+          <tal:seemore i18n:translate="seemore_stats">See more</tal:seemore>
+        </a>
+      </li>
     </ul>
 
     <ul tal:condition="not: is_community">
@@ -139,6 +145,12 @@
         <p i18n:translate="ulearn_media">
           Media
         </p>
+      </li>
+      <li tal:condition="view/show_stats">
+        <a tal:attributes="href string:${view/portal_url}/ulearn-stats">
+          <i class="icon-plus-sign icons"> </i>
+          <tal:seemore i18n:translate="seemore_stats">See more</tal:seemore>
+        </a>
       </li>
     </ul>
 
