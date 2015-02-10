@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.44 (unreleased)
+1.44 (2015-02-10)
 -----------------
 
-- Nothing changed yet.
-
+* Merge branch 'master' of github.com:UPCnet/ulearn.theme [Victor Fernandez de Alba]
+* Portlet stats see more genweb.webmaster [Pilar Marinas]
 
 1.43 (2015-02-05)
 -----------------
