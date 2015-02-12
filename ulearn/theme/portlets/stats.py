@@ -26,6 +26,8 @@ from mrs.max.utilities import IMAXClient
 from mrs.max.browser.controlpanel import IMAXUISettings
 from zope.security import checkPermission
 
+from genweb.core.utils import get_safe_member_by_id
+
 
 class IStatsPortlet(IPortletDataProvider):
     """ A portlet which can render the community stats information """
@@ -81,14 +83,11 @@ class Renderer(base.Renderer):
 
     @memoize_contextless
     def get_context_activities(self):
-        pm = getToolByName(self.context, "portal_membership")
-        member = pm.getAuthenticatedMember()
-        username = member.getUserName()
-        member = pm.getMemberById(username)
-        oauth_token = member.getProperty('oauth_token', None)
+        current_user = api.user.get_current()
+        oauth_token = current_user.getProperty('oauth_token', None)
 
         maxclient, settings = getUtility(IMAXClient)()
-        maxclient.setActor(username)
+        maxclient.setActor(current_user.id)
         maxclient.setToken(oauth_token)
 
         context_hash = sha1(self.get_community().absolute_url()).hexdigest()

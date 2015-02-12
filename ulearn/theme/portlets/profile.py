@@ -1,6 +1,6 @@
 from hashlib import sha1
 from copy import deepcopy
-
+from plone import api
 from Acquisition import aq_inner
 from Acquisition import aq_chain
 from OFS.Image import Image
@@ -26,8 +26,6 @@ from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 from maxclient import MaxClient
 from mrs.max.browser.controlpanel import IMAXUISettings
-
-import plone.api
 
 
 class IProfilePortlet(IPortletDataProvider):
@@ -73,7 +71,7 @@ class Renderer(base.Renderer):
             return userid
 
     def get_current_user(self):
-        return plone.api.user.get_current()
+        return api.user.get_current()
 
     def get_portrait(self):
         pm = getToolByName(self.portal(), 'portal_membership')
@@ -147,14 +145,11 @@ class Renderer(base.Renderer):
         # Pick grant type from settings unless passed as optional argument
         effective_grant_type = settings.oauth_grant_type
 
-        pm = getToolByName(self.context, "portal_membership")
-        member = pm.getAuthenticatedMember()
-        username = member.getUserName()
-        member = pm.getMemberById(username)
-        oauth_token = member.getProperty('oauth_token', None)
+        current_user = api.user.get_current()
+        oauth_token = current_user.getProperty('oauth_token', None)
 
         maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
-        maxclient.setActor(username)
+        maxclient.setActor(current_user.id)
         maxclient.setToken(oauth_token)
 
         if community:
@@ -168,7 +163,7 @@ class Renderer(base.Renderer):
         return factories_view.addable_types()
 
     def get_posts_literal(self):
-        literal = plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+        literal = api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
         if literal == 'thinnkers':
             return 'thinnkins'
         else:
