@@ -1,11 +1,10 @@
 Changelog
 =========
 
-1.45 (unreleased)
+1.45 (2015-02-12)
 -----------------
 
-- Nothing changed yet.
-
+* Rationalize slightly some getMemberByIds [Victor Fernandez de Alba]
 
 1.44 (2015-02-10)
 -----------------
