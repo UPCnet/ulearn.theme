@@ -171,11 +171,12 @@ class searchCommunitiesAJAX(baseCommunities):
 
 def _render_cachekey(method, self, main_color, secondary_color, background_property, background_color,
                      buttons_color_primary, buttons_color_secondary, maxui_form_bg,
-                     alt_gradient_start_color, alt_gradient_end_color):
+                     alt_gradient_start_color, alt_gradient_end_color, color_community_closed, color_community_organizative, color_community_open):
     """Cache by the specific colors"""
     return (main_color, secondary_color, background_property, background_color,
             buttons_color_primary, buttons_color_secondary, maxui_form_bg,
-            alt_gradient_start_color, alt_gradient_end_color)
+            alt_gradient_start_color, alt_gradient_end_color,
+            color_community_closed, color_community_organizative, color_community_open)
 
 
 class dynamicCSS(grok.View):
@@ -197,7 +198,10 @@ class dynamicCSS(grok.View):
            self.settings.buttons_color_secondary and \
            self.settings.maxui_form_bg and \
            self.settings.alt_gradient_start_color and \
-           self.settings.alt_gradient_end_color:
+           self.settings.alt_gradient_end_color and \
+           self.settings.color_community_closed and \
+           self.settings.color_community_organizative and \
+           self.settings.color_community_open:
             return self.compile_scss(main_color=self.settings.main_color,
                                      secondary_color=self.settings.secondary_color,
                                      background_property=self.settings.background_property,
@@ -206,7 +210,11 @@ class dynamicCSS(grok.View):
                                      buttons_color_secondary=self.settings.buttons_color_secondary,
                                      maxui_form_bg=self.settings.maxui_form_bg,
                                      alt_gradient_start_color=self.settings.alt_gradient_start_color,
-                                     alt_gradient_end_color=self.settings.alt_gradient_end_color)
+                                     alt_gradient_end_color=self.settings.alt_gradient_end_color,
+                                     color_community_closed=self.settings.color_community_closed,
+                                     color_community_organizative=self.settings.color_community_organizative,
+                                     color_community_open=self.settings.color_community_open)
+
         else:
             return ""
 
@@ -224,7 +232,10 @@ class dynamicCSS(grok.View):
                         buttons_color_secondary=self.settings.buttons_color_secondary,
                         maxui_form_bg=self.settings.maxui_form_bg,
                         alt_gradient_start_color=self.settings.alt_gradient_start_color,
-                        alt_gradient_end_color=self.settings.alt_gradient_end_color)
+                        alt_gradient_end_color=self.settings.alt_gradient_end_color,
+                        color_community_closed=self.settings.color_community_closed,
+                        color_community_organizative=self.settings.color_community_organizative,
+                        color_community_open=self.settings.color_community_open)
 
         variables_scss = """
 
@@ -237,6 +248,9 @@ class dynamicCSS(grok.View):
         $maxui-form-bg: {maxui_form_bg};
         $alt-gradient-start-color: {alt_gradient_start_color};
         $alt-gradient-end-color: {alt_gradient_end_color};
+        $color_community_closed: {color_community_closed};
+        $color_community_organizative: {color_community_organizative};
+        $color_community_open: {color_community_open};
 
         """.format(**settings)
 

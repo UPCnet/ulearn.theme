@@ -1264,4 +1264,9 @@ label[for="form.ext_editor"] ~ div.widget {
 // Per a que es vegi el desplegable de l'estat pels objectius de l'intranet.
 .portaltype-objectius li > a#plone-contentmenu-workflow {
   display: block;
+
+#box_comunitats .fa-stack {
+  height: 1em;
+  margin-top: -10px;
+  color: white;
 }

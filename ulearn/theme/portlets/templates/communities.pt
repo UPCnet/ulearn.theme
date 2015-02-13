@@ -6,17 +6,29 @@
 <h2 i18n:translate="communities">Comunidades</h2>
 
 <nav class="subnavbar">
-  <ul class="nav nav-pills nav-stacked" role="menu">
+  <ul class="nav nav-pills nav-stacked" role="menu" tal:define="user view/get_user">
     <li role="menuitem"
-        tal:repeat="community view/getCommunities">
+        tal:repeat="community view/getCommunities"
+        tal:attributes="class community/community_type">
           <div class="bubble right pull-right">
             <div class="arrow"></div>
-            <div class="bubble-content">
-              <a href="#"
-                 tal:attributes="href community/getURL"
-                 tal:content="python:view.getCommunityMembers(community)">
-                23
-              </a>
+            <div class="bubble-content" tal:define="pending python:view.get_pending_community_user(community, user)">
+              <tal:condition  tal:condition="python:pending != 0">
+                <span class="fa-stack">
+                  <i class="fa fa-folder fa-stack-2x"></i>
+                  <i class="fa fa-stack-1x">
+                    <a href="#"
+                       tal:attributes="href community/getURL"
+                       tal:content="pending">
+                    23</a>
+                  </i>
+                </span>
+              </tal:condition>
+              <tal:condition  tal:condition="python:pending == 0">
+                <span class="fa-stack">
+                  <i class="fa fa-check-square-o fa-stack-2x"></i>
+                </span>
+              </tal:condition>
             </div>
           </div>
           <a href="#"

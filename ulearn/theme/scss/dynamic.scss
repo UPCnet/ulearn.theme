@@ -206,3 +206,22 @@ h1, h2, h3, label, span.label, fieldset legend {
   font-weight: bold;
   text-shadow: 0 -1px $secondary-color;
 }
+
+.Closed {
+  border-left: 3px solid $color_community_closed;
+}
+
+.Organizative {
+  border-left: 3px solid $color_community_organizative;
+}
+
+.Open {
+  border-left: 3px solid $color_community_open;
+}
+
+#box_comunitats .bubble a {
+  color: $main-color;
+  font-weight: 600;
+  height: 18px;
+  width: 33px;
+}

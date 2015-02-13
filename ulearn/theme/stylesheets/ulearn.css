@@ -3522,6 +3522,7 @@ label[for="form.ext_editor"] ~ div.widget {
     font-weight: normal;
 }
 
+<<<<<<< HEAD
 .maxui-origin.maxui-icon- > a {
     background: none repeat scroll 0 0 #ddd;
     border-radius: 4px;
@@ -3532,3 +3533,10 @@ label[for="form.ext_editor"] ~ div.widget {
 }
 
 
+=======
+#box_comunitats .fa-stack {
+  height: 1em;
+  margin-top: -10px;
+  color: white;
+}
+>>>>>>> new branch portlet comunitats

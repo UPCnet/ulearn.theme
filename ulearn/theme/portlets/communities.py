@@ -94,6 +94,20 @@ class Renderer(base.Renderer):
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
         return settings.library_url
 
+    def get_user(self):
+        portal = self.portal()
+        pm = getToolByName(portal, "portal_membership")
+        current_user = pm.getAuthenticatedMember().getUserName()
+        return current_user
+
+    # TO DO
+    def get_pending_community_user(self, community, user):
+        valor = 11
+        if valor > 0:
+            return valor
+        else:
+            return 0
+
 
 class AddForm(base.NullAddForm):
 
