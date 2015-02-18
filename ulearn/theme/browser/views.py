@@ -291,8 +291,11 @@ class searchUsers(grok.View):
     grok.layer(IUlearnTheme)
 
     def users(self):
+        searchby = ''
+        if len(self.request.form) > 0:
+            searchby = self.request.form['search']
 
-        resultat = searchUsersFunction(self.context, self.request, '')
+        resultat = searchUsersFunction(self.context, self.request, searchby)
         return resultat
 
     def get_people_literal(self):

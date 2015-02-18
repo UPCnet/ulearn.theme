@@ -24,11 +24,11 @@
             <div class="span9">
               <a tal:attributes="href user/url">
                 <h4><span tal:replace="user/fullname">Full name</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
-                <p tal:condition="user/email"><i class="fa fa-envelope"></i><span tal:content="user/email">Email</span></p>
-                <p tal:condition="user/telefon"><i class="fa fa-mobile"></i><span tal:content="user/telefon">Phone</span></p>
-                <p tal:condition="user/location"><i class="fa fa-building-o"></i><span tal:content="user/location">Location</span></p>
-                <p tal:condition="user/ubicacio"><i class="fa fa-user"></i><span tal:content="user/ubicacio">Ubicacio</span></p>
               </a>
+                <p class="email" tal:condition="user/email"><i class="fa fa-envelope"></i><span tal:content="user/email">Email</span></p>
+                <p class="telefon" tal:condition="user/telefon"><i class="fa fa-mobile"></i><span tal:content="user/telefon">Phone</span></p>
+                <p class="location" tal:condition="user/location"><i class="fa fa-building-o"></i><span tal:content="user/location">Location</span></p>
+                <p class="ubicacio" tal:condition="user/ubicacio"><i class="fa fa-user"></i><span tal:content="user/ubicacio">Ubicacio</span></p>
             </div>
           </div>
         </li>
