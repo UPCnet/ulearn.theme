@@ -51,22 +51,26 @@
               </a>
             </div>
           <div class="eines span3">
-            <a class="favorite" href="#"
+            <a class="favorite" href="#" 
+               i18n:attributes="title label_check_favorite"
                tal:attributes="class python:'favorite' if view.favorite_button_enabled(community) else 'favoritedisabled';
                                data-community string:${community/getURL}">
               <i tal:attributes="class python:view.get_star_class(community)"></i>
             </a>
             <a class="subscribe" href="#"
+               i18n:attributes="title label_subscribe_to_community"
                tal:condition="python:view.is_not_organizative(community)"
                tal:attributes="data-community string:${community/getURL};
                                data-name community/Title">
               <i tal:attributes="class python:view.get_subscribed_class(community)"></i>
             </a>
             <a tal:condition="python:view.is_community_manager(community)"
-               tal:attributes="href string:${community/getURL}/edit">
+               tal:attributes="href string:${community/getURL}/edit"
+               i18n:attributes="title label_edit_community">
               <i class="fa fa-pencil"></i>
             </a>
             <a class="delete" href="#"
+               i18n:attributes="title label_delete_community"
                tal:condition="python:view.is_community_manager(community)"
                tal:attributes="href string:${community/getURL}/delete_confirmation;
                                data-authenticator view/get_authenticator;
