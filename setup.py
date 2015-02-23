@@ -31,7 +31,8 @@ setup(name='ulearn.theme',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'genweb.theme'
+          'genweb.theme',
+          'ulearn.js'
       ],
       extras_require={'test': ['plone.app.testing[robot]>=4.2.2']},
       entry_points="""

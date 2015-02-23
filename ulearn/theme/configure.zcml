@@ -42,12 +42,6 @@
       name="stylesheets"
       />
 
-  <plone:static
-      directory="js"
-      type="ulearn"
-      name="js"
-      />
-
   <include package="z3c.jbot" file="meta.zcml" />
 
   <browser:jbot

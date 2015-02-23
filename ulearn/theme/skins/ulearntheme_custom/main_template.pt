@@ -26,7 +26,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       i18n:domain="plone"
       tal:attributes="lang lang;"
-      >
+      ng-app="GenwebApp">
 <!--<![endif]-->
 
     <metal:cache use-macro="context/global_cache_settings/macros/cacheheaders">
@@ -77,6 +77,9 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/ulearn.css">
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/dynamic.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-ui-select/dist/select.min.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/selectize/dist/css/selectize.default.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css">
 
     </tal:notajax>
 </head>
@@ -209,17 +212,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 <tal:notajax tal:condition="not:ajax_load">
     <tal:comment replace="nothing"> <!-- A partir d'aqui, els JS comuns d'inicialització --> </tal:comment>
 
-    <!-- <script tal:attributes="src string:${portal_url}/++genweb++static/js/dropkick.js"></script> -->
-    <!-- <script tal:attributes="src string:${portal_url}/++genweb++static/js/scrollability.js"></script> -->
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/fileinput.js"></script>
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/customInput.js"></script>
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.nicescroll.js"></script>
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/prettify.js"></script>
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/jquery.mixitup.min.js"></script>
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/alertify.min.js"></script>
-    <script tal:attributes="src string:${portal_url}/++components++root/select2/select2.js"></script>
-    <script tal:attributes="src string:${portal_url}/++components++root/handlebars/handlebars.min.js"></script>
-    <script tal:attributes="src string:${portal_url}/++components++root/typeahead.js/dist/typeahead.jquery.min.js"></script>
+    <div tal:replace="structure provider:genweb.js" />
 
     <tal:select2lang condition="python:lang=='ca'">
       <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_ca.js"></script>
@@ -229,13 +222,6 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
       <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_es.js"></script>
     </tal:select2lang>
 
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/underscore-min.js"></script>
-
-    <script tal:attributes="src string:${portal_url}/++genweb++js/main.js"></script>
-    <script tal:attributes="src string:${portal_url}/++ulearn++js/ulearn.js"></script>
-
-
-    <script tal:attributes="src string:${portal_url}/++genweb++static/js/ios-orientationchange-fix.js"></script>
     <tal:comment replace="nothing"> <!-- Finalment els que es posen a cada template especificament (per revisar) --> </tal:comment>
     <metal:javascriptslot define-slot="javascript_head_slot" />
 </tal:notajax>
