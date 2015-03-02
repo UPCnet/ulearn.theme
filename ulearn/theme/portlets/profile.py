@@ -111,12 +111,9 @@ class Renderer(base.Renderer):
         return False
 
     def showEditCommunity(self):
-        pm = api.portal.get_tool('portal_membership')
-        user = pm.getAuthenticatedMember()
-
         if not IPloneSiteRoot.providedBy(self.context) and \
            ICommunity.providedBy(self.context) and \
-           'Owner' in self.context.get_local_roles_for_userid(user.id):
+           'Owner' in self.context.get_local_roles_for_userid(self.username):
             return True
 
     def get_addable_types(self):
