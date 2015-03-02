@@ -7,15 +7,11 @@ from OFS.Image import Image
 from zope.interface import implements
 from zope.component import queryUtility
 from zope.component import getMultiAdapter
-from zope.component.hooks import getSite
-from zope.security import checkPermission
 
 from plone.app.portlets.portlets import base
 from plone.registry.interfaces import IRegistry
-from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
 
-from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -24,8 +20,7 @@ from ulearn.core.badges import AVAILABLE_BADGES
 from ulearn.core.content.community import ICommunity
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
-from maxclient import MaxClient
-from mrs.max.browser.controlpanel import IMAXUISettings
+from genweb.core.utils import get_safe_member_by_id
 
 
 class IProfilePortlet(IPortletDataProvider):
@@ -43,48 +38,34 @@ class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/profile.pt')
 
-    @memoize_contextless
-    def portal_url(self):
-        return self.portal().absolute_url()
-
-    @memoize_contextless
-    def portal(self):
-        return getSite()
-
-    def username(self):
-        pm = getToolByName(self.portal(), 'portal_membership')
-        return pm.getAuthenticatedMember()
+    def __init__(self, context, request, view, manager, data):
+        super(Renderer, self).__init__(context, request, view, manager, data)
+        self.username = api.user.get_current().id
+        self.user_info = get_safe_member_by_id(self.username)
+        self.portal_url = api.portal.get().absolute_url()
 
     def fullname(self):
-        pm = getToolByName(self.portal(), 'portal_membership')
-        userid = pm.getAuthenticatedMember()
-        member_info = pm.getMemberInfo()
-
-        if member_info:
-            fullname = member_info.get('fullname', '')
+        if self.user_info:
+            fullname = self.user_info.get('fullname', '')
         else:
             fullname = None
 
         if fullname:
             return fullname
         else:
-            return userid
-
-    def get_current_user(self):
-        return api.user.get_current()
+            return self.username
 
     def get_portrait(self):
-        pm = getToolByName(self.portal(), 'portal_membership')
+        pm = api.portal.get_tool('portal_membership')
         return pm.getPersonalPortrait().absolute_url()
 
     def has_complete_profile(self):
-        pm = getToolByName(self.portal(), 'portal_membership')
-        user = pm.getAuthenticatedMember()
+        pm = api.portal.get_tool('portal_membership')
         portrait = pm.getPersonalPortrait()
 
-        if user.getProperty('fullname') \
-           and user.getProperty('fullname') != user.getProperty('username') \
-           and user.getProperty('email') \
+        if self.user_info.get('fullname', False) \
+           and self.user_info.get('fullname', False) != self.username \
+           and self.user_info.get('email', False) \
            and isinstance(portrait, Image):
             return True
         else:
@@ -130,33 +111,13 @@ class Renderer(base.Renderer):
         return False
 
     def showEditCommunity(self):
-        pm = getToolByName(self.portal(), "portal_membership")
+        pm = api.portal.get_tool('portal_membership')
         user = pm.getAuthenticatedMember()
 
         if not IPloneSiteRoot.providedBy(self.context) and \
            ICommunity.providedBy(self.context) and \
            'Owner' in self.context.get_local_roles_for_userid(user.id):
             return True
-
-    @memoize_contextless
-    def get_thinnkins(self, community=False):
-        registry = queryUtility(IRegistry)
-        settings = registry.forInterface(IMAXUISettings, check=False)
-        # Pick grant type from settings unless passed as optional argument
-        effective_grant_type = settings.oauth_grant_type
-
-        current_user = api.user.get_current()
-        oauth_token = current_user.getProperty('oauth_token', None)
-
-        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
-        maxclient.setActor(current_user.id)
-        maxclient.setToken(oauth_token)
-
-        if community:
-            context_hash = sha1(community.absolute_url()).hexdigest()
-            return maxclient.getContextActivities(context=context_hash, count=True)
-        else:
-            return maxclient.getUserActivities(count=True)
 
     def get_addable_types(self):
         factories_view = getMultiAdapter((self.context, self.request), name='folder_factories')
@@ -168,6 +129,9 @@ class Renderer(base.Renderer):
             return 'thinnkins'
         else:
             return 'entrades'
+
+    def get_hash(self, community):
+        return sha1(community.absolute_url()).hexdigest()
 
 
 class AddForm(base.NullAddForm):
