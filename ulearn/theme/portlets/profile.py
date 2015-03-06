@@ -60,15 +60,20 @@ class Renderer(base.Renderer):
         return pm.getPersonalPortrait().absolute_url()
 
     def has_complete_profile(self):
-        pm = api.portal.get_tool('portal_membership')
-        portrait = pm.getPersonalPortrait()
+        if self.user_info:
+            pm = api.portal.get_tool('portal_membership')
+            portrait = pm.getPersonalPortrait()
 
-        if self.user_info.get('fullname', False) \
-           and self.user_info.get('fullname', False) != self.username \
-           and self.user_info.get('email', False) \
-           and isinstance(portrait, Image):
-            return True
+            if self.user_info.get('fullname', False) \
+               and self.user_info.get('fullname', False) != self.username \
+               and self.user_info.get('email', False) \
+               and isinstance(portrait, Image):
+                return True
+            else:
+                return False
         else:
+            # The user doesn't have any property information for some weird
+            # reason or simply beccause we are admin
             return False
 
     def get_badges(self):

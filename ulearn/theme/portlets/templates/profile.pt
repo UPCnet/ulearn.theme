@@ -87,14 +87,14 @@
     <div class="row-fluid">
         <div class="badges span12">
           <div class="box_badges">
-            <badge image="badge1.png"
+            <badge class="box_badges" image="badge1.png"
                    tal:attributes="enabled view/has_complete_profile">
             </badge>
-            <badge image="badge2.png" threshold="1"></badge>
-            <badge image="badge3.png" threshold="3"></badge>
-            <badge image="badge4.png" threshold="5"></badge>
+            <badge class="box_badges" image="badge2.png" threshold="1"></badge>
+            <badge class="box_badges" image="badge3.png" threshold="3"></badge>
+            <badge class="box_badges" image="badge4.png" threshold="5"></badge>
           </div>
-<!--!             <tal:block repeat="badge view/get_badges">
+<!--!       <tal:block repeat="badge view/get_badges">
                 <div class="box_badges">
                   <img tal:attributes="src python:'{}/{}.png'.format(view.portal_url(), badge['png']) if badge['awarded'] else '{}/++ulearn++static/images/{}-alt.png'.format(view.portal_url(), badge['png'])" />
                 </div>

@@ -29,6 +29,7 @@ from genweb.core.interfaces import IHomePage
 from genweb.theme.browser.interfaces import IHomePageView
 from genweb.core.utils import genweb_config, havePermissionAtRoot, pref_lang
 from genweb.theme.browser.viewlets import gwPersonalBarViewlet
+from genweb.theme.browser.viewlets import gwManagePortletsFallbackViewletMixin
 from genweb.theme.browser.interfaces import IGenwebTheme
 
 from ulearn.core.content.community import ICommunity
@@ -188,102 +189,11 @@ class gwHeader(viewletBase):
     grok.layer(IUlearnTheme)
 
 
-# class gwImportantNews(viewletBase):
-#     grok.name('genweb.important')
-#     grok.context(IATNewsItem)
-#     grok.template('important')
-#     grok.viewletmanager(IAboveContentTitle)
-#     grok.layer(IGenwebTheme)
-
-#     def permisos_important(self):
-#         #TODO: Comprovar que l'usuari tingui permisos per a marcar com a important
-#         return not IImportant(self.context).is_important and getSecurityManager().checkPermission("plone.app.controlpanel.Overview", self.portal)
-
-#     def permisos_notimportant(self):
-#         #TODO: Comprovar que l'usuari tingui permisos per a marcar com a notimportant
-#         return IImportant(self.context).is_important and getSecurityManager().checkPermission("plone.app.controlpanel.Overview", self.portal)
-
-#     def update(self):
-#         form = self.request.form
-#         if 'genweb.theme.viewlet.marcar_important' in form:
-#             IImportant(self.context).is_important = True
-#         if 'genweb.theme.viewlet.marcar_notimportant' in form:
-#             IImportant(self.context).is_important = False
-
-
-# class gwGlobalSectionsViewlet(GlobalSectionsViewlet, viewletBase):
-#     grok.name('genweb.globalsections')
-#     grok.viewletmanager(IPortalTop)
-#     grok.layer(IGenwebTheme)
-
-#     index = ViewPageTemplateFile('viewlets_templates/sections.pt')
-
-#     def show_menu(self):
-#         return not self.genweb_config().treu_menu_horitzontal and self.portal_tabs
-
-
-# class gwPathBarViewlet(PathBarViewlet, viewletBase):
-#     grok.name('genweb.pathbar')
-#     grok.viewletmanager(IPortalTop)
-#     grok.layer(IGenwebTheme)
-
-#     index = ViewPageTemplateFile('viewlets_templates/path_bar.pt')
-
-#     def paginaPrincipal(self):
-#         #TODO: Comprovar que no sigui la Pàgina Principal
-#         return IHomePageView.providedBy(self.view)
-
-
 class gwFooter(viewletBase):
     grok.name('genweb.footer')
     grok.template('footer')
     grok.viewletmanager(IPortalFooter)
     grok.layer(IUlearnTheme)
-
-
-# class gwSearchViewletManager(grok.ViewletManager):
-#     grok.context(Interface)
-#     grok.name('genweb.search_manager')
-
-
-# class gwSearchViewlet(SearchBoxViewlet, viewletBase):
-#     grok.context(Interface)
-#     grok.viewletmanager(gwSearchViewletManager)
-#     grok.layer(IGenwebTheme)
-
-#     render = ViewPageTemplateFile('viewlets_templates/searchbox.pt')
-
-
-# class gwManagePortletsFallbackViewlet(ManagePortletsFallbackViewlet, viewletBase):
-#     """ The override for the manage_portlets_fallback viewlet for IPloneSiteRoot
-#     """
-#     grok.context(IPloneSiteRoot)
-#     grok.name('plone.manage_portlets_fallback')
-#     grok.viewletmanager(IBelowContent)
-#     grok.layer(IGenwebTheme)
-
-#     render = ViewPageTemplateFile('viewlets_templates/manage_portlets_fallback.pt')
-
-#     def getPortletContainerPath(self):
-#         context = aq_inner(self.context)
-#         pc = getToolByName(context, 'portal_catalog')
-#         result = pc.searchResults(object_provides=IHomePage.__identifier__,
-#                                   Language=pref_lang())
-#         if result:
-#             return result[0].getURL()
-#         else:
-#             # If this happens, it's bad. Implemented as a fallback
-#             return context.absolute_url()
-
-#     def managePortletsURL(self):
-#         return "%s/%s" % (self.getPortletContainerPath(), '@@manage-homeportlets')
-
-#     def available(self):
-#         secman = getSecurityManager()
-#         if secman.checkPermission('Portlets: Manage portlets', self.context):
-#             return True
-#         else:
-#             return False
 
 
 class TitleViewlet(TitleViewlet, viewletBase):
@@ -317,4 +227,13 @@ class socialtoolsViewlet(viewletBase):
     grok.name('genweb.socialtools')
     grok.template('socialtools')
     grok.viewletmanager(IAboveContentTitle)
+    grok.layer(IUlearnTheme)
+
+
+class uLearnManagePortletsFallbackViewletForPloneSiteRoot(gwManagePortletsFallbackViewletMixin, ManagePortletsFallbackViewlet, viewletBase):
+    """ The override for the manage_portlets_fallback viewlet for IPloneSiteRoot
+    """
+    grok.context(IPloneSiteRoot)
+    grok.name('plone.manage_portlets_fallback')
+    grok.viewletmanager(IBelowContent)
     grok.layer(IUlearnTheme)
