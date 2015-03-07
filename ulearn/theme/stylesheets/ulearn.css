@@ -3498,3 +3498,9 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .datagridwidget-cell input[type="checkbox"] {
   margin: 0 52px 10px; }
+
+.spinner {
+  float: left;
+  position: relative !important;
+  left: -10px !important;
+  top: 16px !important; }
