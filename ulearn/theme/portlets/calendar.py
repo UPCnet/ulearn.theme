@@ -48,16 +48,19 @@ class Renderer(calendarRenderer):
            not IDexterityContent.providedBy(self.context):
             path = ''
         else:
-            community = self.get_community()
-            if community is not None:
+            if ICommunity.providedBy(aq_inner(self.context)):
+                community = aq_inner(self.context)
                 portal = api.portal.get()
                 portal_path = portal.getPhysicalPath()
-                community_path = self.get_community().getPhysicalPath()
+                community_path = community.getPhysicalPath()
                 path = '/' + '/'.join(set(community_path) - set(portal_path))
             else:
                 path = ''
         self.data.search_base = path
         self.data.state = ('published', 'intranet')
+
+        self.username = api.user.get_current().id
+        # self.user_info = get_safe_member_by_id(self.username)
 
     def today(self):
         today = {}
@@ -81,9 +84,9 @@ class Renderer(calendarRenderer):
            not IDexterityContent.providedBy(self.context):
             path = navigation_root_path
         else:
-            community = self.get_community()
-            if community is not None:
-                path = '/'.join(self.get_community().getPhysicalPath())
+            if ICommunity.providedBy(aq_inner(self.context)):
+                community = aq_inner(self.context)
+                path = '/'.join(community.getPhysicalPath())
             else:
                 path = navigation_root_path
 
@@ -116,9 +119,9 @@ class Renderer(calendarRenderer):
            not IDexterityContent.providedBy(self.context):
             path = navigation_root_path
         else:
-            community = self.get_community()
-            if community is not None:
-                path = '/'.join(self.get_community().getPhysicalPath())
+            if ICommunity.providedBy(aq_inner(self.context)):
+                community = aq_inner(self.context)
+                path = '/'.join(community.getPhysicalPath())
             else:
                 path = navigation_root_path
 
@@ -147,9 +150,9 @@ class Renderer(calendarRenderer):
         if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
             path = navigation_root_path
         else:
-            community = self.get_community()
-            if community is not None:
-                path = '/'.join(self.get_community().getPhysicalPath())
+            if ICommunity.providedBy(aq_inner(self.context)):
+                community = aq_inner(self.context)
+                path = '/'.join(community.getPhysicalPath())
             else:
                 path = navigation_root_path
 
@@ -169,41 +172,44 @@ class Renderer(calendarRenderer):
 
         return weeks
 
-    def get_community(self):
-        context = aq_inner(self.context)
-        for obj in aq_chain(context):
-            if ICommunity.providedBy(obj):
-                return obj
-
     def show_newevent_url(self):
+        """ Assume that the calendar is only shown on the community itself. """
         context = aq_inner(self.context)
-        if 'Editor' in api.user.get_roles(obj=self.get_community()):
-            if IHomePage.providedBy(context) or IPloneSiteRoot.providedBy(self.context):
-                return False
-            else:
+        if IHomePage.providedBy(context) or IPloneSiteRoot.providedBy(self.context):
+            return False
+        else:
+            user_roles = context.get_local_roles_for_userid(self.username)
+            if 'Editor' in user_roles:
                 return True
+            else:
+                return False
+
+    def newevent_url(self):
+        """ Assume that the new event button is only shown on the community itself. """
+        context = aq_inner(self.context)
+        # Fist, a light guard
+        if ICommunity.providedBy(context):
+            event_folder_id = ''
+            for obj_id in context.objectIds():
+                if IEventsFolder.providedBy(context[obj_id]):
+                    event_folder_id = obj_id
+
+            return '{}/{}/++add++Event'.format(context.absolute_url(), event_folder_id)
+        else:
+            return ''
+
+    def is_community(self):
+        """ Assume that the calendar is only shown on the community itself. """
+        context = aq_inner(self.context)
+        if ICommunity.providedBy(context):
+            return True
         else:
             return False
 
-    def newevent_url(self):
-        community = self.get_community()
-        event_folder_id = ''
-        for obj_id in community.objectIds():
-            if IEventsFolder.providedBy(community[obj_id]):
-                event_folder_id = obj_id
-
-        return '{}/{}/++add++Event'.format(self.get_community().absolute_url(), event_folder_id)
-
-    def is_community(self):
-        context = aq_inner(self.context)
-        for obj in aq_chain(context):
-            if ICommunity.providedBy(obj):
-                return True
-
-        return False
-
     def get_event_folder_url(self):
-        return '{}/events'.format(self.get_community().absolute_url())
+        """ Assume that the new event button is only shown on the community itself. """
+        context = aq_inner(self.context)
+        return '{}/events'.format(context.absolute_url())
 
 
 class AddForm(base.NullAddForm):
