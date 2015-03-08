@@ -1,15 +1,9 @@
 from hashlib import sha1
 from plone import api
 from zope.interface import implements
-from zope.component.hooks import getSite
 
-from Products.CMFCore.utils import getToolByName
 from Acquisition import aq_inner, aq_chain
 
-from zope.component import getMultiAdapter, queryUtility
-
-from plone.registry.interfaces import IRegistry
-from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
 
@@ -19,8 +13,7 @@ from Products.CMFPlone import PloneMessageFactory as _
 
 from ulearn.core.content.community import ICommunity
 
-from maxclient import MaxClient
-from mrs.max.browser.controlpanel import IMAXUISettings
+from genweb.core.utils import get_safe_member_by_id
 
 
 class IThinnkersPortlet(IPortletDataProvider):
@@ -38,13 +31,11 @@ class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/thinnkers.pt')
 
-    @memoize_contextless
-    def portal_url(self):
-        return self.portal().absolute_url()
-
-    @memoize_contextless
-    def portal(self):
-        return getSite()
+    def __init__(self, context, request, view, manager, data):
+        super(Renderer, self).__init__(context, request, view, manager, data)
+        self.username = api.user.get_current().id
+        self.user_info = get_safe_member_by_id(self.username)
+        self.portal_url = api.portal.get().absolute_url()
 
     def get_community(self):
         context = aq_inner(self.context)
@@ -66,32 +57,8 @@ class Renderer(base.Renderer):
     def get_seemoreusers_literal(self):
         return 'seemoreusers_{}'.format(self.get_people_literal())
 
-    def get_thinnkers(self, community=False):
-        registry = queryUtility(IRegistry)
-        settings = registry.forInterface(IMAXUISettings, check=False)
-        # Pick grant type from settings unless passed as optional argument
-        effective_grant_type = settings.oauth_grant_type
-
-        current_user = api.user.get_current()
-        oauth_token = current_user.getProperty('oauth_token', None)
-
-        maxclient = MaxClient(url=settings.max_server, oauth_server=settings.oauth_server, grant_type=effective_grant_type)
-        maxclient.setActor(current_user.id)
-        maxclient.setToken(oauth_token)
-
-        if community:
-            context_hash = sha1(community.absolute_url()).hexdigest()
-            context_last_authors = maxclient.getContextLastAuthors(context=context_hash, limit=8)
-            if context_last_authors:
-                return context_last_authors[:8]
-            else:
-                return []
-        else:
-            context_last_authors = maxclient.getTimelineLastAuthors(limit=8)
-            if context_last_authors:
-                return context_last_authors[:8]
-            else:
-                return []
+    def get_hash(self, community):
+        return sha1(community.absolute_url()).hexdigest()
 
 
 class AddForm(base.NullAddForm):

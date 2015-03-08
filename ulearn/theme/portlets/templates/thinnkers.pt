@@ -1,8 +1,9 @@
 <tal:thinnkers tal:define="is_community view/community_mode"
                i18n:domain="ulearn">
+<tal:iscommunity condition="is_community">
 <div id="box_thinkers" class="ulearnbox"
-     tal:condition="is_community"
-     tal:define="community view/get_community">
+     tal:define="community view/get_community;
+                 community_hash python:view.get_hash(community)">
 
       <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
@@ -10,16 +11,16 @@
         Thinnkers
       </h2>
       <div id="miniatures">
-        <tal:loop repeat="thinnker python:view.get_thinnkers(community=community)">
+        <lastauthors type="context" community_hash="${community_hash}" ng-cloak>
           <div class="thinnker">
-            <a href="#" rel="tooltip" data-placement="bottom"
-               tal:attributes="title thinnker/displayName;
-                               href string:${view/portal_url}/profile/${thinnker/username}">
-              <img alt="User"
-                   tal:attributes="src string:${view/portal_url}/@@avatar/${thinnker/username}">
+            <a ng-repeat="author in last_authors"
+               title="{{author.displayName}}"
+               ng-href="{{portal_url}}/profile/{{author.username}}">
+               <img alt="User"
+                    ng-src="{{portal_url}}/@@avatar/{{author.username}}" />
             </a>
           </div>
-        </tal:loop>
+        </lastauthors>
       </div>
       <ul class="userslinks"
         tal:define="community view/get_community">
@@ -31,9 +32,10 @@
         </li>
       </ul>
 </div>
+</tal:iscommunity>
 
-<div id="box_thinkers" class="ulearnbox"
-     tal:condition="not: is_community">
+<tal:isprofile condition="not:is_community">
+<div id="box_thinkers" class="ulearnbox">
 
       <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
@@ -41,16 +43,16 @@
         Thinnkers
       </h2>
       <div id="miniatures">
-        <tal:loop repeat="thinnker python:view.get_thinnkers()">
+        <lastauthors type="timeline" ng-cloak>
           <div class="thinnker">
-            <a href="#" rel="tooltip" data-placement="bottom"
-               tal:attributes="title thinnker/displayName;
-                               href string:${view/portal_url}/profile/${thinnker/username}">
-              <img alt="User"
-                   tal:attributes="src string:${view/portal_url}/@@avatar/${thinnker/username}">
+            <a ng-repeat="author in last_authors"
+               title="{{author.displayName}}"
+               ng-href="{{portal_url}}/profile/{{author.username}}">
+               <img alt="User"
+                    ng-src="{{portal_url}}/@@avatar/{{author.username}}" />
             </a>
           </div>
-        </tal:loop>
+        </lastauthors>
       </div>
       <ul class="userslinks">
         <li>
@@ -61,4 +63,5 @@
         </li>
       </ul>
 </div>
+</tal:isprofile>
 </tal:thinnkers>
