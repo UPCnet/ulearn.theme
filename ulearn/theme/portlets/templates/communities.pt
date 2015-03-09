@@ -37,7 +37,7 @@
     <h3 id="myModalLabel" i18n:translate="createcommunity">Create a new community</h3>
   </div>
   <div class="modal-body">
-    <p>One fine body…</p>
+    <p></p>
   </div>
 </div>
 

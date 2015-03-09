@@ -2,6 +2,7 @@ from scss import Scss
 from DateTime import DateTime
 
 from five import grok
+from plone import api
 from zope.component.hooks import getSite
 from zope.interface import Interface
 from zope.component import queryUtility
@@ -24,16 +25,14 @@ from ulearn.core.controlpanel import IUlearnControlPanelSettings
 from ulearn.core.browser.searchuser import searchUsersFunction
 from ulearn.core.interfaces import IDiscussionFolder
 
-import pkg_resources
-import plone.api
-import scss
-import random
 from Products.PythonScripts.standard import url_quote_plus
 from Products.CMFPlone.browser.navtree import getNavigationRoot
 from genweb.core.utils import pref_lang
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.CMFPlone.utils import safe_unicode
 import json
+import scss
+import pkg_resources
 
 
 class homePage(HomePageBase):
@@ -50,10 +49,7 @@ class baseCommunities(grok.View):
     def update(self):
         self.favorites = self.get_favorites()
         self.query = self.request.form.get('q', '')
-
-    @memoize_contextless
-    def portal_url(self):
-        return self.portal().absolute_url()
+        self.portal_url = api.portal.get().absolute_url()
 
     @memoize_contextless
     def portal(self):
@@ -63,8 +59,8 @@ class baseCommunities(grok.View):
         return createToken()
 
     def get_my_communities(self):
-        pm = getToolByName(self.portal(), "portal_membership")
-        pc = getToolByName(self.portal(), "portal_catalog")
+        pm = api.portal.get_tool('portal_membership')
+        pc = api.portal.get_tool('portal_catalog')
         current_user = pm.getAuthenticatedMember().getUserName()
         return pc.searchResults(portal_type="ulearn.community",
                                 subscribed_users=current_user)
@@ -78,7 +74,7 @@ class baseCommunities(grok.View):
         return batch
 
     def is_community_manager(self, community):
-        roles = plone.api.user.get_roles(obj=community.getObject())
+        roles = api.user.get_roles(obj=community.getObject())
 
         return 'Manager' in roles or \
                'Site Administrator' in roles or \
@@ -286,7 +282,7 @@ class searchUsers(grok.View):
         return resultat
 
     def get_people_literal(self):
-        return plone.api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+        return api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
 
 
 class showOportunitats(grok.View):
@@ -340,7 +336,7 @@ class DiscussionFolderView(grok.View):
         return getSite()
 
     def get_folder_discussions(self):
-        pc = plone.api.portal.get_tool(name="portal_catalog")
+        pc = api.portal.get_tool(name="portal_catalog")
         path = "/".join(self.context.getPhysicalPath())
         results = pc.searchResults(portal_type="ulearn.discussion",
                                    path={'query': path},
@@ -348,8 +344,8 @@ class DiscussionFolderView(grok.View):
         return results
 
     def get_last_comment_from_discussion(self, discussion):
-        pc = plone.api.portal.get_tool(name="portal_catalog")
-        pm = plone.api.portal.get_tool(name="portal_membership")
+        pc = api.portal.get_tool(name="portal_catalog")
+        pm = api.portal.get_tool(name="portal_membership")
         results = pc.searchResults(portal_type="Discussion Item",
                                    path={'query': discussion.getPath()},
                                    sort_on='created',

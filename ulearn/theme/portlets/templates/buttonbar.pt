@@ -31,5 +31,5 @@
 
 <div class="tab-content">
   <div class="tab-pane active" id="maxui-widget-container"></div>
-  <div class="tab-pane" id="communities-view" data-remote="my-communities-ajax">Documents</div>
+  <div class="tab-pane" id="communities-view" data-remote="my-communities-ajax"></div>
 </div>

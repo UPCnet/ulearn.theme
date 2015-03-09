@@ -4,33 +4,30 @@ from five import grok
 from cgi import escape
 from Acquisition import aq_inner
 from Acquisition import aq_chain
-from AccessControl import getSecurityManager
 from zope.interface import Interface
 from zope.component import getMultiAdapter
 from zope.component.hooks import getSite
+from zope.component import getUtility
 
 from plone.memoize.view import memoize_contextless
+from plone.memoize import forever
 
-from Products.CMFCore import permissions
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
-from plone.app.layout.viewlets.common import PersonalBarViewlet, GlobalSectionsViewlet, PathBarViewlet
-from plone.app.layout.viewlets.common import SearchBoxViewlet, TitleViewlet, ManagePortletsFallbackViewlet
-from plone.app.layout.viewlets.interfaces import IHtmlHead, IPortalTop, IPortalHeader, IAboveContent, IBelowContent
-from plone.app.layout.viewlets.interfaces import IPortalFooter, IAboveContentTitle
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 
-from Products.ATContentTypes.interface.news import IATNewsItem
-from genweb.core.adapters import IImportant
+from plone.app.layout.viewlets.common import TitleViewlet, ManagePortletsFallbackViewlet
+from plone.app.layout.viewlets.interfaces import IHtmlHead, IPortalTop, IPortalHeader, IAboveContent, IBelowContent
+from plone.app.layout.viewlets.interfaces import IPortalFooter, IAboveContentTitle
+from plone.registry.interfaces import IRegistry
+from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
-from genweb.core.interfaces import IHomePage
-from genweb.theme.browser.interfaces import IHomePageView
-from genweb.core.utils import genweb_config, havePermissionAtRoot, pref_lang
+from genweb.core.utils import genweb_config
+from genweb.core.utils import pref_lang
+from genweb.core.utils import get_safe_member_by_id
 from genweb.theme.browser.viewlets import gwPersonalBarViewlet
 from genweb.theme.browser.viewlets import gwManagePortletsFallbackViewletMixin
-from genweb.theme.browser.interfaces import IGenwebTheme
 
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IDocumentFolder
@@ -40,11 +37,8 @@ from ulearn.core.interfaces import IEventsFolder
 from ulearn.core.interfaces import IDiscussionFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
+import datetime
 import plone.api
-
-from zope.component import getUtility
-from plone.registry.interfaces import IRegistry
-from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 grok.context(Interface)
 
@@ -137,6 +131,39 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
 
     index = ViewPageTemplateFile('viewlets_templates/personal_bar.pt')
 
+    def update(self):
+        self.portal_state = getMultiAdapter((self.context, self.request),
+                                            name=u'plone_portal_state')
+        self.site_url = self.portal_state.portal_url()
+        self.navigation_root_url = self.portal_state.navigation_root_url()
+
+        context = aq_inner(self.context)
+
+        context_state = getMultiAdapter((context, self.request),
+                                        name=u'plone_context_state')
+
+        self.user_actions = context_state.actions('user')
+        self.anonymous = self.portal_state.anonymous()
+
+        if not self.anonymous:
+            member = self.portal_state.member()
+            userid = member.getId()
+
+            self.homelink_url = "%s/useractions" % self.navigation_root_url
+
+            # Use the local catalog instead of getMemberById
+            member_info = get_safe_member_by_id(userid)
+            # member_info is None if there's no Plone user object, as when
+            # using OpenID.
+            if member_info:
+                fullname = member_info.get('fullname', '')
+            else:
+                fullname = None
+            if fullname:
+                self.user_name = fullname
+            else:
+                self.user_name = userid
+
     def is_upc_site(self):
         """ Check if the site is using LDAP UPC for show the
             correct change password link
@@ -194,6 +221,10 @@ class gwFooter(viewletBase):
     grok.template('footer')
     grok.viewletmanager(IPortalFooter)
     grok.layer(IUlearnTheme)
+
+    @forever.memoize
+    def get_current_year(self):
+        return datetime.datetime.now().year
 
 
 class TitleViewlet(TitleViewlet, viewletBase):

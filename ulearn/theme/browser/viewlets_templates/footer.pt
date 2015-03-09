@@ -6,7 +6,7 @@
       <div class="span8">
         <p>&copy;
           <a href="http://www.upcnet.es" target="_blank">
-            <abbr rel="tooltip" data-placement="top" title="UPCnet - Universitat Politècnica de Catalunya · BarcelonaTech">UPCnet 2013-2014</abbr>
+            <abbr rel="tooltip" data-placement="top" title="UPCnet - Universitat Politècnica de Catalunya · BarcelonaTech">UPCnet 2013-${viewlet/get_current_year}</abbr>
             <img class="img_blank" src="++genweb++static/images/blank_blanc.png"
                  i18n:attributes="alt obrir_link_finestra_nova"></a>.
         </p>

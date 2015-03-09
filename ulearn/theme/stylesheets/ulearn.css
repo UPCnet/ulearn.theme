@@ -2983,7 +2983,8 @@ input[type="text"]:focus {
 
 #box_stats .bubble-content {
   padding: 5px 12px;
-  text-align: center; }
+  text-align: center;
+  height: 18px; }
 #box_stats .bubble {
   background-color: #344961;
   color: white;
