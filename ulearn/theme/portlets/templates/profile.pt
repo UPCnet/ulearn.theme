@@ -44,19 +44,17 @@
         <h3 id="editModalLabel" i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</h3>
       </div>
       <div class="modal-body">
-        <p>One fine body…</p>
+        <p></p>
       </div>
     </div>
 
     <p tal:condition="view/showEditCommunity">
-      <a class="btn btn-large btn-comunitat" type="button" href="edit">
-        <i class="fa fa-pencil"></i>
-        <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
-      </a>
-      <a class="btn btn-large btn-comunitat" type="button" href="editacl">
-        <i class="fa fa-pencil"></i>
-        <tal:editcommunityacl i18n:domain="ulearn" i18n:translate="">Subscripcions</tal:editcommunityacl>
-      </a>
+      <button class="btn btn-large btn-comunitat"
+              type="button"
+              data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
+                <i class="fa fa-pencil"></i>
+                <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
+      </button>
     </p>
 
 </div>
