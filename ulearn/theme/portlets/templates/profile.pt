@@ -87,9 +87,9 @@
           <badge class="box_badges" image="badge1.png"
                  tal:attributes="enabled view/has_complete_profile">
           </badge>
-          <badge class="box_badges" image="badge2.png" threshold="1"></badge>
-          <badge class="box_badges" image="badge3.png" threshold="3"></badge>
-          <badge class="box_badges" image="badge4.png" threshold="5"></badge>
+          <badge class="box_badges" image="badge2.png" threshold="50"></badge>
+          <badge class="box_badges" image="badge3.png" threshold="100"></badge>
+          <badge class="box_badges" image="badge4.png" threshold="500"></badge>
         </div>
     </div>
 </div>
