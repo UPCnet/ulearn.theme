@@ -1,3 +1,4 @@
+/* global Spinner */
 (function($){
 
 function refreshPortlet(hash, _options){
@@ -50,7 +51,7 @@ $(document).ready(function(){
     // spinner.appendTo('body').hide();
     // $(document).ajaxStart(function() { spinner.show(); });
     // $(document).ajaxStop(function() { spinner.hide(); });
-    opts = {color: 'white', left:0, radius:0, lines:7, length:6, width:2}
+    var opts = {color: 'white', left:0, radius:0, lines:7, length:6, width:2};
     var spinner = new Spinner(opts).spin($('#portal-personaltools-wrapper .container')[0]);
     spinner.stop();
     $(document).ajaxStart(function() { spinner.spin(); });
