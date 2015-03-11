@@ -1,11 +1,23 @@
 Changelog
 =========
 
-1.46 (unreleased)
+1.46 (2015-03-11)
 -----------------
 
-- Nothing changed yet.
-
+* Fix spinner [Victor Fernandez de Alba]
+* Put correct threshold values [Victor Fernandez de Alba]
+* Return button to its original stage before grups [Victor Fernandez de Alba]
+* Transfer new spin jquery to ulearn [Victor Fernandez de Alba]
+* Optimizations and improvements on templates and getMemberById [Victor Fernandez de Alba]
+* Angularized stats portlet [Victor Fernandez de Alba]
+* Refactor calendar [Victor Fernandez de Alba]
+* Angularized Thinkers portlet [Victor Fernandez de Alba]
+* New spinner both for jquery and angular [Victor Fernandez de Alba]
+* Cleanup viewlets, fix manage portlets and Angular powered profile portlet [Victor Fernandez de Alba]
+* Further improvements to profile portlet [Victor Fernandez de Alba]
+* New profile using angular directives for MAX comunication. [Victor Fernandez de Alba]
+* WIP, refactoring grups [Victor Fernandez de Alba]
+* tooltips iconos vista más comunidades [Paco Gregori]
 
 1.45 (2015-02-12)
 -----------------
