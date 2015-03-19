@@ -225,3 +225,10 @@ h1, h2, h3, label, span.label, fieldset legend {
   height: 18px;
   width: 33px;
 }
+
+#tagslist a h4 {
+  color: $main-color;
+  font-size: 16px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
