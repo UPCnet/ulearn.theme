@@ -34,6 +34,11 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.template-view.portaltype-ulearn-community .content_edit {
+  padding: 0px;
+  background-color: inherit;
+}
+
 input, button, select, textarea {
   font-family: 'Open Sans', sans-serif;
 }
@@ -437,6 +442,8 @@ border-color: #34495E;
 
 
 // Botó blau
+.btn-group > .btn-comunitat {font-size: 13px;}
+
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -546,6 +553,31 @@ border-color: #34495E;
 #box_community img { width: 200px; }
 #box_community i { margin-right: 3px; }
 #box_community p { margin-top: 10px; }
+#box_community .btn-group { width: 175px; }
+#box_community .community_actions.btn-group > a { padding-left: 0; padding-right: 0; }
+#box_community .btn-large.dropdown-toggle {
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #34495E;
+  *background-color: #34495E;
+  background-image: -moz-linear-gradient(top, #3c546c, #34495E);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3c546c), to(#34495E));
+  background-image: -webkit-linear-gradient(top, #3c546c, #34495E);
+  background-image: -o-linear-gradient(top, #3c546c, #34495E);
+  background-image: linear-gradient(to bottom, #3c546c, #34495E);
+  background-repeat: repeat-x;
+  border-color: #34495E;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c546c', endColorstr='#34495E', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    font-size: 13px;
+    line-height: 15px;
+    padding-bottom: 10px;
+  padding-top: 10px;
+
+  .caret { border-top-color: #FFFFFF; }
+}
+#box_community ul.dropdown-menu { width: 202px; }
 
 .template-communities #content,
 .template-searchusers #content { background-color: white; }
@@ -1375,3 +1407,21 @@ label[for="form.ext_editor"] ~ div.widget {
 border-radius: 0;
 }
 
+.changeCommunityType .selected { border-radius: 4px; border: 2px solid #999; }
+.changeCommunityType div { float: left; width: 33%; height: 50px; padding: 5px; }
+.changeCommunityType:last-child {padding-right: 0}
+.changeCommunityType button {margin-top: 10px; }
+
+.dataTables_wrapper {
+  .row {
+    margin-left: 0;
+  }
+  input[type=search] {
+    margin-left: 4px;
+  }
+  .text-center, th {
+    text-align: center;
+  }
+}
+
+.user_group { margin-bottom: 10px;}

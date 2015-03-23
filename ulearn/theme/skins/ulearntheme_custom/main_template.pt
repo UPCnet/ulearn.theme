@@ -80,6 +80,10 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-ui-select/dist/select.min.css">
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/selectize/dist/css/selectize.default.css">
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog-theme-default.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog-theme-plain.css">
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/sweetalert/lib/sweet-alert.css">
 
     </tal:notajax>
 </head>

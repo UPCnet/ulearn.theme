@@ -135,12 +135,16 @@ class Renderer(base.Renderer):
     def get_hash(self, community):
         return sha1(community.absolute_url()).hexdigest()
 
-    def isCurrentPage(self,page):
-        param = False 
+    def isCurrentPage(self, page):
+        param = False
         path = self.context.absolute_url_path()
         if page in path:
             param = True
         return param
+
+    def get_community_type(self, community):
+        return community.community_type
+
 
 class AddForm(base.NullAddForm):
 

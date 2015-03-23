@@ -1569,7 +1569,7 @@
 h1, h2, h3, label, span.label {
   color: #F58D3D; }
 
-#portlet-prefs, .documentEditable,
+#portlet-prefs, .content_edit, .documentEditable,
 .template-overview-controlpanel #content {
   padding: 10px;
   background-color: white; }
@@ -2414,6 +2414,10 @@ body {
   background: #eae9e4;
   font-family: 'Open Sans', sans-serif; }
 
+.template-view.portaltype-ulearn-community .content_edit {
+  padding: 0px;
+  background-color: inherit; }
+
 input, button, select, textarea {
   font-family: 'Open Sans', sans-serif; }
 
@@ -2781,6 +2785,9 @@ input[type="text"]:focus {
 .todayevent a {
   color: #fff; }
 
+.btn-group > .btn-comunitat {
+  font-size: 13px; }
+
 .btn-comunitat {
   color: #FFFFFF;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
@@ -2872,6 +2879,38 @@ input[type="text"]:focus {
 
 #box_community p {
   margin-top: 10px; }
+
+#box_community .btn-group {
+  width: 175px; }
+
+#box_community .community_actions.btn-group > a {
+  padding-left: 0;
+  padding-right: 0; }
+
+#box_community .btn-large.dropdown-toggle {
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #34495E;
+  *background-color: #34495E;
+  background-image: -moz-linear-gradient(top, #3c546c, #34495e);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3c546c), to(#34495e));
+  background-image: -webkit-linear-gradient(top, #3c546c, #34495e);
+  background-image: -o-linear-gradient(top, #3c546c, #34495e);
+  background-image: linear-gradient(to bottom, #3c546c, #34495e);
+  background-repeat: repeat-x;
+  border-color: #34495E;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c546c', endColorstr='#34495E', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  font-size: 13px;
+  line-height: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px; }
+  #box_community .btn-large.dropdown-toggle .caret {
+    border-top-color: #FFFFFF; }
+
+#box_community ul.dropdown-menu {
+  width: 202px; }
 
 .template-communities #content,
 .template-searchusers #content {
@@ -3506,6 +3545,7 @@ label[for="form.ext_editor"] ~ div.widget {
   left: -10px !important;
   top: 16px !important; }
 
+<<<<<<< HEAD
 .portaltype-objectius li > a#plone-contentmenu-workflow {
   display: block; }
 
@@ -3651,3 +3691,30 @@ label[for="form.ext_editor"] ~ div.widget {
 border-radius: 0;
 }
 >>>>>>> Renderitzador carrousel youtube queryportlet
+=======
+.changeCommunityType .selected {
+  border-radius: 4px;
+  border: 2px solid #999; }
+
+.changeCommunityType div {
+  float: left;
+  width: 33%;
+  height: 50px;
+  padding: 5px; }
+
+.changeCommunityType:last-child {
+  padding-right: 0; }
+
+.changeCommunityType button {
+  margin-top: 10px; }
+
+.dataTables_wrapper .row {
+  margin-left: 0; }
+.dataTables_wrapper input[type=search] {
+  margin-left: 4px; }
+.dataTables_wrapper .text-center, .dataTables_wrapper th {
+  text-align: center; }
+
+.user_group {
+  margin-bottom: 10px; }
+>>>>>>> Improve API and specially its tests. Finished editacl view and related angularjs. Angularize alerts, dialogs for old interactions. Fix omega13 views. New i18n. Improve profile pt and button.

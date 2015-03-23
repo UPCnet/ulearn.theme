@@ -54,14 +54,35 @@
       </div>
     </div>
 
-    <p tal:condition="view/showEditCommunity">
-      <button class="btn btn-large btn-comunitat"
+  <div class="community_actions btn-group"
+       tal:condition="view/showEditCommunity"
+       ng-controller="profilePortlet as portlet"
+       tal:define="community_type python:view.get_community_type(community)">
+    <a class="btn btn-large btn-comunitat"
+       href="${community/absolute_url}/edit">
+      <i class="fa fa-pencil"></i>
+      <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
+    </a>
+    <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="${community/absolute_url}/editacl"><i class="fa fa-users"></i><tal:manageacl i18n:domain="ulearn" i18n:translate="manage_membership">Manage members</tal:manageacl></a></li>
+      <li><a ng-dialog="/++ulearn++app/portlets/change_community_type.html"
+             ng-dialog-class="ngdialog-theme-default"
+             ng-dialog-controller="profilePortletModal"
+             ng-dialog-cache="false"
+             ng-dialog-data='{"community_type": "${community_type}", "community_hash": "${community_hash}"}'
+             href="">
+              <i class="fa fa-pencil"></i><tal:changetype i18n:domain="ulearn" i18n:translate="change_community_type">Change type</tal:changetype></a></li>
+    </ul>
+  </div>
+<!--!       <button class="btn btn-large btn-comunitat"
               type="button"
               data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
                 <i class="fa fa-pencil"></i>
                 <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
-      </button>
-    </p>
+      </button> -->
 
 </div>
 </tal:iscommunity>
