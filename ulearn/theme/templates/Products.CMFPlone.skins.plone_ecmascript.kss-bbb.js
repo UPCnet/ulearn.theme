@@ -52,9 +52,10 @@ $(document).ready(function(){
     // $(document).ajaxStart(function() { spinner.show(); });
     // $(document).ajaxStop(function() { spinner.hide(); });
     var opts = {color: 'white', left:0, radius:0, lines:7, length:6, width:2};
-    var spinner = new Spinner(opts).spin($('#portal-personaltools-wrapper .container')[0]);
-    spinner.stop();
-    $(document).ajaxStart(function() { spinner.spin(); });
+    // var spinner = new Spinner(opts).spin($('#portal-personaltools-wrapper .container')[0]);
+    $(document).ajaxStart(function() {
+        spinner = new Spinner(opts).spin($('#portal-personaltools-wrapper .container')[0]);
+    });
     $(document).ajaxStop(function() { spinner.stop(); });
 
     /* Calendar Portlet KSS Replacement */
