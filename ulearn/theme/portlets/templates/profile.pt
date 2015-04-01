@@ -28,14 +28,46 @@
     </div>
 
     <div class="btn-group contentaddtoolbar"
-         tal:define="types view/get_addable_types">
-        <tal:buttons repeat="type types">
+          tal:define="types view/get_addable_types;
+                  documentPage python:view.isCurrentPage('documents');
+                  linkPage python:view.isCurrentPage('links');
+                  mediaPage python:view.isCurrentPage('media');">
+
+      <tal:buttons condition="documentPage" repeat="type types">
+        <tal:con tal:define="type_id type/id">
+          <span tal:condition="python: type_id in ('Folder','Document','File')">
             <a class="btn" rel="tooltip" data-placement="bottom"
                tal:attributes="href type/action;
                                title type/description">
                 <i tal:attributes="class string:icon-${type/extra/id}"></i>
             </a>
-        </tal:buttons>
+          </span>
+        </tal:con>
+      </tal:buttons>
+
+      <tal:buttons condition="linkPage" repeat="type types">
+        <tal:con tal:define="type_id type/id">
+          <span tal:condition="python: type_id in ('Folder','Link')">
+            <a class="btn" rel="tooltip" data-placement="bottom"
+               tal:attributes="href type/action;
+                               title type/description">
+                <i tal:attributes="class string:icon-${type/extra/id}"></i>
+            </a>
+          </span>
+        </tal:con>
+      </tal:buttons>
+
+      <tal:buttons condition="mediaPage" repeat="type types">
+        <tal:con tal:define="type_id type/id">
+          <span tal:condition="python: type_id in ('Folder','Image')">
+            <a class="btn" rel="tooltip" data-placement="bottom"
+               tal:attributes="href type/action;
+                               title type/description">
+                <i tal:attributes="class string:icon-${type/extra/id}"></i>
+            </a>
+          </span>
+        </tal:con>
+      </tal:buttons>
     </div>
 
     <div id="editModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
