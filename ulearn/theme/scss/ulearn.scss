@@ -1260,3 +1260,8 @@ label[for="form.ext_editor"] ~ div.widget {
 }
 
 .spinner { float:left; position: relative !important; left: -10px !important; top: 16px !important}
+
+// Per a que es vegi el desplegable de l'estat pels objectius de l'intranet.
+.portaltype-objectius li > a#plone-contentmenu-workflow {
+  display: block;
+}

@@ -3505,3 +3505,6 @@ label[for="form.ext_editor"] ~ div.widget {
   position: relative !important;
   left: -10px !important;
   top: 16px !important; }
+
+.portaltype-objectius li > a#plone-contentmenu-workflow {
+  display: block; }
