@@ -1569,6 +1569,9 @@
 h1, h2, h3, label, span.label {
   color: #F58D3D; }
 
+.template-homepage .content_edit {
+  background-color: inherit; }
+
 #portlet-prefs, .content_edit, .documentEditable,
 .template-overview-controlpanel #content {
   padding: 10px;
@@ -2410,6 +2413,82 @@ li > .noMenuAction {
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
 
+#communities-view .pagination {
+  text-align: center; }
+
+.community-actions {
+  position: relative;
+  line-height: 14px;
+  margin-top: 10px;
+  text-align: center; }
+
+a.community-action {
+  display: inline;
+  font-size: 11px;
+  padding-right: 5px;
+  cursor: pointer;
+  color: #6f6f6f; }
+  a.community-action.ng-enter, a.community-action.ng-leave, a.community-action.ng-animate {
+    -webkit-transition: none !important;
+    transition: none !important; }
+  a.community-action.ng-animate {
+    -webkit-animation: none 0s;
+    animation: none 0s; }
+  a.community-action:before {
+    font-size: 12px;
+    margin-right: .22em;
+    font-family: "maxicons"; }
+  a.community-action:hover {
+    color: #565656; }
+  a.community-action.community-edit:before {
+    font-family: FontAwesome;
+    content: "\f040"; }
+  a.community-action.community-edit:hover {
+    color: #555555; }
+  a.community-action.community-subscribe:before {
+    font-family: FontAwesome;
+    content: "\f096"; }
+  a.community-action.community-subscribe.community-subscribed {
+    color: #555555; }
+  a.community-action.community-subscribe.community-subscribed:before {
+    font-family: FontAwesome;
+    content: "\f046";
+    color: #555555; }
+  a.community-action.community-subscribe.community-subscribed:hover:before {
+    color: #3b3b3b; }
+  a.community-action.community-subscribe.community-subscribed:hover {
+    color: #3b3b3b; }
+  a.community-action.community-favorite:before {
+    content: '\e801'; }
+  a.community-action.community-favorite:hover:before {
+    content: '\e801';
+    color: #ff9b00; }
+  a.community-action.community-favorite.community-favorited {
+    color: #555555; }
+  a.community-action.community-favorite.community-favorited:hover {
+    color: #3b3b3b; }
+  a.community-action.community-favorite.community-favorited:before {
+    content: '\e800';
+    color: #555555; }
+  a.community-action.community-favorite.community-favorited:hover:before {
+    color: favoriteColor; }
+  a.community-action.community-flag:before {
+    content: '\e81e'; }
+  a.community-action.community-flag:hover:before {
+    content: '\e81e';
+    color: #555555; }
+  a.community-action.community-flag.community-flagged {
+    color: #555555; }
+  a.community-action.community-flag.community-flagged:hover {
+    color: #3b3b3b; }
+  a.community-action.community-flag.community-flagged:before {
+    content: '\e81d';
+    color: #555555; }
+  a.community-action.community-flag.community-flagged:hover:before {
+    color: #3b3b3b; }
+  a.community-action.community-delete:before {
+    content: '\e806'; }
+
 body {
   background: #eae9e4;
   font-family: 'Open Sans', sans-serif; }
@@ -2916,12 +2995,10 @@ input[type="text"]:focus {
 .template-searchusers #content {
   background-color: white; }
 
-#communitysearch, #librarysearch {
-  padding: 10px; }
-  #communitysearch h2, #librarysearch h2 {
-    float: left;
-    padding-left: 13px;
-    margin-top: 13px; }
+#communitysearch h2, #librarysearch h2 {
+  float: left;
+  padding-left: 13px;
+  margin-top: 13px; }
 
 #communitysearch .portalMessage,
 #communitysearch .alert,

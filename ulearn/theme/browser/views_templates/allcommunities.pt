@@ -1,43 +1,37 @@
-<div ng-controller="homeTopPageMenuButtons as ctrl">
-<div id="menusup"
-     i18n:domain="ulearn">
-  <nav>
-    <div class="row-fluid">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="ulearn">
 
-      <div class="active bubble top span6"
-           ng-class="{active: ctrl.active_tab == 'stream'}">
-        <div class="arrow"></div>
-        <div class="bubble-content">
-          <a ng-click="ctrl.active_tab = 'stream'">
-                <i class="fa fa-comment icons"></i>
-                <tal:Entrada i18n:translate="Entrada"> Stream </tal:Entrada></a>
+<head>
+  <metal:block fill-slot="top_slot"
+             tal:define="dummy python:request.set('disable_border',1);"/>
+</head>
+
+<body>
+
+  <metal:main metal:fill-slot="main"
+              tal:define="communities view/get_all_communities;">
+
+  <div id="communities-view" ng-controller="AllCommunities as ctrl">
+
+    <div id="communitysearch">
+      <h2 i18n:translate="allcommunities">Communities</h2>
+      <div id="searchinputcommunities">
+        <div class="input-append">
+          <input ng-model="q"
+                 class="searchInput" type="text" placeholder="Cerca"
+                 i18n:attributes="placeholder search_communities">
+          <span class="add-on"><i class="fa fa-search"></i></span>
         </div>
       </div>
 
-      <div class="bubble top span6"
-           ng-class="{active: ctrl.active_tab == 'mycommunities'}">
-        <div class="arrow"></div>
-        <div class="bubble-content">
-          <a ng-click="ctrl.active_tab = 'mycommunities'">
-                <i class="fa fa-group icons"></i>
-                <tal:Documents i18n:translate="my_communities">My communities</tal:Documents></a>
-        </div>
-      </div>
-
-    </div>
-  </nav>
-</div>
-
-<div ng-switch="ctrl.active_tab">
-  <div id="maxui-widget-container"
-       ng-hide="ctrl.active_tab === 'mycommunities'"></div>
-  <div id="communities-view"
-       ng-switch-when="mycommunities">
-
-    <div id="communities-view" ng-controller="AllCommunities as ctrl">
       <section id="communitylist">
         <ul>
-          <li dir-paginate="community in ctrl.user_communities | filter:q | itemsPerPage: ctrl.pageSize" current-page="ctrl.currentPage" ng-cloak>
+          <li dir-paginate="community in ctrl.communities | filter:q | itemsPerPage: ctrl.pageSize" current-page="ctrl.currentPage" ng-cloak>
             <div class="row-fluid">
               <div class="span2">
                 <a ng-href="{{community.url}}">
@@ -83,15 +77,12 @@
         </ul>
       </section>
       <div class="pagination">
-        <dir-pagination-controls boundary-links="true" template-url="${view/portal_url}/++components++ulearn/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        <dir-pagination-controls boundary-links="true" template-url="${portal_url}/++components++ulearn/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
       </div>
 
     </div>
-
   </div>
-</div>
-</div>
-<script type="text/javascript"
-        tal:attributes="src string:${view/portal_url}/max_variables.js">
-</script>
-<script type="text/javascript" src="++maxui++static/maxui.loader.js"></script>
+
+  </metal:main>
+</body>
+</html>

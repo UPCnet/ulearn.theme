@@ -11,6 +11,7 @@ $fa-font-path: "/++components++root/fontawesome/fonts";
 @import "iefixes";
 @import "propostes";
 @import "angular";
+@import "communities";
 // @import "genwebupc";
 
 // Victor for pushing it to genweb.theme
@@ -583,7 +584,6 @@ border-color: #34495E;
 .template-searchusers #content { background-color: white; }
 
 #communitysearch, #librarysearch {
-  padding: 10px;
   h2 {
     float: left;
     padding-left: 13px;
