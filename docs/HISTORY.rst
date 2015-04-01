@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.47 (unreleased)
+1.47 (2015-04-01)
 -----------------
 
-- Nothing changed yet.
-
+* Add CSS for the upcnet intranet package [Victor Fernandez de Alba]
+* change url forget password dynamically [Paco Gregori]
 
 1.46 (2015-03-11)
 -----------------
