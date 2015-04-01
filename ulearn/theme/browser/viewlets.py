@@ -29,6 +29,7 @@ from genweb.core.utils import pref_lang
 from genweb.core.utils import get_safe_member_by_id
 from genweb.theme.browser.viewlets import gwPersonalBarViewlet
 from genweb.theme.browser.viewlets import gwManagePortletsFallbackViewletMixin
+from genweb.core.browser.viewlets import gwCSSViewletManager
 
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IDocumentFolder
@@ -39,9 +40,29 @@ from ulearn.core.interfaces import IDiscussionFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
 import datetime
-import plone.api
+from plone import api
 
 grok.context(Interface)
+
+
+class gwCSSDevelViewlet(grok.Viewlet):
+    """ This is the develop CSS viewlet. """
+    grok.context(Interface)
+    grok.viewletmanager(gwCSSViewletManager)
+    grok.layer(IUlearnTheme)
+
+    def is_devel_mode(self):
+        return api.env.debug_mode()
+
+
+class gwCSSProductionViewlet(grok.Viewlet):
+    """ This is the production CSS viewlet. """
+    grok.context(Interface)
+    grok.viewletmanager(gwCSSViewletManager)
+    grok.layer(IUlearnTheme)
+
+    def is_devel_mode(self):
+        return api.env.debug_mode()
 
 
 class viewletBase(grok.Viewlet):
@@ -170,7 +191,7 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
             correct change password link
         """
 
-        acl_users = plone.api.portal.get_tool(name='acl_users')
+        acl_users = api.portal.get_tool(name='acl_users')
         if 'ldapUPC' in acl_users:
             return True
         else:

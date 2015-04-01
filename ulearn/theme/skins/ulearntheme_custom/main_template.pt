@@ -37,7 +37,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true" />
     <meta name="generator" content="Plone - http://plone.org" />
-    <meta name="author" content="UPCnet, SLU - eKnowledge" />
+    <meta name="author" content="UPCnet, SLU - Knowledge" />
     <meta name="description" content="Genweb v4.0 - El generador de webs d'UPCnet" />
     <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/++ulearn++static/favicon.ico" />
 
@@ -75,15 +75,9 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
         <tal:splittedCSS4IE tal:replace="structure string:&lt;!--[if lt IE 10]&gt;&lt;link rel='stylesheet' href='${portal_url}/++genweb++stylesheets/genwebupc-ie.css'&gt;&lt;![endif]--&gt;" />
 
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/ulearn.css">
+        <div tal:replace="structure provider:genweb.css" />
+
         <link rel="stylesheet" tal:attributes="href string:${portal_url}/dynamic.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-ui-select/dist/select.min.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/selectize/dist/css/selectize.default.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog-theme-default.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog-theme-plain.css">
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/sweetalert/lib/sweet-alert.css">
 
     </tal:notajax>
 </head>

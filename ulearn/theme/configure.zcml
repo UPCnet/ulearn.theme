@@ -43,6 +43,12 @@
       name="stylesheets"
       />
 
+  <plone:static
+      directory="dist"
+      type="ulearn"
+      name="distcss"
+      />
+
   <include package="z3c.jbot" file="meta.zcml" />
 
   <browser:jbot

@@ -1,0 +1,16 @@
+<tal:cssdefines define="portal_state context/@@plone_portal_state;
+                       portal_url portal_state/portal_url"
+                condition="viewlet/is_devel_mode">
+
+<!-- build:css(.) ulearn.css -->
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++stylesheets/ulearn.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-ui-select/dist/select.min.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/selectize/dist/css/selectize.default.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog-theme-default.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/ngDialog/css/ngDialog-theme-plain.css">
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/sweetalert/lib/sweet-alert.css">
+<!-- endbuild -->
+
+</tal:cssdefines>
