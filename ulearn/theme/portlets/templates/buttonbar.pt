@@ -74,7 +74,7 @@
               </a>
               <a class="community-action community-edit community-icon-"
                  ng-if="community.can_manage"
-                 href="${context/absolute_url}/edit">edit</a>
+                 ng-href="{{community.url}}/edit">edit</a>
               <a class="community-action community-delete community-icon-"
                  ng-if="community.can_manage"
                  ng-click="ctrl.delete(community)">delete</a>
