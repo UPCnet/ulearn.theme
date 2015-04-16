@@ -1303,9 +1303,10 @@ label[for="form.ext_editor"] ~ div.widget {
 }
 
 #Media-carousel .carousel-inner {
-  overflow: visible;
+  overflow: hidden;
   padding-top: 0px;
   padding-bottom: 0px;
+  border-radius: 0px;
 }
 
 #Media-carousel .carousel-caption {
