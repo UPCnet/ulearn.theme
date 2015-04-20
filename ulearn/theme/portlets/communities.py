@@ -41,6 +41,11 @@ class Renderer(base.Renderer):
     def portal(self):
         return getSite()
 
+    def get_addview(self):
+        add_view = self.portal().restrictedTraverse('{}/addCommunity'.format(''.join(self.portal().getPhysicalPath())))
+        add_view.update()
+        return add_view.render()
+
     def showCreateCommunity(self):
         """ The Contributor role is assumed that will be applied at the group in
             the portal root.

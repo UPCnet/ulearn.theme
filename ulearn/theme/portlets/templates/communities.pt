@@ -49,7 +49,7 @@
     <h3 id="myModalLabel" i18n:translate="createcommunity">Create a new community</h3>
   </div>
   <div class="modal-body">
-    <p></p>
+     <p tal:replace="structure view/get_addview"> </p>
   </div>
 </div>
 
@@ -81,7 +81,7 @@
 <tal:showcreate condition="view/showCreateCommunity">
   <button class="btn btn-large btn-comunitat"
           type="button"
-          data-remote="addCommunity" data-toggle="modal" data-target="#addModal">
+          data-toggle="modal" data-target="#addModal">
             <i class="fa fa-group"></i>
             <tal:createcommunity i18n:translate="createcommunity">Create a new community</tal:createcommunity>
   </button>
