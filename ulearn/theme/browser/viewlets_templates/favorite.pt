@@ -1,0 +1,8 @@
+<div id="object-favorite" style="float:right;">
+	<a class="favorite" href="#"
+	   i18n:attributes="title label_check_favorite"
+	   tal:attributes="data-dextobject context/id">
+	   <i tal:attributes="class viewlet/get_star_class"></i>
+	</a>
+
+</div>

@@ -21,6 +21,7 @@ from plone.app.layout.viewlets.common import TitleViewlet, ManagePortletsFallbac
 from plone.app.layout.viewlets.interfaces import IHtmlHead, IPortalTop, IPortalHeader, IAboveContent, IBelowContent
 from plone.app.layout.viewlets.interfaces import IPortalFooter, IAboveContentTitle
 from plone.registry.interfaces import IRegistry
+from plone.dexterity.interfaces import IDexterityContent
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
 
 from genweb.core.utils import genweb_config
@@ -98,7 +99,7 @@ class folderBar(viewletBase):
            self.folder_type == 'discussion':
             span = 'span2'
         else:
-            span = 'span3'
+            span = 'span6'
 
         if bubble == 'events' or \
            bubble == 'discussion':
@@ -268,3 +269,28 @@ class uLearnManagePortletsFallbackViewletForPloneSiteRoot(gwManagePortletsFallba
     grok.name('plone.manage_portlets_fallback')
     grok.viewletmanager(IBelowContent)
     grok.layer(IUlearnTheme)
+
+
+class favoriteViewlet(viewletBase):
+    grok.name('genweb.favorite')
+    grok.template('favorite')
+    grok.context(IDexterityContent)
+    grok.viewletmanager(IAboveContentTitle)
+    grok.layer(IUlearnTheme)
+
+    def update(self):
+        self.favorites = self.get_favorites()
+
+    def get_star_class(self):
+        return self.context.id in self.favorites and 'fa fa-star' or 'fa fa-star-o'
+
+
+    def get_favorites(self):
+        pm = getToolByName(self.context, "portal_membership")
+        pc = getToolByName(self.context, "portal_catalog")
+        current_user = pm.getAuthenticatedMember().getUserName()
+
+        results = pc.unrestrictedSearchResults(favoritedBy=current_user)
+        return [favorites.id for favorites in results]
+
+

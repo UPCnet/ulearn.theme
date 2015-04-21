@@ -148,3 +148,25 @@ input.maxui-button[disabled] {
 #maxui-search-filters .maxui-filter .close{
     top: 0;
 }
+
+
+#maxui-container .maxui-body {
+    font-family: open sans;
+    margin: 2px 0 0;
+    font-weight: 600;
+}
+
+#maxui-container .maxui-body > a {
+    font-family: open sans;
+    margin: 2px 0 0;
+    font-weight: normal;
+}
+
+.maxui-origin.maxui-icon- > a {
+    background: none repeat scroll 0 0 #ddd;
+    border-radius: 4px;
+    color: #444 !important;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-shadow: none;
+}

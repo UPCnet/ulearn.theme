@@ -475,3 +475,215 @@ class TypeAheadSearch(grok.View):
                 queryElements.append(too_many_results)
 
         return json.dumps(queryElements)
+
+
+class FilteredContentsSearchView(grok.View):
+    """ Filtered content search view for every folder. """
+    grok.name('filtered_contents_search_view')
+    grok.context(Interface)
+    grok.require('genweb.member')
+    grok.template('filtered_contents_search')
+    grok.layer(IUlearnTheme)
+
+    def update(self):
+        self.query = self.request.form.get('q', '')
+        if self.request.form.get('t', ''):
+            self.tags = [v for v in self.request.form.get('t').split(',')]
+        else:
+            self.tags = []
+
+    def get_batched_contenttags(self, query=None, batch=True, b_size=10, b_start=0):
+        pc = getToolByName(self.context, "portal_catalog")
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
+        r_results = pc.searchResults(path=path,
+                                     sort_on='sortable_title',
+                                     sort_order='ascending')
+        items = self.marca_favoritos(r_results)
+        batch = Batch(items, b_size, b_start)
+        return batch
+
+    def get_contenttags_by_query(self):
+        pc = getToolByName(self.context, "portal_catalog")
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
+
+        def quotestring(s):
+            return '"%s"' % s
+
+        def quote_bad_chars(s):
+            bad_chars = ["(", ")"]
+            for char in bad_chars:
+                s = s.replace(char, quotestring(char))
+            return s
+
+        if not self.query and not self.tags:
+            return self.getContent()
+
+        if not self.query == '':
+            multispace = u'\u3000'.encode('utf-8')
+            for char in ('?', '-', '+', '*', multispace):
+                self.query = self.query.replace(char, ' ')
+
+            query = self.query.split()
+            query = " AND ".join(query)
+            query = quote_bad_chars(query) + '*'
+
+            if self.tags:
+                r_results = pc.searchResults(path=path,
+                                             SearchableText=query,
+                                             Subject={'query': self.tags, 'operator': 'and'},
+                                             sort_on='sortable_title',
+                                             sort_order='ascending')
+            else:
+                r_results = pc.searchResults(path=path,
+                                             SearchableText=query,
+                                             sort_on='sortable_title',
+                                             sort_order='ascending')
+
+            items = self.marca_favoritos(r_results)
+            return items
+        else:
+            r_results = pc.searchResults(path=path,
+                                         Subject={'query': self.tags, 'operator': 'and'},
+                                         sort_on='sortable_title',
+                                         sort_order='ascending')
+
+            items = self.marca_favoritos(r_results)
+            return items
+            # return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
+
+    def get_tags_by_query(self):
+        pc = getToolByName(self.context, "portal_catalog")
+
+        def quotestring(s):
+            return '"%s"' % s
+
+        def quote_bad_chars(s):
+            bad_chars = ["(", ")"]
+            for char in bad_chars:
+                s = s.replace(char, quotestring(char))
+            return s
+
+        if not self.query == '':
+            multispace = u'\u3000'.encode('utf-8')
+            for char in ('?', '-', '+', '*', multispace):
+                self.query = self.query.replace(char, ' ')
+
+            query = self.query.split()
+            query = " AND ".join(query)
+            query = quote_bad_chars(query)
+            path = self.context.absolute_url_path()
+
+            r_results = pc.searchResults(path=path,
+                                         Subject=query,
+                                         sort_on='sortable_title',
+                                         sort_order='ascending')
+
+            items = self.marca_favoritos(r_results)
+            return items
+        else:
+            return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
+
+    def get_container_path(self):
+        return self.context.absolute_url()
+
+    def getContent(self):
+        portal = api.portal.get()
+        catalog = getToolByName(portal, 'portal_catalog')
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
+
+        r_results_all = catalog.searchResults(path={'query': path},
+                              sort_on='sortable_title',
+                              sort_order='ascending')
+
+        r_results_parent = catalog.searchResults(path={'query': path, 'depth': 1},
+                                      sort_on='sortable_title',
+                                      sort_order='ascending')
+
+        items_favorites = self.get_list_favorites(r_results_all)
+        items_nofavorites = self.get_list_nofavorites(r_results_parent)
+        items = [dict(favorite=items_favorites,
+                      nofavorite=items_nofavorites)]
+        return items
+
+    def get_list_favorites(self,r_results):
+        pc = getToolByName(self.context, "portal_catalog")
+        favorites_list = self.favorites_items()
+        favorite = []
+        favorite_folder = []
+
+        for item in r_results:
+            if item.id in favorites_list:
+                if item.portal_type == 'Folder':
+                    favorite_folder.append(item)
+                else:
+                    favorite.append(item)
+        items = favorite_folder + favorite
+        return items
+
+    def get_list_nofavorites(self, r_results):
+        pc = getToolByName(self.context, "portal_catalog")
+        favorites_list = self.favorites_items()
+        nofavorite = []
+        nofavorite_folder = []
+
+        for item in r_results:
+            if item.id not in favorites_list:
+                if item.portal_type == 'Folder':
+                    nofavorite_folder.append(item)
+                else:
+                    nofavorite.append(item)
+        items = nofavorite_folder + nofavorite
+        return items
+
+    def marca_favoritos(self, r_results):
+        pc = getToolByName(self.context, "portal_catalog")
+        favorites_list = self.favorites_items()
+        favorite = []
+        nofavorite = []
+        favorite_folder = []
+        nofavorite_folder = []
+
+        for item in r_results:
+            if item.id in favorites_list:
+                if item.portal_type == 'Folder':
+                    favorite_folder.append(item)
+                else:
+                    favorite.append(item)
+            else:
+                if item.portal_type == 'Folder':
+                    nofavorite_folder.append(item)
+                else:
+                    nofavorite.append(item)
+        items = [dict(favorite=favorite_folder + favorite,
+                      nofavorite=nofavorite_folder + nofavorite)]
+        return items      
+
+    def favorites_items(self):
+        pm = getToolByName(self.context, "portal_membership")
+        pc = getToolByName(self.context, "portal_catalog")
+        current_user = pm.getAuthenticatedMember().getUserName()
+        results = pc.unrestrictedSearchResults(favoritedBy=current_user)
+        self.favorites = [favorites.id for favorites in results]
+        return self.favorites
+
+    def item_is_favorite(self,contingut):
+        pm = getToolByName(self.context, "portal_membership")
+        pc = getToolByName(self.context, "portal_catalog")
+        current_user = pm.getAuthenticatedMember().getUserName()
+
+        results = pc.unrestrictedSearchResults(favoritedBy=current_user)
+
+        self.favorites = [favorites.id for favorites in results]
+        return contingut.id in self.favorites
+
+
+class SearchFilteredContentAjax(FilteredContentsSearchView):
+    """ Ajax helper for filtered content search view for every folder. """
+    grok.name('search_filtered_content')
+    grok.context(Interface)
+    grok.template('filtered_contents_search_ajax')
+    grok.layer(IUlearnTheme)
+

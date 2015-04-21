@@ -2636,7 +2636,7 @@ input[type="text"]:focus {
 
 #menusup {
   height: 49px;
-  max-width: 474px; }
+  max-width: 774px; }
   #menusup nav {
     border-bottom: 0;
     margin-bottom: 0; }
@@ -3508,3 +3508,27 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .portaltype-objectius li > a#plone-contentmenu-workflow {
   display: block; }
+
+
+#maxui-container .maxui-body {
+    font-family: open sans;
+    margin: 2px 0 0;
+    font-weight: 600;
+}
+
+#maxui-container .maxui-body > a {
+    font-family: open sans;
+    margin: 2px 0 0;
+    font-weight: normal;
+}
+
+.maxui-origin.maxui-icon- > a {
+    background: none repeat scroll 0 0 #ddd;
+    border-radius: 4px;
+    color: #444 !important;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-shadow: none;
+}
+
+
