@@ -33,14 +33,14 @@
         </div>
       </div>
 
-       <script type="text/javascript">
+      <!--  <script type="text/javascript">
        $(document).ready(function(event) {
            intervalid = setInterval(function(event) {
-               $('.carousel').carousel('cycle')
+               $('#portlet_media .carousel').carousel('cycle')
                clearInterval(intervalid)
                console.log('interval')
            }, 8000)
 
        })
-    </script>
+    </script> -->
   </tal:items>
