@@ -2,6 +2,6 @@
                        portal_url portal_state/portal_url"
                 condition="not: viewlet/is_devel_mode">
 
-<link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++distcss/ulearn.e60b6f70.css">
+<link rel="stylesheet" tal:attributes="href string:${portal_url}/++ulearn++distcss/ulearn.9924c9fa.css">
 
 </tal:cssdefines>
