@@ -15,9 +15,8 @@ from plone.registry.interfaces import IRegistry
 from plone.app.users.browser.personalpreferences import UserDataPanel
 
 from Products.CMFCore.utils import getToolByName
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-from souper.soup import get_soup
-from repoze.catalog.query import Eq
 
 from genweb.theme.browser.views import HomePageBase
 from genweb.theme.browser.interfaces import IHomePageView
@@ -148,7 +147,8 @@ class dynamicCSS(grok.View):
                         alt_gradient_end_color=self.settings.alt_gradient_end_color,
                         color_community_closed=self.settings.color_community_closed,
                         color_community_organizative=self.settings.color_community_organizative,
-                        color_community_open=self.settings.color_community_open)
+                        color_community_open=self.settings.color_community_open,
+                        portal_url=api.portal.get().absolute_url())
 
         variables_scss = """
 
@@ -165,6 +165,8 @@ class dynamicCSS(grok.View):
         $color_community_organizative: {color_community_organizative};
         $color_community_open: {color_community_open};
 
+        @import "{portal_url}/ulearncustom.css";
+
         """.format(**settings)
 
         scss.config.LOAD_PATHS = [
@@ -179,6 +181,18 @@ class dynamicCSS(grok.View):
         dynamic_scss = ''.join([variables_scss, scssfile.read()])
 
         return css.compile(dynamic_scss)
+
+
+class CustomCSS(grok.View):
+    grok.name('ulearncustom.css')
+    grok.context(Interface)
+    grok.layer(IUlearnTheme)
+
+    index = ViewPageTemplateFile('views_templates/ulearncustom.css.pt')
+
+    def render(self):
+        self.request.response.setHeader('Content-Type', 'text/css')
+        return self.index()
 
 
 class SearchUser(grok.View):
@@ -589,7 +603,7 @@ class FilteredContentsSearchView(grok.View):
                     nofavorite.append(item)
         items = [dict(favorite=favorite_folder + favorite,
                       nofavorite=nofavorite_folder + nofavorite)]
-        return items      
+        return items
 
     def favorites_items(self):
         pm = getToolByName(self.context, "portal_membership")
