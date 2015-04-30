@@ -256,10 +256,8 @@ class TitleViewlet(TitleViewlet, viewletBase):
     grok.layer(IUlearnTheme)
 
     def update(self):
-        portal_state = getMultiAdapter((self.context, self.request),
-                                        name=u'plone_portal_state')
-        context_state = getMultiAdapter((self.context, self.request),
-                                         name=u'plone_context_state')
+        portal_state = getMultiAdapter((self.context, self.request), name=u'plone_portal_state')
+        context_state = getMultiAdapter((self.context, self.request), name=u'plone_context_state')
         page_title = escape(safe_unicode(context_state.object_title()))
         portal_title = escape(safe_unicode(portal_state.navigation_root_title()))
 
@@ -299,19 +297,11 @@ class favoriteViewlet(viewletBase):
     grok.viewletmanager(IAboveContentTitle)
     grok.layer(IUlearnTheme)
 
-    def update(self):
-        self.favorites = self.get_favorites()
-
     def get_star_class(self):
-        return self.context.id in self.favorites and 'fa fa-star' or 'fa fa-star-o'
-
-
-    def get_favorites(self):
         pm = getToolByName(self.context, "portal_membership")
-        pc = getToolByName(self.context, "portal_catalog")
         current_user = pm.getAuthenticatedMember().getUserName()
 
-        results = pc.unrestrictedSearchResults(favoritedBy=current_user)
-        return [favorites.id for favorites in results]
-
-
+        if current_user in self.context._favoritedBy:
+            return 'fa fa-star'
+        else:
+            return 'fa fa-star-o'

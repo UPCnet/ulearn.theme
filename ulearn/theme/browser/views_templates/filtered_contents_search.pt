@@ -69,25 +69,25 @@
       <ul>
         <tal:llistat repeat="continguttot continguts">
           <tal:favorite repeat="contingut continguttot/favorite">
-            <li tal:define="item_type contingut/portal_type;
-                            item_url contingut/getURL|contingut/absolute_url;">
+            <li tal:define="item_type contingut/obj/portal_type;
+                            item_url contingut/obj/getURL|contingut/obj/absolute_url;">
               <div class="favorite">
                 <div class="star pull-right"><i class="fa fa-star pull-right"></i></div>
                 <a tal:attributes="href python: item_url+'/view' if item_type in use_view_action else item_url;">
-                  <h4 tal:attributes="class item_type"><span tal:replace="contingut/Title">Title</span></h4>
-                  <p tal:condition="contingut/Description"><span tal:content="contingut/Description">Description</span>
+                  <h4 tal:attributes="class item_type"><span tal:replace="contingut/obj/Title">Title</span></h4>
+                  <p tal:condition="contingut/obj/Description"><span tal:content="contingut/obj/Description">Description</span>
                   </p>
                 </a>
               </div>
            </li>
           </tal:favorite>
           <tal:nofavorite repeat="contingut continguttot/nofavorite">
-            <li tal:define="item_type contingut/portal_type;
-                              item_url contingut/getURL|contingut/absolute_url;">
+            <li tal:define="item_type contingut/obj/portal_type;
+                              item_url contingut/obj/getURL|contingut/obj/absolute_url;">
               <div class="nofavorite">
                 <a tal:attributes="href python: item_url+'/view' if item_type in use_view_action else item_url;">
-                  <h4 tal:attributes="class item_type"><span tal:replace="contingut/Title">Title</span></h4>
-                  <p tal:condition="contingut/Description"><span tal:content="contingut/Description">Description</span>
+                  <h4 tal:attributes="class item_type"><span tal:replace="contingut/obj/Title">Title</span></h4>
+                  <p tal:condition="contingut/obj/Description"><span tal:content="contingut/obj/Description">Description</span>
                   </p>
                 </a>
               </div>

@@ -1426,3 +1426,106 @@ border-radius: 0;
 }
 
 .user_group { margin-bottom: 10px;}
+
+#librarysearch {
+    .File:before {
+        content:"\f1c1";
+        font-family: FontAwesome;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        margin-right: 7px;
+    }
+    .File {
+        color: #585858;
+         font-size: 14px;
+        font-weight: 600;
+    }
+    .Link:before {
+        content:"\f0c1";
+        font-family: FontAwesome;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        margin-right: 7px;
+    }
+    .Link {
+        color: #585858;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .Image:before {
+        content:"\f1c5";
+        font-family: FontAwesome;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        margin-right: 7px;
+    }
+    .Image {
+        color: #585858;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .Document:before {
+        content:"\f0f6";
+        font-family: FontAwesome;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        margin-right: 7px;
+    }
+    .Document {
+        color: #585858;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+ }
+
+#tagslist {
+    a {
+        .Folder {
+            color: inherit;
+        }
+        .Folder:before {
+            content:"\f114";
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            margin-right: 10px;
+        }
+    }
+    li {
+    background: none repeat scroll 0 0 #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow: none;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 5px;
+    padding-top: 10px;
+    min-height: 40px;
+    }
+    p {
+        margin-left: 25px;
+    }
+}
+
+.favorite {
+    background: none repeat scroll 0 0 #f9faf5;
+    margin-bottom: 10px;
+    padding: 10px 10px 1px;
+    text-shadow: 1px 1px 1px white;
+    h4 {
+        color: black;
+    }
+}
+.favorite:hover {
+    opacity: 0.8;
+}

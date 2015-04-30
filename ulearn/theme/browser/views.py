@@ -35,6 +35,8 @@ import json
 import scss
 import pkg_resources
 
+order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}
+
 
 class homePage(HomePageBase):
     """ Override the original homepage as it will be always restricted to auth users """
@@ -412,7 +414,7 @@ class TypeAheadSearch(grok.View):
                 queryElements.append(queryElement)
 
             if len(results) > limit:
-                #We have to add here an element to the JSON in case there is too many elements.
+                # We have to add here an element to the JSON in case there is too many elements.
                 searchquery = '/@@search?SearchableText=%s&path=%s' \
                     % (searchterms, params['path'])
                 too_many_results = {'class': 'with-separator', 'title': ts.translate(label_show_all, context=REQUEST), 'description': '', 'itemUrl': portal_url + searchquery, 'icon': ''}
@@ -443,7 +445,12 @@ class FilteredContentsSearchView(grok.View):
         r_results = pc.searchResults(path=path,
                                      sort_on='sortable_title',
                                      sort_order='ascending')
-        items = self.marca_favoritos(r_results)
+
+        items_favorites = self.marca_favoritos(r_results)
+        items_nofavorites = self.exclude_favoritos(r_results)
+
+        items = self.ordenar_results(items_favorites, items_nofavorites)
+
         batch = Batch(items, b_size, b_start)
         return batch
 
@@ -485,7 +492,11 @@ class FilteredContentsSearchView(grok.View):
                                              sort_on='sortable_title',
                                              sort_order='ascending')
 
-            items = self.marca_favoritos(r_results)
+            items_favorites = self.marca_favoritos(r_results)
+            items_nofavorites = self.exclude_favoritos(r_results)
+
+            items = self.ordenar_results(items_favorites, items_nofavorites)
+
             return items
         else:
             r_results = pc.searchResults(path=path,
@@ -493,9 +504,12 @@ class FilteredContentsSearchView(grok.View):
                                          sort_on='sortable_title',
                                          sort_order='ascending')
 
-            items = self.marca_favoritos(r_results)
+            items_favorites = self.marca_favoritos(r_results)
+            items_nofavorites = self.exclude_favoritos(r_results)
+
+            items = self.ordenar_results(items_favorites, items_nofavorites)
+
             return items
-            # return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
 
     def get_tags_by_query(self):
         pc = getToolByName(self.context, "portal_catalog")
@@ -524,7 +538,11 @@ class FilteredContentsSearchView(grok.View):
                                          sort_on='sortable_title',
                                          sort_order='ascending')
 
-            items = self.marca_favoritos(r_results)
+            items_favorites = self.marca_favoritos(r_results)
+            items_nofavorites = self.exclude_favoritos(r_results)
+
+            items = self.ordenar_results(items_favorites, items_nofavorites)
+
             return items
         else:
             return self.get_batched_contenttags(query=None, batch=True, b_size=10, b_start=0)
@@ -538,90 +556,58 @@ class FilteredContentsSearchView(grok.View):
         path = self.context.getPhysicalPath()
         path = "/".join(path)
 
-        r_results_all = catalog.searchResults(path={'query': path},
-                              sort_on='sortable_title',
-                              sort_order='ascending')
-
         r_results_parent = catalog.searchResults(path={'query': path, 'depth': 1},
-                                      sort_on='sortable_title',
-                                      sort_order='ascending')
+                                                 sort_on='sortable_title',
+                                                 sort_order='ascending')
 
-        items_favorites = self.get_list_favorites(r_results_all)
-        items_nofavorites = self.get_list_nofavorites(r_results_parent)
-        items = [dict(favorite=items_favorites,
-                      nofavorite=items_nofavorites)]
+        items_favorites = self.favorites_items(path)
+        items_nofavorites = self.exclude_favoritos(r_results_parent)
+
+        items = self.ordenar_results(items_favorites, items_nofavorites)
+
         return items
 
-    def get_list_favorites(self,r_results):
-        pc = getToolByName(self.context, "portal_catalog")
-        favorites_list = self.favorites_items()
-        favorite = []
-        favorite_folder = []
+    def ordenar_results(self, items_favorites, items_nofavorites):
+        """ Ordena los resultados segun el tipo (portal_type)
+            segun este orden: (order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5})
+            y devuelve el diccionario con los favoritos y no favoritos. """
+        items_favorites_by_tipus = sorted(items_favorites, key=lambda item: item['tipus'])
+        items_nofavorites_by_tipus = sorted(items_nofavorites, key=lambda item: item['tipus'])
 
-        for item in r_results:
-            if item.id in favorites_list:
-                if item.portal_type == 'Folder':
-                    favorite_folder.append(item)
-                else:
-                    favorite.append(item)
-        items = favorite_folder + favorite
-        return items
-
-    def get_list_nofavorites(self, r_results):
-        pc = getToolByName(self.context, "portal_catalog")
-        favorites_list = self.favorites_items()
-        nofavorite = []
-        nofavorite_folder = []
-
-        for item in r_results:
-            if item.id not in favorites_list:
-                if item.portal_type == 'Folder':
-                    nofavorite_folder.append(item)
-                else:
-                    nofavorite.append(item)
-        items = nofavorite_folder + nofavorite
+        items = [dict(favorite=items_favorites_by_tipus,
+                      nofavorite=items_nofavorites_by_tipus)]
         return items
 
     def marca_favoritos(self, r_results):
-        pc = getToolByName(self.context, "portal_catalog")
-        favorites_list = self.favorites_items()
+        """ De los resultados obtenidos devuelve una lista con los que son FAVORITOS y le asigna un valor al tipus
+            segun este orden: (order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}) """
+        current_user = api.user.get_current().id
         favorite = []
+        favorite = [{'obj': r, 'tipus': order_by_type[r.portal_type] if r.portal_type in order_by_type else 6} for r in r_results if current_user in r.favoritedBy]
+
+        return favorite
+
+    def exclude_favoritos(self, r_results):
+        """ De los resultados obtenidos devuelve una lista con los que NO son FAVORITOS y le asigna un valor al tipus
+            segun este orden: (order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}) """
+        current_user = api.user.get_current().id
         nofavorite = []
-        favorite_folder = []
-        nofavorite_folder = []
+        nofavorite = [{'obj': r, 'tipus': order_by_type[r.portal_type] if r.portal_type in order_by_type else 6} for r in r_results if current_user not in r.favoritedBy]
 
-        for item in r_results:
-            if item.id in favorites_list:
-                if item.portal_type == 'Folder':
-                    favorite_folder.append(item)
-                else:
-                    favorite.append(item)
-            else:
-                if item.portal_type == 'Folder':
-                    nofavorite_folder.append(item)
-                else:
-                    nofavorite.append(item)
-        items = [dict(favorite=favorite_folder + favorite,
-                      nofavorite=nofavorite_folder + nofavorite)]
-        return items
+        return nofavorite
 
-    def favorites_items(self):
-        pm = getToolByName(self.context, "portal_membership")
-        pc = getToolByName(self.context, "portal_catalog")
-        current_user = pm.getAuthenticatedMember().getUserName()
-        results = pc.unrestrictedSearchResults(favoritedBy=current_user)
-        self.favorites = [favorites.id for favorites in results]
-        return self.favorites
+    def favorites_items(self, path):
+        """ Devuelve todos los favoritos del usuario y le asigna un valor al tipus
+            segun este orden: (order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}) """
+        pc = api.portal.get_tool(name='portal_catalog')
+        current_user = api.user.get_current().id
+        results = pc.searchResults(path={'query': path},
+                                   favoritedBy=current_user,
+                                   sort_on='sortable_title',
+                                   sort_order='ascending')
 
-    def item_is_favorite(self,contingut):
-        pm = getToolByName(self.context, "portal_membership")
-        pc = getToolByName(self.context, "portal_catalog")
-        current_user = pm.getAuthenticatedMember().getUserName()
-
-        results = pc.unrestrictedSearchResults(favoritedBy=current_user)
-
-        self.favorites = [favorites.id for favorites in results]
-        return contingut.id in self.favorites
+        favorite = [{'obj': r, 'tipus': order_by_type[r.portal_type] if r.portal_type in order_by_type else 6} for r in results]
+        return favorite
 
 
 class SearchFilteredContentAjax(FilteredContentsSearchView):
@@ -630,4 +616,3 @@ class SearchFilteredContentAjax(FilteredContentsSearchView):
     grok.context(Interface)
     grok.template('filtered_contents_search_ajax')
     grok.layer(IUlearnTheme)
-
