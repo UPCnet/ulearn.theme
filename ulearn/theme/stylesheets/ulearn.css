@@ -2489,6 +2489,33 @@ a.community-action {
   a.community-action.community-delete:before {
     content: '\e806'; }
 
+.changeCommunityType .selected {
+  border-radius: 4px;
+  border: 2px solid #999; }
+
+.changeCommunityType .pill {
+  float: left;
+  width: 33%;
+  height: 100px;
+  padding: 5px; }
+
+.changeCommunityType .subpill {
+  float: left;
+  width: 33%;
+  padding: 5px; }
+
+.changeCommunityType:last-child {
+  padding-right: 0; }
+
+.changeCommunityType button {
+  margin-top: 10px; }
+
+.changeCommunityType.ngdialog.ngdialog-theme-default .ngdialog-content {
+  width: 600px; }
+.changeCommunityType i {
+  font-size: 60px;
+  display: block; }
+
 body {
   background: #eae9e4;
   font-family: 'Open Sans', sans-serif; }
@@ -3717,22 +3744,6 @@ label[for="form.ext_editor"] ~ div.widget {
   -moz-border-radius: 0;
   border-radius: 0; }
 
-.changeCommunityType .selected {
-  border-radius: 4px;
-  border: 2px solid #999; }
-
-.changeCommunityType div {
-  float: left;
-  width: 33%;
-  height: 50px;
-  padding: 5px; }
-
-.changeCommunityType:last-child {
-  padding-right: 0; }
-
-.changeCommunityType button {
-  margin-top: 10px; }
-
 .dataTables_wrapper .row {
   margin-left: 0; }
 .dataTables_wrapper input[type=search] {
@@ -3743,6 +3754,7 @@ label[for="form.ext_editor"] ~ div.widget {
 .user_group {
   margin-bottom: 10px; }
 
+<<<<<<< HEAD
 #librarysearch .File:before {
   content: "\f1c1";
   font-family: FontAwesome;
@@ -3824,3 +3836,7 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .favorite:hover {
   opacity: 0.8; }
+=======
+.text-center {
+  text-align: center; }
+>>>>>>> Complete the change community view, add translations

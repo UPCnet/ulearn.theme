@@ -12,6 +12,7 @@ $fa-font-path: "/++components++root/fontawesome/fonts";
 @import "propostes";
 @import "angular";
 @import "communities";
+@import "community";
 // @import "genwebupc";
 
 // Victor for pushing it to genweb.theme
@@ -1408,11 +1409,6 @@ label[for="form.ext_editor"] ~ div.widget {
 border-radius: 0;
 }
 
-.changeCommunityType .selected { border-radius: 4px; border: 2px solid #999; }
-.changeCommunityType div { float: left; width: 33%; height: 50px; padding: 5px; }
-.changeCommunityType:last-child {padding-right: 0}
-.changeCommunityType button {margin-top: 10px; }
-
 .dataTables_wrapper {
   .row {
     margin-left: 0;
@@ -1529,3 +1525,5 @@ border-radius: 0;
 .favorite:hover {
     opacity: 0.8;
 }
+
+.text-center { text-align: center; }
