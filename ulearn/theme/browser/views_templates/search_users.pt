@@ -76,10 +76,12 @@
                   <a tal:attributes="href user/url">
                     <h4><span tal:replace="user/fullname">Full name</span> <span class="usuari_petit" tal:content="user/id">Id</span></h4>
                   </a>
-                    <p class="queryable email " tal:condition="user/email"><i class="queryable fa fa-envelope"></i><span tal:content="user/email">Email</span></p>
-                    <p class="queryable telefon" tal:condition="user/telefon"><i class="queryable fa fa-mobile"></i><span tal:content="user/telefon">Phone</span></p>
-                    <p class="queryable location" tal:condition="user/location"><i class="fa fa-building-o"></i><span tal:content="user/location">Location</span></p>
-                    <p class="queryable ubicacio" tal:condition="user/ubicacio"><i class="fa fa-user"></i><span tal:content="user/ubicacio">Ubicacio</span></p>
+                  <tal:props repeat="field view/get_user_info_for_display">
+                    <p class="queryable" tal:condition="python: user[field['name']]">
+                      <i tal:attributes="class python:'queryable '+field['icon']"></i>
+                      <span tal:content="python: user[field['name']]">Email</span>
+                    </p>
+                  </tal:props>
                 </div>
               </div>
             </li>

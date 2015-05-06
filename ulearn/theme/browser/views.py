@@ -6,6 +6,9 @@ from plone import api
 from zope.component.hooks import getSite
 from zope.interface import Interface
 from zope.component import queryUtility
+from zope.component import getUtilitiesFor
+from zope.component import getUtility
+from souper.interfaces import ICatalogFactory
 
 from plone.memoize import ram
 from plone.batching import Batch
@@ -20,6 +23,7 @@ from Products.CMFPlone.interfaces import IPloneSiteRoot
 
 from genweb.theme.browser.views import HomePageBase
 from genweb.theme.browser.interfaces import IHomePageView
+from genweb.core.utils import get_safe_member_by_id
 
 from ulearn.theme.browser.interfaces import IUlearnTheme
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
@@ -211,6 +215,33 @@ class SearchUser(grok.View):
         resultat = searchUsersFunction(self.context, self.request, searchString)
         return resultat
 
+    def get_user_info_for_display(self):
+        user_properties_utility = getUtility(ICatalogFactory, name='user_properties')
+
+        try:
+            client = api.portal.get_registry_record('mrs.max.browser.controlpanel.IMAXUISettings.domain')
+        except:
+            client = ''
+
+        rendered_properties = []
+        if 'user_properties_{}'.format(client) in [a[0] for a in getUtilitiesFor(ICatalogFactory)]:
+            extended_user_properties_utility = getUtility(ICatalogFactory, name='user_properties_{}'.format(client))
+            for prop in extended_user_properties_utility.directory_properties:
+                rendered_properties.append(dict(
+                    name=prop,
+                    icon=extended_user_properties_utility.directory_icons[prop]
+                ))
+            return rendered_properties
+        else:
+            # If it's not extended, then return the simple set of data we know
+            # about the user using also the directory_properties field
+            for prop in user_properties_utility.directory_properties:
+                rendered_properties.append(dict(
+                    name=prop,
+                    icon=user_properties_utility.directory_icons[prop]
+                ))
+            return rendered_properties
+
 
 class searchUsers(grok.View):
     grok.name('searchUsers')
@@ -229,6 +260,33 @@ class searchUsers(grok.View):
 
     def get_people_literal(self):
         return api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+
+    def get_user_info_for_display(self):
+        user_properties_utility = getUtility(ICatalogFactory, name='user_properties')
+
+        try:
+            client = api.portal.get_registry_record('mrs.max.browser.controlpanel.IMAXUISettings.domain')
+        except:
+            client = ''
+
+        rendered_properties = []
+        if 'user_properties_{}'.format(client) in [a[0] for a in getUtilitiesFor(ICatalogFactory)]:
+            extended_user_properties_utility = getUtility(ICatalogFactory, name='user_properties_{}'.format(client))
+            for prop in extended_user_properties_utility.directory_properties:
+                rendered_properties.append(dict(
+                    name=prop,
+                    icon=extended_user_properties_utility.directory_icons[prop]
+                ))
+            return rendered_properties
+        else:
+            # If it's not extended, then return the simple set of data we know
+            # about the user using also the directory_properties field
+            for prop in user_properties_utility.directory_properties:
+                rendered_properties.append(dict(
+                    name=prop,
+                    icon=user_properties_utility.directory_icons[prop]
+                ))
+            return rendered_properties
 
 
 class showOportunitats(grok.View):
