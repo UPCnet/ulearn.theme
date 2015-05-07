@@ -25,7 +25,7 @@
 <metal:main fill-slot="content">
     <tal:main-macro metal:define-macro="main"
                     tal:define="username view/username;
-                                userinfo view/user_properties;
+                                userinfo view/user_info;
                                 portal_url context/@@plone_portal_state/navigation_root_url;
                                 member context/@@plone_portal_state/member;">
 
