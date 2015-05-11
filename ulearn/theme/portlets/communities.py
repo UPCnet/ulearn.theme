@@ -42,7 +42,7 @@ class Renderer(base.Renderer):
         return getSite()
 
     def get_addview(self):
-        add_view = self.portal().restrictedTraverse('{}/addCommunity'.format(''.join(self.portal().getPhysicalPath())))
+        add_view = self.portal().restrictedTraverse('{}/addCommunity'.format('/'.join(self.portal().getPhysicalPath())))
         add_view.update()
         return add_view.render()
 
