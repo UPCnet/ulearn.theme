@@ -3844,3 +3844,9 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .icon-ulearn-video_embed {
   background-position: -192px 0px; }
+
+#listing-table a.contenttype-privatefolder:before, .template-folder_tabular_view .listing a.contenttype-privatefolder:before, .contenttreeWidget > .navTree a.contenttype-privatefolder:before {
+  background-position: -120px -120px; }
+
+#listing-table a.contenttype-ulearn-video_embed:before, .template-folder_tabular_view .listing a.contenttype-ulearn-video_embed:before, .contenttreeWidget > .navTree a.contenttype-ulearn-video_embed:before {
+  background-position: -192px 0px; }
