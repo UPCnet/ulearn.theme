@@ -1,11 +1,42 @@
 Changelog
 =========
 
-1.48 (unreleased)
------------------
+2.0 (2015-05-18)
+----------------
 
-- Nothing changed yet.
-
+* Translations for literals [Victor Fernandez de Alba]
+* Icon contenttype-privatefolder [Pilar Marinas]
+* Update build [Victor Fernandez de Alba]
+* Icon private folder [Pilar Marinas]
+* Fix communities portlet for sites inside a mount point [Victor Fernandez de Alba]
+* Updated build [Victor Fernandez de Alba]
+* Fix user profile [Victor Fernandez de Alba]
+* New generic view for directory views [Victor Fernandez de Alba]
+* Updated for complete profile generic enough for not to override it [Victor Fernandez de Alba]
+* Add class queryable for searUsers [Pilar Marinas]
+* Rebuild CSS [Victor Fernandez de Alba]
+* Complete the change community view, add translations [Victor Fernandez de Alba]
+* fix dist [Pilar Marinas]
+* Solucionar marcar favoritos y busquedas biblioteca [Pilar Marinas]
+* Erase demo CSS [Victor Fernandez de Alba]
+* Add new way of adding custom CSS at the end of the chain [Victor Fernandez de Alba]
+* Build last dist and fix CSS merge conflicts [Victor Fernandez de Alba]
+* Get add form programatically and add it directly to the portlet html. This solves add image button erratic behavior. [Victor Fernandez de Alba]
+* Fix CSS, and end all communities and my communities views [Victor Fernandez de Alba]
+* New views for all communities [Victor Fernandez de Alba]
+* New CSS viewlets automated via grunt [Victor Fernandez de Alba]
+* Fixed spiner [Victor Fernandez de Alba]
+* Improve API and specially its tests. Finished editacl view and related angularjs. Angularize alerts, dialogs for old interactions. Fix omega13 views. New i18n. Improve profile pt and button. [Victor Fernandez de Alba]
+* Quitar carousel cycle [Pilar Marinas]
+* Comentado interval carousel [Pilar Marinas]
+* Hidden overflow carousel media [Pilar Marinas]
+* Mostrar titol als videos [Pilar Marinas]
+* Renderitzador carrousel youtube queryportlet [Pilar Marinas]
+* Solucionar error cerca portlet de persones [Pilar Marinas]
+* Afegir cerca al portlet de persones [Pilar Marinas]
+* new branch portlet comunitats [Pilar Marinas]
+* add favorites to dexterityObjects and customize filtered_contents_search to show favorites items [Paco Gregori]
+* limit actions icons in portlet profile [Paco Gregori]
 
 1.47 (2015-04-01)
 -----------------
