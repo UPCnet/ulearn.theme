@@ -12,30 +12,35 @@
         tal:attributes="class community/community_type">
           <div class="bubble right pull-right">
             <div class="arrow"></div>
-            <div class="bubble-content" tal:define="pending python:view.get_pending_community_user(community, user)">
+            <div class="bubble-content" tal:define="pending community/pending">
               <tal:condition  tal:condition="python:pending != 0">
                 <span class="fa-stack">
                   <i class="fa fa-folder fa-stack-2x"></i>
                   <i class="fa fa-stack-1x">
                     <a href="#"
-                       tal:attributes="href community/getURL"
-                       tal:content="pending">
+                       tal:attributes="href community/url"
+                       tal:content="community/pending">
                     23</a>
                   </i>
                 </span>
               </tal:condition>
               <tal:condition  tal:condition="python:pending == 0">
                 <span class="fa-stack">
-                  <i class="fa fa-check-square-o fa-stack-2x"></i>
+                  <i class="fa fa-check-square-o fa-stack-2x">
+                     <a href="#"
+                        tal:attributes="href community/url"
+                        tal:content="community/pending">
+                    0</a>
+                  </i>
                 </span>
               </tal:condition>
             </div>
           </div>
           <a href="#"
              rel="tooltip" data-placement="right" title="Community title not trimmed"
-             tal:attributes="href community/getURL;
-                             title community/Title">
-              <tal:community content="python:view.get_community_title(community.Title)">
+             tal:attributes="href community/url;
+                             title community/title">
+              <tal:community content="community/title">
                 Community
               </tal:community>
           </a>

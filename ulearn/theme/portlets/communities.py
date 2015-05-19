@@ -16,6 +16,10 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from genweb.core.interfaces import IHomePage
 from ulearn.core.content.community import ICommunity
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
+from plone import api
+from souper.soup import get_soup
+from repoze.catalog.query import Eq
+from DateTime.DateTime import DateTime
 
 
 class ICommunitiesNavigation(IPortletDataProvider):
@@ -32,6 +36,38 @@ class Assignment(base.Assignment):
 class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/communities.pt')
+
+    @staticmethod
+    def get_pending_community_user(community, user):
+        """ Returns the number of pending objects to see in the community.
+        """
+        def get_data_acces_community_user():
+            """ Returns the date of user access to the community.
+            """
+            user_community = user + '_' + community.id
+            portal = api.portal.get()
+
+            soup_access = get_soup('user_community_access', portal)
+            exist = [r for r in soup_access.query(Eq('user_community', user_community))]
+            if not exist:
+                return DateTime()
+            else:
+                return exist[0].attrs['data_access']
+
+        data_access = get_data_acces_community_user() + 0.001   # Suma 0.001 para que no muetre los que acaba de crear el usuario
+        now = DateTime() + 0.001  # Suma 0.001 para que no muetre los que acaba de crear el usuario
+        portal = api.portal.get()
+        pc = getToolByName(portal, "portal_catalog")
+
+        date_range_query = {'query': (data_access, now), 'range': 'min:max'}
+
+        results = pc.searchResults(path=community.getPath(),
+                                   created=date_range_query)
+        valor = len(results)
+        if valor > 0:
+            return valor
+        else:
+            return 0
 
     @memoize_contextless
     def portal_url(self):
@@ -75,7 +111,20 @@ class Renderer(base.Renderer):
                                        favoritedBy=current_user,
                                        sort_on="subscribed_items",
                                        sort_order="reverse")
-        return communities
+
+        def format_communities():
+            """ Generator to return information of the community.
+            """
+            for community in communities:
+                info = {'id': community.id,
+                        'url': community.getURL(),
+                        'title': self.get_community_title(community.Title),
+                        'community_type': community.community_type,
+                        'pending': self.get_pending_community_user(community, current_user)
+                        }
+                yield info
+
+        return format_communities()
 
     def getCommunityMembers(self, community):
         if community.subscribed_items < 100:
@@ -104,14 +153,6 @@ class Renderer(base.Renderer):
         pm = getToolByName(portal, "portal_membership")
         current_user = pm.getAuthenticatedMember().getUserName()
         return current_user
-
-    # TO DO
-    def get_pending_community_user(self, community, user):
-        valor = 11
-        if valor > 0:
-            return valor
-        else:
-            return 0
 
 
 class AddForm(base.NullAddForm):
