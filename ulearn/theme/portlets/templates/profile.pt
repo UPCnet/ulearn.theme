@@ -68,7 +68,8 @@
     </button>
     <ul class="dropdown-menu">
       <li><a href="${community/absolute_url}/editacl"><i class="fa fa-users"></i><tal:manageacl i18n:domain="ulearn" i18n:translate="manage_membership">Manage members</tal:manageacl></a></li>
-      <li><a ng-dialog="/++ulearn++app/portlets/change_community_type.html"
+      <li tal:condition="view/has_webmaster_role">
+          <a ng-dialog="/++ulearn++app/portlets/change_community_type.html"
              ng-dialog-class="ngdialog-theme-default changeCommunityType"
              ng-dialog-controller="profilePortletModal"
              ng-dialog-cache="false"
@@ -77,12 +78,6 @@
               <i class="fa fa-pencil"></i><tal:changetype i18n:domain="ulearn" i18n:translate="change_community_type">Change type</tal:changetype></a></li>
     </ul>
   </div>
-<!--!       <button class="btn btn-large btn-comunitat"
-              type="button"
-              data-toggle="modal" data-remote="editCommunity" data-target="#editModal">
-                <i class="fa fa-pencil"></i>
-                <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
-      </button> -->
 
 </div>
 </tal:iscommunity>

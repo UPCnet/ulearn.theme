@@ -76,6 +76,9 @@ class Renderer(base.Renderer):
             # reason or simply beccause we are admin
             return False
 
+    def has_webmaster_role(self):
+        return 'WebMaster' in api.user.get_roles()
+
     def get_badges(self):
         """ Done consistent with an hipotetical badge provider backend """
         # Call to the REST service for the user badges returning a list with the
