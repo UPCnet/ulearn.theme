@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.1 (unreleased)
+2.1 (2015-05-27)
 ----------------
 
-- Nothing changed yet.
-
+* Parametro player pantalla completa [Pilar Marinas]
+* Add granularity to community creation by adding a role for each community type. CC open, CC closed, CC organizative. WebMasters retain their full permissions, and they are the only ones that could change the community type. [Victor Fernandez de Alba]
+* Shows the number of pending objects to see in the community [Pilar Marinas]
 
 2.0 (2015-05-18)
 ----------------
