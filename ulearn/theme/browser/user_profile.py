@@ -43,7 +43,7 @@ class userProfile(BrowserView):
     def publishTraverse(self, request, name):
         if self.username is None:  # ../profile/username
             self.username = name
-            self.user_info = get_safe_member_by_id(self.username)
+            self.user_info = api.user.get(self.username)
         else:
             raise NotFound(self, name, request)
         return self
@@ -86,7 +86,7 @@ class userProfile(BrowserView):
             for prop in extended_user_properties_utility.profile_properties:
                 rendered_properties.append(dict(
                     name=_(prop),
-                    value=self.user_info.get(prop, '')
+                    value=self.user_info.getProperty(prop, '')
                 ))
             return rendered_properties
         else:
@@ -95,7 +95,7 @@ class userProfile(BrowserView):
             for prop in user_properties_utility.profile_properties:
                 rendered_properties.append(dict(
                     name=_(prop),
-                    value=self.user_info.get(prop, '')
+                    value=self.user_info.getProperty(prop, '')
                 ))
             return rendered_properties
 
