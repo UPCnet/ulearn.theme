@@ -218,14 +218,10 @@ class SearchUser(grok.View):
     def get_user_info_for_display(self):
         user_properties_utility = getUtility(ICatalogFactory, name='user_properties')
 
-        try:
-            client = api.portal.get_registry_record('mrs.max.browser.controlpanel.IMAXUISettings.domain')
-        except:
-            client = ''
-
         rendered_properties = []
-        if 'user_properties_{}'.format(client) in [a[0] for a in getUtilitiesFor(ICatalogFactory)]:
-            extended_user_properties_utility = getUtility(ICatalogFactory, name='user_properties_{}'.format(client))
+        extender_name = api.portal.get_registry_record('genweb.controlpanel.core.IGenwebCoreControlPanelSettings.user_properties_extender')
+        if extender_name in [a[0] for a in getUtilitiesFor(ICatalogFactory)]:
+            extended_user_properties_utility = getUtility(ICatalogFactory, name=extender_name)
             for prop in extended_user_properties_utility.directory_properties:
                 rendered_properties.append(dict(
                     name=prop,
@@ -264,14 +260,10 @@ class searchUsers(grok.View):
     def get_user_info_for_display(self):
         user_properties_utility = getUtility(ICatalogFactory, name='user_properties')
 
-        try:
-            client = api.portal.get_registry_record('mrs.max.browser.controlpanel.IMAXUISettings.domain')
-        except:
-            client = ''
-
         rendered_properties = []
-        if 'user_properties_{}'.format(client) in [a[0] for a in getUtilitiesFor(ICatalogFactory)]:
-            extended_user_properties_utility = getUtility(ICatalogFactory, name='user_properties_{}'.format(client))
+        extender_name = api.portal.get_registry_record('genweb.controlpanel.core.IGenwebCoreControlPanelSettings.user_properties_extender')
+        if extender_name in [a[0] for a in getUtilitiesFor(ICatalogFactory)]:
+            extended_user_properties_utility = getUtility(ICatalogFactory, name=extender_name)
             for prop in extended_user_properties_utility.directory_properties:
                 rendered_properties.append(dict(
                     name=prop,
