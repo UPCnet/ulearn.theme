@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.2 (unreleased)
+2.2 (2015-06-10)
 ----------------
 
-- Nothing changed yet.
-
+* Add extended_user_properties profile [Pilar Marinas]
+* User_profile [Pilar Marinas]
 
 2.1 (2015-05-27)
 ----------------
