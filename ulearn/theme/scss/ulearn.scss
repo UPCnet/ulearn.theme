@@ -1299,6 +1299,17 @@ label[for="form.ext_editor"] ~ div.widget {
   display: block;
 }
 
+#box_comunitats .fa {
+  font-size: 21px;
+}
+
+#box_comunitats .bubble-content .fa a {
+  font-size: 11px;
+  position: absolute;
+  top: -2px;
+  left: -3px;
+}
+
 #box_comunitats .fa-stack {
   height: 1em;
   margin-top: -10px;
@@ -1490,6 +1501,17 @@ border-radius: 0;
         }
         .Folder:before {
             content:"\f114";
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            text-decoration: inherit;
+            margin-right: 10px;
+        }
+        .privateFolder {
+            color: inherit;
+        }
+        .privateFolder:before {
+            content:"\f070";
             font-family: FontAwesome;
             font-style: normal;
             font-weight: normal;

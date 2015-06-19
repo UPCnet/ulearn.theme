@@ -20,7 +20,7 @@
                     <a href="#"
                        tal:attributes="href community/url"
                        tal:content="community/pending">
-                    23</a>
+                    </a>
                   </i>
                 </span>
               </tal:condition>
@@ -28,9 +28,8 @@
                 <span class="fa-stack">
                   <i class="fa fa-check-square-o fa-stack-2x">
                      <a href="#"
-                        tal:attributes="href community/url"
-                        tal:content="community/pending">
-                    0</a>
+                        tal:attributes="href community/url">
+                     </a>
                   </i>
                 </span>
               </tal:condition>
