@@ -3850,3 +3850,8 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #listing-table a.contenttype-ulearn-video_embed:before, .template-folder_tabular_view .listing a.contenttype-ulearn-video_embed:before, .contenttreeWidget > .navTree a.contenttype-ulearn-video_embed:before {
   background-position: -192px 0px; }
+
+.searchbytagcontainer ul.select2-choices {
+  list-style: none;
+  margin: 0;
+}
