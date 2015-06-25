@@ -1,11 +1,16 @@
 Changelog
 =========
 
-2.3 (unreleased)
+2.3 (2015-06-25)
 ----------------
 
-- Nothing changed yet.
-
+* Rebuild CSS [Victor Fernandez de Alba]
+* Fix conflicted cSS [Victor Fernandez de Alba]
+* Add missing css [Victor Fernandez de Alba]
+* Modificar btn-group [Pilar Marinas]
+* Aplicar css a filtre per etiquetes [Pilar Marinas]
+* Canvi css comptador folder [Pilar Marinas]
+* Canvi color estats [hanirok]
 
 2.2 (2015-06-10)
 ----------------
