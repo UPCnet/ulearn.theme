@@ -33,13 +33,13 @@
 
       <tal:buttons condition="documentPage" repeat="type types">
         <tal:con tal:define="type_id type/id">
-          <span tal:condition="python: type_id in ('Folder','Document','Image')">
-            <a class="btn" rel="tooltip" data-placement="bottom"
+          <button type="button" class="btn btn-default" tal:condition="python: type_id in ('Folder','Document','Image')">
+            <a rel="tooltip" data-placement="bottom"
                tal:attributes="href type/action;
                                title type/description">
                 <i tal:attributes="class string:icon-${type/extra/id}"></i>
             </a>
-          </span>
+          </button>
         </tal:con>
       </tal:buttons>
     </div>
