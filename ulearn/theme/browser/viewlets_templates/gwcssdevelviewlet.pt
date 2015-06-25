@@ -3,6 +3,7 @@
                 condition="viewlet/is_devel_mode">
 
 <!-- build:css(.) ulearn.css -->
+    <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++root/select2/select2.css">
     <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-ui-select/dist/select.min.css">
     <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/selectize/dist/css/selectize.default.css">
     <link rel="stylesheet" tal:attributes="href string:${portal_url}/++components++ulearn/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css">

@@ -3652,6 +3652,15 @@ label[for="form.ext_editor"] ~ div.widget {
 .portaltype-objectius li > a#plone-contentmenu-workflow {
   display: block; }
 
+#box_comunitats .fa, #box_comunitats .icon-ulearn-discussion, #box_comunitats .icon-ulearn-video {
+  font-size: 21px; }
+
+#box_comunitats .bubble-content .fa a, #box_comunitats .bubble-content .icon-ulearn-discussion a, #box_comunitats .bubble-content .icon-ulearn-video a {
+  font-size: 11px;
+  position: absolute;
+  top: -2px;
+  left: -3px; }
+
 #box_comunitats .fa-stack {
   height: 1em;
   margin-top: -10px;
@@ -3812,6 +3821,15 @@ label[for="form.ext_editor"] ~ div.widget {
   font-weight: normal;
   text-decoration: inherit;
   margin-right: 10px; }
+#tagslist a .privateFolder {
+  color: inherit; }
+#tagslist a .privateFolder:before {
+  content: "\f070";
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 10px; }
 #tagslist li {
   background: none repeat scroll 0 0 #fff;
   border-bottom: 1px solid #ddd;
@@ -3851,7 +3869,12 @@ label[for="form.ext_editor"] ~ div.widget {
 #listing-table a.contenttype-ulearn-video_embed:before, .template-folder_tabular_view .listing a.contenttype-ulearn-video_embed:before, .contenttreeWidget > .navTree a.contenttype-ulearn-video_embed:before {
   background-position: -192px 0px; }
 
+<<<<<<< HEAD
 .searchbytagcontainer ul.select2-choices {
   list-style: none;
   margin: 0;
 }
+=======
+#plone-contentmenu-workflow .label.default {
+  color: white; }
+>>>>>>> Add missing css
