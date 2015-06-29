@@ -44,6 +44,8 @@ class userProfile(BrowserView):
         if self.username is None:  # ../profile/username
             self.username = name
             self.user_info = api.user.get(self.username)
+            member_info = get_safe_member_by_id(self.user_info.id)
+            self.user_fullname = member_info.get('fullname', '')
         else:
             raise NotFound(self, name, request)
         return self
