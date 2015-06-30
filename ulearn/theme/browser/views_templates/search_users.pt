@@ -78,7 +78,13 @@
                   </a>
                   <tal:props repeat="field view/get_user_info_for_display">
                     <p class="queryable" tal:condition="python: user[field['name']]">
-                      <i tal:attributes="class python:'queryable '+field['icon']"></i>
+                      <a target="_blank" tal:condition="python: field['name'] == 'email'"
+                         tal:attributes="href python: 'mailto:' + user[field['name']]">
+                        <i tal:attributes="class python:'queryable '+field['icon']"></i>
+                      </a>
+                      <tal:notemail tal:condition="python: field['name'] != 'email'">
+                         <i tal:attributes="class python:'queryable '+field['icon']"></i>
+                      </tal:notemail>
                       <span tal:content="python: user[field['name']]">Email</span>
                     </p>
                   </tal:props>
