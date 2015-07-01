@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.4 (unreleased)
+2.4 (2015-07-01)
 ----------------
 
-- Nothing changed yet.
-
+* Fix dist [Pilar Marinas]
+* searchUsers send mail [Pilar Marinas]
+* Add fullname user_profile [Pilar Marinas]
 
 2.3 (2015-06-25)
 ----------------
