@@ -43,9 +43,8 @@
       </h2>
       <div id="miniatures">
         <lastauthors type="timeline" ng-cloak>
-          <div class="thinnker">
-            <a ng-repeat="author in last_authors"
-               title="{{author.displayName}}"
+          <div class="thinnker" ng-repeat="author in last_authors">
+            <a title="{{author.displayName}}"
                ng-href="{{portal_url}}/profile/{{author.username}}">
                <img alt="User"
                     ng-src="{{portal_url}}/@@avatar/{{author.username}}" />
