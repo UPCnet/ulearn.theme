@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.5 (unreleased)
+2.5 (2015-07-14)
 ----------------
 
-- Nothing changed yet.
-
+* Fix components root path (from genweb.js) [Victor Fernandez de Alba]
+* Fix components root path (from genweb.js) [Victor Fernandez de Alba]
+* Fix authors placeholder in thinnkers portlet [Victor Fernandez de Alba]
 
 2.4 (2015-07-01)
 ----------------
