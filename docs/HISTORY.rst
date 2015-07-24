@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.6 (unreleased)
+2.6 (2015-07-24)
 ----------------
 
-- Nothing changed yet.
-
+* Acortar titulo portlet media [Pilar Marinas]
 
 2.5 (2015-07-14)
 ----------------
