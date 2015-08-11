@@ -1,5 +1,25 @@
 {
   "resources": {
+    "plone": {
+      "css": {
+        "development": [
+          "../../parts/omelette/Products/TinyMCE/browser/stylesheets/tinymce.css",
+          "../../parts/omelette/plone/app/jquerytools/browser/jquery.tools.dateinput.css",
+          "../../parts/omelette/plone/formwidget/querystring/querywidget.css",
+          "../../parts/omelette/collective/z3cform/datagridfield/static/datagridfield.css",
+          "../mrs.max/mrs/max/static/max.ui.css",
+          "../../parts/omelette/plone/formwidget/datetime/resources/styles.css",
+          "../../parts/omelette/plone/formwidget/recurrence/browser/lib/jquery.recurrenceinput.css",
+          "../../parts/omelette/plone/formwidget/recurrence/browser/lib/integration.css",
+          "../../parts/omelette/plone/formwidget/autocomplete/jquery-autocomplete/jquery.autocomplete.css",
+          "../../parts/omelette/plone/formwidget/contenttree/jquery-contenttree/contenttree.css",
+          "../../parts/omelette/plone/app/discussion/browser/stylesheets/discussion.css"
+        ],
+        "production": [
+          "../genweb.cdn/genweb/cdn/dist/plone.css"
+        ]
+      }
+    },
     "ulearn": {
       "css": {
         "development": [
@@ -20,6 +40,7 @@
     }
   },
   "order": [
+    "plone",
     "ulearn"
   ],
   "replace_map": {
@@ -43,6 +64,7 @@
     "../ulearn.theme/ulearn/theme/stylesheets": "++ulearn++stylesheets"
   },
   "revision_info": {
-    "../genweb.cdn/genweb/cdn/dist/ulearn.css": "../genweb.cdn/genweb/cdn/dist/ulearn.f7a7bc99.css"
+    "../genweb.cdn/genweb/cdn/dist/ulearn/plone.css": "../genweb.cdn/genweb/cdn/dist/ulearn/plone.4b3dedd7.css",
+    "../genweb.cdn/genweb/cdn/dist/ulearn/ulearn.css": "../genweb.cdn/genweb/cdn/dist/ulearn/ulearn.418a5228.css"
   }
 }
