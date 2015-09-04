@@ -21,7 +21,7 @@ module.exports = function (grunt) {
     egg: 'ulearn/theme'
   };
 
-  var config_file = 'config.json';
+  var config_file = 'ulearn/theme/config.json';
   var resource_config = grunt.file.readJSON(config_file);
 
   // Define the configuration for all the tasks
