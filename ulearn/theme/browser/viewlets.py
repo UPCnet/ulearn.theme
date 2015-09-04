@@ -60,7 +60,7 @@ class gwCSSDevelViewlet(grok.Viewlet):
 
     def read_resource_config_file(self):
         ulearnthemeegg = pkg_resources.get_distribution('ulearn.theme')
-        resource_file = open('{}/config.json'.format(ulearnthemeegg.location))
+        resource_file = open('{}/ulearn/theme/config.json'.format(ulearnthemeegg.location))
         return resource_file.read()
 
     @forever.memoize
@@ -96,7 +96,7 @@ class gwCSSProductionViewlet(grok.Viewlet):
 
     def read_resource_config_file(self):
         ulearnthemeegg = pkg_resources.get_distribution('ulearn.theme')
-        resource_file = open('{}/config.json'.format(ulearnthemeegg.location))
+        resource_file = open('{}/ulearn/theme/config.json'.format(ulearnthemeegg.location))
         return resource_file.read()
 
     @forever.memoize
