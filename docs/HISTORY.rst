@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.10 (unreleased)
+2.10 (2015-09-04)
 -----------------
 
-- Nothing changed yet.
-
+* Fix Grunt config.json location [Carles Bruguera]
 
 2.9 (2015-09-04)
 ----------------
