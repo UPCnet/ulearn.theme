@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.7 (unreleased)
+2.7 (2015-09-04)
 ----------------
 
-- Nothing changed yet.
-
+* Finished external resource with config.json based method [Victor Fernandez de Alba]
+* First version of new resource model [Victor Fernandez de Alba]
 
 2.6 (2015-07-24)
 ----------------
