@@ -30,6 +30,7 @@ from genweb.core.utils import get_safe_member_by_id
 from genweb.theme.browser.viewlets import gwPersonalBarViewlet
 from genweb.theme.browser.viewlets import gwManagePortletsFallbackViewletMixin
 from genweb.core.browser.viewlets import gwCSSViewletManager
+from genweb.core.browser.viewlets import baseResourcesViewlet
 
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IDocumentFolder
@@ -40,86 +41,19 @@ from ulearn.core.interfaces import IDiscussionFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
 import datetime
-import json
-import pkg_resources
 from plone import api
 
 grok.context(Interface)
 
 
-class gwCSSDevelViewlet(grok.Viewlet):
-    """ This is the develop CSS viewlet. """
+class gwCSSViewlet(baseResourcesViewlet):
+    """ This is the uLearn CSS viewlet. """
     grok.context(Interface)
     grok.viewletmanager(gwCSSViewletManager)
     grok.layer(IUlearnTheme)
 
     resource_type = 'css'
-
-    def is_devel_mode(self):
-        return api.env.debug_mode()
-
-    def read_resource_config_file(self):
-        ulearnthemeegg = pkg_resources.get_distribution('ulearn.theme')
-        resource_file = open('{}/ulearn/theme/config.json'.format(ulearnthemeegg.location))
-        return resource_file.read()
-
-    @forever.memoize
-    def get_resources(self):
-        true_http_path = []
-        resources_conf = json.loads(self.read_resource_config_file())
-        replace_map = resources_conf['replace_map']
-
-        for kind in resources_conf['order']:
-            devel_resources = resources_conf['resources'][kind][self.resource_type]['development']
-            for resource in devel_resources:
-                found = False
-                for source, destination in replace_map.items():
-                    if source in resource:
-                        true_http_path.append(resource.replace(source, destination))
-                        found = True
-                if not found:
-                    true_http_path.append(resource)
-
-        return true_http_path
-
-
-class gwCSSProductionViewlet(grok.Viewlet):
-    """ This is the production CSS viewlet. """
-    grok.context(Interface)
-    grok.viewletmanager(gwCSSViewletManager)
-    grok.layer(IUlearnTheme)
-
-    resource_type = 'css'
-
-    def is_devel_mode(self):
-        return api.env.debug_mode()
-
-    def read_resource_config_file(self):
-        ulearnthemeegg = pkg_resources.get_distribution('ulearn.theme')
-        resource_file = open('{}/ulearn/theme/config.json'.format(ulearnthemeegg.location))
-        return resource_file.read()
-
-    @forever.memoize
-    def get_resources(self):
-        true_http_path = []
-        resources_conf = json.loads(self.read_resource_config_file())
-        replace_map = resources_conf['replace_map']
-        for kind in resources_conf['order']:
-            production_resources = resources_conf['resources'][kind][self.resource_type]['production']
-            for resource in production_resources:
-                for res_rev_key in resources_conf['revision_info']:
-                    if resource == res_rev_key:
-                        resource = resources_conf['revision_info'][res_rev_key]
-
-                found = False
-                for source, destination in replace_map.items():
-                    if source in resource:
-                        true_http_path.append(resource.replace(source, destination))
-                        found = True
-                if not found:
-                    true_http_path.append(resource)
-
-        return true_http_path
+    current_egg_name = 'ulearn.theme'
 
 
 class viewletBase(grok.Viewlet):
