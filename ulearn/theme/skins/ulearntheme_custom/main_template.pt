@@ -39,7 +39,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
     <meta name="generator" content="Plone - http://plone.org" />
     <meta name="author" content="UPCnet, SLU - Knowledge" />
     <meta name="description" content="Genweb v4.0 - El generador de webs d'UPCnet" />
-    <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/++ulearn++static/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/favicon.ico" />
 
     <metal:baseslot define-slot="base">
         <base tal:attributes="href plone_view/renderBase" /><!--[if lt IE 7]></base><![endif]-->
