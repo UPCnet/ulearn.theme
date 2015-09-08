@@ -120,7 +120,8 @@ class dynamicCSS(grok.View):
            self.settings.color_community_closed and \
            self.settings.color_community_organizative and \
            self.settings.color_community_open:
-            return self.compile_scss(main_color=self.settings.main_color,
+            return '@import "{}/ulearncustom.css";\n'.format(api.portal.get().absolute_url()) + \
+                   self.compile_scss(main_color=self.settings.main_color,
                                      secondary_color=self.settings.secondary_color,
                                      background_property=self.settings.background_property,
                                      background_color=self.settings.background_color,
@@ -134,7 +135,7 @@ class dynamicCSS(grok.View):
                                      color_community_open=self.settings.color_community_open)
 
         else:
-            return ""
+            return '@import "{}/ulearncustom.css";'.format(api.portal.get().absolute_url())
 
     @ram.cache(_render_cachekey)
     def compile_scss(self, **kwargs):
@@ -153,8 +154,7 @@ class dynamicCSS(grok.View):
                         alt_gradient_end_color=self.settings.alt_gradient_end_color,
                         color_community_closed=self.settings.color_community_closed,
                         color_community_organizative=self.settings.color_community_organizative,
-                        color_community_open=self.settings.color_community_open,
-                        portal_url=api.portal.get().absolute_url())
+                        color_community_open=self.settings.color_community_open)
 
         variables_scss = """
 
@@ -170,8 +170,6 @@ class dynamicCSS(grok.View):
         $color_community_closed: {color_community_closed};
         $color_community_organizative: {color_community_organizative};
         $color_community_open: {color_community_open};
-
-        @import "{portal_url}/ulearncustom.css";
 
         """.format(**settings)
 
