@@ -1,11 +1,13 @@
 Changelog
 =========
 
-2.11 (unreleased)
+2.11 (2015-09-08)
 -----------------
 
-- Nothing changed yet.
-
+* Fix cache of custom.css path [Victor Fernandez de Alba]
+* Fix favicon.ico path [Victor Fernandez de Alba]
+* Refactor of the new resource viewlet [Victor Fernandez de Alba]
+* Not clean resources [Victor Fernandez de Alba]
 
 2.10 (2015-09-04)
 -----------------
