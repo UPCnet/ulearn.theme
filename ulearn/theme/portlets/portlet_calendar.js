@@ -7,7 +7,7 @@
         var elem_data = elem.data();
         var portlethash = pw.attr('id');
         portlethash = portlethash.substring(15, portlethash.length);
-        url = window.location.href +
+        url = portal_url +
               '/@@render-portlet?portlethash=' + portlethash +
               '&year=' + elem_data.year +
               '&month=' + elem_data.month;
