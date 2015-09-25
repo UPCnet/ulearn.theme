@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.12 (unreleased)
+2.12 (2015-09-25)
 -----------------
 
-- Nothing changed yet.
-
+* Solucionar que funcione cambio mes del calendario general [Pilar Marinas]
 
 2.11 (2015-09-08)
 -----------------
