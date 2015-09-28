@@ -1,4 +1,5 @@
 # -*- extra stuff goes here -*-
+import calendar as calmodule
 
 
 def initialize(context):
