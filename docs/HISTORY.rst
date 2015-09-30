@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.14 (unreleased)
+2.14 (2015-09-30)
 -----------------
 
-- Nothing changed yet.
-
+* Fix calendar portlet when showing so many events in case that there's no today event [Victor Fernandez de Alba]
 
 2.13 (2015-09-29)
 -----------------
