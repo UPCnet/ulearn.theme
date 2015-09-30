@@ -285,7 +285,7 @@ class Renderer(base.Renderer):
         result = pc(**query)
         nearest = self.get_nearest_today_event()
         if nearest:
-            return [event for event in result if event.id != nearest.id]
+            return [event for event in result if event.id != nearest.id][:3]
         else:
             return result[:3]
 
