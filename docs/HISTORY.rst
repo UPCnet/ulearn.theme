@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.15 (unreleased)
+2.15 (2015-10-06)
 -----------------
 
-- Nothing changed yet.
-
+* Badge foto [Pilar Marinas]
+* Transfer override of the portlet_calendar.js to GW [Victor Fernandez de Alba]
 
 2.14 (2015-09-30)
 -----------------
