@@ -60,11 +60,12 @@ class userProfile(BrowserView):
     def has_complete_profile(self):
         if self.user_info:
             pm = api.portal.get_tool('portal_membership')
-            portrait = pm.getPersonalPortrait()
+            portrait = pm.getPersonalPortrait(self.user_info.id)
+            member_info = get_safe_member_by_id(self.user_info.id)
 
-            if self.user_info.get('fullname', False) \
-               and self.user_info.get('fullname', False) != self.username \
-               and self.user_info.get('email', False) \
+            if member_info.get('fullname', False) \
+               and member_info.get('fullname', False) != self.username \
+               and member_info.get('email', False) \
                and isinstance(portrait, Image):
                 return True
             else:
