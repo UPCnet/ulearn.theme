@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.16 (unreleased)
+2.16 (2015-10-14)
 -----------------
 
-- Nothing changed yet.
-
+* Solucionar error youtube [Pilar Marinas]
 
 2.15 (2015-10-06)
 -----------------
