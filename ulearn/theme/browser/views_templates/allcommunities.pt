@@ -55,7 +55,7 @@
                  {{ 'ALLCOMMUNITIES_VIEW.FAVORITE' | translate }}
               </a>
               <a class="community-action community-subscribe community-icon-"
-                 ng-if="!ctrl.is_subscribed(community.url)"
+                 ng-if="!ctrl.is_subscribed(community.url) && community.type === 'Open'"
                  ng-class="{'community-subscribed': ctrl.is_subscribed(community.url)}"
                  ng-click="ctrl.subscribe(community)" ng-cloak>
                  {{ 'ALLCOMMUNITIES_VIEW.SUBSCRIBE' | translate }}
