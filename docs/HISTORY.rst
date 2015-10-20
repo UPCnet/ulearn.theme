@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.17 (unreleased)
+2.17 (2015-10-20)
 -----------------
 
-- Nothing changed yet.
-
+* Acortar por css titulo portlet comunidad [Pilar Marinas]
+* Que a les comunitats tancades no et puguis subscriure [Pilar Marinas]
 
 2.16 (2015-10-14)
 -----------------
