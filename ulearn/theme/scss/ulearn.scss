@@ -1576,3 +1576,14 @@ border-radius: 0;
 #userlist .queryable a img {
   display: none;
 }
+
+#box_comunitats .bubble.right {
+  margin-left: 0px;
+}
+
+#title_community {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

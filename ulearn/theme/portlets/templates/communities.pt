@@ -35,7 +35,7 @@
               </tal:condition>
             </div>
           </div>
-          <a href="#"
+          <a id="title_community" href="#"
              rel="tooltip" data-placement="right" title="Community title not trimmed"
              tal:attributes="href community/url;
                              title community/title">

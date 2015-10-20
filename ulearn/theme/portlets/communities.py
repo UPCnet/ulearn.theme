@@ -118,7 +118,7 @@ class Renderer(base.Renderer):
             for community in communities:
                 info = {'id': community.id,
                         'url': community.getURL(),
-                        'title': self.get_community_title(community.Title),
+                        'title': community.Title,
                         'community_type': community.community_type,
                         'pending': self.get_pending_community_user(community, current_user)
                         }
@@ -132,11 +132,11 @@ class Renderer(base.Renderer):
         else:
             return '+99'
 
-    def get_community_title(self, title):
-        if len(title) > 18:
-            return title[:18] + '...'
-        else:
-            return title
+    # def get_community_title(self, title):
+    #     if len(title) > 18:
+    #         return title[:18] + '...'
+    #     else:
+    #         return title
 
     def get_campus_url(self):
         registry = queryUtility(IRegistry)
