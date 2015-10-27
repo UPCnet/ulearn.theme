@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.18 (unreleased)
+2.18 (2015-10-27)
 -----------------
 
-- Nothing changed yet.
-
+* Modify method get in searchUsers [Pilar Marinas]
 
 2.17 (2015-10-20)
 -----------------
