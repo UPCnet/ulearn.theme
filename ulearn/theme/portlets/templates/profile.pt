@@ -10,7 +10,8 @@
         <h2 tal:content="community/title">Ricard Grau</h2>
         <p>
           <span class="dades currentactivity">
-          <max-activities-count object="context" community_hash="${community_hash}"></max-activities-count>
+          <max-activities-count object="context"
+                                tal:attributes="community_hash community_hash"></max-activities-count>
           </span>
            <span i18n:translate="" tal:content="view/get_posts_literal">thinnkins</span>
         </p>
@@ -92,7 +93,8 @@
         <h2 tal:content="view/fullname">Ricard Grau</h2>
         <p>
           <span class="dades currentactivity">
-            <max-activities-count object="user" username="${username}"></max-activities-count>
+            <max-activities-count object="user"
+                                  tal:attributes="username username"></max-activities-count>
           </span>
           <span i18n:translate="" tal:content="view/get_posts_literal">thinnkins</span>
         </p>
