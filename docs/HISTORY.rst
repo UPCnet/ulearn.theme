@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.19 (unreleased)
+2.19 (2015-11-10)
 -----------------
 
-- Nothing changed yet.
-
+* Make templates compatible with non-Chamaleon zpt engine [Victor Fernandez de Alba]
 
 2.18 (2015-10-27)
 -----------------
