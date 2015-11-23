@@ -67,6 +67,14 @@
                         use_view_action site_properties/typesUseViewActionInListings|python:()">
 
       <ul>
+        <li>
+            <div class="nofavorite">
+              <a tal:attributes="href python:context.absolute_url() + '/@@shared'">
+                <h4 class="Shared" i18n:translate="shared">Shared</h4>
+
+              </a>
+            </div>
+         </li>
         <tal:llistat repeat="continguttot continguts">
           <tal:favorite repeat="contingut continguttot/favorite">
             <li tal:define="item_type contingut/obj/portal_type;
