@@ -16,6 +16,7 @@
                     <metal:entry fill-slot="entry">
                 <div class="tileItem visualIEFloatFix"
                      tal:define="item_object item/getObject;">
+                    <p tal:content="python: str(item)"></p>
 
                     <a href="#"
                        tal:define="real_object python:item_object.aq_explicit"
@@ -27,7 +28,6 @@
                              src="" alt=""
                              tal:replace="structure python: scale.tag(css_class='tileImage')" />
                     </a>
-
                     <h2 class="tileHeadline"
                         metal:define-macro="listitem">
 
