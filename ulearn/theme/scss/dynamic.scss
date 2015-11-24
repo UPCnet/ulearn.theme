@@ -61,7 +61,7 @@ a {
 
 #day {
   background: none repeat scroll 0 0 $main-color;
-  text-shadow: 1px 1px 0 $secondary-color;
+  text-shadow: 1px 1px 0 #444;
   .arrow { border-left-color: $main-color; }
 }
 
@@ -125,6 +125,12 @@ input[type="text"]:focus {
   background-color: $buttons-color-secondary;
   *background-color: $buttons-color-secondary;
 }
+.context {
+  background: $buttons-color-primary;
+}
+.context:hover {
+  background: $buttons-color-secondary;
+}
 
 #box_stats {
   .bubble {
@@ -137,10 +143,10 @@ input[type="text"]:focus {
 
 // MAXUI
 #maxui-container a {
-  color: $secondary-color;
+  color: $main-color;
 }
 .maxui-displayname {
-  color: $secondary-color;
+  color: $main-color;
 }
 input.maxui-button {
   background: none repeat scroll 0 0 $secondary-color;
@@ -198,7 +204,7 @@ h1, h2, h3, label, span.label, fieldset legend {
 
 .portletCalendar .ploneCalendar td.cal_has_events .popover-content a {
   color: $secondary-color;
-  text-shadow: 0 -1px $secondary-color;
+  text-shadow: 0 -1px 
 }
 
 .portletCalendar .ploneCalendar td.cal_has_events {
@@ -231,4 +237,40 @@ h1, h2, h3, label, span.label, fieldset legend {
   font-size: 16px;
   margin-bottom: 0;
   margin-top: 0;
+}
+.state-intranet, #workflow-transition-publishtointranet, #workflow-transition-publicaalaintranet, #workflow-transition-retracttointranet, #workflow-transition-retiraalaintranet {
+    color: $secondary-color;
+}
+.favorite .fa-star {
+    color: orange;
+}
+#box_community .btn-large.dropdown-toggle {
+background: $main-color;
+border-color: $main-color;
+}
+.breadcrumb .active, .breadcrumb .selected, .breadcrumb .contentViews .selected:hover, .contentViews .breadcrumb .selected:hover, .breadcrumb .active a, .breadcrumb .selected a, .breadcrumb .contentViews .selected:hover a, .contentViews .breadcrumb .selected:hover a {
+    color: $main-color;
+    font-weight: 600;
+}
+.breadcrumb .divider {
+    color: #888;
+}    
+#maxui-container #maxui-new-participants .maxui-filter span, #maxui-container #maxui-search-filters .maxui-filter span, .maxui-filters .maxui-filter span, #maxui-container .maxui-button {
+    background-color: $main-color;
+    border: 1px solid $main-color;
+}
+.loginbox {
+  .control-label {
+    color: $main-color;
+  }
+  input[type="text"] {
+    border-color: $main-color;
+  }
+  .loginbox .btn.btn-primary {
+    background: $main-color;
+    border-color: $main-color;
+  }
+  #login-forgotten-password {
+    a {color:$main-color;}
+  }
 }
