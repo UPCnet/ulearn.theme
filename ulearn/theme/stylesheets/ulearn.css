@@ -2000,7 +2000,7 @@ li > .noMenuAction {
 .loginbox {
   margin-left: auto;
   margin-right: auto;
-  width: 450px;
+  width: 420px;
   background-color: #eee;
   background-color: #f2f2f2;
   background-image: -moz-linear-gradient(top, white, #dddddd);
@@ -2028,8 +2028,10 @@ li > .noMenuAction {
   padding: 30px 25px; }
   .loginbox .loginlogo {
     text-align: center;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    max-width: 405px; }
   .loginbox .control-label {
+    color: #444;
     font-weight: 600; }
   .loginbox .btn.btn-primary {
     width: 93%; }
@@ -2042,7 +2044,12 @@ li > .noMenuAction {
     width: 88%; }
   .loginbox #inputPassword {
     width: 88%; }
+  .loginbox input[type="text"] {
+    border-color: #ccc; }
 
+@media only screen and (max-width: 480px) {
+  html {
+    min-height: 515px; } }
 .template-event .day, .template-event .hour, .template-event .minute, .template-event .second {
   width: 55px; }
 .template-event .year {
@@ -4093,14 +4100,33 @@ label[for="form.ext_editor"] ~ div.widget {
 #maxui-container {
   border: 0 none;
   box-shadow: -1px 1px 2px #ddd;
-  color: #333333;
+  color: #222;
   font-family: "open sans",sans-serif; }
 
+#maxui-container #maxui-activities .maxui-activity .maxui-activity-content {
+  margin: 0 0 0 60px; }
+
 #maxui-container .maxui-actor a .maxui-displayname {
+  font-size: 12px;
   font-weight: 600; }
 
 #maxui-container #maxui-mainpanel #maxui-timeline {
   padding: 0; }
+
+.maxui-activity .maxui-avatar {
+  left: -60px; }
+
+#maxui-container #maxui-activities .maxui-activity .maxui-activity-content .maxui-activity-message {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  position: relative; }
+
+#maxui-container #maxui-activities .maxui-activity .maxui-footer .maxui-actions {
+  line-height: inherit;
+  position: relative; }
+
+#maxui-container #maxui-activities .maxui-activity .maxui-footer {
+  margin-left: 55px; }
 
 #maxui-container #maxui-activities .maxui-activity {
   border-bottom: 1px solid #ddd;
@@ -4343,8 +4369,35 @@ label[for="form.ext_editor"] ~ div.widget {
   text-decoration: inherit;
   margin-right: 10px; }
 
+#portal-personaltools-wrapper .container {
+  box-shadow: none; }
+
+.bubble.left .arrow {
+  right: -7px; }
+
+.bubble.right .arrow {
+  left: -7px; }
+
+.bubble.top .arrow {
+  bottom: -7px; }
+
+#sharedwithme-container {
+  background: white none repeat scroll 0 0;
+  min-height: 300px;
+  padding: 10px;
+  box-shadow: -1px 1px 2px #ddd; }
+
+.homepage-hpm3 {
+  margin-bottom: 20px; }
+
+#portal-header .pull-left a img {
+  max-height: 75px; }
+
+#box_stats ul li:last-child {
+  margin-top: 10px; }
+
 @media (min-width: 1150px) {
-  .template-homepage #portal-column-content #content .span9 .span4 {
+  .homepage-hpm1 .homepage-hpm4 {
     margin-left: 19px;
     width: 32%; }
 
@@ -4361,6 +4414,9 @@ label[for="form.ext_editor"] ~ div.widget {
   #portal-column-content.span6 {
     width: 51%;
     margin-left: 20px; } }
+@media only screen and (max-width: 1050px) {
+  #searchinputusers .inputsearchUsers .searchInput {
+    max-width: 195px; } }
 @media only screen and (max-width: 800px) {
   body {
     background: none repeat scroll 0 0 white; }
@@ -4440,7 +4496,12 @@ label[for="form.ext_editor"] ~ div.widget {
 
   .documentByLine {
     font-size: 85%;
-    margin-bottom: 11px; } }
+    margin-bottom: 11px; }
+
+  #maxui-widget-container {
+    float: left;
+    margin-top: 20px;
+    width: 100%; } }
 @media only screen and (max-width: 480px) {
   #day .arrow {
     border-left-color: #f58d3d;
@@ -4450,13 +4511,15 @@ label[for="form.ext_editor"] ~ div.widget {
     margin-right: 0; }
 
   .loginbox {
-    width: auto; }
+    width: 85%;
+    padding: 20px 20px 10px; }
 
   .loginlogo {
     margin-bottom: 20px;
-    text-align: left; }
+    text-align: left;
+    max-width: 250px; }
     .loginlogo img {
-      max-width: 285px; }
+      max-width: 100%; }
 
   #login-forgotten-password {
     font-size: 11px;

@@ -191,7 +191,7 @@ border-color: #34495E;
   background:white;
   }
 
-.badges { 
+.badges {
   text-align: center;
   .box_badges {
     display: inline;
@@ -486,7 +486,7 @@ border-color: #34495E;
     min-height: 10px;
     font-size: 13px;
     color: #555;
-    text-shadow: 1px 1px 0px white;  
+    text-shadow: 1px 1px 0px white;
     .eines {
         color: #34495E;
         font-size: 18px;
@@ -802,7 +802,7 @@ label[for="form.ext_editor"] ~ div.widget {
   min-height: 10px;
   font-size: 13px;
   color: #555;
-  text-shadow: 1px 1px 0px white; 
+  text-shadow: 1px 1px 0px white;
 }
   #tagslist .eines {
     color: #34495E;
@@ -1436,9 +1436,9 @@ border-radius: 0;
 }
 // Marc's CSS - Revisió Novembre 2015
 
-.container, 
-.navbar-static-top .container, 
-.navbar-fixed-top .container, 
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
 .navbar-fixed-bottom .container {
     max-width: 1150px;
     width: 100%;
@@ -1446,14 +1446,33 @@ border-radius: 0;
 #maxui-container {
     border: 0 none;
     box-shadow: -1px 1px 2px #ddd;
-    color: #333333;
+    color: #222;
     font-family: "open sans",sans-serif;
 }
+#maxui-container #maxui-activities .maxui-activity .maxui-activity-content {
+    margin: 0 0 0 60px;
+}
 #maxui-container .maxui-actor a .maxui-displayname {
+  font-size: 12px;
   font-weight: 600;
 }
 #maxui-container #maxui-mainpanel #maxui-timeline {
   padding: 0;
+}
+.maxui-activity .maxui-avatar {
+    left: -60px;
+}
+#maxui-container #maxui-activities .maxui-activity .maxui-activity-content .maxui-activity-message {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    position: relative;
+}
+#maxui-container #maxui-activities .maxui-activity .maxui-footer .maxui-actions {
+    line-height: inherit;
+    position: relative;
+}
+#maxui-container #maxui-activities .maxui-activity .maxui-footer {
+    margin-left: 55px;
 }
 #maxui-container #maxui-activities .maxui-activity {
     border-bottom: 1px solid #ddd;
@@ -1483,7 +1502,7 @@ border-radius: 0;
 #maxui-container .maxui-togglebar {
     background-color: white;
     border: 0 none !important;
-}    
+}
 #maxui-container #maxui-mainpanel #maxui-activity-sort .maxui-sort-action.active {
   font-weight: normal;
 }
@@ -1509,9 +1528,9 @@ border-radius: 0;
    margin-top: 10px;
 }
 
-#portlet-prefs, 
-.documentEditable, 
-.template-overview-controlpanel #content, 
+#portlet-prefs,
+.documentEditable,
+.template-overview-controlpanel #content,
 .cell.width-full.position-0 {
       background-color: white;
       box-shadow: -1px 1px 2px #ddd;
@@ -1522,8 +1541,8 @@ border-radius: 0;
 }
 .user {
     border: 0.1em solid white;
-    border-radius: 50%;    
-}    
+    border-radius: 50%;
+}
 #searchinputcommunities, #searchinputcontent, #searchinputtags, #searchinputusers {
     right: 5px;
     top: 5px;
@@ -1637,7 +1656,7 @@ border-radius: 0;
 }
 .template-folder_extended .list-index > li:before {
   content: none;
-} 
+}
 .template-folder_extended .list-index > li {
     border-bottom: 1px solid #eee;
     margin-left: 0;
@@ -1713,13 +1732,38 @@ border-radius: 0;
     text-decoration: inherit;
     margin-right: 10px;
 }
-
-
+#portal-personaltools-wrapper .container {
+    box-shadow: none;
+}
+.bubble.left .arrow {
+  right: -7px;
+}
+.bubble.right .arrow {
+ left: -7px;
+}  
+.bubble.top .arrow {
+  bottom: -7px;
+}
+#sharedwithme-container {
+    background: white none repeat scroll 0 0;
+    min-height: 300px;
+    padding: 10px;
+    box-shadow: -1px 1px 2px #ddd;
+}
+.homepage-hpm3 {
+  margin-bottom: 20px;
+}
+#portal-header .pull-left a img {
+    max-height: 75px;
+}
+#box_stats ul li:last-child {
+    margin-top: 10px;
+}
 @media (min-width: 1150px) {
-  .template-homepage #portal-column-content #content .span9 .span4 {
+ .homepage-hpm1 .homepage-hpm4 {
     margin-left: 19px;
     width: 32%;
-}
+ }
 .template-homepage #portal-columns #portal-column-content .span9 {
     margin-left: 20px;
     width: 75%;
@@ -1735,7 +1779,11 @@ border-radius: 0;
     margin-left: 20px;
 }
 }
-
+@media only screen and (max-width: 1050px) {
+  #searchinputusers .inputsearchUsers .searchInput {
+  max-width: 195px;
+}
+}  
 @media only screen and (max-width: 800px) {
   body {
       background: none repeat scroll 0 0 white;
@@ -1751,9 +1799,9 @@ border-radius: 0;
   #box_thinkers.ulearnbox {
    padding: 10px 0;
 }
-  #portlet-prefs, 
-  .documentEditable, 
-  .template-overview-controlpanel #content, 
+  #portlet-prefs,
+  .documentEditable,
+  .template-overview-controlpanel #content,
  .cell.width-full.position-0 {
       padding: 0;
   }
@@ -1804,9 +1852,9 @@ border-radius: 0;
       padding: 2px 5px;
       width: 95%;
   }
-  #portlet-prefs, 
-  .documentEditable, 
-  .template-overview-controlpanel #content, 
+  #portlet-prefs,
+  .documentEditable,
+  .template-overview-controlpanel #content,
   .cell.width-full.position-0 {
       background-color: white;
       padding: 0;
@@ -1815,10 +1863,14 @@ border-radius: 0;
       font-size: 85%;
       margin-bottom: 11px;
   }
+  #maxui-widget-container {
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
 
 }
 @media only screen and (max-width: 480px) {
-  
   #day .arrow {
       border-left-color: #f58d3d;
       display: none;
@@ -1827,14 +1879,16 @@ border-radius: 0;
       margin-right: 0;
   }
   .loginbox {
-    width: auto;
+    width: 85%;
+    padding: 20px 20px 10px;
 
   }
   .loginlogo {
     margin-bottom: 20px;
     text-align: left;
+    max-width: 250px;
     img {
-        max-width: 285px;
+        max-width: 100%;
     }
   }
 #login-forgotten-password {
@@ -1969,7 +2023,7 @@ display: none;
  }
 #maxui-widget-container {
     float: left;
-}      
+}
 }
 @media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait) {
 .row-fluid .span3, #dashboard .span3, .fila .span3, .template-atct_album_view #content-core .span3, .row-fluid #dashboard-portlets1, #dashboard #dashboard-portlets1, .fila #dashboard-portlets1, .template-atct_album_view #content-core #dashboard-portlets1, .row-fluid #dashboard-portlets2, #dashboard #dashboard-portlets2, .fila #dashboard-portlets2, .template-atct_album_view #content-core #dashboard-portlets2, .row-fluid #dashboard-portlets3, #dashboard #dashboard-portlets3, .fila #dashboard-portlets3, .template-atct_album_view #content-core #dashboard-portlets3, .row-fluid #dashboard-portlets4, #dashboard #dashboard-portlets4, .fila #dashboard-portlets4, .template-atct_album_view #content-core #dashboard-portlets4, .row-fluid .w1\3a 4, #dashboard .w1\3a 4, .fila .w1\3a 4, .template-atct_album_view #content-core .w1\3a 4, .row-fluid .photoAlbumEntry, #dashboard .photoAlbumEntry, .fila .photoAlbumEntry, .template-atct_album_view #content-core .photoAlbumEntry {
