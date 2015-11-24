@@ -70,7 +70,7 @@
         <li>
             <div class="nofavorite">
               <a tal:attributes="href python:context.absolute_url() + '/@@shared'">
-                <h4 class="Shared" i18n:translate="shared">Shared</h4>
+                <h4 class="Shared" i18n:translate="shared_content">Shared content</h4>
 
               </a>
             </div>
