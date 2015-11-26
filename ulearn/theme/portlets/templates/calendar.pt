@@ -29,6 +29,7 @@
   </div>
 
   <div id="calendari" class="portletCalendar"
+       i18n:domain="plone"
        tal:define="navigation_root_url context/@@plone_portal_state/navigation_root_url;
                    month view/month;
                    year view/year;">

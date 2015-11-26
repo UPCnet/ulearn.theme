@@ -327,7 +327,7 @@ class Renderer(base.Renderer):
         if IHomePage.providedBy(context) or IPloneSiteRoot.providedBy(self.context):
             return False
         else:
-            user_roles = context.get_local_roles_for_userid(self.username)
+            user_roles = api.user.get_roles(username=self.username, obj=self.context)
             if 'Editor' in user_roles:
                 return True
             else:

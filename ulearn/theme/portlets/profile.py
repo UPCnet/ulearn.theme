@@ -121,7 +121,7 @@ class Renderer(base.Renderer):
     def showEditCommunity(self):
         if not IPloneSiteRoot.providedBy(self.context) and \
            ICommunity.providedBy(self.context) and \
-           'Owner' in self.context.get_local_roles_for_userid(self.username):
+           'Owner' in api.user.get_roles(username=self.username, obj=self.context):
             return True
 
     def get_addable_types(self):
