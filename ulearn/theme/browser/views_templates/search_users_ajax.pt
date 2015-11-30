@@ -2,7 +2,25 @@
                       users usersDict/content;
                       big_data usersDict/big;
                       num_users usersDict/length;
-                      ">
+                      "
+              i18n:domain="ulearn">
+  <div id="subscribealert" class="alert alert-info" role="alert">
+    <button data-dismiss="alert" class="close" type="button">×</button>
+    <p>
+    <strong i18n:translate="info">
+              Info
+    </strong><br/>
+    <tal:msg i18n:translate="use_the_search_input_to_find_more_people1">
+      Use the search input to find people.
+    </tal:msg>
+    <tal:bigdata condition="big_data">
+      <tal:msg i18n:translate="use_the_search_input_to_find_more_people2">
+        Showing 100 out of
+      </tal:msg>
+      <span tal:replace="num_users">256</span>.
+    </tal:bigdata>
+    </p>
+  </div>
   <tal:bigdata condition="big_data">
     <tal:llistat repeat="user users">
       <div class="directori_usuari_foto">
