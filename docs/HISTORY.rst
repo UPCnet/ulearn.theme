@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.20 (unreleased)
+2.20 (2015-12-01)
 -----------------
 
-- Nothing changed yet.
-
+* Mostrar numero gent llistada si son mes de 100 [Pilar Marinas]
+* Mostrar boto editar comunitat i afegir esdeveniments permisos grup [Pilar Marinas]
 
 2.19 (2015-11-10)
 -----------------
