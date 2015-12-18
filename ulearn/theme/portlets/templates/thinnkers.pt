@@ -24,11 +24,10 @@
         </lastauthors>
       </div>
       <div id="searchinputusers">
-        <div class="input-append inputsearchUsers">
-          <form action="searchUsers" method="get" id="searchusers" input="search">
-            <input id="search" name="search" class="searchInput" type="text" placeholder="Cerca" i18n:attributes="placeholder search_users">
-            <span class="add-on"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
-          </form>
+        <div class="input-append inputsearchUsers" ng-controller="Thinnkers as ctrl">
+            <input ng-model="ctrl.query" id="search" name="search" class="searchInput" type="text" placeholder="Cerca" i18n:attributes="placeholder search_users" >
+            <span class="add-on"><button ng-click="ctrl.searchby()" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
+
         </div>
       </div>
 </div>
@@ -53,14 +52,15 @@
           </div>
         </lastauthors>
       </div>
-      <div id="searchinputusers">
-        <div class="input-append inputsearchUsers">
-          <form action="searchUsers" method="get" id="searchusers" input="search">
-            <input id="search" name="search" class="searchInput" type="text" placeholder="Cerca" i18n:attributes="placeholder search_users">
-            <span class="add-on"><button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
-          </form>
+
+     <div id="searchinputusers">
+        <div class="input-append inputsearchUsers" ng-controller="Thinnkers as ctrl">
+            <input ng-model="ctrl.query" id="search" name="search" class="searchInput" type="text" placeholder="Cerca" i18n:attributes="placeholder search_users" >
+            <span class="add-on"><button ng-click="ctrl.searchby()" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button></span>
+
         </div>
-      </div>
+    </div>
+
 </div>
 </tal:isprofile>
 </tal:thinnkers>

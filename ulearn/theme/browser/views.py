@@ -38,6 +38,7 @@ from Products.CMFPlone.utils import safe_unicode
 import json
 import scss
 import pkg_resources
+from genweb.core.utils import json_response
 
 order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}
 
@@ -202,15 +203,20 @@ class CustomCSS(grok.View):
 class SearchUser(grok.View):
     grok.name('searchUser')
     grok.context(Interface)
-    grok.template('search_users_ajax')
+
+    @json_response
+    def render(self):
+        return {'users': self.get_my_users(),
+                'properties': self.get_user_info_for_display()}
 
     def get_my_users(self):
-        if 'search' in self.request:
-            searchString = self.request.get('search')
-        else:
-            searchString = ''
+        searchby = ''
+        if len(self.request.form) > 0:
+            searchby = self.request.form['search']
+        elif 'search' in self.request:
+            searchby = self.request.get('search')
+        resultat = searchUsersFunction(self.context, self.request, searchby)
 
-        resultat = searchUsersFunction(self.context, self.request, searchString)
         return resultat
 
     def get_user_info_for_display(self):
@@ -244,39 +250,8 @@ class searchUsers(grok.View):
     grok.template('search_users')
     grok.layer(IUlearnTheme)
 
-    def users(self):
-        searchby = ''
-        if len(self.request.form) > 0:
-            searchby = self.request.form['search']
-
-        resultat = searchUsersFunction(self.context, self.request, searchby)
-        return resultat
-
     def get_people_literal(self):
         return api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
-
-    def get_user_info_for_display(self):
-        user_properties_utility = getUtility(ICatalogFactory, name='user_properties')
-
-        rendered_properties = []
-        extender_name = api.portal.get_registry_record('genweb.controlpanel.core.IGenwebCoreControlPanelSettings.user_properties_extender')
-        if extender_name in [a[0] for a in getUtilitiesFor(ICatalogFactory)]:
-            extended_user_properties_utility = getUtility(ICatalogFactory, name=extender_name)
-            for prop in extended_user_properties_utility.directory_properties:
-                rendered_properties.append(dict(
-                    name=prop,
-                    icon=extended_user_properties_utility.directory_icons[prop]
-                ))
-            return rendered_properties
-        else:
-            # If it's not extended, then return the simple set of data we know
-            # about the user using also the directory_properties field
-            for prop in user_properties_utility.directory_properties:
-                rendered_properties.append(dict(
-                    name=prop,
-                    icon=user_properties_utility.directory_icons[prop]
-                ))
-            return rendered_properties
 
 
 class showOportunitats(grok.View):

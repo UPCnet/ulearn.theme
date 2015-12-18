@@ -4014,6 +4014,7 @@ label[for="form.ext_editor"] ~ div.widget {
   overflow: hidden;
   text-overflow: ellipsis; }
 
+
 .container,
 .navbar-static-top .container,
 .navbar-fixed-top .container,
@@ -4586,3 +4587,12 @@ label[for="form.ext_editor"] ~ div.widget {
   .row-fluid .span4, #dashboard .span4, .fila .span4, .template-atct_album_view #content-core .span4, .row-fluid .w1\3a 3, #dashboard .w1\3a 3, .fila .w1\3a 3, .template-atct_album_view #content-core .w1\3a 3 {
     width: 100%;
     margin: 0; } }
+
+#communitysearch .pagination {
+  text-align: center;
+}
+
+#communitysearch {
+  background-color: #fff;
+}
+

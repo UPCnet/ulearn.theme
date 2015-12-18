@@ -86,4 +86,12 @@
         addview=".econnect.AddForm"
         />
 
+    <plone:portlet
+        name="ulearn.portlets.angularrouteview"
+        interface=".angularrouteview.IAngularRouteViewPortlet"
+        assignment=".angularrouteview.Assignment"
+        renderer=".angularrouteview.Renderer"
+        addview=".angularrouteview.AddForm"
+        />
+
 </configure>

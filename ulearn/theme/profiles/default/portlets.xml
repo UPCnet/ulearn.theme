@@ -18,6 +18,9 @@
        description="Stats portlet"/>
     <portlet title="Ulearn eConnect" addview="ulearn.portlets.econnect"
        description="eConnect portlet"/>
+    <portlet title="Ulearn AngularRouteView" addview="ulearn.portlets.angularrouteview"
+       description="AngularRouteView portlet"/>
+
 
     <!-- Obsolete -->
     <portlet title="Ulearn comments" addview="ulearn.portlets.comments" remove="True" />

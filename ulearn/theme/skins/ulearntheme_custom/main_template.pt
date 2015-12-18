@@ -6,6 +6,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
             plone_view context/@@plone;
             genweb_config context/@@gwconfig;
             genweb_utils context/@@genweb.utils;
+            ulearn_utils context/@@ulearn.utils;
             lang portal_state/language;
             view nocall:view | nocall: plone_view;
             dummy python: plone_view.mark_view(view);
@@ -113,14 +114,16 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
             </tal:notajax>
 
             <tal:comment content="nothing"> <!-- Supposing there is no right portlet column --> </tal:comment>
-            <div id="portal-column-content" tal:attributes="class content_class">
+            <div id="portal-column-content" tal:attributes="class content_class" >
+
+               <div tal:condition="not:ulearn_utils/is_siteroot" id="angular-route-view" tal:attributes="ui-view ulearn_utils/is_angularview"></div>
 
                 <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" tal:condition="not:ajax_load" />
 
-                <metal:block define-slot="content">
+                <metal:block define-slot="content" >
                     <div metal:define-macro="content"
                         tal:define="show_border context/@@plone/showEditableBorder; show_border python:show_border and not ajax_load"
-                        tal:attributes="class python:show_border and 'documentEditable' or 'content_edit'">
+                        tal:attributes="class python:show_border and 'documentEditable' or 'content_edit'"  >
 
                         <div id="edit-bar"
                             class="clearfix"
@@ -132,13 +135,15 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
                         </div>
 
                         <metal:slot define-slot="body">
+
                             <div id="content">
 
                                 <metal:header define-slot="header" tal:content="nothing">
                                 Visual Header
                                 </metal:header>
-
                                 <metal:bodytext define-slot="main">
+
+
 
                                  <div id="viewlet-above-content-title" tal:content="structure provider:plone.abovecontenttitle" tal:condition="not:ajax_load" />
                                  <metal:title define-slot="content-title">

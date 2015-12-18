@@ -17,7 +17,7 @@
                 <span class="fa-stack">
                   <i class="fa fa-folder fa-stack-2x"></i>
                   <i class="fa fa-stack-1x">
-                    <a href="#"
+                    <a href="#" target="_self"
                        tal:attributes="href community/url"
                        tal:content="community/pending">
                     </a>
@@ -27,7 +27,7 @@
               <tal:condition  tal:condition="python:pending == 0">
                 <span class="fa-stack">
                   <i class="fa fa-check-square-o fa-stack-2x">
-                     <a href="#"
+                     <a href="#" target="_self"
                         tal:attributes="href community/url">
                      </a>
                   </i>
@@ -35,7 +35,7 @@
               </tal:condition>
             </div>
           </div>
-          <a id="title_community" href="#"
+          <a id="title_community" href="#" target="_self"
              rel="tooltip" data-placement="right" title="Community title not trimmed"
              tal:attributes="href community/url;
                              title community/title">

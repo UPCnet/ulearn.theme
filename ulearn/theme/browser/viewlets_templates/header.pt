@@ -3,7 +3,7 @@
   <div class="clearfix masthead">
     <h1 class="pull-left">
       <a accesskey="1"
-         tal:attributes="href string:${viewlet/portal_url}">
+         tal:attributes="href string:${viewlet/portal_url}" target="_self">
         <img tal:attributes="src string:${viewlet/portal_url}/ulearn_comunitats.png"
              alt="Ulearn Comunitats - UPCnet SLU">
       </a>
