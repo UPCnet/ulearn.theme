@@ -22,7 +22,7 @@
 
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
-  font-size: 1.333em;
+  font-size: 1.33333em;
   line-height: 0.75em;
   vertical-align: -15%; }
 
@@ -39,24 +39,24 @@
   font-size: 5em; }
 
 .fa-fw {
-  width: 1.286em;
+  width: 1.28571em;
   text-align: center; }
 
 .fa-ul {
   padding-left: 0;
-  margin-left: 2.143em;
+  margin-left: 2.14286em;
   list-style-type: none; }
   .fa-ul > li {
     position: relative; }
 
 .fa-li {
   position: absolute;
-  left: -2.143em;
-  width: 2.143em;
-  top: 0.143em;
+  left: -2.14286em;
+  width: 2.14286em;
+  top: 0.14286em;
   text-align: center; }
   .fa-li.fa-lg {
-    left: -1.857em; }
+    left: -1.85714em; }
 
 .fa-border {
   padding: .2em .25em .15em;
@@ -1793,7 +1793,7 @@
 .fa-medium:before {
   content: "\f23a"; }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   #portal-header h1.pull-left {
     height: auto;
     width: auto;
@@ -2007,11 +2007,7 @@ li > .noMenuAction {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#dddddd));
   background-image: -webkit-linear-gradient(top, white, #dddddd);
   background-image: -o-linear-gradient(top, white, #dddddd);
-<<<<<<< HEAD
-  background-image: linear-gradient(to bottom, white, #dddddd);
-=======
   background-image: linear-gradient(to bottom, #ffffff, #dddddd);
->>>>>>> bbbb7d7... Style changes
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#dadada', GradientType=0);
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -2289,11 +2285,7 @@ li > .noMenuAction {
   background-image: -moz-linear-gradient(top, white, #e6e6e6);
   background-image: -ms-linear-gradient(top, white, #e6e6e6);
   background-image: -o-linear-gradient(top, white, #e6e6e6);
-<<<<<<< HEAD
-  background-image: linear-gradient(top, white, #e6e6e6); }
-=======
   background-image: linear-gradient(top, #ffffff, #e6e6e6); }
->>>>>>> bbbb7d7... Style changes
 
 .alertify-button-cancel:hover,
 .alertify-button-cancel:focus,
@@ -2595,7 +2587,7 @@ li > .noMenuAction {
 
 @media only screen and (max-width: 768px) {
   #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
-    padding: 10px!important; }
+    padding: 10px !important; }
 
   .userrole-manager .template-proposalslist .idea:first-child {
     padding-top: 100px; }
@@ -2886,7 +2878,7 @@ input[type="text"]:focus {
   padding: 10px;
   clear: both;
   margin-bottom: 20px;
-  box-shadow: -1px 1px 2px #dddddd; }
+  box-shadow: -1px 1px 2px #ddd; }
   .ulearnbox ul:last-child,
   .ulearnbox p:last-child {
     margin-bottom: 0px; }
@@ -3266,22 +3258,6 @@ input[type="text"]:focus {
 
 #box_community .btn-large.dropdown-toggle {
   color: #FFFFFF;
-<<<<<<< HEAD
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #34495E;
-  *background-color: #34495E;
-  background-image: -moz-linear-gradient(top, #3c546c, #34495e);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3c546c), to(#34495e));
-  background-image: -webkit-linear-gradient(top, #3c546c, #34495e);
-  background-image: -o-linear-gradient(top, #3c546c, #34495e);
-  background-image: linear-gradient(to bottom, #3c546c, #34495e);
-  background-repeat: repeat-x;
-  border-color: #34495E;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3c546c', endColorstr='#34495E', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-=======
->>>>>>> bbbb7d7... Style changes
   font-size: 13px;
   line-height: 15px;
   padding-bottom: 10px;
@@ -3733,58 +3709,8 @@ label[for="form.ext_editor"] ~ div.widget {
   #box_agenda li a i {
     float: left;
     margin-bottom: 6px;
-<<<<<<< HEAD
-    margin-right: 8px;
-    margin-top: 2px; }
-
-@media only screen and (max-width: 768px) {
-  body {
-    background: none repeat scroll 0 0 white; }
-
-  .ulearnbox {
-    background-color: white;
-    box-shadow: none;
-    clear: both;
-    margin-bottom: 10px;
-    padding: 10px;
-    position: relative; }
-
-  .osomcorner-wrapper {
-    display: none; }
-
-  nav#portal-personaltools-wrapper {
-    margin-top: 0px!important; }
-
-  #portal-header {
-    background: none repeat scroll 0 0 #f58d3d; }
-
-  #portal-header h1.pull-left {
-    margin-bottom: 0; }
-
-  #portal-header h1.pull-left img {
-    height: 55px;
-    margin-top: 0;
-    padding-top: 10px; }
-
-  #menusup {
-    height: 190px; }
-
-  .template-homepage #menusup {
-    height: 105px; }
-
-  .template-event_view #menusup {
-    height: 235px; }
-
-  #communitylist img {
-    float: left;
-    margin-right: 15px; }
-
-  #communitylist li {
-    position: relative; }
-=======
     margin-right: 6px;
     margin-top: 1px; }
->>>>>>> bbbb7d7... Style changes
 
 #formfield-form-widgets-quicklinks_literal .required:after {
   content: ""; }
@@ -4087,8 +4013,6 @@ label[for="form.ext_editor"] ~ div.widget {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
-<<<<<<< HEAD
-=======
 
 .container,
 .navbar-static-top .container,
@@ -4352,9 +4276,6 @@ label[for="form.ext_editor"] ~ div.widget {
 #shared-with-me-view #content-core .shared_by i {
   padding-right: 4px; }
 
-<<<<<<< HEAD
-/*# sourceMappingURL=ulearn.css.map */
-=======
 #taglist a h4.Shared {
   color: inherit; }
 
@@ -4665,5 +4586,3 @@ label[for="form.ext_editor"] ~ div.widget {
   .row-fluid .span4, #dashboard .span4, .fila .span4, .template-atct_album_view #content-core .span4, .row-fluid .w1\3a 3, #dashboard .w1\3a 3, .fila .w1\3a 3, .template-atct_album_view #content-core .w1\3a 3 {
     width: 100%;
     margin: 0; } }
->>>>>>> 740c43d... Style changes
->>>>>>> bbbb7d7... Style changes
