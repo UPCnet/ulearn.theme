@@ -4,13 +4,15 @@
       "css": {
         "development": [
           "../genweb.js/genweb/js/components/select2/select2.css",
-          "../ulearn.js/ulearn/js/components/angular-ui-select/dist/select.min.css",
+          "../ulearn.js/ulearn/js/components/angular-ui-select/dist/select.css",
           "../ulearn.js/ulearn/js/components/selectize/dist/css/selectize.default.css",
+          "../ulearn.js/ulearn/js/components/selectize/dist/css/selectize.bootstrap2.css",
           "../ulearn.js/ulearn/js/components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.css",
           "../ulearn.js/ulearn/js/components/ngDialog/css/ngDialog.css",
           "../ulearn.js/ulearn/js/components/ngDialog/css/ngDialog-theme-default.css",
           "../ulearn.js/ulearn/js/components/ngDialog/css/ngDialog-theme-plain.css",
           "../ulearn.js/ulearn/js/components/sweetalert/lib/sweet-alert.css",
+          "../ulearn.js/ulearn/js/components/v-modal/dist/v-modal.css",
           "../ulearn.theme/ulearn/theme/stylesheets/ulearn.css"
         ],
         "production": [

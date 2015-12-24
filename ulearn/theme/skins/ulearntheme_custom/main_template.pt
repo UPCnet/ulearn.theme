@@ -217,13 +217,17 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
     <div tal:replace="structure provider:genweb.js" />
 
-    <tal:select2lang condition="python:lang=='ca'">
+    <tal:selectlang condition="python:lang=='ca'">
       <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_ca.js"></script>
-    </tal:select2lang>
+      <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-i18n/angular-locale_ca.js"></script>
+      <script tal:attributes="src string:${portal_url}/++components++ulearn/moment/locale/ca.js"></script>
+    </tal:selectlang>
 
-    <tal:select2lang condition="python:lang=='es'">
+    <tal:selectlang condition="python:lang=='es'">
       <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_es.js"></script>
-    </tal:select2lang>
+      <script tal:attributes="src string:${portal_url}/++components++ulearn/angular-i18n/angular-locale_es.js"></script>
+      <script tal:attributes="src string:${portal_url}/++components++ulearn/moment/locale/es.js"></script>
+    </tal:selectlang>
 
     <tal:comment replace="nothing"> <!-- Finalment els que es posen a cada template especificament (per revisar) --> </tal:comment>
     <metal:javascriptslot define-slot="javascript_head_slot" />
