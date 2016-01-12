@@ -71,12 +71,6 @@
               Media
             </p>
           </li>
-          <li tal:condition="view/show_stats">
-            <a ui-sref="stats.activity">
-              <i class="icon-plus-sign icons"> </i>
-              <tal:seemore i18n:translate="seemore_stats">See more</tal:seemore>
-            </a>
-          </li>
         </ul>
       </communitiesstats>
     </tal:iscommunity>
