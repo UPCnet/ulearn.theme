@@ -60,7 +60,7 @@
        ng-controller="profilePortlet as portlet"
        tal:define="community_type python:view.get_community_type(community)">
     <a class="btn btn-large btn-comunitat"
-       href="${community/absolute_url}/edit">
+       tal:attributes="href string:${community/absolute_url}/edit">
       <i class="fa fa-pencil"></i>
       <tal:editcommunity i18n:domain="ulearn" i18n:translate="editcommunity">Edit this community</tal:editcommunity>
     </a>
@@ -68,7 +68,7 @@
       <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-      <li><a href="${community/absolute_url}/editacl"><i class="fa fa-users"></i><tal:manageacl i18n:domain="ulearn" i18n:translate="manage_membership">Manage members</tal:manageacl></a></li>
+      <li><a tal:attributes="href string:${community/absolute_url}/editacl"><i class="fa fa-users"></i><tal:manageacl i18n:domain="ulearn" i18n:translate="manage_membership">Manage members</tal:manageacl></a></li>
       <li tal:condition="view/has_webmaster_role">
           <a ng-dialog="/++ulearn++app/portlets/change_community_type.html"
              ng-dialog-class="ngdialog-theme-default changeCommunityType"
