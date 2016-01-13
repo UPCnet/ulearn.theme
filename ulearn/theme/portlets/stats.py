@@ -57,11 +57,11 @@ class Renderer(base.Renderer):
 
         pc = api.portal.get_tool('portal_catalog')
         if query_type == 'documents':
-            results = pc.searchResults(portal_type=['Document', 'File'], path={'query': current_path})
+            results = pc.searchResults(portal_type=['Document', 'File', 'AppFile'], path={'query': current_path})
         elif query_type == 'links':
             results = pc.searchResults(portal_type=['Link'], path={'query': current_path})
         elif query_type == 'media':
-            results = pc.searchResults(portal_type=['Image', 'Video'], path={'query': current_path})
+            results = pc.searchResults(portal_type=['Image', 'AppImage', 'ulearn.video', 'ulearn.video_embed'], path={'query': current_path})
 
         return len(results)
 
