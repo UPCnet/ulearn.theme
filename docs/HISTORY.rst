@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.22 (unreleased)
+2.22 (2016-01-14)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
 
 2.21 (2016-01-14)
 -----------------
