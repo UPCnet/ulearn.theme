@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.23 (unreleased)
+2.23 (2016-01-14)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* Marc's changes [root muntanyeta]
 
 2.22 (2016-01-14)
 -----------------
