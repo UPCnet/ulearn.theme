@@ -3157,6 +3157,9 @@ input[type="text"]:focus {
 .todayevent a {
   color: #fff; }
 
+.popover-content .title {
+  color: white; }
+
 .btn-group > .btn-comunitat {
   font-size: 13px; }
 
@@ -3290,21 +3293,23 @@ input[type="text"]:focus {
 #librarysearch .searchbytagcontainer {
   float: right; }
 
-#searchinputusers .searchInput {
-  border-color: #cccccc;
-  font-size: 13px;
-  height: 22px;
-  padding: 2px 5px; }
-#searchinputusers .add-on {
-  color: #888888;
-  background-color: white;
-  border: none;
-  font-size: 15px;
-  position: relative;
-  right: 28px;
-  top: 2px;
-  z-index: 10;
-  padding: 2px; }
+#searchinputusers {
+  padding-top: 10px; }
+  #searchinputusers .searchInput {
+    border-color: #cccccc;
+    font-size: 13px;
+    height: 22px;
+    padding: 2px 5px; }
+  #searchinputusers .add-on {
+    color: #888888;
+    background-color: white;
+    border: none;
+    font-size: 15px;
+    position: relative;
+    right: 28px;
+    top: 2px;
+    z-index: 10;
+    padding: 2px; }
 
 #userlist {
   clear: both;
@@ -4014,7 +4019,6 @@ label[for="form.ext_editor"] ~ div.widget {
   overflow: hidden;
   text-overflow: ellipsis; }
 
-
 .container,
 .navbar-static-top .container,
 .navbar-fixed-top .container,
@@ -4125,15 +4129,20 @@ label[for="form.ext_editor"] ~ div.widget {
   right: 5px;
   top: 5px; }
 
+#searchinputcommunities .input-append {
+  padding-top: 5px; }
+
 #communitysearch h2 {
   float: left;
   margin-bottom: 20px;
   margin-top: 10px;
   padding-left: 13px;
-  width: 59%; }
+  width: 55%; }
+#communitysearch .span9 {
+  margin-left: 5px !important; }
 
 .template-allcommunities #communitysearch h2 {
-  width: 52%; }
+  width: 53%; }
 .template-allcommunities #communitysearch input[type="text"] {
   border-color: #ccc;
   margin-right: 0; }
@@ -4317,6 +4326,19 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #box_stats ul li:last-child {
   margin-top: 10px; }
+
+.portlet-static-banners img {
+  width: 100%; }
+
+#maxui-container #maxui-mainpanel #maxui-newactivity #maxui-newactivity-box #maxui-subscriptions {
+  float: left;
+  font-family: inherit;
+  font-size: 12px;
+  height: 25px;
+  margin-right: 8px;
+  margin-top: 10px;
+  max-width: 330px;
+  padding-top: 2px; }
 
 @media (min-width: 1150px) {
   .homepage-hpm1 .homepage-hpm4 {
@@ -4572,7 +4594,10 @@ label[for="form.ext_editor"] ~ div.widget {
     padding: 0; }
 
   #maxui-widget-container {
-    float: left; } }
+    float: left; }
+
+  #communitysearch h2 {
+    padding-left: 0; } }
 @media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait) {
   .row-fluid .span3, #dashboard .span3, .fila .span3, .template-atct_album_view #content-core .span3, .row-fluid #dashboard-portlets1, #dashboard #dashboard-portlets1, .fila #dashboard-portlets1, .template-atct_album_view #content-core #dashboard-portlets1, .row-fluid #dashboard-portlets2, #dashboard #dashboard-portlets2, .fila #dashboard-portlets2, .template-atct_album_view #content-core #dashboard-portlets2, .row-fluid #dashboard-portlets3, #dashboard #dashboard-portlets3, .fila #dashboard-portlets3, .template-atct_album_view #content-core #dashboard-portlets3, .row-fluid #dashboard-portlets4, #dashboard #dashboard-portlets4, .fila #dashboard-portlets4, .template-atct_album_view #content-core #dashboard-portlets4, .row-fluid .w1\3a 4, #dashboard .w1\3a 4, .fila .w1\3a 4, .template-atct_album_view #content-core .w1\3a 4, .row-fluid .photoAlbumEntry, #dashboard .photoAlbumEntry, .fila .photoAlbumEntry, .template-atct_album_view #content-core .photoAlbumEntry {
     width: 100%; }
@@ -4587,12 +4612,8 @@ label[for="form.ext_editor"] ~ div.widget {
   .row-fluid .span4, #dashboard .span4, .fila .span4, .template-atct_album_view #content-core .span4, .row-fluid .w1\3a 3, #dashboard .w1\3a 3, .fila .w1\3a 3, .template-atct_album_view #content-core .w1\3a 3 {
     width: 100%;
     margin: 0; } }
-
 #communitysearch .pagination {
-  text-align: center;
-}
+  text-align: center; }
 
 #communitysearch {
-  background-color: #fff;
-}
-
+  background-color: #fff; }

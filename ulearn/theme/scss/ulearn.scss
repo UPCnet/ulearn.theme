@@ -444,7 +444,11 @@ border-color: #34495E;
 .todayevent{ background:#f58d3d; text-shadow:none; text-align:center; border-right: 1px solid white; }
 // .event a { color: white; font-weight:normal; }
 .todayevent a { color:#fff; }
-
+.popover-content {
+  .title {
+    color: white;
+  }
+}
 
 // Botó blau
 .btn-group > .btn-comunitat {font-size: 13px;}
@@ -599,6 +603,7 @@ border-color: #34495E;
 }
 
 #searchinputusers {
+  padding-top: 10px;
 .searchInput {
     border-color: #cccccc;
     font-size: 13px;
@@ -1547,17 +1552,27 @@ border-radius: 0;
     right: 5px;
     top: 5px;
 }
-#communitysearch h2 {
-    float: left;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding-left: 13px;
-    width: 59%;
+#searchinputcommunities .input-append {
+  padding-top: 5px;
 }
+
+#communitysearch {
+  h2 {
+      float: left;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      padding-left: 13px;
+      width: 55%;
+  }
+  .span9 {
+      margin-left: 5px !important;
+  }
+}
+
 .template-allcommunities {
   #communitysearch {
     h2 {
-      width: 52%;
+      width: 53%;
     }
     input[type="text"] {
     border-color: #ccc;
@@ -1755,6 +1770,22 @@ border-radius: 0;
 #box_stats ul li:last-child {
     margin-top: 10px;
 }
+.portlet-static-banners {
+  img {
+    width: 100%;
+  }
+}
+#maxui-container #maxui-mainpanel #maxui-newactivity #maxui-newactivity-box #maxui-subscriptions {
+    float: left;
+    font-family: inherit;
+    font-size: 12px;
+    height: 25px;
+    margin-right: 8px;
+    margin-top: 10px;
+    max-width: 330px;
+    padding-top: 2px;
+}
+
 @media (min-width: 1150px) {
  .homepage-hpm1 .homepage-hpm4 {
     margin-left: 19px;
@@ -2019,6 +2050,9 @@ display: none;
  }
 #maxui-widget-container {
     float: left;
+}
+#communitysearch h2 {
+  padding-left: 0;
 }
 }
 @media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait) {
