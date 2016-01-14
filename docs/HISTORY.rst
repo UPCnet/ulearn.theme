@@ -1,11 +1,27 @@
 Changelog
 =========
 
-2.21 (unreleased)
+2.21 (2016-01-14)
 -----------------
 
-- Nothing changed yet.
-
+* Change icon for header optionsin responsive [Victor Fernandez de Alba]
+* Fix Chamaleon syntax on footer [Victor Fernandez de Alba]
+* Fix location of files in stats [Victor Fernandez de Alba]
+* Do not show link on communities [Victor Fernandez de Alba]
+* Remove chameleon syntactig sugar [Carles Bruguera]
+* Fix link to stats [Victor Fernandez de Alba]
+* Change to angular route for stats [Victor Fernandez de Alba]
+* Updated required CSS for stats feature [Victor Fernandez de Alba]
+* Migrate search view to angular [Pilar Marinas]
+*  [Pilar Marinas]
+* Conflicts: [Pilar Marinas]
+*  [Pilar Marinas]
+* ulearn/theme/browser/views_templates/homepage.pt [Pilar Marinas]
+* ulearn/theme/stylesheets/ulearn.css [Pilar Marinas]
+* Fix messed up merge [Carles Bruguera]
+* Add classes to hompage portlets slots [root muntanyeta]
+* Recover deleted styles [Carles Bruguera]
+* Style changes [root muntanyeta]
 
 2.20 (2015-12-01)
 -----------------
