@@ -174,31 +174,31 @@ h1, h2, h3, label, span.label, fieldset legend {
 #maxui-container .maxui-actions {
   a.maxui-action.maxui-likes.maxui-liked,
   a.maxui-action.maxui-likes.maxui-liked:before {
-    color: $secondary-color;
+    color: $main-color;
   }
   a.maxui-action.maxui-likes.maxui-liked:hover:before {
-    color: #3B5998;
+    color: $main-color;
   }
   a.maxui-action.maxui-favorites.maxui-favorited,
   a.maxui-action.maxui-favorites.maxui-favorited:before {
-    color: $secondary-color;
+    color: $main-color;
   }
   a.maxui-action.maxui-commentaction {
-    color: $secondary-color;
+    color: $main-color;
   }
   a.maxui-action.maxui-flag.maxui-flagged:before {
-      color: $secondary-color;
+      color: $main-color;
   }
   a.maxui-action.maxui-flag.maxui-flagged {
-      color: $secondary-color;
+      color: $main-color;
   }
   a.maxui-action.maxui-flag:hover:before {
-      color: $secondary-color;
+      color: $main-color;
   }
   a.maxui-action.maxui-favorites.maxui-favorited:hover,
   a.maxui-action.maxui-likes.maxui-liked:hover,
   a.maxui-action.maxui-commentaction:hover {
-    color: #444;
+    color: $main-color;
   }
 }
 
