@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.25 (unreleased)
+2.25 (2016-01-19)
 -----------------
 
-- Nothing changed yet.
-
+* Canvi tipus comunitat [Pilar Marinas]
 
 2.24 (2016-01-19)
 -----------------
