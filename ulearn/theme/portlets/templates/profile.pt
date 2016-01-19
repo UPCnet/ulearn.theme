@@ -74,7 +74,7 @@
              ng-dialog-class="ngdialog-theme-default changeCommunityType"
              ng-dialog-controller="profilePortletModal"
              ng-dialog-cache="false"
-             ng-dialog-data='{"community_type": "${community_type}", "community_hash": "${community_hash}"}'
+             tal:attributes="ng-dialog-data string:{&quot;community_type&quot;: &quot;${community_type}&quot;, &quot;community_hash&quot;: &quot;${community_hash}&quot;}"
              href="">
               <i class="fa fa-pencil"></i><tal:changetype i18n:domain="ulearn" i18n:translate="change_community_type">Change type</tal:changetype></a></li>
     </ul>
