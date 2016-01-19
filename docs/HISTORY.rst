@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.24 (unreleased)
+2.24 (2016-01-19)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* css portlet stats [Pilar Marinas]
+* Canvis Marc [root muntanyeta]
 
 2.23 (2016-01-14)
 -----------------
