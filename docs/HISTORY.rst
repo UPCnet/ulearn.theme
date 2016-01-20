@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.26 (unreleased)
+2.26 (2016-01-20)
 -----------------
 
-- Nothing changed yet.
-
+* Search by enter in thinnkers [Pilar Marinas]
 
 2.25 (2016-01-19)
 -----------------
