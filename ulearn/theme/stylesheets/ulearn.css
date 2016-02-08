@@ -4640,3 +4640,22 @@ label[for="form.ext_editor"] ~ div.widget {
   text-shadow: 0 0 1px white;
   width: 60px;
 }
+
+.disabled-implico {
+    background-color: #ffffff;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+#joinedUsers{
+  margin-top:60px;
+}
+
+.nexus24_usuari_foto {
+    float: left;
+    margin: 2%;
+    overflow-y: hidden;
+    text-align: center;
+    width: 21%;
+    font-weight: bold;
+}
