@@ -2375,14 +2375,9 @@ li > .noMenuAction {
   margin-bottom: 20px;
   padding-bottom: 10px; }
   .idea .span1 {
-    background: none repeat scroll 0 0 #eee;
-    border: 1px solid #ddd;
-    font-size: 11px;
-    height: 55px;
-    padding: 0;
-    text-align: center;
-    text-shadow: 0 0 1px white;
-    width: 60px; }
+    height: 120px;
+    width: 60px;
+  }
   .idea .span9 {
     margin-left: 15px;
     max-width: 508px; }
@@ -4618,3 +4613,30 @@ label[for="form.ext_editor"] ~ div.widget {
 #communitysearch {
   background-color: #fff; }
 
+.title_description{
+  color:#999 !important;
+  font-size: 9px;
+}
+
+.implicat-list{
+  background: #eee none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  font-size: 11px;
+  height: 55px;
+  margin-top: 8px;
+  padding: 0;
+  text-align: center;
+  text-shadow: 0 0 1px white;
+  width: 60px;
+}
+
+.magrada-list{
+  background: #eee none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  font-size: 11px;
+  height: 55px;
+  padding: 0;
+  text-align: center;
+  text-shadow: 0 0 1px white;
+  width: 60px;
+}
