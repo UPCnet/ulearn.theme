@@ -1,11 +1,15 @@
 Changelog
 =========
 
-2.27 (unreleased)
+2.27 (2016-02-10)
 -----------------
 
-- Nothing changed yet.
-
+* cdn nexus24 [Paco Gregori]
+* remove css [Paco Gregori]
+* Modificar css perque surti foto quan entres a una conversa [Pilar Marinas]
+* add css nexus24 [Paco Gregori]
+* remove css [Paco Gregori]
+* remove css [Paco Gregori]
 
 2.26 (2016-01-20)
 -----------------
