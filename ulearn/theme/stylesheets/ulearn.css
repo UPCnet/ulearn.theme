@@ -22,7 +22,7 @@
 
 /* makes the font 33% larger relative to the icon container */
 .fa-lg {
-  font-size: 1.33333em;
+  font-size: 1.333em;
   line-height: 0.75em;
   vertical-align: -15%; }
 
@@ -39,24 +39,24 @@
   font-size: 5em; }
 
 .fa-fw {
-  width: 1.28571em;
+  width: 1.286em;
   text-align: center; }
 
 .fa-ul {
   padding-left: 0;
-  margin-left: 2.14286em;
+  margin-left: 2.143em;
   list-style-type: none; }
   .fa-ul > li {
     position: relative; }
 
 .fa-li {
   position: absolute;
-  left: -2.14286em;
-  width: 2.14286em;
-  top: 0.14286em;
+  left: -2.143em;
+  width: 2.143em;
+  top: 0.143em;
   text-align: center; }
   .fa-li.fa-lg {
-    left: -1.85714em; }
+    left: -1.857em; }
 
 .fa-border {
   padding: .2em .25em .15em;
@@ -1793,7 +1793,7 @@
 .fa-medium:before {
   content: "\f23a"; }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and (     -o-min-device-pixel-ratio: 2/1), only screen and (        min-device-pixel-ratio: 2), only screen and (                min-resolution: 192dpi), only screen and (                min-resolution: 2dppx) {
   #portal-header h1.pull-left {
     height: auto;
     width: auto;
@@ -2007,7 +2007,7 @@ li > .noMenuAction {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#dddddd));
   background-image: -webkit-linear-gradient(top, white, #dddddd);
   background-image: -o-linear-gradient(top, white, #dddddd);
-  background-image: linear-gradient(to bottom, #ffffff, #dddddd);
+  background-image: linear-gradient(to bottom, white, #dddddd);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#dadada', GradientType=0);
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
@@ -2285,7 +2285,7 @@ li > .noMenuAction {
   background-image: -moz-linear-gradient(top, white, #e6e6e6);
   background-image: -ms-linear-gradient(top, white, #e6e6e6);
   background-image: -o-linear-gradient(top, white, #e6e6e6);
-  background-image: linear-gradient(top, #ffffff, #e6e6e6); }
+  background-image: linear-gradient(top, white, #e6e6e6); }
 
 .alertify-button-cancel:hover,
 .alertify-button-cancel:focus,
@@ -2375,9 +2375,14 @@ li > .noMenuAction {
   margin-bottom: 20px;
   padding-bottom: 10px; }
   .idea .span1 {
-    height: 120px;
-    width: 60px;
-  }
+    background: none repeat scroll 0 0 #eee;
+    border: 1px solid #ddd;
+    font-size: 11px;
+    height: 55px;
+    padding: 0;
+    text-align: center;
+    text-shadow: 0 0 1px white;
+    width: 60px; }
   .idea .span9 {
     margin-left: 15px;
     max-width: 508px; }
@@ -2582,7 +2587,7 @@ li > .noMenuAction {
 
 @media only screen and (max-width: 768px) {
   #portlet-prefs, .documentEditable, .template-overview-controlpanel #content {
-    padding: 10px !important; }
+    padding: 10px!important; }
 
   .userrole-manager .template-proposalslist .idea:first-child {
     padding-top: 100px; }
@@ -2873,7 +2878,7 @@ input[type="text"]:focus {
   padding: 10px;
   clear: both;
   margin-bottom: 20px;
-  box-shadow: -1px 1px 2px #ddd; }
+  box-shadow: -1px 1px 2px #dddddd; }
   .ulearnbox ul:last-child,
   .ulearnbox p:last-child {
     margin-bottom: 0px; }
@@ -3012,7 +3017,7 @@ input[type="text"]:focus {
     margin-bottom: 0; }
     #menusup nav .bubble {
       background: #DEDED6;
-      box-shadow: -1px 1px 2px #ddd; }
+      box-shadow: -1px 1px 2px #dddddd; }
       #menusup nav .bubble .arrow {
         border-top-color: #DEDED6; }
     #menusup nav .bubble-content {
@@ -4023,7 +4028,7 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #maxui-container {
   border: 0 none;
-  box-shadow: -1px 1px 2px #ddd;
+  box-shadow: -1px 1px 2px #dddddd;
   color: #222;
   font-family: "open sans",sans-serif; }
 
@@ -4110,7 +4115,7 @@ label[for="form.ext_editor"] ~ div.widget {
 .template-overview-controlpanel #content,
 .cell.width-full.position-0 {
   background-color: white;
-  box-shadow: -1px 1px 2px #ddd;
+  box-shadow: -1px 1px 2px #dddddd;
   padding: 10px; }
 
 #communitysearch {
@@ -4311,7 +4316,7 @@ label[for="form.ext_editor"] ~ div.widget {
   background: white none repeat scroll 0 0;
   min-height: 300px;
   padding: 10px;
-  box-shadow: -1px 1px 2px #ddd; }
+  box-shadow: -1px 1px 2px #dddddd; }
 
 .homepage-hpm3 {
   margin-bottom: 20px; }
@@ -4381,7 +4386,7 @@ label[for="form.ext_editor"] ~ div.widget {
     display: none; }
 
   nav#portal-personaltools-wrapper {
-    margin-top: 0px !important; }
+    margin-top: 0px!important; }
 
   #portal-header {
     background: none repeat scroll 0 0 #f58d3d; }
@@ -4613,12 +4618,11 @@ label[for="form.ext_editor"] ~ div.widget {
 #communitysearch {
   background-color: #fff; }
 
-.title_description{
-  color:#999 !important;
-  font-size: 9px;
-}
+.title_description {
+  color: #999 !important;
+  font-size: 9px; }
 
-.implicat-list{
+.implicat-list {
   background: #eee none repeat scroll 0 0;
   border: 1px solid #ddd;
   font-size: 11px;
@@ -4627,10 +4631,9 @@ label[for="form.ext_editor"] ~ div.widget {
   padding: 0;
   text-align: center;
   text-shadow: 0 0 1px white;
-  width: 60px;
-}
+  width: 60px; }
 
-.magrada-list{
+.magrada-list {
   background: #eee none repeat scroll 0 0;
   border: 1px solid #ddd;
   font-size: 11px;
@@ -4638,24 +4641,24 @@ label[for="form.ext_editor"] ~ div.widget {
   padding: 0;
   text-align: center;
   text-shadow: 0 0 1px white;
-  width: 60px;
-}
+  width: 60px; }
 
 .disabled-implico {
-    background-color: #ffffff;
-    opacity: 0.6;
-    filter: alpha(opacity=60); /* For IE8 and earlier */
-}
+  background-color: #ffffff;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  /* For IE8 and earlier */ }
 
-#joinedUsers{
-  margin-top:60px;
-}
+#joinedUsers {
+  margin-top: 60px; }
 
 .nexus24_usuari_foto {
-    float: left;
-    margin: 2%;
-    overflow-y: hidden;
-    text-align: center;
-    width: 21%;
-    font-weight: bold;
-}
+  float: left;
+  margin: 2%;
+  overflow-y: hidden;
+  text-align: center;
+  width: 21%;
+  font-weight: bold; }
+
+i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-filtered_contents_search_view {
+  background-position: -407px -168px; }
