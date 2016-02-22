@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.28 (unreleased)
+2.28 (2016-02-22)
 -----------------
 
-- Nothing changed yet.
-
+* Fix grunt [Pilar Marinas]
+* Canvis vistas nous contentypes [Pilar Marinas]
+* Nueva vista contentypes [Pilar Marinas]
 
 2.27 (2016-02-10)
 -----------------
