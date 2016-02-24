@@ -3343,7 +3343,7 @@ input[type="text"]:focus {
     padding: 4px 3px;
     text-align: center; }
   #userlist .fa:hover, #userlist .icon-ulearn-discussion:hover, #userlist .icon-ulearn-video:hover {
-    color: #F58D3D; }
+    color: #777; }
   #userlist li p span {
     font-size: 13px;
     margin-left: 0; }
@@ -4339,6 +4339,9 @@ label[for="form.ext_editor"] ~ div.widget {
 
 .maxui-comment .maxui-avatar.maxui-little {
   left: -37px; }
+
+.template-profile .photo img {
+  margin-bottom: 15px; }
 
 @media (min-width: 1150px) {
   .homepage-hpm1 .homepage-hpm4 {

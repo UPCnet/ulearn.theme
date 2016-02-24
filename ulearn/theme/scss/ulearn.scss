@@ -668,7 +668,7 @@ border-color: #34495E;
     text-align: center;
   }
   .fa:hover {
-    color: #F58D3D;
+    color: #777;
   }
   li p span {
     font-size: 13px;
@@ -1786,6 +1786,10 @@ border-radius: 0;
 .maxui-comment .maxui-avatar.maxui-little {
     left: -37px;
 }
+.template-profile .photo img {
+    margin-bottom: 15px;
+}
+
 @media (min-width: 1150px) {
  .homepage-hpm1 .homepage-hpm4 {
     margin-left: 19px;
