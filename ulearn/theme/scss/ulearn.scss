@@ -2136,3 +2136,6 @@ display: none;
 i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-filtered_contents_search_view {
   background-position: -407px -168px;}
 
+.contenttreeWindow{
+    z-index: 10000 !important;
+}
