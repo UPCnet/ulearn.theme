@@ -139,7 +139,7 @@ class Renderer(base.Renderer):
         return sha1(community.absolute_url()).hexdigest()
 
     def get_url(self, community):
-        return '/'.join(community.getPhysicalPath())
+        return self.portal_url + '/' + community.getPhysicalPath()[-1]
 
     def isCurrentPage(self, page):
         param = False
