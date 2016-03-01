@@ -1,7 +1,7 @@
 from plone import api
 from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
-from Acquisition import aq_inner
+from Acquisition import aq_inner, aq_chain
 from genweb.core.interfaces import IHomePage
 
 from zope.component import getMultiAdapter
@@ -350,10 +350,11 @@ class Renderer(base.Renderer):
     def is_community(self):
         """ Assume that the calendar is only shown on the community itself. """
         context = aq_inner(self.context)
-        if ICommunity.providedBy(context):
-            return True
-        else:
-            return False
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
 
     def get_event_folder_url(self):
         """ Assume that the new event button is only shown on the community itself. """

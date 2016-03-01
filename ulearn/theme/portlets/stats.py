@@ -1,6 +1,6 @@
 from hashlib import sha1
 from plone import api
-from Acquisition import aq_inner
+from Acquisition import aq_inner, aq_chain
 from zope.interface import implements
 
 from plone.app.portlets.portlets import base
@@ -43,10 +43,11 @@ class Renderer(base.Renderer):
     def is_community(self):
         """ Assume that the stats are only shown on the community itself. """
         context = aq_inner(self.context)
-        if ICommunity.providedBy(context):
-            return True
-        else:
-            return False
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
 
     def get_stats_for(self, query_type):
         if IHomePage.providedBy(self.context):
