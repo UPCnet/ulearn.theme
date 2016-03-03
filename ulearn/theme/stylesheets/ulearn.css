@@ -2676,7 +2676,7 @@ li > .noMenuAction {
   position: relative;
   line-height: 14px;
   margin-top: 10px;
-  text-align: center; }
+  text-align: right; }
 
 a.community-action {
   display: inline;
