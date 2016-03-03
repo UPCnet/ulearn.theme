@@ -1,5 +1,6 @@
 <div id="object-favorite" style="float:right;">
 	<a class="favorite" href="#"
+	   i18n:domain="ulearn"
        i18n:attributes="title label_check_favorite"
        tal:attributes="data-dextobject context/absolute_url">
        <i tal:attributes="class viewlet/get_star_class"></i>
