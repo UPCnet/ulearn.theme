@@ -109,15 +109,17 @@ class folderBar(viewletBase):
     def bubble_class(self, bubble):
         if self.folder_type == 'events' or \
            self.folder_type == 'discussion':
-            span = 'span2'
+            span = 'span4'
         else:
             span = 'span6'
 
-        if bubble == 'events' or \
-           bubble == 'discussion':
-            span = 'span3'
+        # if bubble == 'events' or \
+        #    bubble == 'discussion':
+        #     span = 'span3'
 
         if bubble == self.folder_type:
+            return 'active bubble top {}'.format(span)
+        elif bubble == 'documents' and 'photos' == self.folder_type:
             return 'active bubble top {}'.format(span)
         else:
             return 'bubble top {}'.format(span)
