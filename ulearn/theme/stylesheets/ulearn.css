@@ -3420,7 +3420,6 @@ input[type="text"]:focus {
   display: flex!important;
    }
   .contentaddtoolbar .btn-default {
-    width: 33%;
     flex-grow: 1;}
 
 #box_econnect a {
