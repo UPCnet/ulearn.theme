@@ -744,8 +744,10 @@ border-color: #34495E;
 .contentaddtoolbar {
   margin-top: 10px;
   text-align: center;
+  display: flex!important;
   .btn-default {
     width: 33%;
+    flex-grow: 1;
   }
 }
 

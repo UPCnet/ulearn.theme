@@ -3416,9 +3416,12 @@ input[type="text"]:focus {
 
 .contentaddtoolbar {
   margin-top: 10px;
-  text-align: center; }
+  text-align: center;
+  display: flex!important;
+   }
   .contentaddtoolbar .btn-default {
-    width: 33%; }
+    width: 33%;
+    flex-grow: 1;}
 
 #box_econnect a {
   margin-top: 10px;
