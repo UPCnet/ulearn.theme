@@ -1,7 +1,7 @@
 Changelog
 =========
 
-2.29 (unreleased)
+2.29 (2016-03-17)
 -----------------
 
 * css changes [Paco Gregori]
