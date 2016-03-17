@@ -4,8 +4,23 @@ Changelog
 2.29 (unreleased)
 -----------------
 
-- Nothing changed yet.
-
+* css changes [Paco Gregori]
+* solved ssos.pt [Paco Gregori]
+* remove communitiesstats directive [Paco Gregori]
+* Solucionar que todo el boton cree contenido [root@shayla]
+* modify button bar span and class [Paco Gregori]
+* translate check_favorite [Paco Gregori]
+* Nova vista contentypes [Pilar Marinas]
+* Canvis Marc [root muntanyeta]
+* Canvi vista contentypes [Pilar Marinas]
+* change ulearn calendar to show only events community into community [Paco Gregori]
+* modify bug on stats and calendar portlets [Paco Gregori]
+* css changes [Paco Gregori]
+* modify url function [Paco Gregori]
+* add link function [Paco Gregori]
+* marc css changes next update [root muntanyeta]
+* rename listing summary view [Paco Gregori]
+* username lower on portlet communities [Paco Gregori]
 
 2.28 (2016-02-22)
 -----------------
