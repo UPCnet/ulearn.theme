@@ -30,6 +30,15 @@
 
         </div>
       </div>
+
+    <ul class="communitylinks">
+      <li>
+       <a ui-sref="search">
+        <i class="icon-plus-sign icons"> </i>
+        <tal:seemore i18n:translate="seethinkers">Veure tots els participants</tal:seemore>
+       </a>
+      </li>
+     </ul>
 </div>
 </tal:iscommunity>
 
