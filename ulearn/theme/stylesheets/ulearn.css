@@ -3433,6 +3433,14 @@ input[type="text"]:focus {
   .discussionlinks li {
     list-style: none; }
 
+.communitylinks,
+.discussionlinks {
+  margin-left: 3px;
+  margin-top: 10px; }
+  .communitylinks li,
+  .discussionlinks li {
+    list-style: none; }
+
 .userslinks {
   margin-left: 3px; }
   .userslinks li {
