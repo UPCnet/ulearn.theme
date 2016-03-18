@@ -4679,3 +4679,7 @@ i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-fi
 .contenttreeWindow{
     z-index: 10000 !important;
 }
+
+#box_thinkers ul {
+  list-style: none;
+  margin: 10px 0 0 0; }

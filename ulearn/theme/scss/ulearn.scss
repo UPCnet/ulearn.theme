@@ -762,15 +762,6 @@ border-color: #34495E;
   }
 }
 
-.thinkerslinks,
-.discussionlinks {
-  margin-left: 3px;
-  margin-top: 10px;
-  li {
-    list-style: none;
-  }
-}
-
 .userslinks {
   margin-left: 3px;
   li {
@@ -2152,3 +2143,7 @@ i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-fi
 .contenttreeWindow{
     z-index: 10000 !important;
 }
+
+#box_thinkers ul {
+  list-style: none;
+  margin: 10px 0 0 0; }
