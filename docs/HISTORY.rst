@@ -1,11 +1,13 @@
 Changelog
 =========
 
-2.30 (unreleased)
+2.30 (2016-04-04)
 -----------------
 
-- Nothing changed yet.
-
+* css cdn [Paco Gregori]
+* css changes portlet thinkers [Paco Gregori]
+* css thinkers portlet [Paco Gregori]
+* add link to see all participant on thinkers portlet [Paco Gregori]
 
 2.29 (2016-03-17)
 -----------------
