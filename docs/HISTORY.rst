@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.31 (unreleased)
+2.31 (2016-04-18)
 -----------------
 
-- Nothing changed yet.
-
+* Afegir nous tipus contingut folder [Pilar Marinas]
 
 2.30 (2016-04-04)
 -----------------
