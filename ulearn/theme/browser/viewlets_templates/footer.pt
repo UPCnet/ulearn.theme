@@ -13,8 +13,7 @@
                  i18n:attributes="alt obrir_link_finestra_nova"></a>.
         </p>
       </div>
-      <div class="span4" role="complementary" aria-labelledby="titol-sobre-el-web">
-        <h2 class="goout" id="titol-sobre-el-web"> Sobre el web </h2>
+      <div class="span4">
         <ul class="pull-right sobreElWeb" role="menu">
           <li role="menuitem" class="amunt"><a href="#portal-header" rel="tooltip" data-placement="top" title="Inici de la pàgina"><img src="++genweb++static/images/amunt.png" alt="Inici de la pàgina"></a></li>
         </ul>
