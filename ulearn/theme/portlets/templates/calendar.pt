@@ -71,8 +71,6 @@
 
         <table class="ploneCalendar" summary="Calendar"
             i18n:attributes="summary summary_calendar">
-            <caption class="hiddenStructure"
-                i18n:translate="" tal:content="string:month-${month}">monthname</caption>
             <thead>
               <tr class="weekdays"><tal:data repeat="weekday view/weekdays">
                 <th scope="col" i18n:translate="" tal:content="weekday">Su</th>
