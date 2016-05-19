@@ -91,7 +91,3 @@
   </div>
 </div>
 </div>
-<script type="text/javascript"
-        tal:attributes="src string:${view/portal_url}/max_variables.js">
-</script>
-<script type="text/javascript" src="++maxui++static/maxui.loader.js"></script>
