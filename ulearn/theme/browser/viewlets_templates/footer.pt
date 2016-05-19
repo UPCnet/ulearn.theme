@@ -15,7 +15,13 @@
       </div>
       <div class="span4">
         <ul class="pull-right sobreElWeb" role="menu">
-          <li role="menuitem" class="amunt"><a href="#portal-header" rel="tooltip" data-placement="top" title="Inici de la pàgina"><img src="++genweb++static/images/amunt.png" alt="Inici de la pàgina"></a></li>
+          <li role="menuitem" class="amunt">
+            <a href="#portal-header" rel="tooltip" data-placement="top"
+               i18n:attributes="title inici_page">
+               <img src="++genweb++static/images/amunt.png"
+                    i18n:attributes="alt inici_page" />
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -26,7 +32,9 @@
 <!--[if !IE]> -->
 <footer id="canvia-vista" role="complementary">
   <p>
-    <a class="reView" data-defaultText="Versi&oacute; m&ograve;bil" data-coreText="Versi&oacute; d&apos;escriptori" href="javascript:void(0)">
+    <a class="reView"
+       data-defaultText="Versi&oacute; m&ograve;bil"
+       data-coreText="Versi&oacute; d&apos;escriptori" href="javascript:void(0)" i18n:translate="inici_page">
       Versi&oacute; d&apos;escriptori
     </a>
   </p>
