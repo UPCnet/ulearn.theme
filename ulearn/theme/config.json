@@ -13,6 +13,7 @@
           "../ulearn.js/ulearn/js/components/ngDialog/css/ngDialog-theme-plain.css",
           "../ulearn.js/ulearn/js/components/sweetalert/lib/sweet-alert.css",
           "../ulearn.js/ulearn/js/components/v-modal/dist/v-modal.css",
+          "../ulearn.theme/ulearn/theme/portlets/importantnews/importantnews.css",
           "../ulearn.theme/ulearn/theme/stylesheets/ulearn.css"
         ],
         "production": [
@@ -42,7 +43,8 @@
     "../../parts/omelette/plone/formwidget/autocomplete/jquery-autocomplete": "++resource++plone.formwidget.autocomplete",
     "../../parts/omelette/plone/formwidget/contenttree/jquery-contenttree": "++resource++plone.formwidget.contenttree",
     "../../parts/omelette/plone/app/discussion/browser/stylesheets": "++resource++plone.app.discussion.stylesheets",
-    "../ulearn.theme/ulearn/theme/stylesheets": "++ulearn++stylesheets"
+    "../ulearn.theme/ulearn/theme/stylesheets": "++ulearn++stylesheets",
+    "../ulearn.theme/ulearn/theme/portlets": "++ulearn++portlets"
   },
   "revision_info": {
     "../genweb.cdn/genweb/cdn/dist/ulearn.css": "../genweb.cdn/genweb/cdn/dist/ulearn.b94b53b1.css"

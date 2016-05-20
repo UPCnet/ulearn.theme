@@ -21,7 +21,6 @@ class IStatsPortlet(IPortletDataProvider):
 
 class Assignment(base.Assignment):
     implements(IStatsPortlet)
-
     title = _(u'stats', default=u'Stats')
 
 

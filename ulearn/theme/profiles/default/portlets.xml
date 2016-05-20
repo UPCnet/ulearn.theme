@@ -20,8 +20,10 @@
        description="eConnect portlet"/>
     <portlet title="Ulearn AngularRouteView" addview="ulearn.portlets.angularrouteview"
        description="AngularRouteView portlet"/>
-
-
+    <portlet title="News Important" addview="ulearn.portlets.importantnews"
+       description="News Important portlet"/>
+    <portlet title="News Flash" addview="ulearn.portlets.flashesinformativos"
+       description="News Flash portlet"/>
     <!-- Obsolete -->
     <portlet title="Ulearn comments" addview="ulearn.portlets.comments" remove="True" />
 

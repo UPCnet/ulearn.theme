@@ -32,6 +32,12 @@
       />
 
   <plone:static
+      directory="portlets"
+      type="ulearn"
+      name="portlets"
+      />
+
+  <plone:static
       directory="static"
       type="ulearn"
       name="static"
