@@ -4718,3 +4718,14 @@ i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-fi
 }
 
 /* =========== FIN Vista summary_view_news =========== */
+
+#viewlet-above-content-title{
+  display:flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+#viewlet-above-content-title a{
+  box-sizing:1;
+  margin-right: 10px;
+}

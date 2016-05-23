@@ -32,7 +32,9 @@ setup(name='ulearn.theme',
       install_requires=[
           'setuptools',
           'genweb.theme',
-          'ulearn.js'
+          'ulearn.js',
+          'bleach',
+          'bs4'
       ],
       extras_require={'test': ['plone.app.testing[robot]>=4.2.2']},
       entry_points="""

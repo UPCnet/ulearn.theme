@@ -13,8 +13,9 @@
           "../ulearn.js/ulearn/js/components/ngDialog/css/ngDialog-theme-plain.css",
           "../ulearn.js/ulearn/js/components/sweetalert/lib/sweet-alert.css",
           "../ulearn.js/ulearn/js/components/v-modal/dist/v-modal.css",
+          "../ulearn.theme/ulearn/theme/stylesheets/ulearn.css",
           "../ulearn.theme/ulearn/theme/portlets/importantnews/importantnews.css",
-          "../ulearn.theme/ulearn/theme/stylesheets/ulearn.css"
+          "../ulearn.theme/ulearn/theme/portlets/flashesinformativos/flashesinformativos.css"
         ],
         "production": [
           "../genweb.cdn/genweb/cdn/dist/ulearn.css"
