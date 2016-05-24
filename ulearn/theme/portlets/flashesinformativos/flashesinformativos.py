@@ -150,7 +150,7 @@ class Renderer(base.Renderer):
                                    sort_on='effective',
                                    sort_order='reverse',
                                    sort_limit=limit,
-                                   flash_news=True)[:limit]
+                                   is_flash=True)[:limit]
         dades = []
         for a in flashes:
             if a.getObject().text is None:

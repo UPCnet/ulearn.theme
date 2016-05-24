@@ -643,11 +643,6 @@ class SearchFilteredContentAjax(FilteredContentsSearchView):
 
 
 class SummaryViewNews(FolderView):
-    # grok.name('summary_view_news')
-    # grok.context(ISyndicatableCollection)
-    # grok.require('zope2.View')
-    # grok.template('summary_view_news')
-    # grok.layer(IGebropharmaLayer)
 
     def __init__(self, *args, **kwargs):
         super(SummaryViewNews, self).__init__(*args, **kwargs)
@@ -670,6 +665,7 @@ class SummaryViewNews(FolderView):
         # Extra filter
         contentFilter = self.request.get('contentFilter', {})
         contentFilter.update(kwargs.get('contentFilter', {}))
+        contentFilter.update({'is_outoflist': True})
         kwargs.setdefault('custom_query', contentFilter)
         kwargs.setdefault('batch', True)
         kwargs.setdefault('b_size', self.b_size)
