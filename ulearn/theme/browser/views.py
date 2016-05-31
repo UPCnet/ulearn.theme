@@ -41,6 +41,9 @@ import scss
 import pkg_resources
 from genweb.core.utils import json_response
 
+from souper.soup import get_soup
+from repoze.catalog.query import Eq
+
 order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}
 
 
@@ -665,7 +668,7 @@ class SummaryViewNews(FolderView):
         # Extra filter
         contentFilter = self.request.get('contentFilter', {})
         contentFilter.update(kwargs.get('contentFilter', {}))
-        contentFilter.update({'is_outoflist': True})
+        contentFilter.update({'is_outoflist': False})
         kwargs.setdefault('custom_query', contentFilter)
         kwargs.setdefault('batch', True)
         kwargs.setdefault('b_size', self.b_size)
@@ -728,3 +731,37 @@ class SummaryViewNews(FolderView):
     def abreviaText(self, item):
         text = self.abrevia(item.text.raw, 180)
         return text
+
+
+class AllTags(grok.View):
+    grok.name('alltags')
+    grok.context(Interface)
+    grok.require('genweb.authenticated')
+    grok.template('alltags')
+    grok.layer(IUlearnTheme)
+
+    def get_subscribed_tags(self):
+        portal = getSite()
+        current_user = api.user.get_current()
+        userid = current_user.id
+
+        soup_tags = get_soup('user_subscribed_tags', portal)
+        tags_soup = [r for r in soup_tags.query(Eq('id', userid))]
+
+        return tags_soup[0].attrs['tags'] if tags_soup else []
+
+    def get_unsubscribed_tags(self):
+
+        subjects = []
+        pc = api.portal.get_tool('portal_catalog')
+        subjs_index = pc._catalog.indexes['Subject']
+        [subjects.append(index[0]) for index in subjs_index.items()]
+
+        portal = getSite()
+        current_user = api.user.get_current()
+        userid = current_user.id
+
+        soup_tags = get_soup('user_subscribed_tags', portal)
+        tags_soup = [r for r in soup_tags.query(Eq('id', userid))]
+        user_tags = tags_soup[0].attrs['tags']
+        return list(set(subjects)-set(user_tags))

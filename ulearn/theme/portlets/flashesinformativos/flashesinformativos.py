@@ -47,9 +47,10 @@ class Assignment(base.Assignment):
         """
         Display the name in portlet mngmt interface
         """
-        if self.name:
-            return self.name
-        return 'Flashes_Informativos'
+        return 'flashesinformativos'
+        # if self.name:
+        #    return self.name
+        # return 'Flashes_Informativos'
 
 
 class Renderer(base.Renderer):

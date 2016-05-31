@@ -24,6 +24,18 @@
        description="News Important portlet"/>
     <portlet title="News Flash" addview="ulearn.portlets.flashesinformativos"
        description="News Flash portlet"/>
+     <portlet title="News Subscribed with tags" addview="ulearn.portlets.subscribednews"
+        description="News Subscribed with tags portlet"/>
+     <portlet title="Custom ButtonBar" addview="ulearn.portlets.custombuttonbar"
+        description="Custom buttonBar portlet "/>
+     <portlet title="My Communities" addview="ulearn.portlets.mycommunities"
+         description="My Communities portlet"/>
+     <portlet title="My Subjects" addview="ulearn.portlets.mysubjects"
+        description="My Subjects EVA portlet"/>
+     <portlet title="My Tags" addview="ulearn.portlets.mytags"
+        description="My Tags portlet"/>
+
+
     <!-- Obsolete -->
     <portlet title="Ulearn comments" addview="ulearn.portlets.comments" remove="True" />
 

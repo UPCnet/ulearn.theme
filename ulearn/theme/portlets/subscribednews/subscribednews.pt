@@ -1,0 +1,70 @@
+<tal:newsitems tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                           plone_view context/@@plone;
+                           news_items view/published_news_items;
+                           dades_noticies view/dadesNoticies;
+                           Batch python:modules['Products.CMFPlone'].Batch;
+                           b_size python:10;
+                           b_start python:0;
+                           b_start request/b_start | b_start;
+                           batch python:Batch(dades_noticies, b_size, int(b_start), orphan=1);"
+               tal:condition="news_items"
+               i18n:domain="udemo">
+
+    <div class="ulearnbox portlet-subscribed-news">
+      <!--  <h2 i18n:translate="actualidad">Notícies</h2>
+        <div class="seemore pull-right">
+          <a tal:attributes="href string:${view/get_noticias_folder_url}"><i class="fa fa-camera-retro fa-lg"></i><span i18n:translate="seemore"> See more</span>
+          </a>
+        </div> -->
+        <ul class="list-portlet">
+          <li class="noticies clearfix" tal:repeat="obj batch">
+
+            <div>
+
+                <div class="imatge_noticia">
+                  <img tal:condition="obj/new/image"
+                       tal:define="scale obj/new/@@images"
+                       tal:replace="structure python: scale.scale('image',
+                                    scale='mini').tag(css_class='newsImage')" />
+                  <p class="discreet" tal:condition="obj/new/image_caption|nothing"
+                     tal:content="structure obj/new/image_caption" >
+                  </p>
+                </div>
+
+                <div class="text_noticia">
+
+                  <h2><a href=""
+                     tal:attributes="href obj/url">
+                      <span tal:replace="obj/title">
+                      Notícies RSS
+                      </span>
+                  </a></h2>
+
+                  <p><time class="smaller" tal:content="obj/date">May 5</time></p>
+
+                  <span tal:condition="obj/text|nothing" tal:replace="structure obj/text">
+                    Text Noticia
+                  </span>
+
+                  <a href="#" class="readmore"
+                     tal:attributes="href obj/url;
+                                     title obj/title"><span i18n:translate="readmore">Read more</span>
+                  </a>
+                </div>
+            </div>
+
+          </li>
+        </ul>
+      <div metal:use-macro="here/batch_macros/macros/navigation" />
+    </div>
+    <span tal:condition="context/@@genweb.utils/is_debug_mode">
+    <!--  <script src="++ulearn++portlets/subscribednews/subscribednews.js"></script> -->
+       <link rel="stylesheet" href="++ulearn++portlets/subscribednews/subscribednews.css" type="text/css" media="screen" />
+    </span>
+</tal:newsitems>
+<tal:notnewsitems tal:define="items view/published_news_items"
+                  >
+    <div class="ulearnbox portlet-subscribed-news">
+                  Cap notícia per mostrar
+    </div>
+</tal:notnewsitems>
