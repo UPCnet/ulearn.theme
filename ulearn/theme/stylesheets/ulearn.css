@@ -4674,93 +4674,42 @@ i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-fi
   margin: 10px 0 0 0; }
 
 /* =========== Vista summary_view_news =========== */
-
 .text_noticia h3 {
-    font-weight: 600;
-    margin-bottom: 2px;
-}
+  font-weight: 600;
+  margin-bottom: 2px; }
 
 .text_noticia > p {
-    font-size: 12px;
-    line-height: 13px;
-    margin-bottom: 3px;
-}
+  font-size: 12px;
+  line-height: 13px;
+  margin-bottom: 3px; }
 
 .imatge_noticia {
-    margin-top: 10px;
-}
+  margin-top: 10px; }
 
 .imatge_noticia .discreet {
-    font-size: 12px;
-    line-height: 13px;
-    margin-top: 3px;
-}
+  font-size: 12px;
+  line-height: 13px;
+  margin-top: 3px; }
 
 .summary_news .imatge_noticia {
-    float: left;
-    margin-right: 10px;
-    max-height: 140px;
-    max-width: 35%;
-}
-.summary_news .text_noticia {
-    border-bottom: 1px solid #ddd;
-    min-height: 150px;
-}
+  float: left;
+  margin-right: 10px;
+  max-height: 140px;
+  max-width: 35%; }
 
-.favorite {display:none;}
+.summary_news .text_noticia {
+  border-bottom: 1px solid #ddd;
+  min-height: 150px; }
+
+.favorite {
+  display: none; }
 
 .summary_news .imatge_noticia img {
-    max-height: 136px;
-}
+  max-height: 136px; }
 
 .icon-plone-contentmenu-display-summary_view_news {
-  background-position: -360px -169px;
-}
+  background-position: -360px -169px; }
 
 /* =========== FIN Vista summary_view_news =========== */
 
-/* =========== Viewlet follow tags =========== */
-
-
-#viewlet-above-content-title{
-  display:flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-#viewlet-above-content-title a{
-  box-sizing:1;
-  margin-right: 10px;
-}
-
-.listtags{
-  width:100%;
-}
-
-.tagfollowed{
-background-color: #67931a;
-}
-
-.tagnotfollowed{
-background-color: #deded6;
-}
-
-/* =========== FIN Viewlet follow tags =========== */
-
-
-/* =========== portlet My Tags =========== */
-
-.tags_cloud {
-  margin: 5px 0;
-}
-
-.see_all_tags {
-  margin-top: 10px;
-}
-
-.tag_pill{
-    margin: 0 5px;
-}
-
-/* =========== FIN portlet My Tags =========== */
+/*# sourceMappingURL=ulearn.css.map */
