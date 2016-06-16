@@ -44,7 +44,7 @@
                   <img ng-if="community.image"
                        ng-src="{{community.url}}/@@images/image/thumb" />
                   <img ng-if="!community.image"
-                       src="/++ulearn++static/images/avatar_default.png" />
+                       src="++ulearn++static/images/avatar_default.png" />
                 </a>
               </div>
               <div class="span10">
@@ -83,7 +83,7 @@
         </ul>
       </section>
       <div class="pagination">
-        <dir-pagination-controls boundary-links="true" template-url="/++components++ulearn/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+        <dir-pagination-controls boundary-links="true" template-url="++components++ulearn/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
       </div>
 
     </div>

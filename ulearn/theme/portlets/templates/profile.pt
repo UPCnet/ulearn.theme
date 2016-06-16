@@ -23,7 +23,7 @@
                  tal:attributes="src string:${community/absolute_url}/@@download/image/${community/image/filename}"
                  tal:condition="nocall:image"/>
             <img alt="User"
-                 src="/++ulearn++static/images/avatar_default.png"
+                 src="++ulearn++static/images/avatar_default.png"
                  tal:condition="nocall:not:image"/>
         </div>
     </div>
@@ -70,7 +70,7 @@
     <ul class="dropdown-menu">
       <li><a tal:attributes="href string:${community/absolute_url}/editacl"><i class="fa fa-users"></i><tal:manageacl i18n:domain="ulearn" i18n:translate="manage_membership">Manage members</tal:manageacl></a></li>
       <li tal:condition="view/has_webmaster_role">
-          <a ng-dialog="/++ulearn++app/portlets/change_community_type.html"
+          <a ng-dialog="++ulearn++app/portlets/change_community_type.html"
              ng-dialog-class="ngdialog-theme-default changeCommunityType"
              ng-dialog-controller="profilePortletModal"
              ng-dialog-cache="false"
