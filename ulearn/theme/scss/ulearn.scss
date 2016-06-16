@@ -2192,4 +2192,12 @@ i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-fi
   background-position: -360px -169px;
 }
 
+#angular-route-view  select { max-width:100%;}
+#home-angular-route-view  select { max-width:100%;}
+input#form-widgets-max_server,
+input#form-widgets-max_server_alias,
+input#form-widgets-hub_server,
+input#form-widgets-domain  { width :100%;}
+
+
 /* =========== FIN Vista summary_view_news =========== */
