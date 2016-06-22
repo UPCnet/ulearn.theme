@@ -7,7 +7,6 @@
                            b_start python:0;
                            b_start request/b_start | b_start;
                            batch python:Batch(dades_noticies, b_size, int(b_start), orphan=1);"
-               tal:condition="news_items"
                i18n:domain="udemo">
 
     <div class="ulearnbox portlet-subscribed-news">
@@ -57,14 +56,5 @@
         </ul>
       <div metal:use-macro="here/batch_macros/macros/navigation" />
     </div>
-    <span tal:condition="context/@@genweb.utils/is_debug_mode">
-    <!--  <script src="++ulearn++portlets/subscribednews/subscribednews.js"></script> -->
-       <link rel="stylesheet" href="++ulearn++portlets/subscribednews/subscribednews.css" type="text/css" media="screen" />
-    </span>
+
 </tal:newsitems>
-<tal:notnewsitems tal:define="items view/published_news_items"
-                  >
-    <div class="ulearnbox portlet-subscribed-news">
-                  Cap notícia per mostrar
-    </div>
-</tal:notnewsitems>

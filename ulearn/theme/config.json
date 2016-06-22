@@ -15,7 +15,8 @@
           "../ulearn.js/ulearn/js/components/v-modal/dist/v-modal.css",
           "../ulearn.theme/ulearn/theme/stylesheets/ulearn.css",
           "../ulearn.theme/ulearn/theme/portlets/importantnews/importantnews.css",
-          "../ulearn.theme/ulearn/theme/portlets/flashesinformativos/flashesinformativos.css"
+          "../ulearn.theme/ulearn/theme/portlets/flashesinformativos/flashesinformativos.css",
+          "../ulearn.theme/ulearn/theme/portlets/subscribednews/subscribednews.css"
         ],
         "production": [
           "../genweb.cdn/genweb/cdn/dist/ulearn.css"

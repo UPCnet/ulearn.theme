@@ -112,6 +112,8 @@ class Renderer(base.Renderer):
 
             newsSorted = sorted(news_filtered, key=lambda new: new['date'], reverse=True)
             return newsSorted
+        else:
+            return []
 
     def get_news(self, context, state, path, limit, tags):
         catalog = getToolByName(context, 'portal_catalog')
