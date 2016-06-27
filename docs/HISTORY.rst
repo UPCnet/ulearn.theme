@@ -1,11 +1,26 @@
 Changelog
 =========
 
-2.32 (unreleased)
+2.32 (2016-06-27)
 -----------------
 
-- Nothing changed yet.
-
+* css follow tags [Paco Gregori]
+* CSS panel de control input 100% [roberto.diaz]
+* removed / from url [roberto.diaz]
+* Translate seemore_communities [Pilar Marinas]
+* updated intranet theme CSS [roberto.diaz]
+* add tags portlets [Paco Gregori]
+* adding layer to view [Roberto Diaz]
+* news portlets and adapters [Paco Gregori]
+* css botonera noticias [Paco Gregori]
+* add flashinformatius and importantnews portlets [Paco Gregori]
+* removed included scrupts [roberto.diaz]
+* added translation to footer link [roberto.diaz]
+* updated css with grunt [roberto.diaz]
+* added translations [roberto.diaz]
+* put condition in li not in a [roberto.diaz]
+* removed unused string in a18y [roberto.diaz]
+* removed hiddenstructure from a18y [roberto.diaz]
 
 2.31 (2016-04-18)
 -----------------
