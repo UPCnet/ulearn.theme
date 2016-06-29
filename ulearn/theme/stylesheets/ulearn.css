@@ -4725,3 +4725,11 @@ input#form-widgets-domain {
 /* =========== FIN Vista summary_view_news =========== */
 
 /*# sourceMappingURL=ulearn.css.map */
+
+.portaltype-incorporacions li > a#plone-contentmenu-workflow {
+    display: block;
+}
+
+.portaltype-valoracioperiode li > a#plone-contentmenu-workflow {
+    display: block;
+}

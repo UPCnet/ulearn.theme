@@ -2247,3 +2247,12 @@ background-color: #deded6;
 }
 
 /* =========== FIN portlet My Tags =========== */
+
+/* =========== Mostra el botó de workflow als següents tipus =========== */
+.portaltype-incorporacions li > a#plone-contentmenu-workflow {
+    display: block;
+}
+
+.portaltype-valoracioperiode li > a#plone-contentmenu-workflow {
+    display: block;
+}
