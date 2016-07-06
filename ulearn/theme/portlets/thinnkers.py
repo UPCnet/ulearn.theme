@@ -13,7 +13,7 @@ from Products.CMFPlone import PloneMessageFactory as _
 
 from ulearn.core.content.community import ICommunity
 
-from genweb.core.utils import get_safe_member_by_id
+from genweb.core.utils import get_safe_member_by_id, pref_lang
 
 
 class IThinnkersPortlet(IPortletDataProvider):
@@ -52,7 +52,27 @@ class Renderer(base.Renderer):
         return False
 
     def get_people_literal(self):
-        return api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+        literal = api.portal.get_registry_record(name='ulearn.core.controlpanel.IUlearnControlPanelSettings.people_literal')
+        lang = pref_lang()
+
+        if lang == 'ca' and literal == 'persones':
+            literal = 'Persones'
+        elif lang == 'es' and literal == 'persones':
+            literal = 'Personas'
+        elif lang == 'en' and literal == 'persones':
+            literal = 'People'
+
+        if lang == 'ca' and literal == 'participants':
+            literal = 'Participants'
+        elif lang == 'es' and literal == 'participants':
+            literal = 'Participantes'
+        elif lang == 'en' and literal == 'participants':
+            literal = 'Participants'
+
+        if literal == 'thinnkers':
+            literal = 'Thinnkers'
+
+        return literal
 
     def get_seemoreusers_literal(self):
         return 'seemoreusers_{}'.format(self.get_people_literal())
