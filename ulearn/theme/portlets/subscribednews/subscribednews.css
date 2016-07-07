@@ -26,6 +26,16 @@
 }
 .portlet-subscribed-news .text_noticia {
     margin-top: 5px;
+    width: 330px;
+    float: right;
+}
+
+.portlet-subscribed-news .text_noticia ul{
+  margin: -10px;
+}
+
+.portlet-subscribed-news li::before {
+    content: none;
 }
 
 .portlet-subscribed-news .readmore {

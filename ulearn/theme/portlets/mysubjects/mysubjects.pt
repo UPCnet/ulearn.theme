@@ -137,8 +137,5 @@
 		</li>
 	</ul>
 
-	<span tal:condition="context/@@genweb.utils/is_debug_mode">
-		<link rel="stylesheet" href="++ulearn++portlets/mysubjects/mysubjects.css" type="text/css" media="screen" />
-	</span>
 
 </div>
