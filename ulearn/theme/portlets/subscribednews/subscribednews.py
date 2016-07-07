@@ -126,7 +126,7 @@ class Renderer(base.Renderer):
                               sort_on='created',
                               sort_order='reverse',
                               sort_limit=limit,
-                              subject=tag)
+                              Subject=tag)
             noticies = self.dades(results)
             for item in noticies:
                 yield item
