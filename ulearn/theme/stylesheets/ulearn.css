@@ -4734,10 +4734,6 @@ input#form-widgets-domain {
     display: block;
 }
 
-.tagfollowed{
-background-color: #d2edf4;
-}
-
 .tags_cloud {
     margin: 10px 0;
 }
@@ -4750,4 +4746,26 @@ background-color: #d2edf4;
     font-weight: 600;
     margin: 3px;
     padding: 2px 7px;
+}
+
+.tagnotfollowed {
+    background-color: #deded6;
+    border-radius: 15px;
+    color: white;
+    margin: 3px;
+    padding: 2px 7px;
+}
+
+.tagfollowed {
+    background-color: #16638d;
+    border-radius: 15px;
+    color: white;
+    margin: 3px;
+    padding: 2px 7px;
+}
+
+.tagfollowed > a {
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
 }

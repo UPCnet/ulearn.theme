@@ -204,7 +204,7 @@ h1, h2, h3, label, span.label, fieldset legend {
 
 .portletCalendar .ploneCalendar td.cal_has_events .popover-content a {
   color: $secondary-color;
-  text-shadow: 0 -1px 
+  text-shadow: 0 -1px
 }
 
 .portletCalendar .ploneCalendar td.cal_has_events {
@@ -254,7 +254,7 @@ border-color: $main-color;
 }
 .breadcrumb .divider {
     color: #888;
-}    
+}
 #maxui-container #maxui-new-participants .maxui-filter span, #maxui-container #maxui-search-filters .maxui-filter span, .maxui-filters .maxui-filter span, #maxui-container .maxui-button {
     background-color: $main-color;
     border: 1px solid $main-color;
@@ -273,4 +273,22 @@ border-color: $main-color;
   #login-forgotten-password {
     a {color:$main-color;}
   }
+}
+
+.tag_pill {
+    background-color: $main-color;
+    border-radius: 15px;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 3px;
+    padding: 2px 7px;
+}
+
+.tagfollowed {
+    background-color: $main-color;
+    border-radius: 15px;
+    color: white;
+    margin: 3px;
+    padding: 2px 7px;
 }
