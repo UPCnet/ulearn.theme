@@ -8,11 +8,9 @@
 
     <div class="tags_cloud">
       <span class="tag_pill" tal:repeat="tag tags">
-        <a href=""
-           tal:content="tag"
-           tal:attributes="href string:${context/absolute_url}">
+        <span tal:content="tag">
           Category
-        </a>
+        </span>
       </span>
     </div>
 
