@@ -4764,6 +4764,12 @@ input#form-widgets-domain {
     padding: 2px 7px;
 }
 
+.tagnotfollowed > a {
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+}
+
 .tagfollowed > a {
     color: white;
     font-size: 10px;
