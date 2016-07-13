@@ -13,6 +13,7 @@ from genweb.core.interfaces import IHomePage
 from ulearn.core.content.community import ICommunity
 
 from zope.security import checkPermission
+from ulearn.core import _
 
 
 class IStatsPortlet(IPortletDataProvider):
@@ -70,7 +71,7 @@ class Renderer(base.Renderer):
         if literal == 'thinnkers':
             return 'thinnkins'
         else:
-            return 'entrades'
+            return _(u'entrades')
 
     def show_stats(self):
         """ The genweb.webmaster can see stats.
