@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<object
+    name="portal_controlportlets"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone"
+    purge="False">
+
+    <configlet
+        title="Ulearn Portlets Settings"
+        action_id="ulearnPortlets"
+        appId="ulearn.theme"
+        category="Products"
+        condition_expr=""
+        icon_expr="string:${portal_url}/++maxui++static/simbol_MAX_16.png"
+        url_expr="string:${portal_url}/@@ulearn-control-portlets"
+        visible="True"
+        i18n:attributes="title">
+            <permission>Manage portal</permission>
+    </configlet>
+
+</object>

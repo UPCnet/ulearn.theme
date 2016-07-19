@@ -71,4 +71,11 @@
       />
   <!-- -*- extra stuff goes here -*- -->
 
+  <browser:page
+    name="ulearn-control-portlets"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".controlportlets.PortletsControlPanel"
+    permission="cmf.ManagePortal"
+    />
+
 </configure>

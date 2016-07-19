@@ -3,4 +3,5 @@
   <record name="genweb.controlpanel.interface.IGenwebControlPanelSettings.treu_menu_horitzontal" interface="genweb.controlpanel.interface.IGenwebControlPanelSettings" field="treu_menu_horitzontal">
     <value>True</value>
   </record>
+  <records interface="ulearn.theme.controlportlets.IPortletsSettings" />
 </registry>
