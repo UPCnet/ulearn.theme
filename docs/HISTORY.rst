@@ -1,11 +1,20 @@
 Changelog
 =========
 
-2.33 (unreleased)
+2.33 (2016-07-22)
 -----------------
 
-- Nothing changed yet.
-
+* separar gestion portlets de ulearn settings [Paco Gregori]
+* Translate stats [Pilar Marinas]
+* css tag pills [Paco Gregori]
+* css tag pills [Paco Gregori]
+* mytags portlets changes [Paco Gregori]
+* solved proble in subscribednews portlet [Paco Gregori]
+* css [Paco Gregori]
+* css changes [Paco Gregori]
+* User properties default [Pilar Marinas]
+* translate literal thinnkers portlet [Paco Gregori]
+* add css to show workflow menu [Paco Gregori]
 
 2.32 (2016-06-27)
 -----------------
