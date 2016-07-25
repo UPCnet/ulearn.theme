@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.34 (unreleased)
+2.34 (2016-07-25)
 -----------------
 
-- Nothing changed yet.
-
+* fixed tinymce bug: cant create links [Paco Gregori]
 
 2.33 (2016-07-22)
 -----------------
