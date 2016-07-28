@@ -191,9 +191,9 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
                 <div id="viewlet-below-content" tal:content="structure provider:plone.belowcontent" tal:condition="not:ajax_load" />
 
-            </div> <!-- Fi span content -->
+            </div>
 
-            <!-- A ulearn tenim portlets a la dreta -->
+            <tal:comment replace="nothing"> <!-- A ulearn tenim portlets a la dreta --> </tal:comment>
             <tal:notajax tal:condition="not:ajax_load">
                 <div id="portal-column-two"
                     class="span3"
@@ -204,7 +204,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
                     </metal:portlets>
                 </div>
             </tal:notajax>
-        </div> <!-- Fi row content -->
+        </div>
 
     </div>
 </section>
