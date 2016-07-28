@@ -37,7 +37,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- EMulateIE10 sirve para corregir bug TINY crear links  -->
+    <tal:comment replace="nothing"> <!-- EMulateIE10 sirve para corregir bug TINY crear links  --> </tal:comment>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true" />
     <meta name="generator" content="Plone - http://plone.org" />
