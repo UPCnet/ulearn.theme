@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.35 (unreleased)
+2.35 (2016-09-06)
 -----------------
 
-- Nothing changed yet.
-
+* comment ipad icons sizes [roberto.diaz]
+* added tal:comment to tiny bug message [roberto.diaz]
+* added <tal:comment replace="nothing"> [roberto.diaz]
 
 2.34 (2016-07-25)
 -----------------
