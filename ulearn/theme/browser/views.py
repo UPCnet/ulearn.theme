@@ -763,5 +763,8 @@ class AllTags(grok.View):
 
         soup_tags = get_soup('user_subscribed_tags', portal)
         tags_soup = [r for r in soup_tags.query(Eq('id', userid))]
-        user_tags = tags_soup[0].attrs['tags']
+        if tags_soup:
+            user_tags = tags_soup[0].attrs['tags']
+        else:
+            user_tags = ()
         return list(set(subjects)-set(user_tags))
