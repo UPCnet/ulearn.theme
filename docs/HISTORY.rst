@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.36 (unreleased)
+2.36 (2016-10-05)
 -----------------
 
-- Nothing changed yet.
-
+* View avatar MAX [Pilar Marinas]
+* Dynamic color favorite star [Pilar Marinas]
+* solved bug alltags view [Paco Gregori]
 
 2.35 (2016-09-06)
 -----------------
