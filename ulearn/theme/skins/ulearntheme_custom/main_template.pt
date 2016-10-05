@@ -52,6 +52,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
     <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
         <div tal:replace="structure provider:plone.htmlhead" />
         <link tal:replace="structure provider:plone.htmlhead.links" />
+        <div tal:replace="structure provider:genweb.js" />
 
         <tal:comment replace="nothing">
             Various slots where you can insert elements in the header from a template.
@@ -217,8 +218,6 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
 <tal:notajax tal:condition="not:ajax_load">
     <tal:comment replace="nothing"> <!-- A partir d'aqui, els JS comuns d'inicialització --> </tal:comment>
-
-    <div tal:replace="structure provider:genweb.js" />
 
     <tal:selectlang condition="python:lang=='ca'">
       <script tal:attributes="src string:${portal_url}/++components++root/select2/select2_locale_ca.js"></script>
