@@ -17,8 +17,8 @@
           <h2 class="goout" id="titol-eines-usuari" i18n:translate="label_menu_usuari"> Menú d'usuari </h2>
           <ul class="nav" role="menu" aria-labelledby="titol-menu-usuari">
             <li class="dropdown" role="menuitem" tal:attributes="id string:${view/user_name}">
-              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
-                <img tal:attributes="src string:${view/getPortraitMini}" aria-hidden="true"
+              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown"  tal:define="ulearn_utils context/@@ulearn.utils">
+                <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${view/getUserId}/avatar/large" aria-hidden="true"
                      alt=""
                      class="user" />
                 <tal:username content="view/user_name"> Rafael Ojeda Rojas </tal:username>

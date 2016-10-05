@@ -223,6 +223,11 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
 
         return dades
 
+    def getUserId(self):
+        current = api.user.get_current()
+        return current.id
+
+
 
 class gwHeader(viewletBase):
     grok.name('genweb.header')

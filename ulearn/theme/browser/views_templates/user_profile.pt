@@ -72,8 +72,9 @@
                             <span i18n:domain="ulearn" i18n:translate="" tal:content="view/get_posts_literal">thinnkins</span>
                           </p>
                           <a tal:omit-tag="not: isOwner"
-                             tal:attributes="href string:${view/portal_url}/@@personal-information">
-                              <img tal:attributes="src string:${view/portal_url}/@@avatar/${view/username}" alt="User" >
+                             tal:attributes="href string:${view/portal_url}/@@personal-information"
+                             tal:define="ulearn_utils context/@@ulearn.utils">
+                              <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${view/username}/avatar/large" alt="User" >
                           </a>
                         </div>
                     </div>
