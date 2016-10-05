@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.37 (unreleased)
+2.37 (2016-10-05)
 -----------------
 
-- Nothing changed yet.
-
+* move js to top [Paco Gregori]
 
 2.36 (2016-10-05)
 -----------------
