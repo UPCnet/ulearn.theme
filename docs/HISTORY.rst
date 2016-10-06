@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.38 (unreleased)
+2.38 (2016-10-06)
 -----------------
 
-- Nothing changed yet.
-
+* Avatar mini personal_bar [Pilar Marinas]
+* Avatar mini portlet personas [Pilar Marinas]
 
 2.37 (2016-10-05)
 -----------------
