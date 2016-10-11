@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.39 (unreleased)
+2.39 (2016-10-11)
 -----------------
 
-- Nothing changed yet.
-
+* New JavaScripts Registry [Pilar Marinas]
 
 2.38 (2016-10-06)
 -----------------
