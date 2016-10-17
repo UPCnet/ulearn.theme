@@ -23,6 +23,9 @@ from genweb.core.utils import get_safe_member_by_id
 from ulearn.core import _
 
 from plone import api
+from mrs.max.utilities import IMAXClient
+import requests
+import json
 
 
 class userProfile(BrowserView):
@@ -115,3 +118,17 @@ class userProfile(BrowserView):
                 'telefon': member_data.getProperty('telefon'),
                 'ubicacio': member_data.getProperty('ubicacio'),
                 }
+
+    def get_user_image(self, username):
+        maxclient, settings = getUtility(IMAXClient)()
+        req = requests.get(settings.max_server + '/people/' + username + '/avatar/large')
+
+        try:
+            if req.status_code == 200:
+                userImage = '<img src="' + settings.max_server + '/people/' + username + '/avatar/large" >'
+            else:
+                userImage = '<img src="' + self.portal.absolute_url() + '/@@avatar/' + username + '" >'
+        except:
+            userImage = '<img src="' + self.portal.absolute_url() + '/defaultUser.png" >'
+
+        return userImage
