@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.41 (unreleased)
+2.41 (2016-10-17)
 -----------------
 
-- Nothing changed yet.
-
+* Mida imatge user [Pilar Marinas]
 
 2.40 (2016-10-17)
 -----------------
