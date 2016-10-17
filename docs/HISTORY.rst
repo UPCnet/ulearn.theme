@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.40 (unreleased)
+2.40 (2016-10-17)
 -----------------
 
-- Nothing changed yet.
-
+* User profile avatar or default [Pilar Marinas]
 
 2.39 (2016-10-11)
 -----------------
