@@ -125,10 +125,10 @@ class userProfile(BrowserView):
 
         try:
             if req.status_code == 200:
-                userImage = '<img src="' + settings.max_server + '/people/' + username + '/avatar/large" >'
+                userImage = '<img src="' + settings.max_server + '/people/' + username + '/avatar/large" height="250" width="250" >'
             else:
-                userImage = '<img src="' + self.portal.absolute_url() + '/@@avatar/' + username + '" >'
+                userImage = '<img src="' + self.portal.absolute_url() + '/@@avatar/' + username + '" height="250" width="250" >'
         except:
-            userImage = '<img src="' + self.portal.absolute_url() + '/defaultUser.png" >'
+            userImage = '<img src="' + self.portal.absolute_url() + '/defaultUser.png" height="250" width="250" >'
 
         return userImage
