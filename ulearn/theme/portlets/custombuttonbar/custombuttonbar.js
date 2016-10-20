@@ -35,13 +35,13 @@ $(document).ready(function (event) {
 
   $('.portaltype-plone-site a[data-toggle="tab"]').on('show', function (e) {
 
-        var targetid = $(this).data('target');
-        var remote = $(targetid).data('remote');
-        if (remote) {
-            $(targetid).load(portal_url + "/" + remote, function (event) {
-                $('.sortablelist').mixitup({layoutMode: 'list'});
-            });
-        }
+        //var targetid = $(this).data('target');
+        //var remote = $(targetid).data('remote');
+        //if (remote) {
+            //$(targetid).load(portal_url + "/" + remote, function (event) {
+                //$('.sortablelist').mixitup({layoutMode: 'list'});
+            //});
+        //}
         $('#menusup .active').removeClass('active');
         $(e.target.parentElement.parentElement).addClass('active');
     });
