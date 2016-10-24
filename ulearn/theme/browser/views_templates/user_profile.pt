@@ -73,8 +73,8 @@
                           </p>
                           <a tal:omit-tag="not: isOwner"
                              tal:attributes="href string:${view/portal_url}/@@personal-information"
-                             tal:define="imgUser python:view.get_user_image(username)">
-                             <span tal:content="structure imgUser"></span>
+                             tal:define="ulearn_utils context/@@ulearn.utils">
+                              <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${view/username}/avatar/large" alt="User" >
                           </a>
                         </div>
                     </div>
