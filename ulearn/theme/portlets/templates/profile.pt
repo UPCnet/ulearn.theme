@@ -102,7 +102,7 @@
     <div class="row-fluid">
         <div class="photo span12" tal:define="ulearn_utils context/@@ulearn.utils">
             <a tal:attributes="href string:${view/portal_url}/@@personal-information">
-                <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${username}/avatar/large" alt="User" >
+                <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${username}/avatar/large" alt="User" style="width:202px">
             </a>
         </div>
     </div>
