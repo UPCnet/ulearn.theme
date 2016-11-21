@@ -1,5 +1,5 @@
 <div id="menusup"
-     i18n:domain="udemo" ng-non-bindable >
+     i18n:domain="ulearn" ng-non-bindable >
   <nav>
     <div class="row-fluid">
 
@@ -21,7 +21,7 @@
              data-toggle="tab"
              data-target="#mynews" target="_self">
                 <i class="fa fa-group icons"></i>
-                <tal:Noticies i18n:translate="mynews"> Mis Noticias </tal:Noticies></a>
+                <tal:Noticies i18n:translate="mynews"> Noticias </tal:Noticies></a>
         </div>
       </div>
 

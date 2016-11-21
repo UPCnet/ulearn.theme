@@ -4775,3 +4775,190 @@ input#form-widgets-domain {
     font-size: 10px;
     font-weight: 600;
 }
+
+
+/* The switch - the box around the slider */
+.switch {
+    display: inline-block;
+    height: 15px;
+    position: relative;
+    width: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.sliderbutton {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sliderbutton::before {
+    background-color: white;
+    bottom: 1px;
+    content: "";
+    height: 13px;
+    left: 1px;
+    position: absolute;
+    transition: all 0.4s ease 0s;
+    width: 13px;
+}
+
+input:checked + .sliderbutton {
+  background-color: #f58d3d;
+}
+
+input:focus + .sliderbutton {
+  box-shadow: 0 0 1px #f58d3d;
+}
+
+input:checked + .sliderbutton:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+.toogle-group {
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#newtoolbar-title {
+  margin-top: -3px;
+}
+
+#toggle-outoflist, #toggle-important, #toggle-flash, #newtoolbar-title {
+    display: flex; margin-right: 15px;
+}
+
+.literal-toggle{  line-height: 12px;
+    margin-right: 4px;}
+
+/* Rounded sliders */
+.sliderbutton.round {
+  border-radius: 34px;
+}
+
+.sliderbutton.round:before {
+  border-radius: 50%;
+}
+
+
+/* =========== Vista contents_pretty_view =========== */
+
+
+.template-listing_view #content .contenttype-folder:before, .template-listing_view #content .contenttype-privatefolder:before, .template-contents_pretty_view #content .contenttype-privatefolder:before, .template-contents_pretty_view #content .contenttype-folder:before {
+  content: "\f114";
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-file:before, .template-contents_pretty_view #content .contenttype-file:before {
+  content: "\f1c1";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-link:before, .template-contents_pretty_view #content .contenttype-link:before {
+  content: "\f0c1";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-link_pie:before, .template-contents_pretty_view #content .contenttype-link_pie:before {
+  content: "\f0c1";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-image:before, .template-contents_pretty_view #content .contenttype-image:before {
+  content: "\f1c5";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-document:before, .template-contents_pretty_view #content .contenttype-document:before {
+  content: "\f0f6";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-contents_pretty_view .vistaquadricula .span6 {
+  margin-left:0;
+}
+
+.vistaquadricula p {
+  color: #777;
+  font-size: 12.4px;
+  font-weight: 600;
+  line-height: 15px;
+  font-weight: normal;
+}
+
+.vistaquadricula .fa, .vistaquadricula .icon:before {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pretty_view {
+  background-position: -215px -1px;
+}
+
+.secciofolders {
+  font-size: 12px;
+}
+
+.secciofolders {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.secciofolders {
+  list-style-type: none;
+  margin-bottom: 6px;
+  line-height: 15px;
+}
+
+.secciofolders .fa, .secciofolders .icon:before {
+  font-size: 13px !important;
+  margin-right: 4px;
+}
+.secciofolders .span12 {
+    margin: 0;
+    min-height: 25px;
+}
+
+/* =========== FIN Vista contents_pretty_view =========== */

@@ -668,7 +668,6 @@ class SummaryViewNews(FolderView):
         # Extra filter
         contentFilter = self.request.get('contentFilter', {})
         contentFilter.update(kwargs.get('contentFilter', {}))
-        contentFilter.update({'is_outoflist': False})
         kwargs.setdefault('custom_query', contentFilter)
         kwargs.setdefault('batch', True)
         kwargs.setdefault('b_size', self.b_size)
@@ -768,3 +767,174 @@ class AllTags(grok.View):
         else:
             user_tags = ()
         return list(set(subjects)-set(user_tags))
+
+
+class SearchFilteredNews(grok.View):
+    """ Filtered news search view for every folder. """
+    grok.name('search_filtered_news')
+    grok.context(Interface)
+    grok.layer(IUlearnTheme)
+
+    def render(self):
+
+        def quotestring(s):
+            return '"%s"' % s
+
+        def quote_bad_chars(s):
+            bad_chars = ["(", ")"]
+            for char in bad_chars:
+                s = s.replace(char, quotestring(char))
+            return s
+
+        def abrevia(summary, sumlenght):
+            """ Retalla contingut de cadenes
+            """
+            bb = ''
+
+            if sumlenght < len(summary):
+                bb = summary[:sumlenght]
+
+                lastspace = bb.rfind(' ')
+                cutter = lastspace
+                precut = bb[0:cutter]
+
+                if precut.count('<b>') > precut.count('</b>'):
+                    cutter = summary.find('</b>', lastspace) + 4
+                elif precut.count('<strong>') > precut.count('</strong>'):
+                    cutter = summary.find('</strong>', lastspace) + 9
+                bb = summary[0:cutter]
+
+                if bb.count('<p') > precut.count('</p'):
+                    bb += '...</p>'
+                else:
+                    bb = bb + '...'
+            else:
+                bb = summary
+
+            return bb
+
+        def makeHtmlData(news_list):
+            news_html = ''
+            if news_list:
+                for noticia in news_list:
+                    noticiaObj = noticia.getObject()
+                    if noticiaObj.text is None:
+                        text = ''
+                    else:
+                        if noticiaObj.description:
+                            text = abrevia(noticiaObj.description, 150)
+                        else:
+                            text = abrevia(noticiaObj.text.raw, 150)
+
+                    news_html += '<li class="noticies clearfix">' \
+                                   '<div>' \
+                                      '<div class="imatge_noticia">' \
+                                        '<img src="'+noticia.getURL()+'/@@images/image/thumb" alt="'+noticiaObj.id+'" title="'+noticiaObj.id+'" class="newsImage" width="222" height="222">'\
+                                      '</div>' \
+                                      '<div class="text_noticia">' \
+                                        '<h2>'\
+                                        '<a href="'+noticia.getURL()+'">'+abrevia(noticia.Title, 70)+'</a>'\
+                                        '</h2>'\
+                                        '<p><time class="smaller">'+str(noticiaObj.modification_date.day()) + '/' + str(noticiaObj.modification_date.month()) + '/' + str(noticiaObj.modification_date.year())+'</time></p>'\
+                                        '<span>'+text.encode('utf-8')+'</span>'\
+                                        '<a href="http://localhost:8080/migrate/news/asdasd" class="readmore" title="asdasd"><span>Read more</span>'\
+                                        '</a>'\
+                                      '</div>'\
+                                   '</div>'\
+                                 '</li>'
+            else:
+                news_html = '<li class="noticies clearfix"><div> No hay coincidencias. </div></li>'
+            return news_html
+
+        pc = getToolByName(self.context, "portal_catalog")
+        now = DateTime()
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
+        self.query = self.request.form.get('q', '')
+
+        if not self.query == '':
+            multispace = u'\u3000'.encode('utf-8')
+            for char in ('?', '-', '+', '*', multispace):
+                self.query = self.query.replace(char, ' ')
+
+            query = self.query.split()
+            query = " AND ".join(query)
+            query = quote_bad_chars(query) + '*'
+            r_results = pc.searchResults(portal_type='News Item',
+                                         review_state='intranet',
+                                         expires={'query': now, 'range': 'min', },
+                                         sort_on='created',
+                                         sort_order='reverse',
+                                         is_outoflist=False,
+                                         SearchableText=query
+                                         )
+
+            data = makeHtmlData(r_results)
+            return data
+
+        else:
+            r_results = pc.searchResults(portal_type='News Item',
+                                         review_state='intranet',
+                                         expires={'query': now, 'range': 'min', },
+                                         sort_on='created',
+                                         sort_order='reverse',
+                                         is_outoflist=False
+                                         )
+
+            data = makeHtmlData(r_results)
+            return data
+
+
+class ContentsPrettyView(grok.View):
+    """ Show content in a pretty way for every folder. """
+    grok.name('contents_pretty_view')
+    grok.context(Interface)
+    grok.require('genweb.member')
+    grok.template('contents_pretty')
+    grok.layer(IUlearnTheme)
+
+    def getItemPropierties(self):
+        all_items = []
+
+        portal = api.portal.get()
+        catalog = getToolByName(portal, 'portal_catalog')
+        path = self.context.getPhysicalPath()
+        path = "/".join(path)
+
+        nElements = 2
+        llistaElements = []
+
+        items = catalog.searchResults(path={'query': path, 'depth': 1},
+                                      sort_on="getObjPositionInParent")
+        all_items += [{'item_title': item.Title,
+                       'item_desc': item.Description[:110],
+                       'item_type': item.portal_type,
+                       'item_url': item.getURL(),
+                       'item_path': item.getPath(),
+                       'item_state': item.review_state,
+                       } for item in items if item.exclude_from_nav is False]
+
+        if len(all_items) > 0:
+            # Retorna una llista amb els elements en blocs de 2 elements
+            llistaElements = [all_items[i:i + nElements] for i in range(0, len(all_items), nElements)]
+        return llistaElements
+
+    def getBlocs(self):
+        llistaElements = self.getItemPropierties()
+        return len(llistaElements)
+
+    def getSubItemPropierties(self, item_path):
+        all_items = []
+        portal = api.portal.get()
+        catalog = getToolByName(portal, 'portal_catalog')
+        path = item_path
+
+        items = catalog.searchResults(path={'query': path, 'depth': 1},
+                                      sort_on="getObjPositionInParent")
+        all_items += [{'item_title': item2.Title,
+                       'item_desc': item2.Description[:120],
+                       'item_type': item2.portal_type,
+                       'item_url': item2.getURL(),
+                       'item_state': item2.review_state
+                       } for item2 in items if item2.exclude_from_nav is False]
+        return all_items

@@ -1,6 +1,5 @@
 <tal:newsitems tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                            plone_view context/@@plone;
-                           news_items view/published_news_items;
                            dades_noticies view/dadesNoticies;
                            Batch python:modules['Products.CMFPlone'].Batch;
                            b_size python:10;
@@ -9,12 +8,31 @@
                            batch python:Batch(dades_noticies, b_size, int(b_start), orphan=1);"
                i18n:domain="udemo">
 
-    <div class="ulearnbox portlet-subscribed-news">
-      <!--  <h2 i18n:translate="actualidad">Notícies</h2>
-        <div class="seemore pull-right">
-          <a tal:attributes="href string:${view/get_noticias_folder_url}"><i class="fa fa-camera-retro fa-lg"></i><span i18n:translate="seemore"> See more</span>
-          </a>
-        </div> -->
+    <div class="portlet-subscribed-news">
+        <div id="subscribednews-search" class="folded">
+            <a id="subscribednews-search-toggle" class="subscribednews-disabled subscribednews-icon-" href="#" alt="obre-tanca"></a>
+            <a href="#" id="subscribednews-favorites-filter" title=""></a>
+            <div id="subscribednews-search-box">
+               <input id="subscribednews-search-text"
+                      type="search"
+                      data-literal=""
+                      class="maxui-empty maxui-text-input"
+                      value=""
+                      tal:attributes="data-path context/absolute_url" />
+
+                <tal:sea tal:define="searchers view/get_searchers;">
+                 <select id="searcher_selector" class="form-control searcher_selector">
+                   <option selected disabled>búsqueda...</option>
+                   <tal:search tal:repeat="search searchers">
+                     <option tal:content="search">search</option>
+                   </tal:search>
+                  </select>
+                </tal:sea>
+
+            </div>
+            <div id="subscribednews-search-filters"></div>
+        </div>
+
         <ul class="list-portlet">
           <li class="noticies clearfix" tal:repeat="obj batch">
 
@@ -47,7 +65,7 @@
 
                   <a href="#" class="readmore"
                      tal:attributes="href obj/url;
-                                     title obj/title"><span i18n:translate="readmore">Read more</span>
+                                     title obj/title"><span i18n:translate="readmore">Leer mas..</span>
                   </a>
                 </div>
             </div>

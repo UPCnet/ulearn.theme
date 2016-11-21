@@ -6,7 +6,6 @@ from zope.component import getMultiAdapter
 from zope.formlib import form
 from zope.interface import implements
 from zope import schema
-from plone import api
 from Acquisition import aq_inner
 from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -17,6 +16,7 @@ from zope.component.hooks import getSite
 from plone.memoize.view import memoize_contextless
 from DateTime.DateTime import DateTime
 
+from plone import api
 from souper.soup import get_soup
 from repoze.catalog.query import Eq
 
@@ -88,48 +88,48 @@ class Renderer(base.Renderer):
 
     @memoize
     def _data(self):
-        # facultiesList = faculties(None).by_value.keys()
         news = []
-        news_filtered = []
         context = aq_inner(self.context)
         portal_state = getMultiAdapter((context, self.request), name='plone_portal_state')
         path = portal_state.navigation_root_path()
         limit = self.data.count
         state = self.data.state
 
-        portal = getSite()
-        current_user = api.user.get_current()
-        userid = current_user.id
-
-        soup_tags = get_soup('user_subscribed_tags', portal)
-        tags_soup = [r for r in soup_tags.query(Eq('id', userid))]
-        if tags_soup:
-            tags = tags_soup[0].attrs['tags']
-            news += self.get_news(context, state, path, limit, tags)
-            for newObject in news:
-                if newObject not in news_filtered and newObject['subject'] is not ():
-                    news_filtered.append(newObject)
-
-            newsSorted = sorted(news_filtered, key=lambda new: new['date'], reverse=True)
-            return newsSorted
+        news += self.get_news(context, state, path, limit)
+        if news:
+            return sorted(news, key=lambda new: new['date'], reverse=True)
         else:
             return []
 
-    def get_news(self, context, state, path, limit, tags):
+    def get_searchers(self):
+        portal = getSite()
+        current_user = api.user.get_current()
+        userid = current_user.id
+        soup_searches = get_soup('user_news_searches', portal)
+        exist = [r for r in soup_searches.query(Eq('id', userid))]
+
+        res = []
+        if exist:
+            values = exist[0].attrs['searches']
+            for val in values:
+                res.append(' '.join(val))
+        return res
+
+    def get_news(self, context, state, path, limit):
         catalog = getToolByName(context, 'portal_catalog')
         now = DateTime()
-        for tag in tags:
-            results = catalog(portal_type='News Item',
-                              review_state=state,
-                              path=path,
-                              expires={'query': now, 'range': 'min', },
-                              sort_on='created',
-                              sort_order='reverse',
-                              sort_limit=limit,
-                              Subject=tag)
-            noticies = self.dades(results)
-            for item in noticies:
-                yield item
+        results = catalog(portal_type='News Item',
+                          review_state=state,
+                          path=path,
+                          expires={'query': now, 'range': 'min', },
+                          sort_on='created',
+                          sort_order='reverse',
+                          sort_limit=limit,
+                          is_outoflist=False
+                          )
+        noticies = self.dades(results)
+        for item in noticies:
+            yield item
 
     def dades(self, noticies):
         dades = []
