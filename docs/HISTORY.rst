@@ -1,11 +1,17 @@
 Changelog
 =========
 
-2.42 (unreleased)
+2.42 (2016-11-23)
 -----------------
 
-- Nothing changed yet.
-
+* add cdn [Paco Gregori]
+* changes on news searcher [Paco Gregori]
+* Quitar la barra [Pilar Marinas]
+* añadir gestion noticias + vista cotenidos + selector idioma [Paco Gregori]
+* change profile image size to 202px [Paco Gregori]
+* Solo quitar mixitup resto necesario [Pilar Marinas]
+* Quitar comprobacion avatar [Pilar Marinas]
+* Quitar error mixitup [Pilar Marinas]
 
 2.41 (2016-10-17)
 -----------------
