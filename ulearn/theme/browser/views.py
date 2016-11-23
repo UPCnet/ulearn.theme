@@ -851,7 +851,6 @@ class SearchFilteredNews(grok.View):
         path = self.context.getPhysicalPath()
         path = "/".join(path)
         self.query = self.request.form.get('q', '')
-
         if not self.query == '':
             multispace = u'\u3000'.encode('utf-8')
             for char in ('?', '-', '+', '*', multispace):

@@ -33,7 +33,7 @@
             <div id="subscribednews-search-filters"></div>
         </div>
 
-        <ul class="list-portlet">
+        <ul class="list-search-portlet">
           <li class="noticies clearfix" tal:repeat="obj batch">
 
             <div>

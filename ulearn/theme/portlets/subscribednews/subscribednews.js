@@ -17,18 +17,8 @@ $(document).ready(function (event) {
         var path = $(this).data().path;
         var normalized = normalizeWhiteSpace(text, false);
         textSearch(normalized);
-        $('#subscribednews-search').toggleClass('folded', false);
-        $('#subscribednews-search-text').val('');
-
-        var keywords_ls = [];
-        var keywords = $('#subscribednews-search-filters .maxui-filter');
-        var normalized = keywords_ls.join(' ');
-        for (var kw = 0; kw < keywords.length; kw++) {
-          keywords_ls.push(keywords[kw].getAttribute('value'));
-        }
-        normalized = keywords_ls.join(' ');
         $.get(path + '/search_filtered_news', { q: normalized }, function(data) {
-          $('.list-portlet').html(data);
+          $('.list-search-portlet').html(data);
         });
       }
   });
@@ -41,16 +31,23 @@ $(document).ready(function (event) {
           type: filter.attr('type'),
           value: filter.attr('value')
       });
+
       var keywords_ls = [];
       var keywords = $('#subscribednews-search-filters .maxui-filter');
+
+      for (var i = 0; i < keywords.length; i++) {
+          if (keywords[i].getAttribute('value') === filter.attr('value') & keywords[i].getAttribute('type') === filter.attr('type')) {
+              deleted = true;
+              keywords.splice(i, 1);
+          }
+      };
 
       for (var kw = 0; kw < keywords.length; kw++) {
         keywords_ls.push(keywords[kw].getAttribute('value'));
       };
       var normalized = keywords_ls.join(' ');
-
       $.get(path + '/search_filtered_news', { q: normalized }, function(data) {
-        $('.list-portlet').html(data);
+        $('.list-search-portlet').html(data);
       });
 
   });
@@ -64,6 +61,8 @@ $(document).ready(function (event) {
     var items = keywords_ls.join(',');
     var path = $('#subscribednews-search-text').attr('data-path');
     $.post(path + '/add_user_search', { items: items });
+    getSearchers();
+    $('#subscribednews-filters-toolbox').html('<a class="remove-search-news" href=""><i class="fa fa-times fa-2" ></i></a>');
   });
 
   $('#subscribednews-search-filters').on('click', '.remove-search-news', function(event) {
@@ -75,6 +74,9 @@ $(document).ready(function (event) {
     var items = keywords_ls.join(',');
     var path = $('#subscribednews-search-text').attr('data-path');
     $.post(path + '/remove_user_search', { items: items });
+    getSearchers();
+    $('#subscribednews-search-filters').html('');
+
   });
 
   $('#searcher_selector').on('change',function(event){
@@ -85,15 +87,8 @@ $(document).ready(function (event) {
     $('#subscribednews-search').toggleClass('folded', false);
     $('#subscribednews-search-text').val('');
 
-    var keywords_ls = [];
-    var keywords = $('#subscribednews-search-filters .maxui-filter');
-    var normalized = keywords_ls.join(' ');
-    for (var kw = 0; kw < keywords.length; kw++) {
-      keywords_ls.push(keywords[kw].getAttribute('value'));
-    }
-    normalized = keywords_ls.join(' ');
     $.get(path + '/search_filtered_news', { q: normalized }, function(data) {
-      $('.list-portlet').html(data);
+      $('.list-search-portlet').html(data);
     });
 
   });
@@ -131,6 +126,19 @@ $(document).ready(function (event) {
           }
       }
       reloadFilters();
+  };
+
+  var getSearchers = function(){
+    var path = $('#subscribednews-search-text').attr('data-path');
+    $.get(path + '/get_user_searchers', function(data) {
+      data_parser = data.replace(/'/g, '"');
+      data_array = JSON.parse(data_parser);
+      $('#searcher_selector option').remove();
+      for (var i = 0; i < data_array.length; i++){
+          $('#searcher_selector').append($('<option>', { value : data_array[i] }).text(data_array[i]));
+      }
+
+    });
   };
 
 
@@ -183,13 +191,24 @@ var reloadFilters = function() {
     var filters;
 
     var values = [];
+    keywords_ls=[];
     var template = '';
     for (var i = 0; i < maxui.filters.length; i++) {
       template = template + '<div class="maxui-filter maxui-keyword" type="keyword" value="'+maxui.filters[i].value+'"><span>'+maxui.filters[i].value+'<a class="maxui-close" href=""><i class="maxui-icon-cancel-circled" alt="tanca"/></a></span></div>';
-    }
-    template += '<div id="subscribednews-filters-toolbox"><a class="add-search-news" href=""><i class="fa fa-floppy-o fa-2" aria-hidden="true"></i></a><a class="remove-search-news" href=""><i class="fa fa-times fa-2" aria-hidden="true"></i></a></div>';
+      keywords_ls.push(maxui.filters[i].value);
+    };
+    items = keywords_ls.join(',');
+    var path = $('#subscribednews-search-text').attr('data-path');
 
-    $('#subscribednews-search-filters').html(template);
+    $.get(path + '/search_in_searchers', { items: items}, function(data) {
+      if(data != 'True'){
+        template += '<div id="subscribednews-filters-toolbox"><a class="add-search-news" href=""><i class="fa fa-floppy-o fa-2" ></i></a></div>';
+      }
+      else{
+        template += '<div id="subscribednews-filters-toolbox"><a class="remove-search-news" href=""><i class="fa fa-times fa-2" ></i></a></div>';
+      };
+      $('#subscribednews-search-filters').html(template);
+    });
     // Accept a optional parameter indicating search start point
     if (arguments.length > 0) {
         filters = getFilters(arguments[0]);
