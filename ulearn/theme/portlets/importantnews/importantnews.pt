@@ -1,7 +1,7 @@
 <tal:newsitems tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                            plone_view context/@@plone;
                            dades_noticies view/dadesNoticies"
-               i18n:domain="udemo">
+               i18n:domain="ulearn">
 
     <div class="ulearnbox portlet-noticies">
       <div class="osomcorner-wrapper">

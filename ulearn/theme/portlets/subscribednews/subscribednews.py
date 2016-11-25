@@ -107,12 +107,12 @@ class Renderer(base.Renderer):
         userid = current_user.id
         soup_searches = get_soup('user_news_searches', portal)
         exist = [r for r in soup_searches.query(Eq('id', userid))]
-
         res = []
         if exist:
             values = exist[0].attrs['searches']
-            for val in values:
-                res.append(' '.join(val))
+            if values:
+                for val in values:
+                    res.append(' '.join(val))
         return res
 
     def get_news(self, context, state, path, limit):

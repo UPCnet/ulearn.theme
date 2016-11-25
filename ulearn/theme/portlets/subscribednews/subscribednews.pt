@@ -6,11 +6,10 @@
                            b_start python:0;
                            b_start request/b_start | b_start;
                            batch python:Batch(dades_noticies, b_size, int(b_start), orphan=1);"
-               i18n:domain="udemo">
+               i18n:domain="ulearn">
 
     <div class="portlet-subscribed-news">
         <div id="subscribednews-search" class="folded">
-            <a id="subscribednews-search-toggle" class="subscribednews-disabled subscribednews-icon-" href="#" alt="obre-tanca"></a>
             <a href="#" id="subscribednews-favorites-filter" title=""></a>
             <div id="subscribednews-search-box">
                <input id="subscribednews-search-text"
@@ -22,7 +21,7 @@
 
                 <tal:sea tal:define="searchers view/get_searchers;">
                  <select id="searcher_selector" class="form-control searcher_selector">
-                   <option selected disabled>búsqueda...</option>
+                   <option selected disabled><span i18n:translate="find_label">búsqueda...</span></option>
                    <tal:search tal:repeat="search searchers">
                      <option tal:content="search">search</option>
                    </tal:search>

@@ -76,14 +76,23 @@ $(document).ready(function (event) {
     $.post(path + '/remove_user_search', { items: items });
     getSearchers();
     $('#subscribednews-search-filters').html('');
+    delAllFilters();
+
+    $.get(path + '/search_filtered_news', { q:'' }, function(data) {
+      $('.list-search-portlet').html(data);
+    });
+
 
   });
 
   $('#searcher_selector').on('change',function(event){
+
     var text = $(this).val();
     var path = $('#subscribednews-search-text').attr('data-path');
     var normalized = normalizeWhiteSpace(text, false);
+    delAllFilters();
     textSearch(normalized);
+
     $('#subscribednews-search').toggleClass('folded', false);
     $('#subscribednews-search-text').val('');
 
@@ -130,9 +139,12 @@ $(document).ready(function (event) {
 
   var getSearchers = function(){
     var path = $('#subscribednews-search-text').attr('data-path');
+    var data_array = [];
     $.get(path + '/get_user_searchers', function(data) {
-      data_parser = data.replace(/'/g, '"');
-      data_array = JSON.parse(data_parser);
+      if (typeof data === 'string' || data instanceof String){
+        data_parser = data.replace(/'/g, '"');
+        data_array = JSON.parse(data_parser);
+      };
       $('#searcher_selector option').remove();
       for (var i = 0; i < data_array.length; i++){
           $('#searcher_selector').append($('<option>', { value : data_array[i] }).text(data_array[i]));
@@ -235,6 +247,12 @@ var delFilter = function(filter) {
         reloadFilters();
     }
 };
+
+var delAllFilters = function() {
+    var maxui = this;
+    maxui.filters = [];
+};
+
 /**
  *    Adds a new filter to the search if its not present
  *    @param {Object} filter    An object repesenting a filter, with the keys "type" and "value"

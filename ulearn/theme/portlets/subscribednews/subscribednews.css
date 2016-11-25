@@ -69,7 +69,7 @@
 .portlet-subscribed-news .list-search-portlet {
     border-bottom: 0px solid #fff;
     list-style: none;
-} 
+}
 
 .portlet-subscribed-news .ulearnbox h2 {
     font-weight: 600;
@@ -185,7 +185,6 @@
   font-size: 23px;
 }
 .portlet-subscribed-news #subscribednews-search #subscribednews-search-box {
-  padding: 0px 56px;
   width: auto;
   text-align: left;
 }
@@ -215,7 +214,6 @@
 
 #subscribednews-search-filters{
   margin-top: -4px;
-  padding: 0 56px;
 }
 
 #maxui-container #subscribednews-search-filters::after, #maxui-container #subscribednews-search-filters::before, .maxui-filters::after, .maxui-filters::before {
@@ -232,17 +230,6 @@
   float: left;
   margin-top: 2px;
   padding: 2px 4px 2px 0;
-}
-
-#subscribednews-search-filters .maxui-filter span {
-  background-color: #007BC0;
-  border: 1px solid #007BC0;
-  border-radius: 5px;
-  box-shadow: 0 1px #fff;
-  color: #fff;
-  display: block;
-  padding: 0 0 3px 4px;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
 }
 
 #subscribednews-search-filters .maxui-filter .maxui-close .maxui-icon-cancel-circled::before {
@@ -265,5 +252,5 @@
 }
 
 .searcher_selector {
-    width: 422px;
+    width: 100%;
 }

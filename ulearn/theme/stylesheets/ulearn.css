@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -4723,70 +4722,70 @@ input#form-widgets-domain {
   width: 100%; }
 
 /* =========== FIN Vista summary_view_news =========== */
+/* =========== Viewlet follow tags =========== */
+#viewlet-above-content-title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap; }
 
-/*# sourceMappingURL=ulearn.css.map */
+#viewlet-above-content-title a {
+  box-sizing: 1;
+  margin-right: 10px; }
 
-.portaltype-incorporacions li > a#plone-contentmenu-workflow {
-    display: block;
-}
-
-.portaltype-valoracioperiode li > a#plone-contentmenu-workflow {
-    display: block;
-}
-
-.tags_cloud {
-    margin: 10px 0;
-}
-
-.tag_pill {
-    background-color: #16638d;
-    border-radius: 15px;
-    color: white;
-    font-size: 10px;
-    font-weight: 600;
-    margin: 3px;
-    padding: 2px 7px;
-}
-
-.tagnotfollowed {
-    background-color: #deded6;
-    border-radius: 15px;
-    color: white;
-    margin: 3px;
-    padding: 2px 7px;
-}
+.listtags {
+  width: 100%; }
 
 .tagfollowed {
-    background-color: #16638d;
-    border-radius: 15px;
-    color: white;
-    margin: 3px;
-    padding: 2px 7px;
-}
+  background-color: #67931a; }
 
-.tagnotfollowed > a {
-    color: white;
-    font-size: 10px;
-    font-weight: 600;
-}
+.tagnotfollowed {
+  background-color: #deded6; }
+
+/* =========== FIN Viewlet follow tags =========== */
+/* =========== portlet My Tags =========== */
+.tags_cloud {
+  margin: 5px 0; }
+
+.see_all_tags {
+  margin-top: 10px; }
+
+.tag_pill {
+  margin: 0 5px; }
+
+/* =========== FIN portlet My Tags =========== */
+/* =========== Mostra el botó de workflow als següents tipus =========== */
+.portaltype-incorporacions li > a#plone-contentmenu-workflow {
+  display: block; }
+
+.portaltype-valoracioperiode li > a#plone-contentmenu-workflow {
+  display: block; }
+
+.tags_cloud {
+  margin: 10px 0; }
+
+.tagnotfollowed {
+  background-color: #deded6;
+  border-radius: 15px;
+  color: white;
+  margin: 3px;
+  padding: 2px 7px; }
 
 .tagfollowed > a {
-    color: white;
-    font-size: 10px;
-    font-weight: 600;
-}
-
+  color: white;
+  font-size: 10px;
+  font-weight: 600; }
 
 /* The switch - the box around the slider */
 .switch {
-    display: inline-block;
-    height: 15px;
-    position: relative;
-    width: 30px;
-}
+  display: inline-block;
+  height: 15px;
+  position: relative;
+  width: 30px; }
 
 /* Hide default HTML checkbox */
-.switch input {display:none;}
+.switch input {
+  display: none; }
 
 /* The slider */
 .sliderbutton {
@@ -4798,64 +4797,53 @@ input#form-widgets-domain {
   bottom: 0;
   background-color: #ccc;
   -webkit-transition: .4s;
-  transition: .4s;
-}
+  transition: .4s; }
 
 .sliderbutton::before {
-    background-color: white;
-    bottom: 1px;
-    content: "";
-    height: 13px;
-    left: 1px;
-    position: absolute;
-    transition: all 0.4s ease 0s;
-    width: 13px;
-}
+  background-color: white;
+  bottom: 1px;
+  content: "";
+  height: 13px;
+  left: 1px;
+  position: absolute;
+  transition: all 0.4s ease 0s;
+  width: 13px; }
 
 input:checked + .sliderbutton {
-  background-color: #f58d3d;
-}
+  background-color: #f58d3d; }
 
 input:focus + .sliderbutton {
-  box-shadow: 0 0 1px #f58d3d;
-}
+  box-shadow: 0 0 1px #f58d3d; }
 
 input:checked + .sliderbutton:before {
   -webkit-transform: translateX(15px);
   -ms-transform: translateX(15px);
-  transform: translateX(15px);
-}
+  transform: translateX(15px); }
 
 .toogle-group {
   border-bottom: 1px solid #dddddd;
   display: flex;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 #newtoolbar-title {
-  margin-top: -3px;
-}
+  margin-top: -3px; }
 
 #toggle-outoflist, #toggle-important, #toggle-flash, #newtoolbar-title {
-    display: flex; margin-right: 15px;
-}
+  display: flex;
+  margin-right: 15px; }
 
-.literal-toggle{  line-height: 12px;
-    margin-right: 4px;}
+.literal-toggle {
+  line-height: 12px;
+  margin-right: 4px; }
 
 /* Rounded sliders */
 .sliderbutton.round {
-  border-radius: 34px;
-}
+  border-radius: 34px; }
 
 .sliderbutton.round:before {
-  border-radius: 50%;
-}
-
+  border-radius: 50%; }
 
 /* =========== Vista contents_pretty_view =========== */
-
-
 .template-listing_view #content .contenttype-folder:before, .template-listing_view #content .contenttype-privatefolder:before, .template-contents_pretty_view #content .contenttype-privatefolder:before, .template-contents_pretty_view #content .contenttype-folder:before {
   content: "\f114";
   font-family: FontAwesome;
@@ -4863,8 +4851,7 @@ input:checked + .sliderbutton:before {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  margin-right: 7px;
-}
+  margin-right: 7px; }
 
 .template-listing_view #content .contenttype-file:before, .template-contents_pretty_view #content .contenttype-file:before {
   content: "\f1c1";
@@ -4873,8 +4860,7 @@ input:checked + .sliderbutton:before {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  margin-right: 7px;
-}
+  margin-right: 7px; }
 
 .template-listing_view #content .contenttype-link:before, .template-contents_pretty_view #content .contenttype-link:before {
   content: "\f0c1";
@@ -4883,8 +4869,7 @@ input:checked + .sliderbutton:before {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  margin-right: 7px;
-}
+  margin-right: 7px; }
 
 .template-listing_view #content .contenttype-link_pie:before, .template-contents_pretty_view #content .contenttype-link_pie:before {
   content: "\f0c1";
@@ -4893,8 +4878,7 @@ input:checked + .sliderbutton:before {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  margin-right: 7px;
-}
+  margin-right: 7px; }
 
 .template-listing_view #content .contenttype-image:before, .template-contents_pretty_view #content .contenttype-image:before {
   content: "\f1c5";
@@ -4903,8 +4887,7 @@ input:checked + .sliderbutton:before {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  margin-right: 7px;
-}
+  margin-right: 7px; }
 
 .template-listing_view #content .contenttype-document:before, .template-contents_pretty_view #content .contenttype-document:before {
   content: "\f0f6";
@@ -4913,52 +4896,45 @@ input:checked + .sliderbutton:before {
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
-  margin-right: 7px;
-}
+  margin-right: 7px; }
 
 .template-contents_pretty_view .vistaquadricula .span6 {
-  margin-left:0;
-}
+  margin-left: 0; }
 
 .vistaquadricula p {
   color: #777;
   font-size: 12.4px;
   font-weight: 600;
   line-height: 15px;
-  font-weight: normal;
-}
+  font-weight: normal; }
 
-.vistaquadricula .fa, .vistaquadricula .icon:before {
+.vistaquadricula .fa, .vistaquadricula .icon-ulearn-discussion, .vistaquadricula .icon-ulearn-video, .vistaquadricula .icon:before {
   font-size: 20px;
-  margin-right: 8px;
-}
+  margin-right: 8px; }
 
 i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pretty_view {
-  background-position: -215px -1px;
-}
+  background-position: -215px -1px; }
 
 .secciofolders {
-  font-size: 12px;
-}
+  font-size: 12px; }
 
 .secciofolders {
   margin-left: 5px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .secciofolders {
   list-style-type: none;
   margin-bottom: 6px;
-  line-height: 15px;
-}
+  line-height: 15px; }
 
-.secciofolders .fa, .secciofolders .icon:before {
+.secciofolders .fa, .secciofolders .icon-ulearn-discussion, .secciofolders .icon-ulearn-video, .secciofolders .icon:before {
   font-size: 13px !important;
-  margin-right: 4px;
-}
+  margin-right: 4px; }
+
 .secciofolders .span12 {
-    margin: 0;
-    min-height: 25px;
-}
+  margin: 0;
+  min-height: 25px; }
 
 /* =========== FIN Vista contents_pretty_view =========== */
+
+/*# sourceMappingURL=ulearn.css.map */

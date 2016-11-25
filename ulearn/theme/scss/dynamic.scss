@@ -21,6 +21,7 @@ a {
   color: $secondary-color;
 }
 
+
 #portal-header {
   @include gradient-vertical($startColor: $alt-gradient-start-color, $endColor: $alt-gradient-end-color);
 }
@@ -291,4 +292,15 @@ border-color: $main-color;
     color: white;
     margin: 3px;
     padding: 2px 7px;
+}
+
+#subscribednews-search-filters .maxui-filter span {
+  background-color: $main-color;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+  box-shadow: 0 1px #fff;
+  color: #fff;
+  display: block;
+  padding: 0 0 3px 4px;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
 }
