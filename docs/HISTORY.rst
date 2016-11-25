@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.43 (unreleased)
+2.43 (2016-11-25)
 -----------------
 
-- Nothing changed yet.
-
+* newstoolbar changes [Paco Gregori]
+* searchers news and css [Paco Gregori]
 
 2.42 (2016-11-23)
 -----------------
