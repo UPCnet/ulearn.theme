@@ -30,7 +30,7 @@ class ISubscribedNewsPortlet(IPortletDataProvider):
 
     state = schema.Tuple(title=_(u"Workflow state"),
                          description=_(u"Items in which workflow state to show."),
-                         default=('published', ),
+                         default=('published', 'intranet'),
                          required=True,
                          value_type=schema.Choice(
                              vocabulary="plone.app.vocabularies.WorkflowStates")
@@ -40,7 +40,7 @@ class ISubscribedNewsPortlet(IPortletDataProvider):
 class Assignment(base.Assignment):
     implements(ISubscribedNewsPortlet)
 
-    def __init__(self, count=20, state=('published', )):
+    def __init__(self, count=20, state=('published', 'intranet')):
         self.count = count
         self.state = state
 

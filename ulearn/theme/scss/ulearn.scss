@@ -2329,7 +2329,9 @@ input:checked + .sliderbutton:before {
   border-bottom: 1px solid #dddddd;
   display: flex;
   margin-bottom: 10px;
+  width: 1000px;
 }
+
 
 #newtoolbar-title {
   margin-top: -3px;
