@@ -1,6 +1,7 @@
 <tal:newsitems tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                            plone_view context/@@plone;
                            dades_noticies view/dadesNoticies"
+               tal:condition="dades_noticies"
                i18n:domain="ulearn">
 
     <div class="ulearnbox portlet-noticies">
