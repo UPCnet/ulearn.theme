@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.44 (unreleased)
+2.44 (2016-11-30)
 -----------------
 
-- Nothing changed yet.
-
+* hide importantnews portlet when is empty [Paco Gregori]
 
 2.43 (2016-11-25)
 -----------------
