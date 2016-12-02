@@ -157,7 +157,7 @@ ul#accordion li.panel.subject a  span {
     text-decoration: none;
 }
 
-.link_blank {
+#box_mysubjects .link_blank {
     display: none;
 }
 
