@@ -10,8 +10,14 @@
         }
 </script>
 
-<iframe id="player" type="text/html" width="100%" height="100%"
-        tal:attributes="src string:https://www.youtube.com/v/${view/getVideo}?rel=0" frameborder="0" allowfullscreen>
+<iframe id="player" type="text/html" widht="100%" height="100%"
+        tal:attributes="src string:https://www.youtube.com/embed/${view/getVideo}"
+        frameborder="0"
+        allowfullscreen="allowfullscreen"
+        mozallowfullscreen="mozallowfullscreen"
+        msallowfullscreen="msallowfullscreen"
+        oallowfullscreen="oallowfullscreen"
+        webkitallowfullscreen="webkitallowfullscreen">
 </iframe>
 
 <div class="description_video">
