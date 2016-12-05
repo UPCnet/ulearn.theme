@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.45 (unreleased)
+2.45 (2016-12-05)
 -----------------
 
-- Nothing changed yet.
-
+* add directives to allow youtube fullscreen [Pilar Marinas]
+* fix bug css hide link_blank icon [Paco Gregori]
+* fix bug viewlets css [Paco Gregori]
 
 2.44 (2016-11-30)
 -----------------
