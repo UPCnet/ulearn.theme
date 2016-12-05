@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.46 (unreleased)
+2.46 (2016-12-05)
 -----------------
 
-- Nothing changed yet.
-
+* add cdn css bugs [Paco Gregori]
 
 2.45 (2016-12-05)
 -----------------
