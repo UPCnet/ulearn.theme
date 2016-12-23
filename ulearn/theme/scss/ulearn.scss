@@ -1,4 +1,4 @@
-$fa-font-path: "/++components++root/fontawesome/fonts";
+$fa-font-path: "++components++root/fontawesome/fonts";
 @import "fontawesome/scss/font-awesome";
 // @import "select2";
 // @import "maxui";
@@ -444,7 +444,11 @@ border-color: #34495E;
 .todayevent{ background:#f58d3d; text-shadow:none; text-align:center; border-right: 1px solid white; }
 // .event a { color: white; font-weight:normal; }
 .todayevent a { color:#fff; }
-
+.popover-content {
+  .title {
+    color: white;
+  }
+}
 
 // Botó blau
 .btn-group > .btn-comunitat {font-size: 13px;}
@@ -599,6 +603,7 @@ border-color: #34495E;
 }
 
 #searchinputusers {
+  padding-top: 10px;
 .searchInput {
     border-color: #cccccc;
     font-size: 13px;
@@ -663,7 +668,7 @@ border-color: #34495E;
     text-align: center;
   }
   .fa:hover {
-    color: #F58D3D;
+    color: #777;
   }
   li p span {
     font-size: 13px;
@@ -739,8 +744,9 @@ border-color: #34495E;
 .contentaddtoolbar {
   margin-top: 10px;
   text-align: center;
+  display: flex!important;
   .btn-default {
-    width: 33%;
+    flex-grow: 1;
   }
 }
 
@@ -1547,17 +1553,27 @@ border-radius: 0;
     right: 5px;
     top: 5px;
 }
-#communitysearch h2 {
-    float: left;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding-left: 13px;
-    width: 59%;
+#searchinputcommunities .input-append {
+  padding-top: 5px;
 }
+
+#communitysearch {
+  h2 {
+      float: left;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      padding-left: 13px;
+      width: 55%;
+  }
+  .span9 {
+      margin-left: 5px !important;
+  }
+}
+
 .template-allcommunities {
   #communitysearch {
     h2 {
-      width: 52%;
+      width: 53%;
     }
     input[type="text"] {
     border-color: #ccc;
@@ -1736,7 +1752,7 @@ border-radius: 0;
 }
 .bubble.right .arrow {
  left: -7px;
-}  
+}
 .bubble.top .arrow {
   bottom: -7px;
 }
@@ -1752,9 +1768,32 @@ border-radius: 0;
 #portal-header .pull-left a img {
     max-height: 75px;
 }
-#box_stats ul li:last-child {
-    margin-top: 10px;
+
+.portlet-static-banners {
+  img {
+    width: 100%;
+  }
 }
+#maxui-container #maxui-mainpanel #maxui-newactivity #maxui-newactivity-box #maxui-subscriptions {
+    float: left;
+    font-family: inherit;
+    font-size: 12px;
+    height: 25px;
+    margin-right: 8px;
+    margin-top: 10px;
+    max-width: 330px;
+    padding-top: 2px;
+}
+.maxui-comment .maxui-avatar.maxui-little {
+    left: -37px;
+}
+.template-profile .photo img {
+    margin-bottom: 15px;
+}
+.community-actions {
+    text-align: right;
+}
+
 @media (min-width: 1150px) {
  .homepage-hpm1 .homepage-hpm4 {
     margin-left: 19px;
@@ -1779,7 +1818,7 @@ border-radius: 0;
   #searchinputusers .inputsearchUsers .searchInput {
   max-width: 195px;
 }
-}  
+}
 @media only screen and (max-width: 800px) {
   body {
       background: none repeat scroll 0 0 white;
@@ -2020,6 +2059,9 @@ display: none;
 #maxui-widget-container {
     float: left;
 }
+#communitysearch h2 {
+  padding-left: 0;
+}
 }
 @media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait) {
 .row-fluid .span3, #dashboard .span3, .fila .span3, .template-atct_album_view #content-core .span3, .row-fluid #dashboard-portlets1, #dashboard #dashboard-portlets1, .fila #dashboard-portlets1, .template-atct_album_view #content-core #dashboard-portlets1, .row-fluid #dashboard-portlets2, #dashboard #dashboard-portlets2, .fila #dashboard-portlets2, .template-atct_album_view #content-core #dashboard-portlets2, .row-fluid #dashboard-portlets3, #dashboard #dashboard-portlets3, .fila #dashboard-portlets3, .template-atct_album_view #content-core #dashboard-portlets3, .row-fluid #dashboard-portlets4, #dashboard #dashboard-portlets4, .fila #dashboard-portlets4, .template-atct_album_view #content-core #dashboard-portlets4, .row-fluid .w1\3a 4, #dashboard .w1\3a 4, .fila .w1\3a 4, .template-atct_album_view #content-core .w1\3a 4, .row-fluid .photoAlbumEntry, #dashboard .photoAlbumEntry, .fila .photoAlbumEntry, .template-atct_album_view #content-core .photoAlbumEntry {
@@ -2038,3 +2080,373 @@ display: none;
 }
 }
 
+#communitysearch .pagination {
+  text-align: center;
+}
+
+#communitysearch {
+  background-color: #fff;
+}
+
+
+
+.title_description{
+  color:#999 !important;
+  font-size: 9px;
+}
+
+.implicat-list{
+  background: #eee none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  font-size: 11px;
+  height: 55px;
+  margin-top: 8px;
+  padding: 0;
+  text-align: center;
+  text-shadow: 0 0 1px white;
+  width: 60px;
+}
+
+.magrada-list{
+  background: #eee none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  font-size: 11px;
+  height: 55px;
+  padding: 0;
+  text-align: center;
+  text-shadow: 0 0 1px white;
+  width: 60px;
+}
+
+.disabled-implico {
+    background-color: #ffffff;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+#joinedUsers{
+  margin-top:60px;
+}
+
+.nexus24_usuari_foto {
+    float: left;
+    margin: 2%;
+    overflow-y: hidden;
+    text-align: center;
+    width: 21%;
+    font-weight: bold;
+}
+
+i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-filtered_contents_search_view {
+  background-position: -407px -168px;}
+
+.contenttreeWindow{
+    z-index: 10000 !important;
+}
+
+#box_thinkers ul {
+  list-style: none;
+  margin: 10px 0 0 0; }
+
+/* =========== Vista summary_view_news =========== */
+
+.text_noticia h3 {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.text_noticia > p {
+    font-size: 12px;
+    line-height: 13px;
+    margin-bottom: 3px;
+}
+
+.imatge_noticia {
+    margin-top: 10px;
+}
+
+.imatge_noticia .discreet {
+    font-size: 12px;
+    line-height: 13px;
+    margin-top: 3px;
+}
+
+.summary_news .imatge_noticia {
+    float: left;
+    margin-right: 10px;
+    max-height: 140px;
+    max-width: 35%;
+}
+.summary_news .text_noticia {
+    border-bottom: 1px solid #ddd;
+    min-height: 150px;
+}
+
+.favorite {display:none;}
+
+.summary_news .imatge_noticia img {
+    max-height: 136px;
+}
+
+.icon-plone-contentmenu-display-summary_view_news {
+  background-position: -360px -169px;
+}
+
+#angular-route-view  select { max-width:100%;}
+#home-angular-route-view  select { max-width:100%;}
+input#form-widgets-max_server,
+input#form-widgets-max_server_alias,
+input#form-widgets-hub_server,
+input#form-widgets-domain  { width :100%;}
+
+
+/* =========== FIN Vista summary_view_news =========== */
+
+/* =========== Viewlet follow tags =========== */
+
+.listtags{
+  width:100%;
+}
+
+.tagfollowed{
+background-color: #67931a;
+}
+
+.tagnotfollowed{
+background-color: #deded6;
+}
+
+/* =========== FIN Viewlet follow tags =========== */
+
+
+/* =========== portlet My Tags =========== */
+
+.tags_cloud {
+  margin: 5px 0;
+}
+
+.see_all_tags {
+  margin-top: 10px;
+}
+
+.tag_pill{
+    margin: 0 5px;
+}
+
+/* =========== FIN portlet My Tags =========== */
+
+/* =========== Mostra el botó de workflow als següents tipus =========== */
+.portaltype-incorporacions li > a#plone-contentmenu-workflow {
+    display: block;
+}
+
+.portaltype-valoracioperiode li > a#plone-contentmenu-workflow {
+    display: block;
+}
+
+.tags_cloud {
+    margin: 10px 0;
+}
+
+
+.tagnotfollowed {
+    background-color: #deded6;
+    border-radius: 15px;
+    color: white;
+    margin: 3px;
+    padding: 2px 7px;
+}
+
+.tagfollowed > a {
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    display: inline-block;
+    height: 15px;
+    position: relative;
+    width: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.sliderbutton {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.sliderbutton::before {
+    background-color: white;
+    bottom: 1px;
+    content: "";
+    height: 13px;
+    left: 1px;
+    position: absolute;
+    transition: all 0.4s ease 0s;
+    width: 13px;
+}
+
+input:checked + .sliderbutton {
+  background-color: #f58d3d;
+}
+
+input:focus + .sliderbutton {
+  box-shadow: 0 0 1px #f58d3d;
+}
+
+input:checked + .sliderbutton:before {
+  -webkit-transform: translateX(15px);
+  -ms-transform: translateX(15px);
+  transform: translateX(15px);
+}
+
+.toogle-group {
+  border-bottom: 1px solid #dddddd;
+  display: flex;
+  margin-bottom: 10px;
+  width: 1000px;
+}
+
+
+#newtoolbar-title {
+  margin-top: -3px;
+}
+
+#toggle-outoflist, #toggle-important, #toggle-flash, #newtoolbar-title {
+    display: flex; margin-right: 15px;
+}
+
+.literal-toggle{  line-height: 12px;
+    margin-right: 4px;}
+
+/* Rounded sliders */
+.sliderbutton.round {
+  border-radius: 34px;
+}
+
+.sliderbutton.round:before {
+  border-radius: 50%;
+}
+
+
+/* =========== Vista contents_pretty_view =========== */
+
+
+.template-listing_view #content .contenttype-folder:before, .template-listing_view #content .contenttype-privatefolder:before, .template-contents_pretty_view #content .contenttype-privatefolder:before, .template-contents_pretty_view #content .contenttype-folder:before {
+  content: "\f114";
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-file:before, .template-contents_pretty_view #content .contenttype-file:before {
+  content: "\f1c1";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-link:before, .template-contents_pretty_view #content .contenttype-link:before {
+  content: "\f0c1";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-link_pie:before, .template-contents_pretty_view #content .contenttype-link_pie:before {
+  content: "\f0c1";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-image:before, .template-contents_pretty_view #content .contenttype-image:before {
+  content: "\f1c5";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-listing_view #content .contenttype-document:before, .template-contents_pretty_view #content .contenttype-document:before {
+  content: "\f0f6";
+  font-family: FontAwesome;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  margin-right: 7px;
+}
+
+.template-contents_pretty_view .vistaquadricula .span6 {
+  margin-left:0;
+}
+
+.vistaquadricula p {
+  color: #777;
+  font-size: 12.4px;
+  font-weight: 600;
+  line-height: 15px;
+  font-weight: normal;
+}
+
+.vistaquadricula .fa, .vistaquadricula .icon:before {
+  font-size: 20px;
+  margin-right: 8px;
+}
+
+i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pretty_view {
+  background-position: -215px -1px;
+}
+
+.secciofolders {
+  font-size: 12px;
+}
+
+.secciofolders {
+  margin-left: 5px;
+  margin-bottom: 10px;
+}
+
+.secciofolders {
+  list-style-type: none;
+  margin-bottom: 6px;
+  line-height: 15px;
+}
+
+.secciofolders .fa, .secciofolders .icon:before {
+  font-size: 13px !important;
+  margin-right: 4px;
+}
+.secciofolders .span12 {
+    margin: 0;
+    min-height: 25px;
+}
+
+/* =========== FIN Vista contents_pretty_view =========== */

@@ -25,7 +25,6 @@ class IMostValuedPortlet(IPortletDataProvider):
 
 class Assignment(base.Assignment):
     implements(IMostValuedPortlet)
-
     title = _(u'mostvalued', default=u'Most valued portlet')
 
 

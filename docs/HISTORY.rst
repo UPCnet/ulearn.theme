@@ -1,11 +1,228 @@
 Changelog
 =========
 
-2.21 (unreleased)
+2.47 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+2.46 (2016-12-05)
+-----------------
+
+* add cdn css bugs [Paco Gregori]
+
+2.45 (2016-12-05)
+-----------------
+
+* add directives to allow youtube fullscreen [Pilar Marinas]
+* fix bug css hide link_blank icon [Paco Gregori]
+* fix bug viewlets css [Paco Gregori]
+
+2.44 (2016-11-30)
+-----------------
+
+* hide importantnews portlet when is empty [Paco Gregori]
+
+2.43 (2016-11-25)
+-----------------
+
+* newstoolbar changes [Paco Gregori]
+* searchers news and css [Paco Gregori]
+
+2.42 (2016-11-23)
+-----------------
+
+* add cdn [Paco Gregori]
+* changes on news searcher [Paco Gregori]
+* Quitar la barra [Pilar Marinas]
+* añadir gestion noticias + vista cotenidos + selector idioma [Paco Gregori]
+* change profile image size to 202px [Paco Gregori]
+* Solo quitar mixitup resto necesario [Pilar Marinas]
+* Quitar comprobacion avatar [Pilar Marinas]
+* Quitar error mixitup [Pilar Marinas]
+
+2.41 (2016-10-17)
+-----------------
+
+* Mida imatge user [Pilar Marinas]
+
+2.40 (2016-10-17)
+-----------------
+
+* User profile avatar or default [Pilar Marinas]
+
+2.39 (2016-10-11)
+-----------------
+
+* New JavaScripts Registry [Pilar Marinas]
+
+2.38 (2016-10-06)
+-----------------
+
+* Avatar mini personal_bar [Pilar Marinas]
+* Avatar mini portlet personas [Pilar Marinas]
+
+2.37 (2016-10-05)
+-----------------
+
+* move js to top [Paco Gregori]
+
+2.36 (2016-10-05)
+-----------------
+
+* View avatar MAX [Pilar Marinas]
+* Dynamic color favorite star [Pilar Marinas]
+* solved bug alltags view [Paco Gregori]
+
+2.35 (2016-09-06)
+-----------------
+
+* comment ipad icons sizes [roberto.diaz]
+* added tal:comment to tiny bug message [roberto.diaz]
+* added <tal:comment replace="nothing"> [roberto.diaz]
+
+2.34 (2016-07-25)
+-----------------
+
+* fixed tinymce bug: cant create links [Paco Gregori]
+
+2.33 (2016-07-22)
+-----------------
+
+* separar gestion portlets de ulearn settings [Paco Gregori]
+* Translate stats [Pilar Marinas]
+* css tag pills [Paco Gregori]
+* css tag pills [Paco Gregori]
+* mytags portlets changes [Paco Gregori]
+* solved proble in subscribednews portlet [Paco Gregori]
+* css [Paco Gregori]
+* css changes [Paco Gregori]
+* User properties default [Pilar Marinas]
+* translate literal thinnkers portlet [Paco Gregori]
+* add css to show workflow menu [Paco Gregori]
+
+2.32 (2016-06-27)
+-----------------
+
+* css follow tags [Paco Gregori]
+* CSS panel de control input 100% [roberto.diaz]
+* removed / from url [roberto.diaz]
+* Translate seemore_communities [Pilar Marinas]
+* updated intranet theme CSS [roberto.diaz]
+* add tags portlets [Paco Gregori]
+* adding layer to view [Roberto Diaz]
+* news portlets and adapters [Paco Gregori]
+* css botonera noticias [Paco Gregori]
+* add flashinformatius and importantnews portlets [Paco Gregori]
+* removed included scrupts [roberto.diaz]
+* added translation to footer link [roberto.diaz]
+* updated css with grunt [roberto.diaz]
+* added translations [roberto.diaz]
+* put condition in li not in a [roberto.diaz]
+* removed unused string in a18y [roberto.diaz]
+* removed hiddenstructure from a18y [roberto.diaz]
+
+2.31 (2016-04-18)
+-----------------
+
+* Afegir nous tipus contingut folder [Pilar Marinas]
+
+2.30 (2016-04-04)
+-----------------
+
+* css cdn [Paco Gregori]
+* css changes portlet thinkers [Paco Gregori]
+* css thinkers portlet [Paco Gregori]
+* add link to see all participant on thinkers portlet [Paco Gregori]
+
+2.29 (2016-03-17)
+-----------------
+
+* css changes [Paco Gregori]
+* solved ssos.pt [Paco Gregori]
+* remove communitiesstats directive [Paco Gregori]
+* Solucionar que todo el boton cree contenido [root@shayla]
+* modify button bar span and class [Paco Gregori]
+* translate check_favorite [Paco Gregori]
+* Nova vista contentypes [Pilar Marinas]
+* Canvis Marc [root muntanyeta]
+* Canvi vista contentypes [Pilar Marinas]
+* change ulearn calendar to show only events community into community [Paco Gregori]
+* modify bug on stats and calendar portlets [Paco Gregori]
+* css changes [Paco Gregori]
+* modify url function [Paco Gregori]
+* add link function [Paco Gregori]
+* marc css changes next update [root muntanyeta]
+* rename listing summary view [Paco Gregori]
+* username lower on portlet communities [Paco Gregori]
+
+2.28 (2016-02-22)
+-----------------
+
+* Fix grunt [Pilar Marinas]
+* Canvis vistas nous contentypes [Pilar Marinas]
+* Nueva vista contentypes [Pilar Marinas]
+
+2.27 (2016-02-10)
+-----------------
+
+* cdn nexus24 [Paco Gregori]
+* remove css [Paco Gregori]
+* Modificar css perque surti foto quan entres a una conversa [Pilar Marinas]
+* add css nexus24 [Paco Gregori]
+* remove css [Paco Gregori]
+* remove css [Paco Gregori]
+
+2.26 (2016-01-20)
+-----------------
+
+* Search by enter in thinnkers [Pilar Marinas]
+
+2.25 (2016-01-19)
+-----------------
+
+* Canvi tipus comunitat [Pilar Marinas]
+
+2.24 (2016-01-19)
+-----------------
+
+* Fix grunt [Pilar Marinas]
+* css portlet stats [Pilar Marinas]
+* Canvis Marc [root muntanyeta]
+
+2.23 (2016-01-14)
+-----------------
+
+* Fix grunt [Pilar Marinas]
+* Marc's changes [root muntanyeta]
+
+2.22 (2016-01-14)
+-----------------
+
+* Fix grunt [Pilar Marinas]
+
+2.21 (2016-01-14)
+-----------------
+
+* Change icon for header optionsin responsive [Victor Fernandez de Alba]
+* Fix Chamaleon syntax on footer [Victor Fernandez de Alba]
+* Fix location of files in stats [Victor Fernandez de Alba]
+* Do not show link on communities [Victor Fernandez de Alba]
+* Remove chameleon syntactig sugar [Carles Bruguera]
+* Fix link to stats [Victor Fernandez de Alba]
+* Change to angular route for stats [Victor Fernandez de Alba]
+* Updated required CSS for stats feature [Victor Fernandez de Alba]
+* Migrate search view to angular [Pilar Marinas]
+*  [Pilar Marinas]
+* Conflicts: [Pilar Marinas]
+*  [Pilar Marinas]
+* ulearn/theme/browser/views_templates/homepage.pt [Pilar Marinas]
+* ulearn/theme/stylesheets/ulearn.css [Pilar Marinas]
+* Fix messed up merge [Carles Bruguera]
+* Add classes to hompage portlets slots [root muntanyeta]
+* Recover deleted styles [Carles Bruguera]
+* Style changes [root muntanyeta]
 
 2.20 (2015-12-01)
 -----------------

@@ -1,6 +1,6 @@
 from hashlib import sha1
 from plone import api
-from Acquisition import aq_inner
+from Acquisition import aq_inner, aq_chain
 from zope.interface import implements
 
 from plone.app.portlets.portlets import base
@@ -13,6 +13,7 @@ from genweb.core.interfaces import IHomePage
 from ulearn.core.content.community import ICommunity
 
 from zope.security import checkPermission
+from ulearn.core import _
 
 
 class IStatsPortlet(IPortletDataProvider):
@@ -21,7 +22,6 @@ class IStatsPortlet(IPortletDataProvider):
 
 class Assignment(base.Assignment):
     implements(IStatsPortlet)
-
     title = _(u'stats', default=u'Stats')
 
 
@@ -43,10 +43,11 @@ class Renderer(base.Renderer):
     def is_community(self):
         """ Assume that the stats are only shown on the community itself. """
         context = aq_inner(self.context)
-        if ICommunity.providedBy(context):
-            return True
-        else:
-            return False
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
 
     def get_stats_for(self, query_type):
         if IHomePage.providedBy(self.context):
@@ -57,11 +58,11 @@ class Renderer(base.Renderer):
 
         pc = api.portal.get_tool('portal_catalog')
         if query_type == 'documents':
-            results = pc.searchResults(portal_type=['Document', 'File'], path={'query': current_path})
+            results = pc.searchResults(portal_type=['Document', 'File', 'AppFile'], path={'query': current_path})
         elif query_type == 'links':
             results = pc.searchResults(portal_type=['Link'], path={'query': current_path})
         elif query_type == 'media':
-            results = pc.searchResults(portal_type=['Image', 'Video'], path={'query': current_path})
+            results = pc.searchResults(portal_type=['Image', 'AppImage', 'ulearn.video', 'ulearn.video_embed'], path={'query': current_path})
 
         return len(results)
 
@@ -70,7 +71,7 @@ class Renderer(base.Renderer):
         if literal == 'thinnkers':
             return 'thinnkins'
         else:
-            return 'entrades'
+            return _(u'entrades')
 
     def show_stats(self):
         """ The genweb.webmaster can see stats.

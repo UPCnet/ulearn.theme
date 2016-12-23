@@ -21,6 +21,7 @@ a {
   color: $secondary-color;
 }
 
+
 #portal-header {
   @include gradient-vertical($startColor: $alt-gradient-start-color, $endColor: $alt-gradient-end-color);
 }
@@ -174,37 +175,37 @@ h1, h2, h3, label, span.label, fieldset legend {
 #maxui-container .maxui-actions {
   a.maxui-action.maxui-likes.maxui-liked,
   a.maxui-action.maxui-likes.maxui-liked:before {
-    color: $secondary-color;
+    color: $main-color;
   }
   a.maxui-action.maxui-likes.maxui-liked:hover:before {
-    color: #3B5998;
+    color: $main-color;
   }
   a.maxui-action.maxui-favorites.maxui-favorited,
   a.maxui-action.maxui-favorites.maxui-favorited:before {
-    color: $secondary-color;
+    color: $main-color;
   }
   a.maxui-action.maxui-commentaction {
-    color: $secondary-color;
+    color: $main-color;
   }
   a.maxui-action.maxui-flag.maxui-flagged:before {
-      color: $secondary-color;
+      color: $main-color;
   }
   a.maxui-action.maxui-flag.maxui-flagged {
-      color: $secondary-color;
+      color: $main-color;
   }
   a.maxui-action.maxui-flag:hover:before {
-      color: $secondary-color;
+      color: $main-color;
   }
   a.maxui-action.maxui-favorites.maxui-favorited:hover,
   a.maxui-action.maxui-likes.maxui-liked:hover,
   a.maxui-action.maxui-commentaction:hover {
-    color: #444;
+    color: $main-color;
   }
 }
 
 .portletCalendar .ploneCalendar td.cal_has_events .popover-content a {
   color: $secondary-color;
-  text-shadow: 0 -1px 
+  text-shadow: 0 -1px
 }
 
 .portletCalendar .ploneCalendar td.cal_has_events {
@@ -242,7 +243,7 @@ h1, h2, h3, label, span.label, fieldset legend {
     color: $secondary-color;
 }
 .favorite .fa-star {
-    color: orange;
+    color: $main-color;
 }
 #box_community .btn-large.dropdown-toggle {
 background: $main-color;
@@ -254,7 +255,7 @@ border-color: $main-color;
 }
 .breadcrumb .divider {
     color: #888;
-}    
+}
 #maxui-container #maxui-new-participants .maxui-filter span, #maxui-container #maxui-search-filters .maxui-filter span, .maxui-filters .maxui-filter span, #maxui-container .maxui-button {
     background-color: $main-color;
     border: 1px solid $main-color;
@@ -273,4 +274,33 @@ border-color: $main-color;
   #login-forgotten-password {
     a {color:$main-color;}
   }
+}
+
+.tag_pill {
+    background-color: $main-color;
+    border-radius: 15px;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    margin: 3px;
+    padding: 2px 7px;
+}
+
+.tagfollowed {
+    background-color: $main-color;
+    border-radius: 15px;
+    color: white;
+    margin: 3px;
+    padding: 2px 7px;
+}
+
+#subscribednews-search-filters .maxui-filter span {
+  background-color: $main-color;
+  border: 1px solid $main-color;
+  border-radius: 5px;
+  box-shadow: 0 1px #fff;
+  color: #fff;
+  display: block;
+  padding: 0 0 3px 4px;
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
 }

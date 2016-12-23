@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '2.21.dev0'
+version = '2.47.dev0'
 
 README = open("README.rst").read()
 HISTORY = open(os.path.join("docs", "HISTORY.rst")).read()
@@ -32,7 +32,9 @@ setup(name='ulearn.theme',
       install_requires=[
           'setuptools',
           'genweb.theme',
-          'ulearn.js'
+          'ulearn.js',
+          'bleach',
+          'bs4'
       ],
       extras_require={'test': ['plone.app.testing[robot]>=4.2.2']},
       entry_points="""

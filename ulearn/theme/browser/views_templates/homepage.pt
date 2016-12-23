@@ -56,6 +56,7 @@
                        tal:condition="have_portlets_slot3"
                        tal:define="manager_name string:genweb.portlets.HomePortletManager3"
                        tal:attributes="class python:'homepage-hpm3 span' + view.getSpanValueForManager(manager_name)">
+
                     <span tal:replace="structure python:view.renderProviderByName(manager_name)" />
                   </div>
                   <div class="span3"

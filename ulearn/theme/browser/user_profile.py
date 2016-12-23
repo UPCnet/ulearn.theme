@@ -103,6 +103,8 @@ class userProfile(BrowserView):
         return api.user.get_current()
 
     def user_properties(self):
+        user_properties_default = [_(u'fullname'), _(u'email'), _(u'home_page'), _(u'description'), _(u'twitter_username'), _(u'location'), _(u'telefon'), _(u'ubicacio')]
+
         member_data = self.get_member_data()
         return {'fullname': member_data.getProperty('fullname'),
                 'email': member_data.getProperty('email'),
@@ -113,3 +115,4 @@ class userProfile(BrowserView):
                 'telefon': member_data.getProperty('telefon'),
                 'ubicacio': member_data.getProperty('ubicacio'),
                 }
+

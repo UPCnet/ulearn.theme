@@ -1,7 +1,7 @@
 from plone import api
 from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
-from Acquisition import aq_inner
+from Acquisition import aq_inner, aq_chain
 from genweb.core.interfaces import IHomePage
 
 from zope.component import getMultiAdapter
@@ -228,16 +228,12 @@ class Renderer(base.Renderer):
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
 
-        if IHomePage.providedBy(self.context) or \
-           IPloneSiteRoot.providedBy(self.context) or\
-           not IDexterityContent.providedBy(self.context):
-            path = navigation_root_path
-        else:
-            if ICommunity.providedBy(aq_inner(self.context)):
-                community = aq_inner(self.context)
+        context = aq_inner(self.context)
+        path = navigation_root_path
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                community = aq_inner(obj)
                 path = '/'.join(community.getPhysicalPath())
-            else:
-                path = navigation_root_path
 
         query = {
             'portal_type': 'Event',
@@ -263,16 +259,12 @@ class Renderer(base.Renderer):
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
 
-        if IHomePage.providedBy(self.context) or \
-           IPloneSiteRoot.providedBy(self.context) or \
-           not IDexterityContent.providedBy(self.context):
-            path = navigation_root_path
-        else:
-            if ICommunity.providedBy(aq_inner(self.context)):
-                community = aq_inner(self.context)
+        context = aq_inner(self.context)
+        path = navigation_root_path
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                community = aq_inner(obj)
                 path = '/'.join(community.getPhysicalPath())
-            else:
-                path = navigation_root_path
 
         query = {
             'portal_type': 'Event',
@@ -296,14 +288,12 @@ class Renderer(base.Renderer):
         portal_state = getMultiAdapter((self.context, self.request), name='plone_portal_state')
         navigation_root_path = portal_state.navigation_root_path()
 
-        if IHomePage.providedBy(self.context) or IPloneSiteRoot.providedBy(self.context):
-            path = navigation_root_path
-        else:
-            if ICommunity.providedBy(aq_inner(self.context)):
-                community = aq_inner(self.context)
+        context = aq_inner(self.context)
+        path = navigation_root_path
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                community = aq_inner(obj)
                 path = '/'.join(community.getPhysicalPath())
-            else:
-                path = navigation_root_path
 
         weeks = self.calendar.getEventsForCalendar(month, year, path=path)
         for week in weeks:
@@ -350,10 +340,11 @@ class Renderer(base.Renderer):
     def is_community(self):
         """ Assume that the calendar is only shown on the community itself. """
         context = aq_inner(self.context)
-        if ICommunity.providedBy(context):
-            return True
-        else:
-            return False
+        for obj in aq_chain(context):
+            if ICommunity.providedBy(obj):
+                return True
+
+        return False
 
     def get_event_folder_url(self):
         """ Assume that the new event button is only shown on the community itself. """

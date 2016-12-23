@@ -32,6 +32,12 @@
       />
 
   <plone:static
+      directory="portlets"
+      type="ulearn"
+      name="portlets"
+      />
+
+  <plone:static
       directory="static"
       type="ulearn"
       name="static"
@@ -64,5 +70,12 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <!-- -*- extra stuff goes here -*- -->
+
+  <browser:page
+    name="ulearn-control-portlets"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    class=".controlportlets.PortletsControlPanel"
+    permission="cmf.ManagePortal"
+    />
 
 </configure>

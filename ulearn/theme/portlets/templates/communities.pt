@@ -17,7 +17,7 @@
                 <span class="fa-stack">
                   <i class="fa fa-folder fa-stack-2x"></i>
                   <i class="fa fa-stack-1x">
-                    <a href="#"
+                    <a href="#" target="_self"
                        tal:attributes="href community/url"
                        tal:content="community/pending">
                     </a>
@@ -27,7 +27,7 @@
               <tal:condition  tal:condition="python:pending == 0">
                 <span class="fa-stack">
                   <i class="fa fa-check-square-o fa-stack-2x">
-                     <a href="#"
+                     <a href="#" target="_self"
                         tal:attributes="href community/url">
                      </a>
                   </i>
@@ -35,7 +35,7 @@
               </tal:condition>
             </div>
           </div>
-          <a id="title_community" href="#"
+          <a id="title_community" href="#" target="_self"
              rel="tooltip" data-placement="right" title="Community title not trimmed"
              tal:attributes="href community/url;
                              title community/title">
@@ -65,19 +65,17 @@
   <li>
     <a tal:attributes="href string:${view/portal_url}/allcommunities">
       <i class="icon-plus-sign icons"> </i>
-      <tal:seemore i18n:translate="seemore">See more communities</tal:seemore>
+      <tal:seemore i18n:translate="seemore_communities">See more communities</tal:seemore>
     </a>
   </li>
-  <li>
-    <a tal:condition="campus_url"
-       tal:attributes="href campus_url">
+  <li tal:condition="campus_url">
+    <a tal:attributes="href campus_url">
       <i class="icon-plus-sign icons"> </i>
       <tal:gotocampus i18n:translate="gotocampus">Go to the campus</tal:gotocampus>
     </a>
   </li>
-  <li>
-    <a tal:condition="library_url"
-       tal:attributes="href library_url">
+  <li tal:condition="library_url">
+    <a tal:attributes="href library_url">
       <i class="icon-plus-sign icons"> </i>
       <tal:gotolibrary i18n:translate="gotolibrary">Go to the library</tal:gotolibrary>
     </a>

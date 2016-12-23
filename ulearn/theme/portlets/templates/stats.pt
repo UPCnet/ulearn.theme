@@ -7,8 +7,6 @@
     <h2 i18n:translate="stats">Stats</h2>
 
     <tal:iscommunity condition="is_community">
-      <communitiesstats
-        tal:attributes="community_hash view/get_hash">
         <ul>
           <li>
             <div class="bubble left pull-left">
@@ -71,14 +69,7 @@
               Media
             </p>
           </li>
-          <li tal:condition="view/show_stats">
-            <a tal:attributes="href string:${view/portal_url}/ulearn-stats">
-              <i class="icon-plus-sign icons"> </i>
-              <tal:seemore i18n:translate="seemore_stats">See more</tal:seemore>
-            </a>
-          </li>
         </ul>
-      </communitiesstats>
     </tal:iscommunity>
 
     <tal:isroot condition="not: is_community">
@@ -144,7 +135,7 @@
             </p>
           </li>
           <li tal:condition="view/show_stats">
-            <a tal:attributes="href string:${view/portal_url}/ulearn-stats">
+            <a ui-sref="stats.activity">
               <i class="icon-plus-sign icons"> </i>
               <tal:seemore i18n:translate="seemore_stats">See more</tal:seemore>
             </a>

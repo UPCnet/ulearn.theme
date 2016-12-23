@@ -106,7 +106,7 @@ class Renderer(base.Renderer):
         portal = self.portal()
         pc = getToolByName(portal, "portal_catalog")
         pm = getToolByName(portal, "portal_membership")
-        current_user = pm.getAuthenticatedMember().getUserName()
+        current_user = pm.getAuthenticatedMember().getUserName().lower()
         communities = pc.searchResults(object_provides=ICommunity.__identifier__,
                                        favoritedBy=current_user,
                                        sort_on="subscribed_items",
