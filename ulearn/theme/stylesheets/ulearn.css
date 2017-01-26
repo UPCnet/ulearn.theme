@@ -4752,6 +4752,10 @@ input#form-widgets-domain {
 .portaltype-valoracioperiode li > a#plone-contentmenu-workflow {
   display: block; }
 
+.portaltype-news-item li > a#plone-contentmenu-workflow {
+    display: block;
+}
+
 .tags_cloud {
   margin: 10px 0; }
 

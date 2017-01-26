@@ -102,9 +102,10 @@ class Renderer(base.Renderer):
         results = catalog(portal_type='News Item',
                           review_state=state,
                           path=path,
-                          expires={'query': now, 'range': 'min', },
                           is_important=True,
-                          sort_on='created',
+                          expires={'query': now, 'range': 'min', },
+                          effective={'query': now, 'range': 'max', },
+                          sort_on='effective',
                           sort_order='reverse',
                           sort_limit=limit)
         noticies = self.dades(results)
@@ -119,12 +120,22 @@ class Renderer(base.Renderer):
                 text = None
             else:
                 text = self.abrevia(noticiaObj.text.raw, 100)
+
+            if noticiaObj.effective_date:
+                news_day = noticiaObj.effective_date.day()
+                news_month = noticiaObj.effective_date.month()
+                news_year = noticiaObj.effective_date.year()
+            else:
+                news_day = noticiaObj.modification_date.day()
+                news_month = noticiaObj.modification_date.month()
+                news_year = noticiaObj.modification_date.year()
+
             info = {'id': noticia.id,
                     'text': text,
                     'url': noticia.getURL(),
                     'title': self.abrevia(noticia.Title, 70),
                     'new': noticiaObj,
-                    'date': str(noticiaObj.modification_date.day()) + '/' + str(noticiaObj.modification_date.month()) + '/' + str(noticiaObj.modification_date.year()),
+                    'date': str(news_day) + '/' + str(news_month) + '/' + str(news_year),
                     'image': noticiaObj.image
                     }
 

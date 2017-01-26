@@ -97,7 +97,8 @@ class Renderer(base.Renderer):
 
         news += self.get_news(context, state, path, limit)
         if news:
-            return sorted(news, key=lambda new: new['date'], reverse=True)
+            return news
+            # return sorted(news, key=lambda new: new['date'], reverse=True)
         else:
             return []
 
@@ -122,11 +123,13 @@ class Renderer(base.Renderer):
                           review_state=state,
                           path=path,
                           expires={'query': now, 'range': 'min', },
-                          sort_on='created',
+                          effective={'query': now, 'range': 'max', },
+                          sort_on='effective',
                           sort_order='reverse',
                           sort_limit=limit,
                           is_outoflist=False
                           )
+
         noticies = self.dades(results)
         for item in noticies:
             yield item
@@ -142,12 +145,22 @@ class Renderer(base.Renderer):
                     text = self.abrevia(noticiaObj.description, 150)
                 else:
                     text = self.abrevia(noticiaObj.text.raw, 150)
+
+            if noticiaObj.effective_date:
+                news_day = noticiaObj.effective_date.day()
+                news_month = noticiaObj.effective_date.month()
+                news_year = noticiaObj.effective_date.year()
+            else:
+                news_day = noticiaObj.modification_date.day()
+                news_month = noticiaObj.modification_date.month()
+                news_year = noticiaObj.modification_date.year()
+
             info = {'id': noticia.id,
                     'text': text,
                     'url': noticia.getURL(),
                     'title': self.abrevia(noticia.Title, 70),
                     'new': noticiaObj,
-                    'date': str(noticiaObj.modification_date.day()) + '/' + str(noticiaObj.modification_date.month()) + '/' + str(noticiaObj.modification_date.year()),
+                    'date': str(news_day) + '/' + str(news_month) + '/' + str(news_year),
                     'image': noticiaObj.image,
                     'subject': noticiaObj.subject,
                     }
