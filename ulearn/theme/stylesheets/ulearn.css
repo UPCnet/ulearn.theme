@@ -4930,3 +4930,7 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
 /* =========== FIN Vista contents_pretty_view =========== */
 
 /*# sourceMappingURL=ulearn.css.map */
+
+.portaltype-news-item li > a#plone-contentmenu-workflow {
+    display: block;
+}
