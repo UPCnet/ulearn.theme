@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.47 (unreleased)
+2.47 (2017-01-31)
 -----------------
 
-- Nothing changed yet.
-
+* orden portlets noticias por fecha efectiva [Paco Gregori]
 
 2.46 (2016-12-05)
 -----------------
