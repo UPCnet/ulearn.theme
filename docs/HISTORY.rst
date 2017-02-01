@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.48 (unreleased)
+2.48 (2017-02-01)
 -----------------
 
-- Nothing changed yet.
-
+* cdn ulearn theme [Paco Gregori]
 
 2.47 (2017-01-31)
 -----------------
