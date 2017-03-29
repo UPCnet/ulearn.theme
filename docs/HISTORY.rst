@@ -1,11 +1,21 @@
 Changelog
 =========
 
-2.47 (unreleased)
+2.49 (unreleased)
 -----------------
 
 - Nothing changed yet.
 
+
+2.48 (2017-02-01)
+-----------------
+
+* cdn ulearn theme [Paco Gregori]
+
+2.47 (2017-01-31)
+-----------------
+
+* orden portlets noticias por fecha efectiva [Paco Gregori]
 
 2.46 (2016-12-05)
 -----------------

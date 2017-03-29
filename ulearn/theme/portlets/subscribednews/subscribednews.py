@@ -98,7 +98,6 @@ class Renderer(base.Renderer):
         news += self.get_news(context, state, path, limit)
         if news:
             return news
-            # return sorted(news, key=lambda new: new['date'], reverse=True)
         else:
             return []
 
