@@ -304,3 +304,10 @@ border-color: $main-color;
   padding: 0 0 3px 4px;
   text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
 }
+
+i.shared_icon {
+    float: right;
+    color: $secondary-color;
+    font-size: 25px;
+    padding-right: 20px;
+}

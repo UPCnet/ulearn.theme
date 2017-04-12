@@ -4310,7 +4310,6 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #sharedwithme-container {
   background: white none repeat scroll 0 0;
-  min-height: 300px;
   padding: 10px;
   box-shadow: -1px 1px 2px #ddd; }
 
@@ -4935,3 +4934,20 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
   display: block; }
 
 /*# sourceMappingURL=ulearn.css.map */
+
+.caixessearch_shared {
+    background: #f5f5f5 none repeat scroll 0 0;
+    margin-bottom: 10px;
+    min-height: 60px;
+    padding: 10px;
+}
+
+#sharedwithme-container .pagination {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.shared_from_community {
+    color: #444;
+    font-weight: 600;
+}
