@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-      <div id="librarysearch">
+      <div id="librarysearch" i18n:domain="ulearn">
         <div id="sharedwithme-container" ng-switch-when="sharedwithme">
             <div id="shared-with-me-view" ng-controller="SharedWithMe as ctrl">
                 <div class="caixessearch_shared">
