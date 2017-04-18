@@ -40,6 +40,8 @@ from ulearn.core.interfaces import IEventsFolder
 from ulearn.core.interfaces import IDiscussionFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
 
+from zope.component import queryUtility
+
 import datetime
 from plone import api
 
@@ -234,6 +236,11 @@ class gwHeader(viewletBase):
     grok.template('header')
     grok.viewletmanager(IPortalHeader)
     grok.layer(IUlearnTheme)
+
+    def get_info_servei(self):
+        registry = queryUtility(IRegistry)
+        settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
+        return settings.info_servei
 
 
 class gwFooter(viewletBase):

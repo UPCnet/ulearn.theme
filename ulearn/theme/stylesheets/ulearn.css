@@ -4951,3 +4951,15 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
     color: #444;
     font-weight: 600;
 }
+
+.header-info a {
+    color: white;
+    margin-top: 22px;
+    float: right;
+    margin-right: 10px;
+    font-size: 2em;
+}
+
+.header-info a img.link_blank {
+    display: none;
+}
