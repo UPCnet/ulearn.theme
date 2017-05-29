@@ -10,7 +10,7 @@
              data-toggle="tab"
              data-target="#corporatiu" target="_self">
                 <i class="fa fa-comment icons"></i>
-                <tal:Corporatiu i18n:translate="stream"> Stream </tal:Corporatiu></a>
+                <tal:Corporatiu i18n:translate="Entrada"> Stream </tal:Corporatiu></a>
         </div>
       </div>
 
