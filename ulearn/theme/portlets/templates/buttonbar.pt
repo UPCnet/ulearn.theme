@@ -1,5 +1,5 @@
-<div ng-controller="homeTopPageMenuButtons as ctrl">
-    <div id="menusup" i18n:domain="ulearn">
+<div tal:define="ulearn_utils context/@@ulearn.utils" ng-controller="homeTopPageMenuButtons as ctrl">
+    <div tal:condition="ulearn_utils/is_activate_sharedwithme" id="menusup" i18n:domain="ulearn">
         <nav>
             <div class="row-fluid">
                 <div class="active bubble top span4" ng-class="{active: ctrl.active_tab == 'stream'}">
@@ -26,6 +26,30 @@
                         <a ng-click="ctrl.active_tab = 'sharedwithme'">
                             <i class="fa fa-share-alt icons"></i>
                             <tal:Documents i18n:translate="shared_with_me">Shared with me</tal:Documents>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div tal:condition="not:ulearn_utils/is_activate_sharedwithme" id="menusup" i18n:domain="ulearn">
+        <nav>
+            <div class="row-fluid">
+                <div class="active bubble top span6" ng-class="{active: ctrl.active_tab == 'stream'}">
+                    <div class="arrow"></div>
+                    <div class="bubble-content">
+                        <a ng-click="ctrl.active_tab = 'stream'">
+                            <i class="fa fa-comment icons"></i>
+                            <tal:Entrada i18n:translate="Entrada"> Stream </tal:Entrada>
+                        </a>
+                    </div>
+                </div>
+                <div class="bubble top span6" ng-class="{active: ctrl.active_tab == 'mycommunities'}">
+                    <div class="arrow"></div>
+                    <div class="bubble-content">
+                        <a ng-click="ctrl.active_tab = 'mycommunities'">
+                            <i class="fa fa-group icons"></i>
+                            <tal:Documents i18n:translate="my_communities">My communities</tal:Documents>
                         </a>
                     </div>
                 </div>

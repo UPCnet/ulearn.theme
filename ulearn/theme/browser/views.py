@@ -937,3 +937,9 @@ class ContentsPrettyView(grok.View):
                        'item_state': item2.review_state
                        } for item2 in items if item2.exclude_from_nav is False]
         return all_items
+
+class SharedWithMe(baseCommunities):
+    """ The list of communities """
+    grok.context(IPloneSiteRoot)
+    grok.require('genweb.member')
+    grok.layer(IUlearnTheme)
