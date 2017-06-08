@@ -1,11 +1,18 @@
 Changelog
 =========
 
-2.49 (unreleased)
+2.49 (2017-06-08)
 -----------------
 
-- Nothing changed yet.
-
+* cdn ulearn theme [Pilar Marinas]
+* Merge remote-tracking branch 'origin/newsharing' into develop [Pilar Marinas]
+* Configuracion activate_sharedwithme [Pilar Marinas]
+* Cambiar traduccion [Iago López Fernández]
+* Icones compartit en cerca ajax [Pilar Marinas]
+* Afegir info servei [Pilar Marinas]
+* Traduccions [Pilar Marinas]
+* Canvis disseny shared [Pilar Marinas]
+* Merge develop [Pilar Marinas]
 
 2.48 (2017-02-01)
 -----------------
