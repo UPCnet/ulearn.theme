@@ -128,6 +128,7 @@ class Renderer(base.Renderer):
                           sort_limit=limit,
                           is_outoflist=False
                           )
+
         noticies = self.dades(results)
         for item in noticies:
             yield item

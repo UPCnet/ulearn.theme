@@ -14,9 +14,7 @@
             <metal:entries fill-slot="entries">
                 <metal:block use-macro="context/folder_listing/macros/entries">
                     <metal:entry fill-slot="entry">
-                <div class="tileItem visualIEFloatFix"
-                     tal:define="item_object item/getObject;">
-
+                <div tal:attributes="class python:'tileItem visualIEFloatFix' + (' shared' if item.is_shared else '')" tal:define="item_object item/getObject;">
                     <a href="#"
                        tal:define="real_object python:item_object.aq_explicit"
                        tal:condition="python:getattr(real_object, 'image', None)"
@@ -27,7 +25,6 @@
                              src="" alt=""
                              tal:replace="structure python: scale.tag(css_class='tileImage')" />
                     </a>
-
                     <h2 class="tileHeadline"
                         metal:define-macro="listitem">
 

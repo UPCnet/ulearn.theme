@@ -347,6 +347,15 @@ class IPortletsSettings(form.Schema):
         default=True,
     )
 
+    ulearn_portlets_sharedwithme = schema.Bool(
+        title=_(u'ulearn_sharedwithme',
+                default=_(u"Habilitar portlet compartit amb mi")),
+        description=_(u'help_ulearn_sharedwithme',
+                      default=_(u"Habilita el portlet per a veure el compartit amb mi.")),
+        required=False,
+        default=False,
+    )
+
     # ==== FIN Portlets ====
 
 

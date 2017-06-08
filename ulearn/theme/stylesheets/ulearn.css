@@ -4310,7 +4310,6 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #sharedwithme-container {
   background: white none repeat scroll 0 0;
-  min-height: 300px;
   padding: 10px;
   box-shadow: -1px 1px 2px #ddd; }
 
@@ -4751,6 +4750,10 @@ input#form-widgets-domain {
 .portaltype-valoracioperiode li > a#plone-contentmenu-workflow {
   display: block; }
 
+.portaltype-news-item li > a#plone-contentmenu-workflow {
+    display: block;
+}
+
 .tags_cloud {
   margin: 10px 0; }
 
@@ -4931,3 +4934,32 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
   display: block; }
 
 /*# sourceMappingURL=ulearn.css.map */
+
+.caixessearch_shared {
+    background: #f5f5f5 none repeat scroll 0 0;
+    margin-bottom: 10px;
+    min-height: 60px;
+    padding: 10px;
+}
+
+#sharedwithme-container .pagination {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.shared_from_community {
+    color: #444;
+    font-weight: 600;
+}
+
+.header-info a {
+    color: white;
+    margin-top: 22px;
+    float: right;
+    margin-right: 10px;
+    font-size: 2em;
+}
+
+.header-info a img.link_blank {
+    display: none;
+}
