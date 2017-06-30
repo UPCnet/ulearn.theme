@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.50 (unreleased)
+2.50 (2017-06-30)
 -----------------
 
-- Nothing changed yet.
-
+* show canvi estat per ulearn.intranet [alberto.duran]
+* Template portlet collective.polls [iago.lopez]
 
 2.49 (2017-06-08)
 -----------------
