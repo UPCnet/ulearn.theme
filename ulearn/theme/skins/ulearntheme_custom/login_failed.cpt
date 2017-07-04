@@ -34,7 +34,7 @@
   <meta name="generator" content="Plone - http://plone.org" />
   <meta name="author" content="UPCnet, SLU - eKnowledge" />
   <meta name="description" content="Genweb v4.0 - El generador de webs d'UPCnet" />
-  <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/++ulearn++static/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/favicon.ico" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <tal:comment replace="nothing"><!-- El seguent script ha d'anar seguit del meta del viewport --></tal:comment>

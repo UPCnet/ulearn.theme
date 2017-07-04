@@ -32,7 +32,7 @@
   <meta name="generator" content="Plone - http://plone.org" />
   <meta name="author" content="UPCnet, SLU - eKnowledge" />
   <meta name="description" content="Genweb v4.0 - El generador de webs d'UPCnet" />
-  <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/++ulearn++static/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/favicon.ico" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <tal:comment replace="nothing"><!-- El seguent script ha d'anar seguit del meta del viewport --></tal:comment>
@@ -77,7 +77,7 @@
                     came_from request/came_from|request/HTTP_REFERER|nothing;
                     came_from_template_id python:came_from and context.plone_utils.urlparse(came_from)[2].split('/')[-1];
                     came_from python:test(came_from is not None and isURLInPortal(came_from) and came_from_template_id not in login_template_ids, came_from, None);
-                    next request/next|nothing;                 
+                    next request/next|nothing;
                     next python:test(next is not None and isURLInPortal(next), next, None);
                     errors options/state/getErrors;
                     ac_name auth/name_cookie|string:__ac_name;
