@@ -1,11 +1,12 @@
 Changelog
 =========
 
-2.51 (unreleased)
+2.51 (2017-07-12)
 -----------------
 
-- Nothing changed yet.
-
+* cdn ulearn theme [Pilar Marinas]
+* Css required terms [Pilar Marinas]
+* favicon [Pilar Marinas]
 
 2.50 (2017-06-30)
 -----------------
