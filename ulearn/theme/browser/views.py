@@ -938,8 +938,22 @@ class ContentsPrettyView(grok.View):
                        } for item2 in items if item2.exclude_from_nav is False]
         return all_items
 
+
 class SharedWithMe(baseCommunities):
     """ The list of communities """
     grok.context(IPloneSiteRoot)
     grok.require('genweb.member')
     grok.layer(IUlearnTheme)
+
+
+class resetMenuBar(grok.View):
+    """ This view reset the personal bar """
+    grok.name('reset_menu')
+    grok.context(IPloneSiteRoot)
+    grok.template('reset_menu_bar')
+    grok.layer(IUlearnTheme)
+
+    def update(self):
+        portal = getToolByName(self.context, 'portal_url').getPortalObject()
+        soup_menu = get_soup('menu_soup', portal)
+        soup_menu.clear()

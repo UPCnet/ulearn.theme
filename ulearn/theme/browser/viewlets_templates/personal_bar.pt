@@ -1,8 +1,7 @@
-
-<tal:personaltools condition="not: view/anonymous" i18n:domain="genweb">
-<h1 class="goout" id="titol-eines-usuari" i18n:translate="label_eines_usuari"> Eines d'usuari </h1>
+<tal:personaltools condition="not: view/anonymous">
+<h1 class="goout" id="titol-eines-usuari"> Eines d'usuari </h1>
 <nav id="portal-personaltools-wrapper" role="toolbar" aria-labelledby="titol-eines-usuari"
-     >
+     i18n:domain="genweb">
   <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
@@ -14,11 +13,11 @@
           <i class="icon-user icon-white"></i>
         </a>
         <div class="nav-collapse nav-collapse-edit">
-          <h2 class="goout" id="titol-eines-usuari" i18n:translate="label_menu_usuari"> Menú d'usuari </h2>
+          <h2 class="goout" id="titol-eines-usuari"> Menú d'usuari </h2>
           <ul class="nav" role="menu" aria-labelledby="titol-menu-usuari">
             <li class="dropdown" role="menuitem" tal:attributes="id string:${view/user_name}">
-              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown"  tal:define="ulearn_utils context/@@ulearn.utils">
-                <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${view/getUserId}/avatar/mini" aria-hidden="true"
+              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                <img tal:attributes="src string:${view/getPortraitMini}" aria-hidden="true"
                      alt=""
                      class="user" />
                 <tal:username content="view/user_name"> Rafael Ojeda Rojas </tal:username>
@@ -55,31 +54,6 @@
                 </li>
               </ul>
             </li>
-            <li tal:condition="dades/quicklinks_show" class="dropdown" role="menuitem" tal:define="dades view/quicklinks">
-              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
-                <i tal:attributes="class string:fa ${dades/quicklinks_icon}"></i>
-                <tal:quicklinks tal:content="dades/quicklinks_literal"> Quick Links </tal:quicklinks>
-                <b aria-hidden="true" class="caret"></b>
-              </a>
-              <ul class="dropdown-menu" role="menu">
-                <li role="menuitem" tal:repeat="item dades/quicklinks_table">
-                  <tal:span condition="not: item/new_window">
-                    <a tal:attributes="href string:${item/link}">
-                         <i tal:attributes="class string:fa ${item/icon}"></i>
-                         <tal:link tal:content="item/text">
-                            Links1</tal:link>
-                    </a>
-                  </tal:span>
-                  <tal:span condition="item/new_window">
-                    <a class="quicklinks" tal:attributes="href string:${item/link}" target="_blank">
-                         <i tal:attributes="class string:fa ${item/icon}"></i>
-                         <tal:link tal:content="item/text">
-                            Links1</tal:link>
-                    </a>
-                  </tal:span>
-                </li>
-              </ul>
-            </li>
             <li  role="menuitem"><a tal:condition="view/showRootFolderLink"
                    tal:attributes="href string:${view/portal_url}/folder_contents">
                    <tal:rootFolder i18n:translate="genweb-accesarrel">
@@ -90,6 +64,49 @@
                    <tal:managesite i18n:domain="plone" i18n:translate="Site Setup">
                       Site setup</tal:managesite>
             </a></li>
+          </ul>
+          <ul class="nav" role="menuitem" tal:condition="view/canGestion">
+            <li class="dropdown" role="menuitem">
+              <a class="dropdown-toggle" data-toggle="dropdown" tal:attributes="href string:${view/portal_url}/gestion">
+                <tal:management i18n:domain="ulearn" i18n:translate="menu-gestion">
+                          Management</tal:management>
+                <b aria-hidden="true" class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem" tal:condition="view/canGestionarMenu"><a tal:attributes="href string:${view/portal_url}/gestion/menu">
+                  <i class="fa fa-folder"></i>
+                  <tal:footer i18n:domain="ulearn" i18n:translate="menu-gestion-menu">Management menu</tal:footer>
+                </a></li>
+                <li role="menuitem" tal:condition="view/canResetMenu"><a href="#" tal:attributes="href string:${view/portal_url}/reset_menu">
+                  <i class="fa fa-refresh"></i>
+                  <tal:footer i18n:domain="ulearn" i18n:translate="menu-reset-menu">Reset Menu</tal:footer>
+                </a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav pull-right" role="menu" aria-labelledby="titol-menu-usuari" tal:define="menu view/menu_enlaces">
+            <li tal:condition="menu" class="dropdown" role="menuitem" tal:repeat="dades menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <tal:quicklinks tal:content="dades/title"> Quick Links </tal:quicklinks>
+                <b aria-hidden="true" class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem" tal:repeat="item dades/links">
+                  <tal:span condition="not: item/new_window">
+                    <a tal:attributes="href item/url">
+                         <tal:link tal:content="item/title">
+                            Links1</tal:link>
+                    </a>
+                  </tal:span>
+                  <tal:span condition="item/new_window">
+                    <a class="quicklinks" tal:attributes="href item/url" target="_blank">
+                         <tal:link tal:content="item/title">
+                            Links1</tal:link>
+                    </a>
+                  </tal:span>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
