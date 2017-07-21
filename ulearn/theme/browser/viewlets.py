@@ -305,7 +305,10 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
                         'url': obj.remoteUrl,
                         'new_window': obj.open_link_in_new_window,
                         }
-                carpetes[link_parent_path]['links'].append(info)
+                try:
+                    carpetes[link_parent_path]['links'].append(info)
+                except:
+                    pass
 
             return carpetes
         else:
