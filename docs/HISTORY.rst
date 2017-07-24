@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.52 (unreleased)
+2.52 (2017-07-24)
 -----------------
 
-- Nothing changed yet.
-
+* Solucionar error menu enlaces [Pilar Marinas]
+* Create menu folders [iago.lopez]
 
 2.51 (2017-07-12)
 -----------------
