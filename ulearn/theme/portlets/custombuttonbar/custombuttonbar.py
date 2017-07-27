@@ -24,7 +24,7 @@ class ICustomButtonBarPortlet(IPortletDataProvider):
 class Assignment(base.Assignment):
     implements(ICustomButtonBarPortlet)
 
-    title = _(u'custombuttonbar', default=u'Custom button bar')
+    title = _(u'custombuttonbar')
 
 
 class Renderer(base.Renderer):

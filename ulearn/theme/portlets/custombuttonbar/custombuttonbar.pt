@@ -21,7 +21,7 @@
              data-toggle="tab"
              data-target="#mynews" target="_self">
                 <i class="fa fa-group icons"></i>
-                <tal:Noticies i18n:translate="mynews"> Noticias </tal:Noticies></a>
+                <tal:Noticies i18n:translate=""> mynews </tal:Noticies></a>
         </div>
       </div>
 
@@ -32,7 +32,7 @@
              data-toggle="tab"
              data-target="#mycommunities" target="_self">
                 <i class="fa fa-calendar icons"></i>
-                <tal:Stream i18n:translate="my_communities"> Mis Comunidades </tal:Stream></a>
+                <tal:Stream i18n:translate="">my_communities</tal:Stream></a>
         </div>
       </div>
 

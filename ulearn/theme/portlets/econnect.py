@@ -1,11 +1,8 @@
 from zope.interface import implements
 from zope.component.hooks import getSite
-from zope.security import checkPermission
-
 from plone.app.portlets.portlets import base
 from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
-
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -18,7 +15,7 @@ class IeConnectPortlet(IPortletDataProvider):
 class Assignment(base.Assignment):
     implements(IeConnectPortlet)
 
-    title = _(u'Meetings space', default=u'Meetings space')
+    title = _(u'Meetings space')
 
 
 class Renderer(base.Renderer):

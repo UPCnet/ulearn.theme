@@ -16,7 +16,7 @@
                     <div class="bubble-content">
                         <a ng-click="ctrl.active_tab = 'mycommunities'">
                             <i class="fa fa-group icons"></i>
-                            <tal:Documents i18n:translate="my_communities">My communities</tal:Documents>
+                            <tal:Documents i18n:translate="">my_communities</tal:Documents>
                         </a>
                     </div>
                 </div>
@@ -49,7 +49,7 @@
                     <div class="bubble-content">
                         <a ng-click="ctrl.active_tab = 'mycommunities'">
                             <i class="fa fa-group icons"></i>
-                            <tal:Documents i18n:translate="my_communities">My communities</tal:Documents>
+                            <tal:Documents i18n:translate="">my_communities</tal:Documents>
                         </a>
                     </div>
                 </div>

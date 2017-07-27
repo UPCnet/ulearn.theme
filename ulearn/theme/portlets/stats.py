@@ -2,18 +2,13 @@ from hashlib import sha1
 from plone import api
 from Acquisition import aq_inner, aq_chain
 from zope.interface import implements
-
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
-
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from genweb.core.interfaces import IHomePage
 from ulearn.core.content.community import ICommunity
-
 from zope.security import checkPermission
-from ulearn.core import _
 
 
 class IStatsPortlet(IPortletDataProvider):
@@ -22,7 +17,7 @@ class IStatsPortlet(IPortletDataProvider):
 
 class Assignment(base.Assignment):
     implements(IStatsPortlet)
-    title = _(u'stats', default=u'Stats')
+    title = _(u'stats')
 
 
 class Renderer(base.Renderer):

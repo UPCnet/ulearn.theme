@@ -4,7 +4,7 @@
 
     <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
-    <h2 i18n:translate="Meetings space">Online Meetings</h2>
+    <h2 i18n:translate="Meetings space">Meetings space</h2>
     <a href="" class="btn btn-large btn-comunitat"
        tal:attributes="href string:${view/portal_url}/addBBBReservation"
        i18n:translate="web_collaboration">

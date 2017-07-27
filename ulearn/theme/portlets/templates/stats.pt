@@ -4,7 +4,7 @@
 
     <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
-    <h2 i18n:translate="stats">Stats</h2>
+    <h2 i18n:translate="">stats</h2>
 
     <tal:iscommunity condition="is_community">
         <ul>
@@ -27,7 +27,7 @@
               </div>
             </div>
             <p i18n:translate="stats_comments">
-              Comments
+              stats_comments
             </p>
           </li>
           <li>
@@ -91,8 +91,8 @@
               <div class="bubble-content" ng-bind="all_comments">
               </div>
             </div>
-            <p i18n:translate="stats_comments">
-              Comentaris
+            <p i18n:translate="">
+              stats_comments
             </p>
           </li>
           <li>

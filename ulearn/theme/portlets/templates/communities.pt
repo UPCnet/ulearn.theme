@@ -3,7 +3,7 @@
 
 <div class="osomcorner-wrapper"><div class="osomcorner"></div></div>
 
-<h2 i18n:translate="communities">Comunidades</h2>
+<h2 i18n:translate="">communities</h2>
 
 <nav class="subnavbar">
   <ul class="nav nav-pills nav-stacked" role="menu" tal:define="user view/get_user">
