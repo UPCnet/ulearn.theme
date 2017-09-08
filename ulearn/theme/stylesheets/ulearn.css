@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -4717,8 +4718,16 @@ i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-fi
 input#form-widgets-max_server,
 input#form-widgets-max_server_alias,
 input#form-widgets-hub_server,
-input#form-widgets-domain {
-  width: 100%; }
+input#form-widgets-domain,
+input#form-widgets-IDublinCore-title,
+input#form-widgets-title,
+input#form-widgets-ILeadImage-image_caption,
+input#form-widgets-twitter_hashtag,
+input#form-widgets-IVersionable-changeNote {
+  width: 98%; }
+
+input[type="text"] {
+  width: 98%; }
 
 /* =========== FIN Vista summary_view_news =========== */
 /* =========== Viewlet follow tags =========== */
@@ -4751,8 +4760,10 @@ input#form-widgets-domain {
   display: block; }
 
 .portaltype-news-item li > a#plone-contentmenu-workflow {
-    display: block;
-}
+  display: block; }
+
+.portaltype-vencimentcontracte li > a#plone-contentmenu-workflow {
+  display: block; }
 
 .tags_cloud {
   margin: 10px 0; }
@@ -4933,44 +4944,33 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
 .portaltype-news-item li > a#plone-contentmenu-workflow {
   display: block; }
 
-/*# sourceMappingURL=ulearn.css.map */
-
 .caixessearch_shared {
-    background: #f5f5f5 none repeat scroll 0 0;
-    margin-bottom: 10px;
-    min-height: 60px;
-    padding: 10px;
-}
-
-#sharedwithme-container .pagination {
-    padding-top: 10px;
-    text-align: center;
-}
+  background: #f5f5f5 none repeat scroll 0 0;
+  margin-bottom: 10px;
+  min-height: 60px;
+  padding: 10px; }
 
 .shared_from_community {
-    color: #444;
-    font-weight: 600;
-}
+  color: #444;
+  font-weight: 600; }
 
 .header-info a {
-    color: white;
-    margin-top: 22px;
-    float: right;
-    margin-right: 10px;
-    font-size: 2em;
-}
+  color: white;
+  margin-top: 22px;
+  float: right;
+  margin-right: 10px;
+  font-size: 2em; }
 
 .header-info a img.link_blank {
-    display: none;
-}
-
+  display: none; }
 
 #formfield-form-widgets-terms span.label:after {
-    color: #a62e1f;
-    content: "*";
-    top: .35em;
-    position: relative;
-    font-size: 150%;
-    line-height: 0;
-    margin-left: 5px;
-}
+  color: #a62e1f;
+  content: "*";
+  top: .35em;
+  position: relative;
+  font-size: 150%;
+  line-height: 0;
+  margin-left: 5px; }
+
+/*# sourceMappingURL=ulearn.css.map */

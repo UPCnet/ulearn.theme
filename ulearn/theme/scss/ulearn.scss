@@ -2191,13 +2191,21 @@ i.icon-plone-contentmenu-display-filtered_contents_search_view, i.icon-folder-fi
   background-position: -360px -169px;
 }
 
-#angular-route-view  select { max-width:100%;}
-#home-angular-route-view  select { max-width:100%;}
+#angular-route-view  select {max-width:100%;}
+
+#home-angular-route-view  select {max-width:100%;}
+
 input#form-widgets-max_server,
 input#form-widgets-max_server_alias,
 input#form-widgets-hub_server,
-input#form-widgets-domain  { width :100%;}
+input#form-widgets-domain,
+input#form-widgets-IDublinCore-title,
+input#form-widgets-title,
+input#form-widgets-ILeadImage-image_caption,
+input#form-widgets-twitter_hashtag,
+input#form-widgets-IVersionable-changeNote {width :98%;}
 
+input[type="text"] {width: 98%;} 
 
 /* =========== FIN Vista summary_view_news =========== */
 
