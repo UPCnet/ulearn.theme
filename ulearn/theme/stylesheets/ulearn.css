@@ -4729,6 +4729,9 @@ input#form-widgets-IVersionable-changeNote {
 .template-personal-information input[type="text"] {
   width: 90%; }
 
+.template-ulearn-controlpanel input[type="text"] {
+  width: 98%; }
+
 /* =========== FIN Vista summary_view_news =========== */
 /* =========== Viewlet follow tags =========== */
 .listtags {
