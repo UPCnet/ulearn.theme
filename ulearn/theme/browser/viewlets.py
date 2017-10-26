@@ -238,10 +238,8 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
             roles = api.user.get_roles(username=current.id, obj=portal['gestion'])
             if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
                 return True
-            else:
-                return False
-        else:
-            return False
+
+        return False
 
     def canGestionarMenu(self):
         current = api.user.get_current()
@@ -250,19 +248,7 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
             roles = api.user.get_roles(username=current.id, obj=portal['gestion']['menu'])
             if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
                 return True
-            else:
-                return False
-        return False
 
-    def canResetMenu(self):
-        current = api.user.get_current()
-        portal = api.portal.get()
-        if 'gestion' in portal and 'menu' in portal['gestion']:
-            roles = api.user.get_roles(username=current.id, obj=portal['gestion']['menu'])
-            if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
-                return True
-            else:
-                return False
         return False
 
     def genera_menu_enlaces(self, language):

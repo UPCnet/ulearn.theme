@@ -102,7 +102,7 @@
                   <i class="fa fa-folder"></i>
                   <tal:footer i18n:domain="ulearn" i18n:translate="menu-gestion-menu">Management menu</tal:footer>
                 </a></li>
-                <li role="menuitem" tal:condition="view/canResetMenu"><a href="#" tal:attributes="href string:${view/portal_url}/reset_menu">
+                <li role="menuitem" tal:condition="view/canGestionarMenu"><a href="#" tal:attributes="href string:${view/portal_url}/reset_menu">
                   <i class="fa fa-refresh"></i>
                   <tal:footer i18n:domain="ulearn" i18n:translate="menu-reset-menu">Reset Menu</tal:footer>
                 </a></li>
