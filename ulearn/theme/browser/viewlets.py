@@ -236,7 +236,7 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
         portal = api.portal.get()
         if 'gestion' in portal:
             roles = api.user.get_roles(username=current.id, obj=portal['gestion'])
-            if 'Reader' in roles or 'Editor' in roles or 'Contributor' in roles or 'Reviewer' in roles or 'WebMaster' in roles or 'Manager' in roles:
+            if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
                 return True
             else:
                 return False
@@ -248,7 +248,7 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
         portal = api.portal.get()
         if 'gestion' in portal and 'menu' in portal['gestion']:
             roles = api.user.get_roles(username=current.id, obj=portal['gestion']['menu'])
-            if 'Reader' in roles or 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
+            if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
                 return True
             else:
                 return False
