@@ -146,6 +146,7 @@ class Renderer(base.Renderer):
         # date_range_query = {'query': (start, now), 'range': 'min:max'}
 
         flashes = pc.searchResults(portal_type=['News Item'],
+                                   review_state='intranet',
                                    expires={'query': now, 'range': 'min', },
                                    effective={'query': now, 'range': 'max', },
                                    sort_on='effective',
