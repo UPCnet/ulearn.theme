@@ -3006,7 +3006,8 @@ input[type="text"]:focus {
   opacity: 0.8; }
 
 #menusup {
-  height: 49px;
+  padding-bottom: 5px;
+  height: auto;
   cursor: pointer; }
   #menusup nav {
     border-bottom: 0;
