@@ -119,11 +119,22 @@
   padding-top: 0;
   padding-bottom: 5px;
   float:left;
+  width: 65%;
 }
 /* line 332, CreditAndorraTheme.scss */
 #flasinformatiu .newsImage {
   margin-right: 10px;
   float:left;
+}
+
+#flasinformatiu .carousel-control.right {
+  top: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  #flasinformatiu {
+    margin-top: 10px;
+  }
 }
 
 @media (max-width: 640px){
