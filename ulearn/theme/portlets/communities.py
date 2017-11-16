@@ -120,6 +120,7 @@ class Renderer(base.Renderer):
                         'url': community.getURL(),
                         'title': community.Title,
                         'community_type': community.community_type,
+                        'image': community.getObject().image,
                         'pending': self.get_pending_community_user(community, current_user)
                         }
                 yield info
