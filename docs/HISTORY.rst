@@ -1,11 +1,24 @@
 Changelog
 =========
 
-2.53 (unreleased)
+2.53 (2017-11-21)
 -----------------
 
-- Nothing changed yet.
-
+* cdn ulearn theme [Pilar Marinas]
+* Add image portlet communnities [Pilar Marinas]
+* Translate literals [Pilar Marinas]
+* Mejorado css portlet flashesinformativos [iago.lopez]
+* Mejorado css #menusup [iago.lopez]
+* Nomes publicar flash estat intranet [Pilar Marinas]
+* Quitar metodo identico del menu de gestion [iago.lopez]
+* Delete Reader in menu [Pilar Marinas]
+* added css class for button news in app [Roberto Diaz]
+* updated with in inputs [Roberto Diaz]
+* changed with to 90% only in profile view [Roberto Diaz]
+* Updated CSS: width 98% on inputs [Roberto Diaz]
+* i18n warnings cleared [Roberto Diaz]
+* Import javascript in portlet flashesinformativos [iago.lopez]
+* View quicklinks [Pilar Marinas]
 
 2.52 (2017-07-24)
 -----------------
