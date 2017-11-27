@@ -37,7 +37,7 @@
                           Canvi de contrasenya</tal:password>
                 </a></li>
                 <li role="menuitem"
-                    tal:condition="is_upc_site"><a href="https://gauss.upc.edu/gauss/canvicontrasenya/index.jsp">
+                    tal:condition="is_upc_site"><a href="https://identitatdigital.upc.edu/gcredencials/login">
                        <i class="icon-cog"></i>
                        <tal:password i18n:translate="genweb-password">
                           Canvi de contrasenya</tal:password>
