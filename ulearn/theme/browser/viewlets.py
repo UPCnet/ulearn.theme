@@ -236,19 +236,45 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
         portal = api.portal.get()
         if 'gestion' in portal:
             roles = api.user.get_roles(username=current.id, obj=portal['gestion'])
-            if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
+            if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles or self.canGestionarMenu() or self.canGestionarHeader() or self.canGestionarFooter() or self.canGestionarNoticies() or self.canGestionarEstadistiques():
+                return True
+
+        return False
+
+    def canGestionarDirectori(self, directori):
+        current = api.user.get_current()
+        portal = api.portal.get()
+        if 'gestion' in portal and directori in portal['gestion']:
+            roles = api.user.get_roles(username=current.id, obj=portal['gestion'][directori])
+            if 'Editor' in roles or 'Contributor' in roles or 'Reviewer' in roles or 'WebMaster' in roles or 'Manager' in roles:
                 return True
 
         return False
 
     def canGestionarMenu(self):
+        return self.canGestionarDirectori('menu')
+
+    def canGestionarHeader(self):
+        return self.canGestionarDirectori('header')
+
+    def canGestionarFooter(self):
+        return self.canGestionarDirectori('footer')
+
+    def canGestionarNoticies(self):
         current = api.user.get_current()
         portal = api.portal.get()
-        if 'gestion' in portal and 'menu' in portal['gestion']:
-            roles = api.user.get_roles(username=current.id, obj=portal['gestion']['menu'])
+        if 'news' in portal:
+            roles = api.user.get_roles(username=current.id, obj=portal['news'])
             if 'Editor' in roles or 'Contributor' in roles or 'WebMaster' in roles or 'Manager' in roles:
                 return True
+        return False
 
+    def canGestionarEstadistiques(self):
+        current = api.user.get_current()
+        portal = api.portal.get()
+        roles = api.user.get_roles(username=current.id, obj=portal)
+        if 'WebMaster' in roles or 'Manager' in roles:
+            return True
         return False
 
     def genera_menu_enlaces(self, language):
@@ -341,6 +367,21 @@ class gwHeader(viewletBase):
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
         return settings.info_servei
 
+    def canHeaderImatge(self):
+        portal = api.portal.get()
+        if 'gestion' in portal:
+            if 'header' in portal['gestion']:
+                path = '/'.join(portal.getPhysicalPath()) + "/gestion/header"
+                catalog = api.portal.get_tool('portal_catalog')
+                brains = catalog(portal_type=('Image'),
+                                 sort_on='getObjPositionInParent',
+                                 sort_order='ascending',
+                                 sort_limit=1,
+                                 path={'query': path, 'depth': 1})
+                if brains:
+                    return brains[0].getObject().id
+        return False
+
 
 class gwFooter(viewletBase):
     grok.name('genweb.footer')
@@ -351,6 +392,21 @@ class gwFooter(viewletBase):
     @forever.memoize
     def get_current_year(self):
         return datetime.datetime.now().year
+
+    def getPersonalizedFooter(self):
+        portal = api.portal.get()
+        if 'gestion' in portal:
+            if 'footer' in portal['gestion']:
+                path = '/'.join(portal.getPhysicalPath()) + '/gestion/footer'
+                catalog = api.portal.get_tool('portal_catalog')
+                brains = catalog(portal_type=('Document'),
+                                 sort_on='getObjPositionInParent',
+                                 sort_order='ascending',
+                                 sort_limit=1,
+                                 path={'query': path, 'depth': 1})
+                if brains:
+                    return brains[0].getObject().text
+        return None
 
 
 class TitleViewlet(TitleViewlet, viewletBase):

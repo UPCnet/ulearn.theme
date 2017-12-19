@@ -1832,6 +1832,12 @@ h1, h2, h3, label, span.label {
   margin-top: 0;
   border-bottom: 0; }
 
+#portal-header .headerImg > img {
+  margin: 0 auto;
+  display: block;
+  max-height: 65px;
+  padding: 5px; }
+
 #portal-breadcrumbs {
   margin-bottom: 6px;
   clear: both; }

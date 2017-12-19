@@ -1,29 +1,30 @@
 <div class="container"
-     i18n:domain="genweb"
-     tal:define="info_servei viewlet/get_info_servei">
-  <div class="clearfix masthead">
-    <h1 class="pull-left">
-      <a accesskey="1"
-         tal:attributes="href string:${viewlet/portal_url}" target="_self">
-        <img tal:attributes="src string:${viewlet/portal_url}/ulearn_comunitats.png"
-             alt="Ulearn Comunitats - UPCnet SLU">
-      </a>
-    </h1>
-    <a class="btn btn-navbar pull-right hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-eines">
-      <i class="fa fa-search"></i>
-    </a>
-    <div class="nav-collapse nav-collapse-eines">
-      <ul id="eines" class="nav nav-pills pull-right">
-        <li>
-          <tal:block replace="structure provider:genweb.search_manager" />
-        </li>
-      </ul>
+     i18n:domain="ulearn">
+  <div class="clearfix masthead row-fluid">
+    <div class="pull-left span4">
+      <h1>
+        <a accesskey="1"
+           tal:attributes="href string:${viewlet/portal_url}" target="_self">
+          <img tal:attributes="src string:${viewlet/portal_url}/ulearn_comunitats.png"
+               alt="Ulearn Comunitats - UPCnet SLU">
+        </a>
+      </h1>
     </div>
-
-    <div tal:condition="info_servei" class="header-info">
-      <a target="_blank" tal:attributes="href info_servei">
-        <i class="fa fa-info-circle"></i>
+    <div class="pull-left headerImg span4" tal:condition="viewlet/canHeaderImatge">
+      <img tal:attributes="src string:${viewlet/portal_url}/gestion/header/${viewlet/canHeaderImatge}">
+    </div>
+    <div class="pull-right span4">
+      <a class="btn btn-navbar pull-right hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-eines">
+        <i class="fa fa-search"></i>
       </a>
+      <div class="nav-collapse nav-collapse-eines">
+        <ul id="eines" class="nav nav-pills pull-right">
+          <li>
+            <tal:block replace="structure provider:genweb.search_manager" />
+          </li>
+        </ul>
+      </div>
+
     </div>
   </div>
 </div>

@@ -37,7 +37,7 @@
                           Canvi de contrasenya</tal:password>
                 </a></li>
                 <li role="menuitem"
-                    tal:condition="is_upc_site"><a href="https://identitatdigital.upc.edu/gcredencials/login">
+                    tal:condition="is_upc_site"><a href="https://gauss.upc.edu/gauss/canvicontrasenya/index.jsp">
                        <i class="icon-cog"></i>
                        <tal:password i18n:translate="genweb-password">
                           Canvi de contrasenya</tal:password>
@@ -98,6 +98,18 @@
                 <b aria-hidden="true" class="caret"></b>
               </a>
               <ul class="dropdown-menu" role="menu">
+                <li role="menuitem" tal:condition="view/canGestionarNoticies"><a href="#" tal:attributes="href string:${view/portal_url}/news">
+                  <i class="fa fa-newspaper-o "></i>
+                  <tal:footer i18n:domain="ulearn" i18n:translate="menu-gestio-noticies">Noticies</tal:footer>
+                </a></li>
+                <li role="menuitem" tal:condition="view/canGestionarHeader"><a href="#" tal:attributes="href string:${view/portal_url}/gestion/header/folder_contents">
+                  <i class="fa fa-picture-o"></i>
+                  <tal:footer i18n:domain="ulearn" i18n:translate="menu-gestio-header">Gestionar capçalera</tal:footer>
+                </a></li>
+                <li role="menuitem" tal:condition="view/canGestionarFooter"><a href="#" tal:attributes="href string:${view/portal_url}/gestion/footer/folder_contents">
+                  <i class="fa fa-file"></i>
+                  <tal:footer i18n:domain="ulearn" i18n:translate="menu-gestio-footer">Gestionar peu</tal:footer>
+                </a></li>
                 <li role="menuitem" tal:condition="view/canGestionarMenu"><a tal:attributes="href string:${view/portal_url}/gestion/menu">
                   <i class="fa fa-folder"></i>
                   <tal:footer i18n:domain="ulearn" i18n:translate="menu-gestion-menu">Management menu</tal:footer>
@@ -105,6 +117,10 @@
                 <li role="menuitem" tal:condition="view/canGestionarMenu"><a href="#" tal:attributes="href string:${view/portal_url}/reset_menu">
                   <i class="fa fa-refresh"></i>
                   <tal:footer i18n:domain="ulearn" i18n:translate="menu-reset-menu">Reset Menu</tal:footer>
+                </a></li>
+                <li role="menuitem" tal:condition="view/canGestionarEstadistiques"><a href="#" tal:attributes="href string:#/stats/activity">
+                  <i class="fa fa-bar-chart"></i>
+                  <tal:footer i18n:domain="ulearn" i18n:translate="menu-gestio-estadistiques">Estadístiques</tal:footer>
                 </a></li>
               </ul>
             </li>

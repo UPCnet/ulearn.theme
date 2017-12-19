@@ -1,41 +1,39 @@
 <footer id="peu" role="contentinfo"
-        i18n:domain="genweb">
+        tal:define="portal_url context/@@plone_portal_state/portal_url;
+                    plone_view context/@@plone;
+                    view nocall:view | nocall: plone_view;
+                    dades context/@@genweb.utils/getDadesUnitat;"
+        i18n:domain="ulearn">
+
   <div class="container">
     <div class="inner">
-    <div class="row-fluid">
-      <div class="span8">
-        <p>&copy;
-          <a href="http://www.upcnet.es" target="_blank">
-            <abbr rel="tooltip" data-placement="top" title="UPCnet - Universitat Politècnica de Catalunya · BarcelonaTech"
-                  tal:content="string:UPCnet 2013-${viewlet/get_current_year}">
-                  UPCnet 2013-${viewlet/get_current_year}</abbr>
-            <img class="img_blank" src="++genweb++static/images/blank_blanc.png"
-                 i18n:attributes="alt obrir_link_finestra_nova"></a>.
-        </p>
-      </div>
-      <div class="span4">
-        <ul class="pull-right sobreElWeb" role="menu">
-          <li role="menuitem" class="amunt">
-            <a href="#portal-header" rel="tooltip" data-placement="top"
-               i18n:attributes="title inici_page">
-               <img src="++genweb++static/images/amunt.png"
-                    i18n:attributes="alt inici_page" />
-            </a>
-          </li>
-        </ul>
+      <div class="row-fluid">
+        <div class="container container-bottom">
+          <div class="span2">
+            <p>© <a href="http://www.upcnet.es" target="_blank"> <abbr title="" data-placement="top" data-original-title="UPCnet - Universitat Politècnica de Catalunya · BarcelonaTech">UPCnet 2013-2017</abbr></a></p>
+          </div>
+          <div class="span8" tal:define="result viewlet/getPersonalizedFooter" >
+            <tal:block tal:condition="result | nothing" tal:content="structure result/output">
+              Body text
+            </tal:block>
+          </div>
+          <div class="span2">
+            <ul class="pull-right sobreElWeb">
+              <li class="amunt"><a href="#portal-header" rel="tooltip" title="" data-placement="top" data-original-title="inici_page"> <img alt="inici_page" src="++genweb++static/images/amunt.png" /> </a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+
 </footer>
 
 <!--[if !IE]> -->
 <footer id="canvia-vista" role="complementary">
   <p>
-    <a class="reView"
-       data-defaultText="Versi&oacute; m&ograve;bil"
-       data-coreText="Versi&oacute; d&apos;escriptori" href="javascript:void(0)" i18n:translate="inici_page">
-      Versi&oacute; d&apos;escriptori
+    <a class="reView" data-defaultText="Versió móbil" data-coreText="Versió d'escriptori" href="javascript:void(0)">
+      Versió d'escriptori
     </a>
   </p>
 </footer>
