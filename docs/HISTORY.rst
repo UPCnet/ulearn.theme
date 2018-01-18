@@ -1,11 +1,15 @@
 Changelog
 =========
 
-2.54 (unreleased)
+2.54 (2018-01-18)
 -----------------
 
-- Nothing changed yet.
-
+* Solucionado con las fotos al pasar de chat a actividad [iago.lopez]
+* Añadir puntos suspensivos si se superan las dos lineas de título - Portlet Smartportlet [iago.lopez]
+* New cdn theme [Pilar Marinas]
+* Modificaciones - Portlet Smartportlet [iago.lopez]
+* Nuevos enlaces en el menu de gestion + Footer y Header personalizables [iago.lopez]
+* Canvi url canvi contrasenya UPC [Pilar Marinas]
 
 2.53 (2017-11-21)
 -----------------
