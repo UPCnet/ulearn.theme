@@ -98,7 +98,7 @@
                       </tal:empty>
                     </tal:field>
                   </div>
-
+                </div>
               </div>
           </div>
 
