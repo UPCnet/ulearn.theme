@@ -402,7 +402,7 @@ class PortletsSettingsEditForm(controlpanel.RegistryEditForm):
                 mapping = getMultiAdapter((site, manager), IPortletAssignmentMapping)
                 [activate_portlets.append(item[0]) for item in mapping.items()]
 
-        portlets = {k: v for k, v in data.iteritems() if 'portlet' in k}
+        portlets = {k: v for k, v in data.iteritems() if 'portlet' in k.lower()}
         if portlets:
             for portlet, value in portlets.iteritems():
                 idPortlet = portlet.replace('_', '.')
