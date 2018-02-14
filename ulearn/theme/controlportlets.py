@@ -275,6 +275,15 @@ class IPortletsSettings(form.Schema):
         default=True,
     )
 
+    ulearn_portlets_buttonbarangular = schema.Bool(
+        title=_(u'ulearn_button_bar_angular',
+                default=_(u"Habilitar portlet Ulearn Button Bar Angular")),
+        description=_(u'help_ulearn_button_bar_angular',
+                      default=_(u"Habilita el portlet botonera central configurable Angular.")),
+        required=False,
+        default=True,
+    )
+
     ulearn_portlets_communities = schema.Bool(
         title=_(u'ulearn_communities',
                 default=_(u"Habilitar portlet Ulearn Comunnities")),

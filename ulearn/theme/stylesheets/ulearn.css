@@ -3012,7 +3012,7 @@ input[type="text"]:focus {
 
 #menusup {
   padding-bottom: 5px;
-  height: auto;
+  height: 49px;
   cursor: pointer; }
   #menusup nav {
     border-bottom: 0;

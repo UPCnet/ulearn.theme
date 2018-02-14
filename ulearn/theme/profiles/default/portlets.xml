@@ -34,7 +34,8 @@
         description="My Subjects EVA portlet"/>
      <portlet title="My Tags" addview="ulearn.portlets.mytags"
         description="My Tags portlet"/>
-
+     <portlet title="Ulearn Button Bar Angular" addview="ulearn.portlets.buttonbarangular"
+        description="Ulearn Button Bar Angular"/>
 
     <!-- Obsolete -->
     <portlet title="Ulearn comments" addview="ulearn.portlets.comments" remove="True" />
