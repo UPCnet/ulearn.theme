@@ -44,6 +44,9 @@ from genweb.core.utils import json_response
 from souper.soup import get_soup
 from repoze.catalog.query import Eq
 
+from zope.i18n import translate
+from plone import api
+
 order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}
 
 
@@ -815,6 +818,9 @@ class SearchFilteredNews(grok.View):
 
         def makeHtmlData(news_list):
             news_html = ''
+            current = api.user.get_current()
+            lang = current.getProperty('language')
+            readmore = translate("readmore", "ulearn", None, None, lang, None)
             if news_list:
                 for noticia in news_list:
                     noticiaObj = noticia.getObject()
@@ -837,7 +843,7 @@ class SearchFilteredNews(grok.View):
                                         '</h2>'\
                                         '<p><time class="smaller">'+str(noticiaObj.modification_date.day()) + '/' + str(noticiaObj.modification_date.month()) + '/' + str(noticiaObj.modification_date.year())+'</time></p>'\
                                         '<span>'+text.encode('utf-8')+'</span>'\
-                                        '<a href="http://localhost:8080/migrate/news/asdasd" class="readmore" title="asdasd"><span>Read more</span>'\
+                                        '<a href="'+noticia.getURL()+'" class="readmore" title="'+abrevia(noticia.Title, 70)+'"><span class="readmore">'+readmore+'</span>'\
                                         '</a>'\
                                       '</div>'\
                                    '</div>'\

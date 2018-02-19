@@ -94,6 +94,15 @@
         addview=".angularrouteview.AddForm"
         />
 
+
+    <plone:portlet
+        name="ulearn.portlets.buttonbarangular"
+        interface=".buttonbar.buttonbar.IButtonBarPortlet"
+        assignment=".buttonbar.buttonbar.Assignment"
+        renderer=".buttonbar.buttonbar.Renderer"
+        addview=".buttonbar.buttonbar.AddForm"
+        />
+
     <plone:portlet
         name="ulearn.portlets.importantnews"
         interface=".importantnews.importantnews.IImportantNewsPortlet"

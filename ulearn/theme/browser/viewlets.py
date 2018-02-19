@@ -332,11 +332,10 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
         """
         current = api.user.get_current()
         user_language = current.getProperty('language')
-        if user_language == '':
+        if user_language is None:
             lt = getToolByName(self.portal(), 'portal_languages')
             user_language = lt.getPreferredLanguage()
             current.setMemberProperties({'language': user_language})
-
         portal = api.portal.get()
         soup_menu = get_soup('menu_soup', portal)
         exist = [r for r in soup_menu.query(Eq('id_menusoup', user_language))]

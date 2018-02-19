@@ -275,6 +275,15 @@ class IPortletsSettings(form.Schema):
         default=True,
     )
 
+    ulearn_portlets_buttonbarangular = schema.Bool(
+        title=_(u'ulearn_button_bar_angular',
+                default=_(u"Habilitar portlet Ulearn Button Bar Angular")),
+        description=_(u'help_ulearn_button_bar_angular',
+                      default=_(u"Habilita el portlet botonera central configurable Angular.")),
+        required=False,
+        default=True,
+    )
+
     ulearn_portlets_communities = schema.Bool(
         title=_(u'ulearn_communities',
                 default=_(u"Habilitar portlet Ulearn Comunnities")),
@@ -402,7 +411,7 @@ class PortletsSettingsEditForm(controlpanel.RegistryEditForm):
                 mapping = getMultiAdapter((site, manager), IPortletAssignmentMapping)
                 [activate_portlets.append(item[0]) for item in mapping.items()]
 
-        portlets = {k: v for k, v in data.iteritems() if 'portlet' in k}
+        portlets = {k: v for k, v in data.iteritems() if 'portlet' in k.lower()}
         if portlets:
             for portlet, value in portlets.iteritems():
                 idPortlet = portlet.replace('_', '.')
