@@ -1,11 +1,15 @@
 Changelog
 =========
 
-2.55 (unreleased)
+2.55 (2018-02-19)
 -----------------
 
-- Nothing changed yet.
-
+* Merge remote-tracking branch 'origin/develop' [Pilar Marinas]
+* New Portlet Buttonbar Angular [Pilar Marinas]
+* solved empty no, NONE value [Roberto Diaz]
+* Controlportlets - Solucionado problema con collective.polls.VotePortlet [iago.lopez]
+* Translate readmore in filter news [Pilar Marinas]
+* Cierre de etiqueta <div> [iago.lopez]
 
 2.54 (2018-01-18)
 -----------------
