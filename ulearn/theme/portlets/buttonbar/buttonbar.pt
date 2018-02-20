@@ -13,21 +13,21 @@
                    </a>
                 </div>
             </div>
-            <div tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'mycommunities'}">
-                <div class="arrow"></div>
-                <div class="bubble-content">
-                    <a ng-click="ctrl.active_tab = 'mycommunities'">
-                        <i class="fa fa-calendar icons"></i>
-                        <tal:Community i18n:translate="my_communities_buttonbar">Communities</tal:Community>
-                    </a>
-                </div>
-            </div>
             <div tal:condition="news" tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'news'}">
                 <div class="arrow"></div>
                 <div class="bubble-content">
                     <a ng-click="ctrl.active_tab = 'news'">
-                        <i class="fa fa-group icons"></i>
+                        <i class="fa fa-calendar icons"></i>
                         <tal:News i18n:translate="news_buttonbar">News</tal:News>
+                    </a>
+                </div>
+            </div>
+            <div tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'mycommunities'}">
+                <div class="arrow"></div>
+                <div class="bubble-content">
+                    <a ng-click="ctrl.active_tab = 'mycommunities'">
+                        <i class="fa fa-group icons"></i>
+                        <tal:Community i18n:translate="my_communities_buttonbar">Communities</tal:Community>
                     </a>
                 </div>
             </div>
