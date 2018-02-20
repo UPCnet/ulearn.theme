@@ -102,16 +102,15 @@
         </p>
     </div>
     <div class="row-fluid">
-        <div tal:condition="not:view/isAdmin" class="photo span12" tal:define="ulearn_utils context/@@ulearn.utils">
-            <a tal:attributes="href string:${view/portal_url}/@@personal-information">
-                <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${username}/avatar/large" alt="User" style="width:202px">
-            </a>
-        </div>
-        <div tal:condition="view/isAdmin" class="photo span12">
-            <a tal:attributes="href string:${view/portal_url}/@@personal-information">
+        <div class="photo span12" tal:define="ulearn_utils context/@@ulearn.utils">
+            <a tal:condition="view/isAdmin" tal:attributes="href string:${view/portal_url}/@@personal-information">
                 <img tal:attributes="src string:${view/portal_url}/defaultUser.png" alt="admin" title="admin" style="width:202px">
             </a>
+            <a tal:condition="not:view/isAdmin" tal:attributes="href string:${view/portal_url}/@@personal-information">
+                <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${username}/avatar/large" alt="User Photo" style="width:202px">
+            </a>
         </div>
+
     </div>
     <div class="row-fluid">
         <div class="badges span12">
