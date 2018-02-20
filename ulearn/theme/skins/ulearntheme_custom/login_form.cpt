@@ -38,10 +38,10 @@
   <tal:comment replace="nothing"><!-- El seguent script ha d'anar seguit del meta del viewport --></tal:comment>
   <script tal:attributes="src string:${portal_url}/++genweb++static/js/ReView.js"></script>
 
-  <link rel="apple-touch-icon" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-57x57-precomposed.png" /> <!-- iPhone -->
-  <link rel="apple-touch-icon" sizes="72x72" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-72x72-precomposed.png" /> <!-- iPad -->
-  <link rel="apple-touch-icon" sizes="114x114" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-114x114-precomposed.png" /> <!-- iPhone 2x -->
-  <link rel="apple-touch-icon" sizes="144x144" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-144x144-precomposed.png" /> <!-- iPad 2x -->
+  <link rel="apple-touch-icon" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-57x57-precomposed.png" />
+  <link rel="apple-touch-icon" sizes="72x72" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-72x72-precomposed.png" />
+  <link rel="apple-touch-icon" sizes="114x114" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-114x114-precomposed.png" />
+  <link rel="apple-touch-icon" sizes="144x144" tal:attributes="href string:${portal_url}/++genweb++static/apple-touch-icon-144x144-precomposed.png" />
 
   <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
@@ -210,29 +210,12 @@
               <button type="submit" name="submit" class="btn btn-primary"
                       i18n:domain="plone"
                       i18n:translate="label_log_in">Log in</button>
-<!--               <h2 class="l"
-                  i18n:translate="genweb-si_heu_oblidat_la_contrasenya_question">
-                  Have you forgotten your password?
-              </h2>
-              <p class="s margin0"
-                 i18n:translate="genweb-si_heu_oblidat_la_contrasenya">
-                  If you have forgotten your password,
-                  <tal:recuperarla i18n:name="click_here">
-                    <a tal:attributes="href string:${portal_url}/canvidecontrasenya"
-                       i18n:translate="genweb-per_recuperarla">
-                        click here to retrieve it
-                    </a>
-                  </tal:recuperarla>
-              </p> -->
             </div>
           </div>
         </form>
 
             <div id="login-forgotten-password"
                  tal:condition="python:mail_password_url and use_normal">
-<!--                 <strong i18n:domain="plone" i18n:translate="box_forgot_password_option">
-                    Forgot your password?
-                </strong> -->
                 <p
                    i18n:domain="plone"
                    i18n:translate="help_password_retrieval">
