@@ -2,20 +2,13 @@ from zope.interface import implements
 from zope.security import checkPermission
 from zope.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
-from Acquisition import aq_inner
 from genweb.core.interfaces import IHomePage
-from genweb.core.utils import pref_lang
-from zope.component import getMultiAdapter
 from ulearn.core.content.community import ICommunity
-
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from Products.CMFPlone import PloneMessageFactory as _
-from ulearn.core.content.community import ICommunity
 
 
 class IMostValuedPortlet(IPortletDataProvider):

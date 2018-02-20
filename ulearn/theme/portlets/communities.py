@@ -2,17 +2,14 @@ from zope.interface import implements
 from zope.component.hooks import getSite
 from zope.component import queryUtility
 from zope.security import checkPermission
-
 from plone.app.portlets.portlets import base
 from plone.registry.interfaces import IRegistry
 from plone.memoize.view import memoize_contextless
 from plone.portlets.interfaces import IPortletDataProvider
-
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone import PloneMessageFactory as _
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from genweb.core.interfaces import IHomePage
 from ulearn.core.content.community import ICommunity
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
@@ -36,6 +33,11 @@ class Assignment(base.Assignment):
 class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/communities.pt')
+
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
 
     @staticmethod
     def get_pending_community_user(community, user):
@@ -95,11 +97,11 @@ class Renderer(base.Renderer):
         user = pm.getAuthenticatedMember()
 
         if not IPloneSiteRoot.providedBy(self.context) and \
-           ICommunity.providedBy(self.context) and \
-           ('Manager' in user.getRoles() or
-           'WebMaster' in user.getRoles() or
-           'Site Administrator' in user.getRoles() or
-           'Owner' in self.context.get_local_roles_for_userid(user.id)):
+            ICommunity.providedBy(self.context) and \
+                ('Manager' in user.getRoles() or
+                 'WebMaster' in user.getRoles() or
+                 'Site Administrator' in user.getRoles() or
+                 'Owner' in self.context.get_local_roles_for_userid(user.id)):
             return True
 
     def getCommunities(self):

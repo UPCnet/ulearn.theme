@@ -1,3 +1,5 @@
+<tal:block tal:condition="not:view/isAnon">
+
 <tal:thinnkers tal:define="is_community view/community_mode"
                i18n:domain="ulearn">
 <tal:iscommunity condition="is_community">
@@ -73,3 +75,5 @@
 </div>
 </tal:isprofile>
 </tal:thinnkers>
+
+</tal:block>

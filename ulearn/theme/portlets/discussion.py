@@ -1,23 +1,16 @@
 from Acquisition import aq_parent
 from zope.interface import implements
-from zope.security import checkPermission
 from zope.component.hooks import getSite
 from Products.CMFCore.utils import getToolByName
 from Acquisition import aq_inner
 from Acquisition import aq_chain
 from plone.memoize.view import memoize_contextless
-
 from genweb.core.interfaces import IHomePage
-from genweb.core.utils import pref_lang
-from zope.component import getMultiAdapter
 from ulearn.core.content.community import ICommunity
-
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.interfaces import IDiscussionFolder
 
@@ -61,13 +54,13 @@ class Renderer(base.Renderer):
         if community:
             path = "/".join(community.getPhysicalPath())
             comments = pc.searchResults(portal_type="Discussion Item",
-                                       path={'query': path},
-                                       sort_on='created',
-                                       sort_order='reverse')
+                                        path={'query': path},
+                                        sort_on='created',
+                                        sort_order='reverse')
         else:
             comments = pc.searchResults(portal_type="Discussion Item",
-                                       sort_on='created',
-                                       sort_order='reverse')
+                                        sort_on='created',
+                                        sort_order='reverse')
 
         if comments:
             results = []
@@ -97,12 +90,6 @@ class Renderer(base.Renderer):
             return True
         else:
             return False
-
-    def get_community(self):
-        context = aq_inner(self.context)
-        for obj in aq_chain(context):
-            if ICommunity.providedBy(obj):
-                return obj
 
     def newdiscussion_url(self):
         discussion_folder_url = self.get_discussion_folder_url()

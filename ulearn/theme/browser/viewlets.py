@@ -369,6 +369,11 @@ class gwHeader(viewletBase):
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
         return settings.info_servei
 
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
+
     def canHeaderImatge(self):
         portal = api.portal.get()
         if 'gestion' in portal:

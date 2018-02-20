@@ -1,21 +1,16 @@
 from StringIO import StringIO
 from time import localtime
-
 from plone.memoize import ram
 from plone.memoize.compress import xhtml_compress
 from plone.portlets.interfaces import IPortletDataProvider
-
 from zope.i18nmessageid import MessageFactory
 from zope.interface import implements
 from zope.component import getMultiAdapter
-
 from Acquisition import aq_inner
 from DateTime import DateTime
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
-from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.PythonScripts.standard import url_quote_plus
-
 from plone.app.portlets import PloneMessageFactory as _
 from plone.app.portlets import cache
 from plone.app.portlets.portlets import base
@@ -101,8 +96,8 @@ class Renderer(base.Renderer):
         self.year = year = yearmonth[0]
         self.month = month = yearmonth[1]
 
-        self.showPrevMonth = yearmonth > (self.now[0]-1, self.now[1])
-        self.showNextMonth = yearmonth < (self.now[0]+1, self.now[1])
+        self.showPrevMonth = yearmonth > (self.now[0] - 1, self.now[1])
+        self.showNextMonth = yearmonth < (self.now[0] + 1, self.now[1])
 
         self.prevMonthYear, self.prevMonthMonth = self.getPreviousMonth(year, month)
         self.nextMonthYear, self.nextMonthMonth = self.getNextMonth(year, month)
@@ -130,7 +125,7 @@ class Renderer(base.Renderer):
                 if day['event']:
                     cur_date = DateTime(year, month, daynumber)
                     localized_date = [self._ts.ulocalized_time(cur_date, context=context, request=self.request)]
-                    day['eventstring'] = '\n'.join(localized_date+[' %s' %
+                    day['eventstring'] = '\n'.join(localized_date + [' %s' %
                         self.getEventString(e) for e in day['eventslist']])
                     day['date_string'] = '%s-%s-%s' % (year, month, daynumber)
 
@@ -143,11 +138,11 @@ class Renderer(base.Renderer):
 
         if start and end:
             eventstring = "%s-%s %s" % (start, end, title)
-        elif start: # can assume not event['end']
+        elif start:  # can assume not event['end']
             eventstring = "%s - %s" % (start, title)
-        elif event['end']: # can assume not event['start']
+        elif event['end']:  # can assume not event['start']
             eventstring = "%s - %s" % (title, end)
-        else: # can assume not event['start'] and not event['end']
+        else:  # can assume not event['start'] and not event['end']
             eventstring = title
 
         return eventstring
@@ -191,17 +186,17 @@ class Renderer(base.Renderer):
         return year, month
 
     def getPreviousMonth(self, year, month):
-        if month==0 or month==1:
+        if month == 0 or month == 1:
             month, year = 12, year - 1
         else:
-            month-=1
+            month -= 1
         return (year, month)
 
     def getNextMonth(self, year, month):
-        if month==12:
+        if month == 12:
             month, year = 1, year + 1
         else:
-            month+=1
+            month += 1
         return (year, month)
 
     def getWeekdays(self):
@@ -218,15 +213,16 @@ class Renderer(base.Renderer):
         """Returns True if the given day and the current month and year equals
            today, otherwise False.
         """
-        return self.now[2]==day and self.now[1]==self.month and \
-               self.now[0]==self.year
+        return self.now[2] == day and self.now[1] == self.month and self.now[0] == self.year
 
     def getReviewStateString(self):
         states = self.calendar.getCalendarStates()
         return ''.join(map(lambda x: 'review_state=%s&amp;' % self.url_quote_plus(x), states))
+
     def getEventTypes(self):
         types = self.calendar.getCalendarTypes()
         return ''.join(map(lambda x: 'Type=%s&amp;' % self.url_quote_plus(x), types))
+
     def getQueryString(self):
         request = self.request
         query_string = request.get('orig_query',

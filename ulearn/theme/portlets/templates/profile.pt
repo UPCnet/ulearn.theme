@@ -1,3 +1,5 @@
+<tal:block tal:condition="not:view/isAnon">
+
 <tal:profile tal:define="is_community view/community_mode" i18n:domain="ulearn">
 <tal:iscommunity condition="is_community">
 <div id="box_community" class="ulearnbox"
@@ -100,9 +102,14 @@
         </p>
     </div>
     <div class="row-fluid">
-        <div class="photo span12" tal:define="ulearn_utils context/@@ulearn.utils">
+        <div tal:condition="not:view/isAdmin" class="photo span12" tal:define="ulearn_utils context/@@ulearn.utils">
             <a tal:attributes="href string:${view/portal_url}/@@personal-information">
                 <img tal:attributes="src string:${ulearn_utils/url_max_server}/people/${username}/avatar/large" alt="User" style="width:202px">
+            </a>
+        </div>
+        <div tal:condition="view/isAdmin" class="photo span12">
+            <a tal:attributes="href string:${view/portal_url}/@@personal-information">
+                <img tal:attributes="src string:${view/portal_url}/defaultUser.png" alt="admin" title="admin" style="width:202px">
             </a>
         </div>
     </div>
@@ -120,3 +127,5 @@
 
 </tal:isprofile>
 </tal:profile>
+
+</tal:block>
