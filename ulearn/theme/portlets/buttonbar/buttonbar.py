@@ -52,7 +52,7 @@ class Renderer(base.Renderer):
     def __init__(self, *args):
         base.Renderer.__init__(self, *args)
 
-    def activated_sharedwithme(self):
+    def is_activate_sharedwithme(self):
         if (api.portal.get_registry_record('genweb.controlpanel.core.IGenwebCoreControlPanelSettings.elasticsearch') != 'localhost') and (api.portal.get_registry_record('ulearn.core.controlpanel.IUlearnControlPanelSettings.activate_sharedwithme') == True):
             portal = api.portal.get()
             if portal.portal_actions.object.local_roles.visible is False:
@@ -62,13 +62,13 @@ class Renderer(base.Renderer):
         else:
             return False
 
-    def activated_news(self):
+    def is_activate_news(self):
         return api.portal.get_registry_record('ulearn.core.controlpanel.IUlearnControlPanelSettings.activate_news')
 
     def getClass(self):
         """ Returns class for links """
-        shared = self.activated_sharedwithme()
-        news = self.activated_news()
+        shared = self.is_activate_sharedwithme()
+        news = self.is_activate_news()
         width = ''
         if shared and news:
             width = 'span3'
@@ -82,7 +82,7 @@ class Renderer(base.Renderer):
         return "bubble top " + width
 
     # Subscribed news
-    def show_news(self):
+    def news_to_show(self):
         return self.data.count > 0 and len(self._data())
 
     @memoize_contextless

@@ -1,6 +1,6 @@
 <div ng-controller="homeTopPageMenuButtons as ctrl"
-   tal:define="shared view/activated_sharedwithme;
-   news view/activated_news;
+   tal:define="shared view/is_activate_sharedwithme;
+   news view/is_activate_news;
    cls view/getClass">
     <div id="menusup" i18n:domain="ulearn">
         <nav>
@@ -99,7 +99,7 @@
             </div>
         </div>
         <div id="news-container" class="tab-container" ng-switch-when="news">
-            <tal:newsitems tal:define="show_news view/show_news;" tal:condition="show_news" i18n:domain="ulearn">
+            <tal:newsitems tal:define="news_to_show view/news_to_show;" tal:condition="news_to_show" i18n:domain="ulearn">
             <div tal:define="dades_noticies view/dadesNoticies;
                           Batch python:modules['Products.CMFPlone'].Batch;
                           b_size python:10;
