@@ -19,7 +19,7 @@
           </div>
           <div class="span2">
             <ul class="pull-right sobreElWeb">
-              <li class="amunt"><a href="#portal-header" rel="tooltip" title="" data-placement="top" data-original-title="inici_page"> <img alt="inici_page" src="++genweb++static/images/amunt.png" /> </a></li>
+              <li class="amunt"><a href="#portal-header" rel="tooltip" i18n:domain="genweb" i18n:attributes="title inici_page;alt inici_page;"" data-placement="top" data-original-title="inici_page"> <img src="++genweb++static/images/amunt.png" /> </a></li>
             </ul>
           </div>
         </div>
