@@ -42,7 +42,7 @@ class Assignment(base.Assignment):
         self.count = count
         self.state = state
 
-    title = _(u'buttonbar', default=u'Button bar')
+    title = _(u'Button bar with angular')
 
 
 class Renderer(base.Renderer):
@@ -52,7 +52,7 @@ class Renderer(base.Renderer):
     def __init__(self, *args):
         base.Renderer.__init__(self, *args)
 
-    def is_activate_sharedwithme(self):
+    def activated_sharedwithme(self):
         if (api.portal.get_registry_record('genweb.controlpanel.core.IGenwebCoreControlPanelSettings.elasticsearch') != 'localhost') and (api.portal.get_registry_record('ulearn.core.controlpanel.IUlearnControlPanelSettings.activate_sharedwithme') == True):
             portal = api.portal.get()
             if portal.portal_actions.object.local_roles.visible is False:
@@ -62,13 +62,13 @@ class Renderer(base.Renderer):
         else:
             return False
 
-    def is_activate_news(self):
+    def activated_news(self):
         return api.portal.get_registry_record('ulearn.core.controlpanel.IUlearnControlPanelSettings.activate_news')
 
     def getClass(self):
         """ Returns class for links """
-        shared = self.is_activate_sharedwithme()
-        news = self.is_activate_news()
+        shared = self.activated_sharedwithme()
+        news = self.activated_news()
         width = ''
         if shared and news:
             width = 'span3'
@@ -82,8 +82,7 @@ class Renderer(base.Renderer):
         return "bubble top " + width
 
     # Subscribed news
-
-    def news_to_show(self):
+    def show_news(self):
         return self.data.count > 0 and len(self._data())
 
     @memoize_contextless
@@ -217,10 +216,11 @@ class Renderer(base.Renderer):
 
         return bb
 
+
 class AddForm(base.AddForm):
     form_fields = form.Fields(IButtonBarPortlet)
-    label = _(u"Add Subscribed News Portlet")
-    description = _(u"This portlet displays subscribed News Items.")
+    label = _(u"Configure Custom button Bar With Angular")
+    description = _(u"Ths portlet shows News Items. Configure in the next fields.")
 
     def create(self, data):
         return Assignment(count=data.get('count', 20),
@@ -229,5 +229,5 @@ class AddForm(base.AddForm):
 
 class EditForm(base.EditForm):
     form_fields = form.Fields(IButtonBarPortlet)
-    label = _(u"Edit Subscribed News Portlet")
-    description = _(u"This portlet displays subscribed News Items.")
+    label = _(u"Edit Configure Custom button Bar With Angular")
+    description = _(u"Ths portlet shows News Items. Configure in the next fields.")
