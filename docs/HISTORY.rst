@@ -1,11 +1,19 @@
 Changelog
 =========
 
-2.56 (unreleased)
+2.56 (2018-02-27)
 -----------------
 
-- Nothing changed yet.
-
+* Merge remote-tracking branch 'origin/develop' [Pilar Marinas]
+* i18n in footer top page link [Roberto Diaz]
+* revert renamed functions [Roberto Diaz]
+* renamed variales and literals [Roberto Diaz]
+* Edit button bar angular [Pilar Marinas]
+* changed icons order [Roberto Diaz]
+* changed condition [Roberto Diaz]
+* added isAnon to portlets and remove content from error_page [Roberto Diaz]
+* removed commented code [Roberto Diaz]
+* if no user lang, dont chrash the personal_toolbar [Roberto Diaz]
 
 2.55 (2018-02-19)
 -----------------
