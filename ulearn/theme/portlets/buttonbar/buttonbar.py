@@ -42,7 +42,7 @@ class Assignment(base.Assignment):
         self.count = count
         self.state = state
 
-    title = _(u'buttonbar', default=u'Button bar')
+    title = _(u'Button bar with angular')
 
 
 class Renderer(base.Renderer):
@@ -82,7 +82,6 @@ class Renderer(base.Renderer):
         return "bubble top " + width
 
     # Subscribed news
-
     def news_to_show(self):
         return self.data.count > 0 and len(self._data())
 
@@ -217,10 +216,11 @@ class Renderer(base.Renderer):
 
         return bb
 
+
 class AddForm(base.AddForm):
     form_fields = form.Fields(IButtonBarPortlet)
-    label = _(u"Add Subscribed News Portlet")
-    description = _(u"This portlet displays subscribed News Items.")
+    label = _(u"Configure Custom button Bar With Angular")
+    description = _(u"Ths portlet shows News Items. Configure in the next fields.")
 
     def create(self, data):
         return Assignment(count=data.get('count', 20),
@@ -229,5 +229,5 @@ class AddForm(base.AddForm):
 
 class EditForm(base.EditForm):
     form_fields = form.Fields(IButtonBarPortlet)
-    label = _(u"Edit Subscribed News Portlet")
-    description = _(u"This portlet displays subscribed News Items.")
+    label = _(u"Edit Configure Custom button Bar With Angular")
+    description = _(u"Ths portlet shows News Items. Configure in the next fields.")

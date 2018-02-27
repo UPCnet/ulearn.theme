@@ -7,7 +7,6 @@ from OFS.Image import Image
 from zope.interface import implements
 from zope.component import queryUtility
 from zope.component import getMultiAdapter
-
 from plone.app.portlets.portlets import base
 from plone.registry.interfaces import IRegistry
 from plone.portlets.interfaces import IPortletDataProvider
@@ -43,6 +42,17 @@ class Renderer(base.Renderer):
         self.username = api.user.get_current().id
         self.user_info = get_safe_member_by_id(self.username)
         self.portal_url = api.portal.get().absolute_url()
+
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
+
+    def isAdmin(self):
+        current = api.user.get_current().id
+        if current == 'admin':
+            return True
+        return False
 
     def fullname(self):
         if self.user_info:

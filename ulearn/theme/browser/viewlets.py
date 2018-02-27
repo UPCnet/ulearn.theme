@@ -328,7 +328,7 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
 
     def menu_enlaces(self):
         """ Devuelve el menu de enlaces segun el idioma que tenga definido el
-            usuario en su perfil
+            usuario en su perfil. Si no tiene nada, no lo devuleve
         """
         current = api.user.get_current()
         user_language = current.getProperty('language')
@@ -338,17 +338,20 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
             current.setMemberProperties({'language': user_language})
         portal = api.portal.get()
         soup_menu = get_soup('menu_soup', portal)
-        exist = [r for r in soup_menu.query(Eq('id_menusoup', user_language))]
-        if not exist:
-            dades = self.genera_menu_enlaces(user_language)
-            record = Record()
-            record.attrs['id_menusoup'] = user_language
-            record.attrs['dades'] = dades.values()
-            soup_menu.add(record)
-            soup_menu.reindex()
-            return dades.values()
+        if user_language != '':
+            exist = [r for r in soup_menu.query(Eq('id_menusoup', user_language))]
+            if not exist:
+                dades = self.genera_menu_enlaces(user_language)
+                record = Record()
+                record.attrs['id_menusoup'] = user_language
+                record.attrs['dades'] = dades.values()
+                soup_menu.add(record)
+                soup_menu.reindex()
+                return dades.values()
+            else:
+                return exist[0].attrs['dades']
         else:
-            return exist[0].attrs['dades']
+            return None
 
     def getUserId(self):
         current = api.user.get_current()
@@ -365,6 +368,11 @@ class gwHeader(viewletBase):
         registry = queryUtility(IRegistry)
         settings = registry.forInterface(IUlearnControlPanelSettings, check=False)
         return settings.info_servei
+
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
 
     def canHeaderImatge(self):
         portal = api.portal.get()

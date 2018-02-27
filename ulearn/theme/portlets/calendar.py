@@ -3,16 +3,12 @@ from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
 from Acquisition import aq_inner, aq_chain
 from genweb.core.interfaces import IHomePage
-
 from zope.component import getMultiAdapter
-
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.memoize.view import memoize_contextless
-
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from Products.CMFPlone import PloneMessageFactory as _
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IEventsFolder
@@ -24,12 +20,10 @@ from plone.app.event.base import wkday_to_mon1
 from plone.app.event.portlets import get_calendar_url
 from plone.event.interfaces import IEventAccessor
 from plone.dexterity.interfaces import IDexterityContent
-
+from ulearn.theme import calmodule
 from DateTime import DateTime
 from zope.i18nmessageid import MessageFactory
 PLMF = MessageFactory('plonelocales')
-
-from ulearn.theme import calmodule
 
 
 class ICalendarPortlet(IPortletDataProvider):
@@ -46,6 +40,11 @@ class Assignment(base.Assignment):
 class Renderer(base.Renderer):
 
     render = ViewPageTemplateFile('templates/calendar.pt')
+
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
 
     def update(self):
         context = aq_inner(self.context)
@@ -142,8 +141,6 @@ class Renderer(base.Renderer):
 
     def __init__(self, *args, **kwargs):
         super(Renderer, self).__init__(*args, **kwargs)
-
-
 
     @property
     def cal_data(self):

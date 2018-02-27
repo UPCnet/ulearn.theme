@@ -1,3 +1,5 @@
+<tal:block tal:condition="not:view/isAnon">
+
 <div id="box_comunitats" class="ulearnbox"
       i18n:domain="ulearn">
 
@@ -92,3 +94,5 @@
 </tal:showcreate>
 
 </div>
+
+</tal:block>

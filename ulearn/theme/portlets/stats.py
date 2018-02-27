@@ -4,7 +4,6 @@ from Acquisition import aq_inner, aq_chain
 from zope.interface import implements
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
-#from Products.CMFPlone import PloneMessageFactory as _
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from genweb.core.interfaces import IHomePage
 from ulearn.core.content.community import ICommunity
@@ -28,6 +27,11 @@ class Renderer(base.Renderer):
     def __init__(self, context, request, view, manager, data):
         super(Renderer, self).__init__(context, request, view, manager, data)
         self.portal_url = api.portal.get().absolute_url()
+
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
 
     def get_hash(self):
         """ Assume that the stats are only shown on the community itself. """
@@ -70,8 +74,7 @@ class Renderer(base.Renderer):
             return _(u'entrades')
 
     def show_stats(self):
-        """ The genweb.webmaster can see stats.
-        """
+        """ The genweb.webmaster can see "MORE" stats """
         if checkPermission('genweb.webmaster', self.context):
             return True
 

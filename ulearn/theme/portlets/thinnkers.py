@@ -1,18 +1,12 @@
 from hashlib import sha1
 from plone import api
 from zope.interface import implements
-
 from Acquisition import aq_inner, aq_chain
-
 from plone.portlets.interfaces import IPortletDataProvider
 from plone.app.portlets.portlets import base
-
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from Products.CMFPlone import PloneMessageFactory as _
-
 from ulearn.core.content.community import ICommunity
-
 from genweb.core.utils import get_safe_member_by_id, pref_lang
 
 
@@ -36,6 +30,11 @@ class Renderer(base.Renderer):
         self.username = api.user.get_current().id
         self.user_info = get_safe_member_by_id(self.username)
         self.portal_url = api.portal.get().absolute_url()
+
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
 
     def get_community(self):
         context = aq_inner(self.context)
