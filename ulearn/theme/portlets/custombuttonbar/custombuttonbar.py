@@ -12,7 +12,7 @@ from plone.app.portlets.portlets import base
 
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 
-from Products.CMFPlone import PloneMessageFactory as _
+from ulearn.core import _
 from zope.component.hooks import getSite
 
 

@@ -1,24 +1,12 @@
-from copy import deepcopy
+# -*- coding: utf-8 -*-
 from OFS.Image import Image
-
 from zope.interface import implements
 from zope.component import getUtility
-from zope.component.hooks import getSite
 from zope.publisher.interfaces import IPublishTraverse, NotFound
 from zope.component import getUtilitiesFor
-
-from plone.memoize.view import memoize_contextless
-from plone.registry.interfaces import IRegistry
-
 from Products.Five import BrowserView
-from Products.CMFCore.utils import getToolByName
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
-
 from souper.interfaces import ICatalogFactory
-
-from mrs.max.utilities import IMAXClient
-from ulearn.core.badges import AVAILABLE_BADGES
-from ulearn.core.controlpanel import IUlearnControlPanelSettings
 from genweb.core.utils import get_safe_member_by_id
 from ulearn.core import _
 
@@ -103,8 +91,6 @@ class userProfile(BrowserView):
         return api.user.get_current()
 
     def user_properties(self):
-        user_properties_default = [_(u'fullname'), _(u'email'), _(u'home_page'), _(u'description'), _(u'twitter_username'), _(u'location'), _(u'telefon'), _(u'ubicacio')]
-
         member_data = self.get_member_data()
         return {'fullname': member_data.getProperty('fullname'),
                 'email': member_data.getProperty('email'),
@@ -115,4 +101,3 @@ class userProfile(BrowserView):
                 'telefon': member_data.getProperty('telefon'),
                 'ubicacio': member_data.getProperty('ubicacio'),
                 }
-
