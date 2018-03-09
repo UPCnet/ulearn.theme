@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.57 (unreleased)
+2.57 (2018-03-09)
 -----------------
 
-- Nothing changed yet.
-
+* removed unused imports and added domain to translate custombuttonbar [Roberto Diaz]
 
 2.56 (2018-02-27)
 -----------------
