@@ -2,7 +2,7 @@
    tal:define="shared view/is_activate_sharedwithme;
    news view/is_activate_news;
    cls view/getClass">
-    <div id="menusup" i18n:domain="ulearn">
+    <div id="menusup" i18n:domain="ulearn" style="height:40px !important">
         <nav>
             <div tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'stream'}">
                 <div class="arrow"></div>
