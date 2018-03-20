@@ -17,22 +17,32 @@
               tal:define="subscribed_tags view/get_subscribed_tags;
                           unsubscribed_tags view/get_unsubscribed_tags;">
 
-    <h3> Subscribed Tags </h3>
-    <div class="tags-subscribed" tal:repeat="tag subscribed_tags">
-      <a tal:content="tag"
-         tal:attributes="href string:${context/absolute_url}/toggle_subscriptiontag?tag=${tag}">
-        tag
-      </a>
-
+    <h3 i18n:translate=""> Subscribed Tags </h3>
+    <div class="tags-subscribed">
+      <ul  style="list-style:none">
+        <li tal:repeat="tag subscribed_tags" style="padding-bottom: 10px;">
+          <span class="tagfollowed">
+            <a tal:attributes="href string:${context/absolute_url}/toggle_subscriptiontag?tag=${tag}">
+              <i class="fa fa-minus"> </i>
+              <tal:block tal:content="tag"> tag </tal:block>
+            </a>
+          </span>
+        </li>
+      </ul>
     </div>
 
-    <h3> Unsubscribed Tags </h3>
-    <div clas="tags-unsubscribed" tal:repeat="tag unsubscribed_tags">
-      <a tal:content="tag"
-         tal:attributes="href string:${context/absolute_url}/toggle_subscriptiontag?tag=${tag}">
-         tag
-      </a>
-
+    <h3 i18n:translate=""> Unsubscribed Tags </h3>
+    <div clas="tags-unsubscribed">
+      <ul style="list-style:none">
+        <li tal:repeat="tag unsubscribed_tags" style="padding-bottom: 10px;">
+          <span class="tagnotfollowed">
+            <a tal:attributes="href string:${context/absolute_url}/toggle_subscriptiontag?tag=${tag}">
+              <i class="fa fa-plus"> </i>
+              <tal:block tal:content="tag">tag</tal:block>
+            </a>
+          </span>
+        </li>
+      </ul>
     </div>
 
   </metal:main>
