@@ -20,7 +20,7 @@
           <a href="#"
              data-toggle="tab"
              data-target="#mynews" target="_self">
-                <i class="fa fa-group icons"></i>
+                <i class="fa fa-newspaper-o icons"></i>
                 <tal:Noticies i18n:translate=""> mynews </tal:Noticies></a>
         </div>
       </div>
@@ -31,7 +31,7 @@
           <a href="#"
              data-toggle="tab"
              data-target="#mycommunities" target="_self">
-                <i class="fa fa-calendar icons"></i>
+                <i class="fa fa-group icons"></i>
                 <tal:Stream i18n:translate="">my_communities</tal:Stream></a>
         </div>
       </div>
