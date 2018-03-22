@@ -1832,12 +1832,6 @@ h1, h2, h3, label, span.label {
   margin-top: 0;
   border-bottom: 0; }
 
-#portal-header .headerImg > img {
-  margin: 0 auto;
-  display: block;
-  max-height: 65px;
-  padding: 5px; }
-
 #portal-breadcrumbs {
   margin-bottom: 6px;
   clear: both; }
@@ -2809,7 +2803,8 @@ a {
   -webkit-transition: 0.25s;
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
-  transition: 0.25s; }
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden; }
 
 a:hover {
   color: #004A74;
@@ -3011,7 +3006,6 @@ input[type="text"]:focus {
   opacity: 0.8; }
 
 #menusup {
-  padding-bottom: 5px;
   height: 49px;
   cursor: pointer; }
   #menusup nav {
@@ -3823,16 +3817,6 @@ label[for="form.ext_editor"] ~ div.widget {
 .inputsearchUsers form {
   margin-bottom: 0px; }
 
-#content-core video {
-  width: 100%; }
-
-#player {
-  height: 319px;
-  width: 100%; }
-
-.ulearnbox #portlet_media {
-  margin-bottom: 0px; }
-
 #Media-carousel .carousel-inner {
   overflow: hidden;
   padding-top: 0px;
@@ -3841,9 +3825,6 @@ label[for="form.ext_editor"] ~ div.widget {
 
 #Media-carousel .carousel-caption {
   padding: 0px; }
-
-#portlet_media .carousel {
-  margin-bottom: 0px; }
 
 #portlet_media .carousel-control {
   position: absolute;
@@ -3864,31 +3845,7 @@ label[for="form.ext_editor"] ~ div.widget {
   left: auto;
   right: 15px; }
 
-#portlet_media .titleResource {
-  margin-bottom: 10px; }
-
-#portlet_media .titleResource a {
-  display: -webkit-box;
-  height: 50px;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical; }
-
-#portlet_media .contentResource {
-  height: 150px; }
-
-#portlet_media .contentResource .player {
-  height: 100%;
-  width: 100%;
-  display: table;  }
-
-#portlet_media .contentResource .player .errorYT {
-  padding: 0px 45px;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;  }
-
-#portlet_media .contentResource video {
+#player {
   width: 100%; }
 
 #portlet_media .contentResource .carousel-image img {
@@ -4998,5 +4955,53 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
   font-size: 150%;
   line-height: 0;
   margin-left: 5px; }
+
+#box_agenda li:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+  margin-bottom: 0px; }
+
+#content-core video {
+  width: 100%; }
+
+#player {
+  height: 319px;
+  width: 100%; }
+
+.ulearnbox #portlet_media {
+  margin-bottom: 0px; }
+
+#portlet_media .carousel {
+  margin-bottom: 0px; }
+
+#portlet_media .titleResource {
+  margin-bottom: 10px; }
+
+#portlet_media .titleResource a {
+  display: block;
+  height: 50px;
+  overflow: hidden; }
+
+#portlet_media .contentResource {
+  height: 150px; }
+
+#portlet_media .contentResource .player {
+  height: 100%;
+  width: 100%;
+  display: table; }
+
+#portlet_media .contentResource .player .errorYT {
+  padding: 0px 45px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle; }
+
+#portlet_media .contentResource video {
+  width: 100%; }
+
+#portlet_media .contentResource .carousel-image img {
+  width: 100%;
+  height: auto;
+  max-height: 150px; }
 
 /*# sourceMappingURL=ulearn.css.map */

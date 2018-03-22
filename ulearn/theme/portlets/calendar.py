@@ -185,14 +185,13 @@ class Renderer(base.Renderer):
                     whole_day = accessor.whole_day
                     time = accessor.start.time().strftime('%H:%M')
                     # TODO: make 24/12 hr format configurable
-                    base = u'<a href="%s"><span class="title">%s</span>'\
-                           u'%s%s%s</a>'
+                    base = u'<li style="list-style:none;"><a href="%s" class="title">%s%s%s - %s</a></li>'
                     events_string += base % (
                         accessor.url,
-                        accessor.title,
                         not whole_day and u' %s' % time or u'',
                         not whole_day and location and u', ' or u'',
-                        location and u' %s' % location or u'')
+                        location and u' %s' % location or u'',
+                        accessor.title)
 
             caldata[-1].append(
                 {'date': dat,
