@@ -14,7 +14,6 @@
 <body>
   <metal:main metal:fill-slot="main">
 
-
   <div ng-switch="ctrl.active_tab">
       <div id="librarysearch" i18n:domain="ulearn">
         <div id="sharedwithme-container">
@@ -51,7 +50,6 @@
                               <span class="shared_from_community">{{shared_item.community_displayname}}</span>
                             </div>
                             <div class="visualClear">
-                                <!-- -->
                             </div>
                         </div>
                     </div>

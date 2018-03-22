@@ -769,7 +769,7 @@ class AllTags(grok.View):
             user_tags = tags_soup[0].attrs['tags']
         else:
             user_tags = ()
-        return list(set(subjects)-set(user_tags))
+        return list(set(subjects) - set(user_tags))
 
 
 class SearchFilteredNews(grok.View):

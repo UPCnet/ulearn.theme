@@ -45,14 +45,7 @@
                     </span>
                 </p>
 
-
-  <!--               <a href=""
-                   tal:attributes="href python:item_type in use_view_action and item_url+'/view' or item_url;"><span i18n:translate="read_more">Read more</span>
-
-                </a> -->
-
               </div>
-
 
           </div>
           <div class="visualClear"><!-- --></div>

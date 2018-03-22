@@ -8,28 +8,21 @@ from zope.interface import Interface
 from zope.component import getMultiAdapter
 from zope.component.hooks import getSite
 from zope.component import getUtility
-from zope.security import checkPermission
-
 from plone.memoize.view import memoize_contextless
 from plone.memoize import forever
-
 from Products.CMFCore.utils import getToolByName
 from Products.CMFPlone.utils import safe_unicode
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from Products.CMFPlone.interfaces import IPloneSiteRoot
-
 from souper.soup import get_soup
 from souper.soup import Record
-
 from repoze.catalog.query import Eq
-
 from plone.app.layout.viewlets.common import TitleViewlet, ManagePortletsFallbackViewlet
 from plone.app.layout.viewlets.interfaces import IHtmlHead, IPortalTop, IPortalHeader, IAboveContent, IBelowContent
 from plone.app.layout.viewlets.interfaces import IPortalFooter, IAboveContentTitle
 from plone.registry.interfaces import IRegistry
 from plone.dexterity.interfaces import IDexterityContent
 from ulearn.core.controlpanel import IUlearnControlPanelSettings
-
 from genweb.core.utils import genweb_config
 from genweb.core.utils import pref_lang
 from genweb.core.utils import get_safe_member_by_id
@@ -37,7 +30,6 @@ from genweb.theme.browser.viewlets import gwPersonalBarViewlet
 from genweb.theme.browser.viewlets import gwManagePortletsFallbackViewletMixin
 from genweb.core.browser.viewlets import gwCSSViewletManager
 from genweb.core.browser.viewlets import baseResourcesViewlet
-
 from ulearn.core.content.community import ICommunity
 from ulearn.core.interfaces import IDocumentFolder
 from ulearn.core.interfaces import ILinksFolder
@@ -45,9 +37,7 @@ from ulearn.core.interfaces import IPhotosFolder
 from ulearn.core.interfaces import IEventsFolder
 from ulearn.core.interfaces import IDiscussionFolder
 from ulearn.theme.browser.interfaces import IUlearnTheme
-
 from zope.component import queryUtility
-
 import datetime
 from plone import api
 
