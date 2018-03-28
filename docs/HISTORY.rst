@@ -1,11 +1,14 @@
 Changelog
 =========
 
-2.58 (unreleased)
+2.58 (2018-03-28)
 -----------------
 
-- Nothing changed yet.
-
+* added thinkers portlet missing translations and removed commented come [Roberto Diaz]
+* changed popover calendar and readded CSS from smartportlet to SCSS [Roberto Diaz]
+* changed alltags template [Roberto Diaz]
+* changed newspaper icon [Roberto Diaz]
+* added height to button in angular buttonbarg [Roberto Diaz]
 
 2.57 (2018-03-09)
 -----------------
