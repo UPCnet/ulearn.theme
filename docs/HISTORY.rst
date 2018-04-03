@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.59 (unreleased)
+2.59 (2018-04-03)
 -----------------
 
-- Nothing changed yet.
-
+* Quitar / nginx [Pilar Marinas]
 
 2.58 (2018-03-28)
 -----------------
