@@ -1,17 +1,18 @@
 <div class="container"
-     i18n:domain="ulearn">
+     i18n:domain="ulearn"
+     tal:define="portal_url context/@@plone_portal_state/portal_url">
   <div class="clearfix masthead row-fluid">
-    <div class="pull-left span4">
-      <h1>
+    <div class="span4">
+      <h1 class="pull-left">
         <a accesskey="1"
-           tal:attributes="href string:${viewlet/portal_url}" target="_self">
-          <img tal:attributes="src string:${viewlet/portal_url}/ulearn_comunitats.png"
-               alt="Ulearn Comunitats - UPCnet SLU">
+           tal:attributes="href string:${portal_url}" target="_self">
+          <img tal:attributes="src string:${portal_url}/ulearn_comunitats.png"
+               alt="uLearn Comunitats - UPCnet SLU">
         </a>
       </h1>
     </div>
     <div class="pull-left headerImg span4" tal:condition="viewlet/canHeaderImatge">
-      <img tal:attributes="src string:${viewlet/portal_url}/gestion/header/${viewlet/canHeaderImatge}">
+      <img tal:attributes="src string:${portal_url}/gestion/header/${viewlet/canHeaderImatge}">
     </div>
     <div class="pull-right span4">
       <a class="btn btn-navbar pull-right hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-eines">
