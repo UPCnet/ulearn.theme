@@ -1,8 +1,8 @@
 <div class="container"
      i18n:domain="ulearn">
   <div class="clearfix masthead row-fluid">
-    <div class="pull-left span4">
-      <h1>
+    <div span4">
+      <h1 class="pull-left">
         <a accesskey="1"
            tal:attributes="href string:${viewlet/portal_url}" target="_self">
           <img tal:attributes="src string:${viewlet/portal_url}/ulearn_comunitats.png"
