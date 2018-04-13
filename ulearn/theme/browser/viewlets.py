@@ -221,6 +221,14 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
 
         return dades
 
+    def showFolderContentsLink(self):
+        current = api.user.get_current()
+        roles = api.user.get_roles(username=current.id)
+        if 'WebMaster' in roles or 'Manager' in roles or 'Site Administrator' in roles:
+            return True
+
+        return False
+
     def canGestion(self):
         current = api.user.get_current()
         portal = api.portal.get()

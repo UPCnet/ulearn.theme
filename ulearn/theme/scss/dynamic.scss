@@ -226,6 +226,18 @@ h1, h2, h3, label, span.label, fieldset legend {
   border-left: 3px solid $color_community_open;
 }
 
+td.ulearnevent.cal_has_events.event-closed {
+  background-color: $color_community_closed;
+}
+
+td.ulearnevent.cal_has_events.event-open {
+  background-color: $color_community_open;
+}
+
+td.ulearnevent.cal_has_events.event-org {
+  background-color: $color_community_organizative;
+}
+
 #box_comunitats .bubble a {
   color: $main-color;
   font-weight: 600;

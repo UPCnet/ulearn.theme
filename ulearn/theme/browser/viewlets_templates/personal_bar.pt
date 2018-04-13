@@ -79,7 +79,7 @@
                 </li>
               </ul>
             </li>
-            <li  role="menuitem"><a tal:condition="view/showRootFolderLink"
+            <li  role="menuitem"><a tal:condition="view/showFolderContentsLink"
                    tal:attributes="href string:${view/portal_url}/folder_contents">
                    <tal:rootFolder i18n:translate="genweb-accesarrel">
                       Root folder</tal:rootFolder>
