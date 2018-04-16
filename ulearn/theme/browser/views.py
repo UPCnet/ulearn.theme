@@ -1,5 +1,7 @@
 from scss import Scss
 from DateTime import DateTime
+from plone.protect.interfaces import IDisableCSRFProtection
+from zope.interface import alsoProvides
 
 from five import grok
 from plone import api
@@ -43,9 +45,10 @@ from genweb.core.utils import json_response
 
 from souper.soup import get_soup
 from repoze.catalog.query import Eq
+from Products.statusmessages.interfaces import IStatusMessage
+from plone.protect.utils import addTokenToUrl
 
 from zope.i18n import translate
-from plone import api
 
 order_by_type = {"Folder": 1, "Document": 2, "File": 3, "Link": 4, "Image": 5}
 
@@ -835,15 +838,15 @@ class SearchFilteredNews(grok.View):
                     news_html += '<li class="noticies clearfix">' \
                                    '<div>' \
                                       '<div class="imatge_noticia">' \
-                                        '<img src="'+noticia.getURL()+'/@@images/image/thumb" alt="'+noticiaObj.id+'" title="'+noticiaObj.id+'" class="newsImage" width="222" height="222">'\
+                                      '<img src="' + noticia.getURL() + '/@@images/image/thumb" alt="' + noticiaObj.id + '" title="' + noticiaObj.id + '" class="newsImage" width="222" height="222">'\
                                       '</div>' \
                                       '<div class="text_noticia">' \
                                         '<h2>'\
-                                        '<a href="'+noticia.getURL()+'">'+abrevia(noticia.Title, 70)+'</a>'\
+                                        '<a href="' + noticia.getURL() + '">' + abrevia(noticia.Title, 70) + '</a>'\
                                         '</h2>'\
-                                        '<p><time class="smaller">'+str(noticiaObj.modification_date.day()) + '/' + str(noticiaObj.modification_date.month()) + '/' + str(noticiaObj.modification_date.year())+'</time></p>'\
-                                        '<span>'+text.encode('utf-8')+'</span>'\
-                                        '<a href="'+noticia.getURL()+'" class="readmore" title="'+abrevia(noticia.Title, 70)+'"><span class="readmore">'+readmore+'</span>'\
+                                        '<p><time class="smaller">' + str(noticiaObj.modification_date.day()) + '/' + str(noticiaObj.modification_date.month()) + '/' + str(noticiaObj.modification_date.year()) + '</time></p>'\
+                                        '<span>' + text.encode('utf-8') + '</span>'\
+                                        '<a href="' + noticia.getURL() + '" class="readmore" title="' + abrevia(noticia.Title, 70) + '"><span class="readmore">' + readmore + '</span>'\
                                         '</a>'\
                                       '</div>'\
                                    '</div>'\
@@ -953,13 +956,17 @@ class SharedWithMe(baseCommunities):
 
 
 class resetMenuBar(grok.View):
-    """ This view reset the personal bar """
+    """ This view resets the links menu. And refresh them when accesing to personal_bar...always :) """
     grok.name('reset_menu')
     grok.context(IPloneSiteRoot)
-    grok.template('reset_menu_bar')
     grok.layer(IUlearnTheme)
 
-    def update(self):
+    def render(self):
+        """ clear the soup from links... recreated rendering the personal_bar.pt"""
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
         soup_menu = get_soup('menu_soup', portal)
         soup_menu.clear()
+        alsoProvides(self.request, IDisableCSRFProtection)
+        from ulearn.core import _
+        IStatusMessage(self.request).addStatusMessage(_(u"menu-reset-menu-msg"), type='success')
+        return self.request.response.redirect(self.context.absolute_url())
