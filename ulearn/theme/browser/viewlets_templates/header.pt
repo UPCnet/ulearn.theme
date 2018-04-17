@@ -7,7 +7,7 @@
         <a accesskey="1"
            tal:attributes="href string:${portal_url}" target="_self">
           <img tal:attributes="src string:${portal_url}/ulearn_comunitats.png"
-               alt="uLearn Comunitats - UPCnet SLU">
+               alt="uLearn Comunitats - IThinkUPC">
         </a>
       </h1>
     </div>
@@ -25,7 +25,6 @@
           </li>
         </ul>
       </div>
-
     </div>
   </div>
 </div>

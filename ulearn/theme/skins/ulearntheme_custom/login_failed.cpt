@@ -32,8 +32,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1,requiresActiveX=true" />
   <meta name="generator" content="Plone - http://plone.org" />
-  <meta name="author" content="UPCnet, SLU - eKnowledge" />
-  <meta name="description" content="Genweb v4.0 - El generador de webs d'UPCnet" />
+  <meta name="author" content="IThinkUPC" />
+  <meta name="description" content="uLearn Comunitats" />
   <link rel="shortcut icon" type="image/x-icon" tal:attributes="href string:${portal_url}/favicon.ico" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
