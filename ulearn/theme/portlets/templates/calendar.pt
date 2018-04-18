@@ -133,4 +133,6 @@
 
 </div>
 
+<script src="++ulearn++portlets/portlet_calendar.js"></script>
+
 </tal:block>
