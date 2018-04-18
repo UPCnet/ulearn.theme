@@ -1,11 +1,11 @@
 Changelog
 =========
 
-2.61 (unreleased)
+2.61 (2018-04-18)
 -----------------
 
-- Nothing changed yet.
-
+* Cargar javascript portlet calendario [iago.lopez]
+* moved IDisableCSRFProtection to function [Roberto Diaz]
 
 2.60 (2018-04-18)
 -----------------
