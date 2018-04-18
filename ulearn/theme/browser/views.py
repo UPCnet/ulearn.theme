@@ -1,6 +1,5 @@
 from scss import Scss
 from DateTime import DateTime
-from plone.protect.interfaces import IDisableCSRFProtection
 from zope.interface import alsoProvides
 
 from five import grok
@@ -46,7 +45,6 @@ from genweb.core.utils import json_response
 from souper.soup import get_soup
 from repoze.catalog.query import Eq
 from Products.statusmessages.interfaces import IStatusMessage
-from plone.protect.utils import addTokenToUrl
 
 from zope.i18n import translate
 
@@ -966,7 +964,11 @@ class resetMenuBar(grok.View):
         portal = getToolByName(self.context, 'portal_url').getPortalObject()
         soup_menu = get_soup('menu_soup', portal)
         soup_menu.clear()
-        alsoProvides(self.request, IDisableCSRFProtection)
+        try:
+            from plone.protect.interfaces import IDisableCSRFProtection
+            alsoProvides(self.request, IDisableCSRFProtection)
+        except:
+            pass
         from ulearn.core import _
         IStatusMessage(self.request).addStatusMessage(_(u"menu-reset-menu-msg"), type='success')
         return self.request.response.redirect(self.context.absolute_url())
