@@ -1,10 +1,9 @@
 Changelog
 =========
 
-2.60 (unreleased)
+2.60 (2018-04-18)
 -----------------
 
-- Nothing changed yet.
 
 
 2.59 (2018-04-03)
