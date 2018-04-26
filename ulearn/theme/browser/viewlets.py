@@ -328,15 +328,16 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
         """ Devuelve el menu de enlaces segun el idioma que tenga definido el
             usuario en su perfil. Si no tiene nada, no lo devuleve
         """
+        portal = api.portal.get()
         current = api.user.get_current()
         user_language = current.getProperty('language')
-        if user_language is None:
-            lt = getToolByName(self.portal(), 'portal_languages')
-            user_language = lt.getPreferredLanguage()
-            current.setMemberProperties({'language': user_language})
-        portal = api.portal.get()
         soup_menu = get_soup('menu_soup', portal)
-        if user_language != '':
+
+        if user_language is None or not isinstance(current.getProperty('language'), basestring):
+            lt = getToolByName(self.portal(), 'portal_languages')
+            language = lt.getPreferredLanguage()
+            current.setMemberProperties(mapping={'language': language})
+        else:
             exist = [r for r in soup_menu.query(Eq('id_menusoup', user_language))]
             if not exist:
                 dades = self.genera_menu_enlaces(user_language)
@@ -348,8 +349,6 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
                 return dades.values()
             else:
                 return exist[0].attrs['dades']
-        else:
-            return None
 
     def getUserId(self):
         current = api.user.get_current()

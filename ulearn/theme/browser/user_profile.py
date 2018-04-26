@@ -94,6 +94,7 @@ class userProfile(BrowserView):
         member_data = self.get_member_data()
         return {'fullname': member_data.getProperty('fullname'),
                 'email': member_data.getProperty('email'),
+                'language': member_data.getProperty('language'),
                 'home_page': member_data.getProperty('home_page'),
                 'description': member_data.getProperty('description'),
                 'twitter_username': member_data.getProperty('twitter_username'),
