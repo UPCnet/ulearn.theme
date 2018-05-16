@@ -143,6 +143,9 @@ class CarouselPortletContainerRenderer(PortletContainerRenderer):
     template = ViewPageTemplateFile('templates/carousel-container.pt')
     css_class = 'carousel-container-div'
 
+    def getTitleIdPortlet(self):
+        return self.portlet.data.header.replace(" ", "-")
+
 
 @adapter(IImage)
 @implementer(IPortletItemRenderer)
