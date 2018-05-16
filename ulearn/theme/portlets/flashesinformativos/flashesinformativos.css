@@ -150,4 +150,9 @@
 .ulearnboxflash .carousel-inner .item { overflow: hidden;              /* "overflow" value must be different from "visible" */
   text-overflow: ellipsis; height: 30px; text-overflow: "…";}
 
+.ulearnboxflash .item a {
+  vertical-align: middle;
+  font-size: 1.05em;
+}
+
 /* ==================== FIN flashes-informativos ==================== */
