@@ -1,11 +1,13 @@
 Changelog
 =========
 
-2.62 (unreleased)
+2.62 (2018-05-22)
 -----------------
 
-- Nothing changed yet.
-
+* CSS Portlet flashes informativos [iago.lopez]
+* Arreglar problema del portlet smartportlet, al añadirle un titulo con espacio el carousel deja de funcionar. [iago.lopez]
+* change None to not checking language in personal_bar viewlet [Roberto Diaz]
+* If user has not defined lang, assign the portal default lang [Roberto Diaz]
 
 2.61 (2018-04-18)
 -----------------
