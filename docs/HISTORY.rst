@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.63 (unreleased)
+2.63 (2018-06-06)
 -----------------
 
-- Nothing changed yet.
-
+* W3C compliant code [Roberto Diaz]
 
 2.62 (2018-05-22)
 -----------------
