@@ -1,5 +1,5 @@
 <div id="menusup"
-     i18n:domain="ulearn" ng-non-bindable >
+     i18n:domain="ulearn" data-ng-non-bindable >
   <nav>
     <div class="row-fluid">
 
@@ -40,7 +40,7 @@
   </nav>
 </div>
 
-<div class="tab-content" ng-non-bindable>
+<div class="tab-content" data-ng-non-bindable>
   <div class="tab-pane active" id="corporatiu"></div>
   <div class="tab-pane" id="mynews"></div>
  <div class="tab-pane" id="mycommunities"></div>

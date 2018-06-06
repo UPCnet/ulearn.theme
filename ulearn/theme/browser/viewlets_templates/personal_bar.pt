@@ -1,20 +1,19 @@
-<tal:personaltools condition="not: view/anonymous">
-<h1 class="goout" id="titol-eines-usuari"> Eines d'usuari </h1>
-<nav id="portal-personaltools-wrapper" role="toolbar" aria-labelledby="titol-eines-usuari"
-     i18n:domain="genweb">
+<tal:personaltools condition="not: view/anonymous" i18n:domain="genweb">
+<h1 class="goout" i18n:translate="label_eines_usuari"> Eines d'usuari </h1>
+<nav id="portal-personaltools-wrapper" role="toolbar">
   <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
         <span style="float:left; display:block; position: relative;"
-              us-spinner="{color: 'white', left:0, radius:0, lines:7, length:6, width:2}">
+              data-us-spinner="{color: 'white', left:0, radius:0, lines:7, length:6, width:2}">
         </span>
 
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse-edit">
           <i class="icon-user icon-white"></i>
         </a>
         <div class="nav-collapse nav-collapse-edit">
-          <h2 class="goout" id="titol-eines-usuari"> Menú d'usuari </h2>
-          <ul class="nav" role="menu" aria-labelledby="titol-menu-usuari">
+          <h2 class="goout" i18n:translate="label_menu_usuari"> Menú d'usuari </h2>
+          <ul class="nav" role="menu">
             <li class="dropdown" role="menuitem" tal:attributes="id string:${view/user_name}">
               <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
                 <img tal:attributes="src string:${view/getPortraitMini}" aria-hidden="true"
@@ -124,10 +123,8 @@
                 </a></li>
               </ul>
             </li>
-
-
           </ul>
-          <ul class="nav pull-right" role="menu" aria-labelledby="titol-menu-usuari" tal:define="menu view/menu_enlaces">
+          <ul class="nav pull-right" role="menu" tal:define="menu view/menu_enlaces">
             <li tal:condition="menu" class="dropdown" role="menuitem" tal:repeat="dades menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <tal:quicklinks tal:content="dades/title"> Quick Links </tal:quicklinks>

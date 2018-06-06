@@ -14,14 +14,14 @@
 <body>
   <metal:main metal:fill-slot="main">
 
-  <div ng-switch="ctrl.active_tab">
+  <div data-ng-switch="ctrl.active_tab">
       <div id="librarysearch" i18n:domain="ulearn">
         <div id="sharedwithme-container">
-            <div id="shared-with-me-view" ng-controller="SharedWithMe as ctrl">
+            <div id="shared-with-me-view" data-ng-controller="SharedWithMe as ctrl">
                 <div class="caixessearch_shared">
                   <div id="searchinputcontent">
                    <div class="input-append">
-                      <input ng-model="q"
+                      <input data-ng-model="q"
                              class="searchInput" type="text" placeholder="Cerca"
                              i18n:attributes="placeholder search">
                       <span class="add-on"><i class="fa fa-search"></i></span>
@@ -31,10 +31,10 @@
 
                 <section id="sharedlist">
                     <div id="content-core">
-                        <p ng-if="ctrl.shared_items.length == 0" ng-cloak i18n:translate="no_content_shared_user">There is no content shared with you right now.</p>
-                        <div class="tileItem visualIEFloatFix" dir-paginate="shared_item in ctrl.shared_items | filter:q | itemsPerPage: ctrl.pageSize" current-page="ctrl.currentPage" ng-cloak>
+                        <p data-ng-if="ctrl.shared_items.length == 0" data-ng-cloak i18n:translate="no_content_shared_user">There is no content shared with you right now.</p>
+                        <div class="tileItem visualIEFloatFix" data-dir-paginate="shared_item in ctrl.shared_items | filter:q | itemsPerPage: ctrl.pageSize" data-current-page="ctrl.currentPage" data-ng-cloak>
                             <h4 class="tileHeadline {{shared_item.portal_type}}" >
-                                <a ng-href="{{shared_item.url}}" class="summary url">{{shared_item.title}} </a>
+                                <a data-ng-href="{{shared_item.url}}" class="summary url">{{shared_item.title}} </a>
                             </h4>
                             <div class="documentByLine">
                             </div>
@@ -43,7 +43,7 @@
                             </p>
                             <div class="shared_by">
                               <i class="fa fa-share-alt icons"></i>Compartido por
-                              <a ng-href="{{shared_item.by_profile}}">{{shared_item.by}}</a>
+                              <a data-ng-href="{{shared_item.by_profile}}">{{shared_item.by}}</a>
                             </div>
                             <div class="shared_from">
                               desde

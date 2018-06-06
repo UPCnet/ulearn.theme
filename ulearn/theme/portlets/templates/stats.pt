@@ -10,14 +10,14 @@
         <li>
           <div class="bubble left pull-left">
             <div class="arrow"></div>
-            <div class="bubble-content" ng-bind="context_activities"> 0 </div>
+            <div class="bubble-content" data-ng-bind="context_activities"> 0 </div>
           </div>
           <p i18n:translate="" tal:content="view/get_posts_literal"> Activity </p>
         </li>
         <li>
           <div class="bubble left pull-left">
             <div class="arrow"></div>
-            <div class="bubble-content" ng-bind="users_comments"> 0 </div>
+            <div class="bubble-content" data-ng-bind="users_comments"> 0 </div>
           </div>
           <p i18n:translate="stats_comments"> stats_comments </p>
         </li>
@@ -56,14 +56,14 @@
         <li>
           <div class="bubble left pull-left">
             <div class="arrow"></div>
-            <div class="bubble-content" ng-bind="all_activities"></div>
+            <div class="bubble-content" data-ng-bind="all_activities"></div>
           </div>
           <p i18n:translate="" tal:content="view/get_posts_literal"> Activitat </p>
         </li>
         <li>
           <div class="bubble left pull-left">
             <div class="arrow"></div>
-            <div class="bubble-content" ng-bind="all_comments"></div>
+            <div class="bubble-content" data-ng-bind="all_comments"></div>
           </div>
           <p i18n:translate=""> stats_comments </p>
         </li>

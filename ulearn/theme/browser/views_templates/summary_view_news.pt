@@ -26,9 +26,7 @@
                        tal:replace="structure python:scale.tag(css_class='newsImage')" />
                 </a>
               </div>
-
               <div class="text_noticia">
-
                 <h2>
                     <a href="#"
                        class="summary url"
@@ -38,15 +36,12 @@
                     </a>
                 </h2>
                 <p><time class="smaller" tal:define="date python:view.effectiveDate(item)" tal:content="date">May 5</time></p>
-
                 <p tal:condition="item/text">
                     <span class="description" tal:define="text python:view.abreviaText(item)" tal:content="structure text">
                         Text
                     </span>
                 </p>
-
               </div>
-
           </div>
           <div class="visualClear"><!-- --></div>
       </div>

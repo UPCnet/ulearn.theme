@@ -1,40 +1,40 @@
-<div ng-controller="homeTopPageMenuButtons as ctrl"
+<div data-ng-controller="homeTopPageMenuButtons as ctrl"
    tal:define="shared view/is_activate_sharedwithme;
    news view/is_activate_news;
    cls view/getClass">
     <div id="menusup" i18n:domain="ulearn" style="height:40px !important">
         <nav>
-            <div tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'stream'}">
+            <div tal:attributes="class cls" data-ng-class="{active: ctrl.active_tab == 'stream'}">
                 <div class="arrow"></div>
                 <div class="bubble-content">
-                   <a ng-click="ctrl.active_tab = 'stream'">
+                   <a data-ng-click="ctrl.active_tab = 'stream'">
                       <i class="fa fa-comment icons"></i>
                       <tal:Stream i18n:translate="Entrada_buttonbar"> Stream </tal:Stream>
                    </a>
                 </div>
             </div>
-            <div tal:condition="news" tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'news'}">
+            <div tal:condition="news" tal:attributes="class cls" data-ng-class="{active: ctrl.active_tab == 'news'}">
                 <div class="arrow"></div>
                 <div class="bubble-content">
-                    <a ng-click="ctrl.active_tab = 'news'">
+                    <a data-ng-click="ctrl.active_tab = 'news'">
                         <i class="fa fa-calendar icons"></i>
                         <tal:News i18n:translate="news_buttonbar">News</tal:News>
                     </a>
                 </div>
             </div>
-            <div tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'mycommunities'}">
+            <div tal:attributes="class cls" data-ng-class="{active: ctrl.active_tab == 'mycommunities'}">
                 <div class="arrow"></div>
                 <div class="bubble-content">
-                    <a ng-click="ctrl.active_tab = 'mycommunities'">
+                    <a data-ng-click="ctrl.active_tab = 'mycommunities'">
                         <i class="fa fa-group icons"></i>
                         <tal:Community i18n:translate="my_communities_buttonbar">Communities</tal:Community>
                     </a>
                 </div>
             </div>
-            <div tal:condition="shared" tal:attributes="class cls" ng-class="{active: ctrl.active_tab == 'sharedwithme'}">
+            <div tal:condition="shared" tal:attributes="class cls" data-ng-class="{active: ctrl.active_tab == 'sharedwithme'}">
                 <div class="arrow"></div>
                 <div class="bubble-content">
-                    <a ng-click="ctrl.active_tab = 'sharedwithme'">
+                    <a data-ng-click="ctrl.active_tab = 'sharedwithme'">
                         <i class="fa fa-share-alt icons"></i>
                         <tal:Documents i18n:translate="shared_with_me_buttonbar">Shared</tal:Documents>
                     </a>
@@ -42,24 +42,24 @@
             </div>
        </nav>
     </div>
-    <div ng-switch="ctrl.active_tab" >
-        <div id="maxui-widget-container" class="tab-container" ng-hide="ctrl.active_tab !== 'stream'"></div>
-        <div id="communities-view" class="tab-container" ng-switch-when="mycommunities">
-            <div id="communities-view_init" ng-controller="AllCommunities as comCtrl">
+    <div data-ng-switch="ctrl.active_tab" >
+        <div id="maxui-widget-container" class="tab-container" data-ng-hide="ctrl.active_tab !== 'stream'"></div>
+        <div id="communities-view" class="tab-container" data-ng-switch-when="mycommunities">
+            <div id="communities-view_init" data-ng-controller="AllCommunities as comCtrl">
               <section id="communitylist">
                 <ul>
-                  <li dir-paginate="community in comCtrl.user_communities | filter:q | itemsPerPage: comCtrl.pageSize" current-page="comCtrl.currentPage" ng-cloak>
+                  <li data-dir-paginate="community in comCtrl.user_communities | filter:q | itemsPerPage: comCtrl.pageSize" data-current-page="comCtrl.currentPage" data-ng-cloak>
                     <div class="row-fluid">
                       <div class="span2">
-                        <a ng-href="{{community.url}}">
-                          <img ng-if="community.image"
-                               ng-src="{{community.url}}/@@images/image/thumb" />
-                          <img ng-if="!community.image"
+                        <a data-ng-href="{{community.url}}">
+                          <img data-ng-if="community.image"
+                               data-ng-src="{{community.url}}/@@images/image/thumb" />
+                          <img data-ng-if="!community.image"
                                src="++ulearn++static/images/avatar_default.png" />
                         </a>
                       </div>
                       <div class="span10">
-                        <a ng-href="{{community.url}}">
+                        <a data-ng-href="{{community.url}}">
                           <h4>{{community.title}}</h4>
                           <p>{{community.description}}</p>
                         </a>
@@ -67,28 +67,28 @@
                     </div>
                     <div class="community-actions">
                       <a class="community-action community-favorite community-icon-"
-                         ng-class="{'community-favorited': community.favorited}"
-                         ng-click="comCtrl.toggleFavorite(community)">
+                         data-ng-class="{'community-favorited': community.favorited}"
+                         data-ng-click="comCtrl.toggleFavorite(community)">
                          favorite
                       </a>
                       <a class="community-action community-subscribe community-icon-"
-                         ng-if="!comCtrl.is_subscribed(community.url)"
-                         ng-class="{'community-subscribed': comCtrl.is_subscribed(community.url)}"
-                         ng-click="comCtrl.subscribe(community)" ng-cloak>
+                         data-ng-if="!comCtrl.is_subscribed(community.url)"
+                         data-ng-class="{'community-subscribed': comCtrl.is_subscribed(community.url)}"
+                         data-ng-click="comCtrl.subscribe(community)" data-ng-cloak>
                          subscribe
                       </a>
                       <a class="community-action community-subscribe community-icon-"
-                         ng-if="comCtrl.is_subscribed(community.url) && !(community.type === 'Organizative')"
-                         ng-class="{'community-subscribed': comCtrl.is_subscribed(community.url)}"
-                         ng-click="comCtrl.unSubscribe(community)" ng-cloak>
+                         data-ng-if="comCtrl.is_subscribed(community.url) && !(community.type === 'Organizative')"
+                         data-ng-class="{'community-subscribed': comCtrl.is_subscribed(community.url)}"
+                         data-ng-click="comCtrl.unSubscribe(community)" data-ng-cloak>
                          unsubscribe
                       </a>
                       <a class="community-action community-edit community-icon-"
-                         ng-if="community.can_manage"
+                         data-ng-if="community.can_manage"
                          tal:attributes="href string:${context/absolute_url}/edit">edit</a>
                       <a class="community-action community-delete community-icon-"
-                         ng-if="community.can_manage"
-                         ng-click="comCtrl.delete(community)">delete</a>
+                         data-ng-if="community.can_manage"
+                         data-ng-click="comCtrl.delete(community)">delete</a>
                     </div>
                   </li>
                 </ul>
@@ -98,7 +98,7 @@
               </div>
             </div>
         </div>
-        <div id="news-container" class="tab-container" ng-switch-when="news">
+        <div id="news-container" class="tab-container" data-ng-switch-when="news">
             <tal:newsitems tal:define="news_to_show view/news_to_show;" tal:condition="news_to_show" i18n:domain="ulearn">
             <div tal:define="dades_noticies view/dadesNoticies;
                           Batch python:modules['Products.CMFPlone'].Batch;
@@ -120,7 +120,7 @@
 
                         <tal:sea tal:define="searchers view/getSearchers;">
                          <select id="searcher_selector" class="form-control searcher_selector">
-                           <option selected disabled><span i18n:translate="find_label">búsqueda...</span></option>
+                           <option selected disabled><tal:omit-tag i18n:translate="find_label">búsqueda...</tal:omit-tag></option>
                            <tal:search tal:repeat="search searchers">
                              <option tal:content="search">search</option>
                            </tal:search>
@@ -150,8 +150,8 @@
                                        <span tal:replace="obj/title">Notícies RSS</span>
                                     </a>
                                 </h2>
-                                <p><time class="smaller" tal:content="obj/date">May 5</time></p>
-                                <span tal:condition="obj/text|nothing" tal:replace="structure obj/text">Text Noticia</span>
+                                <span class="smaller" tal:content="obj/date">May 5</span>
+                                <p tal:condition="obj/text|nothing"><span tal:replace="structure obj/text">Text Noticia</span></p>
                                 <a href="#" class="readmore"
                                    tal:attributes="href obj/url;
                                    title obj/title"><span class="readmore"
@@ -166,13 +166,13 @@
             <script src="++ulearn++portlets/buttonbar/subscribednews.js"></script>
             </tal:newsitems>
         </div>
-      <div id="librarysearch" ng-switch-when="sharedwithme">
+      <div id="librarysearch" data-ng-switch-when="sharedwithme">
          <div id="sharedwithme-container">
-            <div id="shared-with-me-view" ng-controller="SharedWithMe as swm">
+            <div id="shared-with-me-view" data-ng-controller="SharedWithMe as swm">
                <div class="caixessearch_shared">
                   <div id="searchinputcontent">
                      <div class="input-append">
-                        <input ng-model="q"
+                        <input data-ng-model="q"
                            class="searchInput" type="text" placeholder="Cerca"
                            i18n:attributes="placeholder search" i18n:domain="ulearn">
                         <span class="add-on"><i class="fa fa-search"></i></span>
@@ -181,10 +181,10 @@
                </div>
                <section id="sharedlist">
                   <div id="content-core">
-                     <p ng-if="swm.shared_items.length == 0" ng-cloak i18n:translate="no_content_shared_user">There is no content shared with you right now.</p>
-                     <div class="tileItem visualIEFloatFix" dir-paginate="shared_item in swm.shared_items | filter:q | itemsPerPage: swm.pageSize" current-page="swm.currentPage" ng-cloak>
+                     <p data-ng-if="swm.shared_items.length == 0" data-ng-cloak i18n:translate="no_content_shared_user">There is no content shared with you right now.</p>
+                     <div class="tileItem visualIEFloatFix" data-dir-paginate="shared_item in swm.shared_items | filter:q | itemsPerPage: swm.pageSize" data-current-page="swm.currentPage" data-ng-cloak>
                         <h4 class="tileHeadline {{shared_item.portal_type}}" >
-                           <a ng-href="{{shared_item.url}}" class="summary url">{{shared_item.title}} </a>
+                           <a data-ng-href="{{shared_item.url}}" class="summary url">{{shared_item.title}} </a>
                         </h4>
                         <div class="documentByLine"></div>
                         <p class="tileBody">
@@ -192,7 +192,7 @@
                         </p>
                         <div class="shared_by">
                            <i class="fa fa-share-alt icons"></i>Compartido por
-                           <a ng-href="{{shared_item.by_profile}}">{{shared_item.by}}</a>
+                           <a data-ng-href="{{shared_item.by_profile}}">{{shared_item.by}}</a>
                         </div>
                         <div class="shared_from">
                            desde

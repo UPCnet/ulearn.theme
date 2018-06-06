@@ -68,8 +68,7 @@
       </a>
     </div>
 
-    <table class="ploneCalendar" summary="Calendar"
-        i18n:attributes="summary summary_calendar">
+    <table class="ploneCalendar">
         <thead>
           <tr class="weekdays"><tal:data repeat="weekday view/weekdays">
             <th scope="col" i18n:translate="" tal:content="weekday">Su</th>

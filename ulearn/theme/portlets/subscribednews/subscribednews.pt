@@ -21,7 +21,7 @@
 
                 <tal:sea tal:define="searchers view/get_searchers;">
                  <select id="searcher_selector" class="form-control searcher_selector">
-                   <option selected disabled><span i18n:translate="find_label">búsqueda...</span></option>
+                   <option selected disabled><tal:omit-tag i18n:translate="find_label">búsqueda...</tal:omit-tag></option>
                    <tal:search tal:repeat="search searchers">
                      <option tal:content="search">search</option>
                    </tal:search>

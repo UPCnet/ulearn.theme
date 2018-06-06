@@ -37,8 +37,8 @@
               </tal:condition>
             </div>
           </div>
-          <a id="title_community" href="#" target="_self"
-             rel="tooltip" data-placement="right" title="Community title not trimmed"
+          <a href="#" target="_self"
+             rel="tooltip" data-placement="right"
              tal:attributes="href community/url;
                              title community/title">
               <tal:community content="community/title">
@@ -50,7 +50,7 @@
 </nav>
 
 <tal:showcreate condition="view/showCreateCommunity">
-  <div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header">
       <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
       <h3 id="myModalLabel" i18n:translate="createcommunity">Create a new community</h3>
