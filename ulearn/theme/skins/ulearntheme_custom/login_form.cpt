@@ -179,7 +179,7 @@
                    i18n:domain="plone"
                    i18n:translate="label_login_name">Username</label>
             <div class="controls">
-              <input type="text" id="inputEmail" i18n:domain="ulearn" i18n:attributes="placeholder nom_usuari" placeholder="nom.usuari"
+              <input type="text" id="inputEmail" i18n:domain="ulearn" i18n:attributes="placeholder nom_usuari" placeholder="nom.usuari" autofocus
                      tal:attributes="name ac_name;
                                      value login_name;">
               <span class="help-inline"
