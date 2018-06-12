@@ -1,4 +1,4 @@
-<tal:personaltools condition="not: view/anonymous" i18n:domain="genweb">
+<tal:personaltools condition="not: view/anonymous" i18n:domain="genweb" tal:define="portal_url context/portal_url;">
 <h1 class="goout" i18n:translate="label_eines_usuari"> Eines d'usuari </h1>
 <nav id="portal-personaltools-wrapper" role="toolbar">
   <div class="navbar navbar-fixed-top navbar-inverse">
@@ -83,6 +83,33 @@
                    <tal:rootFolder i18n:translate="genweb-accesarrel">
                       Root folder</tal:rootFolder>
             </a></li>
+            <li class="dropdown" role="menuitem" tal:condition="view/viewNominesRootFolder">
+              <a class="dropdown-toggle" data-toggle="dropdown" tal:attributes="href string:${portal_url}/">
+                <i class="fa fa-money" aria-hidden="true"></i>&nbsp;
+                <tal:management i18n:domain="ulearn" i18n:translate="">Nomines</tal:management>
+                <b aria-hidden="true" class="caret"></b>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li role="menuitem">
+                  <a href="#" tal:attributes="href string:${portal_url}/@@manage-paysheet">
+                    <i class="fa fa-money"></i>&nbsp;
+                    <tal:footer i18n:domain="ulearn" i18n:translate="">Manage Nomines</tal:footer>
+                  </a>
+                </li>
+                <li role="menuitem">
+                  <a href="#" tal:attributes="href view/viewNominesRootFolder">
+                    <i class="fa fa-folder-open"></i>&nbsp;
+                    <tal:footer i18n:domain="ulearn" i18n:translate="">Nomines Root folder</tal:footer>
+                  </a>
+                </li>
+                <li role="menuitem">
+                  <a href="#" tal:attributes="href string:${portal_url}/@@view-loginfo">
+                    <i class="fa fa-database"></i>&nbsp;
+                    <tal:footer i18n:domain="ulearn" i18n:translate="">View loginfo</tal:footer>
+                  </a>
+                </li>
+              </ul>
+            </li>
             <li  role="menuitem"><a tal:condition="view/canManageSite"
                    tal:attributes="href string:${view/portal_url}/@@overview-controlpanel">
                    <tal:managesite i18n:domain="plone" i18n:translate="Site Setup">

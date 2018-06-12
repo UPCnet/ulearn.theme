@@ -353,6 +353,28 @@ class ulearnPersonalBarViewlet(gwPersonalBarViewlet):
         current = api.user.get_current()
         return current.id
 
+    def viewNominesRootFolder(self):
+        installed = False
+        qi = getToolByName(self.context, 'portal_quickinstaller')
+        prods = qi.listInstalledProducts()
+        for prod in prods:
+            if prod['id'] == 'ulearn.nomines':
+                installed = True
+        # If package is installed check if its needed to show the button
+        if installed:
+            JSONproperties = getToolByName(self, 'portal_properties').nomines_properties
+            if not JSONproperties.getProperty('nominas_folder_name'):
+                return '/'
+            else:
+                nominas_folder_name = JSONproperties.getProperty('nominas_folder_name').lower()
+                path = '/'.join(api.portal.get().getPhysicalPath()) + '/' + nominas_folder_name
+                current = api.user.get_current()
+                roles = api.user.get_roles(username=current.id, obj=path)
+                if 'Manager' in roles or 'WebMaster' in roles or 'Gestor Nomines' in roles:
+                    return path
+                else:
+                    return False
+
 
 class gwHeader(viewletBase):
     grok.name('genweb.header')
