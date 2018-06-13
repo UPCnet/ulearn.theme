@@ -1,11 +1,14 @@
 Changelog
 =========
 
-2.64 (unreleased)
+2.64 (2018-06-13)
 -----------------
 
-- Nothing changed yet.
-
+* added nomines link to personal bar [Roberto Diaz]
+* added autofocus to user form [Roberto Diaz]
+* pass w3C [Roberto Diaz]
+* make sitemap hidden to anon [Roberto Diaz]
+* Title in catalan [Roberto Diaz]
 
 2.63 (2018-06-06)
 -----------------
