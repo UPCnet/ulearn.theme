@@ -12,3 +12,9 @@
          controls="controls">
   </video>
 </div>
+<div class="descriptionResource">
+   <a tal:attributes="href string:${view/item/getURL}/view;
+                      title view/item/Title">
+      <tal:renderer replace="structure view/getTitle"> </tal:renderer>
+  </a>
+</div>

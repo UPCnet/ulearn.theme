@@ -1,11 +1,17 @@
 <div class="titleResource">
   <h2>
     <a tal:attributes="href string:${view/item/getURL}/view;
-                       title view/item/Title">
-      <tal:renderer replace="structure view/getTitle"> </tal:renderer>
+                       title view/item/Title"
+        tal:content="view/item/Title">
     </a>
   </h2>
 </div>
 <div class="contentResource">
   <img tal:attributes="src string:${view/item/getURL}/@@images/image" />
+</div>
+<div class="descriptionResource">
+   <a tal:attributes="href string:${view/item/getURL}/view;
+                      title view/item/Title"
+      tal:content="view/item/Title"">
+  </a>
 </div>

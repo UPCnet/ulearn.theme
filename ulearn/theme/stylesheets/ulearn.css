@@ -4983,7 +4983,7 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
   overflow: hidden; }
 
 #portlet_media .contentResource {
-  height: 150px; }
+  min-height: 140px; }
 
 #portlet_media .contentResource .player {
   height: 100%;
@@ -4999,9 +4999,14 @@ i.icon-plone-contentmenu-display-contents_pretty_view, i.icon-folder-contents_pr
 #portlet_media .contentResource video {
   width: 100%; }
 
-#portlet_media .contentResource .carousel-image img {
-  width: 100%;
+#portlet_media .contentResource img {
+  width: auto;
   height: auto;
-  max-height: 150px; }
+  max-height: 150px;
+  margin: 0 auto;
+  display: block; }
+
+#portlet_media .item .descriptionResource {
+  display: none; }
 
 /*# sourceMappingURL=ulearn.css.map */
