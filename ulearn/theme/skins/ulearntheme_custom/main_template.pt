@@ -117,7 +117,7 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
             <tal:comment content="nothing"> <!-- Supposing there is no right portlet column --> </tal:comment>
             <div id="portal-column-content" tal:attributes="class content_class" >
 
-               <div tal:condition="not:ulearn_utils/is_siteroot" id="angular-route-view" data-ui-view="ulearn_utils/is_angularview"></div>
+               <div tal:condition="not:ulearn_utils/is_siteroot" id="angular-route-view" tal:attributes="data-ui-view ulearn_utils/is_angularview"></div>
 
                 <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" tal:condition="not:ajax_load" />
 
