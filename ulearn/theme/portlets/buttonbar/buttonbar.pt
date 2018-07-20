@@ -132,8 +132,7 @@
                 </div>
                 <ul class="list-search-portlet">
                     <li class="noticies clearfix" tal:repeat="obj batch">
-                        <div>
-                            <div class="imatge_noticia">
+                        <div class="imatge_noticia">
                             <a href="" tal:attributes="href obj/url">
                                 <img tal:condition="obj/new/image"
                                    tal:define="scale obj/new/@@images"
@@ -143,21 +142,18 @@
                                    tal:content="structure obj/new/image_caption" >
                                 </p>
                             </a>
-                            </div>
-                            <div class="text_noticia">
-                                <h2>
-                                    <a href="" tal:attributes="href obj/url">
-                                       <span tal:replace="obj/title">Notícies RSS</span>
-                                    </a>
-                                </h2>
-                                <span class="smaller" tal:content="obj/date">May 5</span>
-                                <p tal:condition="obj/text|nothing"><span tal:replace="structure obj/text">Text Noticia</span></p>
-                                <a href="#" class="readmore"
-                                   tal:attributes="href obj/url;
-                                   title obj/title"><span class="readmore"
-                                   i18n:translate="readmore">Leer mas..</span>
+                        </div>
+                        <div class="text_noticia">
+                            <h2>
+                                <a href="" tal:attributes="href obj/url">
+                                   <span tal:replace="obj/title">Notícies RSS</span>
                                 </a>
-                            </div>
+                            </h2>
+                            <span class="smaller" tal:content="obj/date">May 5</span>
+                            <p tal:condition="obj/text|nothing"><span tal:replace="structure obj/text">Text Noticia</span></p>
+                            <a href="#" class="readmore" i18n:attributes="title readmore; alt readmore;">
+                                <span class="readmore" i18n:translate="readmore">Leer mas..</span>
+                            </a>
                         </div>
                    </li>
                 </ul>
