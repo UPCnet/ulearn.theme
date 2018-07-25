@@ -15,7 +15,7 @@
           <h2 class="goout" i18n:translate="label_menu_usuari"> Menú d'usuari </h2>
           <ul class="nav" role="menu">
             <li class="dropdown" role="menuitem" tal:attributes="id string:${view/user_name}">
-              <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <img tal:attributes="src string:${view/getPortraitMini}" aria-hidden="true"
                      alt=""
                      class="user" />
