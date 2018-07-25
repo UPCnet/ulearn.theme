@@ -151,7 +151,9 @@
                             </h2>
                             <span class="smaller" tal:content="obj/date">May 5</span>
                             <p tal:condition="obj/text|nothing"><span tal:replace="structure obj/text">Text Noticia</span></p>
-                            <a href="#" class="readmore" i18n:attributes="title readmore; alt readmore;">
+                            <a href="#" class="readmore"
+                              tal:attributes="href obj/url;"
+                              i18n:attributes="title readmore; alt readmore;">
                                 <span class="readmore" i18n:translate="readmore">Leer mas..</span>
                             </a>
                         </div>
