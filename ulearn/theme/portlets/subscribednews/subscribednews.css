@@ -34,7 +34,6 @@ li.noticies.clearfix:last-child {
 
 .portlet-subscribed-news .text_noticia > p{
   margin-top:0px;
-  min-height: 50px;
 }
 
 .portlet-subscribed-news .noticies.clearfix::before {
