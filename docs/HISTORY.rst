@@ -1,11 +1,18 @@
 Changelog
 =========
 
-2.65 (unreleased)
+2.65 (2018-07-26)
 -----------------
 
-- Nothing changed yet.
-
+* New grunt cdn [Pilar Marinas]
+* changed css [Roberto Diaz]
+* href on news buttonbar [Roberto Diaz]
+* removed p blanks [root]
+* border news box [Roberto Diaz]
+* Arreglar problema de codificación en el filtro de búsqueda de una noticias desde la buttonbar [iago.lopez]
+* addapted noticies box to show a little better in mobile and ipads [Roberto Diaz]
+* Solucionar problema con /#/search dentro de comunidades [iago.lopez]
+* Smartportlet - CA [iago.lopez]
 
 2.64 (2018-06-13)
 -----------------
