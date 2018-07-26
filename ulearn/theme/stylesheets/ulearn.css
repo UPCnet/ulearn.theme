@@ -4342,7 +4342,7 @@ label[for="form.ext_editor"] ~ div.widget {
     margin-left: 20px; } }
 @media only screen and (max-width: 1050px) {
   #searchinputusers .inputsearchUsers .searchInput {
-    max-width: 195px; } }
+    max-width: 100%; } }
 @media only screen and (max-width: 800px) {
   body {
     background: none repeat scroll 0 0 white; }
@@ -4495,7 +4495,7 @@ label[for="form.ext_editor"] ~ div.widget {
     height: auto;
     margin-bottom: 15px;
     margin-right: 0;
-    width: 100%; }
+    width: 100% !important; }
 
   .noticies .newsImage {
     float: left;
@@ -4505,7 +4505,8 @@ label[for="form.ext_editor"] ~ div.widget {
     width: 100%; }
 
   .text_noticia {
-    margin-left: 0; }
+    margin-left: 0;
+    float: none !important; }
 
   .social {
     margin-bottom: 20px; }
@@ -4579,7 +4580,10 @@ label[for="form.ext_editor"] ~ div.widget {
     float: left; }
 
   #communitysearch h2 {
-    padding-left: 0; } }
+    padding-left: 0; }
+
+  .portlet-subscribed-news .list-search-portlet li {
+    padding-left: 0px; } }
 @media only screen and (max-width: 979px) and (min-width: 768px) and (orientation: portrait) {
   .row-fluid .span3, #dashboard .span3, .fila .span3, .template-atct_album_view #content-core .span3, .row-fluid #dashboard-portlets1, #dashboard #dashboard-portlets1, .fila #dashboard-portlets1, .template-atct_album_view #content-core #dashboard-portlets1, .row-fluid #dashboard-portlets2, #dashboard #dashboard-portlets2, .fila #dashboard-portlets2, .template-atct_album_view #content-core #dashboard-portlets2, .row-fluid #dashboard-portlets3, #dashboard #dashboard-portlets3, .fila #dashboard-portlets3, .template-atct_album_view #content-core #dashboard-portlets3, .row-fluid #dashboard-portlets4, #dashboard #dashboard-portlets4, .fila #dashboard-portlets4, .template-atct_album_view #content-core #dashboard-portlets4, .row-fluid .w1\3a 4, #dashboard .w1\3a 4, .fila .w1\3a 4, .template-atct_album_view #content-core .w1\3a 4, .row-fluid .photoAlbumEntry, #dashboard .photoAlbumEntry, .fila .photoAlbumEntry, .template-atct_album_view #content-core .photoAlbumEntry {
     width: 100%; }
