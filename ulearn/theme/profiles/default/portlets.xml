@@ -22,6 +22,8 @@
        description="AngularRouteView portlet"/>
     <portlet title="News Important" addview="ulearn.portlets.importantnews"
        description="News Important portlet"/>
+    <portlet title="RSS" addview="ulearn.portlets.rss"
+       description="RSS portlet"/>
     <portlet title="News Flash" addview="ulearn.portlets.flashesinformativos"
        description="News Flash portlet"/>
      <portlet title="News Subscribed with tags" addview="ulearn.portlets.subscribednews"

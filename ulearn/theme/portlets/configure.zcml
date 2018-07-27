@@ -114,6 +114,15 @@
     />
 
     <plone:portlet
+        name="ulearn.portlets.rss"
+        interface=".rss.rss.IRSSPortlet"
+        assignment=".rss.rss.Assignment"
+        renderer=".rss.rss.Renderer"
+        addview=".rss.rss.AddForm"
+        editview=".rss.rss.EditForm"
+    />
+
+    <plone:portlet
         name="ulearn.portlets.flashesinformativos"
         interface=".flashesinformativos.flashesinformativos.IFlashesInformativosPortlet"
         assignment=".flashesinformativos.flashesinformativos.Assignment"

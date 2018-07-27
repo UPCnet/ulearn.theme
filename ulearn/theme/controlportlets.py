@@ -266,6 +266,15 @@ class IPortletsSettings(form.Schema):
         default=False,
     )
 
+    ulearn_portlets_rss = schema.Bool(
+        title=_(u'ulearn_portlets_rss',
+                default=_(u"Habilitar portlet rss")),
+        description=_(u'help_ulearn_portlets_rss',
+                      default=_(u"Habilita el portlet per a mostrar contingut a partir d'un enllaç rss.")),
+        required=False,
+        default=False,
+    )
+
     ulearn_portlets_buttonbar = schema.Bool(
         title=_(u'ulearn_button_bar',
                 default=_(u"Habilitar portlet Ulearn Button Bar")),
