@@ -4,6 +4,7 @@ from DateTime.interfaces import DateTimeError
 from Products.Five.browser.pagetemplatefile import ZopeTwoPageTemplateFile
 
 from logging import getLogger
+from plone import api
 from plone.app.portlets import PloneMessageFactory as _PMF
 from plone.app.portlets.portlets import base
 from plone.portlets.interfaces import IPortletDataProvider
@@ -293,6 +294,11 @@ class Renderer(base.DeferredRenderer):
         if feed.needs_update:
             return True
         return False
+
+    def isAnon(self):
+        if not api.user.is_anonymous():
+            return False
+        return True
 
     def deferred_update(self):
         """refresh data for serving via KSS"""

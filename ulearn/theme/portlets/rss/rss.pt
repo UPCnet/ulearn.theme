@@ -3,6 +3,8 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       tal:omit-tag="">
 
+  <tal:block tal:condition="not:view/isAnon">
+
   <div class="ulearnbox portlet-noticies rss" i18n:domain="plone"
        tal:condition="view/enabled">
 
@@ -63,4 +65,6 @@
     });
     $(".portlet-noticies.rss a[rel='external']").attr("target", "_blink")
   </script>
+
+  </tal:block>
 </html>
