@@ -98,7 +98,7 @@ class RSSFeed(object):
         itemdict = {
             'title': self.abrevia(item.title, 70),
             'url': link,
-            'summary': self.abrevia(self.html_escape(item.get('description', '').encode('utf-8')), 100),
+            'summary': self.abrevia(self.html_escape(item.get('description', '').encode('utf-8')), 150),
             'image': item.get('href', '')
         }
         if hasattr(item, "updated"):
@@ -156,6 +156,10 @@ class RSSFeed(object):
         bb = ''
         if sumlenght < len(summary):
             bb = summary[:sumlenght]
+            if '<a' in bb:
+                startLink = summary.find('<a')
+                sumlenght += 4 + summary.find('>', startLink) - startLink
+                bb = summary[:sumlenght]
 
             lastspace = bb.rfind(' ')
             cutter = lastspace
@@ -168,8 +172,6 @@ class RSSFeed(object):
 
             if precut.count('<a') > precut.count('</a>'):
                 cutter = summary.find('</a>', lastspace) + 4
-                link = summary.find('href="', lastspace) + 6
-                cutter += summary.find('"', link) - link
 
             bb = summary[0:cutter]
 
@@ -227,9 +229,27 @@ class IRSSPortlet(IPortletDataProvider):
                          required=True,
                          default=100)
 
-    image = schema.Bool(title=_(u'Display images'),
-                        required=False,
-                        default=True)
+    display_date = schema.Bool(title=_(u'Display dates'),
+                               required=False,
+                               default=True)
+
+    display_description = schema.Bool(title=_(u'Display descriptions'),
+                                      required=False,
+                                      default=True)
+
+    display_image = schema.Bool(title=_(u'Display images'),
+                                required=False,
+                                default=True)
+
+    more_url = schema.TextLine(title=_(u'More link'),
+                               description=_(u'Url that links to more content.'),
+                               required=False,
+                               default=u'')
+
+    more_text = schema.TextLine(title=_(u'More text'),
+                                description=_(u'Text to show more content.'),
+                                required=False,
+                                default=u'')
 
 
 class Assignment(base.Assignment):
@@ -246,12 +266,18 @@ class Assignment(base.Assignment):
         else:
             return u'RSS: ' + feed.title[:20]
 
-    def __init__(self, portlet_title=u'', count=5, url=u"", timeout=100, image=True):
+    def __init__(self, portlet_title=u'', count=5, url=u"", timeout=100,
+                 display_date=True, display_description=True, display_image=True,
+                 more_text=u'', more_url=''):
         self.portlet_title = portlet_title
         self.count = count
         self.url = url
         self.timeout = timeout
-        self.image = image
+        self.display_date = display_date
+        self.display_description = display_description
+        self.display_image = display_image
+        self.more_text = more_text
+        self.more_url = more_url
 
 
 class Renderer(base.DeferredRenderer):
@@ -307,11 +333,6 @@ class Renderer(base.DeferredRenderer):
         return getattr(self.data, 'portlet_title', '') or self._getFeed().title
 
     @property
-    def feedAvailable(self):
-        """checks if the feed data is available"""
-        return self._getFeed().ok
-
-    @property
     def items(self):
         return self._getFeed().items[:self.data.count]
 
@@ -320,8 +341,12 @@ class Renderer(base.DeferredRenderer):
         return self._getFeed().ok
 
     @property
-    def displayImages(self):
-        return self.data.image
+    def displayDate(self):
+        return self.data.display_date
+
+    @property
+    def displayDescription(self):
+        return self.data.display_description
 
 
 class AddForm(base.AddForm):
@@ -334,7 +359,11 @@ class AddForm(base.AddForm):
                           count=data.get('count', 5),
                           url=data.get('url', ''),
                           timeout=data.get('timeout', 100),
-                          image=data.get('image', True))
+                          display_date=data.get('display_date', True),
+                          display_description=data.get('display_description', True),
+                          display_image=data.get('display_image', True),
+                          more_text=data.get('more_text', u''),
+                          more_url=data.get('more_url', ''))
 
 
 class EditForm(base.EditForm):
