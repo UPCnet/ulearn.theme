@@ -97,10 +97,11 @@ class RSSFeed(object):
     def _buildItemDict(self, item):
         link = item.links[0]['href']
         itemdict = {
-            'title': self.abrevia(item.title, 70),
+            'title': item.title,
             'url': link,
-            'summary': self.abrevia(self.html_escape(item.get('description', '').encode('utf-8')), 150),
-            'image': item.get('href', '')
+            'summary': self.abrevia(self.html_escape(item.get('description', '').encode('utf-8')), 250),
+            'image': item.get('href', ''),
+            'categories': [tag['term'] for tag in item.tags],
         }
         if hasattr(item, "updated"):
             try:
@@ -242,6 +243,10 @@ class IRSSPortlet(IPortletDataProvider):
                                 required=False,
                                 default=True)
 
+    display_categories = schema.Bool(title=_(u'Display categories'),
+                                     required=False,
+                                     default=False)
+
     more_url = schema.TextLine(title=_(u'More link'),
                                description=_(u'Url that links to more content.'),
                                required=False,
@@ -269,7 +274,7 @@ class Assignment(base.Assignment):
 
     def __init__(self, portlet_title=u'', count=5, url=u"", timeout=100,
                  display_date=True, display_description=True, display_image=True,
-                 more_text=u'', more_url=''):
+                 display_categories=False, more_text=u'', more_url=''):
         self.portlet_title = portlet_title
         self.count = count
         self.url = url
@@ -277,6 +282,7 @@ class Assignment(base.Assignment):
         self.display_date = display_date
         self.display_description = display_description
         self.display_image = display_image
+        self.display_categories = display_categories
         self.more_text = more_text
         self.more_url = more_url
 
@@ -368,6 +374,7 @@ class AddForm(base.AddForm):
                           display_date=data.get('display_date', True),
                           display_description=data.get('display_description', True),
                           display_image=data.get('display_image', True),
+                          display_categories=data.get('display_categories', False),
                           more_text=data.get('more_text', u''),
                           more_url=data.get('more_url', ''))
 

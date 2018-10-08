@@ -70,3 +70,16 @@
 }
 
 .favorite {display:none;}
+
+.portlet-noticies .categories {
+  margin-top: 5px;
+}
+
+.portlet-noticies .category {
+  background-color: #344961;
+  color: #FFF;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 3px 6px;
+  margin-bottom: 3px;
+}
