@@ -1,11 +1,14 @@
 Changelog
 =========
 
-2.66 (unreleased)
+2.66 (2018-10-23)
 -----------------
 
-- Nothing changed yet.
-
+* Badges profile [iago.lopez]
+* Portlet Ulearn RSS: no abreviar tanto y añadir categorias [iago.lopez]
+* Portlet RSS - isAnon [iago.lopez]
+* Portlet Ulearn RSS: añadir opciones de visibilidad y mejorar abrevia con los enlaces [iago.lopez]
+* Portlet RSS [iago.lopez]
 
 2.65 (2018-07-26)
 -----------------
