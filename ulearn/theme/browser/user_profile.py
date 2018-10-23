@@ -51,10 +51,12 @@ class userProfile(BrowserView):
             portrait = pm.getPersonalPortrait(self.user_info.id)
             member_info = get_safe_member_by_id(self.user_info.id)
 
+            typePortrait = portrait.__class__.__name__
+            changePortrait = typePortrait == 'Image' and portrait.size != 9715 and portrait.size != 4831
             if member_info.get('fullname', False) \
                and member_info.get('fullname', False) != self.username \
                and member_info.get('email', False) \
-               and isinstance(portrait, Image):
+               and changePortrait:
                 return True
             else:
                 return False
