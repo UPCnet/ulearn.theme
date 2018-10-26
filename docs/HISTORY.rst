@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.67 (unreleased)
+2.67 (2018-10-26)
 -----------------
 
-- Nothing changed yet.
-
+* Arreglar problema de codificación en el filtro de búsqueda de una noticia [iago.lopez]
 
 2.66 (2018-10-23)
 -----------------
