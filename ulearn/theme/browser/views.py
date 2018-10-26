@@ -844,7 +844,7 @@ class SearchFilteredNews(grok.View):
                                         '</h2>'\
                                         '<p><time class="smaller">' + str(noticiaObj.modification_date.day()) + '/' + str(noticiaObj.modification_date.month()) + '/' + str(noticiaObj.modification_date.year()) + '</time></p>'\
                                         '<span>' + text.encode('utf-8') + '</span>'\
-                                        '<a href="' + noticia.getURL() + '" class="readmore" title="' + abrevia(noticia.Title, 70) + '"><span class="readmore">' + readmore.decode().encode('utf-8') + '</span>'\
+                                        '<a href="' + noticia.getURL() + '" class="readmore" title="' + abrevia(noticia.Title, 70) + '"><span class="readmore">' + readmore.encode('utf-8') + '</span>'\
                                         '</a>'\
                                       '</div>'\
                                    '</div>'\
