@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.68 (unreleased)
+2.68 (2018-12-10)
 -----------------
 
-- Nothing changed yet.
-
+* Cambiar url de cambio de contraseña [Iago López Fernández]
 
 2.67 (2018-10-26)
 -----------------
