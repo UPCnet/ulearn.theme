@@ -1,11 +1,10 @@
 Changelog
 =========
 
-2.69 (unreleased)
+2.69 (2019-03-15)
 -----------------
 
-- Nothing changed yet.
-
+* Evitar Redraw y aplicar estilos al inicio [Pilar Marinas]
 
 2.68 (2018-12-10)
 -----------------
