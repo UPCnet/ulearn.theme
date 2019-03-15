@@ -49,11 +49,21 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
     <tal:notajax tal:condition="python:not ajax_load or ajax_include_head">
         <div tal:replace="structure provider:plone.htmlhead" />
         <link tal:replace="structure provider:plone.htmlhead.links" />
+
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/++genweb++stylesheets/genwebupc.css">
+
+        <tal:splittedCSS4IE tal:replace="structure string:&lt;!--[if lt IE 10]&gt;&lt;link rel='stylesheet' href='${portal_url}/++genweb++stylesheets/genwebupc-ie.css'&gt;&lt;![endif]--&gt;" />
+
+        <div tal:replace="structure provider:genweb.css" />
+
+        <link rel="stylesheet" tal:attributes="href string:${portal_url}/dynamic.css">
+
         <div tal:replace="structure provider:genweb.js" />
 
         <tal:comment replace="nothing">
             Various slots where you can insert elements in the header from a template.
         </tal:comment>
+
         <metal:topslot define-slot="top_slot" />
         <metal:headslot define-slot="head_slot" />
         <metal:styleslot define-slot="style_slot" />
@@ -70,16 +80,6 @@ id="portal-columns" <metal:page define-macro="master"><tal:doctype tal:replace="
 
         <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
-        <tal:comment content="nothing"> <!-- Splitting CSS only for IE, the rest the common CSS --> </tal:comment>
-        <!--[if !IE]><!-->
-          <link rel="stylesheet" tal:attributes="href string:${portal_url}/++genweb++stylesheets/genwebupc.css">
-        <!--<![endif]-->
-
-        <tal:splittedCSS4IE tal:replace="structure string:&lt;!--[if lt IE 10]&gt;&lt;link rel='stylesheet' href='${portal_url}/++genweb++stylesheets/genwebupc-ie.css'&gt;&lt;![endif]--&gt;" />
-
-        <div tal:replace="structure provider:genweb.css" />
-
-        <link rel="stylesheet" tal:attributes="href string:${portal_url}/dynamic.css">
 
     </tal:notajax>
 </head>
